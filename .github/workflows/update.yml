@@ -4,17 +4,18 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v4
+            - uses: actions/checkout@v6
             - uses: actions/setup-python@v5
               with:
                 python-version: '3.13'
             - run: pip install UnityPy Pillow
-            - uses: actions/setup-dotnet@v4
+            - uses: actions/setup-dotnet@v5
               with:
                 dotnet-version: '8.0'
             - run: |
-                dotnet tool install -g DepotDownloader
-                export PATH="$PATH:$HOME/.dotnet/tools"
+                curl -L -o dd.zip https://github.com/SteamRE/DepotDownloader/releases/latest/download/DepotDownloader-linux-x64.zip
+                unzip -o dd.zip -d dd
+                chmod +x dd/DepotDownloader
                 DepotDownloader -app 3678970 -depot 3678971 -username anonymous -dir game
                 ls -R game | head -30
             - run: python tools/extract.py web --game game
