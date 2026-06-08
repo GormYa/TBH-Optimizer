@@ -49,7 +49,7 @@ func (s *StageHistoryStore) Update(stageKey int, timeSpent float64, goldGain flo
 		return
 	}
 	alpha := alphaConfig
-	if stats.TotalRuns == 1 {
+	if stats.TotalRuns == 1 && stats.ManualTime == 0 {
 		alpha = 1.0
 	}
 
@@ -67,6 +67,40 @@ func (s *StageHistoryStore) Update(stageKey int, timeSpent float64, goldGain flo
 	if numHeroes > 0 {
 		runXpPerHour := ((xpGain / float64(numHeroes)) / timeSpent) * 3600
 		stats.AvgXpPerHour = (runXpPerHour * alpha) + (stats.AvgXpPerHour * (1.0 - alpha))
+	}
+}
+
+// SetManualTime grava o tempo digitado pelo usuario na calibracao como uma SEMENTE,
+// nao como uma corrida. Diferente de Update:
+//   - nao incrementa TotalRuns (a fase nao passa a contar como "medida");
+//   - SUBSTITUI o valor anterior em vez de empilhar (recalibrar nao "prende" a media);
+//   - so define a media exibida enquanto nao ha corridas reais (TotalRuns==0).
+//
+// Quando uma corrida real chega depois, Update mistura nela (ver alpha/ManualTime la).
+func (s *StageHistoryStore) SetManualTime(stageKey int, timeSpent, goldGain, xpGain float64, numHeroes int) {
+	s.mu.Lock()
+	defer s.mu.Unlock()
+	if s.history == nil {
+		s.history = make(map[int]*StageStats)
+	}
+	stats, exists := s.history[stageKey]
+	if !exists {
+		stats = &StageStats{StageKey: stageKey}
+		s.history[stageKey] = stats
+	}
+
+	stats.ManualTime = timeSpent
+
+	if stats.TotalRuns == 0 && timeSpent > 0 {
+		stats.AvgTimeSpent = timeSpent
+		stats.AvgGoldPerRun = goldGain
+		stats.AvgXpPerRun = xpGain
+		stats.AvgGoldPerHour = (goldGain / timeSpent) * 3600.0
+		if numHeroes > 0 {
+			stats.AvgXpPerHour = (xpGain / float64(numHeroes) / timeSpent) * 3600.0
+		} else {
+			stats.AvgXpPerHour = (xpGain / timeSpent) * 3600.0
+		}
 	}
 }
 

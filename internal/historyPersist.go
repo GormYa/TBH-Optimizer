@@ -15,6 +15,7 @@ const HistoryFilePath = "stage_history.json"
 type persistedStageStats struct {
 	StageKey        int     `json:"stage_key"`
 	TotalRuns       int     `json:"total_runs"`
+	ManualTime      float64 `json:"manual_time"`
 	AvgTimeSpent    float64 `json:"avg_time_spent"`
 	AvgGoldPerRun   float64 `json:"avg_gold_per_run"`
 	AvgGoldPerHour  float64 `json:"avg_gold_per_hour"`
@@ -37,6 +38,7 @@ func (s *StageHistoryStore) Save(path string) error {
 		snapshot = append(snapshot, persistedStageStats{
 			StageKey:        st.StageKey,
 			TotalRuns:       st.TotalRuns,
+			ManualTime:      st.ManualTime,
 			AvgTimeSpent:    st.AvgTimeSpent,
 			AvgGoldPerRun:   st.AvgGoldPerRun,
 			AvgGoldPerHour:   st.AvgGoldPerHour,
@@ -87,6 +89,7 @@ func (s *StageHistoryStore) Load(path string) error {
 		s.history[p.StageKey] = &StageStats{
 			StageKey:        p.StageKey,
 			TotalRuns:       p.TotalRuns,
+			ManualTime:      p.ManualTime,
 			AvgTimeSpent:    p.AvgTimeSpent,
 			AvgGoldPerRun:   p.AvgGoldPerRun,
 			AvgGoldPerHour:   p.AvgGoldPerHour,

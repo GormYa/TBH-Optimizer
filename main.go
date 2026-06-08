@@ -3,6 +3,7 @@ package main
 import (
 	"embed"
 	"fmt"
+	"net/http"
 	"optimizer/internal"
 	"os"
 	"os/exec"
@@ -20,7 +21,6 @@ var farmStagesData []byte
 const gameDataDir = "gamedata"
 
 func main() {
-	// `optimizer -update`: regenera o baseline embarcado (web/) a partir da wiki.
 	if len(os.Args) > 1 && os.Args[1] == "-update" {
 		n, err := internal.UpdateChestData("web", time.Now().Format("2006-01-02 15:04"))
 		if err != nil {
@@ -31,8 +31,19 @@ func main() {
 		return
 	}
 
-	// Remove o optimizer.exe.old deixado por um auto-update anterior.
 	internal.CleanupOldBinary()
+
+	relaunch := false
+	for _, a := range os.Args[1:] {
+		if a == "-no-browser" {
+			relaunch = true
+		}
+	}
+
+	if !relaunch && instanceRunning() {
+		_ = exec.Command("rundll32", "url.dll,FileProtocolHandler", "http://localhost:8080").Start()
+		return
+	}
 
 	farmStages, err := internal.LoadFarmStages(farmStagesData)
 	if err != nil {
@@ -52,9 +63,23 @@ func main() {
 	go internal.StartMonitoring(&ctrl)
 
 	go func() {
+		if relaunch {
+			return
+		}
 		time.Sleep(300 * time.Millisecond)
-		_ = exec.Command("cmd", "/c", "start", "http://localhost:8080").Start()
+		_ = exec.Command("rundll32", "url.dll,FileProtocolHandler", "http://localhost:8080").Start()
 	}()
 
 	internal.StartWebServer(&ctrl, webFiles, gameDataDir)
+}
+
+// instanceRunning diz se ja existe um app nosso respondendo na :8080.
+func instanceRunning() bool {
+	client := &http.Client{Timeout: 600 * time.Millisecond}
+	resp, err := client.Get("http://localhost:8080/api/stats")
+	if err != nil {
+		return false
+	}
+	_ = resp.Body.Close()
+	return resp.StatusCode == 200
 }

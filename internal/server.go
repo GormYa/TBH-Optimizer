@@ -102,16 +102,15 @@ func StartWebServer(ctrl *Control, webFiles embed.FS, dataDir string) {
 
 		timeSpentSeconds := ParseTimeSpent(req.TimeSpent)
 
-		ctrl.StageHistory.Update(
+		// Tempo digitado na calibracao entra como SEMENTE (nao como corrida): nao
+		// infla o contador, substitui o valor anterior (sem empilhar) e e diluido
+		// pelas corridas reais conforme elas chegam.
+		ctrl.StageHistory.SetManualTime(
 			req.StageKey,
 			timeSpentSeconds,
 			goldGain,
 			xpGain,
-			ctrl.UseEMA,
-			ctrl.EMAAlpha,
 			len(ctrl.HeroStates),
-			0,
-			nil,
 		)
 		_ = ctrl.StageHistory.Save(HistoryFilePath)
 
@@ -223,10 +222,14 @@ func StartWebServer(ctrl *Control, webFiles embed.FS, dataDir string) {
 	http.Handle("/", embedded)
 
 	fmt.Println("Servidor HTTP iniciado em http://localhost:8080")
-	err = http.ListenAndServe(":8080", nil)
-	if err != nil {
-		fmt.Println("Erro ao iniciar o servidor HTTP:", err)
+	for i := 0; i < 30; i++ {
+		err = http.ListenAndServe(":8080", nil)
+		if err == nil {
+			return
+		}
+		time.Sleep(300 * time.Millisecond)
 	}
+	fmt.Println("Erro ao iniciar o servidor HTTP:", err)
 }
 
 func ParseTimeSpent(val interface{}) float64 {

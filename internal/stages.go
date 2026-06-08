@@ -34,7 +34,9 @@ func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
 	var goldMultSum, xpMultSum float64
 	var multCount int
 	for key, stats := range ctrl.StageHistory.history {
-		if stats.TotalRuns <= 0 || stats.AvgTimeSpent <= 0 {
+		measured := stats.TotalRuns > 0
+		seeded := stats.ManualTime > 0
+		if (!measured && !seeded) || stats.AvgTimeSpent <= 0 {
 			continue
 		}
 		info, ok := ctrl.FarmStages[key]
@@ -42,7 +44,7 @@ func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
 			continue
 		}
 		points = append(points, timePoint{HP: info.TotalHP, Waves: float64(info.Waves), Time: stats.AvgTimeSpent})
-		if info.ExpectedGold > 0 && info.ExpectedEXP > 0 {
+		if measured && info.ExpectedGold > 0 && info.ExpectedEXP > 0 {
 			goldMultSum += stats.AvgGoldPerRun / info.ExpectedGold
 			xpMultSum += stats.AvgXpPerRun / info.ExpectedEXP
 			multCount++
@@ -69,7 +71,7 @@ func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
 	if calibrated && ctrl.FarmStages != nil {
 		lastRegistered := 0
 		for stageKey, st := range ctrl.StageHistory.history {
-			if st.TotalRuns > 0 && stageKey > lastRegistered {
+			if (st.TotalRuns > 0 || st.ManualTime > 0) && stageKey > lastRegistered {
 				lastRegistered = stageKey
 			}
 		}

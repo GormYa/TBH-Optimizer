@@ -39,6 +39,7 @@ type HeroState struct {
 type StageStats struct {
 	StageKey         int         `json:"stage_key"`
 	TotalRuns        int         `json:"total_runs"`
+	ManualTime       float64     `json:"manual_time"`
 	AvgTimeSpent     float64     `json:"avg_time_spent"`
 	AvgGoldPerRun    float64     `json:"avg_gold_per_run"`
 	AvgGoldPerHour   float64     `json:"avg_gold_per_hour"`

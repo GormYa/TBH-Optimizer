@@ -75,7 +75,9 @@
 		.card{background:linear-gradient(160deg,var(--panel),var(--bg-2));border:1px solid var(--line-soft);
 			border-radius:16px;padding:24px;position:relative;overflow:hidden}
 		.card::before{content:"";position:absolute;inset:0 0 auto 0;height:2px;background:var(--accent,var(--gold));opacity:.7}
-		.card .ico{font-size:24px;margin-bottom:12px}
+		.card .ico{margin-bottom:12px;color:var(--accent)}
+		.card .ico svg{width:26px;height:26px}
+		.note .ni svg{vertical-align:-0.2em;color:var(--gold)}
 		.card h3{font-family:var(--font-d);font-weight:700;font-size:17px;margin-bottom:7px}
 		.card p{font-size:14.5px;color:var(--txt-dim)}
 		.c-gold{--accent:var(--gold)} .c-xp{--accent:var(--xp)} .c-drop{--accent:var(--drop)} .c-blue{--accent:#6ea8fe}
@@ -121,7 +123,7 @@
 	<div class="wrap">
 		<header class="fade">
 			<div class="brand">
-				<div class="mark">⚔</div>
+				<div class="mark"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div>
 				<div>
 					<h1>TASKBAR<span>HERO</span></h1>
 					<p>Otimizador de Farm</p>
@@ -146,10 +148,10 @@
 		<section>
 			<div class="sec-h">O que ele faz</div>
 			<div class="grid">
-				<div class="card c-gold fade"><div class="ico">💰</div><h3>Ouro por hora</h3><p>Mede o ouro real de cada corrida e projeta o ganho/hora — bruto e ajustado.</p></div>
-				<div class="card c-xp fade d1"><div class="ico">✨</div><h3>XP por hora</h3><p>Acompanha o XP por herói e estima o melhor mapa pra subir de nível.</p></div>
-				<div class="card c-drop fade d2"><div class="ico">🎁</div><h3>Baús &amp; loot</h3><p>Taxa de baú por fase e a tabela de saque item a item, com raridade e sprites.</p></div>
-				<div class="card c-blue fade d3"><div class="ico">🎯</div><h3>Recomendação</h3><p>Escolha o foco (ouro ou xp) e o app aponta a melhor fase entre todas.</p></div>
+				<div class="card c-gold fade"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/></svg></div><h3>Ouro por hora</h3><p>Mede o ouro real de cada corrida e projeta o ganho/hora — bruto e ajustado.</p></div>
+				<div class="card c-xp fade d1"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg></div><h3>XP por hora</h3><p>Acompanha o XP por herói e estima o melhor mapa pra subir de nível.</p></div>
+				<div class="card c-drop fade d2"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg></div><h3>Baús &amp; loot</h3><p>Taxa de baú por fase e a tabela de saque item a item, com raridade e sprites.</p></div>
+				<div class="card c-blue fade d3"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div><h3>Recomendação</h3><p>Escolha o foco (ouro ou xp) e o app aponta a melhor fase entre todas.</p></div>
 			</div>
 		</section>
 
@@ -161,7 +163,7 @@
 				<div class="step fade d2"><h4>Jogue normalmente</h4><p>A cada fase concluída, as estatísticas se atualizam. Calibre o 1-1 pra projeções mais finas.</p></div>
 			</div>
 			<div class="note fade d2">
-				<span class="ni">🛡️</span>
+				<span class="ni"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></span>
 				<p>Como o app não é assinado, o <b>Windows SmartScreen</b> pode avisar "editor desconhecido". É esperado: clique em <b>Mais informações → Executar assim mesmo</b>. O código é aberto — confira no repositório.</p>
 			</div>
 		</section>
@@ -184,7 +186,7 @@
 			<a href="mailto:rupeliojunior44@gmail.com">Contato</a>
 		</nav>
 		<p class="attrib">Fan-made tool · Game content © Nugem Studio &amp; Tesseract Studio · Not affiliated with the developers</p>
-		<p class="foot-by">Taskbar Hero Optimizer · feito por um fã</p>
+		<p class="foot-by">Taskbar Hero Optimizer · feito por um fã · Dados do jogo: <span id="gamever">—</span></p>
 	</footer>
 
 	<script>
@@ -199,6 +201,12 @@
 				if (j.notes) document.getElementById('notes').textContent = j.notes;
 			})
 			.catch(() => { /* offline ou ainda sem deploy: mantém o texto padrão */ });
+
+		// Lê o gameVersion do chest_drops.json pra mostrar de qual patch do jogo são os dados.
+		fetch('./chest_drops.json', { cache: 'no-store' })
+			.then(r => r.ok ? r.json() : Promise.reject())
+			.then(d => { if (d.gameVersion) document.getElementById('gamever').textContent = 'v' + d.gameVersion; })
+			.catch(() => {});
 	</script>
 </body>
 </html>

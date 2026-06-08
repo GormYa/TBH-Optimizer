@@ -336,8 +336,8 @@ func saveStageLog(stageKey int, timeSpent float64, goldGain float64, xpGain floa
 	}
 	defer file.Close()
 
-	logLine := fmt.Sprintf("Estágio Concluído: %d | Tempo Gasto: %.2fs | Ouro/h: %.0f | XP/h: %.0f\n",
-		stageKey, timeSpent, goldGain, xpGain)
+	logLine := fmt.Sprintf("[%s] Estágio Concluído: %d | Tempo Gasto: %.2fs | Ouro/h: %.0f | XP/h: %.0f\n",
+		time.Now().Format("2006-01-02 15:04:05"), stageKey, timeSpent, goldGain, xpGain)
 	_, err = file.WriteString(logLine)
 	if err != nil {
 		fmt.Println("Erro ao descarregar os dados no bloco de notas:", err)

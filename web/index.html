@@ -14,9 +14,25 @@
 	<div id="app" class="layout">
 
 		<!-- ===================== SIDEBAR ===================== -->
+		<div class="dup-overlay" v-if="duplicateTab">
+			<div class="dup-card">
+				<div class="dup-ico"><icon name="shield" :size="32"></icon></div>
+				<h3>Painel já aberto</h3>
+				<p>O otimizador já está aberto em outra aba deste navegador. Volte para ela — ou continue por aqui.</p>
+				<button @click="useThisTab">Continuar nesta aba</button>
+			</div>
+		</div>
+
+		<div class="toasts">
+			<div v-for="t in toasts" :key="t.id" class="toast" :class="'toast-' + t.type">
+				<span class="toast-ico"><icon :name="t.type === 'success' ? 'check' : (t.type === 'error' ? 'x' : 'info')" :size="14"></icon></span>
+				<span>{{ t.msg }}</span>
+			</div>
+		</div>
+
 		<aside class="sidebar">
 			<div class="brand">
-				<div class="brand-mark">⚔</div>
+				<div class="brand-mark"><icon name="shield" :size="22"></icon></div>
 				<div class="brand-text">
 					<h1>TASKBAR<span>HERO</span></h1>
 					<p>Otimizador de Farm</p>
@@ -31,7 +47,7 @@
 			<nav class="nav">
 				<button v-for="item in navItems" :key="item.id"
 						:class="{ active: view === item.id }" @click="view = item.id">
-					<span class="nav-ico" v-html="item.ico"></span>
+					<span class="nav-ico"><icon :name="item.icon" :size="18"></icon></span>
 					<span>{{ item.label }}</span>
 				</button>
 			</nav>
@@ -51,15 +67,27 @@
 				<div class="ver-row">
 					<span class="ver-tag">v{{ appVersion || '—' }}</span>
 					<button class="btn-ver" @click="checkUpdate" :disabled="updateBusy">
-						{{ updateBusy ? '…' : (updateInfo.has_update ? '⬇ Atualizar' : '↻ Verificar') }}
+						<template v-if="updateBusy">…</template>
+						<template v-else><icon :name="updateInfo.has_update ? 'download' : 'refresh'" :size="13"></icon> {{ updateInfo.has_update ? 'Atualizar' : 'Verificar' }}</template>
 					</button>
 				</div>
 				<div class="ver-msg" v-if="updateMsg">{{ updateMsg }}</div>
+				<div class="ver-game" v-if="chestData.gameVersion">Dados do jogo: <b>v{{ chestData.gameVersion }}</b></div>
 			</div>
 		</aside>
 
 		<!-- ===================== CONTENT ===================== -->
 		<main class="content">
+			<div class="update-banner" v-if="updateInfo.has_update">
+				<div class="ub-left">
+					<span class="ub-spark"><icon name="sparkles" :size="24"></icon></span>
+					<div>
+						<div class="ub-title">Nova versão <b>v{{ updateInfo.latest }}</b> disponível</div>
+						<div class="ub-sub">{{ updateInfo.notes || 'Clique para baixar e reabrir automaticamente.' }}</div>
+					</div>
+				</div>
+				<button class="ub-btn" @click="applyUpdate" :disabled="updateBusy"><icon name="download" :size="16"></icon> {{ updateBusy ? 'Atualizando…' : 'Atualizar agora' }}</button>
+			</div>
 			<header class="content-head">
 				<div>
 					<div class="crumb">Painel</div>
@@ -104,7 +132,7 @@
 				<div class="panel pad calib-bar">
 					<div class="calib-title">
 						<h3 class="panel-title">Calibrar Projeções</h3>
-						<p class="hint">Âncoras: <strong>1-1</strong> + o <strong>maior mapa que você alcança</strong>. Adicione quantos mapas quiser abaixo — quanto mais pontos, melhor a estimativa. Tempo digitado por você tem prioridade.</p>
+						<p class="hint">Âncoras: <strong>1-1</strong> + o <strong>maior mapa que você alcança</strong>. Adicione quantos mapas quiser abaixo — quanto mais pontos, melhor a estimativa. O tempo digitado é só um ponto de partida: as <strong>corridas reais</strong> vão refinando o valor automaticamente.</p>
 					</div>
 					<div class="calib-fields">
 						<div class="fld-group">
@@ -141,12 +169,12 @@
 						<h3 class="panel-title">Desempenho por Fase</h3>
 						<div class="rec-toggle">
 							<span class="rec-toggle-lbl">Melhor mapa pra:</span>
-							<button type="button" :class="{ on: sortKey === 'avg_gold_per_hour' }" @click="setSort('avg_gold_per_hour')">💰 Ouro</button>
-							<button type="button" :class="{ on: sortKey === 'avg_xp_per_hour' }" @click="setSort('avg_xp_per_hour')">✨ XP</button>
+							<button type="button" :class="{ on: sortKey === 'avg_gold_per_hour' }" @click="rankBy('avg_gold_per_hour')"><icon name="coins" :size="15"></icon> Ouro</button>
+							<button type="button" :class="{ on: sortKey === 'avg_xp_per_hour' }" @click="rankBy('avg_xp_per_hour')"><icon name="zap" :size="15"></icon> XP</button>
 						</div>
 					</div>
 					<div class="empty" v-if="sortedStages.length === 0">
-						<div class="empty-mark">⌛</div>
+						<div class="empty-mark"><icon name="clock" :size="40"></icon></div>
 						<h3>Aguardando o save…</h3>
 						<p>A tabela aparece assim que você concluir a primeira corrida.</p>
 					</div>
@@ -164,13 +192,14 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr v-for="stage in sortedStages" :key="stage.stage_key" :class="{ projected: stage.total_runs === 0 }">
+								<tr v-for="stage in sortedStages" :key="stage.stage_key" :class="{ projected: stage.total_runs === 0 && !(stage.manual_time > 0), seeded: stage.total_runs === 0 && stage.manual_time > 0 }">
 									<td><span class="stage-badge">{{ formatStageName(stage.stage_key) }}</span></td>
 									<td>
 										<strong v-if="stage.total_runs > 0">{{ stage.total_runs }}</strong>
+										<span class="tag-seed" v-else-if="stage.manual_time > 0" title="Tempo que você digitou na calibração. As corridas reais vão refinando esse valor.">Digitado</span>
 										<span class="tag-est" v-else>Estimado</span>
 										<span v-if="stage.total_runs > 0" class="conf-dot" :class="'conf-' + confidence(stage.total_runs)" :title="confLabel(stage.total_runs)"></span>
-										<button v-if="stage.total_runs > 0" class="btn-clear-stage" @click="resetStage(stage.stage_key)" title="Limpar corridas desta fase">✕</button>
+										<button v-if="stage.total_runs > 0 || stage.manual_time > 0" class="btn-clear-stage" @click="resetStage(stage.stage_key)" title="Limpar esta fase"><icon name="x" :size="13"></icon></button>
 									</td>
 									<td class="mono">{{ formatTime(stage.avg_time_spent) }}<div class="r2" v-if="stageHP(stage.stage_key)">HP {{ formatNumber(stageHP(stage.stage_key)) }}</div></td>
 									<td>
@@ -203,7 +232,7 @@
 			<section v-show="view === 'chests'" class="view">
 				<!-- DETALHE DE UM BAÚ -->
 				<div v-if="selectedChest">
-					<button class="btn-back" @click="selectedChest = null">← Baús</button>
+					<button class="btn-back" @click="selectedChest = null"><icon name="arrow-left" :size="15"></icon> Baús</button>
 					<div class="detail-grid">
 						<div class="detail-card" :class="typeClass(selectedChest.type)">
 							<img class="detail-sprite" :src="selectedChest.iconUrl" :alt="selectedChest.name" onerror="this.style.visibility='hidden'">
@@ -254,13 +283,13 @@
 								<option value="">Todas as fases</option>
 								<option v-for="s in chestStageOptions" :key="s" :value="s">Fase {{ s }}</option>
 							</select>
-							<button class="btn-update" @click="updateChests" :disabled="updating">{{ updating ? 'Atualizando…' : '↻ Atualizar dados' }}</button>
+							<button class="btn-update" @click="updateChests" :disabled="updating"><template v-if="updating">Atualizando…</template><template v-else><icon name="refresh" :size="13"></icon> Atualizar dados</template></button>
 						</div>
 					</div>
 					<p class="view-intro">Dados da <a href="https://taskbarhero.wiki" target="_blank" rel="noopener">taskbarhero.wiki</a> · {{ filteredChests.length }} baú(s). Clique num baú para ver fases e tabela de saque.</p>
 
 					<div class="empty" v-if="filteredChests.length === 0">
-						<div class="empty-mark">✦</div>
+						<div class="empty-mark"><icon name="package" :size="40"></icon></div>
 						<h3>Nenhum baú para este filtro</h3>
 					</div>
 
@@ -275,7 +304,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="chest-foot">Dropa em {{ (c.stages || []).length }} fase(s) · {{ lootCount(c) }} grupos →</div>
+							<div class="chest-foot">Dropa em {{ (c.stages || []).length }} fase(s) · {{ lootCount(c) }} grupos</div>
 						</div>
 					</div>
 				</div>
@@ -326,7 +355,7 @@
 								</div>
 							</div>
 						</template>
-						<div class="empty" v-else><div class="empty-mark">⚔</div><p>Selecione um item à esquerda.</p></div>
+						<div class="empty" v-else><div class="empty-mark"><icon name="swords" :size="40"></icon></div><p>Selecione um item à esquerda.</p></div>
 					</div>
 				</div>
 			</section>
@@ -336,7 +365,30 @@
 	<script>
 		const { createApp, ref, computed, onMounted } = Vue;
 
-		createApp({
+		// Ícones SVG inline (estilo Lucide) — offline, herdam a cor via currentColor.
+		const ICONS = {
+			shield: '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>',
+			swords: '<polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" x2="19" y1="19" y2="13"/><line x1="16" x2="20" y1="16" y2="20"/><line x1="19" x2="21" y1="21" y2="19"/><polyline points="14.5 6.5 18 3 21 3 21 6 17.5 9.5"/><line x1="5" x2="9" y1="14" y2="18"/><line x1="7" x2="4" y1="17" y2="20"/><line x1="3" x2="5" y1="19" y2="21"/>',
+			dashboard: '<rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/>',
+			package: '<path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><polyline points="3.29 7 12 12 20.71 7"/><path d="m7.5 4.27 9 5.15"/>',
+			check: '<path d="M20 6 9 17l-5-5"/>',
+			x: '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
+			info: '<circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>',
+			download: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/>',
+			refresh: '<path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/>',
+			sparkles: '<path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .962 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.962 0z"/>',
+			coins: '<circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/>',
+			zap: '<path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/>',
+			clock: '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+			'arrow-left': '<path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>'
+		};
+		const Icon = {
+			props: { name: { type: String, required: true }, size: { type: [Number, String], default: 18 } },
+			computed: { paths() { return ICONS[this.name] || ''; } },
+			template: '<svg class="ico" :width="size" :height="size" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" v-html="paths"></svg>'
+		};
+
+		const app = createApp({
 			setup() {
 				const statsReport = ref({ best_gold_stage: 0, best_xp_stage: 0, stages: {} });
 				const stagesList = ref([]);
@@ -472,21 +524,31 @@
 				};
 
 				const updating = ref(false);
+				// --- toasts: feedback no front (o exe não tem mais console) ---
+				const toasts = ref([]);
+				let toastSeq = 0;
+				const pushToast = (type, msg, ttl = 4500) => {
+					const id = ++toastSeq;
+					toasts.value.push({ id, type, msg });
+					setTimeout(() => { toasts.value = toasts.value.filter(t => t.id !== id); }, ttl);
+				};
+				let firstStats = true, wasOffline = false, suppressRunDetect = false;
+
 				const updateChests = async () => {
 					updating.value = true;
 					try {
 						const r = await fetch('http://localhost:8080/api/chests/update', { method: 'POST' });
 						const j = await r.json().catch(() => ({}));
-						if (r.ok) { await loadChests(); alert('Catálogo atualizado: ' + (j.chests || '?') + ' baús.'); }
-						else alert('Falha ao atualizar: ' + (j.message || r.status));
-					} catch (e) { alert('Erro de conexão ao atualizar.'); }
+						if (r.ok) { await loadChests(); pushToast('success', 'Catálogo atualizado: ' + (j.chests || '?') + ' baús.'); }
+						else pushToast('error', 'Falha ao atualizar: ' + (j.message || r.status));
+					} catch (e) { pushToast('error', 'Erro de conexão ao atualizar.'); }
 					finally { updating.value = false; }
 				};
 
 				const navItems = [
-					{ id: 'painel', label: 'Painel', ico: '◈' },
-					{ id: 'chests', label: 'Baús', ico: '✦' },
-					{ id: 'items', label: 'Itens', ico: '⚔' }
+					{ id: 'painel', label: 'Painel', icon: 'dashboard' },
+					{ id: 'chests', label: 'Baús', icon: 'package' },
+					{ id: 'items', label: 'Itens', icon: 'swords' }
 				];
 				const addStage = ref('');
 				const addTime = ref('');
@@ -518,7 +580,22 @@
 					try {
 						const r = await fetch('http://localhost:8080/api/stats');
 						if (!r.ok) return;
-						statsReport.value = await r.json();
+						const data = await r.json();
+						const prev = (statsReport.value && statsReport.value.stages) || {};
+						const cur = data.stages || {};
+						// Avisa quando o monitor registra corrida nova (pula 1ª carga e ações manuais).
+						if (!firstStats && !suppressRunDetect) {
+							for (const k in cur) {
+								const before = (prev[k] && prev[k].total_runs) || 0;
+								if (cur[k].total_runs > before) {
+									pushToast('success', 'Corrida registrada — ' + formatStageName(parseInt(k, 10)) + ' (' + cur[k].total_runs + ')');
+								}
+							}
+						}
+						suppressRunDetect = false;
+						firstStats = false;
+						if (wasOffline) { pushToast('success', 'Reconectado ao otimizador'); wasOffline = false; }
+						statsReport.value = data;
 						const stages = statsReport.value.stages;
 						if (stages) {
 							if (stages[1101] && stages[1101].total_runs > 0 && !calibBaseTime.value) {
@@ -536,7 +613,9 @@
 								}
 							}
 						}
-					} catch (e) { console.error('Erro ao conectar ao otimizador:', e); }
+					} catch (e) {
+						if (!wasOffline) { pushToast('error', 'Sem conexão com o otimizador'); wasOffline = true; }
+					}
 				};
 
 				const loadStagesList = async () => {
@@ -548,12 +627,12 @@
 					if (!confirm('Apagar todas as médias acumuladas e o log historico_farm.txt?')) return;
 					try {
 						const r = await fetch('http://localhost:8080/api/stats/reset', { method: 'POST' });
-						if (r.ok) { calibBaseTime.value = ''; calibLimitStage.value = ''; calibLimitTime.value = ''; await fetchStats(); }
-					} catch (e) { console.error('Erro ao resetar:', e); }
+						if (r.ok) { calibBaseTime.value = ''; calibLimitStage.value = ''; calibLimitTime.value = ''; suppressRunDetect = true; await fetchStats(); pushToast('info', 'Histórico apagado.'); }
+					} catch (e) { pushToast('error', 'Erro ao zerar o histórico.'); }
 				};
 
 				const submitCalibration = async () => {
-					if (!calibBaseTime.value) { alert('Preencha pelo menos o tempo da fase 1-1.'); return; }
+					if (!calibBaseTime.value) { pushToast('error', 'Preencha pelo menos o tempo da fase 1-1.'); return; }
 					try {
 						const reqs = [ fetch('http://localhost:8080/api/stats/add', {
 							method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -561,29 +640,29 @@
 						}) ];
 						if (calibLimitStage.value && calibLimitTime.value) {
 							const limitKey = parseInt(calibLimitStage.value, 10);
-							if (isNaN(limitKey)) { alert('Fase limite inválida.'); return; }
+							if (isNaN(limitKey)) { pushToast('error', 'Fase limite inválida.'); return; }
 							reqs.push(fetch('http://localhost:8080/api/stats/add', {
 								method: 'POST', headers: { 'Content-Type': 'application/json' },
 								body: JSON.stringify({ stage_key: limitKey, time_spent: calibLimitTime.value })
 							}));
 						}
 						const res = await Promise.all(reqs);
-						if (res.every(x => x.ok)) { await fetchStats(); alert('Modelo calibrado com sucesso!'); }
-						else alert('Erro ao enviar dados de calibração.');
-					} catch (e) { console.error('Erro ao calibrar:', e); alert('Erro de conexão.'); }
+						if (res.every(x => x.ok)) { suppressRunDetect = true; await fetchStats(); pushToast('success', 'Modelo calibrado com sucesso!'); }
+						else pushToast('error', 'Erro ao enviar dados de calibração.');
+					} catch (e) { pushToast('error', 'Erro de conexão ao calibrar.'); }
 				};
 
 				const addMapTime = async () => {
 					const key = parseInt(addStage.value, 10);
-					if (isNaN(key) || !addTime.value) { alert('Escolha um mapa e informe o tempo.'); return; }
+					if (isNaN(key) || !addTime.value) { pushToast('error', 'Escolha um mapa e informe o tempo.'); return; }
 					try {
 						const r = await fetch('http://localhost:8080/api/stats/add', {
 							method: 'POST', headers: { 'Content-Type': 'application/json' },
 							body: JSON.stringify({ stage_key: key, time_spent: addTime.value })
 						});
-						if (r.ok) { addTime.value = ''; addStage.value = ''; await fetchStats(); }
-						else alert('Erro ao adicionar o tempo do mapa.');
-					} catch (e) { console.error('Erro ao adicionar mapa:', e); alert('Erro de conexão.'); }
+						if (r.ok) { addTime.value = ''; addStage.value = ''; suppressRunDetect = true; await fetchStats(); pushToast('success', 'Fase ' + formatStageName(key) + ' adicionada.'); }
+						else pushToast('error', 'Erro ao adicionar o tempo do mapa.');
+					} catch (e) { pushToast('error', 'Erro de conexão ao adicionar mapa.'); }
 				};
 
 				const resetStage = async (key) => {
@@ -593,8 +672,8 @@
 							method: 'POST', headers: { 'Content-Type': 'application/json' },
 							body: JSON.stringify({ stage_key: key })
 						});
-						if (r.ok) await fetchStats();
-					} catch (e) { console.error('Erro ao limpar fase:', e); }
+						if (r.ok) { suppressRunDetect = true; await fetchStats(); pushToast('info', 'Corridas de ' + formatStageName(key) + ' apagadas.'); }
+					} catch (e) { pushToast('error', 'Erro ao limpar a fase.'); }
 				};
 
 				const formatDifficulty = (diff) => ({ NORMAL:'Normal', NIGHTMARE:'Nightmare', HELL:'Hell', TORMENT:'Torment' }[diff] || diff);
@@ -612,7 +691,10 @@
 					if (sortKey.value === key) { sortDir.value = sortDir.value === 'desc' ? 'asc' : 'desc'; }
 					else { sortKey.value = key; sortDir.value = key === 'stage_key' ? 'asc' : 'desc'; }
 				};
-				const sortArrow = (key) => sortKey.value === key ? (sortDir.value === 'desc' ? ' ▾' : ' ▴') : '';
+				// Atalho "Melhor mapa pra Ouro/XP": sempre decrescente (melhor no topo).
+				const rankBy = (key) => { sortKey.value = key; sortDir.value = 'desc'; };
+				const chevSvg = (d) => '<svg class="ico sort-arr" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="' + d + '"/></svg>';
+				const sortArrow = (key) => sortKey.value === key ? (sortDir.value === 'desc' ? chevSvg('m6 9 6 6 6-6') : chevSvg('m18 15-6-6-6 6')) : '';
 				const sortedStages = computed(() => {
 					const arr = Object.values(statsReport.value.stages || {});
 					const dir = sortDir.value === 'desc' ? -1 : 1;
@@ -620,7 +702,7 @@
 					return arr.sort((a, b) => {
 						const av = a[k] || 0, bv = b[k] || 0;
 						if (av === bv) return a.stage_key - b.stage_key;     // desempate estável
-						return av < bv ? dir : -dir;
+						return av < bv ? -dir : dir;
 					});
 				});
 
@@ -648,14 +730,38 @@
 					} catch (e) { /* offline: ignora */ }
 				};
 
-				onMounted(() => { loadStagesList(); loadChests(); fetchStats(); initUpdate(); setInterval(fetchStats, 2000); });
+				// Dedup de aba: navegadores não deixam um app externo focar uma aba já
+				// aberta, mas a própria página detecta (via BroadcastChannel) que já existe
+				// um painel ativo e, na aba nova, cede em vez de rodar um 2º painel.
+				const duplicateTab = ref(false);
+				let dashChannel = null;
+				const startApp = () => { loadStagesList(); loadChests(); fetchStats(); initUpdate(); setInterval(fetchStats, 2000); };
+				const useThisTab = () => { duplicateTab.value = false; startApp(); };
+				onMounted(() => {
+					if ('BroadcastChannel' in window) {
+						dashChannel = new BroadcastChannel('tbh-dash');
+						let existing = false;
+						dashChannel.onmessage = (e) => {
+							if (e.data === 'ping') { if (!duplicateTab.value) dashChannel.postMessage('pong'); }
+							else if (e.data === 'pong') { existing = true; }
+							else if (e.data === 'focus') { if (!duplicateTab.value) { try { window.focus(); } catch (_) {} } }
+						};
+						dashChannel.postMessage('ping');
+						setTimeout(() => {
+							if (existing) { duplicateTab.value = true; dashChannel.postMessage('focus'); }
+							else startApp();
+						}, 250);
+					} else {
+						startApp();
+					}
+				});
 
 				return {
 					statsReport, stagesList, calibBaseTime, calibLimitStage, calibLimitTime,
 					view, navItems, viewTitle, sortKey, sortDir,
 					sortedStages, bestGoldData, bestXpData, totalRunsAllStages,
 					addStage, addTime, addMapTime, resetStage,
-					fetchStats, resetHistory, submitCalibration, setSort, sortArrow,
+					fetchStats, resetHistory, submitCalibration, setSort, rankBy, sortArrow,
 					stageHP, chestRateByStage, chestsPerHour, formatItems,
 					confidence, confLabel,
 					formatDifficulty, formatStageName, formatNumber, formatTime,
@@ -663,10 +769,13 @@
 					fmtPct, typeLabel, typeClass, gradeLabel, activeLoot, lootCount, updating, updateChests,
 					selectedHeroes, allHeroes, toggleHero, chestHeroes,
 					selectedChest, itemSearch, selectedItem, itemList, filteredItems, itemChests, itemName, itemIcon, itemGrade, heroList,
-					appVersion, updateInfo, updateBusy, updateMsg, checkUpdate, applyUpdate
+					appVersion, updateInfo, updateBusy, updateMsg, checkUpdate, applyUpdate, toasts,
+					duplicateTab, useThisTab
 				};
 			}
-		}).mount('#app');
+		});
+		app.component('icon', Icon);
+		app.mount('#app');
 	</script>
 </body>
 </html>

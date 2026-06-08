@@ -123,13 +123,12 @@ func ApplySelfUpdate(client *http.Client, rel *ReleaseInfo) error {
 
 // RelaunchAndExit abre o exe novo (apos uma pausa que libera a :8080) e encerra este.
 func RelaunchAndExit() {
-	exePath, err := os.Executable()
-	if err == nil {
-		// cmd espera 1s (este processo sai antes) e reabre o exe no lugar.
-		_ = exec.Command("cmd", "/c",
-			"timeout /t 1 /nobreak >nul & start \"\" \""+exePath+"\"").Start()
+	if exePath, err := os.Executable(); err == nil {
+		cmd := exec.Command(exePath, "-no-browser")
+		cmd.Dir = filepath.Dir(exePath)
+		_ = cmd.Start()
 	}
-	go func() { time.Sleep(300 * time.Millisecond); os.Exit(0) }()
+	go func() { time.Sleep(400 * time.Millisecond); os.Exit(0) }()
 }
 
 // CleanupOldBinary apaga o .old deixado por um update anterior (chame no boot).
