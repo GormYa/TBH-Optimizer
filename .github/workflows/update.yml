@@ -22,7 +22,7 @@ jobs:
             - uses: actions/setup-go@v5
               with:
                 go-version: '1.26'
-            - run: go build -ldflags "-s -w -X optimizer/internal.es3Password=${{ secrets.TBH_ES3_KEY }} -X optimizer/internal.Version=1.0.${{ github.run_number }}" -o optimizer.exe .
+            - run: GOOS=windows GOARCH=amd64 go build -ldflags "-s -w -X optimizer/internal.es3Password=${{ secrets.TBH_ES3_KEY }} -X optimizer/internal.Version=1.0.${{ github.run_number }}" -o optimizer.exe .
             - run: |
                 mkdir -p public
                 cp -r site/* public/
