@@ -302,6 +302,10 @@ th.sortable span { color: var(--gold); font-size: 11px; }
 .grade-epic { color: #b06bff; }
 .grade-legendary { color: #ffb13c; }
 .grade-mythic { color: #ff5a5a; }
+.grade-immortal { color: #ff7be0; }
+/* raridade ao lado do nome do item (desambigua nomes repetidos) */
+.li-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; text-align: left; }
+.li-grade { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; }
 .loot-item.grade-uncommon { border-color: rgba(95,194,107,.4); }
 .loot-item.grade-rare { border-color: rgba(74,163,255,.4); }
 .loot-item.grade-epic { border-color: rgba(176,107,255,.4); }

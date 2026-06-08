@@ -284,12 +284,21 @@
 			<!-- ---------- ITENS (busca reversa) ---------- -->
 			<section v-show="view === 'items'" class="view">
 				<p class="view-intro">Busque um <strong>item</strong> e veja em quais baús ele cai e a chance de vir ao abrir. (% por item = chance do grupo ÷ nº de itens do grupo.)</p>
+				<div class="hero-toggles" v-if="heroList.length">
+					<span class="rec-toggle-lbl">Personagens que você possui:</span>
+					<button type="button" v-for="h in heroList" :key="h.key" :class="{ on: selectedHeroes.includes(h.key) }" @click="toggleHero(h.key)">
+						{{ h.name }}<span v-if="h.dlc" class="dlc-badge">DLC</span>
+					</button>
+				</div>
 				<input type="text" class="fld items-search" v-model="itemSearch" placeholder="Buscar item… (ex.: Espada Longa, Elmo de Madeira)">
 				<div class="items-layout">
 					<div class="group-list">
 						<button v-for="it in filteredItems" :key="it.id" :class="{ on: selectedItem === it.id }" @click="selectedItem = it.id">
 							<img class="li-sprite" :src="itemIcon(it.id)" loading="lazy" onerror="this.style.visibility='hidden'">
-							<span>{{ it.name }}</span>
+							<span class="li-text">
+								<span>{{ it.name }}</span>
+								<span class="li-grade" :class="'grade-' + (it.grade || '').toLowerCase()">{{ gradeLabel(it.grade) }}</span>
+							</span>
 						</button>
 						<div class="empty" v-if="filteredItems.length === 0"><p>Nada encontrado.</p></div>
 					</div>
@@ -297,7 +306,10 @@
 						<template v-if="selectedItem">
 							<div class="item-head">
 								<img class="li-sprite big" :src="itemIcon(selectedItem)" onerror="this.style.visibility='hidden'">
-								<h4 class="sec-title" style="margin:0;">{{ itemName(selectedItem) }}</h4>
+								<div>
+									<h4 class="sec-title" style="margin:0;">{{ itemName(selectedItem) }}</h4>
+									<span class="li-grade" :class="'grade-' + (itemGrade(selectedItem) || '').toLowerCase()">{{ gradeLabel(itemGrade(selectedItem)) }}</span>
+								</div>
 							</div>
 							<p class="hint">Cai em {{ itemChests(selectedItem).length }} baú(s) · % = chance de vir ao abrir aquele baú.</p>
 							<div class="rev-card" v-for="(r, i) in itemChests(selectedItem)" :key="i" :class="typeClass(r.chest.type)">
@@ -363,7 +375,7 @@
 					return list;
 				});
 				const typeLabel = (t) => ({ 'Common': 'Comum', 'Stage Boss': 'Chefe de Fase', 'Act Boss': 'Chefe de Ato' }[t] || t);
-				const gradeLabel = (g) => ({ COMMON:'Comum', UNCOMMON:'Incomum', RARE:'Raro', EPIC:'Épico', LEGENDARY:'Lendário', MYTHIC:'Mítico' }[g] || (g || '').toLowerCase());
+				const gradeLabel = (g) => ({ COMMON:'Comum', UNCOMMON:'Incomum', RARE:'Raro', EPIC:'Épico', LEGENDARY:'Lendário', MYTHIC:'Mítico', IMMORTAL:'Imortal' }[g] || (g || '').toLowerCase());
 				const typeClass = (t) => ({ 'Common': 't-common', 'Stage Boss': 't-boss', 'Act Boss': 't-act' }[t] || '');
 				const fmtPct = (x) => (x >= 100 ? '100%' : (x || 0).toFixed(1) + '%');
 				const selectedHeroes = ref([]);
@@ -390,8 +402,14 @@
 				const selectedChest = ref(null);
 				const itemSearch = ref('');
 				const selectedItem = ref(null);
-				const itemName = (id) => (chestData.value.itemsById && chestData.value.itemsById[id] && chestData.value.itemsById[id].name) || ('#' + id);
-				const itemIcon = (id) => (chestData.value.itemsById && chestData.value.itemsById[id] && chestData.value.itemsById[id].icon) || '';
+				const itemInfo = (id) => (chestData.value.itemsById && chestData.value.itemsById[id]) || null;
+				const itemName = (id) => (itemInfo(id) && itemInfo(id).name) || ('#' + id);
+				const itemIcon = (id) => (itemInfo(id) && itemInfo(id).icon) || '';
+				const itemGrade = (id) => (itemInfo(id) && itemInfo(id).grade) || '';
+				// ordem das raridades pra desempatar itens de mesmo nome (ex.: Amuleto de Esmeralda)
+				const gradeRank = (g) => ({ COMMON:0, UNCOMMON:1, RARE:2, EPIC:3, LEGENDARY:4, MYTHIC:5, IMMORTAL:6 }[g] ?? 9);
+				const heroList = computed(() => Object.entries(chestData.value.heroes || {})
+					.map(([key, v]) => ({ key, name: v.name, dlc: v.dlc })));
 				const itemIndex = computed(() => {
 					const idx = {};
 					(chestData.value.chests || []).forEach(c => {
@@ -404,8 +422,8 @@
 					return idx;
 				});
 				const itemList = computed(() => Object.keys(itemIndex.value)
-					.map(id => ({ id, name: itemName(id) }))
-					.sort((a, b) => a.name.localeCompare(b.name)));
+					.map(id => ({ id, name: itemName(id), grade: itemGrade(id) }))
+					.sort((a, b) => a.name.localeCompare(b.name) || gradeRank(a.grade) - gradeRank(b.grade)));
 				const filteredItems = computed(() => {
 					const q = itemSearch.value.trim().toLowerCase();
 					return q ? itemList.value.filter(it => it.name.toLowerCase().includes(q)) : itemList.value;
@@ -644,7 +662,7 @@
 					chestData, chestType, chestStage, chestTypes, chestStageOptions, filteredChests,
 					fmtPct, typeLabel, typeClass, gradeLabel, activeLoot, lootCount, updating, updateChests,
 					selectedHeroes, allHeroes, toggleHero, chestHeroes,
-					selectedChest, itemSearch, selectedItem, itemList, filteredItems, itemChests, itemName, itemIcon,
+					selectedChest, itemSearch, selectedItem, itemList, filteredItems, itemChests, itemName, itemIcon, itemGrade, heroList,
 					appVersion, updateInfo, updateBusy, updateMsg, checkUpdate, applyUpdate
 				};
 			}

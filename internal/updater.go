@@ -79,8 +79,9 @@ type ChestEntry struct {
 	Loot    []ChestLootGroup `json:"loot"`
 }
 type ItemInfo struct {
-	Name string `json:"name"`
-	Icon string `json:"icon"`
+	Name  string `json:"name"`
+	Grade string `json:"grade"`
+	Icon  string `json:"icon"`
 }
 type ChestDoc struct {
 	Schema    map[string]string   `json:"_schema"`
@@ -344,7 +345,7 @@ func UpdateChestData(dir, now string) (int, error) {
 		if !ok {
 			continue
 		}
-		doc.ItemsByID[fmt.Sprint(id)] = ItemInfo{Name: ci.name, Icon: localSpritePath(ci.icon)}
+		doc.ItemsByID[fmt.Sprint(id)] = ItemInfo{Name: ci.name, Grade: ci.grade, Icon: localSpritePath(ci.icon)}
 		if err := downloadSprite(client, ci.icon, dir); err != nil {
 			fmt.Println("Aviso: sprite item", id, "-", err)
 		}

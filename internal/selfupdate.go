@@ -17,12 +17,12 @@ import (
 
 // Version e a versao embarcada deste binario. O CI deve bumpar isto a cada release
 // e publicar o MESMO numero no version.json do CDN.
-const Version = "1.0.0"
+var Version = "1.0.0"
 
 // updateBaseURL: raiz publica do CDN com version.json + optimizer.exe (+ dados).
 // Troque pela sua URL (GitHub Releases publico, Cloudflare Pages, Vercel...).
 // Enquanto contiver "EXAMPLE" o auto-update fica DESLIGADO (nao quebra nada).
-const updateBaseURL = "https://EXAMPLE.invalid/"
+const updateBaseURL = "https://tbh-optimizer.pages.dev/"
 
 // ReleaseInfo e o conteudo do version.json publicado no CDN.
 type ReleaseInfo struct {

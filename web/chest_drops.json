@@ -36591,4590 +36591,5737 @@
  "itemsById": {
   "110001": {
    "name": "Rubi menor",
+   "grade": "COMMON",
    "icon": "sprites/Item_110001.png"
   },
   "110002": {
    "name": "Safira Menor",
+   "grade": "COMMON",
    "icon": "sprites/Item_110002.png"
   },
   "110003": {
    "name": "Topázio Menor",
+   "grade": "COMMON",
    "icon": "sprites/Item_110003.png"
   },
   "110004": {
    "name": "Esmeralda menor",
+   "grade": "COMMON",
    "icon": "sprites/Item_110004.png"
   },
   "110005": {
    "name": "Ametista Menor",
+   "grade": "COMMON",
    "icon": "sprites/Item_110005.png"
   },
   "111001": {
    "name": "Estilhaço de Obsidiana",
+   "grade": "UNCOMMON",
    "icon": "sprites/Item_111001.png"
   },
   "111002": {
    "name": "Fragmento de Coral",
+   "grade": "UNCOMMON",
    "icon": "sprites/Item_111002.png"
   },
   "111003": {
    "name": "Pedra de Jade",
+   "grade": "UNCOMMON",
    "icon": "sprites/Item_111003.png"
   },
   "111004": {
    "name": "Gema de Âmbar",
+   "grade": "UNCOMMON",
    "icon": "sprites/Item_111004.png"
   },
   "112001": {
    "name": "Rubi",
+   "grade": "RARE",
    "icon": "sprites/Item_112001.png"
   },
   "112002": {
    "name": "Safira",
+   "grade": "RARE",
    "icon": "sprites/Item_112002.png"
   },
   "112003": {
    "name": "Topázio",
+   "grade": "RARE",
    "icon": "sprites/Item_112003.png"
   },
   "112004": {
    "name": "Esmeralda",
+   "grade": "RARE",
    "icon": "sprites/Item_112004.png"
   },
   "112005": {
    "name": "Ametista",
+   "grade": "RARE",
    "icon": "sprites/Item_112005.png"
   },
   "113001": {
    "name": "Quartzo Cristalino",
+   "grade": "LEGENDARY",
    "icon": "sprites/Item_113001.png"
   },
   "113002": {
    "name": "Pérola",
+   "grade": "LEGENDARY",
    "icon": "sprites/Item_113002.png"
   },
   "113003": {
    "name": "Turquesa",
+   "grade": "LEGENDARY",
    "icon": "sprites/Item_113003.png"
   },
   "113004": {
    "name": "Granada",
+   "grade": "LEGENDARY",
    "icon": "sprites/Item_113004.png"
   },
   "114001": {
    "name": "Diamante",
+   "grade": "IMMORTAL",
    "icon": "sprites/Item_114001.png"
   },
   "114002": {
    "name": "Opala",
+   "grade": "IMMORTAL",
    "icon": "sprites/Item_114002.png"
   },
   "114003": {
    "name": "Lápis-lazúli",
+   "grade": "IMMORTAL",
    "icon": "sprites/Item_114003.png"
   },
   "114004": {
    "name": "Pérola Negra",
+   "grade": "IMMORTAL",
    "icon": "sprites/Item_114004.png"
   },
   "115001": {
    "name": "Cristal Arcano",
+   "grade": "ARCANA",
    "icon": "sprites/Item_115001.png"
   },
   "115002": {
    "name": "Topázio místico",
+   "grade": "ARCANA",
    "icon": "sprites/Item_115002.png"
   },
   "115003": {
    "name": "Rubi Encantado",
+   "grade": "ARCANA",
    "icon": "sprites/Item_115003.png"
   },
   "115004": {
    "name": "Safira da Luz Estelar",
+   "grade": "ARCANA",
    "icon": "sprites/Item_115004.png"
   },
   "116001": {
    "name": "Opala do Vazio",
+   "grade": "BEYOND",
    "icon": "sprites/Item_116001.png"
   },
   "116002": {
    "name": "Diamante Astral",
+   "grade": "BEYOND",
    "icon": "sprites/Item_116002.png"
   },
   "116003": {
    "name": "Esmeralda Fantasma",
+   "grade": "BEYOND",
    "icon": "sprites/Item_116003.png"
   },
   "116004": {
    "name": "Ametista do Crepúsculo",
+   "grade": "BEYOND",
    "icon": "sprites/Item_116004.png"
   },
   "120001": {
    "name": "Couro de Goblin",
+   "grade": "COMMON",
    "icon": "sprites/Item_120001.png"
   },
   "120002": {
    "name": "Osso de Esqueleto",
+   "grade": "COMMON",
    "icon": "sprites/Item_120002.png"
   },
   "120003": {
    "name": "Geleia de Slime",
+   "grade": "COMMON",
    "icon": "sprites/Item_120003.png"
   },
   "121001": {
    "name": "Presa de Lobo",
+   "grade": "UNCOMMON",
    "icon": "sprites/Item_121001.png"
   },
   "121002": {
    "name": "Seda de aranha",
+   "grade": "UNCOMMON",
    "icon": "sprites/Item_121002.png"
   },
   "121003": {
    "name": "Erva Venenosa",
+   "grade": "UNCOMMON",
    "icon": "sprites/Item_121003.png"
   },
   "121004": {
    "name": "Erva Curativa",
+   "grade": "UNCOMMON",
    "icon": "sprites/Item_121004.png"
   },
   "122001": {
    "name": "Membrana de asa de morcego",
+   "grade": "RARE",
    "icon": "sprites/Item_122001.png"
   },
   "122002": {
    "name": "Sangue de Ogro",
+   "grade": "RARE",
    "icon": "sprites/Item_122002.png"
   },
   "122003": {
    "name": "Esporo de Cogumelo",
+   "grade": "RARE",
    "icon": "sprites/Item_122003.png"
   },
   "122004": {
    "name": "Seiva de Árvore Antiga",
+   "grade": "RARE",
    "icon": "sprites/Item_122004.png"
   },
   "123001": {
    "name": "Caveira",
+   "grade": "LEGENDARY",
    "icon": "sprites/Item_123001.png"
   },
   "123002": {
    "name": "Pena de Harpia",
+   "grade": "LEGENDARY",
    "icon": "sprites/Item_123002.png"
   },
   "123003": {
    "name": "Raiz de Mandrágora",
+   "grade": "LEGENDARY",
    "icon": "sprites/Item_123003.png"
   },
   "123004": {
    "name": "Extrato de Beladona",
+   "grade": "LEGENDARY",
    "icon": "sprites/Item_123004.png"
   },
   "124001": {
    "name": "Escama de Basilisco",
+   "grade": "IMMORTAL",
    "icon": "sprites/Item_124001.png"
   },
   "124002": {
    "name": "Garra de Wyvern",
+   "grade": "IMMORTAL",
    "icon": "sprites/Item_124002.png"
   },
   "124003": {
    "name": "Dado",
+   "grade": "IMMORTAL",
    "icon": "sprites/Item_124003.png"
   },
   "124004": {
    "name": "Sangue de Demônio",
+   "grade": "IMMORTAL",
    "icon": "sprites/Item_124004.png"
   },
   "125001": {
    "name": "Chifre de Minotauro",
+   "grade": "ARCANA",
    "icon": "sprites/Item_125001.png"
   },
   "125002": {
    "name": "Bico de Grifo",
+   "grade": "ARCANA",
    "icon": "sprites/Item_125002.png"
   },
   "125003": {
    "name": "Cinza de Fênix",
+   "grade": "ARCANA",
    "icon": "sprites/Item_125003.png"
   },
   "125004": {
    "name": "Bile de Dragão",
+   "grade": "ARCANA",
    "icon": "sprites/Item_125004.png"
   },
   "126001": {
    "name": "Essência do Espectro",
+   "grade": "BEYOND",
    "icon": "sprites/Item_126001.png"
   },
   "126002": {
    "name": "Tinta de Kraken",
+   "grade": "BEYOND",
    "icon": "sprites/Item_126002.png"
   },
   "126003": {
    "name": "Tutano de Titã",
+   "grade": "BEYOND",
    "icon": "sprites/Item_126003.png"
   },
   "126004": {
    "name": "Ícor do Vazio",
+   "grade": "BEYOND",
    "icon": "sprites/Item_126004.png"
   },
   "140001": {
    "name": "Madeira",
+   "grade": "COMMON",
    "icon": "sprites/Item_140001.png"
   },
   "140002": {
    "name": "Pedra",
+   "grade": "COMMON",
    "icon": "sprites/Item_140002.png"
   },
   "140003": {
    "name": "Couro",
+   "grade": "COMMON",
    "icon": "sprites/Item_140003.png"
   },
   "140004": {
    "name": "Pepita de Cobre",
+   "grade": "COMMON",
    "icon": "sprites/Item_140004.png"
   },
   "141001": {
    "name": "Lingote de bronze",
+   "grade": "UNCOMMON",
    "icon": "sprites/Item_141001.png"
   },
   "141002": {
    "name": "Lingote de Ferro",
+   "grade": "UNCOMMON",
    "icon": "sprites/Item_141002.png"
   },
   "142001": {
    "name": "Lingote de Prata",
+   "grade": "RARE",
    "icon": "sprites/Item_142001.png"
   },
   "142002": {
    "name": "Barra de Ouro",
+   "grade": "RARE",
    "icon": "sprites/Item_142002.png"
   },
   "143001": {
    "name": "Barra de Poeira Estelar",
+   "grade": "LEGENDARY",
    "icon": "sprites/Item_143001.png"
   },
   "143002": {
    "name": "Ferro do Vácuo",
+   "grade": "LEGENDARY",
    "icon": "sprites/Item_143002.png"
   },
   "144001": {
    "name": "Pedra de Sangue",
+   "grade": "IMMORTAL",
    "icon": "sprites/Item_144001.png"
   },
   "144002": {
    "name": "Pedra do Trovão",
+   "grade": "IMMORTAL",
    "icon": "sprites/Item_144002.png"
   },
   "145001": {
    "name": "Fragmento do Caos",
+   "grade": "ARCANA",
    "icon": "sprites/Item_145001.png"
   },
   "145002": {
    "name": "Minério Arcano",
+   "grade": "ARCANA",
    "icon": "sprites/Item_145002.png"
   },
   "146001": {
    "name": "Lingote de aço negro",
+   "grade": "BEYOND",
    "icon": "sprites/Item_146001.png"
   },
   "146002": {
    "name": "Minério de Oricalco",
+   "grade": "BEYOND",
    "icon": "sprites/Item_146002.png"
   },
   "300001": {
    "name": "Espada Longa",
+   "grade": "COMMON",
    "icon": "sprites/SWORD_300001.png"
   },
   "300002": {
    "name": "Cutlass",
+   "grade": "COMMON",
    "icon": "sprites/SWORD_300002.png"
   },
   "300003": {
    "name": "Rapieira",
+   "grade": "COMMON",
    "icon": "sprites/SWORD_300003.png"
   },
   "300004": {
    "name": "Espada Bastarda",
+   "grade": "COMMON",
    "icon": "sprites/SWORD_300004.png"
   },
   "300005": {
    "name": "Grande Espada",
+   "grade": "COMMON",
    "icon": "sprites/SWORD_300005.png"
   },
   "300007": {
    "name": "Espada do Cavaleiro",
+   "grade": "COMMON",
    "icon": "sprites/SWORD_300007.png"
   },
   "300009": {
    "name": "Espada Rúnica",
+   "grade": "COMMON",
    "icon": "sprites/SWORD_300009.png"
   },
   "300011": {
    "name": "Espada do Destino",
+   "grade": "COMMON",
    "icon": "sprites/SWORD_300011.png"
   },
   "300014": {
    "name": "Espada da Vingança",
+   "grade": "COMMON",
    "icon": "sprites/SWORD_300014.png"
   },
   "300017": {
    "name": "Espada Dimensional",
+   "grade": "COMMON",
    "icon": "sprites/SWORD_300017.png"
   },
   "301011": {
    "name": "Espada Longa",
+   "grade": "UNCOMMON",
    "icon": "sprites/SWORD_300001.png"
   },
   "301021": {
    "name": "Cutlass",
+   "grade": "UNCOMMON",
    "icon": "sprites/SWORD_300002.png"
   },
   "301031": {
    "name": "Rapieira",
+   "grade": "UNCOMMON",
    "icon": "sprites/SWORD_300003.png"
   },
   "301041": {
    "name": "Espada Bastarda",
+   "grade": "UNCOMMON",
    "icon": "sprites/SWORD_300004.png"
   },
   "301051": {
    "name": "Grande Espada",
+   "grade": "UNCOMMON",
    "icon": "sprites/SWORD_300005.png"
   },
   "301071": {
    "name": "Espada do Cavaleiro",
+   "grade": "UNCOMMON",
    "icon": "sprites/SWORD_300007.png"
   },
   "301091": {
    "name": "Espada Rúnica",
+   "grade": "UNCOMMON",
    "icon": "sprites/SWORD_300009.png"
   },
   "301111": {
    "name": "Espada do Destino",
+   "grade": "UNCOMMON",
    "icon": "sprites/SWORD_300011.png"
   },
   "301141": {
    "name": "Espada da Vingança",
+   "grade": "UNCOMMON",
    "icon": "sprites/SWORD_300014.png"
   },
   "301171": {
    "name": "Espada Dimensional",
+   "grade": "UNCOMMON",
    "icon": "sprites/SWORD_300017.png"
   },
   "302011": {
    "name": "Espada Longa",
+   "grade": "RARE",
    "icon": "sprites/SWORD_300001.png"
   },
   "302021": {
    "name": "Cutlass",
+   "grade": "RARE",
    "icon": "sprites/SWORD_300002.png"
   },
   "302031": {
    "name": "Rapieira",
+   "grade": "RARE",
    "icon": "sprites/SWORD_300003.png"
   },
   "302041": {
    "name": "Espada Bastarda",
+   "grade": "RARE",
    "icon": "sprites/SWORD_300004.png"
   },
   "302051": {
    "name": "Grande Espada",
+   "grade": "RARE",
    "icon": "sprites/SWORD_300005.png"
   },
   "302071": {
    "name": "Espada do Cavaleiro",
+   "grade": "RARE",
    "icon": "sprites/SWORD_300007.png"
   },
   "302091": {
    "name": "Espada Rúnica",
+   "grade": "RARE",
    "icon": "sprites/SWORD_300009.png"
   },
   "302111": {
    "name": "Espada do Destino",
+   "grade": "RARE",
    "icon": "sprites/SWORD_300011.png"
   },
   "302141": {
    "name": "Espada da Vingança",
+   "grade": "RARE",
    "icon": "sprites/SWORD_300014.png"
   },
   "302171": {
    "name": "Espada Dimensional",
+   "grade": "RARE",
    "icon": "sprites/SWORD_300017.png"
   },
   "303011": {
    "name": "Espada Longa",
+   "grade": "LEGENDARY",
    "icon": "sprites/SWORD_300001.png"
   },
   "303021": {
    "name": "Cutlass",
+   "grade": "LEGENDARY",
    "icon": "sprites/SWORD_300002.png"
   },
   "303031": {
    "name": "Rapieira",
+   "grade": "LEGENDARY",
    "icon": "sprites/SWORD_300003.png"
   },
   "303041": {
    "name": "Espada Bastarda",
+   "grade": "LEGENDARY",
    "icon": "sprites/SWORD_300004.png"
   },
   "303051": {
    "name": "Grande Espada",
+   "grade": "LEGENDARY",
    "icon": "sprites/SWORD_300005.png"
   },
   "303071": {
    "name": "Espada do Cavaleiro",
+   "grade": "LEGENDARY",
    "icon": "sprites/SWORD_300007.png"
   },
   "303091": {
    "name": "Espada Rúnica",
+   "grade": "LEGENDARY",
    "icon": "sprites/SWORD_300009.png"
   },
   "303111": {
    "name": "Espada do Destino",
+   "grade": "LEGENDARY",
    "icon": "sprites/SWORD_300011.png"
   },
   "303141": {
    "name": "Espada da Vingança",
+   "grade": "LEGENDARY",
    "icon": "sprites/SWORD_300014.png"
   },
   "303171": {
    "name": "Espada Dimensional",
+   "grade": "LEGENDARY",
    "icon": "sprites/SWORD_300017.png"
   },
   "304011": {
    "name": "Espada Longa",
+   "grade": "IMMORTAL",
    "icon": "sprites/SWORD_300001.png"
   },
   "304021": {
    "name": "Cutlass",
+   "grade": "IMMORTAL",
    "icon": "sprites/SWORD_300002.png"
   },
   "304031": {
    "name": "Rapieira",
+   "grade": "IMMORTAL",
    "icon": "sprites/SWORD_300003.png"
   },
   "304041": {
    "name": "Espada Bastarda",
+   "grade": "IMMORTAL",
    "icon": "sprites/SWORD_300004.png"
   },
   "304051": {
    "name": "Grande Espada",
+   "grade": "IMMORTAL",
    "icon": "sprites/SWORD_300005.png"
   },
   "304071": {
    "name": "Espada do Cavaleiro",
+   "grade": "IMMORTAL",
    "icon": "sprites/SWORD_300007.png"
   },
   "304091": {
    "name": "Espada Rúnica",
+   "grade": "IMMORTAL",
    "icon": "sprites/SWORD_300009.png"
   },
   "304111": {
    "name": "Espada do Destino",
+   "grade": "IMMORTAL",
    "icon": "sprites/SWORD_300011.png"
   },
   "304141": {
    "name": "Espada da Vingança",
+   "grade": "IMMORTAL",
    "icon": "sprites/SWORD_300014.png"
   },
   "304171": {
    "name": "Espada Dimensional",
+   "grade": "IMMORTAL",
    "icon": "sprites/SWORD_300017.png"
   },
   "305041": {
    "name": "Espada Bastarda",
+   "grade": "ARCANA",
    "icon": "sprites/SWORD_300004.png"
   },
   "305051": {
    "name": "Grande Espada",
+   "grade": "ARCANA",
    "icon": "sprites/SWORD_300005.png"
   },
   "305071": {
    "name": "Espada do Cavaleiro",
+   "grade": "ARCANA",
    "icon": "sprites/SWORD_300007.png"
   },
   "305091": {
    "name": "Espada Rúnica",
+   "grade": "ARCANA",
    "icon": "sprites/SWORD_300009.png"
   },
   "305111": {
    "name": "Espada do Destino",
+   "grade": "ARCANA",
    "icon": "sprites/SWORD_300011.png"
   },
   "305141": {
    "name": "Espada da Vingança",
+   "grade": "ARCANA",
    "icon": "sprites/SWORD_300014.png"
   },
   "305171": {
    "name": "Espada Dimensional",
+   "grade": "ARCANA",
    "icon": "sprites/SWORD_300017.png"
   },
   "306071": {
    "name": "Espada do Cavaleiro",
+   "grade": "BEYOND",
    "icon": "sprites/SWORD_300007.png"
   },
   "306091": {
    "name": "Espada Rúnica",
+   "grade": "BEYOND",
    "icon": "sprites/SWORD_300009.png"
   },
   "306111": {
    "name": "Espada do Destino",
+   "grade": "BEYOND",
    "icon": "sprites/SWORD_300011.png"
   },
   "306141": {
    "name": "Espada da Vingança",
+   "grade": "BEYOND",
    "icon": "sprites/SWORD_300014.png"
   },
   "306171": {
    "name": "Espada Dimensional",
+   "grade": "BEYOND",
    "icon": "sprites/SWORD_300017.png"
   },
   "310001": {
    "name": "Arco Curto",
+   "grade": "COMMON",
    "icon": "sprites/BOW_310001.png"
   },
   "310002": {
    "name": "Arco de Caça",
+   "grade": "COMMON",
    "icon": "sprites/BOW_310002.png"
   },
   "310003": {
    "name": "Arco longo",
+   "grade": "COMMON",
    "icon": "sprites/BOW_310003.png"
   },
   "310004": {
    "name": "Arco Composto",
+   "grade": "COMMON",
    "icon": "sprites/BOW_310004.png"
   },
   "310005": {
    "name": "Arco de Guerra",
+   "grade": "COMMON",
    "icon": "sprites/BOW_310005.png"
   },
   "310007": {
    "name": "Arco do Crepúsculo",
+   "grade": "COMMON",
    "icon": "sprites/BOW_310007.png"
   },
   "310009": {
    "name": "Arco de Elite",
+   "grade": "COMMON",
    "icon": "sprites/BOW_310009.png"
   },
   "310011": {
    "name": "Arco Místico",
+   "grade": "COMMON",
    "icon": "sprites/BOW_310011.png"
   },
   "310014": {
    "name": "Arco Ilimitado",
+   "grade": "COMMON",
    "icon": "sprites/BOW_310014.png"
   },
   "310017": {
    "name": "Arco das Sombras",
+   "grade": "COMMON",
    "icon": "sprites/BOW_310017.png"
   },
   "311011": {
    "name": "Arco Curto",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOW_310001.png"
   },
   "311021": {
    "name": "Arco de Caça",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOW_310002.png"
   },
   "311031": {
    "name": "Arco longo",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOW_310003.png"
   },
   "311041": {
    "name": "Arco Composto",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOW_310004.png"
   },
   "311051": {
    "name": "Arco de Guerra",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOW_310005.png"
   },
   "311071": {
    "name": "Arco do Crepúsculo",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOW_310007.png"
   },
   "311091": {
    "name": "Arco de Elite",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOW_310009.png"
   },
   "311111": {
    "name": "Arco Místico",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOW_310011.png"
   },
   "311141": {
    "name": "Arco Ilimitado",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOW_310014.png"
   },
   "311171": {
    "name": "Arco das Sombras",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOW_310017.png"
   },
   "312011": {
    "name": "Arco Curto",
+   "grade": "RARE",
    "icon": "sprites/BOW_310001.png"
   },
   "312021": {
    "name": "Arco de Caça",
+   "grade": "RARE",
    "icon": "sprites/BOW_310002.png"
   },
   "312031": {
    "name": "Arco longo",
+   "grade": "RARE",
    "icon": "sprites/BOW_310003.png"
   },
   "312041": {
    "name": "Arco Composto",
+   "grade": "RARE",
    "icon": "sprites/BOW_310004.png"
   },
   "312051": {
    "name": "Arco de Guerra",
+   "grade": "RARE",
    "icon": "sprites/BOW_310005.png"
   },
   "312071": {
    "name": "Arco do Crepúsculo",
+   "grade": "RARE",
    "icon": "sprites/BOW_310007.png"
   },
   "312091": {
    "name": "Arco de Elite",
+   "grade": "RARE",
    "icon": "sprites/BOW_310009.png"
   },
   "312111": {
    "name": "Arco Místico",
+   "grade": "RARE",
    "icon": "sprites/BOW_310011.png"
   },
   "312141": {
    "name": "Arco Ilimitado",
+   "grade": "RARE",
    "icon": "sprites/BOW_310014.png"
   },
   "312171": {
    "name": "Arco das Sombras",
+   "grade": "RARE",
    "icon": "sprites/BOW_310017.png"
   },
   "313011": {
    "name": "Arco Curto",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOW_310001.png"
   },
   "313021": {
    "name": "Arco de Caça",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOW_310002.png"
   },
   "313031": {
    "name": "Arco longo",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOW_310003.png"
   },
   "313041": {
    "name": "Arco Composto",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOW_310004.png"
   },
   "313051": {
    "name": "Arco de Guerra",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOW_310005.png"
   },
   "313071": {
    "name": "Arco do Crepúsculo",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOW_310007.png"
   },
   "313091": {
    "name": "Arco de Elite",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOW_310009.png"
   },
   "313111": {
    "name": "Arco Místico",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOW_310011.png"
   },
   "313141": {
    "name": "Arco Ilimitado",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOW_310014.png"
   },
   "313171": {
    "name": "Arco das Sombras",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOW_310017.png"
   },
   "314011": {
    "name": "Arco Curto",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOW_310001.png"
   },
   "314021": {
    "name": "Arco de Caça",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOW_310002.png"
   },
   "314031": {
    "name": "Arco longo",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOW_310003.png"
   },
   "314041": {
    "name": "Arco Composto",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOW_310004.png"
   },
   "314051": {
    "name": "Arco de Guerra",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOW_310005.png"
   },
   "314071": {
    "name": "Arco do Crepúsculo",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOW_310007.png"
   },
   "314091": {
    "name": "Arco de Elite",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOW_310009.png"
   },
   "314111": {
    "name": "Arco Místico",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOW_310011.png"
   },
   "314141": {
    "name": "Arco Ilimitado",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOW_310014.png"
   },
   "314171": {
    "name": "Arco das Sombras",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOW_310017.png"
   },
   "315041": {
    "name": "Arco Composto",
+   "grade": "ARCANA",
    "icon": "sprites/BOW_310004.png"
   },
   "315051": {
    "name": "Arco de Guerra",
+   "grade": "ARCANA",
    "icon": "sprites/BOW_310005.png"
   },
   "315071": {
    "name": "Arco do Crepúsculo",
+   "grade": "ARCANA",
    "icon": "sprites/BOW_310007.png"
   },
   "315091": {
    "name": "Arco de Elite",
+   "grade": "ARCANA",
    "icon": "sprites/BOW_310009.png"
   },
   "315111": {
    "name": "Arco Místico",
+   "grade": "ARCANA",
    "icon": "sprites/BOW_310011.png"
   },
   "315141": {
    "name": "Arco Ilimitado",
+   "grade": "ARCANA",
    "icon": "sprites/BOW_310014.png"
   },
   "315171": {
    "name": "Arco das Sombras",
+   "grade": "ARCANA",
    "icon": "sprites/BOW_310017.png"
   },
   "316071": {
    "name": "Arco do Crepúsculo",
+   "grade": "BEYOND",
    "icon": "sprites/BOW_310007.png"
   },
   "316091": {
    "name": "Arco de Elite",
+   "grade": "BEYOND",
    "icon": "sprites/BOW_310009.png"
   },
   "316111": {
    "name": "Arco Místico",
+   "grade": "BEYOND",
    "icon": "sprites/BOW_310011.png"
   },
   "316141": {
    "name": "Arco Ilimitado",
+   "grade": "BEYOND",
    "icon": "sprites/BOW_310014.png"
   },
   "316171": {
    "name": "Arco das Sombras",
+   "grade": "BEYOND",
    "icon": "sprites/BOW_310017.png"
   },
   "320001": {
    "name": "Cajado de Madeira",
+   "grade": "COMMON",
    "icon": "sprites/STAFF_320001.png"
   },
   "320002": {
    "name": "Cajado do Arauto",
+   "grade": "COMMON",
    "icon": "sprites/STAFF_320002.png"
   },
   "320003": {
    "name": "Cajado longo",
+   "grade": "COMMON",
    "icon": "sprites/STAFF_320003.png"
   },
   "320004": {
    "name": "Cajado de Bruxa",
+   "grade": "COMMON",
    "icon": "sprites/STAFF_320004.png"
   },
   "320005": {
    "name": "Cajado Azur",
+   "grade": "COMMON",
    "icon": "sprites/STAFF_320005.png"
   },
   "320007": {
    "name": "Cajado do Sábio",
+   "grade": "COMMON",
    "icon": "sprites/STAFF_320007.png"
   },
   "320009": {
    "name": "Cajado Cometa",
+   "grade": "COMMON",
    "icon": "sprites/STAFF_320009.png"
   },
   "320011": {
    "name": "Cajado do Vazio",
+   "grade": "COMMON",
    "icon": "sprites/STAFF_320011.png"
   },
   "320014": {
    "name": "Cajado Sagrado",
+   "grade": "COMMON",
    "icon": "sprites/STAFF_320014.png"
   },
   "320017": {
    "name": "Cajado da Tempestade",
+   "grade": "COMMON",
    "icon": "sprites/STAFF_320017.png"
   },
   "321011": {
    "name": "Cajado de Madeira",
+   "grade": "UNCOMMON",
    "icon": "sprites/STAFF_320001.png"
   },
   "321021": {
    "name": "Cajado do Arauto",
+   "grade": "UNCOMMON",
    "icon": "sprites/STAFF_320002.png"
   },
   "321031": {
    "name": "Cajado longo",
+   "grade": "UNCOMMON",
    "icon": "sprites/STAFF_320003.png"
   },
   "321041": {
    "name": "Cajado de Bruxa",
+   "grade": "UNCOMMON",
    "icon": "sprites/STAFF_320004.png"
   },
   "321051": {
    "name": "Cajado Azur",
+   "grade": "UNCOMMON",
    "icon": "sprites/STAFF_320005.png"
   },
   "321071": {
    "name": "Cajado do Sábio",
+   "grade": "UNCOMMON",
    "icon": "sprites/STAFF_320007.png"
   },
   "321091": {
    "name": "Cajado Cometa",
+   "grade": "UNCOMMON",
    "icon": "sprites/STAFF_320009.png"
   },
   "321111": {
    "name": "Cajado do Vazio",
+   "grade": "UNCOMMON",
    "icon": "sprites/STAFF_320011.png"
   },
   "321141": {
    "name": "Cajado Sagrado",
+   "grade": "UNCOMMON",
    "icon": "sprites/STAFF_320014.png"
   },
   "321171": {
    "name": "Cajado da Tempestade",
+   "grade": "UNCOMMON",
    "icon": "sprites/STAFF_320017.png"
   },
   "322011": {
    "name": "Cajado de Madeira",
+   "grade": "RARE",
    "icon": "sprites/STAFF_320001.png"
   },
   "322021": {
    "name": "Cajado do Arauto",
+   "grade": "RARE",
    "icon": "sprites/STAFF_320002.png"
   },
   "322031": {
    "name": "Cajado longo",
+   "grade": "RARE",
    "icon": "sprites/STAFF_320003.png"
   },
   "322041": {
    "name": "Cajado de Bruxa",
+   "grade": "RARE",
    "icon": "sprites/STAFF_320004.png"
   },
   "322051": {
    "name": "Cajado Azur",
+   "grade": "RARE",
    "icon": "sprites/STAFF_320005.png"
   },
   "322071": {
    "name": "Cajado do Sábio",
+   "grade": "RARE",
    "icon": "sprites/STAFF_320007.png"
   },
   "322091": {
    "name": "Cajado Cometa",
+   "grade": "RARE",
    "icon": "sprites/STAFF_320009.png"
   },
   "322111": {
    "name": "Cajado do Vazio",
+   "grade": "RARE",
    "icon": "sprites/STAFF_320011.png"
   },
   "322141": {
    "name": "Cajado Sagrado",
+   "grade": "RARE",
    "icon": "sprites/STAFF_320014.png"
   },
   "322171": {
    "name": "Cajado da Tempestade",
+   "grade": "RARE",
    "icon": "sprites/STAFF_320017.png"
   },
   "323011": {
    "name": "Cajado de Madeira",
+   "grade": "LEGENDARY",
    "icon": "sprites/STAFF_320001.png"
   },
   "323021": {
    "name": "Cajado do Arauto",
+   "grade": "LEGENDARY",
    "icon": "sprites/STAFF_320002.png"
   },
   "323031": {
    "name": "Cajado longo",
+   "grade": "LEGENDARY",
    "icon": "sprites/STAFF_320003.png"
   },
   "323041": {
    "name": "Cajado de Bruxa",
+   "grade": "LEGENDARY",
    "icon": "sprites/STAFF_320004.png"
   },
   "323051": {
    "name": "Cajado Azur",
+   "grade": "LEGENDARY",
    "icon": "sprites/STAFF_320005.png"
   },
   "323071": {
    "name": "Cajado do Sábio",
+   "grade": "LEGENDARY",
    "icon": "sprites/STAFF_320007.png"
   },
   "323091": {
    "name": "Cajado Cometa",
+   "grade": "LEGENDARY",
    "icon": "sprites/STAFF_320009.png"
   },
   "323111": {
    "name": "Cajado do Vazio",
+   "grade": "LEGENDARY",
    "icon": "sprites/STAFF_320011.png"
   },
   "323141": {
    "name": "Cajado Sagrado",
+   "grade": "LEGENDARY",
    "icon": "sprites/STAFF_320014.png"
   },
   "323171": {
    "name": "Cajado da Tempestade",
+   "grade": "LEGENDARY",
    "icon": "sprites/STAFF_320017.png"
   },
   "324011": {
    "name": "Cajado de Madeira",
+   "grade": "IMMORTAL",
    "icon": "sprites/STAFF_320001.png"
   },
   "324021": {
    "name": "Cajado do Arauto",
+   "grade": "IMMORTAL",
    "icon": "sprites/STAFF_320002.png"
   },
   "324031": {
    "name": "Cajado longo",
+   "grade": "IMMORTAL",
    "icon": "sprites/STAFF_320003.png"
   },
   "324041": {
    "name": "Cajado de Bruxa",
+   "grade": "IMMORTAL",
    "icon": "sprites/STAFF_320004.png"
   },
   "324051": {
    "name": "Cajado Azur",
+   "grade": "IMMORTAL",
    "icon": "sprites/STAFF_320005.png"
   },
   "324071": {
    "name": "Cajado do Sábio",
+   "grade": "IMMORTAL",
    "icon": "sprites/STAFF_320007.png"
   },
   "324091": {
    "name": "Cajado Cometa",
+   "grade": "IMMORTAL",
    "icon": "sprites/STAFF_320009.png"
   },
   "324111": {
    "name": "Cajado do Vazio",
+   "grade": "IMMORTAL",
    "icon": "sprites/STAFF_320011.png"
   },
   "324141": {
    "name": "Cajado Sagrado",
+   "grade": "IMMORTAL",
    "icon": "sprites/STAFF_320014.png"
   },
   "324171": {
    "name": "Cajado da Tempestade",
+   "grade": "IMMORTAL",
    "icon": "sprites/STAFF_320017.png"
   },
   "325041": {
    "name": "Cajado de Bruxa",
+   "grade": "ARCANA",
    "icon": "sprites/STAFF_320004.png"
   },
   "325051": {
    "name": "Cajado Azur",
+   "grade": "ARCANA",
    "icon": "sprites/STAFF_320005.png"
   },
   "325071": {
    "name": "Cajado do Sábio",
+   "grade": "ARCANA",
    "icon": "sprites/STAFF_320007.png"
   },
   "325091": {
    "name": "Cajado Cometa",
+   "grade": "ARCANA",
    "icon": "sprites/STAFF_320009.png"
   },
   "325111": {
    "name": "Cajado do Vazio",
+   "grade": "ARCANA",
    "icon": "sprites/STAFF_320011.png"
   },
   "325141": {
    "name": "Cajado Sagrado",
+   "grade": "ARCANA",
    "icon": "sprites/STAFF_320014.png"
   },
   "325171": {
    "name": "Cajado da Tempestade",
+   "grade": "ARCANA",
    "icon": "sprites/STAFF_320017.png"
   },
   "326071": {
    "name": "Cajado do Sábio",
+   "grade": "BEYOND",
    "icon": "sprites/STAFF_320007.png"
   },
   "326091": {
    "name": "Cajado Cometa",
+   "grade": "BEYOND",
    "icon": "sprites/STAFF_320009.png"
   },
   "326111": {
    "name": "Cajado do Vazio",
+   "grade": "BEYOND",
    "icon": "sprites/STAFF_320011.png"
   },
   "326141": {
    "name": "Cajado Sagrado",
+   "grade": "BEYOND",
    "icon": "sprites/STAFF_320014.png"
   },
   "326171": {
    "name": "Cajado da Tempestade",
+   "grade": "BEYOND",
    "icon": "sprites/STAFF_320017.png"
   },
   "330001": {
    "name": "Cetro Novato",
+   "grade": "COMMON",
    "icon": "sprites/SCEPTER_330001.png"
   },
   "330002": {
    "name": "Cetro de Ferro",
+   "grade": "COMMON",
    "icon": "sprites/SCEPTER_330002.png"
   },
   "330003": {
    "name": "Cetro abençoado",
+   "grade": "COMMON",
    "icon": "sprites/SCEPTER_330003.png"
   },
   "330004": {
    "name": "Cetro de Aço",
+   "grade": "COMMON",
    "icon": "sprites/SCEPTER_330004.png"
   },
   "330005": {
    "name": "Cetro Sagrado",
+   "grade": "COMMON",
    "icon": "sprites/SCEPTER_330005.png"
   },
   "330007": {
    "name": "Cetro Devoto",
+   "grade": "COMMON",
    "icon": "sprites/SCEPTER_330007.png"
   },
   "330009": {
    "name": "Cetro Rúnico",
+   "grade": "COMMON",
    "icon": "sprites/SCEPTER_330009.png"
   },
   "330011": {
    "name": "Cetro do Destino",
+   "grade": "COMMON",
    "icon": "sprites/SCEPTER_330011.png"
   },
   "330014": {
    "name": "Cetro Ilimitado",
+   "grade": "COMMON",
    "icon": "sprites/SCEPTER_330014.png"
   },
   "330017": {
    "name": "Cetro Dimensional",
+   "grade": "COMMON",
    "icon": "sprites/SCEPTER_330017.png"
   },
   "331011": {
    "name": "Cetro Novato",
+   "grade": "UNCOMMON",
    "icon": "sprites/SCEPTER_330001.png"
   },
   "331021": {
    "name": "Cetro de Ferro",
+   "grade": "UNCOMMON",
    "icon": "sprites/SCEPTER_330002.png"
   },
   "331031": {
    "name": "Cetro abençoado",
+   "grade": "UNCOMMON",
    "icon": "sprites/SCEPTER_330003.png"
   },
   "331041": {
    "name": "Cetro de Aço",
+   "grade": "UNCOMMON",
    "icon": "sprites/SCEPTER_330004.png"
   },
   "331051": {
    "name": "Cetro Sagrado",
+   "grade": "UNCOMMON",
    "icon": "sprites/SCEPTER_330005.png"
   },
   "331071": {
    "name": "Cetro Devoto",
+   "grade": "UNCOMMON",
    "icon": "sprites/SCEPTER_330007.png"
   },
   "331091": {
    "name": "Cetro Rúnico",
+   "grade": "UNCOMMON",
    "icon": "sprites/SCEPTER_330009.png"
   },
   "331111": {
    "name": "Cetro do Destino",
+   "grade": "UNCOMMON",
    "icon": "sprites/SCEPTER_330011.png"
   },
   "331141": {
    "name": "Cetro Ilimitado",
+   "grade": "UNCOMMON",
    "icon": "sprites/SCEPTER_330014.png"
   },
   "331171": {
    "name": "Cetro Dimensional",
+   "grade": "UNCOMMON",
    "icon": "sprites/SCEPTER_330017.png"
   },
   "332011": {
    "name": "Cetro Novato",
+   "grade": "RARE",
    "icon": "sprites/SCEPTER_330001.png"
   },
   "332021": {
    "name": "Cetro de Ferro",
+   "grade": "RARE",
    "icon": "sprites/SCEPTER_330002.png"
   },
   "332031": {
    "name": "Cetro abençoado",
+   "grade": "RARE",
    "icon": "sprites/SCEPTER_330003.png"
   },
   "332041": {
    "name": "Cetro de Aço",
+   "grade": "RARE",
    "icon": "sprites/SCEPTER_330004.png"
   },
   "332051": {
    "name": "Cetro Sagrado",
+   "grade": "RARE",
    "icon": "sprites/SCEPTER_330005.png"
   },
   "332071": {
    "name": "Cetro Devoto",
+   "grade": "RARE",
    "icon": "sprites/SCEPTER_330007.png"
   },
   "332091": {
    "name": "Cetro Rúnico",
+   "grade": "RARE",
    "icon": "sprites/SCEPTER_330009.png"
   },
   "332111": {
    "name": "Cetro do Destino",
+   "grade": "RARE",
    "icon": "sprites/SCEPTER_330011.png"
   },
   "332141": {
    "name": "Cetro Ilimitado",
+   "grade": "RARE",
    "icon": "sprites/SCEPTER_330014.png"
   },
   "332171": {
    "name": "Cetro Dimensional",
+   "grade": "RARE",
    "icon": "sprites/SCEPTER_330017.png"
   },
   "333011": {
    "name": "Cetro Novato",
+   "grade": "LEGENDARY",
    "icon": "sprites/SCEPTER_330001.png"
   },
   "333021": {
    "name": "Cetro de Ferro",
+   "grade": "LEGENDARY",
    "icon": "sprites/SCEPTER_330002.png"
   },
   "333031": {
    "name": "Cetro abençoado",
+   "grade": "LEGENDARY",
    "icon": "sprites/SCEPTER_330003.png"
   },
   "333041": {
    "name": "Cetro de Aço",
+   "grade": "LEGENDARY",
    "icon": "sprites/SCEPTER_330004.png"
   },
   "333051": {
    "name": "Cetro Sagrado",
+   "grade": "LEGENDARY",
    "icon": "sprites/SCEPTER_330005.png"
   },
   "333071": {
    "name": "Cetro Devoto",
+   "grade": "LEGENDARY",
    "icon": "sprites/SCEPTER_330007.png"
   },
   "333091": {
    "name": "Cetro Rúnico",
+   "grade": "LEGENDARY",
    "icon": "sprites/SCEPTER_330009.png"
   },
   "333111": {
    "name": "Cetro do Destino",
+   "grade": "LEGENDARY",
    "icon": "sprites/SCEPTER_330011.png"
   },
   "333141": {
    "name": "Cetro Ilimitado",
+   "grade": "LEGENDARY",
    "icon": "sprites/SCEPTER_330014.png"
   },
   "333171": {
    "name": "Cetro Dimensional",
+   "grade": "LEGENDARY",
    "icon": "sprites/SCEPTER_330017.png"
   },
   "334011": {
    "name": "Cetro Novato",
+   "grade": "IMMORTAL",
    "icon": "sprites/SCEPTER_330001.png"
   },
   "334021": {
    "name": "Cetro de Ferro",
+   "grade": "IMMORTAL",
    "icon": "sprites/SCEPTER_330002.png"
   },
   "334031": {
    "name": "Cetro abençoado",
+   "grade": "IMMORTAL",
    "icon": "sprites/SCEPTER_330003.png"
   },
   "334041": {
    "name": "Cetro de Aço",
+   "grade": "IMMORTAL",
    "icon": "sprites/SCEPTER_330004.png"
   },
   "334051": {
    "name": "Cetro Sagrado",
+   "grade": "IMMORTAL",
    "icon": "sprites/SCEPTER_330005.png"
   },
   "334071": {
    "name": "Cetro Devoto",
+   "grade": "IMMORTAL",
    "icon": "sprites/SCEPTER_330007.png"
   },
   "334091": {
    "name": "Cetro Rúnico",
+   "grade": "IMMORTAL",
    "icon": "sprites/SCEPTER_330009.png"
   },
   "334111": {
    "name": "Cetro do Destino",
+   "grade": "IMMORTAL",
    "icon": "sprites/SCEPTER_330011.png"
   },
   "334141": {
    "name": "Cetro Ilimitado",
+   "grade": "IMMORTAL",
    "icon": "sprites/SCEPTER_330014.png"
   },
   "334171": {
    "name": "Cetro Dimensional",
+   "grade": "IMMORTAL",
    "icon": "sprites/SCEPTER_330017.png"
   },
   "335041": {
    "name": "Cetro de Aço",
+   "grade": "ARCANA",
    "icon": "sprites/SCEPTER_330004.png"
   },
   "335051": {
    "name": "Cetro Sagrado",
+   "grade": "ARCANA",
    "icon": "sprites/SCEPTER_330005.png"
   },
   "335071": {
    "name": "Cetro Devoto",
+   "grade": "ARCANA",
    "icon": "sprites/SCEPTER_330007.png"
   },
   "335091": {
    "name": "Cetro Rúnico",
+   "grade": "ARCANA",
    "icon": "sprites/SCEPTER_330009.png"
   },
   "335111": {
    "name": "Cetro do Destino",
+   "grade": "ARCANA",
    "icon": "sprites/SCEPTER_330011.png"
   },
   "335141": {
    "name": "Cetro Ilimitado",
+   "grade": "ARCANA",
    "icon": "sprites/SCEPTER_330014.png"
   },
   "335171": {
    "name": "Cetro Dimensional",
+   "grade": "ARCANA",
    "icon": "sprites/SCEPTER_330017.png"
   },
   "336071": {
    "name": "Cetro Devoto",
+   "grade": "BEYOND",
    "icon": "sprites/SCEPTER_330007.png"
   },
   "336091": {
    "name": "Cetro Rúnico",
+   "grade": "BEYOND",
    "icon": "sprites/SCEPTER_330009.png"
   },
   "336111": {
    "name": "Cetro do Destino",
+   "grade": "BEYOND",
    "icon": "sprites/SCEPTER_330011.png"
   },
   "336141": {
    "name": "Cetro Ilimitado",
+   "grade": "BEYOND",
    "icon": "sprites/SCEPTER_330014.png"
   },
   "336171": {
    "name": "Cetro Dimensional",
+   "grade": "BEYOND",
    "icon": "sprites/SCEPTER_330017.png"
   },
   "340001": {
    "name": "Besta Curta",
+   "grade": "COMMON",
    "icon": "sprites/CROSSBOW_340001.png"
   },
   "340002": {
    "name": "Besta de Couro",
+   "grade": "COMMON",
    "icon": "sprites/CROSSBOW_340002.png"
   },
   "340003": {
    "name": "Besta longa",
+   "grade": "COMMON",
    "icon": "sprites/CROSSBOW_340003.png"
   },
   "340004": {
    "name": "Besta Completa",
+   "grade": "COMMON",
    "icon": "sprites/CROSSBOW_340004.png"
   },
   "340005": {
    "name": "Besta Excepcional",
+   "grade": "COMMON",
    "icon": "sprites/CROSSBOW_340005.png"
   },
   "340007": {
    "name": "Besta de Ferro",
+   "grade": "COMMON",
    "icon": "sprites/CROSSBOW_340007.png"
   },
   "340009": {
    "name": "Besta de Elite",
+   "grade": "COMMON",
    "icon": "sprites/CROSSBOW_340009.png"
   },
   "340011": {
    "name": "Besta Mística",
+   "grade": "COMMON",
    "icon": "sprites/CROSSBOW_340011.png"
   },
   "340014": {
    "name": "Besta Ilimitada",
+   "grade": "COMMON",
    "icon": "sprites/CROSSBOW_340014.png"
   },
   "340017": {
    "name": "Besta Dimensional",
+   "grade": "COMMON",
    "icon": "sprites/CROSSBOW_340017.png"
   },
   "341011": {
    "name": "Besta Curta",
+   "grade": "UNCOMMON",
    "icon": "sprites/CROSSBOW_340001.png"
   },
   "341021": {
    "name": "Besta de Couro",
+   "grade": "UNCOMMON",
    "icon": "sprites/CROSSBOW_340002.png"
   },
   "341031": {
    "name": "Besta longa",
+   "grade": "UNCOMMON",
    "icon": "sprites/CROSSBOW_340003.png"
   },
   "341041": {
    "name": "Besta Completa",
+   "grade": "UNCOMMON",
    "icon": "sprites/CROSSBOW_340004.png"
   },
   "341051": {
    "name": "Besta Excepcional",
+   "grade": "UNCOMMON",
    "icon": "sprites/CROSSBOW_340005.png"
   },
   "341071": {
    "name": "Besta de Ferro",
+   "grade": "UNCOMMON",
    "icon": "sprites/CROSSBOW_340007.png"
   },
   "341091": {
    "name": "Besta de Elite",
+   "grade": "UNCOMMON",
    "icon": "sprites/CROSSBOW_340009.png"
   },
   "341111": {
    "name": "Besta Mística",
+   "grade": "UNCOMMON",
    "icon": "sprites/CROSSBOW_340011.png"
   },
   "341141": {
    "name": "Besta Ilimitada",
+   "grade": "UNCOMMON",
    "icon": "sprites/CROSSBOW_340014.png"
   },
   "341171": {
    "name": "Besta Dimensional",
+   "grade": "UNCOMMON",
    "icon": "sprites/CROSSBOW_340017.png"
   },
   "342011": {
    "name": "Besta Curta",
+   "grade": "RARE",
    "icon": "sprites/CROSSBOW_340001.png"
   },
   "342021": {
    "name": "Besta de Couro",
+   "grade": "RARE",
    "icon": "sprites/CROSSBOW_340002.png"
   },
   "342031": {
    "name": "Besta longa",
+   "grade": "RARE",
    "icon": "sprites/CROSSBOW_340003.png"
   },
   "342041": {
    "name": "Besta Completa",
+   "grade": "RARE",
    "icon": "sprites/CROSSBOW_340004.png"
   },
   "342051": {
    "name": "Besta Excepcional",
+   "grade": "RARE",
    "icon": "sprites/CROSSBOW_340005.png"
   },
   "342071": {
    "name": "Besta de Ferro",
+   "grade": "RARE",
    "icon": "sprites/CROSSBOW_340007.png"
   },
   "342091": {
    "name": "Besta de Elite",
+   "grade": "RARE",
    "icon": "sprites/CROSSBOW_340009.png"
   },
   "342111": {
    "name": "Besta Mística",
+   "grade": "RARE",
    "icon": "sprites/CROSSBOW_340011.png"
   },
   "342141": {
    "name": "Besta Ilimitada",
+   "grade": "RARE",
    "icon": "sprites/CROSSBOW_340014.png"
   },
   "342171": {
    "name": "Besta Dimensional",
+   "grade": "RARE",
    "icon": "sprites/CROSSBOW_340017.png"
   },
   "343011": {
    "name": "Besta Curta",
+   "grade": "LEGENDARY",
    "icon": "sprites/CROSSBOW_340001.png"
   },
   "343021": {
    "name": "Besta de Couro",
+   "grade": "LEGENDARY",
    "icon": "sprites/CROSSBOW_340002.png"
   },
   "343031": {
    "name": "Besta longa",
+   "grade": "LEGENDARY",
    "icon": "sprites/CROSSBOW_340003.png"
   },
   "343041": {
    "name": "Besta Completa",
+   "grade": "LEGENDARY",
    "icon": "sprites/CROSSBOW_340004.png"
   },
   "343051": {
    "name": "Besta Excepcional",
+   "grade": "LEGENDARY",
    "icon": "sprites/CROSSBOW_340005.png"
   },
   "343071": {
    "name": "Besta de Ferro",
+   "grade": "LEGENDARY",
    "icon": "sprites/CROSSBOW_340007.png"
   },
   "343091": {
    "name": "Besta de Elite",
+   "grade": "LEGENDARY",
    "icon": "sprites/CROSSBOW_340009.png"
   },
   "343111": {
    "name": "Besta Mística",
+   "grade": "LEGENDARY",
    "icon": "sprites/CROSSBOW_340011.png"
   },
   "343141": {
    "name": "Besta Ilimitada",
+   "grade": "LEGENDARY",
    "icon": "sprites/CROSSBOW_340014.png"
   },
   "343171": {
    "name": "Besta Dimensional",
+   "grade": "LEGENDARY",
    "icon": "sprites/CROSSBOW_340017.png"
   },
   "344011": {
    "name": "Besta Curta",
+   "grade": "IMMORTAL",
    "icon": "sprites/CROSSBOW_340001.png"
   },
   "344021": {
    "name": "Besta de Couro",
+   "grade": "IMMORTAL",
    "icon": "sprites/CROSSBOW_340002.png"
   },
   "344031": {
    "name": "Besta longa",
+   "grade": "IMMORTAL",
    "icon": "sprites/CROSSBOW_340003.png"
   },
   "344041": {
    "name": "Besta Completa",
+   "grade": "IMMORTAL",
    "icon": "sprites/CROSSBOW_340004.png"
   },
   "344051": {
    "name": "Besta Excepcional",
+   "grade": "IMMORTAL",
    "icon": "sprites/CROSSBOW_340005.png"
   },
   "344071": {
    "name": "Besta de Ferro",
+   "grade": "IMMORTAL",
    "icon": "sprites/CROSSBOW_340007.png"
   },
   "344091": {
    "name": "Besta de Elite",
+   "grade": "IMMORTAL",
    "icon": "sprites/CROSSBOW_340009.png"
   },
   "344111": {
    "name": "Besta Mística",
+   "grade": "IMMORTAL",
    "icon": "sprites/CROSSBOW_340011.png"
   },
   "344141": {
    "name": "Besta Ilimitada",
+   "grade": "IMMORTAL",
    "icon": "sprites/CROSSBOW_340014.png"
   },
   "344171": {
    "name": "Besta Dimensional",
+   "grade": "IMMORTAL",
    "icon": "sprites/CROSSBOW_340017.png"
   },
   "345041": {
    "name": "Besta Completa",
+   "grade": "ARCANA",
    "icon": "sprites/CROSSBOW_340004.png"
   },
   "345051": {
    "name": "Besta Excepcional",
+   "grade": "ARCANA",
    "icon": "sprites/CROSSBOW_340005.png"
   },
   "345071": {
    "name": "Besta de Ferro",
+   "grade": "ARCANA",
    "icon": "sprites/CROSSBOW_340007.png"
   },
   "345091": {
    "name": "Besta de Elite",
+   "grade": "ARCANA",
    "icon": "sprites/CROSSBOW_340009.png"
   },
   "345111": {
    "name": "Besta Mística",
+   "grade": "ARCANA",
    "icon": "sprites/CROSSBOW_340011.png"
   },
   "345141": {
    "name": "Besta Ilimitada",
+   "grade": "ARCANA",
    "icon": "sprites/CROSSBOW_340014.png"
   },
   "345171": {
    "name": "Besta Dimensional",
+   "grade": "ARCANA",
    "icon": "sprites/CROSSBOW_340017.png"
   },
   "346071": {
    "name": "Besta de Ferro",
+   "grade": "BEYOND",
    "icon": "sprites/CROSSBOW_340007.png"
   },
   "346091": {
    "name": "Besta de Elite",
+   "grade": "BEYOND",
    "icon": "sprites/CROSSBOW_340009.png"
   },
   "346111": {
    "name": "Besta Mística",
+   "grade": "BEYOND",
    "icon": "sprites/CROSSBOW_340011.png"
   },
   "346141": {
    "name": "Besta Ilimitada",
+   "grade": "BEYOND",
    "icon": "sprites/CROSSBOW_340014.png"
   },
   "346171": {
    "name": "Besta Dimensional",
+   "grade": "BEYOND",
    "icon": "sprites/CROSSBOW_340017.png"
   },
   "350001": {
    "name": "Machado de Madeira",
+   "grade": "COMMON",
    "icon": "sprites/AXE_350001.png"
   },
   "350002": {
    "name": "Machado de Ferro",
+   "grade": "COMMON",
    "icon": "sprites/AXE_350002.png"
   },
   "350003": {
    "name": "Machado de batalha",
+   "grade": "COMMON",
    "icon": "sprites/AXE_350003.png"
   },
   "350004": {
    "name": "Machado de Aço",
+   "grade": "COMMON",
    "icon": "sprites/AXE_350004.png"
   },
   "350005": {
    "name": "Machado de Guerra",
+   "grade": "COMMON",
    "icon": "sprites/AXE_350005.png"
   },
   "350007": {
    "name": "Grande Machado",
+   "grade": "COMMON",
    "icon": "sprites/AXE_350007.png"
   },
   "350009": {
    "name": "Machado Rúnico",
+   "grade": "COMMON",
    "icon": "sprites/AXE_350009.png"
   },
   "350011": {
    "name": "Machado do Destino",
+   "grade": "COMMON",
    "icon": "sprites/AXE_350011.png"
   },
   "350014": {
    "name": "Machado Ilimitado",
+   "grade": "COMMON",
    "icon": "sprites/AXE_350014.png"
   },
   "350017": {
    "name": "Machado Dimensional",
+   "grade": "COMMON",
    "icon": "sprites/AXE_350017.png"
   },
   "351011": {
    "name": "Machado de Madeira",
+   "grade": "UNCOMMON",
    "icon": "sprites/AXE_350001.png"
   },
   "351021": {
    "name": "Machado de Ferro",
+   "grade": "UNCOMMON",
    "icon": "sprites/AXE_350002.png"
   },
   "351031": {
    "name": "Machado de batalha",
+   "grade": "UNCOMMON",
    "icon": "sprites/AXE_350003.png"
   },
   "351041": {
    "name": "Machado de Aço",
+   "grade": "UNCOMMON",
    "icon": "sprites/AXE_350004.png"
   },
   "351051": {
    "name": "Machado de Guerra",
+   "grade": "UNCOMMON",
    "icon": "sprites/AXE_350005.png"
   },
   "351071": {
    "name": "Grande Machado",
+   "grade": "UNCOMMON",
    "icon": "sprites/AXE_350007.png"
   },
   "351091": {
    "name": "Machado Rúnico",
+   "grade": "UNCOMMON",
    "icon": "sprites/AXE_350009.png"
   },
   "351111": {
    "name": "Machado do Destino",
+   "grade": "UNCOMMON",
    "icon": "sprites/AXE_350011.png"
   },
   "351141": {
    "name": "Machado Ilimitado",
+   "grade": "UNCOMMON",
    "icon": "sprites/AXE_350014.png"
   },
   "351171": {
    "name": "Machado Dimensional",
+   "grade": "UNCOMMON",
    "icon": "sprites/AXE_350017.png"
   },
   "352011": {
    "name": "Machado de Madeira",
+   "grade": "RARE",
    "icon": "sprites/AXE_350001.png"
   },
   "352021": {
    "name": "Machado de Ferro",
+   "grade": "RARE",
    "icon": "sprites/AXE_350002.png"
   },
   "352031": {
    "name": "Machado de batalha",
+   "grade": "RARE",
    "icon": "sprites/AXE_350003.png"
   },
   "352041": {
    "name": "Machado de Aço",
+   "grade": "RARE",
    "icon": "sprites/AXE_350004.png"
   },
   "352051": {
    "name": "Machado de Guerra",
+   "grade": "RARE",
    "icon": "sprites/AXE_350005.png"
   },
   "352071": {
    "name": "Grande Machado",
+   "grade": "RARE",
    "icon": "sprites/AXE_350007.png"
   },
   "352091": {
    "name": "Machado Rúnico",
+   "grade": "RARE",
    "icon": "sprites/AXE_350009.png"
   },
   "352111": {
    "name": "Machado do Destino",
+   "grade": "RARE",
    "icon": "sprites/AXE_350011.png"
   },
   "352141": {
    "name": "Machado Ilimitado",
+   "grade": "RARE",
    "icon": "sprites/AXE_350014.png"
   },
   "352171": {
    "name": "Machado Dimensional",
+   "grade": "RARE",
    "icon": "sprites/AXE_350017.png"
   },
   "353011": {
    "name": "Machado de Madeira",
+   "grade": "LEGENDARY",
    "icon": "sprites/AXE_350001.png"
   },
   "353021": {
    "name": "Machado de Ferro",
+   "grade": "LEGENDARY",
    "icon": "sprites/AXE_350002.png"
   },
   "353031": {
    "name": "Machado de batalha",
+   "grade": "LEGENDARY",
    "icon": "sprites/AXE_350003.png"
   },
   "353041": {
    "name": "Machado de Aço",
+   "grade": "LEGENDARY",
    "icon": "sprites/AXE_350004.png"
   },
   "353051": {
    "name": "Machado de Guerra",
+   "grade": "LEGENDARY",
    "icon": "sprites/AXE_350005.png"
   },
   "353071": {
    "name": "Grande Machado",
+   "grade": "LEGENDARY",
    "icon": "sprites/AXE_350007.png"
   },
   "353091": {
    "name": "Machado Rúnico",
+   "grade": "LEGENDARY",
    "icon": "sprites/AXE_350009.png"
   },
   "353111": {
    "name": "Machado do Destino",
+   "grade": "LEGENDARY",
    "icon": "sprites/AXE_350011.png"
   },
   "353141": {
    "name": "Machado Ilimitado",
+   "grade": "LEGENDARY",
    "icon": "sprites/AXE_350014.png"
   },
   "353171": {
    "name": "Machado Dimensional",
+   "grade": "LEGENDARY",
    "icon": "sprites/AXE_350017.png"
   },
   "354011": {
    "name": "Machado de Madeira",
+   "grade": "IMMORTAL",
    "icon": "sprites/AXE_350001.png"
   },
   "354021": {
    "name": "Machado de Ferro",
+   "grade": "IMMORTAL",
    "icon": "sprites/AXE_350002.png"
   },
   "354031": {
    "name": "Machado de batalha",
+   "grade": "IMMORTAL",
    "icon": "sprites/AXE_350003.png"
   },
   "354041": {
    "name": "Machado de Aço",
+   "grade": "IMMORTAL",
    "icon": "sprites/AXE_350004.png"
   },
   "354051": {
    "name": "Machado de Guerra",
+   "grade": "IMMORTAL",
    "icon": "sprites/AXE_350005.png"
   },
   "354071": {
    "name": "Grande Machado",
+   "grade": "IMMORTAL",
    "icon": "sprites/AXE_350007.png"
   },
   "354091": {
    "name": "Machado Rúnico",
+   "grade": "IMMORTAL",
    "icon": "sprites/AXE_350009.png"
   },
   "354111": {
    "name": "Machado do Destino",
+   "grade": "IMMORTAL",
    "icon": "sprites/AXE_350011.png"
   },
   "354141": {
    "name": "Machado Ilimitado",
+   "grade": "IMMORTAL",
    "icon": "sprites/AXE_350014.png"
   },
   "354171": {
    "name": "Machado Dimensional",
+   "grade": "IMMORTAL",
    "icon": "sprites/AXE_350017.png"
   },
   "355041": {
    "name": "Machado de Aço",
+   "grade": "ARCANA",
    "icon": "sprites/AXE_350004.png"
   },
   "355051": {
    "name": "Machado de Guerra",
+   "grade": "ARCANA",
    "icon": "sprites/AXE_350005.png"
   },
   "355071": {
    "name": "Grande Machado",
+   "grade": "ARCANA",
    "icon": "sprites/AXE_350007.png"
   },
   "355091": {
    "name": "Machado Rúnico",
+   "grade": "ARCANA",
    "icon": "sprites/AXE_350009.png"
   },
   "355111": {
    "name": "Machado do Destino",
+   "grade": "ARCANA",
    "icon": "sprites/AXE_350011.png"
   },
   "355141": {
    "name": "Machado Ilimitado",
+   "grade": "ARCANA",
    "icon": "sprites/AXE_350014.png"
   },
   "355171": {
    "name": "Machado Dimensional",
+   "grade": "ARCANA",
    "icon": "sprites/AXE_350017.png"
   },
   "356071": {
    "name": "Grande Machado",
+   "grade": "BEYOND",
    "icon": "sprites/AXE_350007.png"
   },
   "356091": {
    "name": "Machado Rúnico",
+   "grade": "BEYOND",
    "icon": "sprites/AXE_350009.png"
   },
   "356111": {
    "name": "Machado do Destino",
+   "grade": "BEYOND",
    "icon": "sprites/AXE_350011.png"
   },
   "356141": {
    "name": "Machado Ilimitado",
+   "grade": "BEYOND",
    "icon": "sprites/AXE_350014.png"
   },
   "356171": {
    "name": "Machado Dimensional",
+   "grade": "BEYOND",
    "icon": "sprites/AXE_350017.png"
   },
   "400001": {
    "name": "Broquel",
+   "grade": "COMMON",
    "icon": "sprites/SHIELD_400001.png"
   },
   "400002": {
    "name": "Escudo de Madeira",
+   "grade": "COMMON",
    "icon": "sprites/SHIELD_400002.png"
   },
   "400003": {
    "name": "Escudo de ferro",
+   "grade": "COMMON",
    "icon": "sprites/SHIELD_400003.png"
   },
   "400004": {
    "name": "Escudo Heater",
+   "grade": "COMMON",
    "icon": "sprites/SHIELD_400004.png"
   },
   "400005": {
    "name": "Escudo Pesado",
+   "grade": "COMMON",
    "icon": "sprites/SHIELD_400005.png"
   },
   "400007": {
    "name": "Escudo de Guerra",
+   "grade": "COMMON",
    "icon": "sprites/SHIELD_400007.png"
   },
   "400009": {
    "name": "Escudo de Elite",
+   "grade": "COMMON",
    "icon": "sprites/SHIELD_400009.png"
   },
   "400011": {
    "name": "Escudo Místico",
+   "grade": "COMMON",
    "icon": "sprites/SHIELD_400011.png"
   },
   "400014": {
    "name": "Escudo Radiante",
+   "grade": "COMMON",
    "icon": "sprites/SHIELD_400014.png"
   },
   "400017": {
    "name": "Escudo Dimensional",
+   "grade": "COMMON",
    "icon": "sprites/SHIELD_400017.png"
   },
   "401011": {
    "name": "Broquel",
+   "grade": "UNCOMMON",
    "icon": "sprites/SHIELD_400001.png"
   },
   "401021": {
    "name": "Escudo de Madeira",
+   "grade": "UNCOMMON",
    "icon": "sprites/SHIELD_400002.png"
   },
   "401031": {
    "name": "Escudo de ferro",
+   "grade": "UNCOMMON",
    "icon": "sprites/SHIELD_400003.png"
   },
   "401041": {
    "name": "Escudo Heater",
+   "grade": "UNCOMMON",
    "icon": "sprites/SHIELD_400004.png"
   },
   "401051": {
    "name": "Escudo Pesado",
+   "grade": "UNCOMMON",
    "icon": "sprites/SHIELD_400005.png"
   },
   "401071": {
    "name": "Escudo de Guerra",
+   "grade": "UNCOMMON",
    "icon": "sprites/SHIELD_400007.png"
   },
   "401091": {
    "name": "Escudo de Elite",
+   "grade": "UNCOMMON",
    "icon": "sprites/SHIELD_400009.png"
   },
   "401111": {
    "name": "Escudo Místico",
+   "grade": "UNCOMMON",
    "icon": "sprites/SHIELD_400011.png"
   },
   "401141": {
    "name": "Escudo Radiante",
+   "grade": "UNCOMMON",
    "icon": "sprites/SHIELD_400014.png"
   },
   "401171": {
    "name": "Escudo Dimensional",
+   "grade": "UNCOMMON",
    "icon": "sprites/SHIELD_400017.png"
   },
   "402011": {
    "name": "Broquel",
+   "grade": "RARE",
    "icon": "sprites/SHIELD_400001.png"
   },
   "402021": {
    "name": "Escudo de Madeira",
+   "grade": "RARE",
    "icon": "sprites/SHIELD_400002.png"
   },
   "402031": {
    "name": "Escudo de ferro",
+   "grade": "RARE",
    "icon": "sprites/SHIELD_400003.png"
   },
   "402041": {
    "name": "Escudo Heater",
+   "grade": "RARE",
    "icon": "sprites/SHIELD_400004.png"
   },
   "402051": {
    "name": "Escudo Pesado",
+   "grade": "RARE",
    "icon": "sprites/SHIELD_400005.png"
   },
   "402071": {
    "name": "Escudo de Guerra",
+   "grade": "RARE",
    "icon": "sprites/SHIELD_400007.png"
   },
   "402091": {
    "name": "Escudo de Elite",
+   "grade": "RARE",
    "icon": "sprites/SHIELD_400009.png"
   },
   "402111": {
    "name": "Escudo Místico",
+   "grade": "RARE",
    "icon": "sprites/SHIELD_400011.png"
   },
   "402141": {
    "name": "Escudo Radiante",
+   "grade": "RARE",
    "icon": "sprites/SHIELD_400014.png"
   },
   "402171": {
    "name": "Escudo Dimensional",
+   "grade": "RARE",
    "icon": "sprites/SHIELD_400017.png"
   },
   "403011": {
    "name": "Broquel",
+   "grade": "LEGENDARY",
    "icon": "sprites/SHIELD_400001.png"
   },
   "403021": {
    "name": "Escudo de Madeira",
+   "grade": "LEGENDARY",
    "icon": "sprites/SHIELD_400002.png"
   },
   "403031": {
    "name": "Escudo de ferro",
+   "grade": "LEGENDARY",
    "icon": "sprites/SHIELD_400003.png"
   },
   "403041": {
    "name": "Escudo Heater",
+   "grade": "LEGENDARY",
    "icon": "sprites/SHIELD_400004.png"
   },
   "403051": {
    "name": "Escudo Pesado",
+   "grade": "LEGENDARY",
    "icon": "sprites/SHIELD_400005.png"
   },
   "403071": {
    "name": "Escudo de Guerra",
+   "grade": "LEGENDARY",
    "icon": "sprites/SHIELD_400007.png"
   },
   "403091": {
    "name": "Escudo de Elite",
+   "grade": "LEGENDARY",
    "icon": "sprites/SHIELD_400009.png"
   },
   "403111": {
    "name": "Escudo Místico",
+   "grade": "LEGENDARY",
    "icon": "sprites/SHIELD_400011.png"
   },
   "403141": {
    "name": "Escudo Radiante",
+   "grade": "LEGENDARY",
    "icon": "sprites/SHIELD_400014.png"
   },
   "403171": {
    "name": "Escudo Dimensional",
+   "grade": "LEGENDARY",
    "icon": "sprites/SHIELD_400017.png"
   },
   "404011": {
    "name": "Broquel",
+   "grade": "IMMORTAL",
    "icon": "sprites/SHIELD_400001.png"
   },
   "404021": {
    "name": "Escudo de Madeira",
+   "grade": "IMMORTAL",
    "icon": "sprites/SHIELD_400002.png"
   },
   "404031": {
    "name": "Escudo de ferro",
+   "grade": "IMMORTAL",
    "icon": "sprites/SHIELD_400003.png"
   },
   "404041": {
    "name": "Escudo Heater",
+   "grade": "IMMORTAL",
    "icon": "sprites/SHIELD_400004.png"
   },
   "404051": {
    "name": "Escudo Pesado",
+   "grade": "IMMORTAL",
    "icon": "sprites/SHIELD_400005.png"
   },
   "404071": {
    "name": "Escudo de Guerra",
+   "grade": "IMMORTAL",
    "icon": "sprites/SHIELD_400007.png"
   },
   "404091": {
    "name": "Escudo de Elite",
+   "grade": "IMMORTAL",
    "icon": "sprites/SHIELD_400009.png"
   },
   "404111": {
    "name": "Escudo Místico",
+   "grade": "IMMORTAL",
    "icon": "sprites/SHIELD_400011.png"
   },
   "404141": {
    "name": "Escudo Radiante",
+   "grade": "IMMORTAL",
    "icon": "sprites/SHIELD_400014.png"
   },
   "404171": {
    "name": "Escudo Dimensional",
+   "grade": "IMMORTAL",
    "icon": "sprites/SHIELD_400017.png"
   },
   "405041": {
    "name": "Escudo Heater",
+   "grade": "ARCANA",
    "icon": "sprites/SHIELD_400004.png"
   },
   "405051": {
    "name": "Escudo Pesado",
+   "grade": "ARCANA",
    "icon": "sprites/SHIELD_400005.png"
   },
   "405071": {
    "name": "Escudo de Guerra",
+   "grade": "ARCANA",
    "icon": "sprites/SHIELD_400007.png"
   },
   "405091": {
    "name": "Escudo de Elite",
+   "grade": "ARCANA",
    "icon": "sprites/SHIELD_400009.png"
   },
   "405111": {
    "name": "Escudo Místico",
+   "grade": "ARCANA",
    "icon": "sprites/SHIELD_400011.png"
   },
   "405141": {
    "name": "Escudo Radiante",
+   "grade": "ARCANA",
    "icon": "sprites/SHIELD_400014.png"
   },
   "405171": {
    "name": "Escudo Dimensional",
+   "grade": "ARCANA",
    "icon": "sprites/SHIELD_400017.png"
   },
   "406071": {
    "name": "Escudo de Guerra",
+   "grade": "BEYOND",
    "icon": "sprites/SHIELD_400007.png"
   },
   "406091": {
    "name": "Escudo de Elite",
+   "grade": "BEYOND",
    "icon": "sprites/SHIELD_400009.png"
   },
   "406111": {
    "name": "Escudo Místico",
+   "grade": "BEYOND",
    "icon": "sprites/SHIELD_400011.png"
   },
   "406141": {
    "name": "Escudo Radiante",
+   "grade": "BEYOND",
    "icon": "sprites/SHIELD_400014.png"
   },
   "406171": {
    "name": "Escudo Dimensional",
+   "grade": "BEYOND",
    "icon": "sprites/SHIELD_400017.png"
   },
   "410001": {
    "name": "Flecha de Madeira",
+   "grade": "COMMON",
    "icon": "sprites/ARROW_410001.png"
   },
   "410002": {
    "name": "Flecha de Ferro",
+   "grade": "COMMON",
    "icon": "sprites/ARROW_410002.png"
   },
   "410003": {
    "name": "Flecha do caçador",
+   "grade": "COMMON",
    "icon": "sprites/ARROW_410003.png"
   },
   "410004": {
    "name": "Flecha Farpada",
+   "grade": "COMMON",
    "icon": "sprites/ARROW_410004.png"
   },
   "410005": {
    "name": "Flecha Azur",
+   "grade": "COMMON",
    "icon": "sprites/ARROW_410005.png"
   },
   "410007": {
    "name": "Flecha da Ventania",
+   "grade": "COMMON",
    "icon": "sprites/ARROW_410007.png"
   },
   "410009": {
    "name": "Flecha Rúnica",
+   "grade": "COMMON",
    "icon": "sprites/ARROW_410009.png"
   },
   "410011": {
    "name": "Flecha do Destino",
+   "grade": "COMMON",
    "icon": "sprites/ARROW_410011.png"
   },
   "410014": {
    "name": "Flecha da Pressa",
+   "grade": "COMMON",
    "icon": "sprites/ARROW_410014.png"
   },
   "410017": {
    "name": "Flecha Dimensional",
+   "grade": "COMMON",
    "icon": "sprites/ARROW_410017.png"
   },
   "411011": {
    "name": "Flecha de Madeira",
+   "grade": "UNCOMMON",
    "icon": "sprites/ARROW_410001.png"
   },
   "411021": {
    "name": "Flecha de Ferro",
+   "grade": "UNCOMMON",
    "icon": "sprites/ARROW_410002.png"
   },
   "411031": {
    "name": "Flecha do caçador",
+   "grade": "UNCOMMON",
    "icon": "sprites/ARROW_410003.png"
   },
   "411041": {
    "name": "Flecha Farpada",
+   "grade": "UNCOMMON",
    "icon": "sprites/ARROW_410004.png"
   },
   "411051": {
    "name": "Flecha Azur",
+   "grade": "UNCOMMON",
    "icon": "sprites/ARROW_410005.png"
   },
   "411071": {
    "name": "Flecha da Ventania",
+   "grade": "UNCOMMON",
    "icon": "sprites/ARROW_410007.png"
   },
   "411091": {
    "name": "Flecha Rúnica",
+   "grade": "UNCOMMON",
    "icon": "sprites/ARROW_410009.png"
   },
   "411111": {
    "name": "Flecha do Destino",
+   "grade": "UNCOMMON",
    "icon": "sprites/ARROW_410011.png"
   },
   "411141": {
    "name": "Flecha da Pressa",
+   "grade": "UNCOMMON",
    "icon": "sprites/ARROW_410014.png"
   },
   "411171": {
    "name": "Flecha Dimensional",
+   "grade": "UNCOMMON",
    "icon": "sprites/ARROW_410017.png"
   },
   "412011": {
    "name": "Flecha de Madeira",
+   "grade": "RARE",
    "icon": "sprites/ARROW_410001.png"
   },
   "412021": {
    "name": "Flecha de Ferro",
+   "grade": "RARE",
    "icon": "sprites/ARROW_410002.png"
   },
   "412031": {
    "name": "Flecha do caçador",
+   "grade": "RARE",
    "icon": "sprites/ARROW_410003.png"
   },
   "412041": {
    "name": "Flecha Farpada",
+   "grade": "RARE",
    "icon": "sprites/ARROW_410004.png"
   },
   "412051": {
    "name": "Flecha Azur",
+   "grade": "RARE",
    "icon": "sprites/ARROW_410005.png"
   },
   "412071": {
    "name": "Flecha da Ventania",
+   "grade": "RARE",
    "icon": "sprites/ARROW_410007.png"
   },
   "412091": {
    "name": "Flecha Rúnica",
+   "grade": "RARE",
    "icon": "sprites/ARROW_410009.png"
   },
   "412111": {
    "name": "Flecha do Destino",
+   "grade": "RARE",
    "icon": "sprites/ARROW_410011.png"
   },
   "412141": {
    "name": "Flecha da Pressa",
+   "grade": "RARE",
    "icon": "sprites/ARROW_410014.png"
   },
   "412171": {
    "name": "Flecha Dimensional",
+   "grade": "RARE",
    "icon": "sprites/ARROW_410017.png"
   },
   "413011": {
    "name": "Flecha de Madeira",
+   "grade": "LEGENDARY",
    "icon": "sprites/ARROW_410001.png"
   },
   "413021": {
    "name": "Flecha de Ferro",
+   "grade": "LEGENDARY",
    "icon": "sprites/ARROW_410002.png"
   },
   "413031": {
    "name": "Flecha do caçador",
+   "grade": "LEGENDARY",
    "icon": "sprites/ARROW_410003.png"
   },
   "413041": {
    "name": "Flecha Farpada",
+   "grade": "LEGENDARY",
    "icon": "sprites/ARROW_410004.png"
   },
   "413051": {
    "name": "Flecha Azur",
+   "grade": "LEGENDARY",
    "icon": "sprites/ARROW_410005.png"
   },
   "413071": {
    "name": "Flecha da Ventania",
+   "grade": "LEGENDARY",
    "icon": "sprites/ARROW_410007.png"
   },
   "413091": {
    "name": "Flecha Rúnica",
+   "grade": "LEGENDARY",
    "icon": "sprites/ARROW_410009.png"
   },
   "413111": {
    "name": "Flecha do Destino",
+   "grade": "LEGENDARY",
    "icon": "sprites/ARROW_410011.png"
   },
   "413141": {
    "name": "Flecha da Pressa",
+   "grade": "LEGENDARY",
    "icon": "sprites/ARROW_410014.png"
   },
   "413171": {
    "name": "Flecha Dimensional",
+   "grade": "LEGENDARY",
    "icon": "sprites/ARROW_410017.png"
   },
   "414011": {
    "name": "Flecha de Madeira",
+   "grade": "IMMORTAL",
    "icon": "sprites/ARROW_410001.png"
   },
   "414021": {
    "name": "Flecha de Ferro",
+   "grade": "IMMORTAL",
    "icon": "sprites/ARROW_410002.png"
   },
   "414031": {
    "name": "Flecha do caçador",
+   "grade": "IMMORTAL",
    "icon": "sprites/ARROW_410003.png"
   },
   "414041": {
    "name": "Flecha Farpada",
+   "grade": "IMMORTAL",
    "icon": "sprites/ARROW_410004.png"
   },
   "414051": {
    "name": "Flecha Azur",
+   "grade": "IMMORTAL",
    "icon": "sprites/ARROW_410005.png"
   },
   "414071": {
    "name": "Flecha da Ventania",
+   "grade": "IMMORTAL",
    "icon": "sprites/ARROW_410007.png"
   },
   "414091": {
    "name": "Flecha Rúnica",
+   "grade": "IMMORTAL",
    "icon": "sprites/ARROW_410009.png"
   },
   "414111": {
    "name": "Flecha do Destino",
+   "grade": "IMMORTAL",
    "icon": "sprites/ARROW_410011.png"
   },
   "414141": {
    "name": "Flecha da Pressa",
+   "grade": "IMMORTAL",
    "icon": "sprites/ARROW_410014.png"
   },
   "414171": {
    "name": "Flecha Dimensional",
+   "grade": "IMMORTAL",
    "icon": "sprites/ARROW_410017.png"
   },
   "415041": {
    "name": "Flecha Farpada",
+   "grade": "ARCANA",
    "icon": "sprites/ARROW_410004.png"
   },
   "415051": {
    "name": "Flecha Azur",
+   "grade": "ARCANA",
    "icon": "sprites/ARROW_410005.png"
   },
   "415071": {
    "name": "Flecha da Ventania",
+   "grade": "ARCANA",
    "icon": "sprites/ARROW_410007.png"
   },
   "415091": {
    "name": "Flecha Rúnica",
+   "grade": "ARCANA",
    "icon": "sprites/ARROW_410009.png"
   },
   "415111": {
    "name": "Flecha do Destino",
+   "grade": "ARCANA",
    "icon": "sprites/ARROW_410011.png"
   },
   "415141": {
    "name": "Flecha da Pressa",
+   "grade": "ARCANA",
    "icon": "sprites/ARROW_410014.png"
   },
   "415171": {
    "name": "Flecha Dimensional",
+   "grade": "ARCANA",
    "icon": "sprites/ARROW_410017.png"
   },
   "416071": {
    "name": "Flecha da Ventania",
+   "grade": "BEYOND",
    "icon": "sprites/ARROW_410007.png"
   },
   "416091": {
    "name": "Flecha Rúnica",
+   "grade": "BEYOND",
    "icon": "sprites/ARROW_410009.png"
   },
   "416111": {
    "name": "Flecha do Destino",
+   "grade": "BEYOND",
    "icon": "sprites/ARROW_410011.png"
   },
   "416141": {
    "name": "Flecha da Pressa",
+   "grade": "BEYOND",
    "icon": "sprites/ARROW_410014.png"
   },
   "416171": {
    "name": "Flecha Dimensional",
+   "grade": "BEYOND",
    "icon": "sprites/ARROW_410017.png"
   },
   "420001": {
    "name": "Orbe Mágico",
+   "grade": "COMMON",
    "icon": "sprites/ORB_420001.png"
   },
   "420002": {
    "name": "Orbe do Ancião",
+   "grade": "COMMON",
    "icon": "sprites/ORB_420002.png"
   },
   "420003": {
    "name": "Orbe brilhante",
+   "grade": "COMMON",
    "icon": "sprites/ORB_420003.png"
   },
   "420004": {
    "name": "Orbe Congelado",
+   "grade": "COMMON",
    "icon": "sprites/ORB_420004.png"
   },
   "420005": {
    "name": "Orbe da Profecia",
+   "grade": "COMMON",
    "icon": "sprites/ORB_420005.png"
   },
   "420007": {
    "name": "Orbe Rúnico",
+   "grade": "COMMON",
    "icon": "sprites/ORB_420007.png"
   },
   "420009": {
    "name": "Orbe Arcano",
+   "grade": "COMMON",
    "icon": "sprites/ORB_420009.png"
   },
   "420011": {
    "name": "Orbe Místico",
+   "grade": "COMMON",
    "icon": "sprites/ORB_420011.png"
   },
   "420014": {
    "name": "Orbe Antigo",
+   "grade": "COMMON",
    "icon": "sprites/ORB_420014.png"
   },
   "420017": {
    "name": "Orbe Dimensional",
+   "grade": "COMMON",
    "icon": "sprites/ORB_420017.png"
   },
   "421011": {
    "name": "Orbe Mágico",
+   "grade": "UNCOMMON",
    "icon": "sprites/ORB_420001.png"
   },
   "421021": {
    "name": "Orbe do Ancião",
+   "grade": "UNCOMMON",
    "icon": "sprites/ORB_420002.png"
   },
   "421031": {
    "name": "Orbe brilhante",
+   "grade": "UNCOMMON",
    "icon": "sprites/ORB_420003.png"
   },
   "421041": {
    "name": "Orbe Congelado",
+   "grade": "UNCOMMON",
    "icon": "sprites/ORB_420004.png"
   },
   "421051": {
    "name": "Orbe da Profecia",
+   "grade": "UNCOMMON",
    "icon": "sprites/ORB_420005.png"
   },
   "421071": {
    "name": "Orbe Rúnico",
+   "grade": "UNCOMMON",
    "icon": "sprites/ORB_420007.png"
   },
   "421091": {
    "name": "Orbe Arcano",
+   "grade": "UNCOMMON",
    "icon": "sprites/ORB_420009.png"
   },
   "421111": {
    "name": "Orbe Místico",
+   "grade": "UNCOMMON",
    "icon": "sprites/ORB_420011.png"
   },
   "421141": {
    "name": "Orbe Antigo",
+   "grade": "UNCOMMON",
    "icon": "sprites/ORB_420014.png"
   },
   "421171": {
    "name": "Orbe Dimensional",
+   "grade": "UNCOMMON",
    "icon": "sprites/ORB_420017.png"
   },
   "422011": {
    "name": "Orbe Mágico",
+   "grade": "RARE",
    "icon": "sprites/ORB_420001.png"
   },
   "422021": {
    "name": "Orbe do Ancião",
+   "grade": "RARE",
    "icon": "sprites/ORB_420002.png"
   },
   "422031": {
    "name": "Orbe brilhante",
+   "grade": "RARE",
    "icon": "sprites/ORB_420003.png"
   },
   "422041": {
    "name": "Orbe Congelado",
+   "grade": "RARE",
    "icon": "sprites/ORB_420004.png"
   },
   "422051": {
    "name": "Orbe da Profecia",
+   "grade": "RARE",
    "icon": "sprites/ORB_420005.png"
   },
   "422071": {
    "name": "Orbe Rúnico",
+   "grade": "RARE",
    "icon": "sprites/ORB_420007.png"
   },
   "422091": {
    "name": "Orbe Arcano",
+   "grade": "RARE",
    "icon": "sprites/ORB_420009.png"
   },
   "422111": {
    "name": "Orbe Místico",
+   "grade": "RARE",
    "icon": "sprites/ORB_420011.png"
   },
   "422141": {
    "name": "Orbe Antigo",
+   "grade": "RARE",
    "icon": "sprites/ORB_420014.png"
   },
   "422171": {
    "name": "Orbe Dimensional",
+   "grade": "RARE",
    "icon": "sprites/ORB_420017.png"
   },
   "423011": {
    "name": "Orbe Mágico",
+   "grade": "LEGENDARY",
    "icon": "sprites/ORB_420001.png"
   },
   "423021": {
    "name": "Orbe do Ancião",
+   "grade": "LEGENDARY",
    "icon": "sprites/ORB_420002.png"
   },
   "423031": {
    "name": "Orbe brilhante",
+   "grade": "LEGENDARY",
    "icon": "sprites/ORB_420003.png"
   },
   "423041": {
    "name": "Orbe Congelado",
+   "grade": "LEGENDARY",
    "icon": "sprites/ORB_420004.png"
   },
   "423051": {
    "name": "Orbe da Profecia",
+   "grade": "LEGENDARY",
    "icon": "sprites/ORB_420005.png"
   },
   "423071": {
    "name": "Orbe Rúnico",
+   "grade": "LEGENDARY",
    "icon": "sprites/ORB_420007.png"
   },
   "423091": {
    "name": "Orbe Arcano",
+   "grade": "LEGENDARY",
    "icon": "sprites/ORB_420009.png"
   },
   "423111": {
    "name": "Orbe Místico",
+   "grade": "LEGENDARY",
    "icon": "sprites/ORB_420011.png"
   },
   "423141": {
    "name": "Orbe Antigo",
+   "grade": "LEGENDARY",
    "icon": "sprites/ORB_420014.png"
   },
   "423171": {
    "name": "Orbe Dimensional",
+   "grade": "LEGENDARY",
    "icon": "sprites/ORB_420017.png"
   },
   "424011": {
    "name": "Orbe Mágico",
+   "grade": "IMMORTAL",
    "icon": "sprites/ORB_420001.png"
   },
   "424021": {
    "name": "Orbe do Ancião",
+   "grade": "IMMORTAL",
    "icon": "sprites/ORB_420002.png"
   },
   "424031": {
    "name": "Orbe brilhante",
+   "grade": "IMMORTAL",
    "icon": "sprites/ORB_420003.png"
   },
   "424041": {
    "name": "Orbe Congelado",
+   "grade": "IMMORTAL",
    "icon": "sprites/ORB_420004.png"
   },
   "424051": {
    "name": "Orbe da Profecia",
+   "grade": "IMMORTAL",
    "icon": "sprites/ORB_420005.png"
   },
   "424071": {
    "name": "Orbe Rúnico",
+   "grade": "IMMORTAL",
    "icon": "sprites/ORB_420007.png"
   },
   "424091": {
    "name": "Orbe Arcano",
+   "grade": "IMMORTAL",
    "icon": "sprites/ORB_420009.png"
   },
   "424111": {
    "name": "Orbe Místico",
+   "grade": "IMMORTAL",
    "icon": "sprites/ORB_420011.png"
   },
   "424141": {
    "name": "Orbe Antigo",
+   "grade": "IMMORTAL",
    "icon": "sprites/ORB_420014.png"
   },
   "424171": {
    "name": "Orbe Dimensional",
+   "grade": "IMMORTAL",
    "icon": "sprites/ORB_420017.png"
   },
   "425041": {
    "name": "Orbe Congelado",
+   "grade": "ARCANA",
    "icon": "sprites/ORB_420004.png"
   },
   "425051": {
    "name": "Orbe da Profecia",
+   "grade": "ARCANA",
    "icon": "sprites/ORB_420005.png"
   },
   "425071": {
    "name": "Orbe Rúnico",
+   "grade": "ARCANA",
    "icon": "sprites/ORB_420007.png"
   },
   "425091": {
    "name": "Orbe Arcano",
+   "grade": "ARCANA",
    "icon": "sprites/ORB_420009.png"
   },
   "425111": {
    "name": "Orbe Místico",
+   "grade": "ARCANA",
    "icon": "sprites/ORB_420011.png"
   },
   "425141": {
    "name": "Orbe Antigo",
+   "grade": "ARCANA",
    "icon": "sprites/ORB_420014.png"
   },
   "425171": {
    "name": "Orbe Dimensional",
+   "grade": "ARCANA",
    "icon": "sprites/ORB_420017.png"
   },
   "426071": {
    "name": "Orbe Rúnico",
+   "grade": "BEYOND",
    "icon": "sprites/ORB_420007.png"
   },
   "426091": {
    "name": "Orbe Arcano",
+   "grade": "BEYOND",
    "icon": "sprites/ORB_420009.png"
   },
   "426111": {
    "name": "Orbe Místico",
+   "grade": "BEYOND",
    "icon": "sprites/ORB_420011.png"
   },
   "426141": {
    "name": "Orbe Antigo",
+   "grade": "BEYOND",
    "icon": "sprites/ORB_420014.png"
   },
   "426171": {
    "name": "Orbe Dimensional",
+   "grade": "BEYOND",
    "icon": "sprites/ORB_420017.png"
   },
   "430001": {
    "name": "Tomo de Oração",
+   "grade": "COMMON",
    "icon": "sprites/TOME_430001.png"
   },
   "430002": {
    "name": "Tomo do Império",
+   "grade": "COMMON",
    "icon": "sprites/TOME_430002.png"
   },
   "430003": {
    "name": "Tomo de ferro",
+   "grade": "COMMON",
    "icon": "sprites/TOME_430003.png"
   },
   "430004": {
    "name": "Tomo do Cavaleiro",
+   "grade": "COMMON",
    "icon": "sprites/TOME_430004.png"
   },
   "430005": {
    "name": "Tomo Abençoado",
+   "grade": "COMMON",
    "icon": "sprites/TOME_430005.png"
   },
   "430007": {
    "name": "Tomo de Guerra",
+   "grade": "COMMON",
    "icon": "sprites/TOME_430007.png"
   },
   "430009": {
    "name": "Tomo Rúnico",
+   "grade": "COMMON",
    "icon": "sprites/TOME_430009.png"
   },
   "430011": {
    "name": "Tomo do Destino",
+   "grade": "COMMON",
    "icon": "sprites/TOME_430011.png"
   },
   "430014": {
    "name": "Tomo do Guerreiro",
+   "grade": "COMMON",
    "icon": "sprites/TOME_430014.png"
   },
   "430017": {
    "name": "Tomo Dimensional",
+   "grade": "COMMON",
    "icon": "sprites/TOME_430017.png"
   },
   "431011": {
    "name": "Tomo de Oração",
+   "grade": "UNCOMMON",
    "icon": "sprites/TOME_430001.png"
   },
   "431021": {
    "name": "Tomo do Império",
+   "grade": "UNCOMMON",
    "icon": "sprites/TOME_430002.png"
   },
   "431031": {
    "name": "Tomo de ferro",
+   "grade": "UNCOMMON",
    "icon": "sprites/TOME_430003.png"
   },
   "431041": {
    "name": "Tomo do Cavaleiro",
+   "grade": "UNCOMMON",
    "icon": "sprites/TOME_430004.png"
   },
   "431051": {
    "name": "Tomo Abençoado",
+   "grade": "UNCOMMON",
    "icon": "sprites/TOME_430005.png"
   },
   "431071": {
    "name": "Tomo de Guerra",
+   "grade": "UNCOMMON",
    "icon": "sprites/TOME_430007.png"
   },
   "431091": {
    "name": "Tomo Rúnico",
+   "grade": "UNCOMMON",
    "icon": "sprites/TOME_430009.png"
   },
   "431111": {
    "name": "Tomo do Destino",
+   "grade": "UNCOMMON",
    "icon": "sprites/TOME_430011.png"
   },
   "431141": {
    "name": "Tomo do Guerreiro",
+   "grade": "UNCOMMON",
    "icon": "sprites/TOME_430014.png"
   },
   "431171": {
    "name": "Tomo Dimensional",
+   "grade": "UNCOMMON",
    "icon": "sprites/TOME_430017.png"
   },
   "432011": {
    "name": "Tomo de Oração",
+   "grade": "RARE",
    "icon": "sprites/TOME_430001.png"
   },
   "432021": {
    "name": "Tomo do Império",
+   "grade": "RARE",
    "icon": "sprites/TOME_430002.png"
   },
   "432031": {
    "name": "Tomo de ferro",
+   "grade": "RARE",
    "icon": "sprites/TOME_430003.png"
   },
   "432041": {
    "name": "Tomo do Cavaleiro",
+   "grade": "RARE",
    "icon": "sprites/TOME_430004.png"
   },
   "432051": {
    "name": "Tomo Abençoado",
+   "grade": "RARE",
    "icon": "sprites/TOME_430005.png"
   },
   "432071": {
    "name": "Tomo de Guerra",
+   "grade": "RARE",
    "icon": "sprites/TOME_430007.png"
   },
   "432091": {
    "name": "Tomo Rúnico",
+   "grade": "RARE",
    "icon": "sprites/TOME_430009.png"
   },
   "432111": {
    "name": "Tomo do Destino",
+   "grade": "RARE",
    "icon": "sprites/TOME_430011.png"
   },
   "432141": {
    "name": "Tomo do Guerreiro",
+   "grade": "RARE",
    "icon": "sprites/TOME_430014.png"
   },
   "432171": {
    "name": "Tomo Dimensional",
+   "grade": "RARE",
    "icon": "sprites/TOME_430017.png"
   },
   "433011": {
    "name": "Tomo de Oração",
+   "grade": "LEGENDARY",
    "icon": "sprites/TOME_430001.png"
   },
   "433021": {
    "name": "Tomo do Império",
+   "grade": "LEGENDARY",
    "icon": "sprites/TOME_430002.png"
   },
   "433031": {
    "name": "Tomo de ferro",
+   "grade": "LEGENDARY",
    "icon": "sprites/TOME_430003.png"
   },
   "433041": {
    "name": "Tomo do Cavaleiro",
+   "grade": "LEGENDARY",
    "icon": "sprites/TOME_430004.png"
   },
   "433051": {
    "name": "Tomo Abençoado",
+   "grade": "LEGENDARY",
    "icon": "sprites/TOME_430005.png"
   },
   "433071": {
    "name": "Tomo de Guerra",
+   "grade": "LEGENDARY",
    "icon": "sprites/TOME_430007.png"
   },
   "433091": {
    "name": "Tomo Rúnico",
+   "grade": "LEGENDARY",
    "icon": "sprites/TOME_430009.png"
   },
   "433111": {
    "name": "Tomo do Destino",
+   "grade": "LEGENDARY",
    "icon": "sprites/TOME_430011.png"
   },
   "433141": {
    "name": "Tomo do Guerreiro",
+   "grade": "LEGENDARY",
    "icon": "sprites/TOME_430014.png"
   },
   "433171": {
    "name": "Tomo Dimensional",
+   "grade": "LEGENDARY",
    "icon": "sprites/TOME_430017.png"
   },
   "434011": {
    "name": "Tomo de Oração",
+   "grade": "IMMORTAL",
    "icon": "sprites/TOME_430001.png"
   },
   "434021": {
    "name": "Tomo do Império",
+   "grade": "IMMORTAL",
    "icon": "sprites/TOME_430002.png"
   },
   "434031": {
    "name": "Tomo de ferro",
+   "grade": "IMMORTAL",
    "icon": "sprites/TOME_430003.png"
   },
   "434041": {
    "name": "Tomo do Cavaleiro",
+   "grade": "IMMORTAL",
    "icon": "sprites/TOME_430004.png"
   },
   "434051": {
    "name": "Tomo Abençoado",
+   "grade": "IMMORTAL",
    "icon": "sprites/TOME_430005.png"
   },
   "434071": {
    "name": "Tomo de Guerra",
+   "grade": "IMMORTAL",
    "icon": "sprites/TOME_430007.png"
   },
   "434091": {
    "name": "Tomo Rúnico",
+   "grade": "IMMORTAL",
    "icon": "sprites/TOME_430009.png"
   },
   "434111": {
    "name": "Tomo do Destino",
+   "grade": "IMMORTAL",
    "icon": "sprites/TOME_430011.png"
   },
   "434141": {
    "name": "Tomo do Guerreiro",
+   "grade": "IMMORTAL",
    "icon": "sprites/TOME_430014.png"
   },
   "434171": {
    "name": "Tomo Dimensional",
+   "grade": "IMMORTAL",
    "icon": "sprites/TOME_430017.png"
   },
   "435041": {
    "name": "Tomo do Cavaleiro",
+   "grade": "ARCANA",
    "icon": "sprites/TOME_430004.png"
   },
   "435051": {
    "name": "Tomo Abençoado",
+   "grade": "ARCANA",
    "icon": "sprites/TOME_430005.png"
   },
   "435071": {
    "name": "Tomo de Guerra",
+   "grade": "ARCANA",
    "icon": "sprites/TOME_430007.png"
   },
   "435091": {
    "name": "Tomo Rúnico",
+   "grade": "ARCANA",
    "icon": "sprites/TOME_430009.png"
   },
   "435111": {
    "name": "Tomo do Destino",
+   "grade": "ARCANA",
    "icon": "sprites/TOME_430011.png"
   },
   "435141": {
    "name": "Tomo do Guerreiro",
+   "grade": "ARCANA",
    "icon": "sprites/TOME_430014.png"
   },
   "435171": {
    "name": "Tomo Dimensional",
+   "grade": "ARCANA",
    "icon": "sprites/TOME_430017.png"
   },
   "436071": {
    "name": "Tomo de Guerra",
+   "grade": "BEYOND",
    "icon": "sprites/TOME_430007.png"
   },
   "436091": {
    "name": "Tomo Rúnico",
+   "grade": "BEYOND",
    "icon": "sprites/TOME_430009.png"
   },
   "436111": {
    "name": "Tomo do Destino",
+   "grade": "BEYOND",
    "icon": "sprites/TOME_430011.png"
   },
   "436141": {
    "name": "Tomo do Guerreiro",
+   "grade": "BEYOND",
    "icon": "sprites/TOME_430014.png"
   },
   "436171": {
    "name": "Tomo Dimensional",
+   "grade": "BEYOND",
    "icon": "sprites/TOME_430017.png"
   },
   "440001": {
    "name": "Virote Curto",
+   "grade": "COMMON",
    "icon": "sprites/BOLT_440001.png"
   },
   "440002": {
    "name": "Virote do Medo",
+   "grade": "COMMON",
    "icon": "sprites/BOLT_440002.png"
   },
   "440003": {
    "name": "Virote do caçador",
+   "grade": "COMMON",
    "icon": "sprites/BOLT_440003.png"
   },
   "440004": {
    "name": "Virote Farpado",
+   "grade": "COMMON",
    "icon": "sprites/BOLT_440004.png"
   },
   "440005": {
    "name": "Virote da Besta",
+   "grade": "COMMON",
    "icon": "sprites/BOLT_440005.png"
   },
   "440007": {
    "name": "Virote de Ferro",
+   "grade": "COMMON",
    "icon": "sprites/BOLT_440007.png"
   },
   "440009": {
    "name": "Virote Rúnico",
+   "grade": "COMMON",
    "icon": "sprites/BOLT_440009.png"
   },
   "440011": {
    "name": "Virote do Destino",
+   "grade": "COMMON",
    "icon": "sprites/BOLT_440011.png"
   },
   "440014": {
    "name": "Virote da Pressa",
+   "grade": "COMMON",
    "icon": "sprites/BOLT_440014.png"
   },
   "440017": {
    "name": "Virote Dimensional",
+   "grade": "COMMON",
    "icon": "sprites/BOLT_440017.png"
   },
   "441011": {
    "name": "Virote Curto",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOLT_440001.png"
   },
   "441021": {
    "name": "Virote do Medo",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOLT_440002.png"
   },
   "441031": {
    "name": "Virote do caçador",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOLT_440003.png"
   },
   "441041": {
    "name": "Virote Farpado",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOLT_440004.png"
   },
   "441051": {
    "name": "Virote da Besta",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOLT_440005.png"
   },
   "441071": {
    "name": "Virote de Ferro",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOLT_440007.png"
   },
   "441091": {
    "name": "Virote Rúnico",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOLT_440009.png"
   },
   "441111": {
    "name": "Virote do Destino",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOLT_440011.png"
   },
   "441141": {
    "name": "Virote da Pressa",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOLT_440014.png"
   },
   "441171": {
    "name": "Virote Dimensional",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOLT_440017.png"
   },
   "442011": {
    "name": "Virote Curto",
+   "grade": "RARE",
    "icon": "sprites/BOLT_440001.png"
   },
   "442021": {
    "name": "Virote do Medo",
+   "grade": "RARE",
    "icon": "sprites/BOLT_440002.png"
   },
   "442031": {
    "name": "Virote do caçador",
+   "grade": "RARE",
    "icon": "sprites/BOLT_440003.png"
   },
   "442041": {
    "name": "Virote Farpado",
+   "grade": "RARE",
    "icon": "sprites/BOLT_440004.png"
   },
   "442051": {
    "name": "Virote da Besta",
+   "grade": "RARE",
    "icon": "sprites/BOLT_440005.png"
   },
   "442071": {
    "name": "Virote de Ferro",
+   "grade": "RARE",
    "icon": "sprites/BOLT_440007.png"
   },
   "442091": {
    "name": "Virote Rúnico",
+   "grade": "RARE",
    "icon": "sprites/BOLT_440009.png"
   },
   "442111": {
    "name": "Virote do Destino",
+   "grade": "RARE",
    "icon": "sprites/BOLT_440011.png"
   },
   "442141": {
    "name": "Virote da Pressa",
+   "grade": "RARE",
    "icon": "sprites/BOLT_440014.png"
   },
   "442171": {
    "name": "Virote Dimensional",
+   "grade": "RARE",
    "icon": "sprites/BOLT_440017.png"
   },
   "443011": {
    "name": "Virote Curto",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOLT_440001.png"
   },
   "443021": {
    "name": "Virote do Medo",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOLT_440002.png"
   },
   "443031": {
    "name": "Virote do caçador",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOLT_440003.png"
   },
   "443041": {
    "name": "Virote Farpado",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOLT_440004.png"
   },
   "443051": {
    "name": "Virote da Besta",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOLT_440005.png"
   },
   "443071": {
    "name": "Virote de Ferro",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOLT_440007.png"
   },
   "443091": {
    "name": "Virote Rúnico",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOLT_440009.png"
   },
   "443111": {
    "name": "Virote do Destino",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOLT_440011.png"
   },
   "443141": {
    "name": "Virote da Pressa",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOLT_440014.png"
   },
   "443171": {
    "name": "Virote Dimensional",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOLT_440017.png"
   },
   "444011": {
    "name": "Virote Curto",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOLT_440001.png"
   },
   "444021": {
    "name": "Virote do Medo",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOLT_440002.png"
   },
   "444031": {
    "name": "Virote do caçador",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOLT_440003.png"
   },
   "444041": {
    "name": "Virote Farpado",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOLT_440004.png"
   },
   "444051": {
    "name": "Virote da Besta",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOLT_440005.png"
   },
   "444071": {
    "name": "Virote de Ferro",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOLT_440007.png"
   },
   "444091": {
    "name": "Virote Rúnico",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOLT_440009.png"
   },
   "444111": {
    "name": "Virote do Destino",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOLT_440011.png"
   },
   "444141": {
    "name": "Virote da Pressa",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOLT_440014.png"
   },
   "444171": {
    "name": "Virote Dimensional",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOLT_440017.png"
   },
   "445041": {
    "name": "Virote Farpado",
+   "grade": "ARCANA",
    "icon": "sprites/BOLT_440004.png"
   },
   "445051": {
    "name": "Virote da Besta",
+   "grade": "ARCANA",
    "icon": "sprites/BOLT_440005.png"
   },
   "445071": {
    "name": "Virote de Ferro",
+   "grade": "ARCANA",
    "icon": "sprites/BOLT_440007.png"
   },
   "445091": {
    "name": "Virote Rúnico",
+   "grade": "ARCANA",
    "icon": "sprites/BOLT_440009.png"
   },
   "445111": {
    "name": "Virote do Destino",
+   "grade": "ARCANA",
    "icon": "sprites/BOLT_440011.png"
   },
   "445141": {
    "name": "Virote da Pressa",
+   "grade": "ARCANA",
    "icon": "sprites/BOLT_440014.png"
   },
   "445171": {
    "name": "Virote Dimensional",
+   "grade": "ARCANA",
    "icon": "sprites/BOLT_440017.png"
   },
   "446111": {
    "name": "Virote do Destino",
+   "grade": "BEYOND",
    "icon": "sprites/BOLT_440011.png"
   },
   "446141": {
    "name": "Virote da Pressa",
+   "grade": "BEYOND",
    "icon": "sprites/BOLT_440014.png"
   },
   "450001": {
    "name": "Machadinha Curta",
+   "grade": "COMMON",
    "icon": "sprites/HATCHET_450001.png"
   },
   "450002": {
    "name": "Machadinha de Couro",
+   "grade": "COMMON",
    "icon": "sprites/HATCHET_450002.png"
   },
   "450003": {
    "name": "Machadinha longa",
+   "grade": "COMMON",
    "icon": "sprites/HATCHET_450003.png"
   },
   "450004": {
    "name": "Machadinha de Aço",
+   "grade": "COMMON",
    "icon": "sprites/HATCHET_450004.png"
   },
   "450005": {
    "name": "Machadinha de Guerra",
+   "grade": "COMMON",
    "icon": "sprites/HATCHET_450005.png"
   },
   "450007": {
    "name": "Machadinha de Batalha",
+   "grade": "COMMON",
    "icon": "sprites/HATCHET_450007.png"
   },
   "450009": {
    "name": "Machadinha de Elite",
+   "grade": "COMMON",
    "icon": "sprites/HATCHET_450009.png"
   },
   "450011": {
    "name": "Machadinha Mística",
+   "grade": "COMMON",
    "icon": "sprites/HATCHET_450011.png"
   },
   "450014": {
    "name": "Machadinha Ilimitada",
+   "grade": "COMMON",
    "icon": "sprites/HATCHET_450014.png"
   },
   "450017": {
    "name": "Machadinha Dimensional",
+   "grade": "COMMON",
    "icon": "sprites/HATCHET_450017.png"
   },
   "451011": {
    "name": "Machadinha Curta",
+   "grade": "UNCOMMON",
    "icon": "sprites/HATCHET_450001.png"
   },
   "451021": {
    "name": "Machadinha de Couro",
+   "grade": "UNCOMMON",
    "icon": "sprites/HATCHET_450002.png"
   },
   "451031": {
    "name": "Machadinha longa",
+   "grade": "UNCOMMON",
    "icon": "sprites/HATCHET_450003.png"
   },
   "451041": {
    "name": "Machadinha de Aço",
+   "grade": "UNCOMMON",
    "icon": "sprites/HATCHET_450004.png"
   },
   "451051": {
    "name": "Machadinha de Guerra",
+   "grade": "UNCOMMON",
    "icon": "sprites/HATCHET_450005.png"
   },
   "451071": {
    "name": "Machadinha de Batalha",
+   "grade": "UNCOMMON",
    "icon": "sprites/HATCHET_450007.png"
   },
   "451091": {
    "name": "Machadinha de Elite",
+   "grade": "UNCOMMON",
    "icon": "sprites/HATCHET_450009.png"
   },
   "451111": {
    "name": "Machadinha Mística",
+   "grade": "UNCOMMON",
    "icon": "sprites/HATCHET_450011.png"
   },
   "451141": {
    "name": "Machadinha Ilimitada",
+   "grade": "UNCOMMON",
    "icon": "sprites/HATCHET_450014.png"
   },
   "451171": {
    "name": "Machadinha Dimensional",
+   "grade": "UNCOMMON",
    "icon": "sprites/HATCHET_450017.png"
   },
   "452011": {
    "name": "Machadinha Curta",
+   "grade": "RARE",
    "icon": "sprites/HATCHET_450001.png"
   },
   "452021": {
    "name": "Machadinha de Couro",
+   "grade": "RARE",
    "icon": "sprites/HATCHET_450002.png"
   },
   "452031": {
    "name": "Machadinha longa",
+   "grade": "RARE",
    "icon": "sprites/HATCHET_450003.png"
   },
   "452041": {
    "name": "Machadinha de Aço",
+   "grade": "RARE",
    "icon": "sprites/HATCHET_450004.png"
   },
   "452051": {
    "name": "Machadinha de Guerra",
+   "grade": "RARE",
    "icon": "sprites/HATCHET_450005.png"
   },
   "452071": {
    "name": "Machadinha de Batalha",
+   "grade": "RARE",
    "icon": "sprites/HATCHET_450007.png"
   },
   "452091": {
    "name": "Machadinha de Elite",
+   "grade": "RARE",
    "icon": "sprites/HATCHET_450009.png"
   },
   "452111": {
    "name": "Machadinha Mística",
+   "grade": "RARE",
    "icon": "sprites/HATCHET_450011.png"
   },
   "452141": {
    "name": "Machadinha Ilimitada",
+   "grade": "RARE",
    "icon": "sprites/HATCHET_450014.png"
   },
   "452171": {
    "name": "Machadinha Dimensional",
+   "grade": "RARE",
    "icon": "sprites/HATCHET_450017.png"
   },
   "453011": {
    "name": "Machadinha Curta",
+   "grade": "LEGENDARY",
    "icon": "sprites/HATCHET_450001.png"
   },
   "453021": {
    "name": "Machadinha de Couro",
+   "grade": "LEGENDARY",
    "icon": "sprites/HATCHET_450002.png"
   },
   "453031": {
    "name": "Machadinha longa",
+   "grade": "LEGENDARY",
    "icon": "sprites/HATCHET_450003.png"
   },
   "453041": {
    "name": "Machadinha de Aço",
+   "grade": "LEGENDARY",
    "icon": "sprites/HATCHET_450004.png"
   },
   "453051": {
    "name": "Machadinha de Guerra",
+   "grade": "LEGENDARY",
    "icon": "sprites/HATCHET_450005.png"
   },
   "453071": {
    "name": "Machadinha de Batalha",
+   "grade": "LEGENDARY",
    "icon": "sprites/HATCHET_450007.png"
   },
   "453091": {
    "name": "Machadinha de Elite",
+   "grade": "LEGENDARY",
    "icon": "sprites/HATCHET_450009.png"
   },
   "453111": {
    "name": "Machadinha Mística",
+   "grade": "LEGENDARY",
    "icon": "sprites/HATCHET_450011.png"
   },
   "453141": {
    "name": "Machadinha Ilimitada",
+   "grade": "LEGENDARY",
    "icon": "sprites/HATCHET_450014.png"
   },
   "453171": {
    "name": "Machadinha Dimensional",
+   "grade": "LEGENDARY",
    "icon": "sprites/HATCHET_450017.png"
   },
   "454011": {
    "name": "Machadinha Curta",
+   "grade": "IMMORTAL",
    "icon": "sprites/HATCHET_450001.png"
   },
   "454021": {
    "name": "Machadinha de Couro",
+   "grade": "IMMORTAL",
    "icon": "sprites/HATCHET_450002.png"
   },
   "454031": {
    "name": "Machadinha longa",
+   "grade": "IMMORTAL",
    "icon": "sprites/HATCHET_450003.png"
   },
   "454041": {
    "name": "Machadinha de Aço",
+   "grade": "IMMORTAL",
    "icon": "sprites/HATCHET_450004.png"
   },
   "454051": {
    "name": "Machadinha de Guerra",
+   "grade": "IMMORTAL",
    "icon": "sprites/HATCHET_450005.png"
   },
   "454071": {
    "name": "Machadinha de Batalha",
+   "grade": "IMMORTAL",
    "icon": "sprites/HATCHET_450007.png"
   },
   "454091": {
    "name": "Machadinha de Elite",
+   "grade": "IMMORTAL",
    "icon": "sprites/HATCHET_450009.png"
   },
   "454111": {
    "name": "Machadinha Mística",
+   "grade": "IMMORTAL",
    "icon": "sprites/HATCHET_450011.png"
   },
   "454141": {
    "name": "Machadinha Ilimitada",
+   "grade": "IMMORTAL",
    "icon": "sprites/HATCHET_450014.png"
   },
   "454171": {
    "name": "Machadinha Dimensional",
+   "grade": "IMMORTAL",
    "icon": "sprites/HATCHET_450017.png"
   },
   "455041": {
    "name": "Machadinha de Aço",
+   "grade": "ARCANA",
    "icon": "sprites/HATCHET_450004.png"
   },
   "455051": {
    "name": "Machadinha de Guerra",
+   "grade": "ARCANA",
    "icon": "sprites/HATCHET_450005.png"
   },
   "455071": {
    "name": "Machadinha de Batalha",
+   "grade": "ARCANA",
    "icon": "sprites/HATCHET_450007.png"
   },
   "455091": {
    "name": "Machadinha de Elite",
+   "grade": "ARCANA",
    "icon": "sprites/HATCHET_450009.png"
   },
   "455111": {
    "name": "Machadinha Mística",
+   "grade": "ARCANA",
    "icon": "sprites/HATCHET_450011.png"
   },
   "455141": {
    "name": "Machadinha Ilimitada",
+   "grade": "ARCANA",
    "icon": "sprites/HATCHET_450014.png"
   },
   "455171": {
    "name": "Machadinha Dimensional",
+   "grade": "ARCANA",
    "icon": "sprites/HATCHET_450017.png"
   },
   "456111": {
    "name": "Machadinha Mística",
+   "grade": "BEYOND",
    "icon": "sprites/HATCHET_450011.png"
   },
   "456141": {
    "name": "Machadinha Ilimitada",
+   "grade": "BEYOND",
    "icon": "sprites/HATCHET_450014.png"
   },
   "500001": {
    "name": "Elmo de Madeira",
+   "grade": "COMMON",
    "icon": "sprites/HELMET_500001.png"
   },
   "500002": {
    "name": "Elmo do Império",
+   "grade": "COMMON",
    "icon": "sprites/HELMET_500002.png"
   },
   "500003": {
    "name": "Capacete de ferro",
+   "grade": "COMMON",
    "icon": "sprites/HELMET_500003.png"
   },
   "500004": {
    "name": "Elmo de Cavaleiro",
+   "grade": "COMMON",
    "icon": "sprites/HELMET_500004.png"
   },
   "500005": {
    "name": "Elmo de Malha",
+   "grade": "COMMON",
    "icon": "sprites/HELMET_500005.png"
   },
   "500007": {
    "name": "Elmo de Guerra",
+   "grade": "COMMON",
    "icon": "sprites/HELMET_500007.png"
   },
   "500009": {
    "name": "Elmo Rúnico",
+   "grade": "COMMON",
    "icon": "sprites/HELMET_500009.png"
   },
   "500011": {
    "name": "Elmo do Destino",
+   "grade": "COMMON",
    "icon": "sprites/HELMET_500011.png"
   },
   "500014": {
    "name": "Elmo de Lutador",
+   "grade": "COMMON",
    "icon": "sprites/HELMET_500014.png"
   },
   "500017": {
    "name": "Elmo Dimensional",
+   "grade": "COMMON",
    "icon": "sprites/HELMET_500017.png"
   },
   "501011": {
    "name": "Elmo de Madeira",
+   "grade": "UNCOMMON",
    "icon": "sprites/HELMET_500001.png"
   },
   "501021": {
    "name": "Elmo do Império",
+   "grade": "UNCOMMON",
    "icon": "sprites/HELMET_500002.png"
   },
   "501031": {
    "name": "Capacete de ferro",
+   "grade": "UNCOMMON",
    "icon": "sprites/HELMET_500003.png"
   },
   "501041": {
    "name": "Elmo de Cavaleiro",
+   "grade": "UNCOMMON",
    "icon": "sprites/HELMET_500004.png"
   },
   "501051": {
    "name": "Elmo de Malha",
+   "grade": "UNCOMMON",
    "icon": "sprites/HELMET_500005.png"
   },
   "501071": {
    "name": "Elmo de Guerra",
+   "grade": "UNCOMMON",
    "icon": "sprites/HELMET_500007.png"
   },
   "501091": {
    "name": "Elmo Rúnico",
+   "grade": "UNCOMMON",
    "icon": "sprites/HELMET_500009.png"
   },
   "501111": {
    "name": "Elmo do Destino",
+   "grade": "UNCOMMON",
    "icon": "sprites/HELMET_500011.png"
   },
   "501141": {
    "name": "Elmo de Lutador",
+   "grade": "UNCOMMON",
    "icon": "sprites/HELMET_500014.png"
   },
   "501171": {
    "name": "Elmo Dimensional",
+   "grade": "UNCOMMON",
    "icon": "sprites/HELMET_500017.png"
   },
   "502011": {
    "name": "Elmo de Madeira",
+   "grade": "RARE",
    "icon": "sprites/HELMET_500001.png"
   },
   "502021": {
    "name": "Elmo do Império",
+   "grade": "RARE",
    "icon": "sprites/HELMET_500002.png"
   },
   "502031": {
    "name": "Capacete de ferro",
+   "grade": "RARE",
    "icon": "sprites/HELMET_500003.png"
   },
   "502041": {
    "name": "Elmo de Cavaleiro",
+   "grade": "RARE",
    "icon": "sprites/HELMET_500004.png"
   },
   "502051": {
    "name": "Elmo de Malha",
+   "grade": "RARE",
    "icon": "sprites/HELMET_500005.png"
   },
   "502071": {
    "name": "Elmo de Guerra",
+   "grade": "RARE",
    "icon": "sprites/HELMET_500007.png"
   },
   "502091": {
    "name": "Elmo Rúnico",
+   "grade": "RARE",
    "icon": "sprites/HELMET_500009.png"
   },
   "502111": {
    "name": "Elmo do Destino",
+   "grade": "RARE",
    "icon": "sprites/HELMET_500011.png"
   },
   "502141": {
    "name": "Elmo de Lutador",
+   "grade": "RARE",
    "icon": "sprites/HELMET_500014.png"
   },
   "502171": {
    "name": "Elmo Dimensional",
+   "grade": "RARE",
    "icon": "sprites/HELMET_500017.png"
   },
   "503011": {
    "name": "Elmo de Madeira",
+   "grade": "LEGENDARY",
    "icon": "sprites/HELMET_500001.png"
   },
   "503021": {
    "name": "Elmo do Império",
+   "grade": "LEGENDARY",
    "icon": "sprites/HELMET_500002.png"
   },
   "503031": {
    "name": "Capacete de ferro",
+   "grade": "LEGENDARY",
    "icon": "sprites/HELMET_500003.png"
   },
   "503041": {
    "name": "Elmo de Cavaleiro",
+   "grade": "LEGENDARY",
    "icon": "sprites/HELMET_500004.png"
   },
   "503051": {
    "name": "Elmo de Malha",
+   "grade": "LEGENDARY",
    "icon": "sprites/HELMET_500005.png"
   },
   "503071": {
    "name": "Elmo de Guerra",
+   "grade": "LEGENDARY",
    "icon": "sprites/HELMET_500007.png"
   },
   "503091": {
    "name": "Elmo Rúnico",
+   "grade": "LEGENDARY",
    "icon": "sprites/HELMET_500009.png"
   },
   "503111": {
    "name": "Elmo do Destino",
+   "grade": "LEGENDARY",
    "icon": "sprites/HELMET_500011.png"
   },
   "503141": {
    "name": "Elmo de Lutador",
+   "grade": "LEGENDARY",
    "icon": "sprites/HELMET_500014.png"
   },
   "503171": {
    "name": "Elmo Dimensional",
+   "grade": "LEGENDARY",
    "icon": "sprites/HELMET_500017.png"
   },
   "504011": {
    "name": "Elmo de Madeira",
+   "grade": "IMMORTAL",
    "icon": "sprites/HELMET_500001.png"
   },
   "504021": {
    "name": "Elmo do Império",
+   "grade": "IMMORTAL",
    "icon": "sprites/HELMET_500002.png"
   },
   "504031": {
    "name": "Capacete de ferro",
+   "grade": "IMMORTAL",
    "icon": "sprites/HELMET_500003.png"
   },
   "504041": {
    "name": "Elmo de Cavaleiro",
+   "grade": "IMMORTAL",
    "icon": "sprites/HELMET_500004.png"
   },
   "504051": {
    "name": "Elmo de Malha",
+   "grade": "IMMORTAL",
    "icon": "sprites/HELMET_500005.png"
   },
   "504071": {
    "name": "Elmo de Guerra",
+   "grade": "IMMORTAL",
    "icon": "sprites/HELMET_500007.png"
   },
   "504091": {
    "name": "Elmo Rúnico",
+   "grade": "IMMORTAL",
    "icon": "sprites/HELMET_500009.png"
   },
   "504111": {
    "name": "Elmo do Destino",
+   "grade": "IMMORTAL",
    "icon": "sprites/HELMET_500011.png"
   },
   "504141": {
    "name": "Elmo de Lutador",
+   "grade": "IMMORTAL",
    "icon": "sprites/HELMET_500014.png"
   },
   "504171": {
    "name": "Elmo Dimensional",
+   "grade": "IMMORTAL",
    "icon": "sprites/HELMET_500017.png"
   },
   "505041": {
    "name": "Elmo de Cavaleiro",
+   "grade": "ARCANA",
    "icon": "sprites/HELMET_500004.png"
   },
   "505051": {
    "name": "Elmo de Malha",
+   "grade": "ARCANA",
    "icon": "sprites/HELMET_500005.png"
   },
   "505071": {
    "name": "Elmo de Guerra",
+   "grade": "ARCANA",
    "icon": "sprites/HELMET_500007.png"
   },
   "505091": {
    "name": "Elmo Rúnico",
+   "grade": "ARCANA",
    "icon": "sprites/HELMET_500009.png"
   },
   "505111": {
    "name": "Elmo do Destino",
+   "grade": "ARCANA",
    "icon": "sprites/HELMET_500011.png"
   },
   "505141": {
    "name": "Elmo de Lutador",
+   "grade": "ARCANA",
    "icon": "sprites/HELMET_500014.png"
   },
   "505171": {
    "name": "Elmo Dimensional",
+   "grade": "ARCANA",
    "icon": "sprites/HELMET_500017.png"
   },
   "506071": {
    "name": "Elmo de Guerra",
+   "grade": "BEYOND",
    "icon": "sprites/HELMET_500007.png"
   },
   "506091": {
    "name": "Elmo Rúnico",
+   "grade": "BEYOND",
    "icon": "sprites/HELMET_500009.png"
   },
   "506111": {
    "name": "Elmo do Destino",
+   "grade": "BEYOND",
    "icon": "sprites/HELMET_500011.png"
   },
   "506141": {
    "name": "Elmo de Lutador",
+   "grade": "BEYOND",
    "icon": "sprites/HELMET_500014.png"
   },
   "506171": {
    "name": "Elmo Dimensional",
+   "grade": "BEYOND",
    "icon": "sprites/HELMET_500017.png"
   },
   "510001": {
    "name": "Armadura de Madeira",
+   "grade": "COMMON",
    "icon": "sprites/ARMOR_510001.png"
   },
   "510002": {
    "name": "Armadura do Império",
+   "grade": "COMMON",
    "icon": "sprites/ARMOR_510002.png"
   },
   "510003": {
    "name": "Peitoral de ferro",
+   "grade": "COMMON",
    "icon": "sprites/ARMOR_510003.png"
   },
   "510004": {
    "name": "Cota de Malha",
+   "grade": "COMMON",
    "icon": "sprites/ARMOR_510004.png"
   },
   "510005": {
    "name": "Armadura do Cavaleiro",
+   "grade": "COMMON",
    "icon": "sprites/ARMOR_510005.png"
   },
   "510007": {
    "name": "Armadura de Guerra",
+   "grade": "COMMON",
    "icon": "sprites/ARMOR_510007.png"
   },
   "510009": {
    "name": "Armadura de Placas Rúnica",
+   "grade": "COMMON",
    "icon": "sprites/ARMOR_510009.png"
   },
   "510011": {
    "name": "Armadura Mística",
+   "grade": "COMMON",
    "icon": "sprites/ARMOR_510011.png"
   },
   "510014": {
    "name": "Armadura Reluzente",
+   "grade": "COMMON",
    "icon": "sprites/ARMOR_510014.png"
   },
   "510017": {
    "name": "Armadura Dimensional",
+   "grade": "COMMON",
    "icon": "sprites/ARMOR_510017.png"
   },
   "511011": {
    "name": "Armadura de Madeira",
+   "grade": "UNCOMMON",
    "icon": "sprites/ARMOR_510001.png"
   },
   "511021": {
    "name": "Armadura do Império",
+   "grade": "UNCOMMON",
    "icon": "sprites/ARMOR_510002.png"
   },
   "511031": {
    "name": "Peitoral de ferro",
+   "grade": "UNCOMMON",
    "icon": "sprites/ARMOR_510003.png"
   },
   "511041": {
    "name": "Cota de Malha",
+   "grade": "UNCOMMON",
    "icon": "sprites/ARMOR_510004.png"
   },
   "511051": {
    "name": "Armadura do Cavaleiro",
+   "grade": "UNCOMMON",
    "icon": "sprites/ARMOR_510005.png"
   },
   "511071": {
    "name": "Armadura de Guerra",
+   "grade": "UNCOMMON",
    "icon": "sprites/ARMOR_510007.png"
   },
   "511091": {
    "name": "Armadura de Placas Rúnica",
+   "grade": "UNCOMMON",
    "icon": "sprites/ARMOR_510009.png"
   },
   "511111": {
    "name": "Armadura Mística",
+   "grade": "UNCOMMON",
    "icon": "sprites/ARMOR_510011.png"
   },
   "511141": {
    "name": "Armadura Reluzente",
+   "grade": "UNCOMMON",
    "icon": "sprites/ARMOR_510014.png"
   },
   "511171": {
    "name": "Armadura Dimensional",
+   "grade": "UNCOMMON",
    "icon": "sprites/ARMOR_510017.png"
   },
   "512011": {
    "name": "Armadura de Madeira",
+   "grade": "RARE",
    "icon": "sprites/ARMOR_510001.png"
   },
   "512021": {
    "name": "Armadura do Império",
+   "grade": "RARE",
    "icon": "sprites/ARMOR_510002.png"
   },
   "512031": {
    "name": "Peitoral de ferro",
+   "grade": "RARE",
    "icon": "sprites/ARMOR_510003.png"
   },
   "512041": {
    "name": "Cota de Malha",
+   "grade": "RARE",
    "icon": "sprites/ARMOR_510004.png"
   },
   "512051": {
    "name": "Armadura do Cavaleiro",
+   "grade": "RARE",
    "icon": "sprites/ARMOR_510005.png"
   },
   "512071": {
    "name": "Armadura de Guerra",
+   "grade": "RARE",
    "icon": "sprites/ARMOR_510007.png"
   },
   "512091": {
    "name": "Armadura de Placas Rúnica",
+   "grade": "RARE",
    "icon": "sprites/ARMOR_510009.png"
   },
   "512111": {
    "name": "Armadura Mística",
+   "grade": "RARE",
    "icon": "sprites/ARMOR_510011.png"
   },
   "512141": {
    "name": "Armadura Reluzente",
+   "grade": "RARE",
    "icon": "sprites/ARMOR_510014.png"
   },
   "512171": {
    "name": "Armadura Dimensional",
+   "grade": "RARE",
    "icon": "sprites/ARMOR_510017.png"
   },
   "513011": {
    "name": "Armadura de Madeira",
+   "grade": "LEGENDARY",
    "icon": "sprites/ARMOR_510001.png"
   },
   "513021": {
    "name": "Armadura do Império",
+   "grade": "LEGENDARY",
    "icon": "sprites/ARMOR_510002.png"
   },
   "513031": {
    "name": "Peitoral de ferro",
+   "grade": "LEGENDARY",
    "icon": "sprites/ARMOR_510003.png"
   },
   "513041": {
    "name": "Cota de Malha",
+   "grade": "LEGENDARY",
    "icon": "sprites/ARMOR_510004.png"
   },
   "513051": {
    "name": "Armadura do Cavaleiro",
+   "grade": "LEGENDARY",
    "icon": "sprites/ARMOR_510005.png"
   },
   "513071": {
    "name": "Armadura de Guerra",
+   "grade": "LEGENDARY",
    "icon": "sprites/ARMOR_510007.png"
   },
   "513091": {
    "name": "Armadura de Placas Rúnica",
+   "grade": "LEGENDARY",
    "icon": "sprites/ARMOR_510009.png"
   },
   "513111": {
    "name": "Armadura Mística",
+   "grade": "LEGENDARY",
    "icon": "sprites/ARMOR_510011.png"
   },
   "513141": {
    "name": "Armadura Reluzente",
+   "grade": "LEGENDARY",
    "icon": "sprites/ARMOR_510014.png"
   },
   "513171": {
    "name": "Armadura Dimensional",
+   "grade": "LEGENDARY",
    "icon": "sprites/ARMOR_510017.png"
   },
   "514011": {
    "name": "Armadura de Madeira",
+   "grade": "IMMORTAL",
    "icon": "sprites/ARMOR_510001.png"
   },
   "514021": {
    "name": "Armadura do Império",
+   "grade": "IMMORTAL",
    "icon": "sprites/ARMOR_510002.png"
   },
   "514031": {
    "name": "Peitoral de ferro",
+   "grade": "IMMORTAL",
    "icon": "sprites/ARMOR_510003.png"
   },
   "514041": {
    "name": "Cota de Malha",
+   "grade": "IMMORTAL",
    "icon": "sprites/ARMOR_510004.png"
   },
   "514051": {
    "name": "Armadura do Cavaleiro",
+   "grade": "IMMORTAL",
    "icon": "sprites/ARMOR_510005.png"
   },
   "514071": {
    "name": "Armadura de Guerra",
+   "grade": "IMMORTAL",
    "icon": "sprites/ARMOR_510007.png"
   },
   "514091": {
    "name": "Armadura de Placas Rúnica",
+   "grade": "IMMORTAL",
    "icon": "sprites/ARMOR_510009.png"
   },
   "514111": {
    "name": "Armadura Mística",
+   "grade": "IMMORTAL",
    "icon": "sprites/ARMOR_510011.png"
   },
   "514141": {
    "name": "Armadura Reluzente",
+   "grade": "IMMORTAL",
    "icon": "sprites/ARMOR_510014.png"
   },
   "514171": {
    "name": "Armadura Dimensional",
+   "grade": "IMMORTAL",
    "icon": "sprites/ARMOR_510017.png"
   },
   "515041": {
    "name": "Cota de Malha",
+   "grade": "ARCANA",
    "icon": "sprites/ARMOR_510004.png"
   },
   "515051": {
    "name": "Armadura do Cavaleiro",
+   "grade": "ARCANA",
    "icon": "sprites/ARMOR_510005.png"
   },
   "515071": {
    "name": "Armadura de Guerra",
+   "grade": "ARCANA",
    "icon": "sprites/ARMOR_510007.png"
   },
   "515091": {
    "name": "Armadura de Placas Rúnica",
+   "grade": "ARCANA",
    "icon": "sprites/ARMOR_510009.png"
   },
   "515111": {
    "name": "Armadura Mística",
+   "grade": "ARCANA",
    "icon": "sprites/ARMOR_510011.png"
   },
   "515141": {
    "name": "Armadura Reluzente",
+   "grade": "ARCANA",
    "icon": "sprites/ARMOR_510014.png"
   },
   "515171": {
    "name": "Armadura Dimensional",
+   "grade": "ARCANA",
    "icon": "sprites/ARMOR_510017.png"
   },
   "516071": {
    "name": "Armadura de Guerra",
+   "grade": "BEYOND",
    "icon": "sprites/ARMOR_510007.png"
   },
   "516091": {
    "name": "Armadura de Placas Rúnica",
+   "grade": "BEYOND",
    "icon": "sprites/ARMOR_510009.png"
   },
   "516111": {
    "name": "Armadura Mística",
+   "grade": "BEYOND",
    "icon": "sprites/ARMOR_510011.png"
   },
   "516141": {
    "name": "Armadura Reluzente",
+   "grade": "BEYOND",
    "icon": "sprites/ARMOR_510014.png"
   },
   "516171": {
    "name": "Armadura Dimensional",
+   "grade": "BEYOND",
    "icon": "sprites/ARMOR_510017.png"
   },
   "520001": {
    "name": "Luvas de Couro",
+   "grade": "COMMON",
    "icon": "sprites/GLOVES_520001.png"
   },
   "520002": {
    "name": "Luvas do Império",
+   "grade": "COMMON",
    "icon": "sprites/GLOVES_520002.png"
   },
   "520003": {
    "name": "Luvas de ferro",
+   "grade": "COMMON",
    "icon": "sprites/GLOVES_520003.png"
   },
   "520004": {
    "name": "Luvas de Cavaleiro",
+   "grade": "COMMON",
    "icon": "sprites/GLOVES_520004.png"
   },
   "520005": {
    "name": "Luvas de Malha",
+   "grade": "COMMON",
    "icon": "sprites/GLOVES_520005.png"
   },
   "520007": {
    "name": "Luvas de Guerra",
+   "grade": "COMMON",
    "icon": "sprites/GLOVES_520007.png"
   },
   "520009": {
    "name": "Luvas Rúnicas",
+   "grade": "COMMON",
    "icon": "sprites/GLOVES_520009.png"
   },
   "520011": {
    "name": "Luvas Místicas",
+   "grade": "COMMON",
    "icon": "sprites/GLOVES_520011.png"
   },
   "520014": {
    "name": "Luvas Reluzentes",
+   "grade": "COMMON",
    "icon": "sprites/GLOVES_520014.png"
   },
   "520017": {
    "name": "Luvas Dimensionais",
+   "grade": "COMMON",
    "icon": "sprites/GLOVES_520017.png"
   },
   "521011": {
    "name": "Luvas de Couro",
+   "grade": "UNCOMMON",
    "icon": "sprites/GLOVES_520001.png"
   },
   "521021": {
    "name": "Luvas do Império",
+   "grade": "UNCOMMON",
    "icon": "sprites/GLOVES_520002.png"
   },
   "521031": {
    "name": "Luvas de ferro",
+   "grade": "UNCOMMON",
    "icon": "sprites/GLOVES_520003.png"
   },
   "521041": {
    "name": "Luvas de Cavaleiro",
+   "grade": "UNCOMMON",
    "icon": "sprites/GLOVES_520004.png"
   },
   "521051": {
    "name": "Luvas de Malha",
+   "grade": "UNCOMMON",
    "icon": "sprites/GLOVES_520005.png"
   },
   "521071": {
    "name": "Luvas de Guerra",
+   "grade": "UNCOMMON",
    "icon": "sprites/GLOVES_520007.png"
   },
   "521091": {
    "name": "Luvas Rúnicas",
+   "grade": "UNCOMMON",
    "icon": "sprites/GLOVES_520009.png"
   },
   "521111": {
    "name": "Luvas Místicas",
+   "grade": "UNCOMMON",
    "icon": "sprites/GLOVES_520011.png"
   },
   "521141": {
    "name": "Luvas Reluzentes",
+   "grade": "UNCOMMON",
    "icon": "sprites/GLOVES_520014.png"
   },
   "521171": {
    "name": "Luvas Dimensionais",
+   "grade": "UNCOMMON",
    "icon": "sprites/GLOVES_520017.png"
   },
   "522011": {
    "name": "Luvas de Couro",
+   "grade": "RARE",
    "icon": "sprites/GLOVES_520001.png"
   },
   "522021": {
    "name": "Luvas do Império",
+   "grade": "RARE",
    "icon": "sprites/GLOVES_520002.png"
   },
   "522031": {
    "name": "Luvas de ferro",
+   "grade": "RARE",
    "icon": "sprites/GLOVES_520003.png"
   },
   "522041": {
    "name": "Luvas de Cavaleiro",
+   "grade": "RARE",
    "icon": "sprites/GLOVES_520004.png"
   },
   "522051": {
    "name": "Luvas de Malha",
+   "grade": "RARE",
    "icon": "sprites/GLOVES_520005.png"
   },
   "522071": {
    "name": "Luvas de Guerra",
+   "grade": "RARE",
    "icon": "sprites/GLOVES_520007.png"
   },
   "522091": {
    "name": "Luvas Rúnicas",
+   "grade": "RARE",
    "icon": "sprites/GLOVES_520009.png"
   },
   "522111": {
    "name": "Luvas Místicas",
+   "grade": "RARE",
    "icon": "sprites/GLOVES_520011.png"
   },
   "522141": {
    "name": "Luvas Reluzentes",
+   "grade": "RARE",
    "icon": "sprites/GLOVES_520014.png"
   },
   "522171": {
    "name": "Luvas Dimensionais",
+   "grade": "RARE",
    "icon": "sprites/GLOVES_520017.png"
   },
   "523011": {
    "name": "Luvas de Couro",
+   "grade": "LEGENDARY",
    "icon": "sprites/GLOVES_520001.png"
   },
   "523021": {
    "name": "Luvas do Império",
+   "grade": "LEGENDARY",
    "icon": "sprites/GLOVES_520002.png"
   },
   "523031": {
    "name": "Luvas de ferro",
+   "grade": "LEGENDARY",
    "icon": "sprites/GLOVES_520003.png"
   },
   "523041": {
    "name": "Luvas de Cavaleiro",
+   "grade": "LEGENDARY",
    "icon": "sprites/GLOVES_520004.png"
   },
   "523051": {
    "name": "Luvas de Malha",
+   "grade": "LEGENDARY",
    "icon": "sprites/GLOVES_520005.png"
   },
   "523071": {
    "name": "Luvas de Guerra",
+   "grade": "LEGENDARY",
    "icon": "sprites/GLOVES_520007.png"
   },
   "523091": {
    "name": "Luvas Rúnicas",
+   "grade": "LEGENDARY",
    "icon": "sprites/GLOVES_520009.png"
   },
   "523111": {
    "name": "Luvas Místicas",
+   "grade": "LEGENDARY",
    "icon": "sprites/GLOVES_520011.png"
   },
   "523141": {
    "name": "Luvas Reluzentes",
+   "grade": "LEGENDARY",
    "icon": "sprites/GLOVES_520014.png"
   },
   "523171": {
    "name": "Luvas Dimensionais",
+   "grade": "LEGENDARY",
    "icon": "sprites/GLOVES_520017.png"
   },
   "524011": {
    "name": "Luvas de Couro",
+   "grade": "IMMORTAL",
    "icon": "sprites/GLOVES_520001.png"
   },
   "524021": {
    "name": "Luvas do Império",
+   "grade": "IMMORTAL",
    "icon": "sprites/GLOVES_520002.png"
   },
   "524031": {
    "name": "Luvas de ferro",
+   "grade": "IMMORTAL",
    "icon": "sprites/GLOVES_520003.png"
   },
   "524041": {
    "name": "Luvas de Cavaleiro",
+   "grade": "IMMORTAL",
    "icon": "sprites/GLOVES_520004.png"
   },
   "524051": {
    "name": "Luvas de Malha",
+   "grade": "IMMORTAL",
    "icon": "sprites/GLOVES_520005.png"
   },
   "524071": {
    "name": "Luvas de Guerra",
+   "grade": "IMMORTAL",
    "icon": "sprites/GLOVES_520007.png"
   },
   "524091": {
    "name": "Luvas Rúnicas",
+   "grade": "IMMORTAL",
    "icon": "sprites/GLOVES_520009.png"
   },
   "524111": {
    "name": "Luvas Místicas",
+   "grade": "IMMORTAL",
    "icon": "sprites/GLOVES_520011.png"
   },
   "524141": {
    "name": "Luvas Reluzentes",
+   "grade": "IMMORTAL",
    "icon": "sprites/GLOVES_520014.png"
   },
   "524171": {
    "name": "Luvas Dimensionais",
+   "grade": "IMMORTAL",
    "icon": "sprites/GLOVES_520017.png"
   },
   "525041": {
    "name": "Luvas de Cavaleiro",
+   "grade": "ARCANA",
    "icon": "sprites/GLOVES_520004.png"
   },
   "525051": {
    "name": "Luvas de Malha",
+   "grade": "ARCANA",
    "icon": "sprites/GLOVES_520005.png"
   },
   "525071": {
    "name": "Luvas de Guerra",
+   "grade": "ARCANA",
    "icon": "sprites/GLOVES_520007.png"
   },
   "525091": {
    "name": "Luvas Rúnicas",
+   "grade": "ARCANA",
    "icon": "sprites/GLOVES_520009.png"
   },
   "525111": {
    "name": "Luvas Místicas",
+   "grade": "ARCANA",
    "icon": "sprites/GLOVES_520011.png"
   },
   "525141": {
    "name": "Luvas Reluzentes",
+   "grade": "ARCANA",
    "icon": "sprites/GLOVES_520014.png"
   },
   "525171": {
    "name": "Luvas Dimensionais",
+   "grade": "ARCANA",
    "icon": "sprites/GLOVES_520017.png"
   },
   "526071": {
    "name": "Luvas de Guerra",
+   "grade": "BEYOND",
    "icon": "sprites/GLOVES_520007.png"
   },
   "526091": {
    "name": "Luvas Rúnicas",
+   "grade": "BEYOND",
    "icon": "sprites/GLOVES_520009.png"
   },
   "526111": {
    "name": "Luvas Místicas",
+   "grade": "BEYOND",
    "icon": "sprites/GLOVES_520011.png"
   },
   "526141": {
    "name": "Luvas Reluzentes",
+   "grade": "BEYOND",
    "icon": "sprites/GLOVES_520014.png"
   },
   "526171": {
    "name": "Luvas Dimensionais",
+   "grade": "BEYOND",
    "icon": "sprites/GLOVES_520017.png"
   },
   "530001": {
    "name": "Botas de Madeira",
+   "grade": "COMMON",
    "icon": "sprites/BOOTS_530001.png"
   },
   "530002": {
    "name": "Botas do Império",
+   "grade": "COMMON",
    "icon": "sprites/BOOTS_530002.png"
   },
   "530003": {
    "name": "Botas de ferro",
+   "grade": "COMMON",
    "icon": "sprites/BOOTS_530003.png"
   },
   "530004": {
    "name": "Botas de Cavaleiro",
+   "grade": "COMMON",
    "icon": "sprites/BOOTS_530004.png"
   },
   "530005": {
    "name": "Botas de Malha",
+   "grade": "COMMON",
    "icon": "sprites/BOOTS_530005.png"
   },
   "530007": {
    "name": "Botas de Guerra",
+   "grade": "COMMON",
    "icon": "sprites/BOOTS_530007.png"
   },
   "530009": {
    "name": "Botas Rúnicas",
+   "grade": "COMMON",
    "icon": "sprites/BOOTS_530009.png"
   },
   "530011": {
    "name": "Botas Místicas",
+   "grade": "COMMON",
    "icon": "sprites/BOOTS_530011.png"
   },
   "530014": {
    "name": "Botas Reluzentes",
+   "grade": "COMMON",
    "icon": "sprites/BOOTS_530014.png"
   },
   "530017": {
    "name": "Botas Dimensionais",
+   "grade": "COMMON",
    "icon": "sprites/BOOTS_530017.png"
   },
   "531011": {
    "name": "Botas de Madeira",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOOTS_530001.png"
   },
   "531021": {
    "name": "Botas do Império",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOOTS_530002.png"
   },
   "531031": {
    "name": "Botas de ferro",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOOTS_530003.png"
   },
   "531041": {
    "name": "Botas de Cavaleiro",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOOTS_530004.png"
   },
   "531051": {
    "name": "Botas de Malha",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOOTS_530005.png"
   },
   "531071": {
    "name": "Botas de Guerra",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOOTS_530007.png"
   },
   "531091": {
    "name": "Botas Rúnicas",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOOTS_530009.png"
   },
   "531111": {
    "name": "Botas Místicas",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOOTS_530011.png"
   },
   "531141": {
    "name": "Botas Reluzentes",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOOTS_530014.png"
   },
   "531171": {
    "name": "Botas Dimensionais",
+   "grade": "UNCOMMON",
    "icon": "sprites/BOOTS_530017.png"
   },
   "532011": {
    "name": "Botas de Madeira",
+   "grade": "RARE",
    "icon": "sprites/BOOTS_530001.png"
   },
   "532021": {
    "name": "Botas do Império",
+   "grade": "RARE",
    "icon": "sprites/BOOTS_530002.png"
   },
   "532031": {
    "name": "Botas de ferro",
+   "grade": "RARE",
    "icon": "sprites/BOOTS_530003.png"
   },
   "532041": {
    "name": "Botas de Cavaleiro",
+   "grade": "RARE",
    "icon": "sprites/BOOTS_530004.png"
   },
   "532051": {
    "name": "Botas de Malha",
+   "grade": "RARE",
    "icon": "sprites/BOOTS_530005.png"
   },
   "532071": {
    "name": "Botas de Guerra",
+   "grade": "RARE",
    "icon": "sprites/BOOTS_530007.png"
   },
   "532091": {
    "name": "Botas Rúnicas",
+   "grade": "RARE",
    "icon": "sprites/BOOTS_530009.png"
   },
   "532111": {
    "name": "Botas Místicas",
+   "grade": "RARE",
    "icon": "sprites/BOOTS_530011.png"
   },
   "532141": {
    "name": "Botas Reluzentes",
+   "grade": "RARE",
    "icon": "sprites/BOOTS_530014.png"
   },
   "532171": {
    "name": "Botas Dimensionais",
+   "grade": "RARE",
    "icon": "sprites/BOOTS_530017.png"
   },
   "533011": {
    "name": "Botas de Madeira",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOOTS_530001.png"
   },
   "533021": {
    "name": "Botas do Império",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOOTS_530002.png"
   },
   "533031": {
    "name": "Botas de ferro",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOOTS_530003.png"
   },
   "533041": {
    "name": "Botas de Cavaleiro",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOOTS_530004.png"
   },
   "533051": {
    "name": "Botas de Malha",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOOTS_530005.png"
   },
   "533071": {
    "name": "Botas de Guerra",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOOTS_530007.png"
   },
   "533091": {
    "name": "Botas Rúnicas",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOOTS_530009.png"
   },
   "533111": {
    "name": "Botas Místicas",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOOTS_530011.png"
   },
   "533141": {
    "name": "Botas Reluzentes",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOOTS_530014.png"
   },
   "533171": {
    "name": "Botas Dimensionais",
+   "grade": "LEGENDARY",
    "icon": "sprites/BOOTS_530017.png"
   },
   "534011": {
    "name": "Botas de Madeira",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOOTS_530001.png"
   },
   "534021": {
    "name": "Botas do Império",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOOTS_530002.png"
   },
   "534031": {
    "name": "Botas de ferro",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOOTS_530003.png"
   },
   "534041": {
    "name": "Botas de Cavaleiro",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOOTS_530004.png"
   },
   "534051": {
    "name": "Botas de Malha",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOOTS_530005.png"
   },
   "534071": {
    "name": "Botas de Guerra",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOOTS_530007.png"
   },
   "534091": {
    "name": "Botas Rúnicas",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOOTS_530009.png"
   },
   "534111": {
    "name": "Botas Místicas",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOOTS_530011.png"
   },
   "534141": {
    "name": "Botas Reluzentes",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOOTS_530014.png"
   },
   "534171": {
    "name": "Botas Dimensionais",
+   "grade": "IMMORTAL",
    "icon": "sprites/BOOTS_530017.png"
   },
   "535041": {
    "name": "Botas de Cavaleiro",
+   "grade": "ARCANA",
    "icon": "sprites/BOOTS_530004.png"
   },
   "535051": {
    "name": "Botas de Malha",
+   "grade": "ARCANA",
    "icon": "sprites/BOOTS_530005.png"
   },
   "535071": {
    "name": "Botas de Guerra",
+   "grade": "ARCANA",
    "icon": "sprites/BOOTS_530007.png"
   },
   "535091": {
    "name": "Botas Rúnicas",
+   "grade": "ARCANA",
    "icon": "sprites/BOOTS_530009.png"
   },
   "535111": {
    "name": "Botas Místicas",
+   "grade": "ARCANA",
    "icon": "sprites/BOOTS_530011.png"
   },
   "535141": {
    "name": "Botas Reluzentes",
+   "grade": "ARCANA",
    "icon": "sprites/BOOTS_530014.png"
   },
   "535171": {
    "name": "Botas Dimensionais",
+   "grade": "ARCANA",
    "icon": "sprites/BOOTS_530017.png"
   },
   "536071": {
    "name": "Botas de Guerra",
+   "grade": "BEYOND",
    "icon": "sprites/BOOTS_530007.png"
   },
   "536091": {
    "name": "Botas Rúnicas",
+   "grade": "BEYOND",
    "icon": "sprites/BOOTS_530009.png"
   },
   "536111": {
    "name": "Botas Místicas",
+   "grade": "BEYOND",
    "icon": "sprites/BOOTS_530011.png"
   },
   "536141": {
    "name": "Botas Reluzentes",
+   "grade": "BEYOND",
    "icon": "sprites/BOOTS_530014.png"
   },
   "536171": {
    "name": "Botas Dimensionais",
+   "grade": "BEYOND",
    "icon": "sprites/BOOTS_530017.png"
   },
   "601031": {
    "name": "Amuleto de prata",
+   "grade": "UNCOMMON",
    "icon": "sprites/AMULET_600003.png"
   },
   "601051": {
    "name": "Amuleto de Platina",
+   "grade": "UNCOMMON",
    "icon": "sprites/AMULET_600005.png"
   },
   "601071": {
    "name": "Pingente de Pedra Lunar",
+   "grade": "UNCOMMON",
    "icon": "sprites/AMULET_600007.png"
   },
   "601091": {
    "name": "Pingente de Rubi",
+   "grade": "UNCOMMON",
    "icon": "sprites/AMULET_600009.png"
   },
   "601111": {
    "name": "Amuleto de Esmeralda",
+   "grade": "UNCOMMON",
    "icon": "sprites/AMULET_600011.png"
   },
   "601141": {
    "name": "Amuleto do Eclipse",
+   "grade": "UNCOMMON",
    "icon": "sprites/AMULET_600014.png"
   },
   "602031": {
    "name": "Amuleto de prata",
+   "grade": "RARE",
    "icon": "sprites/AMULET_600003.png"
   },
   "602051": {
    "name": "Amuleto de Platina",
+   "grade": "RARE",
    "icon": "sprites/AMULET_600005.png"
   },
   "602071": {
    "name": "Pingente de Pedra Lunar",
+   "grade": "RARE",
    "icon": "sprites/AMULET_600007.png"
   },
   "602091": {
    "name": "Pingente de Rubi",
+   "grade": "RARE",
    "icon": "sprites/AMULET_600009.png"
   },
   "602111": {
    "name": "Amuleto de Esmeralda",
+   "grade": "RARE",
    "icon": "sprites/AMULET_600011.png"
   },
   "602141": {
    "name": "Amuleto do Eclipse",
+   "grade": "RARE",
    "icon": "sprites/AMULET_600014.png"
   },
   "603031": {
    "name": "Amuleto de prata",
+   "grade": "LEGENDARY",
    "icon": "sprites/AMULET_600003.png"
   },
   "603051": {
    "name": "Amuleto de Platina",
+   "grade": "LEGENDARY",
    "icon": "sprites/AMULET_600005.png"
   },
   "603071": {
    "name": "Pingente de Pedra Lunar",
+   "grade": "LEGENDARY",
    "icon": "sprites/AMULET_600007.png"
   },
   "603091": {
    "name": "Pingente de Rubi",
+   "grade": "LEGENDARY",
    "icon": "sprites/AMULET_600009.png"
   },
   "603111": {
    "name": "Amuleto de Esmeralda",
+   "grade": "LEGENDARY",
    "icon": "sprites/AMULET_600011.png"
   },
   "603141": {
    "name": "Amuleto do Eclipse",
+   "grade": "LEGENDARY",
    "icon": "sprites/AMULET_600014.png"
   },
   "604071": {
    "name": "Pingente de Pedra Lunar",
+   "grade": "IMMORTAL",
    "icon": "sprites/AMULET_600007.png"
   },
   "604091": {
    "name": "Pingente de Rubi",
+   "grade": "IMMORTAL",
    "icon": "sprites/AMULET_600009.png"
   },
   "604111": {
    "name": "Amuleto de Esmeralda",
+   "grade": "IMMORTAL",
    "icon": "sprites/AMULET_600011.png"
   },
   "604141": {
    "name": "Amuleto do Eclipse",
+   "grade": "IMMORTAL",
    "icon": "sprites/AMULET_600014.png"
   },
   "611031": {
    "name": "Brinco de Prata",
+   "grade": "UNCOMMON",
    "icon": "sprites/EARING_610003.png"
   },
   "611051": {
    "name": "Brinco de Platina",
+   "grade": "UNCOMMON",
    "icon": "sprites/EARING_610005.png"
   },
   "611071": {
    "name": "Brinco de Esmeralda",
+   "grade": "UNCOMMON",
    "icon": "sprites/EARING_610007.png"
   },
   "611091": {
    "name": "Brinco Olho de Tigre",
+   "grade": "UNCOMMON",
    "icon": "sprites/EARING_610009.png"
   },
   "611111": {
    "name": "Brinco de Safira",
+   "grade": "UNCOMMON",
    "icon": "sprites/EARING_610011.png"
   },
   "611141": {
    "name": "Brinco celestial",
+   "grade": "UNCOMMON",
    "icon": "sprites/EARING_610014.png"
   },
   "612031": {
    "name": "Brinco de Prata",
+   "grade": "RARE",
    "icon": "sprites/EARING_610003.png"
   },
   "612051": {
    "name": "Brinco de Platina",
+   "grade": "RARE",
    "icon": "sprites/EARING_610005.png"
   },
   "612071": {
    "name": "Brinco de Esmeralda",
+   "grade": "RARE",
    "icon": "sprites/EARING_610007.png"
   },
   "612091": {
    "name": "Brinco Olho de Tigre",
+   "grade": "RARE",
    "icon": "sprites/EARING_610009.png"
   },
   "612111": {
    "name": "Brinco de Safira",
+   "grade": "RARE",
    "icon": "sprites/EARING_610011.png"
   },
   "612141": {
    "name": "Brinco celestial",
+   "grade": "RARE",
    "icon": "sprites/EARING_610014.png"
   },
   "613031": {
    "name": "Brinco de Prata",
+   "grade": "LEGENDARY",
    "icon": "sprites/EARING_610003.png"
   },
   "613051": {
    "name": "Brinco de Platina",
+   "grade": "LEGENDARY",
    "icon": "sprites/EARING_610005.png"
   },
   "613071": {
    "name": "Brinco de Esmeralda",
+   "grade": "LEGENDARY",
    "icon": "sprites/EARING_610007.png"
   },
   "613091": {
    "name": "Brinco Olho de Tigre",
+   "grade": "LEGENDARY",
    "icon": "sprites/EARING_610009.png"
   },
   "613111": {
    "name": "Brinco de Safira",
+   "grade": "LEGENDARY",
    "icon": "sprites/EARING_610011.png"
   },
   "613141": {
    "name": "Brinco celestial",
+   "grade": "LEGENDARY",
    "icon": "sprites/EARING_610014.png"
   },
   "614071": {
    "name": "Brinco de Esmeralda",
+   "grade": "IMMORTAL",
    "icon": "sprites/EARING_610007.png"
   },
   "614091": {
    "name": "Brinco Olho de Tigre",
+   "grade": "IMMORTAL",
    "icon": "sprites/EARING_610009.png"
   },
   "614111": {
    "name": "Brinco de Safira",
+   "grade": "IMMORTAL",
    "icon": "sprites/EARING_610011.png"
   },
   "614141": {
    "name": "Brinco celestial",
+   "grade": "IMMORTAL",
    "icon": "sprites/EARING_610014.png"
   },
   "621031": {
    "name": "Anel de Prata",
+   "grade": "UNCOMMON",
    "icon": "sprites/RING_620003.png"
   },
   "621051": {
    "name": "Anel de platina",
+   "grade": "UNCOMMON",
    "icon": "sprites/RING_620005.png"
   },
   "621071": {
    "name": "Anel de Âmbar",
+   "grade": "UNCOMMON",
    "icon": "sprites/RING_620007.png"
   },
   "621091": {
    "name": "Anel de Ametista",
+   "grade": "UNCOMMON",
    "icon": "sprites/RING_620009.png"
   },
   "621111": {
    "name": "Anel de Esmeralda",
+   "grade": "UNCOMMON",
    "icon": "sprites/RING_620011.png"
   },
   "621141": {
    "name": "Anel do Eclipse",
+   "grade": "UNCOMMON",
    "icon": "sprites/RING_620014.png"
   },
   "622031": {
    "name": "Anel de Prata",
+   "grade": "RARE",
    "icon": "sprites/RING_620003.png"
   },
   "622051": {
    "name": "Anel de platina",
+   "grade": "RARE",
    "icon": "sprites/RING_620005.png"
   },
   "622071": {
    "name": "Anel de Âmbar",
+   "grade": "RARE",
    "icon": "sprites/RING_620007.png"
   },
   "622091": {
    "name": "Anel de Ametista",
+   "grade": "RARE",
    "icon": "sprites/RING_620009.png"
   },
   "622111": {
    "name": "Anel de Esmeralda",
+   "grade": "RARE",
    "icon": "sprites/RING_620011.png"
   },
   "622141": {
    "name": "Anel do Eclipse",
+   "grade": "RARE",
    "icon": "sprites/RING_620014.png"
   },
   "623031": {
    "name": "Anel de Prata",
+   "grade": "LEGENDARY",
    "icon": "sprites/RING_620003.png"
   },
   "623051": {
    "name": "Anel de platina",
+   "grade": "LEGENDARY",
    "icon": "sprites/RING_620005.png"
   },
   "623071": {
    "name": "Anel de Âmbar",
+   "grade": "LEGENDARY",
    "icon": "sprites/RING_620007.png"
   },
   "623091": {
    "name": "Anel de Ametista",
+   "grade": "LEGENDARY",
    "icon": "sprites/RING_620009.png"
   },
   "623111": {
    "name": "Anel de Esmeralda",
+   "grade": "LEGENDARY",
    "icon": "sprites/RING_620011.png"
   },
   "623141": {
    "name": "Anel do Eclipse",
+   "grade": "LEGENDARY",
    "icon": "sprites/RING_620014.png"
   },
   "624071": {
    "name": "Anel de Âmbar",
+   "grade": "IMMORTAL",
    "icon": "sprites/RING_620007.png"
   },
   "624091": {
    "name": "Anel de Ametista",
+   "grade": "IMMORTAL",
    "icon": "sprites/RING_620009.png"
   },
   "624111": {
    "name": "Anel de Esmeralda",
+   "grade": "IMMORTAL",
    "icon": "sprites/RING_620011.png"
   },
   "624141": {
    "name": "Anel do Eclipse",
+   "grade": "IMMORTAL",
    "icon": "sprites/RING_620014.png"
   },
   "631031": {
    "name": "Braçadeira de Prata",
+   "grade": "UNCOMMON",
    "icon": "sprites/BRACER_630003.png"
   },
   "631051": {
    "name": "Braçadeira de Platina",
+   "grade": "UNCOMMON",
    "icon": "sprites/BRACER_630005.png"
   },
   "631071": {
    "name": "Braçadeira de Obsidiana",
+   "grade": "UNCOMMON",
    "icon": "sprites/BRACER_630007.png"
   },
   "631091": {
    "name": "Braçadeira Carmesim",
+   "grade": "UNCOMMON",
    "icon": "sprites/BRACER_630009.png"
   },
   "631111": {
    "name": "Bracelete de Esmeralda",
+   "grade": "UNCOMMON",
    "icon": "sprites/BRACER_630011.png"
   },
   "631141": {
    "name": "Bracelete do Eclipse",
+   "grade": "UNCOMMON",
    "icon": "sprites/BRACER_630014.png"
   },
   "632031": {
    "name": "Braçadeira de Prata",
+   "grade": "RARE",
    "icon": "sprites/BRACER_630003.png"
   },
   "632051": {
    "name": "Braçadeira de Platina",
+   "grade": "RARE",
    "icon": "sprites/BRACER_630005.png"
   },
   "632071": {
    "name": "Braçadeira de Obsidiana",
+   "grade": "RARE",
    "icon": "sprites/BRACER_630007.png"
   },
   "632091": {
    "name": "Braçadeira Carmesim",
+   "grade": "RARE",
    "icon": "sprites/BRACER_630009.png"
   },
   "632111": {
    "name": "Bracelete de Esmeralda",
+   "grade": "RARE",
    "icon": "sprites/BRACER_630011.png"
   },
   "632141": {
    "name": "Bracelete do Eclipse",
+   "grade": "RARE",
    "icon": "sprites/BRACER_630014.png"
   },
   "633031": {
    "name": "Braçadeira de Prata",
+   "grade": "LEGENDARY",
    "icon": "sprites/BRACER_630003.png"
   },
   "633051": {
    "name": "Braçadeira de Platina",
+   "grade": "LEGENDARY",
    "icon": "sprites/BRACER_630005.png"
   },
   "633071": {
    "name": "Braçadeira de Obsidiana",
+   "grade": "LEGENDARY",
    "icon": "sprites/BRACER_630007.png"
   },
   "633091": {
    "name": "Braçadeira Carmesim",
+   "grade": "LEGENDARY",
    "icon": "sprites/BRACER_630009.png"
   },
   "633111": {
    "name": "Bracelete de Esmeralda",
+   "grade": "LEGENDARY",
    "icon": "sprites/BRACER_630011.png"
   },
   "633141": {
    "name": "Bracelete do Eclipse",
+   "grade": "LEGENDARY",
    "icon": "sprites/BRACER_630014.png"
   },
   "634071": {
    "name": "Braçadeira de Obsidiana",
+   "grade": "IMMORTAL",
    "icon": "sprites/BRACER_630007.png"
   },
   "634091": {
    "name": "Braçadeira Carmesim",
+   "grade": "IMMORTAL",
    "icon": "sprites/BRACER_630009.png"
   },
   "634111": {
    "name": "Bracelete de Esmeralda",
+   "grade": "IMMORTAL",
    "icon": "sprites/BRACER_630011.png"
   },
   "634141": {
    "name": "Bracelete do Eclipse",
+   "grade": "IMMORTAL",
    "icon": "sprites/BRACER_630014.png"
   }
  }

@@ -4,4 +4,35 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - run: echo "oi"
+            - uses: actions/checkout@v4
+            - uses: actions/setup-python@v5
+              with:
+                python-version: '3.13'
+            - run: pip install UnityPy Pillow
+            - uses: actions/setup-dotnet@v4
+              with:
+                dotnet-version: '8.0'
+            - run: |
+                dotnet tool install -g DepotDownloader
+                export PATH="$PATH:$HOME/.dotnet/tools"
+                DepotDownloader -app 3678970 -depot 3678971 -username anonymous -dir game
+                ls -R game | head -30
+            - run: python tools/extract.py web --game game
+            - uses: actions/setup-go@v5
+              with:
+                go-version: '1.26'
+            - run: go build -ldflags "-s -w -X optimizer/internal.es3Password=${{ secrets.TBH_ES3_KEY }} -X optimizer/internal.Version=1.0.${{ github.run_number }}" -o optimizer.exe .
+            - run: |
+                mkdir -p public
+                cp -r site/* public/
+                cp optimizer.exe public/
+                cp web/chest_drops.json public/
+                cp -r web/sprites public/
+                SHA=$(sha256sum optimizer.exe | cut -d' ' -f1)
+                echo "{\"version\":\"1.0.${{ github.run_number }}\",\"exe\":\"optimizer.exe\",\"sha256\":\"$SHA\",\"notes\":\"Dados atualizados\"}" > public/version.json
+
+            - uses: cloudflare/wrangler-action@v3
+              with:
+                apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+                accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+                command: pages deploy public --project-name=tbh-optimizer
