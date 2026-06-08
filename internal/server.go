@@ -163,6 +163,12 @@ func StartWebServer(ctrl *Control, webFiles embed.FS, dataDir string) {
 		_ = json.NewEncoder(w).Encode(out)
 	})
 
+	http.HandleFunc("/api/version", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Set("Content-Type", "application/json")
+		fmt.Fprintf(w, `{"version":%q}`, Version)
+	})
+
 	http.HandleFunc("/api/update/apply", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", "*")
 		w.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS")

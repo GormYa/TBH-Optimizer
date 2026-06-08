@@ -533,18 +533,17 @@
 					await waitForNewVersionAndReload(target);
 				};
 
-				// Faz polling na :8080 até o servidor da versão nova estar no ar (handoff da
-				// porta leva ~0,5–2s) e então recarrega a aba para servir o front novo.
+				// Faz polling no /api/version (local, instantâneo) até o servidor da versão
+				// nova estar no ar (handoff da porta leva ~0,5–2s) e recarrega a aba.
 				const waitForNewVersionAndReload = async (target) => {
 					updateMsg.value = 'Reiniciando para a v' + (target || 'nova') + '…';
 					for (let i = 0; i < 40; i++) {            // ~24s de teto
 						await new Promise(res => setTimeout(res, 600));
 						try {
-							const r = await fetch('http://localhost:8080/api/update/check', { cache: 'no-store' });
+							const r = await fetch('http://localhost:8080/api/version', { cache: 'no-store' });
 							const j = await r.json();
-							// current é a versão REALMENTE rodando agora. Quando bate com o
-							// alvo (ou já não há update), o servidor novo está no ar.
-							if ((target && j.current === target) || j.has_update === false) {
+							// version mudou em relação à que carregou esta aba => exe novo no ar.
+							if (j.version && j.version !== loadedVersion && (!target || j.version === target)) {
 								updateMsg.value = 'Atualizado! Recarregando…';
 								location.reload();
 								return;
@@ -758,8 +757,24 @@
 						const r = await fetch('http://localhost:8080/api/update/check');
 						const j = await r.json();
 						updateInfo.value = j; appVersion.value = j.current || '';
+						if (!loadedVersion && j.current) loadedVersion = j.current;
 						if (j.enabled && j.has_update) updateMsg.value = 'Nova versão ' + j.latest + ' disponível!';
 					} catch (e) { /* offline: ignora */ }
+				};
+
+				// Versão com que ESTA página foi carregada. Se o servidor passar a reportar
+				// outra (o .exe foi trocado por um update), a aba se recarrega sozinha — vale
+				// pro botão de update E pra qualquer reinício futuro. Resolve o problema de a
+				// página ficar "presa" na versão antiga depois de atualizar.
+				let loadedVersion = '';
+				const watchVersion = async () => {
+					try {
+						const r = await fetch('http://localhost:8080/api/version', { cache: 'no-store' });
+						const j = await r.json();
+						if (!j.version) return;
+						if (!loadedVersion) { loadedVersion = j.version; return; }
+						if (j.version !== loadedVersion) location.reload();
+					} catch (e) { /* servidor reiniciando/offline: ignora */ }
 				};
 
 				// Dedup de aba: navegadores não deixam um app externo focar uma aba já
@@ -767,7 +782,7 @@
 				// um painel ativo e, na aba nova, cede em vez de rodar um 2º painel.
 				const duplicateTab = ref(false);
 				let dashChannel = null;
-				const startApp = () => { loadStagesList(); loadChests(); fetchStats(); initUpdate(); setInterval(fetchStats, 2000); };
+				const startApp = () => { loadStagesList(); loadChests(); fetchStats(); initUpdate(); watchVersion(); setInterval(fetchStats, 2000); setInterval(watchVersion, 4000); };
 				const useThisTab = () => { duplicateTab.value = false; startApp(); };
 				onMounted(() => {
 					if ('BroadcastChannel' in window) {
