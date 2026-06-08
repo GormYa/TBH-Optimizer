@@ -513,14 +513,46 @@
 				};
 				const applyUpdate = async () => {
 					if (!confirm('Baixar e instalar a versão ' + updateInfo.value.latest + '? O app vai reabrir.')) return;
+					const target = updateInfo.value.latest;
 					updateBusy.value = true; updateMsg.value = 'Baixando e instalando…';
 					try {
 						const r = await fetch('http://localhost:8080/api/update/apply', { method: 'POST' });
 						const j = await r.json().catch(() => ({}));
-						if (j.status === 'success') updateMsg.value = 'Atualizado! Reabrindo o app…';
-						else updateMsg.value = 'Falha: ' + (j.message || j.status || 'desconhecido');
-					} catch (e) { updateMsg.value = 'O app está reabrindo…'; }
-					finally { updateBusy.value = false; }
+						if (j.status && j.status !== 'success') {
+							updateMsg.value = 'Falha: ' + (j.message || j.status);
+							pushToast('error', 'Falha ao atualizar: ' + (j.message || j.status));
+							updateBusy.value = false;
+							return;
+						}
+					} catch (e) {
+						// O servidor já pode ter reiniciado antes de responder — sem problema,
+						// caímos direto no polling abaixo.
+					}
+					// O backend faz a troca do .exe e relança com -no-browser (não abre aba
+					// nova). Esta aba precisa se recarregar sozinha quando a versão nova subir.
+					await waitForNewVersionAndReload(target);
+				};
+
+				// Faz polling na :8080 até o servidor da versão nova estar no ar (handoff da
+				// porta leva ~0,5–2s) e então recarrega a aba para servir o front novo.
+				const waitForNewVersionAndReload = async (target) => {
+					updateMsg.value = 'Reiniciando para a v' + (target || 'nova') + '…';
+					for (let i = 0; i < 40; i++) {            // ~24s de teto
+						await new Promise(res => setTimeout(res, 600));
+						try {
+							const r = await fetch('http://localhost:8080/api/update/check', { cache: 'no-store' });
+							const j = await r.json();
+							// current é a versão REALMENTE rodando agora. Quando bate com o
+							// alvo (ou já não há update), o servidor novo está no ar.
+							if ((target && j.current === target) || j.has_update === false) {
+								updateMsg.value = 'Atualizado! Recarregando…';
+								location.reload();
+								return;
+							}
+						} catch (e) { /* servidor ainda reiniciando; tenta de novo */ }
+					}
+					// Fallback: recarrega mesmo sem confirmar a versão (servidor demorou).
+					location.reload();
 				};
 
 				const updating = ref(false);
