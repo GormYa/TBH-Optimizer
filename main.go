@@ -41,7 +41,7 @@ func main() {
 	}
 
 	if !relaunch && instanceRunning() {
-		_ = exec.Command("rundll32", "url.dll,FileProtocolHandler", "http://localhost:8080").Start()
+		openBrowser("http://localhost:8080")
 		return
 	}
 
@@ -67,10 +67,14 @@ func main() {
 			return
 		}
 		time.Sleep(300 * time.Millisecond)
-		_ = exec.Command("rundll32", "url.dll,FileProtocolHandler", "http://localhost:8080").Start()
+		openBrowser("http://localhost:8080")
 	}()
 
 	internal.StartWebServer(&ctrl, webFiles, gameDataDir)
+}
+
+func openBrowser(url string) {
+	_ = exec.Command("explorer", url).Start()
 }
 
 // instanceRunning diz se ja existe um app nosso respondendo na :8080.
