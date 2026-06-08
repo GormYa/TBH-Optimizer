@@ -1,0 +1,40 @@
+# Executáveis compilados do Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+OtimizadorFarm.exe
+
+# Pastas de cache e dados baixados em runtime pelo aplicativo
+gamedata/
+
+# Históricos locais e arquivos temporários de teste
+historico_farm.txt
+stage_history.json
+tmp_drop_extract/
+scripts/__pycache__/
+*.tmp
+
+# Temporários do auto-update (*.exe já cobre o exe, mas .old/.new não casam nele)
+*.exe.old
+*.exe.new
+
+# Arquivos locais de saves e dados de debug (privacidade do jogador)
+data/
+
+# Arquivos de IDEs (IntelliJ, VS Code, etc.)
+.idea/
+.claude/
+*.iml
+.vscode/
+docs/
+
+# Pasta criada para teste
+scripts/
+
+# Arquivo de automação (helper local)
+*.ps1
+
+# tools/ contém o extract.py (essencial pro CI) -> VAI pro git; ignora só o cache do Python
+tools/__pycache__/

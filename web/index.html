@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Taskbar Hero — Otimizador de Farm</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<script src="vue.global.js"></script>
+</head>
+<body>
+	<div id="app" class="layout">
+
+		<!-- ===================== SIDEBAR ===================== -->
+		<aside class="sidebar">
+			<div class="brand">
+				<div class="brand-mark">⚔</div>
+				<div class="brand-text">
+					<h1>TASKBAR<span>HERO</span></h1>
+					<p>Otimizador de Farm</p>
+				</div>
+			</div>
+
+			<div class="monitor">
+				<span class="pulse-dot"></span>
+				<span>Monitoramento Ativo</span>
+			</div>
+
+			<nav class="nav">
+				<button v-for="item in navItems" :key="item.id"
+						:class="{ active: view === item.id }" @click="view = item.id">
+					<span class="nav-ico" v-html="item.ico"></span>
+					<span>{{ item.label }}</span>
+				</button>
+			</nav>
+
+			<div class="sidebar-foot">
+				<div class="mini-stat">
+					<span class="mini-label">Corridas</span>
+					<span class="mini-value">{{ totalRunsAllStages }}</span>
+				</div>
+				<div class="mini-stat">
+					<span class="mini-label">Modelo</span>
+					<span class="mini-value" :class="statsReport.calibrated ? 'ok' : 'wait'">
+						{{ statsReport.calibrated ? 'Calibrado' : 'Aguardando' }}
+					</span>
+				</div>
+				<button class="btn-reset" @click="resetHistory">Zerar Histórico</button>
+				<div class="ver-row">
+					<span class="ver-tag">v{{ appVersion || '—' }}</span>
+					<button class="btn-ver" @click="checkUpdate" :disabled="updateBusy">
+						{{ updateBusy ? '…' : (updateInfo.has_update ? '⬇ Atualizar' : '↻ Verificar') }}
+					</button>
+				</div>
+				<div class="ver-msg" v-if="updateMsg">{{ updateMsg }}</div>
+			</div>
+		</aside>
+
+		<!-- ===================== CONTENT ===================== -->
+		<main class="content">
+			<header class="content-head">
+				<div>
+					<div class="crumb">Painel</div>
+					<h2>{{ viewTitle }}</h2>
+				</div>
+				<span class="badge">{{ sortedStages.length }} fase(s)</span>
+			</header>
+
+			<!-- ---------- PAINEL: VISÃO GERAL ---------- -->
+			<section v-show="view === 'painel'" class="view">
+				<div class="cards-grid">
+					<div class="card accent-gold">
+						<div class="card-title">Melhor Mapa · Ouro/h</div>
+						<div class="card-value">{{ statsReport.best_gold_stage ? formatStageName(statsReport.best_gold_stage) : '---' }}</div>
+						<div class="card-sub" v-if="bestGoldData">
+							<strong class="g-gold">{{ formatNumber(bestGoldData.avg_gold_per_hour) }}</strong>/h · {{ bestGoldData.total_runs }} corridas
+						</div>
+						<div class="card-sub muted" v-else>Sem dados ainda</div>
+					</div>
+
+					<div class="card accent-xp">
+						<div class="card-title">Melhor Mapa · XP/h</div>
+						<div class="card-value">{{ statsReport.best_xp_stage ? formatStageName(statsReport.best_xp_stage) : '---' }}</div>
+						<div class="card-sub" v-if="bestXpData">
+							<strong class="g-xp">{{ formatNumber(bestXpData.avg_xp_per_hour) }}</strong>/h · {{ bestXpData.total_runs }} corridas
+						</div>
+						<div class="card-sub muted" v-else>Sem dados ainda</div>
+					</div>
+
+					<div class="card accent-blue wide">
+						<div class="card-title">Sessão</div>
+						<div class="card-value small">{{ totalRunsAllStages }} corridas monitoradas</div>
+						<div class="card-sub muted">
+							Modo: <strong>{{ statsReport.calibrated ? 'Projeções ativas' : 'Aguardando 1-1 + outra fase' }}</strong> · Média Móvel (EMA)
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- ---------- PAINEL: PERFORMANCE + CALIBRAÇÃO ---------- -->
+			<section v-show="view === 'painel'" class="view">
+				<div class="panel pad calib-bar">
+					<div class="calib-title">
+						<h3 class="panel-title">Calibrar Projeções</h3>
+						<p class="hint">Âncoras: <strong>1-1</strong> + o <strong>maior mapa que você alcança</strong>. Adicione quantos mapas quiser abaixo — quanto mais pontos, melhor a estimativa. Tempo digitado por você tem prioridade.</p>
+					</div>
+					<div class="calib-fields">
+						<div class="fld-group">
+							<label class="fld-label">Normal 1-1 (tempo)</label>
+							<input type="text" placeholder="Ex: 12 ou 0:12" v-model="calibBaseTime">
+						</div>
+						<div class="fld-group">
+							<label class="fld-label">Fase limite</label>
+							<select v-model="calibLimitStage" class="fld">
+								<option value="" disabled>Selecione…</option>
+								<option v-for="stg in stagesList" :key="stg.key" :value="stg.key" v-show="stg.key !== 1101">
+									{{ formatDifficulty(stg.difficulty) }} {{ stg.label }}
+								</option>
+							</select>
+						</div>
+						<div class="fld-group">
+							<label class="fld-label">Tempo da fase limite</label>
+							<input type="text" placeholder="Ex: 45 ou 0:45" v-model="calibLimitTime">
+						</div>
+						<button class="btn-submit slim" @click="submitCalibration">Calibrar âncoras</button>
+					</div>
+					<div class="calib-add">
+						<select v-model="addStage" class="fld">
+							<option value="" disabled>Adicionar tempo de qualquer mapa…</option>
+							<option v-for="stg in stagesList" :key="stg.key" :value="stg.key">{{ formatDifficulty(stg.difficulty) }} {{ stg.label }}</option>
+						</select>
+						<input type="text" placeholder="Tempo (ex: 1:45)" v-model="addTime">
+						<button class="btn-submit slim ghost" @click="addMapTime">+ Adicionar mapa</button>
+					</div>
+				</div>
+
+				<div class="panel">
+					<div class="perf-head" v-if="sortedStages.length > 0">
+						<h3 class="panel-title">Desempenho por Fase</h3>
+						<div class="rec-toggle">
+							<span class="rec-toggle-lbl">Melhor mapa pra:</span>
+							<button type="button" :class="{ on: sortKey === 'avg_gold_per_hour' }" @click="setSort('avg_gold_per_hour')">💰 Ouro</button>
+							<button type="button" :class="{ on: sortKey === 'avg_xp_per_hour' }" @click="setSort('avg_xp_per_hour')">✨ XP</button>
+						</div>
+					</div>
+					<div class="empty" v-if="sortedStages.length === 0">
+						<div class="empty-mark">⌛</div>
+						<h3>Aguardando o save…</h3>
+						<p>A tabela aparece assim que você concluir a primeira corrida.</p>
+					</div>
+					<div class="table-wrap" v-else>
+						<table>
+							<thead>
+								<tr>
+									<th @click="setSort('stage_key')" class="sortable">Estágio<span v-html="sortArrow('stage_key')"></span></th>
+									<th @click="setSort('total_runs')" class="sortable">Corridas<span v-html="sortArrow('total_runs')"></span></th>
+									<th @click="setSort('avg_time_spent')" class="sortable">Tempo Médio<span v-html="sortArrow('avg_time_spent')"></span></th>
+									<th>Por Corrida</th>
+									<th @click="setSort('avg_gold_per_hour')" class="sortable">Ouro / Hora<span v-html="sortArrow('avg_gold_per_hour')"></span></th>
+									<th @click="setSort('avg_xp_per_hour')" class="sortable">XP / Hora<span v-html="sortArrow('avg_xp_per_hour')"></span></th>
+									<th>Baús / Hora</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr v-for="stage in sortedStages" :key="stage.stage_key" :class="{ projected: stage.total_runs === 0 }">
+									<td><span class="stage-badge">{{ formatStageName(stage.stage_key) }}</span></td>
+									<td>
+										<strong v-if="stage.total_runs > 0">{{ stage.total_runs }}</strong>
+										<span class="tag-est" v-else>Estimado</span>
+										<span v-if="stage.total_runs > 0" class="conf-dot" :class="'conf-' + confidence(stage.total_runs)" :title="confLabel(stage.total_runs)"></span>
+										<button v-if="stage.total_runs > 0" class="btn-clear-stage" @click="resetStage(stage.stage_key)" title="Limpar corridas desta fase">✕</button>
+									</td>
+									<td class="mono">{{ formatTime(stage.avg_time_spent) }}<div class="r2" v-if="stageHP(stage.stage_key)">HP {{ formatNumber(stageHP(stage.stage_key)) }}</div></td>
+									<td>
+										<div class="r1 g-gold">+{{ formatNumber(stage.avg_gold_per_run) }} <small>ouro</small></div>
+										<div class="r2">+{{ formatNumber(stage.avg_xp_per_run) }} <small>xp</small></div>
+									</td>
+									<td>
+										<div class="r1 g-gold">{{ formatNumber(stage.avg_gold_per_hour) }} <small>/h</small></div>
+										<div class="r2">bruto {{ formatNumber(stage.raw_gold_per_hour) }}</div>
+									</td>
+									<td>
+										<div class="r1 g-xp">{{ formatNumber(stage.avg_xp_per_hour) }} <small>/h</small></div>
+										<div class="r2">bruto {{ formatNumber(stage.raw_xp_per_hour) }}</div>
+									</td>
+									<td>
+										<template v-if="chestRateByStage[stage.stage_key]">
+											<div class="r1 g-drop">{{ formatItems(chestsPerHour(stage)) }} <small>/h</small></div>
+											<div class="r2">{{ fmtPct(chestRateByStage[stage.stage_key]) }} por clear</div>
+										</template>
+										<span class="r2 muted" v-else>—</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+
+			<!-- ---------- BAÚS ---------- -->
+			<section v-show="view === 'chests'" class="view">
+				<!-- DETALHE DE UM BAÚ -->
+				<div v-if="selectedChest">
+					<button class="btn-back" @click="selectedChest = null">← Baús</button>
+					<div class="detail-grid">
+						<div class="detail-card" :class="typeClass(selectedChest.type)">
+							<img class="detail-sprite" :src="selectedChest.iconUrl" :alt="selectedChest.name" onerror="this.style.visibility='hidden'">
+							<div class="detail-name">{{ selectedChest.name }}</div>
+							<span class="chest-type" :class="typeClass(selectedChest.type)">{{ typeLabel(selectedChest.type) }}</span>
+						</div>
+						<div class="detail-body">
+							<h4 class="sec-title">Dropa em {{ (selectedChest.stages || []).length }} fase(s)</h4>
+							<div class="cs-head"><span>Fase</span><span>Taxa de drop</span></div>
+							<div class="cs-row" v-for="s in (selectedChest.stages || [])" :key="s.key">
+								<span class="cs-label">{{ s.label }}</span>
+								<span class="cs-bar"><i :style="{ width: Math.min(100, s.dropRatePercent) + '%' }"></i></span>
+								<span class="cs-pct">{{ fmtPct(s.dropRatePercent) }}</span>
+							</div>
+							<h4 class="sec-title" style="margin-top:18px;">Tabela de saque <small>({{ lootCount(selectedChest) }} grupos · 1 item aleatório por grupo)</small></h4>
+							<div class="hero-toggles" v-if="chestHeroes(selectedChest).length">
+								<span class="rec-toggle-lbl">Seus personagens:</span>
+								<button type="button" v-for="h in chestHeroes(selectedChest)" :key="h.key"
+										:class="{ on: selectedHeroes.includes(h.key) }" @click="toggleHero(h.key)">
+									{{ h.name }}<span v-if="h.dlc" class="dlc-badge">DLC</span>
+								</button>
+								<span class="hero-hint">A chance muda conforme os personagens que você possui.</span>
+							</div>
+							<div class="loot-grp" v-for="(g, i) in activeLoot(selectedChest)" :key="i">
+								<span class="loot-pct">{{ fmtPct(g.probability) }}</span>
+								<div class="loot-body">
+									<div class="loot-rarity" :class="'grade-' + (g.grade || '').toLowerCase()">1 de {{ (g.items || []).length }} item(ns) {{ gradeLabel(g.grade) }}</div>
+									<span class="loot-items">
+										<span class="loot-item" v-for="id in g.items" :key="id" :class="'grade-' + (g.grade || '').toLowerCase()" :title="itemName(id) + ' — ' + fmtPct(g.probability / (g.items.length || 1)) + ' por item'">
+											<img :src="itemIcon(id)" loading="lazy" onerror="this.style.visibility='hidden'">
+											<span>{{ itemName(id) }}</span>
+										</span>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- GRID DE BAÚS -->
+				<div v-else>
+					<div class="chest-toolbar">
+						<div class="chip-row">
+							<button v-for="t in chestTypes" :key="t.v" :class="{ on: chestType === t.v }" @click="chestType = t.v">{{ t.label }}</button>
+						</div>
+						<div class="chest-tools-right">
+							<select v-model="chestStage" class="fld chest-stage-sel">
+								<option value="">Todas as fases</option>
+								<option v-for="s in chestStageOptions" :key="s" :value="s">Fase {{ s }}</option>
+							</select>
+							<button class="btn-update" @click="updateChests" :disabled="updating">{{ updating ? 'Atualizando…' : '↻ Atualizar dados' }}</button>
+						</div>
+					</div>
+					<p class="view-intro">Dados da <a href="https://taskbarhero.wiki" target="_blank" rel="noopener">taskbarhero.wiki</a> · {{ filteredChests.length }} baú(s). Clique num baú para ver fases e tabela de saque.</p>
+
+					<div class="empty" v-if="filteredChests.length === 0">
+						<div class="empty-mark">✦</div>
+						<h3>Nenhum baú para este filtro</h3>
+					</div>
+
+					<div class="chest-grid" v-else>
+						<div class="chest-card clickable" v-for="c in filteredChests" :key="c.id" :class="typeClass(c.type)" @click="selectedChest = c">
+							<div class="chest-head">
+								<img class="chest-sprite" :src="c.iconUrl" :alt="c.name" loading="lazy" onerror="this.style.visibility='hidden'">
+								<div class="chest-id">
+									<div class="chest-name">{{ c.name }}</div>
+									<div class="chest-tags">
+										<span class="chest-type">{{ typeLabel(c.type) }}</span>
+									</div>
+								</div>
+							</div>
+							<div class="chest-foot">Dropa em {{ (c.stages || []).length }} fase(s) · {{ lootCount(c) }} grupos →</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- ---------- ITENS (busca reversa) ---------- -->
+			<section v-show="view === 'items'" class="view">
+				<p class="view-intro">Busque um <strong>item</strong> e veja em quais baús ele cai e a chance de vir ao abrir. (% por item = chance do grupo ÷ nº de itens do grupo.)</p>
+				<input type="text" class="fld items-search" v-model="itemSearch" placeholder="Buscar item… (ex.: Espada Longa, Elmo de Madeira)">
+				<div class="items-layout">
+					<div class="group-list">
+						<button v-for="it in filteredItems" :key="it.id" :class="{ on: selectedItem === it.id }" @click="selectedItem = it.id">
+							<img class="li-sprite" :src="itemIcon(it.id)" loading="lazy" onerror="this.style.visibility='hidden'">
+							<span>{{ it.name }}</span>
+						</button>
+						<div class="empty" v-if="filteredItems.length === 0"><p>Nada encontrado.</p></div>
+					</div>
+					<div class="group-detail">
+						<template v-if="selectedItem">
+							<div class="item-head">
+								<img class="li-sprite big" :src="itemIcon(selectedItem)" onerror="this.style.visibility='hidden'">
+								<h4 class="sec-title" style="margin:0;">{{ itemName(selectedItem) }}</h4>
+							</div>
+							<p class="hint">Cai em {{ itemChests(selectedItem).length }} baú(s) · % = chance de vir ao abrir aquele baú.</p>
+							<div class="rev-card" v-for="(r, i) in itemChests(selectedItem)" :key="i" :class="typeClass(r.chest.type)">
+								<div class="rev-head" @click="view='chests'; selectedChest=r.chest">
+									<img class="rev-sprite" :src="r.chest.iconUrl" onerror="this.style.visibility='hidden'">
+									<div>
+										<div class="chest-name">{{ r.chest.name }}</div>
+										<span class="chest-type" :class="typeClass(r.chest.type)">{{ typeLabel(r.chest.type) }}</span>
+									</div>
+									<span class="rev-pct g-gold">{{ fmtPct(r.perItem) }}</span>
+								</div>
+								<div class="rev-stages">
+									<span class="rev-stage" v-for="s in (r.chest.stages || [])" :key="s.key">{{ s.label }} · {{ fmtPct(s.dropRatePercent) }}</span>
+								</div>
+							</div>
+						</template>
+						<div class="empty" v-else><div class="empty-mark">⚔</div><p>Selecione um item à esquerda.</p></div>
+					</div>
+				</div>
+			</section>
+		</main>
+	</div>
+
+	<script>
+		const { createApp, ref, computed, onMounted } = Vue;
+
+		createApp({
+			setup() {
+				const statsReport = ref({ best_gold_stage: 0, best_xp_stage: 0, stages: {} });
+				const stagesList = ref([]);
+				const calibBaseTime = ref('');
+				const calibLimitStage = ref('');
+				const calibLimitTime = ref('');
+				const view = ref('painel');
+				const sortKey = ref('avg_gold_per_hour');
+				const sortDir = ref('desc'); // 'asc' | 'desc'
+
+				// --- Baús (dados da wiki) ---
+				const chestData = ref({ chests: [], spriteBaseUrl: '' });
+				const chestType = ref('');
+				const chestStage = ref('');
+				const chestTypes = [
+					{ v: '', label: 'Todos' }, { v: 'Common', label: 'Comum' },
+					{ v: 'Stage Boss', label: 'Chefe de Fase' }, { v: 'Act Boss', label: 'Chefe de Ato' }
+				];
+				const loadChests = async () => {
+					try { const r = await fetch('chest_drops.json'); if (r.ok) chestData.value = await r.json(); }
+					catch (e) { console.error('Erro ao carregar baús:', e); }
+				};
+				const chestStageOptions = computed(() => {
+					const set = new Set();
+					(chestData.value.chests || []).forEach(c => (c.stages || []).forEach(s => s.label && set.add(s.label)));
+					return Array.from(set).sort((a, b) => {
+						const pa = a.split('-').map(Number), pb = b.split('-').map(Number);
+						return (pa[0] - pb[0]) || (pa[1] - pb[1]);
+					});
+				});
+				const filteredChests = computed(() => {
+					// Só baús que realmente dropam em alguma fase (esconde variantes vazias).
+					let list = (chestData.value.chests || []).filter(c => (c.stages || []).length > 0);
+					if (chestType.value) list = list.filter(c => c.type === chestType.value);
+					if (chestStage.value) list = list.filter(c => (c.stages || []).some(s => s.label === chestStage.value));
+					return list;
+				});
+				const typeLabel = (t) => ({ 'Common': 'Comum', 'Stage Boss': 'Chefe de Fase', 'Act Boss': 'Chefe de Ato' }[t] || t);
+				const gradeLabel = (g) => ({ COMMON:'Comum', UNCOMMON:'Incomum', RARE:'Raro', EPIC:'Épico', LEGENDARY:'Lendário', MYTHIC:'Mítico' }[g] || (g || '').toLowerCase());
+				const typeClass = (t) => ({ 'Common': 't-common', 'Stage Boss': 't-boss', 'Act Boss': 't-act' }[t] || '');
+				const fmtPct = (x) => (x >= 100 ? '100%' : (x || 0).toFixed(1) + '%');
+				const selectedHeroes = ref([]);
+				const allHeroes = computed(() => chestData.value.heroes || {});
+				const toggleHero = (k) => {
+					const i = selectedHeroes.value.indexOf(k);
+					if (i >= 0) selectedHeroes.value.splice(i, 1); else selectedHeroes.value.push(k);
+				};
+				const chestHeroes = (c) => {
+					const seen = new Set((c.loot || []).map(g => g.hero).filter(Boolean));
+					return [...seen].map(k => ({ key: k, name: (allHeroes.value[k] || {}).name || k, dlc: !!(allHeroes.value[k] || {}).dlc }));
+				};
+				const activeLoot = (c) => {
+					const present = new Set((c.loot || []).map(g => g.hero).filter(Boolean));
+					const active = new Set(['']);
+					selectedHeroes.value.forEach(k => { if (present.has(k)) active.add(k); });
+					const groups = (c.loot || []).filter(g => active.has(g.hero || ''));
+					const denom = groups.reduce((s, g) => s + (g.weight || 0), 0) || 1;
+					return groups.map(g => ({ ...g, probability: 100 * (g.weight || 0) / denom }))
+						.sort((a, b) => b.probability - a.probability);
+				};
+				const lootCount = (c) => activeLoot(c).length;
+
+				const selectedChest = ref(null);
+				const itemSearch = ref('');
+				const selectedItem = ref(null);
+				const itemName = (id) => (chestData.value.itemsById && chestData.value.itemsById[id] && chestData.value.itemsById[id].name) || ('#' + id);
+				const itemIcon = (id) => (chestData.value.itemsById && chestData.value.itemsById[id] && chestData.value.itemsById[id].icon) || '';
+				const itemIndex = computed(() => {
+					const idx = {};
+					(chestData.value.chests || []).forEach(c => {
+						if (!(c.stages || []).length) return;
+						activeLoot(c).forEach(g => {
+							const per = (g.items && g.items.length) ? g.probability / g.items.length : g.probability;
+							(g.items || []).forEach(id => { (idx[id] = idx[id] || []).push({ chest: c, perItem: per }); });
+						});
+					});
+					return idx;
+				});
+				const itemList = computed(() => Object.keys(itemIndex.value)
+					.map(id => ({ id, name: itemName(id) }))
+					.sort((a, b) => a.name.localeCompare(b.name)));
+				const filteredItems = computed(() => {
+					const q = itemSearch.value.trim().toLowerCase();
+					return q ? itemList.value.filter(it => it.name.toLowerCase().includes(q)) : itemList.value;
+				});
+				// um item pode estar em vários grupos do mesmo baú -> soma a chance por baú.
+				const itemChests = (id) => {
+					const byChest = {};
+					(itemIndex.value[id] || []).forEach(r => {
+						const k = r.chest.id;
+						if (!byChest[k]) byChest[k] = { chest: r.chest, perItem: 0 };
+						byChest[k].perItem += r.perItem;
+					});
+					return Object.values(byChest).sort((a, b) => b.perItem - a.perItem);
+				};
+				// --- auto-update do executável (canal binário, via CDN) ---
+				const appVersion = ref('');
+				const updateInfo = ref({ has_update: false, enabled: false });
+				const updateBusy = ref(false);
+				const updateMsg = ref('');
+				const checkUpdate = async () => {
+					updateBusy.value = true; updateMsg.value = '';
+					try {
+						// Se já sabemos que há update, clicar aplica; senão, só verifica.
+						if (updateInfo.value.has_update) { await applyUpdate(); return; }
+						const r = await fetch('http://localhost:8080/api/update/check');
+						const j = await r.json();
+						updateInfo.value = j;
+						appVersion.value = j.current || appVersion.value;
+						if (!j.enabled) updateMsg.value = 'Auto-update ainda não configurado (CDN).';
+						else if (j.error) updateMsg.value = 'Erro: ' + j.error;
+						else if (j.has_update) updateMsg.value = 'Nova versão ' + j.latest + ' disponível!' + (j.notes ? ' ' + j.notes : '');
+						else updateMsg.value = 'Você está na versão mais recente.';
+					} catch (e) { updateMsg.value = 'Falha ao verificar atualização.'; }
+					finally { updateBusy.value = false; }
+				};
+				const applyUpdate = async () => {
+					if (!confirm('Baixar e instalar a versão ' + updateInfo.value.latest + '? O app vai reabrir.')) return;
+					updateBusy.value = true; updateMsg.value = 'Baixando e instalando…';
+					try {
+						const r = await fetch('http://localhost:8080/api/update/apply', { method: 'POST' });
+						const j = await r.json().catch(() => ({}));
+						if (j.status === 'success') updateMsg.value = 'Atualizado! Reabrindo o app…';
+						else updateMsg.value = 'Falha: ' + (j.message || j.status || 'desconhecido');
+					} catch (e) { updateMsg.value = 'O app está reabrindo…'; }
+					finally { updateBusy.value = false; }
+				};
+
+				const updating = ref(false);
+				const updateChests = async () => {
+					updating.value = true;
+					try {
+						const r = await fetch('http://localhost:8080/api/chests/update', { method: 'POST' });
+						const j = await r.json().catch(() => ({}));
+						if (r.ok) { await loadChests(); alert('Catálogo atualizado: ' + (j.chests || '?') + ' baús.'); }
+						else alert('Falha ao atualizar: ' + (j.message || r.status));
+					} catch (e) { alert('Erro de conexão ao atualizar.'); }
+					finally { updating.value = false; }
+				};
+
+				const navItems = [
+					{ id: 'painel', label: 'Painel', ico: '◈' },
+					{ id: 'chests', label: 'Baús', ico: '✦' },
+					{ id: 'items', label: 'Itens', ico: '⚔' }
+				];
+				const addStage = ref('');
+				const addTime = ref('');
+				const viewTitle = computed(() => (navItems.find(n => n.id === view.value) || {}).label || '');
+				const stageMap = computed(() => { const m = {}; (stagesList.value || []).forEach(s => m[s.key] = s); return m; });
+				const stageHP = (key) => (stageMap.value[key] || {}).totalHP || 0;
+
+				// #1 Loot/hora: taxa total de baú por fase (soma de todos os baús que caem nela)
+				// cruzada com as corridas/hora (3600 / tempo médio).
+				const chestRateByStage = computed(() => {
+					const m = {};
+					(chestData.value.chests || []).forEach(c => (c.stages || []).forEach(s => {
+						m[s.key] = (m[s.key] || 0) + (s.dropRatePercent || 0);
+					}));
+					return m;
+				});
+				const chestsPerHour = (stage) => {
+					const t = stage.avg_time_spent;
+					if (!t || t <= 0) return 0;
+					return (3600 / t) * ((chestRateByStage.value[stage.stage_key] || 0) / 100);
+				};
+				const formatItems = (n) => !n ? '0,0' : n.toLocaleString('pt-BR', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+
+				// #4 Indicador de confiança por nº de corridas reais.
+				const confidence = (runs) => runs >= 10 ? 'alta' : runs >= 3 ? 'media' : runs > 0 ? 'baixa' : 'est';
+				const confLabel = (runs) => ({ alta: 'Confiança alta (10+ corridas)', media: 'Confiança média (3-9)', baixa: 'Confiança baixa (1-2 corridas)', est: 'Estimado' }[confidence(runs)]);
+
+				const fetchStats = async () => {
+					try {
+						const r = await fetch('http://localhost:8080/api/stats');
+						if (!r.ok) return;
+						statsReport.value = await r.json();
+						const stages = statsReport.value.stages;
+						if (stages) {
+							if (stages[1101] && stages[1101].total_runs > 0 && !calibBaseTime.value) {
+								calibBaseTime.value = stages[1101].avg_time_spent.toFixed(1);
+							}
+							if (!calibLimitStage.value) {
+								let maxKey = -1;
+								for (const k in stages) {
+									const key = parseInt(k, 10);
+									if (key !== 1101 && stages[key].total_runs > 0 && key > maxKey) maxKey = key;
+								}
+								if (maxKey !== -1) {
+									calibLimitStage.value = maxKey;
+									if (!calibLimitTime.value) calibLimitTime.value = stages[maxKey].avg_time_spent.toFixed(1);
+								}
+							}
+						}
+					} catch (e) { console.error('Erro ao conectar ao otimizador:', e); }
+				};
+
+				const loadStagesList = async () => {
+					try { const r = await fetch('farm_stages.json'); if (r.ok) stagesList.value = await r.json(); }
+					catch (e) { console.error('Erro ao carregar fases:', e); }
+				};
+
+				const resetHistory = async () => {
+					if (!confirm('Apagar todas as médias acumuladas e o log historico_farm.txt?')) return;
+					try {
+						const r = await fetch('http://localhost:8080/api/stats/reset', { method: 'POST' });
+						if (r.ok) { calibBaseTime.value = ''; calibLimitStage.value = ''; calibLimitTime.value = ''; await fetchStats(); }
+					} catch (e) { console.error('Erro ao resetar:', e); }
+				};
+
+				const submitCalibration = async () => {
+					if (!calibBaseTime.value) { alert('Preencha pelo menos o tempo da fase 1-1.'); return; }
+					try {
+						const reqs = [ fetch('http://localhost:8080/api/stats/add', {
+							method: 'POST', headers: { 'Content-Type': 'application/json' },
+							body: JSON.stringify({ stage_key: 1101, time_spent: calibBaseTime.value })
+						}) ];
+						if (calibLimitStage.value && calibLimitTime.value) {
+							const limitKey = parseInt(calibLimitStage.value, 10);
+							if (isNaN(limitKey)) { alert('Fase limite inválida.'); return; }
+							reqs.push(fetch('http://localhost:8080/api/stats/add', {
+								method: 'POST', headers: { 'Content-Type': 'application/json' },
+								body: JSON.stringify({ stage_key: limitKey, time_spent: calibLimitTime.value })
+							}));
+						}
+						const res = await Promise.all(reqs);
+						if (res.every(x => x.ok)) { await fetchStats(); alert('Modelo calibrado com sucesso!'); }
+						else alert('Erro ao enviar dados de calibração.');
+					} catch (e) { console.error('Erro ao calibrar:', e); alert('Erro de conexão.'); }
+				};
+
+				const addMapTime = async () => {
+					const key = parseInt(addStage.value, 10);
+					if (isNaN(key) || !addTime.value) { alert('Escolha um mapa e informe o tempo.'); return; }
+					try {
+						const r = await fetch('http://localhost:8080/api/stats/add', {
+							method: 'POST', headers: { 'Content-Type': 'application/json' },
+							body: JSON.stringify({ stage_key: key, time_spent: addTime.value })
+						});
+						if (r.ok) { addTime.value = ''; addStage.value = ''; await fetchStats(); }
+						else alert('Erro ao adicionar o tempo do mapa.');
+					} catch (e) { console.error('Erro ao adicionar mapa:', e); alert('Erro de conexão.'); }
+				};
+
+				const resetStage = async (key) => {
+					if (!confirm('Apagar as corridas registradas de ' + formatStageName(key) + '?')) return;
+					try {
+						const r = await fetch('http://localhost:8080/api/stats/reset', {
+							method: 'POST', headers: { 'Content-Type': 'application/json' },
+							body: JSON.stringify({ stage_key: key })
+						});
+						if (r.ok) await fetchStats();
+					} catch (e) { console.error('Erro ao limpar fase:', e); }
+				};
+
+				const formatDifficulty = (diff) => ({ NORMAL:'Normal', NIGHTMARE:'Nightmare', HELL:'Hell', TORMENT:'Torment' }[diff] || diff);
+				const formatStageName = (key) => {
+					if (!key) return '---';
+					const s = key.toString();
+					if (s.length < 4) return `Fase ${key}`;
+					const diff = { '1':'Normal','2':'Nightmare','3':'Hell','4':'Torment' }[s[0]] || `Dif.${s[0]}`;
+					return `${diff} ${s[1]}-${parseInt(s.slice(2),10)}`;
+				};
+
+				// Ordenação: corridas reais sempre antes das estimadas; dentro de cada
+				// grupo, ordena pela coluna escolhida (clicável no cabeçalho).
+				const setSort = (key) => {
+					if (sortKey.value === key) { sortDir.value = sortDir.value === 'desc' ? 'asc' : 'desc'; }
+					else { sortKey.value = key; sortDir.value = key === 'stage_key' ? 'asc' : 'desc'; }
+				};
+				const sortArrow = (key) => sortKey.value === key ? (sortDir.value === 'desc' ? ' ▾' : ' ▴') : '';
+				const sortedStages = computed(() => {
+					const arr = Object.values(statsReport.value.stages || {});
+					const dir = sortDir.value === 'desc' ? -1 : 1;
+					const k = sortKey.value;
+					return arr.sort((a, b) => {
+						const av = a[k] || 0, bv = b[k] || 0;
+						if (av === bv) return a.stage_key - b.stage_key;     // desempate estável
+						return av < bv ? dir : -dir;
+					});
+				});
+
+				const bestGoldData = computed(() => statsReport.value.stages ? statsReport.value.stages[statsReport.value.best_gold_stage] : null);
+				const bestXpData = computed(() => statsReport.value.stages ? statsReport.value.stages[statsReport.value.best_xp_stage] : null);
+				const totalRunsAllStages = computed(() => Object.values(statsReport.value.stages || {}).reduce((s, x) => s + x.total_runs, 0));
+
+				const formatNumber = (n) => (n === undefined || n === null) ? '0' : Math.round(n).toLocaleString('pt-BR');
+				// Sempre mostra os segundos; acima de 1 min, mostra também minutos+segundos.
+				const formatTime = (seconds) => {
+					if (!seconds || seconds <= 0) return '---';
+					const total = Math.round(seconds);
+					if (total < 60) return `${total}s`;
+					const m = Math.floor(total / 60), s = total % 60;
+					return `${m}m ${s.toString().padStart(2, '0')}s (${total}s)`;
+				};
+
+				// Na abertura: pega a versão atual e avisa (sem ruído) só se houver update real.
+				const initUpdate = async () => {
+					try {
+						const r = await fetch('http://localhost:8080/api/update/check');
+						const j = await r.json();
+						updateInfo.value = j; appVersion.value = j.current || '';
+						if (j.enabled && j.has_update) updateMsg.value = 'Nova versão ' + j.latest + ' disponível!';
+					} catch (e) { /* offline: ignora */ }
+				};
+
+				onMounted(() => { loadStagesList(); loadChests(); fetchStats(); initUpdate(); setInterval(fetchStats, 2000); });
+
+				return {
+					statsReport, stagesList, calibBaseTime, calibLimitStage, calibLimitTime,
+					view, navItems, viewTitle, sortKey, sortDir,
+					sortedStages, bestGoldData, bestXpData, totalRunsAllStages,
+					addStage, addTime, addMapTime, resetStage,
+					fetchStats, resetHistory, submitCalibration, setSort, sortArrow,
+					stageHP, chestRateByStage, chestsPerHour, formatItems,
+					confidence, confLabel,
+					formatDifficulty, formatStageName, formatNumber, formatTime,
+					chestData, chestType, chestStage, chestTypes, chestStageOptions, filteredChests,
+					fmtPct, typeLabel, typeClass, gradeLabel, activeLoot, lootCount, updating, updateChests,
+					selectedHeroes, allHeroes, toggleHero, chestHeroes,
+					selectedChest, itemSearch, selectedItem, itemList, filteredItems, itemChests, itemName, itemIcon,
+					appVersion, updateInfo, updateBusy, updateMsg, checkUpdate, applyUpdate
+				};
+			}
+		}).mount('#app');
+	</script>
+</body>
+</html>
