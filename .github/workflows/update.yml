@@ -16,7 +16,7 @@ jobs:
                 curl -L -o dd.zip https://github.com/SteamRE/DepotDownloader/releases/latest/download/DepotDownloader-linux-x64.zip
                 unzip -o dd.zip -d dd
                 chmod +x dd/DepotDownloader
-                DepotDownloader -app 3678970 -depot 3678971 -username anonymous -dir game
+                ./dd/DepotDownloader -app 3678970 -depot 3678971 -username anonymous -dir game
                 ls -R game | head -30
             - run: python tools/extract.py web --game game
             - uses: actions/setup-go@v5
