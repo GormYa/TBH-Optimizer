@@ -31,6 +31,23 @@
 			</div>
 		</div>
 
+		<div class="console-panel" v-if="consoleOpen">
+			<div class="console-head">
+				<span class="console-title"><icon name="info" :size="14"></icon> Console do otimizador</span>
+				<div class="console-actions">
+					<button class="cbtn" @click="clearConsole">Limpar</button>
+					<button class="cbtn" @click="toggleConsole" title="Fechar"><icon name="x" :size="14"></icon></button>
+				</div>
+			</div>
+			<div class="console-body">
+				<div v-if="!consoleLogs.length" class="console-empty">Aguardando eventos… conclua uma fase no jogo pra ver o registro (ou o motivo do descarte) aqui.</div>
+				<div v-for="l in consoleLogs" :key="l.seq" class="console-line" :class="'cl-' + l.kind">
+					<span class="cl-time">{{ l.time }}</span>
+					<span class="cl-msg">{{ l.msg }}</span>
+				</div>
+			</div>
+		</div>
+
 		<div class="toasts">
 			<div v-for="t in toasts" :key="t.id" class="toast" :class="'toast-' + t.type">
 				<span class="toast-ico"><icon :name="t.type === 'success' ? 'check' : (t.type === 'error' ? 'x' : 'info')" :size="14"></icon></span>
@@ -81,6 +98,7 @@
 				</div>
 				<div class="ver-msg" v-if="updateMsg">{{ updateMsg }}</div>
 				<div class="ver-game" v-if="chestData.gameVersion">Dados do jogo: <b>v{{ chestData.gameVersion }}</b></div>
+					<button class="btn-console" :class="{ on: consoleOpen }" @click="toggleConsole" title="Mostra ao vivo o que o monitor está fazendo"><icon name="info" :size="13"></icon> Console {{ consoleOpen ? '▾' : '▸' }}</button>
 					<button class="btn-quit" @click="quitApp" title="Encerra o monitoramento e fecha o programa"><icon name="x" :size="13"></icon> Encerrar otimizador</button>
 			</div>
 		</aside>
@@ -455,7 +473,7 @@
 	</div>
 
 	<script>
-		const { createApp, ref, computed, onMounted } = Vue;
+		const { createApp, ref, computed, onMounted, nextTick } = Vue;
 
 		// Ícones SVG inline (estilo Lucide) — offline, herdam a cor via currentColor.
 		const ICONS = {
@@ -648,6 +666,25 @@
 
 				const updating = ref(false);
 				// --- toasts: feedback no front (o exe não tem mais console) ---
+				// Console do app: mostra ao vivo o que o monitor faz (corrida registrada/
+				// descartada e o porquê). Polling incremental por Seq.
+				const consoleLogs = ref([]);
+				const consoleOpen = ref(false);
+				let logSeq = 0;
+				const pollLogs = async () => {
+					try {
+						const r = await fetch('http://localhost:8080/api/logs?since=' + logSeq);
+						const j = await r.json();
+						if (j.logs && j.logs.length) {
+							j.logs.forEach(l => { consoleLogs.value.push(l); if (l.seq > logSeq) logSeq = l.seq; });
+							if (consoleLogs.value.length > 400) consoleLogs.value = consoleLogs.value.slice(-400);
+							if (consoleOpen.value) nextTick(() => { const el = document.querySelector('.console-body'); if (el) el.scrollTop = el.scrollHeight; });
+						}
+					} catch (e) { /* offline */ }
+				};
+				const clearConsole = () => { consoleLogs.value = []; };
+				const toggleConsole = () => { consoleOpen.value = !consoleOpen.value; if (consoleOpen.value) nextTick(() => { const el = document.querySelector('.console-body'); if (el) el.scrollTop = el.scrollHeight; }); };
+
 				const quitDone = ref(false);
 				const quitApp = async () => {
 					if (!confirm('Encerrar o otimizador? Ele para de monitorar o save até você abrir de novo.')) return;
@@ -953,7 +990,7 @@
 				// um painel ativo e, na aba nova, cede em vez de rodar um 2º painel.
 				const duplicateTab = ref(false);
 				let dashChannel = null;
-				const startApp = () => { loadStagesList(); loadStageDetails(); loadMonsterSprites(); loadHeroes(); loadChests(); fetchStats(); initUpdate(); watchVersion(); setInterval(fetchStats, 2000); setInterval(watchVersion, 4000); setInterval(pollUpdateAvailability, 10 * 60 * 1000); };
+				const startApp = () => { loadStagesList(); loadStageDetails(); loadMonsterSprites(); loadHeroes(); loadChests(); fetchStats(); initUpdate(); watchVersion(); setInterval(fetchStats, 2000); setInterval(watchVersion, 4000); setInterval(pollUpdateAvailability, 10 * 60 * 1000); pollLogs(); setInterval(pollLogs, 1500); };
 				const useThisTab = () => { duplicateTab.value = false; startApp(); };
 				onMounted(() => {
 					if ('BroadcastChannel' in window) {
@@ -990,7 +1027,8 @@
 					selectedHeroes, allHeroes, toggleHero, chestHeroes,
 					selectedChest, itemSearch, selectedItem, itemList, filteredItems, itemChests, itemName, itemIcon, itemGrade, heroList,
 					appVersion, updateInfo, updateBusy, updateMsg, checkUpdate, applyUpdate, toasts,
-					duplicateTab, useThisTab, quitApp, quitDone
+					duplicateTab, useThisTab, quitApp, quitDone,
+					consoleLogs, consoleOpen, toggleConsole, clearConsole
 				};
 			}
 		});

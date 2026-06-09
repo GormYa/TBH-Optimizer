@@ -57,8 +57,8 @@ func setupWatcher(ctrl *Control) (string, *fsnotify.Watcher, error) {
 		return "", nil, err
 	}
 
-	fmt.Printf("Calibrado! Fase Atual: %d | Ouro Inicial: %d | Heróis Calibrados: %d\n",
-		ctrl.LastCurrentStageKey, ctrl.LastGold, len(ctrl.HeroStates))
+	Logf("info", "Monitoramento iniciado. Fase atual: %s · heróis ativos: %d (nível %d). Conclua uma fase pra ver o registro aqui.",
+		ctrl.stageDisplay(ctrl.LastCurrentStageKey), ctrl.ActiveHeroCount, ctrl.HeroLevel)
 
 	return archivePath, watcher, nil
 }
@@ -109,18 +109,16 @@ func runDebouncedMonitor(events <-chan fsnotify.Event, errs <-chan error, target
 }
 
 func processSaveChange(ctrl *Control) {
-	fmt.Println("Modificação detectada via evento do Sistema Operacional!")
-
 	currentSave, err := loadSaveWithRetry()
 	if err != nil {
-		fmt.Println("Não foi possível ler o arquivo após 5 tentativas:", err)
+		Logf("reject", "Não consegui ler o save (várias tentativas). Tento de novo no próximo evento.")
 		return
 	}
 
-	if currentSave.CommonSaveData.CurrentStageWave != 0 {
+	if currentSave.CommonSaveData.PlayTime == ctrl.LastPlayTime {
 		return
 	}
-	if currentSave.CommonSaveData.PlayTime == ctrl.LastPlayTime {
+	if currentSave.CommonSaveData.CurrentStageWave != 0 {
 		return
 	}
 
@@ -246,28 +244,15 @@ func (ctrl *Control) estimateStageTime(stage int) float64 {
 		return s.AvgTimeSpent
 	}
 
-	info, ok := ctrl.FarmStages[stage]
-	if !ok || info.TotalHP <= 0 {
-		return 0
-	}
+	return 0
+}
 
-	// Modelo tempo = a*HP + b*ondas sobre as fases medidas (o mesmo das projecoes).
-	// O termo b (custo fixo por onda) e essencial: sem ele, uma fase de baixo HP teria
-	// estimativa ~0s e um clear real seria descartado como outlier de tempo inflado.
-	var pts []timePoint
-	for _, st := range ctrl.StageHistory.AllStats() {
-		if st.AvgTimeSpent <= 0 || (st.TotalRuns <= 0 && st.ManualTime <= 0) {
-			continue
-		}
-		if fi, ok := ctrl.FarmStages[st.StageKey]; ok && fi.TotalHP > 0 {
-			pts = append(pts, timePoint{HP: fi.TotalHP, Waves: float64(fi.Waves), Time: st.AvgTimeSpent})
-		}
+// stageDisplay devolve "3-8" (label da fase) ou o numero cru pro console.
+func (ctrl *Control) stageDisplay(stage int) string {
+	if info, ok := ctrl.FarmStages[stage]; ok && info.Label != "" {
+		return info.Label
 	}
-	a, b, ok := fitTimeModel(pts)
-	if !ok {
-		return 0
-	}
-	return estimateTime(a, b, info.TotalHP, float64(info.Waves))
+	return fmt.Sprintf("%d", stage)
 }
 
 func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
@@ -291,18 +276,22 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 	}()
 
 	if !isValidRound(timeSpent, goldGain, xpGain) {
+		Logf("info", "Fase %s: fim de ciclo sem ganho de ouro/xp — ignorado (tela de seleção ou ocioso).", ctrl.stageDisplay(stage))
 		return
 	}
 
 	if stageChanged {
+		Logf("reject", "Fase %s descartada: a fase mudou no meio da janela (auto-avanço ou morte que trocou de mapa). Só conto ciclo estável na mesma fase.", ctrl.stageDisplay(stage))
 		return
 	}
 
 	if !isTimeTrustworthy(timeSpent, estTime, timeOutlierFactor, false) {
+		Logf("reject", "Fase %s descartada: tempo %.0fs muito acima do esperado (~%.0fs). Provável ociosidade/decisão no meio do ciclo.", ctrl.stageDisplay(stage), timeSpent, estTime)
 		return
 	}
 
 	if floor := ctrl.estimateClearGold(stage); floor > 0 && float64(goldGain) < goldFloorFactor*floor {
+		Logf("reject", "Fase %s descartada: ouro %.0f baixo demais para um clear (esperado ~%.0f). Provável morte/clear parcial.", ctrl.stageDisplay(stage), float64(goldGain), floor)
 		return
 	}
 
@@ -329,8 +318,8 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 
 	s, exists := ctrl.StageHistory.Get(stage)
 	if exists {
-		fmt.Printf("Média do Mapa %d -> Corridas: %d | Avg Ouro/h: %.0f | Avg XP/h: %.0f\n",
-			stage, s.TotalRuns, s.AvgGoldPerHour, s.AvgXpPerHour)
+		Logf("run", "Fase %s REGISTRADA: %.0fs · +%.0f ouro · +%.0f xp · total de corridas: %d",
+			ctrl.stageDisplay(stage), timeSpent, float64(goldGain), xpGain, s.TotalRuns)
 	}
 }
 

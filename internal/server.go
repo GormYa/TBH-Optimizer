@@ -169,6 +169,13 @@ func StartWebServer(ctrl *Control, webFiles embed.FS, dataDir string) {
 		fmt.Fprintf(w, `{"version":%q}`, Version)
 	})
 
+	http.HandleFunc("/api/logs", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Set("Content-Type", "application/json")
+		since, _ := strconv.Atoi(r.URL.Query().Get("since"))
+		_ = json.NewEncoder(w).Encode(map[string]any{"logs": LogsSince(since)})
+	})
+
 	http.HandleFunc("/api/quit", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method != http.MethodPost {
 			w.WriteHeader(http.StatusMethodNotAllowed)

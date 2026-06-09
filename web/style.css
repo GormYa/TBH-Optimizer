@@ -308,6 +308,24 @@ tbody tr.seeded { opacity: .82; }
 .quit-card h3 { font-family: var(--font-d); font-weight: 800; font-size: 20px; color: var(--txt); margin: 0 0 8px; }
 .quit-card p { color: var(--txt-dim); font-size: 13.5px; line-height: 1.5; margin: 0; }
 
+/* console do app */
+.btn-console { width: 100%; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 6px; background: var(--panel-2); border: 1px solid var(--line); color: var(--txt-dim); border-radius: 9px; padding: 8px 12px; font-family: var(--font-d); font-weight: 600; font-size: 12.5px; cursor: pointer; }
+.btn-console:hover, .btn-console.on { color: var(--xp); border-color: var(--xp-d); }
+.console-panel { position: fixed; left: 0; right: 0; bottom: 0; z-index: 150; height: 260px; display: flex; flex-direction: column; background: #0a0d13; border-top: 2px solid var(--xp-d); box-shadow: 0 -10px 30px rgba(0,0,0,.5); }
+.console-head { display: flex; align-items: center; justify-content: space-between; padding: 8px 14px; border-bottom: 1px solid var(--line-soft); background: var(--bg-2); }
+.console-title { display: flex; align-items: center; gap: 7px; font-family: var(--font-d); font-weight: 700; font-size: 12.5px; color: var(--xp); text-transform: uppercase; letter-spacing: .5px; }
+.console-actions { display: flex; gap: 8px; }
+.cbtn { background: var(--panel-2); border: 1px solid var(--line); color: var(--txt-dim); border-radius: 7px; padding: 4px 10px; font-size: 12px; cursor: pointer; display: flex; align-items: center; }
+.cbtn:hover { color: var(--txt); border-color: var(--gold); }
+.console-body { flex: 1; overflow-y: auto; padding: 8px 14px; font-family: 'Consolas', 'Courier New', monospace; font-size: 12.5px; line-height: 1.55; }
+.console-empty { color: var(--txt-faint); padding: 16px 0; }
+.console-line { display: flex; gap: 9px; padding: 1px 0; }
+.cl-time { color: var(--txt-faint); flex-shrink: 0; }
+.cl-msg { color: var(--txt-dim); }
+.cl-run .cl-msg { color: var(--ok); }
+.cl-reject .cl-msg { color: #ff8585; }
+.cl-info .cl-msg { color: var(--txt-dim); }
+
 .g-gold { color: var(--gold); }
 .g-xp { color: var(--xp); }
 .g-drop { color: var(--drop); }
