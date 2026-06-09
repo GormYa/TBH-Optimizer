@@ -33,6 +33,16 @@ func expRetention(stageLevel, heroLevel int) float64 {
 }
 
 // runeLevels devolve runeKey -> nivel a partir do save (runas que o jogador tem).
+func ownedPets(save *InnerSaveData) []int {
+	out := make([]int, 0, len(save.PetSaveDatas))
+	for _, p := range save.PetSaveDatas {
+		if p.IsUnlock {
+			out = append(out, p.PetKey)
+		}
+	}
+	return out
+}
+
 func runeLevels(save *InnerSaveData) map[int]int {
 	out := make(map[int]int, len(save.RuneSaveDatas))
 	for _, r := range save.RuneSaveDatas {

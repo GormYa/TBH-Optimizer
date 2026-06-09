@@ -1,0 +1,176 @@
+[
+ {
+  "key": 1001,
+  "name": "Morcego",
+  "desc": "Derrote um morcego",
+  "icon": "pet_sprites/1001.png",
+  "unlock": {
+   "type": "KillMonster",
+   "monsterKey": 10031,
+   "monsterName": "Morcego",
+   "count": 5000,
+   "stages": [
+    "1-3",
+    "1-7",
+    "1-8",
+    "1-9",
+    "2-3"
+   ]
+  },
+  "stats": [
+   {
+    "stat": "DropChanceNormalChestPercent",
+    "value": 100.0
+   },
+   {
+    "stat": "IncreaseExpAmount",
+    "value": 150.0
+   }
+  ]
+ },
+ {
+  "key": 1002,
+  "name": "Vigia",
+  "desc": "Derrote uma mosca gigante",
+  "icon": "pet_sprites/1002.png",
+  "unlock": {
+   "type": "KillMonster",
+   "monsterKey": 20051,
+   "monsterName": "Mosca Gigante",
+   "count": 5000,
+   "stages": [
+    "2-4",
+    "2-5"
+   ]
+  },
+  "stats": [
+   {
+    "stat": "IncreaseGoldAmount",
+    "value": 150.0
+   }
+  ]
+ },
+ {
+  "key": 1003,
+  "name": "Esqueleto Ardente",
+  "desc": "Derrote um espírito de fogo",
+  "icon": "pet_sprites/1003.png",
+  "unlock": {
+   "type": "KillMonster",
+   "monsterKey": 20091,
+   "monsterName": "Elemental de Fogo",
+   "count": 5000,
+   "stages": [
+    "2-8",
+    "2-9"
+   ]
+  },
+  "stats": [
+   {
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   }
+  ]
+ },
+ {
+  "key": 1004,
+  "name": "Golem Azul",
+  "desc": "Derrote um gólem infernal",
+  "icon": "pet_sprites/1004.png",
+  "unlock": {
+   "type": "KillMonster",
+   "monsterKey": 30091,
+   "monsterName": "Golem do Inferno",
+   "count": 5000,
+   "stages": [
+    "3-6"
+   ]
+  },
+  "stats": [
+   {
+    "stat": "DropChanceNormalChestPercent",
+    "value": 150.0
+   }
+  ]
+ },
+ {
+  "key": 1005,
+  "name": "Espírito Sombrio",
+  "desc": "Derrote um fantasma",
+  "icon": "pet_sprites/1005.png",
+  "unlock": {
+   "type": "KillMonster",
+   "monsterKey": 30051,
+   "monsterName": "Fantasma",
+   "count": 5000,
+   "stages": [
+    "3-4",
+    "3-5",
+    "3-8",
+    "3-9"
+   ]
+  },
+  "stats": [
+   {
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 150.0
+   }
+  ]
+ },
+ {
+  "key": 6001,
+  "name": "Espada",
+  "desc": "Adquirir o Pacote Apoiador",
+  "icon": "pet_sprites/6001.png",
+  "unlock": {
+   "type": "DLC",
+   "name": "Pacote Apoiador"
+  },
+  "stats": [
+   {
+    "stat": "IncreaseExpAmount",
+    "value": 150.0
+   }
+  ]
+ },
+ {
+  "key": 6002,
+  "name": "Borboleta",
+  "desc": "Adquirir o Pacote Apoiador",
+  "icon": "pet_sprites/6002.png",
+  "unlock": {
+   "type": "DLC",
+   "name": "Pacote Apoiador"
+  },
+  "stats": [
+   {
+    "stat": "IncreaseGoldAmount",
+    "value": 100.0
+   }
+  ]
+ },
+ {
+  "key": 6003,
+  "name": "Dragão",
+  "desc": "Adquirir o Pacote Apoiador",
+  "icon": "pet_sprites/6003.png",
+  "unlock": {
+   "type": "DLC",
+   "name": "Pacote Apoiador"
+  },
+  "stats": [
+   {
+    "stat": "DropChanceNormalChestPercent",
+    "value": 200.0
+   },
+   {
+    "stat": "IncreaseGoldAmount",
+    "value": 150.0
+   },
+   {
+    "stat": "IncreaseExpAmount",
+    "value": 200.0
+   }
+  ]
+ }
+]

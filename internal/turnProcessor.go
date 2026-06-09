@@ -47,6 +47,8 @@ func setupWatcher(ctrl *Control) (string, *fsnotify.Watcher, error) {
 	ctrl.ActiveHeroes = activeHeroes(currentSave)
 	ctrl.Gold = ctrl.LastGold
 	ctrl.RuneLevels = runeLevels(currentSave)
+	ctrl.OwnedPets = ownedPets(currentSave)
+	ctrl.ActivePet = currentSave.CommonSaveData.ArrangedPetKey
 
 	archivePath := homeDir + `\AppData\LocalLow\TesseractStudio\TaskbarHero\SaveFile_Live.es3`
 	watcher, err := fsnotify.NewWatcher()
@@ -127,6 +129,8 @@ func processSaveChange(ctrl *Control) {
 	}
 	ctrl.Gold = ExtractGold(currentSave.CurrenySaveDatas)
 	ctrl.RuneLevels = runeLevels(currentSave)
+	ctrl.OwnedPets = ownedPets(currentSave)
+	ctrl.ActivePet = currentSave.CommonSaveData.ArrangedPetKey
 	if currentSave.CommonSaveData.CurrentStageWave != 0 {
 		stg := currentSave.CommonSaveData.CurrentStageKey
 		if stg != ctrl.lastMidStage {

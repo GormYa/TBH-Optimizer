@@ -159,5 +159,7 @@ func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
 		ActiveHeroes:  ctrl.ActiveHeroes,
 		Gold:          ctrl.Gold,
 		RuneLevels:    ctrl.RuneLevels,
+		OwnedPets:     ctrl.OwnedPets,
+		ActivePet:     ctrl.ActivePet,
 	}
 }

@@ -7,7 +7,6 @@ import (
 	"io/fs"
 	"net/http"
 	"os"
-	"path/filepath"
 	"strconv"
 	"strings"
 	"time"
@@ -130,14 +129,8 @@ func StartWebServer(ctrl *Control, webFiles embed.FS, dataDir string) {
 			http.Error(w, "Método não permitido", http.StatusMethodNotAllowed)
 			return
 		}
-		n, err := UpdateChestData(dataDir, time.Now().Format("2006-01-02 15:04"))
 		w.Header().Set("Content-Type", "application/json")
-		if err != nil {
-			w.WriteHeader(http.StatusBadGateway)
-			fmt.Fprintf(w, `{"status":"error","message":%q}`, err.Error())
-			return
-		}
-		fmt.Fprintf(w, `{"status":"success","chests":%d}`, n)
+		fmt.Fprint(w, `{"status":"bundled","message":"O catálogo de baús já vem embutido no app (extração local). Ele é atualizado junto com as atualizações do programa."}`)
 	})
 
 	http.HandleFunc("/api/update/check", func(w http.ResponseWriter, r *http.Request) {
@@ -236,19 +229,6 @@ func StartWebServer(ctrl *Control, webFiles embed.FS, dataDir string) {
 	}
 	embedded := http.FileServer(http.FS(webSubFS))
 
-	// chest_drops.json e /sprites/ tem prioridade no disco (dataDir, atualizavel em
-	// runtime); o resto (e o fallback) vem do baseline embarcado.
-	diskOrEmbed := func(w http.ResponseWriter, r *http.Request) {
-		rel := strings.TrimPrefix(r.URL.Path, "/")
-		diskPath := filepath.Join(dataDir, filepath.FromSlash(rel))
-		if fi, statErr := os.Stat(diskPath); statErr == nil && !fi.IsDir() {
-			http.ServeFile(w, r, diskPath)
-			return
-		}
-		embedded.ServeHTTP(w, r)
-	}
-	http.HandleFunc("/chest_drops.json", diskOrEmbed)
-	http.HandleFunc("/sprites/", diskOrEmbed)
 	http.Handle("/", embedded)
 
 	fmt.Println("Servidor HTTP iniciado em http://localhost:8080")

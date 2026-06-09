@@ -26,11 +26,17 @@ type InnerSaveData struct {
 		PlayTime          float64 `json:"playTime"`
 		MaxCompletedStage int     `json:"maxCompletedStage"`
 		ArrangedHeroKey   []int   `json:"arrangedHeroKey"`
+		ArrangedPetKey    int     `json:"ArrangedPetKey"`
 	} `json:"commonSaveData"`
 	CurrenySaveDatas []Currency `json:"currenySaveDatas"`
 	HeroSaveDatas    []Hero     `json:"heroSaveDatas"`
 	ItemSaveDatas    []Item     `json:"itemSaveDatas"`
 	RuneSaveDatas    []RuneSave `json:"RuneSaveData"`
+	PetSaveDatas     []PetSave  `json:"PetSaveData"`
+}
+type PetSave struct {
+	PetKey   int  `json:"PetKey"`
+	IsUnlock bool `json:"IsUnlock"`
 }
 type OuterSave struct {
 	PlayerSaveData struct {
@@ -94,6 +100,8 @@ type Control struct {
 	lastMidStage        int
 	Gold                int
 	RuneLevels          map[int]int
+	OwnedPets           []int
+	ActivePet           int
 }
 type ActiveHero struct {
 	Key   int `json:"key"`
@@ -108,4 +116,6 @@ type AnalyticsReport struct {
 	ActiveHeroes  []ActiveHero        `json:"active_heroes"`
 	Gold          int                 `json:"gold"`
 	RuneLevels    map[int]int         `json:"rune_levels"`
+	OwnedPets     []int               `json:"owned_pets"`
+	ActivePet     int                 `json:"active_pet"`
 }

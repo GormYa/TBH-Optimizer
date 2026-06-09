@@ -120,7 +120,25 @@
 					<div class="crumb">Painel</div>
 					<h2>{{ viewTitle }}</h2>
 				</div>
-				<span class="badge">{{ sortedStages.length }} fase(s)</span>
+				<div class="head-right">
+					<div class="global-search">
+						<span class="gs-ico-search"><icon name="search" :size="16"></icon></span>
+						<input type="text" v-model="globalSearch" @focus="searchActive = true" @blur="searchActive = false" placeholder="Buscar fase, item, baú, runa, pet…">
+						<button v-if="globalSearch" class="gs-clear" @mousedown.prevent="globalSearch = ''"><icon name="x" :size="14"></icon></button>
+						<div class="gs-results" v-if="searchActive && globalSearch.trim().length >= 2" @mousedown.prevent>
+							<div class="gs-group" v-for="g in searchResults" :key="g.cat">
+								<div class="gs-cat">{{ g.cat }}</div>
+								<button class="gs-item" v-for="(it, i) in g.items" :key="i" @click="pickSearch(it)">
+									<span class="gs-ico"><icon :name="it.icon" :size="14"></icon></span>
+									<span class="gs-label">{{ it.label }}</span>
+									<span class="gs-sub">{{ it.sub }}</span>
+								</button>
+							</div>
+							<div class="gs-empty" v-if="!searchResults.length">Nada encontrado para "{{ globalSearch }}".</div>
+						</div>
+					</div>
+					<span class="badge">{{ sortedStages.length }} fase(s)</span>
+				</div>
 			</header>
 
 			<!-- ---------- PAINEL: VISÃO GERAL ---------- -->
@@ -339,6 +357,36 @@
 				</div>
 			</section>
 
+			<!-- ---------- PETS ---------- -->
+			<section v-show="view === 'pets'" class="view">
+				<div v-if="!petsData.length" class="hint">Sem dados de pets ainda.</div>
+				<template v-else>
+					<div class="pet-totals">
+						<div class="pet-totals-head">
+							<h3>Atributos totais dos pets</h3>
+							<span class="pet-totals-note">Os efeitos de todos os pets que você já obteve se aplicam sempre — não precisa estar equipado. Equipar é só o visual.</span>
+						</div>
+						<div class="pet-stats" v-if="petTotals.length">
+							<span class="pet-stat" v-for="(st, i) in petTotals" :key="i">{{ st.label }} <b>{{ st.unit === '%' ? '+' + st.value + '%' : '+' + formatNumber(st.value) }}</b></span>
+						</div>
+						<div v-else class="hint">Você ainda não tem nenhum pet — veja abaixo como conseguir.</div>
+					</div>
+					<div class="pet-grid">
+						<div class="pet-card" v-for="p in petsSorted" :key="p.key" :class="'ps-' + petState(p)">
+							<div class="pet-card-head">
+								<img v-if="p.icon" :src="p.icon" class="pet-ico" loading="lazy" onerror="this.style.visibility='hidden'">
+								<div class="pet-card-name">{{ p.name }}</div>
+								<span class="pet-badge" :class="'pb-' + petState(p)">{{ petState(p) === 'active' ? 'Equipado' : (petState(p) === 'owned' ? 'Você tem' : 'Bloqueado') }}</span>
+							</div>
+							<div class="pet-stats">
+								<span class="pet-stat" v-for="(st, i) in petStatList(p)" :key="i">{{ st.label }} <b>{{ st.unit === '%' ? '+' + st.value + '%' : '+' + formatNumber(st.value) }}</b></span>
+							</div>
+							<div class="pet-unlock" v-if="petState(p) === 'locked'"><icon name="info" :size="13"></icon> {{ petUnlockText(p) }}</div>
+						</div>
+					</div>
+				</template>
+			</section>
+
 			<!-- ---------- BAÚS ---------- -->
 			<section v-show="view === 'chests'" class="view">
 				<!-- DETALHE DE UM BAÚ -->
@@ -354,7 +402,7 @@
 							<h4 class="sec-title">Dropa em {{ (selectedChest.stages || []).length }} fase(s)</h4>
 							<div class="cs-head"><span>Fase</span><span>Taxa de drop</span></div>
 							<div class="cs-row" v-for="s in (selectedChest.stages || [])" :key="s.key">
-								<span class="cs-label">{{ s.label }}</span>
+								<span class="cs-label">{{ formatDifficulty(s.difficulty) }} {{ s.label }}</span>
 								<span class="cs-bar"><i :style="{ width: Math.min(100, s.dropRatePercent) + '%' }"></i></span>
 								<span class="cs-pct">{{ fmtPct(s.dropRatePercent) }}</span>
 							</div>
@@ -392,9 +440,8 @@
 						<div class="chest-tools-right">
 							<select v-model="chestStage" class="fld chest-stage-sel">
 								<option value="">Todas as fases</option>
-								<option v-for="s in chestStageOptions" :key="s" :value="s">Fase {{ s }}</option>
+								<option v-for="s in chestStageOptions" :key="s.val" :value="s.val">{{ s.text }}</option>
 							</select>
-							<button class="btn-update" @click="updateChests" :disabled="updating"><template v-if="updating">Atualizando…</template><template v-else><icon name="refresh" :size="13"></icon> Atualizar dados</template></button>
 						</div>
 					</div>
 					<p class="view-intro">Dados da <a href="https://taskbarhero.wiki" target="_blank" rel="noopener">taskbarhero.wiki</a> · {{ filteredChests.length }} baú(s). Clique num baú para ver fases e tabela de saque.</p>
@@ -430,7 +477,10 @@
 						{{ h.name }}<span v-if="h.dlc" class="dlc-badge">DLC</span>
 					</button>
 				</div>
-				<input type="text" class="fld items-search" v-model="itemSearch" placeholder="Buscar item… (ex.: Espada Longa, Elmo de Madeira)">
+				<div class="chip-row" style="margin-bottom:12px;">
+						<button v-for="c in itemCats" :key="c.v" :class="{ on: itemCatFilter === c.v }" @click="itemCatFilter = c.v">{{ c.label }}</button>
+					</div>
+					<input type="text" class="fld items-search" v-model="itemSearch" placeholder="Buscar item… (ex.: Espada Longa, Pedra da Alma)">
 				<div class="items-layout">
 					<div class="group-list">
 						<button v-for="it in filteredItems" :key="it.id" :class="{ on: selectedItem === it.id }" @click="selectedItem = it.id">
@@ -462,7 +512,7 @@
 									<span class="rev-pct g-gold">{{ fmtPct(r.perItem) }}</span>
 								</div>
 								<div class="rev-stages">
-									<span class="rev-stage" v-for="s in (r.chest.stages || [])" :key="s.key">{{ s.label }} · {{ fmtPct(s.dropRatePercent) }}</span>
+									<span class="rev-stage" v-for="s in (r.chest.stages || [])" :key="s.key">{{ formatDifficulty(s.difficulty) }} {{ s.label }} · {{ fmtPct(s.dropRatePercent) }}</span>
 								</div>
 							</div>
 						</template>
@@ -558,6 +608,8 @@
 			coins: '<circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/>',
 			zap: '<path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/>',
 			clock: '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+			paw: '<circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/>',
+			search: '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
 			'arrow-left': '<path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>'
 		};
 		const Icon = {
@@ -589,24 +641,30 @@
 					try { const r = await fetch('chest_drops.json'); if (r.ok) chestData.value = await r.json(); }
 					catch (e) { console.error('Erro ao carregar baús:', e); }
 				};
+				const DIFF_RANK = { NORMAL: 0, NIGHTMARE: 1, HELL: 2, TORMENT: 3 };
 				const chestStageOptions = computed(() => {
-					const set = new Set();
-					(chestData.value.chests || []).forEach(c => (c.stages || []).forEach(s => s.label && set.add(s.label)));
-					return Array.from(set).sort((a, b) => {
-						const pa = a.split('-').map(Number), pb = b.split('-').map(Number);
-						return (pa[0] - pb[0]) || (pa[1] - pb[1]);
+					const m = new Map();
+					(chestData.value.chests || []).forEach(c => (c.stages || []).forEach(s => {
+						if (!s.label) return;
+						const val = (s.difficulty || '') + '|' + s.label;
+						if (!m.has(val)) m.set(val, { val, diff: s.difficulty, label: s.label, text: formatDifficulty(s.difficulty) + ' ' + s.label });
+					}));
+					return Array.from(m.values()).sort((a, b) => {
+						const da = DIFF_RANK[a.diff] ?? 9, db = DIFF_RANK[b.diff] ?? 9;
+						const pa = a.label.split('-').map(Number), pb = b.label.split('-').map(Number);
+						return da - db || (pa[0] - pb[0]) || (pa[1] - pb[1]);
 					});
 				});
 				const filteredChests = computed(() => {
 					// Só baús que realmente dropam em alguma fase (esconde variantes vazias).
 					let list = (chestData.value.chests || []).filter(c => (c.stages || []).length > 0);
 					if (chestType.value) list = list.filter(c => c.type === chestType.value);
-					if (chestStage.value) list = list.filter(c => (c.stages || []).some(s => s.label === chestStage.value));
+					if (chestStage.value) list = list.filter(c => (c.stages || []).some(s => ((s.difficulty || '') + '|' + s.label) === chestStage.value));
 					return list;
 				});
-				const typeLabel = (t) => ({ 'Common': 'Comum', 'Stage Boss': 'Chefe de Fase', 'Act Boss': 'Chefe de Ato' }[t] || t);
-				const gradeLabel = (g) => ({ COMMON:'Comum', UNCOMMON:'Incomum', RARE:'Raro', EPIC:'Épico', LEGENDARY:'Lendário', MYTHIC:'Mítico', IMMORTAL:'Imortal' }[g] || (g || '').toLowerCase());
-				const typeClass = (t) => ({ 'Common': 't-common', 'Stage Boss': 't-boss', 'Act Boss': 't-act' }[t] || '');
+				const typeLabel = (t) => ({ 'Common': 'Comum', 'Stage Boss': 'Chefe de Fase', 'Act Boss': 'Chefe de Ato', 'Soul Stone': 'Pedra da Alma' }[t] || t);
+				const gradeLabel = (g) => ({ COMMON:'Comum', UNCOMMON:'Incomum', RARE:'Raro', EPIC:'Épico', LEGENDARY:'Lendário', MYTHIC:'Mítico', IMMORTAL:'Imortal', ARCANA:'Arcano', BEYOND:'Além', CELESTIAL:'Celestial' }[g] || (g || '').toLowerCase());
+				const typeClass = (t) => ({ 'Common': 't-common', 'Stage Boss': 't-boss', 'Act Boss': 't-act', 'Soul Stone': 't-soul' }[t] || '');
 				const fmtPct = (x) => (x >= 100 ? '100%' : (x || 0).toFixed(1) + '%');
 				const selectedHeroes = ref([]);
 				const allHeroes = computed(() => chestData.value.heroes || {});
@@ -636,8 +694,11 @@
 				const itemName = (id) => (itemInfo(id) && itemInfo(id).name) || ('#' + id);
 				const itemIcon = (id) => (itemInfo(id) && itemInfo(id).icon) || '';
 				const itemGrade = (id) => (itemInfo(id) && itemInfo(id).grade) || '';
+				const itemCat = (id) => (itemInfo(id) && itemInfo(id).cat) || 'equip';
+				const itemCatFilter = ref('');
+				const itemCats = [{ v: '', label: 'Todos' }, { v: 'equip', label: 'Equipamentos' }, { v: 'material', label: 'Materiais' }];
 				// ordem das raridades pra desempatar itens de mesmo nome (ex.: Amuleto de Esmeralda)
-				const gradeRank = (g) => ({ COMMON:0, UNCOMMON:1, RARE:2, EPIC:3, LEGENDARY:4, MYTHIC:5, IMMORTAL:6 }[g] ?? 9);
+				const gradeRank = (g) => ({ COMMON:0, UNCOMMON:1, RARE:2, EPIC:3, LEGENDARY:4, MYTHIC:5, IMMORTAL:6, ARCANA:7, BEYOND:8, CELESTIAL:9 }[g] ?? 99);
 				const heroList = computed(() => Object.entries(chestData.value.heroes || {})
 					.map(([key, v]) => ({ key, name: v.name, dlc: v.dlc })));
 				const itemIndex = computed(() => {
@@ -652,11 +713,12 @@
 					return idx;
 				});
 				const itemList = computed(() => Object.keys(itemIndex.value)
-					.map(id => ({ id, name: itemName(id), grade: itemGrade(id) }))
+					.map(id => ({ id, name: itemName(id), grade: itemGrade(id), cat: itemCat(id) }))
 					.sort((a, b) => a.name.localeCompare(b.name) || gradeRank(a.grade) - gradeRank(b.grade)));
 				const filteredItems = computed(() => {
 					const q = itemSearch.value.trim().toLowerCase();
-					return q ? itemList.value.filter(it => it.name.toLowerCase().includes(q)) : itemList.value;
+					let list = itemCatFilter.value ? itemList.value.filter(it => it.cat === itemCatFilter.value) : itemList.value;
+					return q ? list.filter(it => it.name.toLowerCase().includes(q)) : list;
 				});
 				// um item pode estar em vários grupos do mesmo baú -> soma a chance por baú.
 				const itemChests = (id) => {
@@ -783,6 +845,7 @@
 					{ id: 'painel', label: 'Painel', icon: 'dashboard' },
 					{ id: 'fases', label: 'Fases', icon: 'shield' },
 					{ id: 'runas', label: 'Runas', icon: 'sparkles' },
+					{ id: 'pets', label: 'Pets', icon: 'paw' },
 					{ id: 'chests', label: 'Baús', icon: 'package' },
 					{ id: 'items', label: 'Itens', icon: 'swords' }
 				];
@@ -842,6 +905,28 @@
 					try { const r = await fetch('runes.json'); if (r.ok) runesData.value = await r.json(); }
 					catch (e) { /* sem runes.json */ }
 				};
+				const petsData = ref([]);
+				const loadPets = async () => {
+					try { const r = await fetch('pets.json'); if (r.ok) petsData.value = await r.json(); }
+					catch (e) { /* sem pets.json */ }
+				};
+				const ownedPetSet = computed(() => new Set(statsReport.value.owned_pets || []));
+				const activePetKey = computed(() => statsReport.value.active_pet || 0);
+				const petState = (pet) => pet.key === activePetKey.value ? 'active' : (ownedPetSet.value.has(pet.key) ? 'owned' : 'locked');
+				// % de pet também vem em décimos (×10), igual runa
+				const petStatList = (pet) => (pet.stats || []).map(st => ({ label: statLabel(st.stat), unit: statUnit(st.stat), value: statUnit(st.stat) === '%' ? st.value / 10 : st.value }));
+				const petsSorted = computed(() => { const rank = { active: 0, owned: 1, locked: 2 }; return petsData.value.slice().sort((a, b) => rank[petState(a)] - rank[petState(b)] || a.key - b.key); });
+				const activePet = computed(() => petsData.value.find(p => p.key === activePetKey.value) || null);
+				// soma dos atributos de TODOS os pets possuídos (todos aplicam, equipado ou não)
+				const petTotals = computed(() => {
+					const t = {};
+					petsData.value.forEach(p => {
+						if (!(ownedPetSet.value.has(p.key) || p.key === activePetKey.value)) return;
+						(p.stats || []).forEach(st => { t[st.stat] = (t[st.stat] || 0) + st.value; });
+					});
+					return Object.entries(t).map(([stat, raw]) => ({ stat, label: statLabel(stat), unit: statUnit(stat), value: statUnit(stat) === '%' ? raw / 10 : raw })).sort((a, b) => a.label.localeCompare(b.label));
+				});
+				const petUnlockText = (pet) => { const u = pet.unlock || {}; if (u.type === 'DLC') return 'Pacote Apoiador (DLC)'; if (u.type === 'KillMonster') { const st = (u.stages || []).length ? ' · fases: ' + u.stages.join(', ') : ''; return 'Derrote ' + formatNumber(u.count) + '× ' + (u.monsterName || 'monstro') + st; } return ''; };
 				const playerGold = computed(() => statsReport.value.gold || 0);
 				const ownedRuneLevels = computed(() => statsReport.value.rune_levels || {});
 				const runeLevel = (key) => ownedRuneLevels.value[key] || 0;
@@ -997,6 +1082,31 @@
 				// Aba "Fases": navega entre estágios sem modal. fasesStage = estágio em foco.
 				const fasesStage = ref(null);
 				const openStageTab = (key) => { if (stageDetails.value[key]) { fasesStage.value = key; view.value = 'fases'; } };
+				// ----- busca global (fases, itens, baús, runas, pets) -----
+				const globalSearch = ref('');
+				const searchActive = ref(false);
+				const searchResults = computed(() => {
+					const q = globalSearch.value.trim().toLowerCase();
+					if (q.length < 2) return [];
+					const groups = [], CAP = 6;
+					const fa = [];
+					stagesList.value.forEach(st => { const name = formatDifficulty(st.difficulty) + ' ' + st.label; if (name.toLowerCase().includes(q)) fa.push({ label: name, sub: 'Fase', icon: 'shield', act: () => openStageTab(st.key) }); });
+					if (fa.length) groups.push({ cat: 'Fases', items: fa.slice(0, CAP) });
+					const ru = [];
+					Object.values(runesData.value).forEach(r => { if ((r.name || '').toLowerCase().includes(q)) ru.push({ label: r.name, sub: 'Runa', icon: 'sparkles', act: () => { view.value = 'runas'; selectRune(r.key); } }); });
+					if (ru.length) groups.push({ cat: 'Runas', items: ru.slice(0, CAP) });
+					const pe = [];
+					petsData.value.forEach(pt => { if ((pt.name || '').toLowerCase().includes(q)) pe.push({ label: pt.name, sub: 'Pet', icon: 'paw', act: () => { view.value = 'pets'; } }); });
+					if (pe.length) groups.push({ cat: 'Pets', items: pe.slice(0, CAP) });
+					const im = [];
+					itemList.value.forEach(it => { if (it.name.toLowerCase().includes(q)) im.push({ label: it.name, sub: gradeLabel(it.grade), icon: 'swords', act: () => { itemSearch.value = ''; itemCatFilter.value = ''; selectedItem.value = it.id; view.value = 'items'; } }); });
+					if (im.length) groups.push({ cat: 'Itens', items: im.slice(0, 8) });
+					const ch = [];
+					(chestData.value.chests || []).forEach(c => { if ((c.name || '').toLowerCase().includes(q)) ch.push({ label: c.name, sub: typeLabel(c.type), icon: 'package', act: () => { selectedChest.value = c; chestType.value = ''; chestStage.value = ''; view.value = 'chests'; } }); });
+					if (ch.length) groups.push({ cat: 'Baús', items: ch.slice(0, CAP) });
+					return groups;
+				});
+				const pickSearch = (it) => { it.act(); globalSearch.value = ''; searchActive.value = false; };
 				const stageDetail = computed(() => stageDetails.value[fasesStage.value] || null);
 				const stageSummary = computed(() => stageMap.value[fasesStage.value] || null);
 				// Lista ordenada de fases que têm detalhe (pra dropdown + prev/next).
@@ -1217,7 +1327,7 @@
 				// um painel ativo e, na aba nova, cede em vez de rodar um 2º painel.
 				const duplicateTab = ref(false);
 				let dashChannel = null;
-				const startApp = () => { loadStagesList(); loadStageDetails(); loadMonsterSprites(); loadHeroes(); loadRunes(); loadChests(); fetchStats(); initUpdate(); watchVersion(); setInterval(fetchStats, 2000); setInterval(watchVersion, 4000); setInterval(pollUpdateAvailability, 10 * 60 * 1000); pollLogs(); setInterval(pollLogs, 1500); };
+				const startApp = () => { loadStagesList(); loadStageDetails(); loadMonsterSprites(); loadHeroes(); loadRunes(); loadPets(); loadChests(); fetchStats(); initUpdate(); watchVersion(); setInterval(fetchStats, 2000); setInterval(watchVersion, 4000); setInterval(pollUpdateAvailability, 10 * 60 * 1000); pollLogs(); setInterval(pollLogs, 1500); };
 				const useThisTab = () => { duplicateTab.value = false; startApp(); };
 				onMounted(() => {
 					if ('BroadcastChannel' in window) {
@@ -1240,7 +1350,7 @@
 
 				return {
 					statsReport, stagesList, calibBaseTime, calibLimitStage, calibLimitTime,
-					view, navItems, viewTitle, sortKey, sortDir,
+					view, navItems, viewTitle, sortKey, sortDir, globalSearch, searchActive, searchResults, pickSearch,
 					sortedStages, bestGoldData, bestXpData, totalRunsAllStages,
 					addStage, addTime, addMapTime, resetStage,
 					fetchStats, resetHistory, submitCalibration, setSort, rankBy, sortArrow,
@@ -1250,9 +1360,10 @@
 					runesData, playerGold, runeLevel, attributeTotals, attrGroups, attrTab, attrGroupOrder, ATTR_GROUP_LABEL, nextLevelCost, isUnlockable, unlockHint, runeState,
 					runeNX, runeNY, runeCanvasW, runeCanvasH, runeLineList, runeListSorted, selectedRune, fmtRuneVal, statLabel, statUnit,
 					runeZoom, runePanX, runePanY, onRuneWheel, onRuneDown, onRuneMove, onRuneUp, selectRune, zoomRunes, fitRunes,
+					petsData, petsSorted, activePet, activePetKey, petState, petStatList, petUnlockText, ownedPetSet, petTotals,
 					confidence, confLabel,
 					formatDifficulty, formatStageName, formatNumber, formatTime,
-					chestData, chestType, chestStage, chestTypes, chestStageOptions, filteredChests,
+					chestData, chestType, chestStage, chestTypes, chestStageOptions, filteredChests, itemCatFilter, itemCats,
 					fmtPct, typeLabel, typeClass, gradeLabel, activeLoot, lootCount, updating, updateChests,
 					selectedHeroes, allHeroes, toggleHero, chestHeroes,
 					selectedChest, itemSearch, selectedItem, itemList, filteredItems, itemChests, itemName, itemIcon, itemGrade, heroList,
