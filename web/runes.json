@@ -1,0 +1,6657 @@
+{
+ "1": {
+  "key": 1,
+  "name": "Runa de Guerra",
+  "icon": "rune_sprites/1.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [
+   10,
+   20
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 100,
+    "stat": "AllHeroAttackDamage",
+    "value": 1.0
+   }
+  ],
+  "x": 0.0,
+  "y": -44.1
+ },
+ "10": {
+  "key": 10,
+  "name": "Runa da Riqueza",
+  "icon": "rune_sprites/10.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   11,
+   101,
+   201
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 200,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 10.0
+   },
+   {
+    "level": 2,
+    "cost": 300,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 10.0
+   },
+   {
+    "level": 3,
+    "cost": 500,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 10.0
+   }
+  ],
+  "x": 0.0,
+  "y": 27.9
+ },
+ "20": {
+  "key": 20,
+  "name": "Runa do Crescimento",
+  "icon": "rune_sprites/20.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   21,
+   301,
+   401
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 200,
+    "stat": "AdditionalExpStageBoss",
+    "value": 10.0
+   },
+   {
+    "level": 2,
+    "cost": 300,
+    "stat": "AdditionalExpStageBoss",
+    "value": 10.0
+   },
+   {
+    "level": 3,
+    "cost": 500,
+    "stat": "AdditionalExpStageBoss",
+    "value": 10.0
+   }
+  ],
+  "x": 0.0,
+  "y": -116.1
+ },
+ "11": {
+  "key": 11,
+  "name": "Runa de Expansão",
+  "icon": "rune_sprites/11.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   12,
+   11001,
+   11002
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 300,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 350,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 400,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   }
+  ],
+  "x": 0.0,
+  "y": 99.9
+ },
+ "12": {
+  "key": 12,
+  "name": "Runa de Expansão",
+  "icon": "rune_sprites/12.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   13
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 1200,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 1500,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   }
+  ],
+  "x": 0.0,
+  "y": 171.9
+ },
+ "13": {
+  "key": 13,
+  "name": "Runa de Expansão",
+  "icon": "rune_sprites/13.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   14,
+   13001,
+   13002
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 5000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 6000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 7000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   }
+  ],
+  "x": 0.0,
+  "y": 243.9
+ },
+ "14": {
+  "key": 14,
+  "name": "Runa de Expansão",
+  "icon": "rune_sprites/14.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   15
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 20000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 25000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 30000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   }
+  ],
+  "x": 0.0,
+  "y": 315.9
+ },
+ "15": {
+  "key": 15,
+  "name": "Runa de Expansão",
+  "icon": "rune_sprites/15.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   16,
+   15001,
+   15002
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 100000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 110000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 120000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   }
+  ],
+  "x": 0.0,
+  "y": 387.9
+ },
+ "16": {
+  "key": 16,
+  "name": "Runa de Expansão",
+  "icon": "rune_sprites/16.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   1801,
+   1901,
+   16001
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 300000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 330000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 360000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   }
+  ],
+  "x": 0.0,
+  "y": 459.9
+ },
+ "1801": {
+  "key": 1801,
+  "name": "Runa de Expansão",
+  "icon": "rune_sprites/1801.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   1802
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1000000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 1200000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 1400000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   }
+  ],
+  "x": -72.0,
+  "y": 459.9
+ },
+ "1802": {
+  "key": 1802,
+  "name": "Runa de Expansão",
+  "icon": "rune_sprites/1802.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   1803,
+   180201
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1300000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 1560000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 1820000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   }
+  ],
+  "x": -144.0,
+  "y": 459.9
+ },
+ "1803": {
+  "key": 1803,
+  "name": "Runa de Expansão",
+  "icon": "rune_sprites/1803.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   1804,
+   180301
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1690000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 2030000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 2370000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   }
+  ],
+  "x": -216.0,
+  "y": 459.9
+ },
+ "1804": {
+  "key": 1804,
+  "name": "Runa de Expansão",
+  "icon": "rune_sprites/1804.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   1805,
+   180401
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 2200000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 2640000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 3080000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   }
+  ],
+  "x": -288.0,
+  "y": 459.9
+ },
+ "1805": {
+  "key": 1805,
+  "name": "Runa de Expansão",
+  "icon": "rune_sprites/1805.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   1806,
+   180501
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 2860000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 3430000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 4000000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   }
+  ],
+  "x": -360.0,
+  "y": 459.9
+ },
+ "1806": {
+  "key": 1806,
+  "name": "Runa de Expansão",
+  "icon": "rune_sprites/1806.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   1807,
+   180601
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 3720000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 4460000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 5200000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   }
+  ],
+  "x": -432.0,
+  "y": 459.9
+ },
+ "1807": {
+  "key": 1807,
+  "name": "Runa de Expansão",
+  "icon": "rune_sprites/1807.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   1808,
+   180701
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 4840000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 5800000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 6760000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   }
+  ],
+  "x": -504.0,
+  "y": 459.9
+ },
+ "1808": {
+  "key": 1808,
+  "name": "Runa de Expansão",
+  "icon": "rune_sprites/1808.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 6290000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 7540000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 8790000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   }
+  ],
+  "x": -576.0,
+  "y": 459.9
+ },
+ "1901": {
+  "key": 1901,
+  "name": "Runa de Expansão",
+  "icon": "rune_sprites/1901.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   1902
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1000000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 1200000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 1400000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   }
+  ],
+  "x": 72.0,
+  "y": 459.9
+ },
+ "1902": {
+  "key": 1902,
+  "name": "Runa de Expansão",
+  "icon": "rune_sprites/1902.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   1903,
+   1902001
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1300000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 1560000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 1820000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   }
+  ],
+  "x": 144.0,
+  "y": 459.9
+ },
+ "1903": {
+  "key": 1903,
+  "name": "Runa de Expansão",
+  "icon": "rune_sprites/1903.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   1904,
+   190301,
+   190302
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1690000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 2030000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 2370000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   }
+  ],
+  "x": 216.0,
+  "y": 459.9
+ },
+ "1904": {
+  "key": 1904,
+  "name": "Runa de Expansão",
+  "icon": "rune_sprites/1904.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   1905,
+   190401
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 2200000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 2640000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 3080000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   }
+  ],
+  "x": 288.0,
+  "y": 459.9
+ },
+ "1905": {
+  "key": 1905,
+  "name": "Runa de Expansão",
+  "icon": "rune_sprites/1905.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   1906,
+   190501,
+   190502
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 2860000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 3430000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 4000000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   }
+  ],
+  "x": 360.0,
+  "y": 459.9
+ },
+ "1906": {
+  "key": 1906,
+  "name": "Runa de Expansão",
+  "icon": "rune_sprites/1906.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   1907
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 3720000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 4460000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 5200000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   }
+  ],
+  "x": 432.0,
+  "y": 459.9
+ },
+ "1907": {
+  "key": 1907,
+  "name": "Runa de Expansão",
+  "icon": "rune_sprites/1907.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   1908
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 4840000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 5800000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 6760000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   }
+  ],
+  "x": 504.0,
+  "y": 459.9
+ },
+ "1908": {
+  "key": 1908,
+  "name": "Runa de Expansão",
+  "icon": "rune_sprites/1908.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 6290000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 7540000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 8790000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   }
+  ],
+  "x": 576.0,
+  "y": 459.9
+ },
+ "11001": {
+  "key": 11001,
+  "name": "Runa do Repouso",
+  "icon": "rune_sprites/11001.png",
+  "maxLevel": 1,
+  "prevReq": "1",
+  "next": [
+   110011,
+   110012
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 100,
+    "stat": "UnlockOfflineReward",
+    "value": 1.0
+   }
+  ],
+  "x": -72.0,
+  "y": 99.9
+ },
+ "110011": {
+  "key": 110011,
+  "name": "Runa do Acúmulo",
+  "icon": "rune_sprites/110011.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 500,
+    "stat": "OfflineRewardGoldPercent",
+    "value": 100.0
+   },
+   {
+    "level": 2,
+    "cost": 1000,
+    "stat": "OfflineRewardGoldPercent",
+    "value": 100.0
+   },
+   {
+    "level": 3,
+    "cost": 1500,
+    "stat": "OfflineRewardGoldPercent",
+    "value": 100.0
+   }
+  ],
+  "x": -144.0,
+  "y": 99.9
+ },
+ "110012": {
+  "key": 110012,
+  "name": "Runa de Treinamento",
+  "icon": "rune_sprites/110012.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 500,
+    "stat": "OfflineRewardExpPercent",
+    "value": 100.0
+   },
+   {
+    "level": 2,
+    "cost": 1000,
+    "stat": "OfflineRewardExpPercent",
+    "value": 100.0
+   },
+   {
+    "level": 3,
+    "cost": 1500,
+    "stat": "OfflineRewardExpPercent",
+    "value": 100.0
+   }
+  ],
+  "x": -144.0,
+  "y": 171.9
+ },
+ "11002": {
+  "key": 11002,
+  "name": "Runa de Contenção",
+  "icon": "rune_sprites/11002.png",
+  "maxLevel": 1,
+  "prevReq": "1",
+  "next": [
+   11003
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1000,
+    "stat": "MaxAmountNormalChest",
+    "value": 1.0
+   }
+  ],
+  "x": 72.0,
+  "y": 99.9
+ },
+ "11003": {
+  "key": 11003,
+  "name": "Runa do Cofre",
+  "icon": "rune_sprites/11003.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [
+   11004
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 30000,
+    "stat": "MaxAmountStageBossChest",
+    "value": 1.0
+   }
+  ],
+  "x": 144.0,
+  "y": 171.9
+ },
+ "11004": {
+  "key": 11004,
+  "name": "Runa do Infinito",
+  "icon": "rune_sprites/11004.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 50000,
+    "stat": "MaxAmountActBossChest",
+    "value": 1.0
+   }
+  ],
+  "x": 216.0,
+  "y": 243.9
+ },
+ "13001": {
+  "key": 13001,
+  "name": "Runa de Armazenamento",
+  "icon": "rune_sprites/13001.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 10000,
+    "stat": "UnlockStashPageCount",
+    "value": 1.0
+   }
+  ],
+  "x": -72.0,
+  "y": 243.9
+ },
+ "13002": {
+  "key": 13002,
+  "name": "Runa do Mecanismo",
+  "icon": "rune_sprites/13002.png",
+  "maxLevel": 1,
+  "prevReq": "1",
+  "next": [
+   130021
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 10000,
+    "stat": "UnlockAutoOpenNormalChest",
+    "value": 300.0
+   }
+  ],
+  "x": 72.0,
+  "y": 243.9
+ },
+ "130021": {
+  "key": 130021,
+  "name": "Runa de Lubrificação",
+  "icon": "rune_sprites/130021.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 5000,
+    "stat": "ReduceAutoOpenNormalChestTime",
+    "value": 3.0
+   },
+   {
+    "level": 2,
+    "cost": 10000,
+    "stat": "ReduceAutoOpenNormalChestTime",
+    "value": 3.0
+   },
+   {
+    "level": 3,
+    "cost": 15000,
+    "stat": "ReduceAutoOpenNormalChestTime",
+    "value": 3.0
+   }
+  ],
+  "x": 144.0,
+  "y": 315.9
+ },
+ "15001": {
+  "key": 15001,
+  "name": "Runa do Mecanismo",
+  "icon": "rune_sprites/15001.png",
+  "maxLevel": 1,
+  "prevReq": "1",
+  "next": [
+   150011
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 200000,
+    "stat": "UnlockAutoOpenStageBossChest",
+    "value": 600.0
+   }
+  ],
+  "x": 72.0,
+  "y": 387.9
+ },
+ "150011": {
+  "key": 150011,
+  "name": "Runa de Lubrificação",
+  "icon": "rune_sprites/150011.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 100000,
+    "stat": "ReduceAutoOpenStageBossChestTime",
+    "value": 5.0
+   },
+   {
+    "level": 2,
+    "cost": 150000,
+    "stat": "ReduceAutoOpenStageBossChestTime",
+    "value": 5.0
+   },
+   {
+    "level": 3,
+    "cost": 200000,
+    "stat": "ReduceAutoOpenStageBossChestTime",
+    "value": 5.0
+   }
+  ],
+  "x": 144.0,
+  "y": 387.9
+ },
+ "15002": {
+  "key": 15002,
+  "name": "Runa do Acúmulo",
+  "icon": "rune_sprites/15002.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   150021
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 50000,
+    "stat": "OfflineRewardGoldPercent",
+    "value": 100.0
+   },
+   {
+    "level": 2,
+    "cost": 75000,
+    "stat": "OfflineRewardGoldPercent",
+    "value": 100.0
+   },
+   {
+    "level": 3,
+    "cost": 100000,
+    "stat": "OfflineRewardGoldPercent",
+    "value": 100.0
+   }
+  ],
+  "x": -72.0,
+  "y": 387.9
+ },
+ "150021": {
+  "key": 150021,
+  "name": "Runa de Treinamento",
+  "icon": "rune_sprites/150021.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 75000,
+    "stat": "OfflineRewardExpPercent",
+    "value": 100.0
+   },
+   {
+    "level": 2,
+    "cost": 100000,
+    "stat": "OfflineRewardExpPercent",
+    "value": 100.0
+   },
+   {
+    "level": 3,
+    "cost": 125000,
+    "stat": "OfflineRewardExpPercent",
+    "value": 100.0
+   }
+  ],
+  "x": -144.0,
+  "y": 387.9
+ },
+ "16001": {
+  "key": 16001,
+  "name": "Runa de Armazenamento",
+  "icon": "rune_sprites/16001.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [
+   160011
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 3000000,
+    "stat": "UnlockStashPageCount",
+    "value": 1.0
+   }
+  ],
+  "x": 0.0,
+  "y": 531.9
+ },
+ "160011": {
+  "key": 160011,
+  "name": "Runa de Armazenamento",
+  "icon": "rune_sprites/160011.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 50000000,
+    "stat": "UnlockStashPageCount",
+    "value": 1.0
+   }
+  ],
+  "x": 72.0,
+  "y": 531.9
+ },
+ "180201": {
+  "key": 180201,
+  "name": "Runa do Acúmulo",
+  "icon": "rune_sprites/180201.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1000000,
+    "stat": "OfflineRewardGoldPercent",
+    "value": 100.0
+   },
+   {
+    "level": 2,
+    "cost": 1200000,
+    "stat": "OfflineRewardGoldPercent",
+    "value": 100.0
+   },
+   {
+    "level": 3,
+    "cost": 1400000,
+    "stat": "OfflineRewardGoldPercent",
+    "value": 100.0
+   },
+   {
+    "level": 4,
+    "cost": 1600000,
+    "stat": "OfflineRewardGoldPercent",
+    "value": 100.0
+   },
+   {
+    "level": 5,
+    "cost": 1800000,
+    "stat": "OfflineRewardGoldPercent",
+    "value": 100.0
+   }
+  ],
+  "x": -144.0,
+  "y": 531.9
+ },
+ "180301": {
+  "key": 180301,
+  "name": "Runa de Treinamento",
+  "icon": "rune_sprites/180301.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1000000,
+    "stat": "OfflineRewardExpPercent",
+    "value": 100.0
+   },
+   {
+    "level": 2,
+    "cost": 1200000,
+    "stat": "OfflineRewardExpPercent",
+    "value": 100.0
+   },
+   {
+    "level": 3,
+    "cost": 1400000,
+    "stat": "OfflineRewardExpPercent",
+    "value": 100.0
+   },
+   {
+    "level": 4,
+    "cost": 1600000,
+    "stat": "OfflineRewardExpPercent",
+    "value": 100.0
+   },
+   {
+    "level": 5,
+    "cost": 1800000,
+    "stat": "OfflineRewardExpPercent",
+    "value": 100.0
+   }
+  ],
+  "x": -216.0,
+  "y": 531.9
+ },
+ "180401": {
+  "key": 180401,
+  "name": "Runa do Acúmulo",
+  "icon": "rune_sprites/180401.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 5000000,
+    "stat": "OfflineRewardGoldPercent",
+    "value": 100.0
+   },
+   {
+    "level": 2,
+    "cost": 5500000,
+    "stat": "OfflineRewardGoldPercent",
+    "value": 100.0
+   },
+   {
+    "level": 3,
+    "cost": 6000000,
+    "stat": "OfflineRewardGoldPercent",
+    "value": 100.0
+   },
+   {
+    "level": 4,
+    "cost": 6500000,
+    "stat": "OfflineRewardGoldPercent",
+    "value": 100.0
+   },
+   {
+    "level": 5,
+    "cost": 7000000,
+    "stat": "OfflineRewardGoldPercent",
+    "value": 100.0
+   }
+  ],
+  "x": -288.0,
+  "y": 387.9
+ },
+ "180501": {
+  "key": 180501,
+  "name": "Runa de Treinamento",
+  "icon": "rune_sprites/180501.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 5000000,
+    "stat": "OfflineRewardExpPercent",
+    "value": 100.0
+   },
+   {
+    "level": 2,
+    "cost": 5500000,
+    "stat": "OfflineRewardExpPercent",
+    "value": 100.0
+   },
+   {
+    "level": 3,
+    "cost": 6000000,
+    "stat": "OfflineRewardExpPercent",
+    "value": 100.0
+   },
+   {
+    "level": 4,
+    "cost": 6500000,
+    "stat": "OfflineRewardExpPercent",
+    "value": 100.0
+   },
+   {
+    "level": 5,
+    "cost": 7000000,
+    "stat": "OfflineRewardExpPercent",
+    "value": 100.0
+   }
+  ],
+  "x": -360.0,
+  "y": 387.9
+ },
+ "180601": {
+  "key": 180601,
+  "name": "Runa do Acúmulo",
+  "icon": "rune_sprites/180601.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 10000000,
+    "stat": "OfflineRewardGoldPercent",
+    "value": 100.0
+   },
+   {
+    "level": 2,
+    "cost": 11000000,
+    "stat": "OfflineRewardGoldPercent",
+    "value": 100.0
+   },
+   {
+    "level": 3,
+    "cost": 12000000,
+    "stat": "OfflineRewardGoldPercent",
+    "value": 100.0
+   },
+   {
+    "level": 4,
+    "cost": 13000000,
+    "stat": "OfflineRewardGoldPercent",
+    "value": 100.0
+   },
+   {
+    "level": 5,
+    "cost": 14000000,
+    "stat": "OfflineRewardGoldPercent",
+    "value": 100.0
+   }
+  ],
+  "x": -432.0,
+  "y": 531.9
+ },
+ "180701": {
+  "key": 180701,
+  "name": "Runa de Treinamento",
+  "icon": "rune_sprites/180701.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 10000000,
+    "stat": "OfflineRewardExpPercent",
+    "value": 100.0
+   },
+   {
+    "level": 2,
+    "cost": 11000000,
+    "stat": "OfflineRewardExpPercent",
+    "value": 100.0
+   },
+   {
+    "level": 3,
+    "cost": 12000000,
+    "stat": "OfflineRewardExpPercent",
+    "value": 100.0
+   },
+   {
+    "level": 4,
+    "cost": 13000000,
+    "stat": "OfflineRewardExpPercent",
+    "value": 100.0
+   },
+   {
+    "level": 5,
+    "cost": 14000000,
+    "stat": "OfflineRewardExpPercent",
+    "value": 100.0
+   }
+  ],
+  "x": -504.0,
+  "y": 531.9
+ },
+ "1902001": {
+  "key": 1902001,
+  "name": "Runa do Mecanismo",
+  "icon": "rune_sprites/1902001.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [
+   19020011
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1000000,
+    "stat": "UnlockAutoOpenActBossChest",
+    "value": 60.0
+   }
+  ],
+  "x": 144.0,
+  "y": 531.9
+ },
+ "19020011": {
+  "key": 19020011,
+  "name": "Runa de Lubrificação",
+  "icon": "rune_sprites/19020011.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 500000,
+    "stat": "ReduceAutoOpenActBossChestTime",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 700000,
+    "stat": "ReduceAutoOpenActBossChestTime",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 900000,
+    "stat": "ReduceAutoOpenActBossChestTime",
+    "value": 1.0
+   }
+  ],
+  "x": 216.0,
+  "y": 531.9
+ },
+ "190301": {
+  "key": 190301,
+  "name": "Runa de Lubrificação",
+  "icon": "rune_sprites/190301.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1000000,
+    "stat": "ReduceAutoOpenNormalChestTime",
+    "value": 2.0
+   },
+   {
+    "level": 2,
+    "cost": 1200000,
+    "stat": "ReduceAutoOpenNormalChestTime",
+    "value": 2.0
+   },
+   {
+    "level": 3,
+    "cost": 1400000,
+    "stat": "ReduceAutoOpenNormalChestTime",
+    "value": 2.0
+   },
+   {
+    "level": 4,
+    "cost": 1600000,
+    "stat": "ReduceAutoOpenNormalChestTime",
+    "value": 2.0
+   },
+   {
+    "level": 5,
+    "cost": 1800000,
+    "stat": "ReduceAutoOpenNormalChestTime",
+    "value": 2.0
+   }
+  ],
+  "x": 216.0,
+  "y": 387.9
+ },
+ "190302": {
+  "key": 190302,
+  "name": "Runa de Lubrificação",
+  "icon": "rune_sprites/190302.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1000000,
+    "stat": "ReduceAutoOpenStageBossChestTime",
+    "value": 4.0
+   },
+   {
+    "level": 2,
+    "cost": 1200000,
+    "stat": "ReduceAutoOpenStageBossChestTime",
+    "value": 4.0
+   },
+   {
+    "level": 3,
+    "cost": 1400000,
+    "stat": "ReduceAutoOpenStageBossChestTime",
+    "value": 4.0
+   },
+   {
+    "level": 4,
+    "cost": 1600000,
+    "stat": "ReduceAutoOpenStageBossChestTime",
+    "value": 4.0
+   },
+   {
+    "level": 5,
+    "cost": 1800000,
+    "stat": "ReduceAutoOpenStageBossChestTime",
+    "value": 4.0
+   }
+  ],
+  "x": 288.0,
+  "y": 387.9
+ },
+ "190401": {
+  "key": 190401,
+  "name": "Runa de Lubrificação",
+  "icon": "rune_sprites/190401.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1500000,
+    "stat": "ReduceAutoOpenActBossChestTime",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 2000000,
+    "stat": "ReduceAutoOpenActBossChestTime",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 2500000,
+    "stat": "ReduceAutoOpenActBossChestTime",
+    "value": 1.0
+   }
+  ],
+  "x": 288.0,
+  "y": 531.9
+ },
+ "190501": {
+  "key": 190501,
+  "name": "Runa de Lubrificação",
+  "icon": "rune_sprites/190501.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   1905011
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 5000000,
+    "stat": "ReduceAutoOpenNormalChestTime",
+    "value": 2.0
+   },
+   {
+    "level": 2,
+    "cost": 5500000,
+    "stat": "ReduceAutoOpenNormalChestTime",
+    "value": 2.0
+   },
+   {
+    "level": 3,
+    "cost": 6000000,
+    "stat": "ReduceAutoOpenNormalChestTime",
+    "value": 2.0
+   },
+   {
+    "level": 4,
+    "cost": 6500000,
+    "stat": "ReduceAutoOpenNormalChestTime",
+    "value": 2.0
+   },
+   {
+    "level": 5,
+    "cost": 7000000,
+    "stat": "ReduceAutoOpenNormalChestTime",
+    "value": 2.0
+   }
+  ],
+  "x": 360.0,
+  "y": 387.9
+ },
+ "1905011": {
+  "key": 1905011,
+  "name": "Runa de Lubrificação",
+  "icon": "rune_sprites/1905011.png",
+  "maxLevel": 5,
+  "prevReq": "5",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 25000000,
+    "stat": "ReduceAutoOpenNormalChestTime",
+    "value": 2.0
+   },
+   {
+    "level": 2,
+    "cost": 27500000,
+    "stat": "ReduceAutoOpenNormalChestTime",
+    "value": 2.0
+   },
+   {
+    "level": 3,
+    "cost": 30000000,
+    "stat": "ReduceAutoOpenNormalChestTime",
+    "value": 2.0
+   },
+   {
+    "level": 4,
+    "cost": 32500000,
+    "stat": "ReduceAutoOpenNormalChestTime",
+    "value": 2.0
+   },
+   {
+    "level": 5,
+    "cost": 35000000,
+    "stat": "ReduceAutoOpenNormalChestTime",
+    "value": 2.0
+   }
+  ],
+  "x": 360.0,
+  "y": 315.9
+ },
+ "190502": {
+  "key": 190502,
+  "name": "Runa de Lubrificação",
+  "icon": "rune_sprites/190502.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   1905021
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 5000000,
+    "stat": "ReduceAutoOpenStageBossChestTime",
+    "value": 4.0
+   },
+   {
+    "level": 2,
+    "cost": 5500000,
+    "stat": "ReduceAutoOpenStageBossChestTime",
+    "value": 4.0
+   },
+   {
+    "level": 3,
+    "cost": 6000000,
+    "stat": "ReduceAutoOpenStageBossChestTime",
+    "value": 4.0
+   },
+   {
+    "level": 4,
+    "cost": 6500000,
+    "stat": "ReduceAutoOpenStageBossChestTime",
+    "value": 4.0
+   },
+   {
+    "level": 5,
+    "cost": 7000000,
+    "stat": "ReduceAutoOpenStageBossChestTime",
+    "value": 4.0
+   }
+  ],
+  "x": 432.0,
+  "y": 387.9
+ },
+ "1905021": {
+  "key": 1905021,
+  "name": "Runa de Lubrificação",
+  "icon": "rune_sprites/1905021.png",
+  "maxLevel": 5,
+  "prevReq": "5",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 25000000,
+    "stat": "ReduceAutoOpenStageBossChestTime",
+    "value": 4.0
+   },
+   {
+    "level": 2,
+    "cost": 27500000,
+    "stat": "ReduceAutoOpenStageBossChestTime",
+    "value": 4.0
+   },
+   {
+    "level": 3,
+    "cost": 30000000,
+    "stat": "ReduceAutoOpenStageBossChestTime",
+    "value": 4.0
+   },
+   {
+    "level": 4,
+    "cost": 32500000,
+    "stat": "ReduceAutoOpenStageBossChestTime",
+    "value": 4.0
+   },
+   {
+    "level": 5,
+    "cost": 35000000,
+    "stat": "ReduceAutoOpenStageBossChestTime",
+    "value": 4.0
+   }
+  ],
+  "x": 432.0,
+  "y": 315.9
+ },
+ "21": {
+  "key": 21,
+  "name": "Runa de Comando",
+  "icon": "rune_sprites/21.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [
+   22,
+   25
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1000,
+    "stat": "UnlockArrangeSlotCount",
+    "value": 1.0
+   }
+  ],
+  "x": 0.0,
+  "y": -188.1
+ },
+ "22": {
+  "key": 22,
+  "name": "Runa de Expansão",
+  "icon": "rune_sprites/22.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   23
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 500,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 1000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 1500,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   }
+  ],
+  "x": -72.0,
+  "y": -260.1
+ },
+ "23": {
+  "key": 23,
+  "name": "Runa de Expansão",
+  "icon": "rune_sprites/23.png",
+  "maxLevel": 5,
+  "prevReq": "1",
+  "next": [
+   24
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 5000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 7000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 10000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 4,
+    "cost": 15000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 5,
+    "cost": 20000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   }
+  ],
+  "x": -72.0,
+  "y": -332.1
+ },
+ "24": {
+  "key": 24,
+  "name": "Runa de Comando",
+  "icon": "rune_sprites/24.png",
+  "maxLevel": 1,
+  "prevReq": "1",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 150000,
+    "stat": "UnlockArrangeSlotCount",
+    "value": 1.0
+   }
+  ],
+  "x": -72.0,
+  "y": -404.1
+ },
+ "25": {
+  "key": 25,
+  "name": "Runa da Riqueza",
+  "icon": "rune_sprites/25.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   26
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 500,
+    "stat": "IncreaseGoldAmount",
+    "value": 50.0
+   },
+   {
+    "level": 2,
+    "cost": 1000,
+    "stat": "IncreaseGoldAmount",
+    "value": 50.0
+   },
+   {
+    "level": 3,
+    "cost": 1500,
+    "stat": "IncreaseGoldAmount",
+    "value": 50.0
+   }
+  ],
+  "x": 72.0,
+  "y": -260.1
+ },
+ "26": {
+  "key": 26,
+  "name": "Runa do Crescimento",
+  "icon": "rune_sprites/26.png",
+  "maxLevel": 3,
+  "prevReq": "1",
+  "next": [
+   27
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 5000,
+    "stat": "IncreaseExpAmount",
+    "value": 50.0
+   },
+   {
+    "level": 2,
+    "cost": 7000,
+    "stat": "IncreaseExpAmount",
+    "value": 50.0
+   },
+   {
+    "level": 3,
+    "cost": 10000,
+    "stat": "IncreaseExpAmount",
+    "value": 50.0
+   }
+  ],
+  "x": 72.0,
+  "y": -332.1
+ },
+ "27": {
+  "key": 27,
+  "name": "Runa do Despertar",
+  "icon": "rune_sprites/27.png",
+  "maxLevel": 1,
+  "prevReq": "1",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 50000,
+    "stat": "UnlockSkillSlotCount",
+    "value": 1.0
+   }
+  ],
+  "x": 72.0,
+  "y": -404.1
+ },
+ "101": {
+  "key": 101,
+  "name": "Runa de Exploração",
+  "icon": "rune_sprites/101.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   102
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 500,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 2,
+    "cost": 500,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 3,
+    "cost": 500,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 100.0
+   }
+  ],
+  "x": 72.0,
+  "y": 27.9
+ },
+ "102": {
+  "key": 102,
+  "name": "Runa da Conquista",
+  "icon": "rune_sprites/102.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   103,
+   1021
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 200.0
+   },
+   {
+    "level": 2,
+    "cost": 1100,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 200.0
+   },
+   {
+    "level": 3,
+    "cost": 1200,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 200.0
+   }
+  ],
+  "x": 144.0,
+  "y": 27.9
+ },
+ "103": {
+  "key": 103,
+  "name": "Runa de Exploração",
+  "icon": "rune_sprites/103.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   104,
+   1031
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 3000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 70.0
+   },
+   {
+    "level": 2,
+    "cost": 3300,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 70.0
+   },
+   {
+    "level": 3,
+    "cost": 3600,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 70.0
+   },
+   {
+    "level": 4,
+    "cost": 3900,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 70.0
+   },
+   {
+    "level": 5,
+    "cost": 4200,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 70.0
+   }
+  ],
+  "x": 216.0,
+  "y": 27.9
+ },
+ "104": {
+  "key": 104,
+  "name": "Runa da Conquista",
+  "icon": "rune_sprites/104.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   105
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 8000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 150.0
+   },
+   {
+    "level": 2,
+    "cost": 8500,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 150.0
+   },
+   {
+    "level": 3,
+    "cost": 9000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 150.0
+   },
+   {
+    "level": 4,
+    "cost": 9500,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 150.0
+   },
+   {
+    "level": 5,
+    "cost": 10000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 150.0
+   }
+  ],
+  "x": 288.0,
+  "y": 27.9
+ },
+ "105": {
+  "key": 105,
+  "name": "Runa de Exploração",
+  "icon": "rune_sprites/105.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   106,
+   1051
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 30000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 70.0
+   },
+   {
+    "level": 2,
+    "cost": 33000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 70.0
+   },
+   {
+    "level": 3,
+    "cost": 36000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 70.0
+   },
+   {
+    "level": 4,
+    "cost": 39000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 70.0
+   },
+   {
+    "level": 5,
+    "cost": 42000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 70.0
+   }
+  ],
+  "x": 360.0,
+  "y": 27.9
+ },
+ "106": {
+  "key": 106,
+  "name": "Runa da Conquista",
+  "icon": "rune_sprites/106.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   107,
+   1061
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 45000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 150.0
+   },
+   {
+    "level": 2,
+    "cost": 48000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 150.0
+   },
+   {
+    "level": 3,
+    "cost": 51000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 150.0
+   },
+   {
+    "level": 4,
+    "cost": 54000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 150.0
+   },
+   {
+    "level": 5,
+    "cost": 57000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 150.0
+   }
+  ],
+  "x": 360.0,
+  "y": 99.9
+ },
+ "107": {
+  "key": 107,
+  "name": "Runa de Exploração",
+  "icon": "rune_sprites/107.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   108,
+   1071,
+   1072
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 60000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 2,
+    "cost": 65000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 3,
+    "cost": 70000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 4,
+    "cost": 75000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 5,
+    "cost": 80000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   }
+  ],
+  "x": 360.0,
+  "y": 171.9
+ },
+ "108": {
+  "key": 108,
+  "name": "Runa da Conquista",
+  "icon": "rune_sprites/108.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   109
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 150000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 2,
+    "cost": 160000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 3,
+    "cost": 170000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 4,
+    "cost": 180000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 5,
+    "cost": 190000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   }
+  ],
+  "x": 432.0,
+  "y": 171.9
+ },
+ "109": {
+  "key": 109,
+  "name": "Runa de Exploração",
+  "icon": "rune_sprites/109.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   110,
+   1091
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 150000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 2,
+    "cost": 170000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 3,
+    "cost": 190000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 4,
+    "cost": 210000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 5,
+    "cost": 230000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   }
+  ],
+  "x": 504.0,
+  "y": 171.9
+ },
+ "110": {
+  "key": 110,
+  "name": "Runa da Conquista",
+  "icon": "rune_sprites/110.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   111,
+   1101,
+   1102
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 250000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 2,
+    "cost": 450000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 3,
+    "cost": 650000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 4,
+    "cost": 850000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 5,
+    "cost": 1050000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   }
+  ],
+  "x": 576.0,
+  "y": 171.9
+ },
+ "111": {
+  "key": 111,
+  "name": "Runa de Exploração",
+  "icon": "rune_sprites/111.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   112,
+   1111
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 500000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 2,
+    "cost": 550000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 3,
+    "cost": 600000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 4,
+    "cost": 650000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 5,
+    "cost": 700000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   }
+  ],
+  "x": 576.0,
+  "y": 243.9
+ },
+ "112": {
+  "key": 112,
+  "name": "Runa da Conquista",
+  "icon": "rune_sprites/112.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   113,
+   1121
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 700000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 2,
+    "cost": 750000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 3,
+    "cost": 800000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 4,
+    "cost": 850000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 5,
+    "cost": 900000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   }
+  ],
+  "x": 648.0,
+  "y": 243.9
+ },
+ "113": {
+  "key": 113,
+  "name": "Runa de Exploração",
+  "icon": "rune_sprites/113.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   114,
+   1131,
+   1132
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 900000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 2,
+    "cost": 990000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 3,
+    "cost": 1080000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 4,
+    "cost": 1170000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 5,
+    "cost": 1260000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   }
+  ],
+  "x": 720.0,
+  "y": 243.9
+ },
+ "114": {
+  "key": 114,
+  "name": "Runa da Conquista",
+  "icon": "rune_sprites/114.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   115,
+   1141,
+   1142
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1300000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 2,
+    "cost": 1400000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 3,
+    "cost": 1500000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 4,
+    "cost": 1600000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 5,
+    "cost": 1700000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   }
+  ],
+  "x": 720.0,
+  "y": 315.9
+ },
+ "115": {
+  "key": 115,
+  "name": "Runa de Exploração",
+  "icon": "rune_sprites/115.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   116
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1950000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 2,
+    "cost": 2100000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 3,
+    "cost": 2250000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 4,
+    "cost": 2400000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 5,
+    "cost": 2550000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   }
+  ],
+  "x": 792.0,
+  "y": 315.9
+ },
+ "116": {
+  "key": 116,
+  "name": "Runa da Conquista",
+  "icon": "rune_sprites/116.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   117,
+   1161
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 2930000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 2,
+    "cost": 3150000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 3,
+    "cost": 3380000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 4,
+    "cost": 3600000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 5,
+    "cost": 3830000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   }
+  ],
+  "x": 864.0,
+  "y": 315.9
+ },
+ "117": {
+  "key": 117,
+  "name": "Runa de Exploração",
+  "icon": "rune_sprites/117.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   118,
+   1171,
+   1172
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 4400000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 2,
+    "cost": 4730000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 3,
+    "cost": 5070000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 4,
+    "cost": 5400000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 5,
+    "cost": 5750000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   }
+  ],
+  "x": 864.0,
+  "y": 387.9
+ },
+ "118": {
+  "key": 118,
+  "name": "Runa da Conquista",
+  "icon": "rune_sprites/118.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   119,
+   1181,
+   1182
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 6600000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 2,
+    "cost": 7100000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 3,
+    "cost": 7610000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 4,
+    "cost": 8100000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 5,
+    "cost": 8630000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   }
+  ],
+  "x": 936.0,
+  "y": 387.9
+ },
+ "119": {
+  "key": 119,
+  "name": "Runa de Exploração",
+  "icon": "rune_sprites/119.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   120,
+   1191
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 9900000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 2,
+    "cost": 10650000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 3,
+    "cost": 11420000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 4,
+    "cost": 12150000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 5,
+    "cost": 12950000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   }
+  ],
+  "x": 1008.0,
+  "y": 387.9
+ },
+ "120": {
+  "key": 120,
+  "name": "Runa da Conquista",
+  "icon": "rune_sprites/120.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   121,
+   1201,
+   1202,
+   1203
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 12870000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 2,
+    "cost": 15980000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 3,
+    "cost": 17130000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 4,
+    "cost": 18230000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 5,
+    "cost": 19430000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   }
+  ],
+  "x": 1080.0,
+  "y": 387.9
+ },
+ "121": {
+  "key": 121,
+  "name": "Runa de Exploração",
+  "icon": "rune_sprites/121.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   122
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 19310000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 2,
+    "cost": 23970000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 3,
+    "cost": 25700000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 4,
+    "cost": 27350000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 5,
+    "cost": 29150000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   }
+  ],
+  "x": 1080.0,
+  "y": 459.9
+ },
+ "122": {
+  "key": 122,
+  "name": "Runa da Conquista",
+  "icon": "rune_sprites/122.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   123,
+   1221,
+   1222
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 28970000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 2,
+    "cost": 35960000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 3,
+    "cost": 38550000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 4,
+    "cost": 41030000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 5,
+    "cost": 43730000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   }
+  ],
+  "x": 1152.0,
+  "y": 459.9
+ },
+ "123": {
+  "key": 123,
+  "name": "Runa de Exploração",
+  "icon": "rune_sprites/123.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   124
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 43460000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 2,
+    "cost": 53940000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 3,
+    "cost": 57830000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 4,
+    "cost": 61550000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 5,
+    "cost": 65600000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   }
+  ],
+  "x": 1224.0,
+  "y": 459.9
+ },
+ "124": {
+  "key": 124,
+  "name": "Runa da Conquista",
+  "icon": "rune_sprites/124.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   125,
+   1241
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 65190000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 2,
+    "cost": 80910000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 3,
+    "cost": 86750000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 4,
+    "cost": 92330000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 5,
+    "cost": 98400000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   }
+  ],
+  "x": 1296.0,
+  "y": 459.9
+ },
+ "125": {
+  "key": 125,
+  "name": "Runa de Exploração",
+  "icon": "rune_sprites/125.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   126,
+   1251,
+   1252
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 97790000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 2,
+    "cost": 121370000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 3,
+    "cost": 130130000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 4,
+    "cost": 138500000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 5,
+    "cost": 147600000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   }
+  ],
+  "x": 1368.0,
+  "y": 459.9
+ },
+ "126": {
+  "key": 126,
+  "name": "Runa da Conquista",
+  "icon": "rune_sprites/126.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   127,
+   1261,
+   1262
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 146690000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 2,
+    "cost": 182060000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 3,
+    "cost": 195200000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 4,
+    "cost": 207750000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 5,
+    "cost": 221400000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   }
+  ],
+  "x": 1368.0,
+  "y": 531.9
+ },
+ "127": {
+  "key": 127,
+  "name": "Runa de Exploração",
+  "icon": "rune_sprites/127.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   128
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 220040000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 2,
+    "cost": 273090000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 3,
+    "cost": 292800000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 4,
+    "cost": 311630000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   },
+   {
+    "level": 5,
+    "cost": 332100000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 50.0
+   }
+  ],
+  "x": 1440.0,
+  "y": 531.9
+ },
+ "128": {
+  "key": 128,
+  "name": "Runa da Conquista",
+  "icon": "rune_sprites/128.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   1281,
+   1282
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 330060000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 2,
+    "cost": 409640000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 3,
+    "cost": 439200000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 4,
+    "cost": 467450000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   },
+   {
+    "level": 5,
+    "cost": 498150000,
+    "stat": "DropChanceStageBossChestPercent",
+    "value": 100.0
+   }
+  ],
+  "x": 1512.0,
+  "y": 531.9
+ },
+ "1021": {
+  "key": 1021,
+  "name": "Runa de Abertura",
+  "icon": "rune_sprites/1021.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 500,
+    "stat": "OpenOneTypeChestAllAtOnce",
+    "value": 1.0
+   }
+  ],
+  "x": 144.0,
+  "y": -44.1
+ },
+ "1031": {
+  "key": 1031,
+  "name": "Runa de Contenção",
+  "icon": "rune_sprites/1031.png",
+  "maxLevel": 1,
+  "prevReq": "1",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 20000,
+    "stat": "MaxAmountNormalChest",
+    "value": 1.0
+   }
+  ],
+  "x": 216.0,
+  "y": 99.9
+ },
+ "1051": {
+  "key": 1051,
+  "name": "Runa de Expansão",
+  "icon": "rune_sprites/1051.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   1052,
+   1053,
+   1055,
+   1056
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 30000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 33000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 36000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 4,
+    "cost": 39000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 5,
+    "cost": 42000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   }
+  ],
+  "x": 432.0,
+  "y": 27.9
+ },
+ "1052": {
+  "key": 1052,
+  "name": "Runa de Contenção",
+  "icon": "rune_sprites/1052.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [
+   1054
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 50000,
+    "stat": "MaxAmountNormalChest",
+    "value": 1.0
+   }
+  ],
+  "x": 504.0,
+  "y": 27.9
+ },
+ "1053": {
+  "key": 1053,
+  "name": "Runa de Exploração",
+  "icon": "rune_sprites/1053.png",
+  "maxLevel": 3,
+  "prevReq": "5",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 40000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 70.0
+   },
+   {
+    "level": 2,
+    "cost": 45000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 70.0
+   },
+   {
+    "level": 3,
+    "cost": 50000,
+    "stat": "DropChanceNormalChestPercent",
+    "value": 70.0
+   }
+  ],
+  "x": 432.0,
+  "y": 99.9
+ },
+ "1054": {
+  "key": 1054,
+  "name": "Runa de Expansão",
+  "icon": "rune_sprites/1054.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 100000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 110000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 120000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 4,
+    "cost": 130000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   },
+   {
+    "level": 5,
+    "cost": 140000,
+    "stat": "MaxInventorySlot",
+    "value": 1.0
+   }
+  ],
+  "x": 504.0,
+  "y": 99.9
+ },
+ "1055": {
+  "key": 1055,
+  "name": "Runa de Abertura",
+  "icon": "rune_sprites/1055.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 10000,
+    "stat": "OpenAllTypeChestAllAtOnce",
+    "value": 1.0
+   }
+  ],
+  "x": 432.0,
+  "y": -44.1
+ },
+ "1056": {
+  "key": 1056,
+  "name": "Runa do Infinito",
+  "icon": "rune_sprites/1056.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 100000,
+    "stat": "MaxAmountActBossChest",
+    "value": 1.0
+   }
+  ],
+  "x": 504.0,
+  "y": -44.1
+ },
+ "1061": {
+  "key": 1061,
+  "name": "Runa de Contenção",
+  "icon": "rune_sprites/1061.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 100000,
+    "stat": "MaxAmountNormalChest",
+    "value": 1.0
+   }
+  ],
+  "x": 288.0,
+  "y": 99.9
+ },
+ "1071": {
+  "key": 1071,
+  "name": "Runa do Cofre",
+  "icon": "rune_sprites/1071.png",
+  "maxLevel": 1,
+  "prevReq": "1",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 500000,
+    "stat": "MaxAmountStageBossChest",
+    "value": 1.0
+   }
+  ],
+  "x": 288.0,
+  "y": 171.9
+ },
+ "1072": {
+  "key": 1072,
+  "name": "Runa de Contenção",
+  "icon": "rune_sprites/1072.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 200000,
+    "stat": "MaxAmountNormalChest",
+    "value": 1.0
+   }
+  ],
+  "x": 360.0,
+  "y": 243.9
+ },
+ "1091": {
+  "key": 1091,
+  "name": "Runa de Contenção",
+  "icon": "rune_sprites/1091.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 300000,
+    "stat": "MaxAmountNormalChest",
+    "value": 1.0
+   }
+  ],
+  "x": 504.0,
+  "y": 243.9
+ },
+ "1101": {
+  "key": 1101,
+  "name": "Runa de Contenção",
+  "icon": "rune_sprites/1101.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 500000,
+    "stat": "MaxAmountNormalChest",
+    "value": 1.0
+   }
+  ],
+  "x": 648.0,
+  "y": 171.9
+ },
+ "1102": {
+  "key": 1102,
+  "name": "Runa do Cofre",
+  "icon": "rune_sprites/1102.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1000000,
+    "stat": "MaxAmountStageBossChest",
+    "value": 1.0
+   }
+  ],
+  "x": 648.0,
+  "y": 99.9
+ },
+ "1111": {
+  "key": 1111,
+  "name": "Runa do Cofre",
+  "icon": "rune_sprites/1111.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1500000,
+    "stat": "MaxAmountStageBossChest",
+    "value": 1.0
+   }
+  ],
+  "x": 576.0,
+  "y": 315.9
+ },
+ "1121": {
+  "key": 1121,
+  "name": "Runa de Contenção",
+  "icon": "rune_sprites/1121.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1000000,
+    "stat": "MaxAmountNormalChest",
+    "value": 1.0
+   }
+  ],
+  "x": 648.0,
+  "y": 315.9
+ },
+ "1131": {
+  "key": 1131,
+  "name": "Runa de Contenção",
+  "icon": "rune_sprites/1131.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 2000000,
+    "stat": "MaxAmountNormalChest",
+    "value": 1.0
+   }
+  ],
+  "x": 792.0,
+  "y": 171.9
+ },
+ "1132": {
+  "key": 1132,
+  "name": "Runa do Cofre",
+  "icon": "rune_sprites/1132.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 3000000,
+    "stat": "MaxAmountStageBossChest",
+    "value": 1.0
+   }
+  ],
+  "x": 792.0,
+  "y": 243.9
+ },
+ "1133": {
+  "key": 1133,
+  "name": "Runa do Infinito",
+  "icon": "rune_sprites/1133.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 5000000,
+    "stat": "MaxAmountActBossChest",
+    "value": 1.0
+   }
+  ],
+  "x": 720.0,
+  "y": 171.9
+ },
+ "1141": {
+  "key": 1141,
+  "name": "Runa do Cofre",
+  "icon": "rune_sprites/1141.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 5000000,
+    "stat": "MaxAmountStageBossChest",
+    "value": 1.0
+   }
+  ],
+  "x": 648.0,
+  "y": 387.9
+ },
+ "1142": {
+  "key": 1142,
+  "name": "Runa de Contenção",
+  "icon": "rune_sprites/1142.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 3000000,
+    "stat": "MaxAmountNormalChest",
+    "value": 1.0
+   }
+  ],
+  "x": 720.0,
+  "y": 387.9
+ },
+ "1161": {
+  "key": 1161,
+  "name": "Runa de Contenção",
+  "icon": "rune_sprites/1161.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [
+   11611
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 5000000,
+    "stat": "MaxAmountNormalChest",
+    "value": 1.0
+   }
+  ],
+  "x": 936.0,
+  "y": 243.9
+ },
+ "11611": {
+  "key": 11611,
+  "name": "Runa de Contenção",
+  "icon": "rune_sprites/11611.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 7000000,
+    "stat": "MaxAmountNormalChest",
+    "value": 1.0
+   }
+  ],
+  "x": 936.0,
+  "y": 171.9
+ },
+ "1171": {
+  "key": 1171,
+  "name": "Runa de Brevidade",
+  "icon": "rune_sprites/1171.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 20000000,
+    "stat": "WaveCountReduction",
+    "value": 1.0
+   }
+  ],
+  "x": 792.0,
+  "y": 459.9
+ },
+ "1172": {
+  "key": 1172,
+  "name": "Runa do Cofre",
+  "icon": "rune_sprites/1172.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 10000000,
+    "stat": "MaxAmountStageBossChest",
+    "value": 1.0
+   }
+  ],
+  "x": 864.0,
+  "y": 459.9
+ },
+ "1181": {
+  "key": 1181,
+  "name": "Runa do Cofre",
+  "icon": "rune_sprites/1181.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 50000000,
+    "stat": "MaxAmountStageBossChest",
+    "value": 1.0
+   }
+  ],
+  "x": 936.0,
+  "y": 315.9
+ },
+ "1182": {
+  "key": 1182,
+  "name": "Runa do Infinito",
+  "icon": "rune_sprites/1182.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 30000000,
+    "stat": "MaxAmountActBossChest",
+    "value": 1.0
+   }
+  ],
+  "x": 936.0,
+  "y": 459.9
+ },
+ "1191": {
+  "key": 1191,
+  "name": "Runa de Contenção",
+  "icon": "rune_sprites/1191.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 10000000,
+    "stat": "MaxAmountNormalChest",
+    "value": 1.0
+   }
+  ],
+  "x": 1008.0,
+  "y": 459.9
+ },
+ "1201": {
+  "key": 1201,
+  "name": "Runa de Contenção",
+  "icon": "rune_sprites/1201.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 15000000,
+    "stat": "MaxAmountNormalChest",
+    "value": 1.0
+   }
+  ],
+  "x": 1080.0,
+  "y": 315.9
+ },
+ "1202": {
+  "key": 1202,
+  "name": "Runa do Cofre",
+  "icon": "rune_sprites/1202.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 70000000,
+    "stat": "MaxAmountStageBossChest",
+    "value": 1.0
+   }
+  ],
+  "x": 1152.0,
+  "y": 315.9
+ },
+ "1203": {
+  "key": 1203,
+  "name": "Runa do Infinito",
+  "icon": "rune_sprites/1203.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 50000000,
+    "stat": "MaxAmountActBossChest",
+    "value": 1.0
+   }
+  ],
+  "x": 1152.0,
+  "y": 387.9
+ },
+ "1221": {
+  "key": 1221,
+  "name": "Runa do Cofre",
+  "icon": "rune_sprites/1221.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 90000000,
+    "stat": "MaxAmountStageBossChest",
+    "value": 1.0
+   }
+  ],
+  "x": 1080.0,
+  "y": 531.9
+ },
+ "1222": {
+  "key": 1222,
+  "name": "Runa do Infinito",
+  "icon": "rune_sprites/1222.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 60000000,
+    "stat": "MaxAmountActBossChest",
+    "value": 1.0
+   }
+  ],
+  "x": 1152.0,
+  "y": 531.9
+ },
+ "1241": {
+  "key": 1241,
+  "name": "Runa de Contenção",
+  "icon": "rune_sprites/1241.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 20000000,
+    "stat": "MaxAmountNormalChest",
+    "value": 1.0
+   }
+  ],
+  "x": 1296.0,
+  "y": 531.9
+ },
+ "1251": {
+  "key": 1251,
+  "name": "Runa do Cofre",
+  "icon": "rune_sprites/1251.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 100000000,
+    "stat": "MaxAmountStageBossChest",
+    "value": 1.0
+   }
+  ],
+  "x": 1368.0,
+  "y": 387.9
+ },
+ "1252": {
+  "key": 1252,
+  "name": "Runa do Infinito",
+  "icon": "rune_sprites/1252.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 70000000,
+    "stat": "MaxAmountActBossChest",
+    "value": 1.0
+   }
+  ],
+  "x": 1440.0,
+  "y": 387.9
+ },
+ "1261": {
+  "key": 1261,
+  "name": "Runa do Cofre",
+  "icon": "rune_sprites/1261.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 120000000,
+    "stat": "MaxAmountStageBossChest",
+    "value": 1.0
+   }
+  ],
+  "x": 1296.0,
+  "y": 603.9
+ },
+ "1262": {
+  "key": 1262,
+  "name": "Runa do Infinito",
+  "icon": "rune_sprites/1262.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 80000000,
+    "stat": "MaxAmountActBossChest",
+    "value": 1.0
+   }
+  ],
+  "x": 1368.0,
+  "y": 603.9
+ },
+ "1281": {
+  "key": 1281,
+  "name": "Runa do Cofre",
+  "icon": "rune_sprites/1281.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 150000000,
+    "stat": "MaxAmountStageBossChest",
+    "value": 1.0
+   }
+  ],
+  "x": 1512.0,
+  "y": 459.9
+ },
+ "1282": {
+  "key": 1282,
+  "name": "Runa do Infinito",
+  "icon": "rune_sprites/1282.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [
+   12821
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 90000000,
+    "stat": "MaxAmountActBossChest",
+    "value": 1.0
+   }
+  ],
+  "x": 1512.0,
+  "y": 603.9
+ },
+ "12821": {
+  "key": 12821,
+  "name": "Runa do Infinito",
+  "icon": "rune_sprites/12821.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 100000000,
+    "stat": "MaxAmountActBossChest",
+    "value": 1.0
+   }
+  ],
+  "x": 1512.0,
+  "y": 387.9
+ },
+ "201": {
+  "key": 201,
+  "name": "Runa da Riqueza",
+  "icon": "rune_sprites/201.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [
+   202
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1000,
+    "stat": "AdditionalGold",
+    "value": 1.0
+   }
+  ],
+  "x": -72.0,
+  "y": 27.9
+ },
+ "202": {
+  "key": 202,
+  "name": "Runa da Riqueza",
+  "icon": "rune_sprites/202.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   203
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1000,
+    "stat": "IncreaseGoldAmount",
+    "value": 100.0
+   },
+   {
+    "level": 2,
+    "cost": 2000,
+    "stat": "IncreaseGoldAmount",
+    "value": 100.0
+   },
+   {
+    "level": 3,
+    "cost": 3000,
+    "stat": "IncreaseGoldAmount",
+    "value": 100.0
+   },
+   {
+    "level": 4,
+    "cost": 4000,
+    "stat": "IncreaseGoldAmount",
+    "value": 100.0
+   },
+   {
+    "level": 5,
+    "cost": 5000,
+    "stat": "IncreaseGoldAmount",
+    "value": 100.0
+   }
+  ],
+  "x": -144.0,
+  "y": 27.9
+ },
+ "203": {
+  "key": 203,
+  "name": "Runa da Riqueza",
+  "icon": "rune_sprites/203.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   204,
+   2031
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 2000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 30.0
+   },
+   {
+    "level": 2,
+    "cost": 4000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 30.0
+   },
+   {
+    "level": 3,
+    "cost": 6000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 30.0
+   },
+   {
+    "level": 4,
+    "cost": 8000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 30.0
+   },
+   {
+    "level": 5,
+    "cost": 10000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 30.0
+   }
+  ],
+  "x": -216.0,
+  "y": 27.9
+ },
+ "204": {
+  "key": 204,
+  "name": "Runa da Riqueza",
+  "icon": "rune_sprites/204.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [
+   205
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 20000,
+    "stat": "AdditionalGoldNormalMonster",
+    "value": 1.0
+   }
+  ],
+  "x": -288.0,
+  "y": 27.9
+ },
+ "205": {
+  "key": 205,
+  "name": "Runa da Riqueza",
+  "icon": "rune_sprites/205.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   206
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 10000,
+    "stat": "AdditionalGoldActBoss",
+    "value": 500.0
+   },
+   {
+    "level": 2,
+    "cost": 20000,
+    "stat": "AdditionalGoldActBoss",
+    "value": 500.0
+   },
+   {
+    "level": 3,
+    "cost": 30000,
+    "stat": "AdditionalGoldActBoss",
+    "value": 500.0
+   },
+   {
+    "level": 4,
+    "cost": 40000,
+    "stat": "AdditionalGoldActBoss",
+    "value": 500.0
+   },
+   {
+    "level": 5,
+    "cost": 50000,
+    "stat": "AdditionalGoldActBoss",
+    "value": 500.0
+   }
+  ],
+  "x": -360.0,
+  "y": 27.9
+ },
+ "206": {
+  "key": 206,
+  "name": "Runa da Riqueza",
+  "icon": "rune_sprites/206.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   207
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 30000,
+    "stat": "IncreaseGoldAmount",
+    "value": 50.0
+   },
+   {
+    "level": 2,
+    "cost": 50000,
+    "stat": "IncreaseGoldAmount",
+    "value": 50.0
+   },
+   {
+    "level": 3,
+    "cost": 70000,
+    "stat": "IncreaseGoldAmount",
+    "value": 50.0
+   },
+   {
+    "level": 4,
+    "cost": 90000,
+    "stat": "IncreaseGoldAmount",
+    "value": 50.0
+   },
+   {
+    "level": 5,
+    "cost": 110000,
+    "stat": "IncreaseGoldAmount",
+    "value": 50.0
+   }
+  ],
+  "x": -360.0,
+  "y": 99.9
+ },
+ "207": {
+  "key": 207,
+  "name": "Runa da Riqueza",
+  "icon": "rune_sprites/207.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   208,
+   2071
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 50000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 100.0
+   },
+   {
+    "level": 2,
+    "cost": 55000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 100.0
+   },
+   {
+    "level": 3,
+    "cost": 60000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 100.0
+   },
+   {
+    "level": 4,
+    "cost": 65000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 100.0
+   },
+   {
+    "level": 5,
+    "cost": 70000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 100.0
+   }
+  ],
+  "x": -360.0,
+  "y": 171.9
+ },
+ "208": {
+  "key": 208,
+  "name": "Runa da Riqueza",
+  "icon": "rune_sprites/208.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   209
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 150000,
+    "stat": "IncreaseGoldAmount",
+    "value": 50.0
+   },
+   {
+    "level": 2,
+    "cost": 200000,
+    "stat": "IncreaseGoldAmount",
+    "value": 50.0
+   },
+   {
+    "level": 3,
+    "cost": 250000,
+    "stat": "IncreaseGoldAmount",
+    "value": 50.0
+   },
+   {
+    "level": 4,
+    "cost": 300000,
+    "stat": "IncreaseGoldAmount",
+    "value": 50.0
+   },
+   {
+    "level": 5,
+    "cost": 350000,
+    "stat": "IncreaseGoldAmount",
+    "value": 50.0
+   }
+  ],
+  "x": -432.0,
+  "y": 171.9
+ },
+ "209": {
+  "key": 209,
+  "name": "Runa da Riqueza",
+  "icon": "rune_sprites/209.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   210,
+   2091
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 200000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 500.0
+   },
+   {
+    "level": 2,
+    "cost": 220000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 500.0
+   },
+   {
+    "level": 3,
+    "cost": 240000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 500.0
+   },
+   {
+    "level": 4,
+    "cost": 260000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 500.0
+   },
+   {
+    "level": 5,
+    "cost": 280000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 500.0
+   }
+  ],
+  "x": -504.0,
+  "y": 171.9
+ },
+ "210": {
+  "key": 210,
+  "name": "Runa da Riqueza",
+  "icon": "rune_sprites/210.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   211
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 500000,
+    "stat": "IncreaseGoldAmount",
+    "value": 50.0
+   },
+   {
+    "level": 2,
+    "cost": 600000,
+    "stat": "IncreaseGoldAmount",
+    "value": 50.0
+   },
+   {
+    "level": 3,
+    "cost": 700000,
+    "stat": "IncreaseGoldAmount",
+    "value": 50.0
+   },
+   {
+    "level": 4,
+    "cost": 800000,
+    "stat": "IncreaseGoldAmount",
+    "value": 50.0
+   },
+   {
+    "level": 5,
+    "cost": 900000,
+    "stat": "IncreaseGoldAmount",
+    "value": 50.0
+   }
+  ],
+  "x": -576.0,
+  "y": 171.9
+ },
+ "211": {
+  "key": 211,
+  "name": "Runa da Riqueza",
+  "icon": "rune_sprites/211.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   212,
+   2111
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 700000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 1000.0
+   },
+   {
+    "level": 2,
+    "cost": 750000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 1000.0
+   },
+   {
+    "level": 3,
+    "cost": 850000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 1000.0
+   },
+   {
+    "level": 4,
+    "cost": 900000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 1000.0
+   },
+   {
+    "level": 5,
+    "cost": 950000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 1000.0
+   }
+  ],
+  "x": -576.0,
+  "y": 243.9
+ },
+ "212": {
+  "key": 212,
+  "name": "Runa da Riqueza",
+  "icon": "rune_sprites/212.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   213
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 2000000,
+    "stat": "IncreaseGoldAmount",
+    "value": 50.0
+   },
+   {
+    "level": 2,
+    "cost": 3000000,
+    "stat": "IncreaseGoldAmount",
+    "value": 50.0
+   },
+   {
+    "level": 3,
+    "cost": 4000000,
+    "stat": "IncreaseGoldAmount",
+    "value": 50.0
+   },
+   {
+    "level": 4,
+    "cost": 5000000,
+    "stat": "IncreaseGoldAmount",
+    "value": 50.0
+   },
+   {
+    "level": 5,
+    "cost": 6000000,
+    "stat": "IncreaseGoldAmount",
+    "value": 50.0
+   }
+  ],
+  "x": -648.0,
+  "y": 243.9
+ },
+ "213": {
+  "key": 213,
+  "name": "Runa da Riqueza",
+  "icon": "rune_sprites/213.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   214,
+   2131,
+   2132
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 3000000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 2000.0
+   },
+   {
+    "level": 2,
+    "cost": 3300000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 2000.0
+   },
+   {
+    "level": 3,
+    "cost": 3600000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 2000.0
+   },
+   {
+    "level": 4,
+    "cost": 3900000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 2000.0
+   },
+   {
+    "level": 5,
+    "cost": 4200000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 2000.0
+   }
+  ],
+  "x": -720.0,
+  "y": 243.9
+ },
+ "214": {
+  "key": 214,
+  "name": "Runa da Riqueza",
+  "icon": "rune_sprites/214.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   215
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 20000000,
+    "stat": "IncreaseGoldAmount",
+    "value": 50.0
+   },
+   {
+    "level": 2,
+    "cost": 25000000,
+    "stat": "IncreaseGoldAmount",
+    "value": 50.0
+   },
+   {
+    "level": 3,
+    "cost": 30000000,
+    "stat": "IncreaseGoldAmount",
+    "value": 50.0
+   },
+   {
+    "level": 4,
+    "cost": 35000000,
+    "stat": "IncreaseGoldAmount",
+    "value": 50.0
+   },
+   {
+    "level": 5,
+    "cost": 40000000,
+    "stat": "IncreaseGoldAmount",
+    "value": 50.0
+   }
+  ],
+  "x": -792.0,
+  "y": 243.9
+ },
+ "215": {
+  "key": 215,
+  "name": "Runa da Riqueza",
+  "icon": "rune_sprites/215.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   2151
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 50000000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 5000.0
+   },
+   {
+    "level": 2,
+    "cost": 55000000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 5000.0
+   },
+   {
+    "level": 3,
+    "cost": 60000000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 5000.0
+   },
+   {
+    "level": 4,
+    "cost": 65000000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 5000.0
+   },
+   {
+    "level": 5,
+    "cost": 70000000,
+    "stat": "AdditionalGoldStageBoss",
+    "value": 5000.0
+   }
+  ],
+  "x": -792.0,
+  "y": 315.9
+ },
+ "2031": {
+  "key": 2031,
+  "name": "Runa de Alquimia",
+  "icon": "rune_sprites/2031.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [
+   2032
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 20000,
+    "stat": "CubeAlchemyGoldPercent",
+    "value": 100.0
+   }
+  ],
+  "x": -216.0,
+  "y": 99.9
+ },
+ "2032": {
+  "key": 2032,
+  "name": "Runa de Combinação",
+  "icon": "rune_sprites/2032.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 10000,
+    "stat": "CubeExpPercent",
+    "value": 40.0
+   },
+   {
+    "level": 2,
+    "cost": 15000,
+    "stat": "CubeExpPercent",
+    "value": 40.0
+   },
+   {
+    "level": 3,
+    "cost": 20000,
+    "stat": "CubeExpPercent",
+    "value": 40.0
+   },
+   {
+    "level": 4,
+    "cost": 25000,
+    "stat": "CubeExpPercent",
+    "value": 40.0
+   },
+   {
+    "level": 5,
+    "cost": 30000,
+    "stat": "CubeExpPercent",
+    "value": 40.0
+   }
+  ],
+  "x": -216.0,
+  "y": 171.9
+ },
+ "2071": {
+  "key": 2071,
+  "name": "Runa da Riqueza",
+  "icon": "rune_sprites/2071.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 100000,
+    "stat": "AdditionalGoldNormalMonster",
+    "value": 1.0
+   }
+  ],
+  "x": -288.0,
+  "y": 243.9
+ },
+ "2091": {
+  "key": 2091,
+  "name": "Runa da Riqueza",
+  "icon": "rune_sprites/2091.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 300000,
+    "stat": "AdditionalGoldActBoss",
+    "value": 2000.0
+   },
+   {
+    "level": 2,
+    "cost": 330000,
+    "stat": "AdditionalGoldActBoss",
+    "value": 2000.0
+   },
+   {
+    "level": 3,
+    "cost": 360000,
+    "stat": "AdditionalGoldActBoss",
+    "value": 2000.0
+   },
+   {
+    "level": 4,
+    "cost": 390000,
+    "stat": "AdditionalGoldActBoss",
+    "value": 2000.0
+   },
+   {
+    "level": 5,
+    "cost": 420000,
+    "stat": "AdditionalGoldActBoss",
+    "value": 2000.0
+   }
+  ],
+  "x": -504.0,
+  "y": 243.9
+ },
+ "2111": {
+  "key": 2111,
+  "name": "Runa da Riqueza",
+  "icon": "rune_sprites/2111.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1000000,
+    "stat": "AdditionalGold",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 2000000,
+    "stat": "AdditionalGold",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 3000000,
+    "stat": "AdditionalGold",
+    "value": 1.0
+   },
+   {
+    "level": 4,
+    "cost": 4000000,
+    "stat": "AdditionalGold",
+    "value": 1.0
+   },
+   {
+    "level": 5,
+    "cost": 5000000,
+    "stat": "AdditionalGold",
+    "value": 1.0
+   }
+  ],
+  "x": -576.0,
+  "y": 315.9
+ },
+ "2131": {
+  "key": 2131,
+  "name": "Runa de Alquimia",
+  "icon": "rune_sprites/2131.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 5000000,
+    "stat": "CubeAlchemyGoldPercent",
+    "value": 100.0
+   },
+   {
+    "level": 2,
+    "cost": 7000000,
+    "stat": "CubeAlchemyGoldPercent",
+    "value": 100.0
+   },
+   {
+    "level": 3,
+    "cost": 10000000,
+    "stat": "CubeAlchemyGoldPercent",
+    "value": 100.0
+   }
+  ],
+  "x": -720.0,
+  "y": 171.9
+ },
+ "2132": {
+  "key": 2132,
+  "name": "Runa de Combinação",
+  "icon": "rune_sprites/2132.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1000000,
+    "stat": "CubeExpPercent",
+    "value": 50.0
+   },
+   {
+    "level": 2,
+    "cost": 2000000,
+    "stat": "CubeExpPercent",
+    "value": 50.0
+   },
+   {
+    "level": 3,
+    "cost": 3000000,
+    "stat": "CubeExpPercent",
+    "value": 50.0
+   },
+   {
+    "level": 4,
+    "cost": 4000000,
+    "stat": "CubeExpPercent",
+    "value": 50.0
+   },
+   {
+    "level": 5,
+    "cost": 5000000,
+    "stat": "CubeExpPercent",
+    "value": 50.0
+   }
+  ],
+  "x": -792.0,
+  "y": 171.9
+ },
+ "2151": {
+  "key": 2151,
+  "name": "Runa da Riqueza",
+  "icon": "rune_sprites/2151.png",
+  "maxLevel": 2,
+  "prevReq": "",
+  "next": [
+   2152
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 40000000,
+    "stat": "AdditionalGoldNormalMonster",
+    "value": 5.0
+   },
+   {
+    "level": 2,
+    "cost": 50000000,
+    "stat": "AdditionalGoldNormalMonster",
+    "value": 5.0
+   }
+  ],
+  "x": -720.0,
+  "y": 387.9
+ },
+ "2152": {
+  "key": 2152,
+  "name": "Runa da Riqueza",
+  "icon": "rune_sprites/2152.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 30000000,
+    "stat": "AdditionalGoldActBoss",
+    "value": 50000.0
+   },
+   {
+    "level": 2,
+    "cost": 40000000,
+    "stat": "AdditionalGoldActBoss",
+    "value": 50000.0
+   },
+   {
+    "level": 3,
+    "cost": 50000000,
+    "stat": "AdditionalGoldActBoss",
+    "value": 50000.0
+   },
+   {
+    "level": 4,
+    "cost": 60000000,
+    "stat": "AdditionalGoldActBoss",
+    "value": 50000.0
+   },
+   {
+    "level": 5,
+    "cost": 70000000,
+    "stat": "AdditionalGoldActBoss",
+    "value": 50000.0
+   }
+  ],
+  "x": -648.0,
+  "y": 387.9
+ },
+ "301": {
+  "key": 301,
+  "name": "Runa do Crescimento",
+  "icon": "rune_sprites/301.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [
+   302
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1000,
+    "stat": "AdditionalExp",
+    "value": 1.0
+   }
+  ],
+  "x": -72.0,
+  "y": -116.1
+ },
+ "302": {
+  "key": 302,
+  "name": "Runa do Crescimento",
+  "icon": "rune_sprites/302.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   303,
+   3031
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 500,
+    "stat": "IncreaseExpAmount",
+    "value": 100.0
+   },
+   {
+    "level": 2,
+    "cost": 1000,
+    "stat": "IncreaseExpAmount",
+    "value": 100.0
+   },
+   {
+    "level": 3,
+    "cost": 1500,
+    "stat": "IncreaseExpAmount",
+    "value": 100.0
+   },
+   {
+    "level": 4,
+    "cost": 2000,
+    "stat": "IncreaseExpAmount",
+    "value": 100.0
+   },
+   {
+    "level": 5,
+    "cost": 2500,
+    "stat": "IncreaseExpAmount",
+    "value": 100.0
+   }
+  ],
+  "x": -144.0,
+  "y": -116.1
+ },
+ "303": {
+  "key": 303,
+  "name": "Runa do Crescimento",
+  "icon": "rune_sprites/303.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   304
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1000,
+    "stat": "AdditionalExpStageBoss",
+    "value": 10.0
+   },
+   {
+    "level": 2,
+    "cost": 1200,
+    "stat": "AdditionalExpStageBoss",
+    "value": 10.0
+   },
+   {
+    "level": 3,
+    "cost": 1400,
+    "stat": "AdditionalExpStageBoss",
+    "value": 10.0
+   },
+   {
+    "level": 4,
+    "cost": 1700,
+    "stat": "AdditionalExpStageBoss",
+    "value": 10.0
+   },
+   {
+    "level": 5,
+    "cost": 2000,
+    "stat": "AdditionalExpStageBoss",
+    "value": 10.0
+   }
+  ],
+  "x": -216.0,
+  "y": -116.1
+ },
+ "304": {
+  "key": 304,
+  "name": "Runa do Crescimento",
+  "icon": "rune_sprites/304.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [
+   305
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 15000,
+    "stat": "AdditionalExpNormalMonster",
+    "value": 1.0
+   }
+  ],
+  "x": -288.0,
+  "y": -116.1
+ },
+ "305": {
+  "key": 305,
+  "name": "Runa do Crescimento",
+  "icon": "rune_sprites/305.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   306
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 6000,
+    "stat": "AdditionalExpActBoss",
+    "value": 100.0
+   },
+   {
+    "level": 2,
+    "cost": 7000,
+    "stat": "AdditionalExpActBoss",
+    "value": 100.0
+   },
+   {
+    "level": 3,
+    "cost": 8000,
+    "stat": "AdditionalExpActBoss",
+    "value": 100.0
+   }
+  ],
+  "x": -360.0,
+  "y": -116.1
+ },
+ "306": {
+  "key": 306,
+  "name": "Runa do Crescimento",
+  "icon": "rune_sprites/306.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   307,
+   3061
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 30000,
+    "stat": "IncreaseExpAmount",
+    "value": 50.0
+   },
+   {
+    "level": 2,
+    "cost": 50000,
+    "stat": "IncreaseExpAmount",
+    "value": 50.0
+   },
+   {
+    "level": 3,
+    "cost": 70000,
+    "stat": "IncreaseExpAmount",
+    "value": 50.0
+   },
+   {
+    "level": 4,
+    "cost": 90000,
+    "stat": "IncreaseExpAmount",
+    "value": 50.0
+   },
+   {
+    "level": 5,
+    "cost": 110000,
+    "stat": "IncreaseExpAmount",
+    "value": 50.0
+   }
+  ],
+  "x": -432.0,
+  "y": -116.1
+ },
+ "307": {
+  "key": 307,
+  "name": "Runa do Crescimento",
+  "icon": "rune_sprites/307.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   308
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 50000,
+    "stat": "AdditionalExpStageBoss",
+    "value": 100.0
+   },
+   {
+    "level": 2,
+    "cost": 55000,
+    "stat": "AdditionalExpStageBoss",
+    "value": 100.0
+   },
+   {
+    "level": 3,
+    "cost": 60000,
+    "stat": "AdditionalExpStageBoss",
+    "value": 100.0
+   },
+   {
+    "level": 4,
+    "cost": 65000,
+    "stat": "AdditionalExpStageBoss",
+    "value": 100.0
+   },
+   {
+    "level": 5,
+    "cost": 70000,
+    "stat": "AdditionalExpStageBoss",
+    "value": 100.0
+   }
+  ],
+  "x": -432.0,
+  "y": -188.1
+ },
+ "308": {
+  "key": 308,
+  "name": "Runa do Crescimento",
+  "icon": "rune_sprites/308.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   309
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 150000,
+    "stat": "IncreaseExpAmount",
+    "value": 50.0
+   },
+   {
+    "level": 2,
+    "cost": 200000,
+    "stat": "IncreaseExpAmount",
+    "value": 50.0
+   },
+   {
+    "level": 3,
+    "cost": 250000,
+    "stat": "IncreaseExpAmount",
+    "value": 50.0
+   },
+   {
+    "level": 4,
+    "cost": 300000,
+    "stat": "IncreaseExpAmount",
+    "value": 50.0
+   },
+   {
+    "level": 5,
+    "cost": 350000,
+    "stat": "IncreaseExpAmount",
+    "value": 50.0
+   }
+  ],
+  "x": -432.0,
+  "y": -260.1
+ },
+ "309": {
+  "key": 309,
+  "name": "Runa do Crescimento",
+  "icon": "rune_sprites/309.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   310,
+   3091
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 200000,
+    "stat": "AdditionalExpStageBoss",
+    "value": 500.0
+   },
+   {
+    "level": 2,
+    "cost": 220000,
+    "stat": "AdditionalExpStageBoss",
+    "value": 500.0
+   },
+   {
+    "level": 3,
+    "cost": 240000,
+    "stat": "AdditionalExpStageBoss",
+    "value": 500.0
+   },
+   {
+    "level": 4,
+    "cost": 260000,
+    "stat": "AdditionalExpStageBoss",
+    "value": 500.0
+   },
+   {
+    "level": 5,
+    "cost": 280000,
+    "stat": "AdditionalExpStageBoss",
+    "value": 500.0
+   }
+  ],
+  "x": -504.0,
+  "y": -260.1
+ },
+ "310": {
+  "key": 310,
+  "name": "Runa do Crescimento",
+  "icon": "rune_sprites/310.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   311
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 500000,
+    "stat": "IncreaseExpAmount",
+    "value": 50.0
+   },
+   {
+    "level": 2,
+    "cost": 600000,
+    "stat": "IncreaseExpAmount",
+    "value": 50.0
+   },
+   {
+    "level": 3,
+    "cost": 700000,
+    "stat": "IncreaseExpAmount",
+    "value": 50.0
+   },
+   {
+    "level": 4,
+    "cost": 800000,
+    "stat": "IncreaseExpAmount",
+    "value": 50.0
+   },
+   {
+    "level": 5,
+    "cost": 900000,
+    "stat": "IncreaseExpAmount",
+    "value": 50.0
+   }
+  ],
+  "x": -576.0,
+  "y": -260.1
+ },
+ "311": {
+  "key": 311,
+  "name": "Runa do Crescimento",
+  "icon": "rune_sprites/311.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   312
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 700000,
+    "stat": "AdditionalExpStageBoss",
+    "value": 1000.0
+   },
+   {
+    "level": 2,
+    "cost": 750000,
+    "stat": "AdditionalExpStageBoss",
+    "value": 1000.0
+   },
+   {
+    "level": 3,
+    "cost": 850000,
+    "stat": "AdditionalExpStageBoss",
+    "value": 1000.0
+   },
+   {
+    "level": 4,
+    "cost": 900000,
+    "stat": "AdditionalExpStageBoss",
+    "value": 1000.0
+   },
+   {
+    "level": 5,
+    "cost": 950000,
+    "stat": "AdditionalExpStageBoss",
+    "value": 1000.0
+   }
+  ],
+  "x": -648.0,
+  "y": -260.1
+ },
+ "312": {
+  "key": 312,
+  "name": "Runa do Crescimento",
+  "icon": "rune_sprites/312.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   313,
+   3121
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 2000000,
+    "stat": "IncreaseExpAmount",
+    "value": 50.0
+   },
+   {
+    "level": 2,
+    "cost": 3000000,
+    "stat": "IncreaseExpAmount",
+    "value": 50.0
+   },
+   {
+    "level": 3,
+    "cost": 4000000,
+    "stat": "IncreaseExpAmount",
+    "value": 50.0
+   },
+   {
+    "level": 4,
+    "cost": 5000000,
+    "stat": "IncreaseExpAmount",
+    "value": 50.0
+   },
+   {
+    "level": 5,
+    "cost": 6000000,
+    "stat": "IncreaseExpAmount",
+    "value": 50.0
+   }
+  ],
+  "x": -648.0,
+  "y": -332.1
+ },
+ "313": {
+  "key": 313,
+  "name": "Runa do Crescimento",
+  "icon": "rune_sprites/313.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   314
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 3000000,
+    "stat": "AdditionalExpStageBoss",
+    "value": 2000.0
+   },
+   {
+    "level": 2,
+    "cost": 3300000,
+    "stat": "AdditionalExpStageBoss",
+    "value": 2000.0
+   },
+   {
+    "level": 3,
+    "cost": 3600000,
+    "stat": "AdditionalExpStageBoss",
+    "value": 2000.0
+   },
+   {
+    "level": 4,
+    "cost": 3900000,
+    "stat": "AdditionalExpStageBoss",
+    "value": 2000.0
+   },
+   {
+    "level": 5,
+    "cost": 4200000,
+    "stat": "AdditionalExpStageBoss",
+    "value": 2000.0
+   }
+  ],
+  "x": -720.0,
+  "y": -332.1
+ },
+ "314": {
+  "key": 314,
+  "name": "Runa do Crescimento",
+  "icon": "rune_sprites/314.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   315
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 20000000,
+    "stat": "IncreaseExpAmount",
+    "value": 50.0
+   },
+   {
+    "level": 2,
+    "cost": 25000000,
+    "stat": "IncreaseExpAmount",
+    "value": 50.0
+   },
+   {
+    "level": 3,
+    "cost": 30000000,
+    "stat": "IncreaseExpAmount",
+    "value": 50.0
+   },
+   {
+    "level": 4,
+    "cost": 35000000,
+    "stat": "IncreaseExpAmount",
+    "value": 50.0
+   },
+   {
+    "level": 5,
+    "cost": 40000000,
+    "stat": "IncreaseExpAmount",
+    "value": 50.0
+   }
+  ],
+  "x": -792.0,
+  "y": -332.1
+ },
+ "315": {
+  "key": 315,
+  "name": "Runa do Crescimento",
+  "icon": "rune_sprites/315.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   3151,
+   3152
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 50000000,
+    "stat": "AdditionalExpStageBoss",
+    "value": 5000.0
+   },
+   {
+    "level": 2,
+    "cost": 55000000,
+    "stat": "AdditionalExpStageBoss",
+    "value": 5000.0
+   },
+   {
+    "level": 3,
+    "cost": 60000000,
+    "stat": "AdditionalExpStageBoss",
+    "value": 5000.0
+   },
+   {
+    "level": 4,
+    "cost": 65000000,
+    "stat": "AdditionalExpStageBoss",
+    "value": 5000.0
+   },
+   {
+    "level": 5,
+    "cost": 70000000,
+    "stat": "AdditionalExpStageBoss",
+    "value": 5000.0
+   }
+  ],
+  "x": -792.0,
+  "y": -404.1
+ },
+ "3031": {
+  "key": 3031,
+  "name": "Runa de Combinação",
+  "icon": "rune_sprites/3031.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [
+   3032
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 35000,
+    "stat": "CubeExpPercent",
+    "value": 100.0
+   }
+  ],
+  "x": -216.0,
+  "y": -188.1
+ },
+ "3032": {
+  "key": 3032,
+  "name": "Runa de Alquimia",
+  "icon": "rune_sprites/3032.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 10000,
+    "stat": "CubeAlchemyGoldPercent",
+    "value": 40.0
+   },
+   {
+    "level": 2,
+    "cost": 12000,
+    "stat": "CubeAlchemyGoldPercent",
+    "value": 40.0
+   },
+   {
+    "level": 3,
+    "cost": 14000,
+    "stat": "CubeAlchemyGoldPercent",
+    "value": 40.0
+   },
+   {
+    "level": 4,
+    "cost": 17000,
+    "stat": "CubeAlchemyGoldPercent",
+    "value": 40.0
+   },
+   {
+    "level": 5,
+    "cost": 20000,
+    "stat": "CubeAlchemyGoldPercent",
+    "value": 40.0
+   }
+  ],
+  "x": -216.0,
+  "y": -260.1
+ },
+ "3061": {
+  "key": 3061,
+  "name": "Runa do Crescimento",
+  "icon": "rune_sprites/3061.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 300000,
+    "stat": "AdditionalExpActBoss",
+    "value": 500.0
+   },
+   {
+    "level": 2,
+    "cost": 330000,
+    "stat": "AdditionalExpActBoss",
+    "value": 500.0
+   },
+   {
+    "level": 3,
+    "cost": 360000,
+    "stat": "AdditionalExpActBoss",
+    "value": 500.0
+   },
+   {
+    "level": 4,
+    "cost": 390000,
+    "stat": "AdditionalExpActBoss",
+    "value": 500.0
+   },
+   {
+    "level": 5,
+    "cost": 420000,
+    "stat": "AdditionalExpActBoss",
+    "value": 500.0
+   }
+  ],
+  "x": -504.0,
+  "y": -116.1
+ },
+ "3091": {
+  "key": 3091,
+  "name": "Runa do Crescimento",
+  "icon": "rune_sprites/3091.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1000000,
+    "stat": "AdditionalExpNormalMonster",
+    "value": 1.0
+   }
+  ],
+  "x": -504.0,
+  "y": -332.1
+ },
+ "3121": {
+  "key": 3121,
+  "name": "Runa de Combinação",
+  "icon": "rune_sprites/3121.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   3122
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1000000,
+    "stat": "CubeExpPercent",
+    "value": 50.0
+   },
+   {
+    "level": 2,
+    "cost": 2000000,
+    "stat": "CubeExpPercent",
+    "value": 50.0
+   },
+   {
+    "level": 3,
+    "cost": 3000000,
+    "stat": "CubeExpPercent",
+    "value": 50.0
+   },
+   {
+    "level": 4,
+    "cost": 4000000,
+    "stat": "CubeExpPercent",
+    "value": 50.0
+   },
+   {
+    "level": 5,
+    "cost": 5000000,
+    "stat": "CubeExpPercent",
+    "value": 50.0
+   }
+  ],
+  "x": -576.0,
+  "y": -404.1
+ },
+ "3122": {
+  "key": 3122,
+  "name": "Runa de Alquimia",
+  "icon": "rune_sprites/3122.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 2000000,
+    "stat": "CubeAlchemyGoldPercent",
+    "value": 50.0
+   },
+   {
+    "level": 2,
+    "cost": 2200000,
+    "stat": "CubeAlchemyGoldPercent",
+    "value": 50.0
+   },
+   {
+    "level": 3,
+    "cost": 2400000,
+    "stat": "CubeAlchemyGoldPercent",
+    "value": 50.0
+   },
+   {
+    "level": 4,
+    "cost": 2600000,
+    "stat": "CubeAlchemyGoldPercent",
+    "value": 50.0
+   },
+   {
+    "level": 5,
+    "cost": 2800000,
+    "stat": "CubeAlchemyGoldPercent",
+    "value": 50.0
+   }
+  ],
+  "x": -576.0,
+  "y": -476.1
+ },
+ "3151": {
+  "key": 3151,
+  "name": "Runa do Crescimento",
+  "icon": "rune_sprites/3151.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 5000000,
+    "stat": "AdditionalExp",
+    "value": 5.0
+   },
+   {
+    "level": 2,
+    "cost": 5500000,
+    "stat": "AdditionalExp",
+    "value": 5.0
+   },
+   {
+    "level": 3,
+    "cost": 6000000,
+    "stat": "AdditionalExp",
+    "value": 5.0
+   },
+   {
+    "level": 4,
+    "cost": 6500000,
+    "stat": "AdditionalExp",
+    "value": 5.0
+   },
+   {
+    "level": 5,
+    "cost": 7000000,
+    "stat": "AdditionalExp",
+    "value": 5.0
+   }
+  ],
+  "x": -864.0,
+  "y": -404.1
+ },
+ "3152": {
+  "key": 3152,
+  "name": "Runa do Crescimento",
+  "icon": "rune_sprites/3152.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 10000000,
+    "stat": "AdditionalExpActBoss",
+    "value": 2000.0
+   },
+   {
+    "level": 2,
+    "cost": 20000000,
+    "stat": "AdditionalExpActBoss",
+    "value": 2000.0
+   },
+   {
+    "level": 3,
+    "cost": 30000000,
+    "stat": "AdditionalExpActBoss",
+    "value": 2000.0
+   },
+   {
+    "level": 4,
+    "cost": 40000000,
+    "stat": "AdditionalExpActBoss",
+    "value": 2000.0
+   },
+   {
+    "level": 5,
+    "cost": 50000000,
+    "stat": "AdditionalExpActBoss",
+    "value": 2000.0
+   }
+  ],
+  "x": -720.0,
+  "y": -476.1
+ },
+ "401": {
+  "key": 401,
+  "name": "Runa do Escudo",
+  "icon": "rune_sprites/401.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   402
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 2000,
+    "stat": "AllHeroArmor",
+    "value": 5.0
+   },
+   {
+    "level": 2,
+    "cost": 2500,
+    "stat": "AllHeroArmor",
+    "value": 5.0
+   },
+   {
+    "level": 3,
+    "cost": 3000,
+    "stat": "AllHeroArmor",
+    "value": 5.0
+   }
+  ],
+  "x": 72.0,
+  "y": -116.1
+ },
+ "402": {
+  "key": 402,
+  "name": "Runa da Tempestade",
+  "icon": "rune_sprites/402.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [
+   403
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 5000,
+    "stat": "AllHeroMoveSpeed",
+    "value": 30.0
+   },
+   {
+    "level": 2,
+    "cost": 5500,
+    "stat": "AllHeroMoveSpeed",
+    "value": 30.0
+   },
+   {
+    "level": 3,
+    "cost": 6000,
+    "stat": "AllHeroMoveSpeed",
+    "value": 30.0
+   }
+  ],
+  "x": 144.0,
+  "y": -116.1
+ },
+ "403": {
+  "key": 403,
+  "name": "Runa do Escudo",
+  "icon": "rune_sprites/403.png",
+  "maxLevel": 10,
+  "prevReq": "",
+  "next": [
+   404,
+   4031
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 2000,
+    "stat": "AllHeroArmor",
+    "value": 5.0
+   },
+   {
+    "level": 2,
+    "cost": 4000,
+    "stat": "AllHeroArmor",
+    "value": 5.0
+   },
+   {
+    "level": 3,
+    "cost": 6000,
+    "stat": "AllHeroArmor",
+    "value": 5.0
+   },
+   {
+    "level": 4,
+    "cost": 8000,
+    "stat": "AllHeroArmor",
+    "value": 5.0
+   },
+   {
+    "level": 5,
+    "cost": 10000,
+    "stat": "AllHeroArmor",
+    "value": 5.0
+   },
+   {
+    "level": 6,
+    "cost": 12000,
+    "stat": "AllHeroArmor",
+    "value": 5.0
+   },
+   {
+    "level": 7,
+    "cost": 15000,
+    "stat": "AllHeroArmor",
+    "value": 5.0
+   },
+   {
+    "level": 8,
+    "cost": 18000,
+    "stat": "AllHeroArmor",
+    "value": 5.0
+   },
+   {
+    "level": 9,
+    "cost": 21000,
+    "stat": "AllHeroArmor",
+    "value": 5.0
+   },
+   {
+    "level": 10,
+    "cost": 25000,
+    "stat": "AllHeroArmor",
+    "value": 5.0
+   }
+  ],
+  "x": 216.0,
+  "y": -116.1
+ },
+ "404": {
+  "key": 404,
+  "name": "Runa da Tempestade",
+  "icon": "rune_sprites/404.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   405
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 20000,
+    "stat": "AllHeroMoveSpeed",
+    "value": 20.0
+   },
+   {
+    "level": 2,
+    "cost": 22000,
+    "stat": "AllHeroMoveSpeed",
+    "value": 20.0
+   },
+   {
+    "level": 3,
+    "cost": 24000,
+    "stat": "AllHeroMoveSpeed",
+    "value": 20.0
+   },
+   {
+    "level": 4,
+    "cost": 27000,
+    "stat": "AllHeroMoveSpeed",
+    "value": 20.0
+   },
+   {
+    "level": 5,
+    "cost": 30000,
+    "stat": "AllHeroMoveSpeed",
+    "value": 20.0
+   }
+  ],
+  "x": 288.0,
+  "y": -116.1
+ },
+ "405": {
+  "key": 405,
+  "name": "Runa de Guerra",
+  "icon": "rune_sprites/405.png",
+  "maxLevel": 10,
+  "prevReq": "",
+  "next": [
+   406
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 15000,
+    "stat": "AllHeroAttackDamagePercent",
+    "value": 20.0
+   },
+   {
+    "level": 2,
+    "cost": 20000,
+    "stat": "AllHeroAttackDamagePercent",
+    "value": 20.0
+   },
+   {
+    "level": 3,
+    "cost": 25000,
+    "stat": "AllHeroAttackDamagePercent",
+    "value": 20.0
+   },
+   {
+    "level": 4,
+    "cost": 30000,
+    "stat": "AllHeroAttackDamagePercent",
+    "value": 20.0
+   },
+   {
+    "level": 5,
+    "cost": 35000,
+    "stat": "AllHeroAttackDamagePercent",
+    "value": 20.0
+   },
+   {
+    "level": 6,
+    "cost": 40000,
+    "stat": "AllHeroAttackDamagePercent",
+    "value": 20.0
+   },
+   {
+    "level": 7,
+    "cost": 50000,
+    "stat": "AllHeroAttackDamagePercent",
+    "value": 20.0
+   },
+   {
+    "level": 8,
+    "cost": 60000,
+    "stat": "AllHeroAttackDamagePercent",
+    "value": 20.0
+   },
+   {
+    "level": 9,
+    "cost": 70000,
+    "stat": "AllHeroAttackDamagePercent",
+    "value": 20.0
+   },
+   {
+    "level": 10,
+    "cost": 80000,
+    "stat": "AllHeroAttackDamagePercent",
+    "value": 20.0
+   }
+  ],
+  "x": 360.0,
+  "y": -116.1
+ },
+ "406": {
+  "key": 406,
+  "name": "Runa da Tempestade",
+  "icon": "rune_sprites/406.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   407,
+   4061
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 20000,
+    "stat": "AllHeroMoveSpeed",
+    "value": 20.0
+   },
+   {
+    "level": 2,
+    "cost": 22000,
+    "stat": "AllHeroMoveSpeed",
+    "value": 20.0
+   },
+   {
+    "level": 3,
+    "cost": 24000,
+    "stat": "AllHeroMoveSpeed",
+    "value": 20.0
+   },
+   {
+    "level": 4,
+    "cost": 27000,
+    "stat": "AllHeroMoveSpeed",
+    "value": 20.0
+   },
+   {
+    "level": 5,
+    "cost": 30000,
+    "stat": "AllHeroMoveSpeed",
+    "value": 20.0
+   }
+  ],
+  "x": 360.0,
+  "y": -188.1
+ },
+ "407": {
+  "key": 407,
+  "name": "Runa do Escudo",
+  "icon": "rune_sprites/407.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   408
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 20000,
+    "stat": "AllHeroArmorPercent",
+    "value": 20.0
+   },
+   {
+    "level": 2,
+    "cost": 22000,
+    "stat": "AllHeroArmorPercent",
+    "value": 20.0
+   },
+   {
+    "level": 3,
+    "cost": 24000,
+    "stat": "AllHeroArmorPercent",
+    "value": 20.0
+   },
+   {
+    "level": 4,
+    "cost": 27000,
+    "stat": "AllHeroArmorPercent",
+    "value": 20.0
+   },
+   {
+    "level": 5,
+    "cost": 30000,
+    "stat": "AllHeroArmorPercent",
+    "value": 20.0
+   }
+  ],
+  "x": 432.0,
+  "y": -188.1
+ },
+ "408": {
+  "key": 408,
+  "name": "Runa de Guerra",
+  "icon": "rune_sprites/408.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   409,
+   4081
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 20000,
+    "stat": "AllHeroAttackDamagePercent",
+    "value": 30.0
+   },
+   {
+    "level": 2,
+    "cost": 22000,
+    "stat": "AllHeroAttackDamagePercent",
+    "value": 30.0
+   },
+   {
+    "level": 3,
+    "cost": 24000,
+    "stat": "AllHeroAttackDamagePercent",
+    "value": 30.0
+   },
+   {
+    "level": 4,
+    "cost": 27000,
+    "stat": "AllHeroAttackDamagePercent",
+    "value": 30.0
+   },
+   {
+    "level": 5,
+    "cost": 30000,
+    "stat": "AllHeroAttackDamagePercent",
+    "value": 30.0
+   }
+  ],
+  "x": 504.0,
+  "y": -188.1
+ },
+ "409": {
+  "key": 409,
+  "name": "Runa do Frenesi",
+  "icon": "rune_sprites/409.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   410
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 50000,
+    "stat": "AllHeroAttackSpeed",
+    "value": 10.0
+   },
+   {
+    "level": 2,
+    "cost": 55000,
+    "stat": "AllHeroAttackSpeed",
+    "value": 10.0
+   },
+   {
+    "level": 3,
+    "cost": 60000,
+    "stat": "AllHeroAttackSpeed",
+    "value": 10.0
+   },
+   {
+    "level": 4,
+    "cost": 65000,
+    "stat": "AllHeroAttackSpeed",
+    "value": 10.0
+   },
+   {
+    "level": 5,
+    "cost": 70000,
+    "stat": "AllHeroAttackSpeed",
+    "value": 10.0
+   },
+   {
+    "level": 5,
+    "cost": 75000,
+    "stat": "AllHeroAttackSpeed",
+    "value": 10.0
+   },
+   {
+    "level": 5,
+    "cost": 80000,
+    "stat": "AllHeroAttackSpeed",
+    "value": 10.0
+   },
+   {
+    "level": 5,
+    "cost": 85000,
+    "stat": "AllHeroAttackSpeed",
+    "value": 10.0
+   },
+   {
+    "level": 5,
+    "cost": 90000,
+    "stat": "AllHeroAttackSpeed",
+    "value": 10.0
+   },
+   {
+    "level": 5,
+    "cost": 95000,
+    "stat": "AllHeroAttackSpeed",
+    "value": 10.0
+   }
+  ],
+  "x": 504.0,
+  "y": -258.1
+ },
+ "410": {
+  "key": 410,
+  "name": "Runa do Escudo",
+  "icon": "rune_sprites/410.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   411,
+   4101
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 50000,
+    "stat": "AllHeroArmor",
+    "value": 5.0
+   },
+   {
+    "level": 2,
+    "cost": 60000,
+    "stat": "AllHeroArmor",
+    "value": 5.0
+   },
+   {
+    "level": 3,
+    "cost": 70000,
+    "stat": "AllHeroArmor",
+    "value": 5.0
+   },
+   {
+    "level": 4,
+    "cost": 80000,
+    "stat": "AllHeroArmor",
+    "value": 5.0
+   },
+   {
+    "level": 5,
+    "cost": 90000,
+    "stat": "AllHeroArmor",
+    "value": 5.0
+   }
+  ],
+  "x": 504.0,
+  "y": -332.1
+ },
+ "411": {
+  "key": 411,
+  "name": "Runa de Guerra",
+  "icon": "rune_sprites/411.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   412
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 80000,
+    "stat": "AllHeroAttackDamage",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 100000,
+    "stat": "AllHeroAttackDamage",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 120000,
+    "stat": "AllHeroAttackDamage",
+    "value": 1.0
+   },
+   {
+    "level": 4,
+    "cost": 140000,
+    "stat": "AllHeroAttackDamage",
+    "value": 1.0
+   },
+   {
+    "level": 5,
+    "cost": 160000,
+    "stat": "AllHeroAttackDamage",
+    "value": 1.0
+   }
+  ],
+  "x": 576.0,
+  "y": -332.1
+ },
+ "412": {
+  "key": 412,
+  "name": "Runa do Escudo",
+  "icon": "rune_sprites/412.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   413
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 150000,
+    "stat": "AllHeroArmorPercent",
+    "value": 50.0
+   },
+   {
+    "level": 2,
+    "cost": 200000,
+    "stat": "AllHeroArmorPercent",
+    "value": 50.0
+   },
+   {
+    "level": 3,
+    "cost": 250000,
+    "stat": "AllHeroArmorPercent",
+    "value": 50.0
+   },
+   {
+    "level": 4,
+    "cost": 300000,
+    "stat": "AllHeroArmorPercent",
+    "value": 50.0
+   },
+   {
+    "level": 5,
+    "cost": 350000,
+    "stat": "AllHeroArmorPercent",
+    "value": 50.0
+   }
+  ],
+  "x": 648.0,
+  "y": -332.1
+ },
+ "413": {
+  "key": 413,
+  "name": "Runa de Guerra",
+  "icon": "rune_sprites/413.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   414
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 200000,
+    "stat": "AllHeroAttackDamagePercent",
+    "value": 50.0
+   },
+   {
+    "level": 2,
+    "cost": 400000,
+    "stat": "AllHeroAttackDamagePercent",
+    "value": 50.0
+   },
+   {
+    "level": 3,
+    "cost": 600000,
+    "stat": "AllHeroAttackDamagePercent",
+    "value": 50.0
+   },
+   {
+    "level": 4,
+    "cost": 800000,
+    "stat": "AllHeroAttackDamagePercent",
+    "value": 50.0
+   },
+   {
+    "level": 5,
+    "cost": 1000000,
+    "stat": "AllHeroAttackDamagePercent",
+    "value": 50.0
+   }
+  ],
+  "x": 720.0,
+  "y": -332.1
+ },
+ "414": {
+  "key": 414,
+  "name": "Runa do Frenesi",
+  "icon": "rune_sprites/414.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 300000,
+    "stat": "AllHeroAttackSpeed",
+    "value": 20.0
+   },
+   {
+    "level": 2,
+    "cost": 500000,
+    "stat": "AllHeroAttackSpeed",
+    "value": 20.0
+   },
+   {
+    "level": 3,
+    "cost": 700000,
+    "stat": "AllHeroAttackSpeed",
+    "value": 20.0
+   },
+   {
+    "level": 4,
+    "cost": 900000,
+    "stat": "AllHeroAttackSpeed",
+    "value": 20.0
+   },
+   {
+    "level": 5,
+    "cost": 1100000,
+    "stat": "AllHeroAttackSpeed",
+    "value": 20.0
+   }
+  ],
+  "x": 720.0,
+  "y": -404.1
+ },
+ "4031": {
+  "key": 4031,
+  "name": "Runa de Guerra",
+  "icon": "rune_sprites/4031.png",
+  "maxLevel": 1,
+  "prevReq": "1",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 30000,
+    "stat": "AllHeroAttackDamage",
+    "value": 1.0
+   }
+  ],
+  "x": 216.0,
+  "y": -188.1
+ },
+ "4061": {
+  "key": 4061,
+  "name": "Runa do Frenesi",
+  "icon": "rune_sprites/4061.png",
+  "maxLevel": 3,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 25000,
+    "stat": "AllHeroAttackSpeed",
+    "value": 20.0
+   },
+   {
+    "level": 2,
+    "cost": 28000,
+    "stat": "AllHeroAttackSpeed",
+    "value": 20.0
+   },
+   {
+    "level": 3,
+    "cost": 33000,
+    "stat": "AllHeroAttackSpeed",
+    "value": 20.0
+   }
+  ],
+  "x": 360.0,
+  "y": -260.1
+ },
+ "4081": {
+  "key": 4081,
+  "name": "Runa de Guerra",
+  "icon": "rune_sprites/4081.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [
+   4082
+  ],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 50000,
+    "stat": "AllHeroAttackDamage",
+    "value": 1.0
+   },
+   {
+    "level": 2,
+    "cost": 70000,
+    "stat": "AllHeroAttackDamage",
+    "value": 1.0
+   },
+   {
+    "level": 3,
+    "cost": 100000,
+    "stat": "AllHeroAttackDamage",
+    "value": 1.0
+   },
+   {
+    "level": 4,
+    "cost": 150000,
+    "stat": "AllHeroAttackDamage",
+    "value": 1.0
+   },
+   {
+    "level": 5,
+    "cost": 200000,
+    "stat": "AllHeroAttackDamage",
+    "value": 1.0
+   }
+  ],
+  "x": 576.0,
+  "y": -188.1
+ },
+ "4082": {
+  "key": 4082,
+  "name": "Runa da Tempestade",
+  "icon": "rune_sprites/4082.png",
+  "maxLevel": 1,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 5000000,
+    "stat": "AllHeroMoveSpeed",
+    "value": 50.0
+   }
+  ],
+  "x": 648.0,
+  "y": -260.1
+ },
+ "4101": {
+  "key": 4101,
+  "name": "Runa da Tempestade",
+  "icon": "rune_sprites/4101.png",
+  "maxLevel": 5,
+  "prevReq": "",
+  "next": [],
+  "levels": [
+   {
+    "level": 1,
+    "cost": 1000000,
+    "stat": "AllHeroMoveSpeed",
+    "value": 20.0
+   },
+   {
+    "level": 2,
+    "cost": 1100000,
+    "stat": "AllHeroMoveSpeed",
+    "value": 20.0
+   },
+   {
+    "level": 3,
+    "cost": 1200000,
+    "stat": "AllHeroMoveSpeed",
+    "value": 20.0
+   },
+   {
+    "level": 4,
+    "cost": 1300000,
+    "stat": "AllHeroMoveSpeed",
+    "value": 20.0
+   },
+   {
+    "level": 5,
+    "cost": 1400000,
+    "stat": "AllHeroMoveSpeed",
+    "value": 20.0
+   }
+  ],
+  "x": 504.0,
+  "y": -404.1
+ }
+}

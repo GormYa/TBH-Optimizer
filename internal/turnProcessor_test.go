@@ -189,7 +189,8 @@ func TestIsValidRound(t *testing.T) {
 		{"so ouro (herois no max, xp 0)", 60, 1000, 0, true},
 		{"ganho zero (save ocioso / selecao) -> invalido", 60, 0, 0, false},
 		{"tempo curto demais (ruido <3s)", 2, 1000, 500, false},
-		{"ouro negativo (anomalia)", 60, -1, 500, false},
+		{"ouro negativo COM xp (compra de runa no meio) -> valido", 60, -50000, 500, true},
+		{"ouro negativo SEM xp (so compra, sem clear) -> invalido", 60, -50000, 0, false},
 		{"xp negativo (anomalia)", 60, 1000, -1, false},
 	}
 	for _, c := range cases {
@@ -288,5 +289,85 @@ func TestRunDebouncedMonitorIgnoresNoise(t *testing.T) {
 	case <-fired:
 		t.Fatal("ruido disparou processamento indevidamente")
 	case <-time.After(150 * time.Millisecond):
+	}
+}
+
+// Corrida em que um herói SOBE DE NÍVEL é descartada (o XP do ciclo fica distorcido
+// pelo limiar do nível). Detectado pelo nível, não pelo XP.
+func TestLevelUpDiscardsRound(t *testing.T) {
+	old, _ := os.Getwd()
+	os.Chdir(t.TempDir())
+	defer os.Chdir(old)
+	const stage = 2206
+	ctrl := Control{
+		UseEMA: true, EMAAlpha: 0.2, HeroLevel: 39, ActiveHeroCount: 1,
+		FarmStages:          map[int]FarmStageInfo{stage: {Key: stage, Label: "2-6", Difficulty: "NIGHTMARE", TotalHP: 1000000, ExpectedGold: 36802, ExpectedEXP: 699465, Waves: 17, Level: 39}},
+		HeroStates:          map[int]HeroState{201: {Level: 39, Xp: 0}},
+		LastCurrentStageKey: stage, LastPlayTime: 1000, LastGold: 500,
+	}
+	// clear estável, ouro normal, mas o herói sobe L39->L40 -> deve DESCARTAR.
+	calculateAndLogRound(&ctrl, newClearSave(stage, 1300, 100500, 201, 40, 3000000))
+	if s, _ := ctrl.StageHistory.Get(stage); s != nil && s.TotalRuns != 0 {
+		t.Fatalf("corrida com level-up deveria ser descartada; TotalRuns=%d (esperado 0)", s.TotalRuns)
+	}
+
+	// A PRÓXIMA corrida (sem level-up) conta normal — a baseline já avançou pro L40.
+	ctrl.LastPlayTime = 1300
+	ctrl.LastGold = 100500
+	calculateAndLogRound(&ctrl, newClearSave(stage, 1600, 200000, 201, 40, 6000000))
+	if s, _ := ctrl.StageHistory.Get(stage); s == nil || s.TotalRuns != 1 {
+		t.Fatalf("corrida seguinte (sem level-up) deveria contar; %v", s)
+	}
+}
+
+// PROVA do fix do caco de 7s: um save ignorado (sem ganho novo) NAO move o baseline,
+// um fragmento curto demais e descartado, e o proximo clear real e medido da janela
+// inteira (do ultimo clear bom), nao do fragmento.
+func TestFragmentRejectedAndBaselineKept(t *testing.T) {
+	old, _ := os.Getwd()
+	if err := os.Chdir(t.TempDir()); err != nil {
+		t.Fatal(err)
+	}
+	defer os.Chdir(old)
+
+	const stage = 2106
+	ctrl := Control{
+		UseEMA: true, EMAAlpha: 0.2,
+		FarmStages:          map[int]FarmStageInfo{stage: {Key: stage, Label: "2-6", TotalHP: 500000, ExpectedGold: 50000, ExpectedEXP: 3000000, Waves: 20, Level: 40}},
+		HeroStates:          map[int]HeroState{201: {Level: 40, Xp: 1000}},
+		ActiveHeroCount:     1,
+		HeroLevel:           40,
+		LastCurrentStageKey: stage,
+		LastPlayTime:        1000,
+		LastGold:            500,
+	}
+
+	// 1) clear real de 262s -> registra, baseline avanca para 1262.
+	calculateAndLogRound(&ctrl, newClearSave(stage, 1262, 99429, 201, 40, 5461397))
+	if ctrl.LastPlayTime != 1262 {
+		t.Fatalf("clear real deveria mover o baseline para 1262, foi %.0f", ctrl.LastPlayTime)
+	}
+
+	// 2) save sem ganho novo (duplicado/ocioso) -> ignorado, baseline NAO anda.
+	calculateAndLogRound(&ctrl, newClearSave(stage, 1269, 99429, 201, 40, 5461397))
+	if ctrl.LastPlayTime != 1262 {
+		t.Fatalf("save ignorado moveu o baseline para %.0f (era pra ficar 1262)", ctrl.LastPlayTime)
+	}
+
+	// 3) fragmento curto demais (14s vs media 262s) -> descartado, baseline mantido.
+	calculateAndLogRound(&ctrl, newClearSave(stage, 1276, 99429+2443, 201, 40, 5461397+144233))
+	s, _ := ctrl.StageHistory.Get(stage)
+	if s.TotalRuns != 1 {
+		t.Fatalf("fragmento de 14s foi registrado (runs=%d, esperado 1)", s.TotalRuns)
+	}
+	if ctrl.LastPlayTime != 1262 {
+		t.Fatalf("fragmento moveu o baseline para %.0f (era pra ficar 1262)", ctrl.LastPlayTime)
+	}
+
+	// 4) clear de verdade medido do baseline mantido (1524-1262=262s) -> registra run 2.
+	calculateAndLogRound(&ctrl, newClearSave(stage, 1524, 99429+98929, 201, 40, 5461397+5460397))
+	s, _ = ctrl.StageHistory.Get(stage)
+	if s.TotalRuns != 2 {
+		t.Fatalf("clear real apos fragmento nao registrou (runs=%d, esperado 2)", s.TotalRuns)
 	}
 }

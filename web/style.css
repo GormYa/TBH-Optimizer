@@ -326,6 +326,51 @@ tbody tr.seeded { opacity: .82; }
 .cl-reject .cl-msg { color: #ff8585; }
 .cl-info .cl-msg { color: var(--txt-dim); }
 
+/* ===================== aba Runas ===================== */
+.runas-head { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
+.runas-gold { display: flex; align-items: center; gap: 7px; font-family: var(--font-d); font-weight: 800; font-size: 20px; color: var(--gold); background: rgba(244,183,64,.1); border: 1px solid rgba(244,183,64,.3); padding: 8px 14px; border-radius: 11px; }
+.runas-gold small { color: var(--txt-faint); font-size: 12px; font-weight: 600; }
+.runas-body { display: flex; gap: 14px; align-items: flex-start; }
+.attr-panel { flex: 0 0 280px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; max-height: 560px; overflow-y: auto; }
+.attr-row { display: flex; justify-content: space-between; gap: 10px; padding: 5px 0; border-bottom: 1px solid var(--line-soft); font-size: 13px; }
+.attr-row:last-child { border-bottom: none; }
+.attr-label { color: var(--txt-dim); }
+.attr-val { font-family: var(--font-d); font-weight: 700; color: var(--ok); white-space: nowrap; }
+.rune-tree-wrap { flex: 1; min-width: 0; overflow: hidden; position: relative; background: var(--bg-2); border: 1px solid var(--line); border-radius: 14px; height: 560px; cursor: grab; user-select: none; }
+.rune-tree-wrap:active { cursor: grabbing; }
+.rune-tree { position: absolute; left: 0; top: 0; transform-origin: 0 0; will-change: transform; }
+.rune-zoom-bar { position: absolute; right: 10px; top: 10px; z-index: 10; display: flex; gap: 6px; }
+.rune-zoom-bar button { width: 30px; height: 30px; display: grid; place-items: center; background: var(--panel-2); border: 1px solid var(--line); color: var(--txt); border-radius: 7px; cursor: pointer; font-size: 17px; line-height: 1; }
+.rune-zoom-bar button:hover { border-color: var(--gold); color: var(--gold); }
+.rune-hint { position: absolute; left: 10px; bottom: 8px; z-index: 10; font-size: 11px; color: var(--txt-faint); pointer-events: none; background: rgba(10,13,19,.6); padding: 3px 8px; border-radius: 6px; }
+.rune-lines { position: absolute; left: 0; top: 0; pointer-events: none; }
+.rune-lines line { stroke: var(--line); stroke-width: 2; }
+.rune-lines line.on { stroke: var(--gold-d); stroke-width: 3; }
+.rune-node { position: absolute; width: 38px; height: 38px; padding: 0; border-radius: 9px; border: 2px solid var(--line); background: var(--panel-2); cursor: pointer; display: grid; place-items: center; transition: transform .1s; }
+.rune-node:hover { transform: scale(1.15); z-index: 5; }
+.rune-node.sel { box-shadow: 0 0 0 3px var(--gold); z-index: 6; }
+.rune-ico { width: 30px; height: 30px; object-fit: contain; image-rendering: pixelated; }
+.rune-ico.big { width: 48px; height: 48px; }
+.rune-lvl { position: absolute; right: -5px; bottom: -5px; background: var(--gold); color: #1a1206; font-family: var(--font-d); font-weight: 800; font-size: 10px; min-width: 15px; height: 15px; padding: 0 3px; border-radius: 8px; display: grid; place-items: center; }
+.rune-node.rs-locked { opacity: .5; border-color: var(--line); background: #15171c; }
+.rune-node.rs-locked .rune-ico { filter: grayscale(1) brightness(.55); }
+.rune-node.rs-locked:not(.sel) { box-shadow: none; }
+.rune-node.rs-ready { border-color: var(--xp-d); }
+.rune-node.rs-owned { border-color: var(--ok); }
+.rune-node.rs-buy { border-color: var(--ok); box-shadow: 0 0 9px rgba(87,224,138,.6); }
+.rune-node.rs-max { border-color: var(--gold); }
+.rune-detail { margin-top: 14px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
+.rd-head { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+.rd-can { color: var(--ok); font-weight: 700; }
+.rd-cant { color: #ff8585; font-weight: 700; }
+.rd-lock { margin: -6px 0 12px; padding: 7px 11px; background: rgba(255,133,133,.08); border: 1px solid rgba(255,133,133,.3); border-radius: 9px; color: #ffb0b0; font-size: 13px; }
+.attr-tabs { display: flex; gap: 4px; margin-bottom: 10px; }
+.attr-tabs button { flex: 1; padding: 6px 4px; font-size: 12px; font-weight: 700; border: 1px solid var(--line); background: var(--panel-2); color: var(--muted); border-radius: 8px; cursor: pointer; transition: all .12s; }
+.attr-tabs button:hover { color: var(--text); }
+.attr-tabs button.on { background: var(--gold); color: #1a1206; border-color: var(--gold); }
+.sm-tbl tr.rdhave td { color: var(--ok); }
+@media (max-width: 720px) { .runas-body { flex-direction: column; } .attr-panel { flex: none; width: 100%; max-height: 280px; } }
+
 .g-gold { color: var(--gold); }
 .g-xp { color: var(--xp); }
 .g-drop { color: var(--drop); }

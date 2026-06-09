@@ -47,7 +47,8 @@ func DumpSaveStructure() error {
 		fmt.Printf("=== heroSaveDatas: %d total | arrangedHeroKey (ativos): %v ===\n",
 			len(save.HeroSaveDatas), save.CommonSaveData.ArrangedHeroKey)
 		for _, h := range save.HeroSaveDatas {
-			fmt.Printf("    hero %d -> level %d\n", h.HeroKey, h.HeroLevel)
+			fmt.Printf("    hero %d -> level %d | HeroExp %.0f | ExpForLevelUp(L%d)=%.0f\n",
+				h.HeroKey, h.HeroLevel, h.HeroExp, h.HeroLevel, GetXPRequiredForLevel(h.HeroLevel))
 		}
 	}
 	return nil

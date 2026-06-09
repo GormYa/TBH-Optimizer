@@ -271,6 +271,74 @@
 				</div>
 			</section>
 
+			<!-- ---------- RUNAS ---------- -->
+			<section v-show="view === 'runas'" class="view">
+				<div class="runas-head">
+					<div class="runas-gold"><icon name="coins" :size="18"></icon> {{ formatNumber(playerGold) }} <small>ouro</small></div>
+					<p class="hint" style="margin:0;">Árvore de runas do jogo. <b style="color:var(--ok)">Verde</b> = dá pra subir agora · <b style="color:var(--xp)">azul</b> = desbloqueável (sem ouro) · cinza = bloqueado. Clique numa runa pra ver níveis e custo.</p>
+				</div>
+				<div class="runas-body">
+					<div class="attr-panel">
+						<h4 class="sm-h">Lista de atributos</h4>
+						<div v-if="!attributeTotals.length" class="hint">Sem runas registradas ainda — abra o jogo com uma corrida pra sincronizar.</div>
+						<template v-else>
+							<div class="attr-tabs">
+								<button type="button" v-for="g in attrGroupOrder" :key="g" :class="{ on: attrTab === g }" @click="attrTab = g">{{ ATTR_GROUP_LABEL[g] }}</button>
+							</div>
+							<div v-if="!attrGroups[attrTab].length" class="hint">Nenhum atributo de {{ ATTR_GROUP_LABEL[attrTab].toLowerCase() }} ainda.</div>
+							<div class="attr-row" v-for="a in attrGroups[attrTab]" :key="a.stat">
+								<span class="attr-label">{{ a.label }}</span>
+								<span class="attr-val">{{ a.unit === '%' ? '+' + a.value + '%' : '+' + formatNumber(a.value) }}</span>
+							</div>
+						</template>
+					</div>
+					<div class="rune-tree-wrap" @wheel.prevent="onRuneWheel" @mousedown.prevent="onRuneDown" @mousemove="onRuneMove" @mouseup="onRuneUp" @mouseleave="onRuneUp">
+						<div class="rune-zoom-bar">
+							<button type="button" @click.stop="zoomRunes(1.2)" title="Zoom +">+</button>
+							<button type="button" @click.stop="zoomRunes(1/1.2)" title="Zoom −">−</button>
+							<button type="button" @click.stop="fitRunes()" title="Centralizar / ajustar"><icon name="refresh" :size="14"></icon></button>
+						</div>
+						<div class="rune-hint">scroll = zoom · arrastar = mover</div>
+						<div class="rune-tree" :style="{ width: runeCanvasW + 'px', height: runeCanvasH + 'px', transform: 'translate(' + runePanX + 'px,' + runePanY + 'px) scale(' + runeZoom + ')' }">
+							<svg class="rune-lines" :width="runeCanvasW" :height="runeCanvasH">
+								<line v-for="(l, i) in runeLineList" :key="i" :x1="l.x1" :y1="l.y1" :x2="l.x2" :y2="l.y2" :class="{ on: l.on }"></line>
+							</svg>
+							<button v-for="r in runeListSorted" :key="r.key" type="button" class="rune-node" :class="['rs-' + runeState(r), { sel: selectedRune === r.key }]" :style="{ left: runeNX(r) + 'px', top: runeNY(r) + 'px' }" @click="selectRune(r.key)" :title="r.name">
+								<img v-if="r.icon" :src="r.icon" class="rune-ico" loading="lazy" onerror="this.style.visibility='hidden'">
+								<span class="rune-lvl" v-if="runeLevel(r.key)">{{ runeLevel(r.key) }}</span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="rune-detail" v-if="selectedRune && runesData[selectedRune]">
+					<div class="rd-head">
+						<img v-if="runesData[selectedRune].icon" :src="runesData[selectedRune].icon" class="rune-ico big">
+						<div>
+							<h4 class="sm-title" style="font-size:18px;margin:0;">{{ runesData[selectedRune].name }}</h4>
+							<div class="sm-sub">
+								Nível {{ runeLevel(selectedRune) }}/{{ runesData[selectedRune].maxLevel }}
+								<template v-if="nextLevelCost(runesData[selectedRune]) != null"> · próximo nível: {{ formatNumber(nextLevelCost(runesData[selectedRune])) }} ouro
+									<span v-if="!isUnlockable(runesData[selectedRune])" class="rd-cant">(bloqueada)</span>
+									<span v-else-if="playerGold >= nextLevelCost(runesData[selectedRune])" class="rd-can">(dá pra comprar)</span>
+									<span v-else class="rd-cant">(falta ouro)</span>
+								</template>
+								<template v-else> · <b>MÁX</b></template>
+							</div>
+							<div v-if="!isUnlockable(runesData[selectedRune])" class="rd-lock">🔒 {{ unlockHint(runesData[selectedRune]) }}</div>
+						</div>
+					</div>
+					<table class="sm-tbl">
+						<tbody>
+							<tr v-for="l in runesData[selectedRune].levels" :key="l.level" :class="{ rdhave: l.level <= runeLevel(selectedRune) }">
+								<td>Nível {{ l.level }}</td>
+								<td>{{ statLabel(l.stat) }} <b>{{ fmtRuneVal(l) }}</b></td>
+								<td class="mono g-gold">{{ formatNumber(l.cost) }} ouro</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+
 			<!-- ---------- BAÚS ---------- -->
 			<section v-show="view === 'chests'" class="view">
 				<!-- DETALHE DE UM BAÚ -->
@@ -473,7 +541,7 @@
 	</div>
 
 	<script>
-		const { createApp, ref, computed, onMounted, nextTick } = Vue;
+		const { createApp, ref, computed, onMounted, nextTick, watch } = Vue;
 
 		// Ícones SVG inline (estilo Lucide) — offline, herdam a cor via currentColor.
 		const ICONS = {
@@ -714,6 +782,7 @@
 				const navItems = [
 					{ id: 'painel', label: 'Painel', icon: 'dashboard' },
 					{ id: 'fases', label: 'Fases', icon: 'shield' },
+					{ id: 'runas', label: 'Runas', icon: 'sparkles' },
 					{ id: 'chests', label: 'Baús', icon: 'package' },
 					{ id: 'items', label: 'Itens', icon: 'swords' }
 				];
@@ -766,6 +835,164 @@
 				const activeHeroList = computed(() => (statsReport.value.active_heroes || []).map(h => ({
 					key: h.key, level: h.level, ...(heroesData.value[h.key] || { name: 'Herói ' + h.key, icon: '', class: '' })
 				})));
+
+				// ---------- RUNAS (árvore do jogo: posições reais + níveis/custos) ----------
+				const runesData = ref({});
+				const loadRunes = async () => {
+					try { const r = await fetch('runes.json'); if (r.ok) runesData.value = await r.json(); }
+					catch (e) { /* sem runes.json */ }
+				};
+				const playerGold = computed(() => statsReport.value.gold || 0);
+				const ownedRuneLevels = computed(() => statsReport.value.rune_levels || {});
+				const runeLevel = (key) => ownedRuneLevels.value[key] || 0;
+
+				// rótulo + formato pt-BR de cada STATTYPE (Lista de atributos)
+				const STAT_LABEL = {
+					IncreaseExpAmount: ['Aumento de Ganho de Exp', '%'], IncreaseGoldAmount: ['Aumento de Ganho de Ouro', '%'],
+					AdditionalExp: ['Exp Adicional', ''], AdditionalExpStageBoss: ['Exp do chefe de fase', ''], AdditionalExpActBoss: ['Exp do chefe de ato', ''], AdditionalExpNormalMonster: ['Exp de monstros comuns', ''],
+					AdditionalGold: ['Ouro Adicional', ''], AdditionalGoldStageBoss: ['Ouro do chefe de fase', ''], AdditionalGoldActBoss: ['Ouro do chefe de ato', ''], AdditionalGoldNormalMonster: ['Ouro de monstros comuns', ''],
+					AllHeroAttackDamage: ['Dano de todos os Heróis', ''], AllHeroAttackDamagePercent: ['Dano de todos os Heróis', '%'], AllHeroAttackSpeed: ['Vel. de ataque de todos os Heróis', '%'], AllHeroMoveSpeed: ['Vel. de mov. de todos os Heróis', '%'], AllHeroArmor: ['Armadura de todos os Heróis', ''], AllHeroArmorPercent: ['Armadura de todos os Heróis', '%'],
+					UnlockArrangeSlotCount: ['Espaço de Herói', ''], UnlockSkillSlotCount: ['Espaço de Habilidade', ''], MaxInventorySlot: ['Espaço de Inventário', ''], UnlockStashPageCount: ['Páginas de Baú', ''],
+					DropChanceNormalChestPercent: ['Chance de baú comum', '%'], DropChanceStageBossChestPercent: ['Chance de baú de chefe', '%'],
+					MaxAmountNormalChest: ['Máx. baú comum', ''], MaxAmountStageBossChest: ['Máx. baú de chefe', ''], MaxAmountActBossChest: ['Máx. baú de ato', ''],
+					CubeExpPercent: ['Exp do Cubo', '%'], CubeAlchemyGoldPercent: ['Ouro de Alquimia do Cubo', '%'], WaveCountReduction: ['Redução de Waves', ''],
+					OfflineRewardGoldPercent: ['Ouro offline', '%'], OfflineRewardExpPercent: ['Exp offline', '%'],
+					UnlockOfflineReward: ['Recompensa offline', ''], UnlockAutoOpenNormalChest: ['Auto-abrir baú comum', ''], UnlockAutoOpenStageBossChest: ['Auto-abrir baú de chefe', ''],
+					ReduceAutoOpenNormalChestTime: ['Tempo auto-abrir baú comum', ''], ReduceAutoOpenStageBossChestTime: ['Tempo auto-abrir baú de chefe', ''],
+					OpenOneTypeChestAllAtOnce: ['Abrir baús de um tipo de vez', ''], OpenAllTypeChestAllAtOnce: ['Abrir baús de todos os tipos', ''],
+				};
+				const statLabel = (s) => (STAT_LABEL[s] || [s, ''])[0];
+				const statUnit = (s) => (STAT_LABEL[s] || [s, ''])[1];
+
+				// abas da Lista de atributos, como no jogo: Exploração / Combate / Recompensa
+				const ATTR_GROUP_LABEL = { exploracao: 'Exploração', combate: 'Combate', recompensa: 'Recompensa' };
+				const attrGroupOrder = ['exploracao', 'combate', 'recompensa'];
+				const STAT_GROUP = {
+					IncreaseExpAmount: 'exploracao', AdditionalExp: 'exploracao', AdditionalExpStageBoss: 'exploracao', AdditionalExpActBoss: 'exploracao', AdditionalExpNormalMonster: 'exploracao', UnlockArrangeSlotCount: 'exploracao',
+					AllHeroAttackDamage: 'combate', AllHeroAttackDamagePercent: 'combate', AllHeroAttackSpeed: 'combate', AllHeroMoveSpeed: 'combate', AllHeroArmor: 'combate', AllHeroArmorPercent: 'combate', UnlockSkillSlotCount: 'combate', WaveCountReduction: 'combate',
+					IncreaseGoldAmount: 'recompensa', AdditionalGold: 'recompensa', AdditionalGoldStageBoss: 'recompensa', AdditionalGoldActBoss: 'recompensa', AdditionalGoldNormalMonster: 'recompensa',
+					CubeExpPercent: 'recompensa', CubeAlchemyGoldPercent: 'recompensa',
+					MaxAmountNormalChest: 'recompensa', MaxAmountStageBossChest: 'recompensa', MaxAmountActBossChest: 'recompensa', MaxInventorySlot: 'recompensa', UnlockStashPageCount: 'recompensa',
+					DropChanceNormalChestPercent: 'recompensa', DropChanceStageBossChestPercent: 'recompensa', OfflineRewardGoldPercent: 'recompensa', OfflineRewardExpPercent: 'recompensa',
+				};
+				const statGroup = (s) => STAT_GROUP[s] || 'recompensa';
+				const attrTab = ref('exploracao');
+
+				// soma dos efeitos dos níveis JÁ possuídos -> Lista de atributos
+				const attributeTotals = computed(() => {
+					const t = {};
+					Object.values(runesData.value).forEach(rune => {
+						const lvl = runeLevel(rune.key);
+						(rune.levels || []).forEach(l => { if (l.level <= lvl && l.value) t[l.stat] = (t[l.stat] || 0) + l.value; });
+					});
+					return Object.entries(t).map(([stat, value]) => ({ stat, value, label: statLabel(stat), unit: statUnit(stat), group: statGroup(stat) }))
+						.sort((a, b) => a.label.localeCompare(b.label));
+				});
+				const attrGroups = computed(() => {
+					const g = { exploracao: [], combate: [], recompensa: [] };
+					attributeTotals.value.forEach(a => g[a.group].push(a));
+					return g;
+				});
+
+				// pais de cada runa (aresta reversa de next[]) -> pré-requisito de desbloqueio
+				const runeParents = computed(() => {
+					const m = {};
+					Object.values(runesData.value).forEach(r => (r.next || []).forEach(nk => { (m[nk] = m[nk] || []).push(r.key); }));
+					return m;
+				});
+				const nextLevelCost = (rune) => {
+					const lvl = runeLevel(rune.key);
+					if (lvl >= rune.maxLevel) return null;
+					const lv = (rune.levels || []).find(l => l.level === lvl + 1);
+					return lv ? lv.cost : null;
+				};
+				const isUnlockable = (rune) => {
+					if (runeLevel(rune.key) > 0) return true; // já tem
+					const parents = runeParents.value[rune.key] || [];
+					if (!parents.length) return true; // raiz de verdade (sem pai)
+					const req = unlockReq(rune);
+					return parents.some(pk => runeLevel(pk) >= req);
+				};
+				// vazio = pai so precisa estar desbloqueado (nivel 1)
+				const unlockReq = (rune) => { const r = parseInt(rune.prevReq, 10); return (isNaN(r) || r <= 0) ? 1 : r; };
+				// texto do pre-requisito de uma runa bloqueada
+				const unlockHint = (rune) => {
+					const parents = runeParents.value[rune.key] || [];
+					if (!parents.length) return '';
+					const req = unlockReq(rune);
+					const names = parents.map(pk => { const p = runesData.value[pk]; return p ? p.name + (req > 1 ? ' nivel ' + req : '') : null; }).filter(Boolean);
+					return names.length ? 'Libere ' + names.join(' ou ') + ' primeiro' : '';
+				};
+				// estado visual: max | owned | buy (dá pra subir agora) | ready (desbloqueável, sem ouro) | locked
+				const runeState = (rune) => {
+					const lvl = runeLevel(rune.key);
+					if (lvl >= rune.maxLevel && lvl > 0) return 'max';
+					if (!isUnlockable(rune)) return 'locked';
+					const cost = nextLevelCost(rune);
+					if (cost != null && playerGold.value >= cost) return 'buy';
+					if (lvl > 0) return 'owned';
+					return 'ready';
+				};
+
+				// layout: normaliza as posições reais (Y invertido p/ tela)
+				const RUNE_PAD = 50, RUNE_NODE = 38;
+				const runeBounds = computed(() => {
+					const rs = Object.values(runesData.value);
+					if (!rs.length) return { minX: 0, maxX: 0, minY: 0, maxY: 0 };
+					return { minX: Math.min(...rs.map(r => r.x)), maxX: Math.max(...rs.map(r => r.x)), minY: Math.min(...rs.map(r => r.y)), maxY: Math.max(...rs.map(r => r.y)) };
+				});
+				const runeNX = (r) => (r.x - runeBounds.value.minX) + RUNE_PAD;
+				const runeNY = (r) => (runeBounds.value.maxY - r.y) + RUNE_PAD;
+				const runeCanvasW = computed(() => runeBounds.value.maxX - runeBounds.value.minX + RUNE_PAD * 2 + RUNE_NODE);
+				const runeCanvasH = computed(() => runeBounds.value.maxY - runeBounds.value.minY + RUNE_PAD * 2 + RUNE_NODE);
+				const runeLineList = computed(() => {
+					const out = []; const rs = runesData.value; const c = RUNE_NODE / 2;
+					Object.values(rs).forEach(r => (r.next || []).forEach(nk => {
+						const n = rs[nk]; if (!n) return;
+						out.push({ x1: runeNX(r) + c, y1: runeNY(r) + c, x2: runeNX(n) + c, y2: runeNY(n) + c, on: runeLevel(r.key) > 0 && runeLevel(nk) > 0 });
+					}));
+					return out;
+				});
+				const runeListSorted = computed(() => Object.values(runesData.value).sort((a, b) => a.key - b.key));
+				const selectedRune = ref(null);
+				const fmtRuneVal = (l) => (statUnit(l.stat) === '%' ? '+' + (l.value) + '%' : '+' + l.value);
+
+				// pan/zoom da árvore: scroll = zoom no cursor, arrastar = mover (sem scrollbar).
+				const runeZoom = ref(0.55);
+				const runePanX = ref(40);
+				const runePanY = ref(40);
+				let runeDrag = null;
+				const runeDragMoved = ref(false);
+				const clampZoom = (z) => Math.max(0.2, Math.min(2.5, z));
+				const onRuneWheel = (e) => {
+					const r = e.currentTarget.getBoundingClientRect();
+					const cx = e.clientX - r.left, cy = e.clientY - r.top;
+					const nz = clampZoom(runeZoom.value * (e.deltaY < 0 ? 1.12 : 1 / 1.12));
+					const k = nz / runeZoom.value;
+					runePanX.value = cx - (cx - runePanX.value) * k;
+					runePanY.value = cy - (cy - runePanY.value) * k;
+					runeZoom.value = nz;
+				};
+				const onRuneDown = (e) => { runeDrag = { x: e.clientX, y: e.clientY, px: runePanX.value, py: runePanY.value }; runeDragMoved.value = false; };
+				const onRuneMove = (e) => {
+					if (!runeDrag) return;
+					const dx = e.clientX - runeDrag.x, dy = e.clientY - runeDrag.y;
+					if (Math.abs(dx) + Math.abs(dy) > 3) runeDragMoved.value = true;
+					runePanX.value = runeDrag.px + dx;
+					runePanY.value = runeDrag.py + dy;
+				};
+				const onRuneUp = () => { runeDrag = null; };
+				const selectRune = (key) => { if (!runeDragMoved.value) selectedRune.value = (selectedRune.value === key ? null : key); };
+				const zoomRunes = (f) => { runeZoom.value = clampZoom(runeZoom.value * f); };
+				const fitRunes = () => {
+					const w = document.querySelector('.rune-tree-wrap');
+					if (!w || !w.clientWidth) { runeZoom.value = 0.55; runePanX.value = 40; runePanY.value = 40; return; }
+					const z = clampZoom(Math.min(w.clientWidth / runeCanvasW.value, w.clientHeight / runeCanvasH.value) * 0.95);
+					runeZoom.value = z;
+					runePanX.value = (w.clientWidth - runeCanvasW.value * z) / 2;
+					runePanY.value = (w.clientHeight - runeCanvasH.value * z) / 2;
+				};
+				watch(view, (v) => { if (v === 'runas') nextTick(fitRunes); });
 
 				// Aba "Fases": navega entre estágios sem modal. fasesStage = estágio em foco.
 				const fasesStage = ref(null);
@@ -990,7 +1217,7 @@
 				// um painel ativo e, na aba nova, cede em vez de rodar um 2º painel.
 				const duplicateTab = ref(false);
 				let dashChannel = null;
-				const startApp = () => { loadStagesList(); loadStageDetails(); loadMonsterSprites(); loadHeroes(); loadChests(); fetchStats(); initUpdate(); watchVersion(); setInterval(fetchStats, 2000); setInterval(watchVersion, 4000); setInterval(pollUpdateAvailability, 10 * 60 * 1000); pollLogs(); setInterval(pollLogs, 1500); };
+				const startApp = () => { loadStagesList(); loadStageDetails(); loadMonsterSprites(); loadHeroes(); loadRunes(); loadChests(); fetchStats(); initUpdate(); watchVersion(); setInterval(fetchStats, 2000); setInterval(watchVersion, 4000); setInterval(pollUpdateAvailability, 10 * 60 * 1000); pollLogs(); setInterval(pollLogs, 1500); };
 				const useThisTab = () => { duplicateTab.value = false; startApp(); };
 				onMounted(() => {
 					if ('BroadcastChannel' in window) {
@@ -1020,6 +1247,9 @@
 					stageHP, chestRateByStage, chestsPerHour, formatItems,
 					stageDetails, fasesStage, openStageTab, stageDetail, stageSummary, stageChests, fmtInt, stageName, stageLevel,
 					monsterSprite, detailStageKeys, gotoStageDelta, fasesIndex, activeHeroList,
+					runesData, playerGold, runeLevel, attributeTotals, attrGroups, attrTab, attrGroupOrder, ATTR_GROUP_LABEL, nextLevelCost, isUnlockable, unlockHint, runeState,
+					runeNX, runeNY, runeCanvasW, runeCanvasH, runeLineList, runeListSorted, selectedRune, fmtRuneVal, statLabel, statUnit,
+					runeZoom, runePanX, runePanY, onRuneWheel, onRuneDown, onRuneMove, onRuneUp, selectRune, zoomRunes, fitRunes,
 					confidence, confLabel,
 					formatDifficulty, formatStageName, formatNumber, formatTime,
 					chestData, chestType, chestStage, chestTypes, chestStageOptions, filteredChests,

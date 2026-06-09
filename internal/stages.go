@@ -157,5 +157,7 @@ func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
 		Calibrated:    calibrated,
 		HeroLevel:     ctrl.HeroLevel,
 		ActiveHeroes:  ctrl.ActiveHeroes,
+		Gold:          ctrl.Gold,
+		RuneLevels:    ctrl.RuneLevels,
 	}
 }

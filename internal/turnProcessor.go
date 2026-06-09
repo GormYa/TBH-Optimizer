@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
 	"time"
 
 	"github.com/fsnotify/fsnotify"
@@ -44,6 +45,8 @@ func setupWatcher(ctrl *Control) (string, *fsnotify.Watcher, error) {
 	ctrl.HeroLevel = activeHeroLevel(currentSave)
 	ctrl.ActiveHeroCount = len(currentSave.CommonSaveData.ArrangedHeroKey)
 	ctrl.ActiveHeroes = activeHeroes(currentSave)
+	ctrl.Gold = ctrl.LastGold
+	ctrl.RuneLevels = runeLevels(currentSave)
 
 	archivePath := homeDir + `\AppData\LocalLow\TesseractStudio\TaskbarHero\SaveFile_Live.es3`
 	watcher, err := fsnotify.NewWatcher()
@@ -122,6 +125,8 @@ func processSaveChange(ctrl *Control) {
 	if currentSave.CommonSaveData.PlayTime == ctrl.LastPlayTime {
 		return
 	}
+	ctrl.Gold = ExtractGold(currentSave.CurrenySaveDatas)
+	ctrl.RuneLevels = runeLevels(currentSave)
 	if currentSave.CommonSaveData.CurrentStageWave != 0 {
 		stg := currentSave.CommonSaveData.CurrentStageKey
 		if stg != ctrl.lastMidStage {
@@ -161,10 +166,10 @@ func loadSaveWithRetry() (*InnerSaveData, error) {
 // ouro/xp; um save em wave 0 SEM conclusao (autosave ocioso, tela de selecao ao
 // abrir o app) tem ganho zero -> nao e corrida, nao deve inflar a contagem.
 func isValidRound(timeSpent float64, goldGain int, xpGain float64) bool {
-	if timeSpent < 3 || goldGain < 0 || xpGain < 0 {
+	if timeSpent < 3 || xpGain < 0 {
 		return false
 	}
-	return goldGain > 0 || xpGain > 0
+	return xpGain > 0 || goldGain > 0
 }
 
 // timeOutlierFactor: descarta a corrida se o tempo medido passar deste fator
@@ -175,6 +180,11 @@ const timeOutlierFactor = 3.0
 // media da fase. Pega MORTE / clear parcial (o ganho parcial fica, mas e bem
 // menor que um clear real). So aplica quando a fase ja tem historico.
 const goldFloorFactor = 0.5
+
+// goldCeilFactor: descarta a corrida se o ouro passar deste fator vezes a media da
+// fase. Pega ganho de ouro que NAO veio do farm (venda de itens, baus grandes, bonus)
+// e que senao inflaria a media/h (ex.: um pico de 11M puxando a media movel pra 3M).
+const goldCeilFactor = 3.0
 
 // expectedClearGold devolve o ouro esperado de um clear SÓ a partir da média própria
 // da fase (>=3 corridas). Sem histórico próprio -> 0 (sem piso). O piso de cold-start
@@ -233,6 +243,15 @@ func (ctrl *Control) estimateStageTime(stage int) float64 {
 	return 0
 }
 
+// recordedAvgTime devolve a média de tempo já medida da fase (a partir de 1
+// corrida). Usada só como piso anti-fragmento, não para estimar fases novas.
+func (ctrl *Control) recordedAvgTime(stage int) float64 {
+	if s, ok := ctrl.StageHistory.Get(stage); ok && s.TotalRuns >= 1 {
+		return s.AvgTimeSpent
+	}
+	return 0
+}
+
 // stageDisplay devolve "Nightmare 1-5" (dificuldade + label) pro console.
 func (ctrl *Control) stageDisplay(stage int) string {
 	if info, ok := ctrl.FarmStages[stage]; ok && info.Label != "" {
@@ -263,21 +282,24 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 	stage := currentSave.CommonSaveData.CurrentStageKey
 	timeSpent := currentSave.CommonSaveData.PlayTime - ctrl.LastPlayTime
 	goldGain := ExtractGold(currentSave.CurrenySaveDatas) - ctrl.LastGold
-	xpGain := ProcessRoundXp(currentSave.HeroSaveDatas, ctrl.HeroStates)
-
-	averageXpPerHero := xpGain / float64(ctrl.numActiveHeroes())
+	levelUps := heroLevelUps(currentSave.HeroSaveDatas, ctrl.HeroStates)
+	xpGain := computeRoundXp(currentSave.HeroSaveDatas, ctrl.HeroStates)
 
 	stageChanged := stage != ctrl.LastCurrentStageKey
 	estTime := ctrl.estimateStageTime(stage)
 	dropCount, dropsByKey := countNewDrops(ctrl.LastItemIds, currentSave.ItemSaveDatas)
 
 	defer func() {
-		ctrl.LastPlayTime = currentSave.CommonSaveData.PlayTime
 		ctrl.LastCurrentStageKey = currentSave.CommonSaveData.CurrentStageKey
-		ctrl.LastGold = ExtractGold(currentSave.CurrenySaveDatas)
 		ctrl.MaxCompletedStage = currentSave.CommonSaveData.MaxCompletedStage
 		ctrl.LastItemIds = snapshotItemIds(currentSave.ItemSaveDatas)
 	}()
+
+	advanceClock := func() {
+		ctrl.LastPlayTime = currentSave.CommonSaveData.PlayTime
+		ctrl.LastGold = ExtractGold(currentSave.CurrenySaveDatas)
+		commitHeroStates(currentSave.HeroSaveDatas, ctrl.HeroStates)
+	}
 
 	if !isValidRound(timeSpent, goldGain, xpGain) {
 		Logf("info", "Fase %s: save em wave 0 sem ganho NOVO de ouro/xp — ignorado (normalmente um 2º save logo após um clear que já foi contado).", ctrl.stageDisplay(stage))
@@ -285,29 +307,64 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 	}
 
 	if stageChanged {
+		advanceClock()
 		Logf("reject", "Fase %s descartada: a fase mudou no meio da janela (auto-avanço ou morte que trocou de mapa). Só conto ciclo estável na mesma fase.", ctrl.stageDisplay(stage))
 		return
 	}
 
+	if avg := ctrl.recordedAvgTime(stage); avg > 0 && timeSpent < avg/timeOutlierFactor {
+		Logf("reject", "Fase %s descartada: %.0fs curto demais para um clear (média ~%.0fs) — fragmento de save, não um ciclo completo. Junto com o próximo ciclo.", ctrl.stageDisplay(stage), timeSpent, avg)
+		return
+	}
+
 	if !isTimeTrustworthy(timeSpent, estTime, timeOutlierFactor, false) {
+		advanceClock()
 		Logf("reject", "Fase %s descartada: tempo %.0fs muito acima do esperado (~%.0fs). Provável ociosidade/decisão no meio do ciclo.", ctrl.stageDisplay(stage), timeSpent, estTime)
 		return
 	}
 
-	if floor := ctrl.estimateClearGold(stage); floor > 0 && float64(goldGain) < goldFloorFactor*floor {
-		Logf("reject", "Fase %s descartada: ouro %.0f baixo demais para um clear (esperado ~%.0f). Provável morte/clear parcial.", ctrl.stageDisplay(stage), float64(goldGain), floor)
+	if len(levelUps) > 0 {
+		advanceClock()
+		Logf("reject", "Fase %s descartada: %s — o XP de um clear com level-up fica distorcido pelo limiar do nível. A próxima corrida já conta normal.", ctrl.stageDisplay(stage), describeLevelUps(levelUps))
 		return
 	}
 
-	xpPerHour := (averageXpPerHero / timeSpent) * 3600
-	goldPerHour := (float64(goldGain) / timeSpent) * 3600
+	// goldRec = o ouro que ENTRA na média. Eventos fora do farm distorcem o delta:
+	//   - ouro caiu (goldGain<0): compra de runa/item no meio -> corrida real (deu xp),
+	//     conto tempo/xp mas neutralizo o ouro (uso a média atual, blend ~no-op).
+	//   - ouro baixo demais (positivo): morte/clear parcial -> descarta.
+	//   - ouro alto demais: venda/bônus -> descarta.
+	goldRec := float64(goldGain)
+	if goldGain < 0 {
+		if s, ok := ctrl.StageHistory.Get(stage); ok {
+			goldRec = s.AvgGoldPerRun
+		} else {
+			goldRec = 0
+		}
+		Logf("info", "Fase %s: ouro caiu %d no ciclo — provável compra de runa/item. Conto tempo/xp; o ouro não distorce a média.", ctrl.stageDisplay(stage), goldGain)
+	} else if floor := ctrl.estimateClearGold(stage); floor > 0 {
+		if float64(goldGain) < goldFloorFactor*floor {
+			Logf("reject", "Fase %s descartada: ouro %.0f baixo demais para um clear (média ~%.0f). Provável morte/clear parcial.", ctrl.stageDisplay(stage), float64(goldGain), floor)
+			return
+		}
+		if float64(goldGain) > goldCeilFactor*floor {
+			advanceClock()
+			Logf("reject", "Fase %s descartada: ouro %.0f MUITO acima da média (~%.0f) — provável venda de itens/bônus, não ouro de farm. Não inflo a média.", ctrl.stageDisplay(stage), float64(goldGain), floor)
+			return
+		}
+	}
+
+	advanceClock()
+
+	xpPerHour := (xpGain / float64(ctrl.numActiveHeroes()) / timeSpent) * 3600
+	goldPerHour := (goldRec / timeSpent) * 3600
 
 	saveStageLog(stage, timeSpent, goldPerHour, xpPerHour)
 
 	ctrl.StageHistory.Update(
 		stage,
 		timeSpent,
-		float64(goldGain),
+		goldRec,
 		xpGain,
 		ctrl.UseEMA,
 		ctrl.EMAAlpha,
@@ -323,8 +380,22 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 	s, exists := ctrl.StageHistory.Get(stage)
 	if exists {
 		Logf("run", "Fase %s REGISTRADA: %.0fs · +%.0f ouro · +%.0f xp · total de corridas: %d",
-			ctrl.stageDisplay(stage), timeSpent, float64(goldGain), xpGain, s.TotalRuns)
+			ctrl.stageDisplay(stage), timeSpent, goldRec, xpGain, s.TotalRuns)
 	}
+}
+
+// describeLevelUps monta a frase do console listando quem subiu e de qual
+// nivel para qual (ex.: "o heroi Cavaleiro (nivel 39 -> 40) subiu de nivel").
+func describeLevelUps(ups []HeroLevelUp) string {
+	parts := make([]string, len(ups))
+	for i, u := range ups {
+		parts[i] = fmt.Sprintf("%s (nível %d → %d)", heroName(u.Key), u.From, u.To)
+	}
+	joined := strings.Join(parts, ", ")
+	if len(ups) == 1 {
+		return "o herói " + joined + " subiu de nível"
+	}
+	return "os heróis " + joined + " subiram de nível"
 }
 
 func saveStageLog(stageKey int, timeSpent float64, goldGain float64, xpGain float64) {

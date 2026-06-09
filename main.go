@@ -16,12 +16,20 @@ var webFiles embed.FS
 //go:embed web/farm_stages.json
 var farmStagesData []byte
 
+//go:embed web/hero_levels.json
+var heroLevelsData []byte
+
+//go:embed web/heroes.json
+var heroesData []byte
+
 // gameDataDir guarda o catalogo atualizavel em runtime (chest_drops.json + sprites),
 // ao lado do executavel. Servido com prioridade sobre o baseline embarcado.
 const gameDataDir = "gamedata"
 
 func main() {
 	if len(os.Args) > 1 && os.Args[1] == "-dump-save" {
+		internal.LoadLevelCurve(heroLevelsData)
+		internal.LoadHeroNames(heroesData)
 		if err := internal.DumpSaveStructure(); err != nil {
 			fmt.Println("Dump falhou:", err)
 			os.Exit(1)
@@ -57,6 +65,8 @@ func main() {
 	if err != nil {
 		fmt.Println("Aviso: farm_stages.json não pôde ser carregado:", err)
 	}
+	internal.LoadLevelCurve(heroLevelsData)
+	internal.LoadHeroNames(heroesData)
 
 	ctrl := internal.Control{
 		UseEMA:     true,

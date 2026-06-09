@@ -32,6 +32,15 @@ func expRetention(stageLevel, heroLevel int) float64 {
 	return r
 }
 
+// runeLevels devolve runeKey -> nivel a partir do save (runas que o jogador tem).
+func runeLevels(save *InnerSaveData) map[int]int {
+	out := make(map[int]int, len(save.RuneSaveDatas))
+	for _, r := range save.RuneSaveDatas {
+		out[r.RuneKey] = r.Level
+	}
+	return out
+}
+
 // activeHeroes devolve os herois do time ativo (arrangedHeroKey) com seus niveis,
 // na ordem do save. Usado pra exibir o time no painel.
 func activeHeroes(save *InnerSaveData) []ActiveHero {

@@ -15,6 +15,10 @@ type Item struct {
 	ItemKey  int   `json:"ItemKey"`
 	UniqueId int64 `json:"UniqueId"`
 }
+type RuneSave struct {
+	RuneKey int `json:"RuneKey"`
+	Level   int `json:"Level"`
+}
 type InnerSaveData struct {
 	CommonSaveData struct {
 		CurrentStageKey   int     `json:"currentStageKey"`
@@ -26,6 +30,7 @@ type InnerSaveData struct {
 	CurrenySaveDatas []Currency `json:"currenySaveDatas"`
 	HeroSaveDatas    []Hero     `json:"heroSaveDatas"`
 	ItemSaveDatas    []Item     `json:"itemSaveDatas"`
+	RuneSaveDatas    []RuneSave `json:"RuneSaveData"`
 }
 type OuterSave struct {
 	PlayerSaveData struct {
@@ -87,6 +92,8 @@ type Control struct {
 	ActiveHeroCount     int
 	ActiveHeroes        []ActiveHero
 	lastMidStage        int
+	Gold                int
+	RuneLevels          map[int]int
 }
 type ActiveHero struct {
 	Key   int `json:"key"`
@@ -99,4 +106,6 @@ type AnalyticsReport struct {
 	Calibrated    bool                `json:"calibrated"`
 	HeroLevel     int                 `json:"hero_level"`
 	ActiveHeroes  []ActiveHero        `json:"active_heroes"`
+	Gold          int                 `json:"gold"`
+	RuneLevels    map[int]int         `json:"rune_levels"`
 }
