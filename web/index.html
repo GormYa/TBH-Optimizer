@@ -288,7 +288,7 @@
 							<div v-if="!attrGroups[attrTab].length" class="hint">Nenhum atributo de {{ ATTR_GROUP_LABEL[attrTab].toLowerCase() }} ainda.</div>
 							<div class="attr-row" v-for="a in attrGroups[attrTab]" :key="a.stat">
 								<span class="attr-label">{{ a.label }}</span>
-								<span class="attr-val">{{ a.unit === '%' ? '+' + a.value + '%' : '+' + formatNumber(a.value) }}</span>
+								<span class="attr-val">{{ a.unit === '%' ? '+' + (a.value / 10) + '%' : '+' + formatNumber(a.value) }}</span>
 							</div>
 						</template>
 					</div>
@@ -955,7 +955,7 @@
 				});
 				const runeListSorted = computed(() => Object.values(runesData.value).sort((a, b) => a.key - b.key));
 				const selectedRune = ref(null);
-				const fmtRuneVal = (l) => (statUnit(l.stat) === '%' ? '+' + (l.value) + '%' : '+' + l.value);
+				const fmtRuneVal = (l) => (statUnit(l.stat) === '%' ? '+' + (l.value / 10) + '%' : '+' + l.value); // jogo guarda % em décimos (×10)
 
 				// pan/zoom da árvore: scroll = zoom no cursor, arrastar = mover (sem scrollbar).
 				const runeZoom = ref(0.55);
