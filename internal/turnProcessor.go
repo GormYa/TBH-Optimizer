@@ -41,6 +41,9 @@ func setupWatcher(ctrl *Control) (string, *fsnotify.Watcher, error) {
 	ctrl.HeroStates = CalibrateHeroStates(currentSave.HeroSaveDatas)
 	ctrl.MaxCompletedStage = currentSave.CommonSaveData.MaxCompletedStage
 	ctrl.LastItemIds = snapshotItemIds(currentSave.ItemSaveDatas)
+	ctrl.HeroLevel = activeHeroLevel(currentSave)
+	ctrl.ActiveHeroCount = len(currentSave.CommonSaveData.ArrangedHeroKey)
+	ctrl.ActiveHeroes = activeHeroes(currentSave)
 
 	archivePath := homeDir + `\AppData\LocalLow\TesseractStudio\TaskbarHero\SaveFile_Live.es3`
 	watcher, err := fsnotify.NewWatcher()
@@ -121,6 +124,9 @@ func processSaveChange(ctrl *Control) {
 		return
 	}
 
+	ctrl.HeroLevel = activeHeroLevel(currentSave)
+	ctrl.ActiveHeroCount = len(currentSave.CommonSaveData.ArrangedHeroKey)
+	ctrl.ActiveHeroes = activeHeroes(currentSave)
 	calculateAndLogRound(ctrl, currentSave)
 }
 
@@ -236,25 +242,32 @@ func isTimeTrustworthy(timeSpent, estTime, factor float64, stageChanged bool) bo
 // estimateStageTime monta os insumos (historico proprio e fase de referencia) e
 // delega para estimatedRunTime.
 func (ctrl *Control) estimateStageTime(stage int) float64 {
-	var ownAvg float64
-	var ownRuns int
-	if s, ok := ctrl.StageHistory.Get(stage); ok {
-		ownAvg = s.AvgTimeSpent
-		ownRuns = s.TotalRuns
+	if s, ok := ctrl.StageHistory.Get(stage); ok && s.TotalRuns >= 3 && s.AvgTimeSpent > 0 {
+		return s.AvgTimeSpent
 	}
 
-	var stageHP float64
-	if info, ok := ctrl.FarmStages[stage]; ok {
-		stageHP = info.TotalHP
+	info, ok := ctrl.FarmStages[stage]
+	if !ok || info.TotalHP <= 0 {
+		return 0
 	}
 
-	refKey, _, refAvg := ctrl.StageHistory.MostRunStage()
-	var refHP float64
-	if info, ok := ctrl.FarmStages[refKey]; ok {
-		refHP = info.TotalHP
+	// Modelo tempo = a*HP + b*ondas sobre as fases medidas (o mesmo das projecoes).
+	// O termo b (custo fixo por onda) e essencial: sem ele, uma fase de baixo HP teria
+	// estimativa ~0s e um clear real seria descartado como outlier de tempo inflado.
+	var pts []timePoint
+	for _, st := range ctrl.StageHistory.AllStats() {
+		if st.AvgTimeSpent <= 0 || (st.TotalRuns <= 0 && st.ManualTime <= 0) {
+			continue
+		}
+		if fi, ok := ctrl.FarmStages[st.StageKey]; ok && fi.TotalHP > 0 {
+			pts = append(pts, timePoint{HP: fi.TotalHP, Waves: float64(fi.Waves), Time: st.AvgTimeSpent})
+		}
 	}
-
-	return estimatedRunTime(ownAvg, ownRuns, stageHP, refHP, refAvg)
+	a, b, ok := fitTimeModel(pts)
+	if !ok {
+		return 0
+	}
+	return estimateTime(a, b, info.TotalHP, float64(info.Waves))
 }
 
 func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
@@ -263,7 +276,7 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 	goldGain := ExtractGold(currentSave.CurrenySaveDatas) - ctrl.LastGold
 	xpGain := ProcessRoundXp(currentSave.HeroSaveDatas, ctrl.HeroStates)
 
-	averageXpPerHero := xpGain / float64(len(ctrl.HeroStates))
+	averageXpPerHero := xpGain / float64(ctrl.numActiveHeroes())
 
 	stageChanged := stage != ctrl.LastCurrentStageKey
 	estTime := ctrl.estimateStageTime(stage)
@@ -281,21 +294,14 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 		return
 	}
 
-	// So registramos corridas em fase ESTAVEL (mesma fase do inicio ao fim da janela).
-	// Qualquer mudanca de fase -- troca manual, auto-avanco ou morte que muda de mapa --
-	// e ambigua sobre qual fase foi realmente jogada. Descartamos e re-baselizamos (defer);
-	// a proxima corrida, ja estavel na fase nova, e registrada corretamente.
 	if stageChanged {
 		return
 	}
 
-	// Tempo inflado (ex.: morreu no meio e completou depois): destoa do esperado -> descarta.
 	if !isTimeTrustworthy(timeSpent, estTime, timeOutlierFactor, false) {
 		return
 	}
 
-	// Morte / clear parcial: ouro bem abaixo do esperado de um clear (histórico ou,
-	// no cold start, ExpectedGold x multiplicador do jogador) -> descarta.
 	if floor := ctrl.estimateClearGold(stage); floor > 0 && float64(goldGain) < goldFloorFactor*floor {
 		return
 	}
@@ -312,7 +318,7 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 		xpGain,
 		ctrl.UseEMA,
 		ctrl.EMAAlpha,
-		len(ctrl.HeroStates),
+		ctrl.numActiveHeroes(),
 		dropCount,
 		dropsByKey,
 	)

@@ -24,16 +24,22 @@ func savePassword() string {
 	return os.Getenv("TBH_ES3_KEY")
 }
 
-func LoadSave() (*InnerSaveData, error) {
-	caminhoSave := os.Getenv("USERPROFILE") + `\AppData\LocalLow\TesseractStudio\TaskbarHero\SaveFile_Live.es3`
-	dados, err := os.ReadFile(caminhoSave)
+// SavePath devolve o caminho do save ao vivo do jogo.
+func SavePath() string {
+	return os.Getenv("USERPROFILE") + `\AppData\LocalLow\TesseractStudio\TaskbarHero\SaveFile_Live.es3`
+}
+
+// DecryptSaveInner decripta o .es3 e devolve o JSON INTERNO cru (o conteudo de
+// PlayerSaveData.value, ja desserializado do envelope ES3). E a fonte unica de verdade
+// para LoadSave e para ferramentas que precisam inspecionar campos ainda nao mapeados
+// (ex.: cronometro de estagio, pets, runas).
+func DecryptSaveInner() ([]byte, error) {
+	dados, err := os.ReadFile(SavePath())
 	if err != nil {
 		return nil, err
 	}
-
 	if len(dados) <= 16 {
-		fmt.Println("Erro: Arquivo pequeno demais para ser um save válido.")
-		return nil, fmt.Errorf("arquivo curto demais")
+		return nil, fmt.Errorf("arquivo curto demais para ser um save valido")
 	}
 
 	salt := dados[:16]
@@ -46,29 +52,31 @@ func LoadSave() (*InnerSaveData, error) {
 	}
 
 	chaveDerivada := pbkdf2.Key([]byte(senhaRaiz), salt, 100, 16, sha1.New)
-
 	block, err := aes.NewCipher(chaveDerivada)
 	if err != nil {
-		fmt.Println("Erro ao criar a cifra AES:", err)
 		return nil, err
 	}
-
 	mode := cipher.NewCBCDecrypter(block, iv)
 	textoDescriptografado := make([]byte, len(textoCriptografado))
 	mode.CryptBlocks(textoDescriptografado, textoCriptografado)
-
 	textoLimpo := removerPadding(textoDescriptografado)
 
 	var outer OuterSave
 	if err := json.Unmarshal(textoLimpo, &outer); err != nil {
 		return nil, err
 	}
+	return []byte(outer.PlayerSaveData.Value), nil
+}
 
-	var inner InnerSaveData
-	if err := json.Unmarshal([]byte(outer.PlayerSaveData.Value), &inner); err != nil {
+func LoadSave() (*InnerSaveData, error) {
+	innerJSON, err := DecryptSaveInner()
+	if err != nil {
 		return nil, err
 	}
-
+	var inner InnerSaveData
+	if err := json.Unmarshal(innerJSON, &inner); err != nil {
+		return nil, err
+	}
 	return &inner, nil
 }
 

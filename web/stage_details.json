@@ -1,0 +1,8170 @@
+{
+ "1101": {
+  "key": 1101,
+  "label": "1-1",
+  "stageLevel": 1,
+  "difficulty": "NORMAL",
+  "waves": 10,
+  "perWave": 1,
+  "normalCount": 10,
+  "hpMult": 1.0,
+  "goldMult": 1.0,
+  "expMult": 1.0,
+  "monsters": [
+   {
+    "key": 10011,
+    "name": "Slime",
+    "hp": 50,
+    "gold": 1.0,
+    "exp": 1.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 50.0
+   },
+   {
+    "key": 10021,
+    "name": "Goblin",
+    "hp": 35,
+    "gold": 1.2,
+    "exp": 1.2,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 50.0
+   }
+  ],
+  "boss": {
+   "key": 10022,
+   "name": "Ladrão goblin",
+   "hp": 135,
+   "gold": 3.0,
+   "exp": 4.5,
+   "hpMult": 3.0,
+   "goldMult": 2.0,
+   "expMult": 3.0
+  },
+  "totalHP": 560,
+  "totalGold": 14,
+  "totalExp": 16
+ },
+ "1102": {
+  "key": 1102,
+  "label": "1-2",
+  "stageLevel": 2,
+  "difficulty": "NORMAL",
+  "waves": 11,
+  "perWave": 2,
+  "normalCount": 22,
+  "hpMult": 1.8,
+  "goldMult": 1.5,
+  "expMult": 1.3,
+  "monsters": [
+   {
+    "key": 10011,
+    "name": "Slime",
+    "hp": 90,
+    "gold": 1.5,
+    "exp": 1.3,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 33.3
+   },
+   {
+    "key": 10021,
+    "name": "Goblin",
+    "hp": 63,
+    "gold": 1.8,
+    "exp": 1.56,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 33.3
+   },
+   {
+    "key": 10022,
+    "name": "Ladrão goblin",
+    "hp": 81,
+    "gold": 2.25,
+    "exp": 1.95,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 33.3
+   }
+  ],
+  "boss": {
+   "key": 10023,
+   "name": "Xamã goblin",
+   "hp": 324,
+   "gold": 9.0,
+   "exp": 10.4,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 4.0
+  },
+  "totalHP": 2040,
+  "totalGold": 50,
+  "totalExp": 46
+ },
+ "1103": {
+  "key": 1103,
+  "label": "1-3",
+  "stageLevel": 3,
+  "difficulty": "NORMAL",
+  "waves": 11,
+  "perWave": 3,
+  "normalCount": 33,
+  "hpMult": 2.2,
+  "goldMult": 2.0,
+  "expMult": 1.6,
+  "monsters": [
+   {
+    "key": 10021,
+    "name": "Goblin",
+    "hp": 77,
+    "gold": 2.4,
+    "exp": 1.92,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 27.8
+   },
+   {
+    "key": 10022,
+    "name": "Ladrão goblin",
+    "hp": 99,
+    "gold": 3.0,
+    "exp": 2.4,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 27.8
+   },
+   {
+    "key": 10023,
+    "name": "Xamã goblin",
+    "hp": 66,
+    "gold": 4.0,
+    "exp": 3.2,
+    "type": "MONSTER",
+    "weight": 600,
+    "sharePct": 16.7
+   },
+   {
+    "key": 10031,
+    "name": "Morcego",
+    "hp": 33,
+    "gold": 2.0,
+    "exp": 0.8,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 27.8
+   }
+  ],
+  "boss": {
+   "key": 10041,
+   "name": "Orc",
+   "hp": 858,
+   "gold": 9.0,
+   "exp": 14.4,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 3137,
+  "totalGold": 99,
+  "totalExp": 79
+ },
+ "1104": {
+  "key": 1104,
+  "label": "1-4",
+  "stageLevel": 5,
+  "difficulty": "NORMAL",
+  "waves": 12,
+  "perWave": 3,
+  "normalCount": 36,
+  "hpMult": 3.2,
+  "goldMult": 3.5,
+  "expMult": 4.5,
+  "monsters": [
+   {
+    "key": 10011,
+    "name": "Slime",
+    "hp": 160,
+    "gold": 3.5,
+    "exp": 4.5,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 26.3
+   },
+   {
+    "key": 10021,
+    "name": "Goblin",
+    "hp": 112,
+    "gold": 4.2,
+    "exp": 5.4,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 26.3
+   },
+   {
+    "key": 10023,
+    "name": "Xamã goblin",
+    "hp": 96,
+    "gold": 7.0,
+    "exp": 9.0,
+    "type": "MONSTER",
+    "weight": 800,
+    "sharePct": 21.1
+   },
+   {
+    "key": 10041,
+    "name": "Orc",
+    "hp": 208,
+    "gold": 5.25,
+    "exp": 6.75,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 26.3
+   }
+  ],
+  "boss": {
+   "key": 10042,
+   "name": "Guerreiro orc",
+   "hp": 1520,
+   "gold": 21.0,
+   "exp": 72.0,
+   "hpMult": 5.0,
+   "goldMult": 3.0,
+   "expMult": 8.0
+  },
+  "totalHP": 6795,
+  "totalGold": 197,
+  "totalExp": 298
+ },
+ "1105": {
+  "key": 1105,
+  "label": "1-5",
+  "stageLevel": 6,
+  "difficulty": "NORMAL",
+  "waves": 12,
+  "perWave": 4,
+  "normalCount": 48,
+  "hpMult": 4.4,
+  "goldMult": 3.8,
+  "expMult": 6.5,
+  "monsters": [
+   {
+    "key": 10021,
+    "name": "Goblin",
+    "hp": 154,
+    "gold": 4.56,
+    "exp": 7.8,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   },
+   {
+    "key": 10022,
+    "name": "Ladrão goblin",
+    "hp": 198,
+    "gold": 5.7,
+    "exp": 9.75,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   },
+   {
+    "key": 10023,
+    "name": "Xamã goblin",
+    "hp": 132,
+    "gold": 7.6,
+    "exp": 13.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   },
+   {
+    "key": 10041,
+    "name": "Orc",
+    "hp": 286,
+    "gold": 5.7,
+    "exp": 9.75,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   },
+   {
+    "key": 10042,
+    "name": "Guerreiro orc",
+    "hp": 418,
+    "gold": 7.6,
+    "exp": 13.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   }
+  ],
+  "boss": {
+   "key": 10043,
+   "name": "Orc de elite",
+   "hp": 4070,
+   "gold": 39.9,
+   "exp": 227.5,
+   "hpMult": 5.0,
+   "goldMult": 3.0,
+   "expMult": 10.0
+  },
+  "totalHP": 15475,
+  "totalGold": 339,
+  "totalExp": 739
+ },
+ "1106": {
+  "key": 1106,
+  "label": "1-6",
+  "stageLevel": 7,
+  "difficulty": "NORMAL",
+  "waves": 12,
+  "perWave": 5,
+  "normalCount": 60,
+  "hpMult": 5.9,
+  "goldMult": 4.1,
+  "expMult": 9.5,
+  "monsters": [
+   {
+    "key": 10041,
+    "name": "Orc",
+    "hp": 384,
+    "gold": 6.15,
+    "exp": 14.25,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 27.8
+   },
+   {
+    "key": 10042,
+    "name": "Guerreiro orc",
+    "hp": 560,
+    "gold": 8.2,
+    "exp": 19.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 27.8
+   },
+   {
+    "key": 10043,
+    "name": "Orc de elite",
+    "hp": 1092,
+    "gold": 14.35,
+    "exp": 33.25,
+    "type": "MONSTER",
+    "weight": 600,
+    "sharePct": 16.7
+   },
+   {
+    "key": 10011,
+    "name": "Slime",
+    "hp": 295,
+    "gold": 4.1,
+    "exp": 9.5,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 27.8
+   }
+  ],
+  "boss": {
+   "key": 10051,
+   "name": "Esqueleto",
+   "hp": 1770,
+   "gold": 12.3,
+   "exp": 125.4,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 12.0
+  },
+  "totalHP": 33340,
+  "totalGold": 463,
+  "totalExp": 1170
+ },
+ "1107": {
+  "key": 1107,
+  "label": "1-7",
+  "stageLevel": 8,
+  "difficulty": "NORMAL",
+  "waves": 12,
+  "perWave": 6,
+  "normalCount": 72,
+  "hpMult": 7.2,
+  "goldMult": 4.4,
+  "expMult": 13.5,
+  "monsters": [
+   {
+    "key": 10051,
+    "name": "Esqueleto",
+    "hp": 360,
+    "gold": 4.4,
+    "exp": 14.85,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 37.0
+   },
+   {
+    "key": 10052,
+    "name": "Arqueiro esqueleto",
+    "hp": 252,
+    "gold": 4.4,
+    "exp": 17.55,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 25.9
+   },
+   {
+    "key": 10031,
+    "name": "Morcego",
+    "hp": 108,
+    "gold": 4.4,
+    "exp": 6.75,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 37.0
+   }
+  ],
+  "boss": {
+   "key": 10053,
+   "name": "Guerreiro esqueleto",
+   "hp": 3888,
+   "gold": 39.6,
+   "exp": 607.5,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 15.0
+  },
+  "totalHP": 21072,
+  "totalGold": 356,
+  "totalExp": 1511
+ },
+ "1108": {
+  "key": 1108,
+  "label": "1-8",
+  "stageLevel": 10,
+  "difficulty": "NORMAL",
+  "waves": 13,
+  "perWave": 6,
+  "normalCount": 78,
+  "hpMult": 9.7,
+  "goldMult": 5.5,
+  "expMult": 23.0,
+  "monsters": [
+   {
+    "key": 10051,
+    "name": "Esqueleto",
+    "hp": 485,
+    "gold": 5.5,
+    "exp": 25.3,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 31.2
+   },
+   {
+    "key": 10052,
+    "name": "Arqueiro esqueleto",
+    "hp": 340,
+    "gold": 5.5,
+    "exp": 29.9,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 21.9
+   },
+   {
+    "key": 10053,
+    "name": "Guerreiro esqueleto",
+    "hp": 873,
+    "gold": 16.5,
+    "exp": 69.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 15.6
+   },
+   {
+    "key": 10031,
+    "name": "Morcego",
+    "hp": 146,
+    "gold": 5.5,
+    "exp": 11.5,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 31.2
+   }
+  ],
+  "boss": {
+   "key": 10052,
+   "name": "Arqueiro esqueleto",
+   "hp": 2037,
+   "gold": 16.5,
+   "exp": 448.5,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 15.0
+  },
+  "totalHP": 33859,
+  "totalGold": 580,
+  "totalExp": 2697
+ },
+ "1109": {
+  "key": 1109,
+  "label": "1-9",
+  "stageLevel": 11,
+  "difficulty": "NORMAL",
+  "waves": 13,
+  "perWave": 7,
+  "normalCount": 91,
+  "hpMult": 10.7,
+  "goldMult": 6.0,
+  "expMult": 29.0,
+  "monsters": [
+   {
+    "key": 10042,
+    "name": "Guerreiro orc",
+    "hp": 1016,
+    "gold": 12.0,
+    "exp": 58.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.8
+   },
+   {
+    "key": 10043,
+    "name": "Orc de elite",
+    "hp": 1979,
+    "gold": 21.0,
+    "exp": 101.5,
+    "type": "MONSTER",
+    "weight": 600,
+    "sharePct": 12.5
+   },
+   {
+    "key": 10051,
+    "name": "Esqueleto",
+    "hp": 535,
+    "gold": 6.0,
+    "exp": 31.9,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.8
+   },
+   {
+    "key": 10052,
+    "name": "Arqueiro esqueleto",
+    "hp": 374,
+    "gold": 6.0,
+    "exp": 37.7,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 14.6
+   },
+   {
+    "key": 10053,
+    "name": "Guerreiro esqueleto",
+    "hp": 963,
+    "gold": 18.0,
+    "exp": 87.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 10.4
+   },
+   {
+    "key": 10031,
+    "name": "Morcego",
+    "hp": 160,
+    "gold": 6.0,
+    "exp": 14.5,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.8
+   }
+  ],
+  "boss": {
+   "key": 10043,
+   "name": "Orc de elite",
+   "hp": 11877,
+   "gold": 63.0,
+   "exp": 1522.5,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 15.0
+  },
+  "totalHP": 80918,
+  "totalGold": 1007,
+  "totalExp": 5981
+ },
+ "1110": {
+  "key": 1110,
+  "label": "1-10",
+  "stageLevel": 12,
+  "difficulty": "NORMAL",
+  "waves": 0,
+  "perWave": 0,
+  "normalCount": 0,
+  "hpMult": 14.7,
+  "goldMult": 6.5,
+  "expMult": 37.0,
+  "monsters": [],
+  "boss": {
+   "key": 10901,
+   "name": "Rei esqueleto",
+   "hp": 15435,
+   "gold": 325.0,
+   "exp": 133.2,
+   "hpMult": 1.0,
+   "goldMult": 1.0,
+   "expMult": 1.0
+  },
+  "totalHP": 15435,
+  "totalGold": 325,
+  "totalExp": 133
+ },
+ "1201": {
+  "key": 1201,
+  "label": "2-1",
+  "stageLevel": 13,
+  "difficulty": "NORMAL",
+  "waves": 14,
+  "perWave": 7,
+  "normalCount": 98,
+  "hpMult": 19.7,
+  "goldMult": 7.1,
+  "expMult": 47.0,
+  "monsters": [
+   {
+    "key": 20011,
+    "name": "Escorpião",
+    "hp": 985,
+    "gold": 7.1,
+    "exp": 47.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 33.3
+   },
+   {
+    "key": 20021,
+    "name": "Guerreiro Ratuno",
+    "hp": 690,
+    "gold": 8.52,
+    "exp": 56.4,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 33.3
+   },
+   {
+    "key": 20022,
+    "name": "Arqueiro Ratuno",
+    "hp": 886,
+    "gold": 10.65,
+    "exp": 70.5,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 33.3
+   }
+  ],
+  "boss": {
+   "key": 20024,
+   "name": "Berserker Ratuno",
+   "hp": 8865,
+   "gold": 53.25,
+   "exp": 1762.5,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 15.0
+  },
+  "totalHP": 92524,
+  "totalGold": 911,
+  "totalExp": 7443
+ },
+ "1202": {
+  "key": 1202,
+  "label": "2-2",
+  "stageLevel": 14,
+  "difficulty": "NORMAL",
+  "waves": 14,
+  "perWave": 7,
+  "normalCount": 98,
+  "hpMult": 25.7,
+  "goldMult": 7.8,
+  "expMult": 59.0,
+  "monsters": [
+   {
+    "key": 20011,
+    "name": "Escorpião",
+    "hp": 1285,
+    "gold": 7.8,
+    "exp": 59.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 20021,
+    "name": "Guerreiro Ratuno",
+    "hp": 900,
+    "gold": 9.36,
+    "exp": 70.8,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 20022,
+    "name": "Arqueiro Ratuno",
+    "hp": 1156,
+    "gold": 11.7,
+    "exp": 88.5,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 20024,
+    "name": "Berserker Ratuno",
+    "hp": 1928,
+    "gold": 19.5,
+    "exp": 147.5,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   }
+  ],
+  "boss": {
+   "key": 20021,
+   "name": "Guerreiro Ratuno",
+   "hp": 5397,
+   "gold": 28.08,
+   "exp": 1062.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 15.0
+  },
+  "totalHP": 134488,
+  "totalGold": 1213,
+  "totalExp": 10024
+ },
+ "1203": {
+  "key": 1203,
+  "label": "2-3",
+  "stageLevel": 15,
+  "difficulty": "NORMAL",
+  "waves": 14,
+  "perWave": 7,
+  "normalCount": 98,
+  "hpMult": 32.7,
+  "goldMult": 8.6,
+  "expMult": 73.0,
+  "monsters": [
+   {
+    "key": 20011,
+    "name": "Escorpião",
+    "hp": 1635,
+    "gold": 8.6,
+    "exp": 73.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 29.4
+   },
+   {
+    "key": 20031,
+    "name": "Cobra",
+    "hp": 1799,
+    "gold": 12.9,
+    "exp": 109.5,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 29.4
+   },
+   {
+    "key": 20023,
+    "name": "Rato da Peste",
+    "hp": 3597,
+    "gold": 17.2,
+    "exp": 146.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 29.4
+   },
+   {
+    "key": 20041,
+    "name": "Inseto Venenoso",
+    "hp": 1472,
+    "gold": 12.9,
+    "exp": 109.5,
+    "type": "MONSTER",
+    "weight": 100,
+    "sharePct": 2.9
+   },
+   {
+    "key": 10031,
+    "name": "Morcego",
+    "hp": 491,
+    "gold": 8.6,
+    "exp": 36.5,
+    "type": "MONSTER",
+    "weight": 300,
+    "sharePct": 8.8
+   }
+  ],
+  "boss": {
+   "key": 20031,
+   "name": "Cobra",
+   "hp": 10791,
+   "gold": 38.7,
+   "exp": 1642.5,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 15.0
+  },
+  "totalHP": 221938,
+  "totalGold": 1266,
+  "totalExp": 11742
+ },
+ "1204": {
+  "key": 1204,
+  "label": "2-4",
+  "stageLevel": 16,
+  "difficulty": "NORMAL",
+  "waves": 15,
+  "perWave": 7,
+  "normalCount": 105,
+  "hpMult": 40.7,
+  "goldMult": 9.5,
+  "expMult": 89.0,
+  "monsters": [
+   {
+    "key": 20011,
+    "name": "Escorpião",
+    "hp": 2035,
+    "gold": 9.5,
+    "exp": 89.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 23.8
+   },
+   {
+    "key": 20031,
+    "name": "Cobra",
+    "hp": 2238,
+    "gold": 14.25,
+    "exp": 133.5,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 23.8
+   },
+   {
+    "key": 20023,
+    "name": "Rato da Peste",
+    "hp": 4477,
+    "gold": 19.0,
+    "exp": 178.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 23.8
+   },
+   {
+    "key": 20041,
+    "name": "Inseto Venenoso",
+    "hp": 1832,
+    "gold": 14.25,
+    "exp": 133.5,
+    "type": "MONSTER",
+    "weight": 200,
+    "sharePct": 4.8
+   },
+   {
+    "key": 20051,
+    "name": "Mosca Gigante",
+    "hp": 1832,
+    "gold": 10.45,
+    "exp": 97.9,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 23.8
+   }
+  ],
+  "boss": {
+   "key": 20041,
+   "name": "Inseto Venenoso",
+   "hp": 10989,
+   "gold": 42.75,
+   "exp": 2002.5,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 15.0
+  },
+  "totalHP": 284699,
+  "totalGold": 1444,
+  "totalExp": 15130
+ },
+ "1205": {
+  "key": 1205,
+  "label": "2-5",
+  "stageLevel": 17,
+  "difficulty": "NORMAL",
+  "waves": 15,
+  "perWave": 7,
+  "normalCount": 105,
+  "hpMult": 49.7,
+  "goldMult": 10.5,
+  "expMult": 107.0,
+  "monsters": [
+   {
+    "key": 20011,
+    "name": "Escorpião",
+    "hp": 2485,
+    "gold": 10.5,
+    "exp": 107.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   },
+   {
+    "key": 20021,
+    "name": "Guerreiro Ratuno",
+    "hp": 1740,
+    "gold": 12.6,
+    "exp": 128.4,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   },
+   {
+    "key": 20022,
+    "name": "Arqueiro Ratuno",
+    "hp": 2236,
+    "gold": 15.75,
+    "exp": 160.5,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   },
+   {
+    "key": 20051,
+    "name": "Mosca Gigante",
+    "hp": 2236,
+    "gold": 11.55,
+    "exp": 117.7,
+    "type": "MONSTER",
+    "weight": 2000,
+    "sharePct": 40.0
+   }
+  ],
+  "boss": {
+   "key": 20071,
+   "name": "Homúnculo",
+   "hp": 34293,
+   "gold": 40.95,
+   "exp": 2086.5,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 15.0
+  },
+  "totalHP": 263886,
+  "totalGold": 1342,
+  "totalExp": 15344
+ },
+ "1206": {
+  "key": 1206,
+  "label": "2-6",
+  "stageLevel": 18,
+  "difficulty": "NORMAL",
+  "waves": 15,
+  "perWave": 8,
+  "normalCount": 120,
+  "hpMult": 59.7,
+  "goldMult": 11.6,
+  "expMult": 127.0,
+  "monsters": [
+   {
+    "key": 20031,
+    "name": "Cobra",
+    "hp": 3284,
+    "gold": 17.4,
+    "exp": 190.5,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 20024,
+    "name": "Berserker Ratuno",
+    "hp": 4478,
+    "gold": 29.0,
+    "exp": 317.5,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 20061,
+    "name": "Guarda Kobold",
+    "hp": 5373,
+    "gold": 19.72,
+    "exp": 215.9,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 20071,
+    "name": "Homúnculo",
+    "hp": 6866,
+    "gold": 15.08,
+    "exp": 165.1,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   }
+  ],
+  "boss": {
+   "key": 20081,
+   "name": "Ghoul",
+   "hp": 80595,
+   "gold": 156.6,
+   "exp": 8572.5,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 15.0
+  },
+  "totalHP": 680625,
+  "totalGold": 2593,
+  "totalExp": 35242
+ },
+ "1207": {
+  "key": 1207,
+  "label": "2-7",
+  "stageLevel": 19,
+  "difficulty": "NORMAL",
+  "waves": 15,
+  "perWave": 8,
+  "normalCount": 120,
+  "hpMult": 70.7,
+  "goldMult": 12.8,
+  "expMult": 150.0,
+  "monsters": [
+   {
+    "key": 20081,
+    "name": "Ghoul",
+    "hp": 15908,
+    "gold": 57.6,
+    "exp": 675.0,
+    "type": "MONSTER",
+    "weight": 300,
+    "sharePct": 9.8
+   },
+   {
+    "key": 20071,
+    "name": "Homúnculo",
+    "hp": 8130,
+    "gold": 16.64,
+    "exp": 195.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 32.8
+   },
+   {
+    "key": 20011,
+    "name": "Escorpião",
+    "hp": 3535,
+    "gold": 12.8,
+    "exp": 150.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 16.4
+   },
+   {
+    "key": 20023,
+    "name": "Rato da Peste",
+    "hp": 7777,
+    "gold": 25.6,
+    "exp": 300.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 23.0
+   },
+   {
+    "key": 10052,
+    "name": "Arqueiro esqueleto",
+    "hp": 2474,
+    "gold": 12.8,
+    "exp": 195.0,
+    "type": "MONSTER",
+    "weight": 550,
+    "sharePct": 18.0
+   }
+  ],
+  "boss": {
+   "key": 20023,
+   "name": "Rato da Peste",
+   "hp": 46662,
+   "gold": 76.8,
+   "exp": 4500.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 15.0
+  },
+  "totalHP": 891560,
+  "totalGold": 2645,
+  "totalExp": 35572
+ },
+ "1208": {
+  "key": 1208,
+  "label": "2-8",
+  "stageLevel": 20,
+  "difficulty": "NORMAL",
+  "waves": 16,
+  "perWave": 8,
+  "normalCount": 128,
+  "hpMult": 82.7,
+  "goldMult": 14.1,
+  "expMult": 176.0,
+  "monsters": [
+   {
+    "key": 20061,
+    "name": "Guarda Kobold",
+    "hp": 7443,
+    "gold": 23.97,
+    "exp": 299.2,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 23.8
+   },
+   {
+    "key": 20062,
+    "name": "Fundeiro Kobold",
+    "hp": 6616,
+    "gold": 19.74,
+    "exp": 246.4,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 23.8
+   },
+   {
+    "key": 20091,
+    "name": "Elemental de Fogo",
+    "hp": 6202,
+    "gold": 32.43,
+    "exp": 404.8,
+    "type": "MONSTER",
+    "weight": 200,
+    "sharePct": 4.8
+   },
+   {
+    "key": 20071,
+    "name": "Homúnculo",
+    "hp": 9510,
+    "gold": 18.33,
+    "exp": 228.8,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 23.8
+   }
+  ],
+  "boss": {
+   "key": 20061,
+   "name": "Guarda Kobold",
+   "hp": 44658,
+   "gold": 71.91,
+   "exp": 4488.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 15.0
+  },
+  "totalHP": 800754,
+  "totalGold": 2160,
+  "totalExp": 30556
+ },
+ "1209": {
+  "key": 1209,
+  "label": "2-9",
+  "stageLevel": 21,
+  "difficulty": "NORMAL",
+  "waves": 16,
+  "perWave": 8,
+  "normalCount": 128,
+  "hpMult": 95.7,
+  "goldMult": 15.5,
+  "expMult": 204.0,
+  "monsters": [
+   {
+    "key": 20061,
+    "name": "Guarda Kobold",
+    "hp": 8613,
+    "gold": 26.35,
+    "exp": 346.8,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.4
+   },
+   {
+    "key": 20062,
+    "name": "Fundeiro Kobold",
+    "hp": 7656,
+    "gold": 21.7,
+    "exp": 285.6,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.4
+   },
+   {
+    "key": 20091,
+    "name": "Elemental de Fogo",
+    "hp": 7178,
+    "gold": 35.65,
+    "exp": 469.2,
+    "type": "MONSTER",
+    "weight": 400,
+    "sharePct": 8.2
+   },
+   {
+    "key": 20111,
+    "name": "Múmia",
+    "hp": 24882,
+    "gold": 46.5,
+    "exp": 612.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.4
+   },
+   {
+    "key": 20081,
+    "name": "Ghoul",
+    "hp": 21532,
+    "gold": 69.75,
+    "exp": 918.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 10.2
+   }
+  ],
+  "boss": {
+   "key": 20111,
+   "name": "Múmia",
+   "hp": 149292,
+   "gold": 139.5,
+   "exp": 9180.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 15.0
+  },
+  "totalHP": 1580494,
+  "totalGold": 3893,
+  "totalExp": 58580
+ },
+ "1210": {
+  "key": 1210,
+  "label": "2-10",
+  "stageLevel": 22,
+  "difficulty": "NORMAL",
+  "waves": 0,
+  "perWave": 0,
+  "normalCount": 0,
+  "hpMult": 109.7,
+  "goldMult": 17.0,
+  "expMult": 234.0,
+  "monsters": [],
+  "boss": {
+   "key": 20901,
+   "name": "Senhor do Deserto",
+   "hp": 202945,
+   "gold": 850.0,
+   "exp": 280.8,
+   "hpMult": 1.0,
+   "goldMult": 1.0,
+   "expMult": 1.0
+  },
+  "totalHP": 202945,
+  "totalGold": 850,
+  "totalExp": 281
+ },
+ "1301": {
+  "key": 1301,
+  "label": "3-1",
+  "stageLevel": 23,
+  "difficulty": "NORMAL",
+  "waves": 16,
+  "perWave": 8,
+  "normalCount": 128,
+  "hpMult": 124.7,
+  "goldMult": 18.6,
+  "expMult": 266.0,
+  "monsters": [
+   {
+    "key": 30011,
+    "name": "Gremlin",
+    "hp": 8729,
+    "gold": 18.6,
+    "exp": 266.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 45.5
+   },
+   {
+    "key": 30012,
+    "name": "Geônide",
+    "hp": 6235,
+    "gold": 22.32,
+    "exp": 319.2,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 31.8
+   },
+   {
+    "key": 30013,
+    "name": "Elmo do Anjo Caído",
+    "hp": 4988,
+    "gold": 27.9,
+    "exp": 399.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 22.7
+   }
+  ],
+  "boss": {
+   "key": 20024,
+   "name": "Berserker Ratuno",
+   "hp": 56115,
+   "gold": 139.5,
+   "exp": 9975.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 15.0
+  },
+  "totalHP": 963024,
+  "totalGold": 2942,
+  "totalExp": 50059
+ },
+ "1302": {
+  "key": 1302,
+  "label": "3-2",
+  "stageLevel": 24,
+  "difficulty": "NORMAL",
+  "waves": 16,
+  "perWave": 8,
+  "normalCount": 128,
+  "hpMult": 140.7,
+  "goldMult": 20.3,
+  "expMult": 300.0,
+  "monsters": [
+   {
+    "key": 30011,
+    "name": "Gremlin",
+    "hp": 9849,
+    "gold": 20.3,
+    "exp": 300.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 29.4
+   },
+   {
+    "key": 30012,
+    "name": "Geônide",
+    "hp": 7035,
+    "gold": 24.36,
+    "exp": 360.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 20.6
+   },
+   {
+    "key": 30013,
+    "name": "Elmo do Anjo Caído",
+    "hp": 5628,
+    "gold": 30.45,
+    "exp": 450.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 14.7
+   },
+   {
+    "key": 30041,
+    "name": "Guerreiro da Montanha Nevada",
+    "hp": 12663,
+    "gold": 20.3,
+    "exp": 150.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 29.4
+   },
+   {
+    "key": 30021,
+    "name": "Yeti",
+    "hp": 45024,
+    "gold": 40.6,
+    "exp": 600.0,
+    "type": "MONSTER",
+    "weight": 200,
+    "sharePct": 5.9
+   }
+  ],
+  "boss": {
+   "key": 20021,
+   "name": "Guerreiro Ratuno",
+   "hp": 29547,
+   "gold": 73.08,
+   "exp": 5400.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 15.0
+  },
+  "totalHP": 1507394,
+  "totalGold": 3122,
+  "totalExp": 44816
+ },
+ "1303": {
+  "key": 1303,
+  "label": "3-3",
+  "stageLevel": 25,
+  "difficulty": "NORMAL",
+  "waves": 17,
+  "perWave": 9,
+  "normalCount": 153,
+  "hpMult": 157.7,
+  "goldMult": 22.1,
+  "expMult": 336.0,
+  "monsters": [
+   {
+    "key": 30041,
+    "name": "Guerreiro da Montanha Nevada",
+    "hp": 14193,
+    "gold": 22.1,
+    "exp": 168.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 34.5
+   },
+   {
+    "key": 30042,
+    "name": "Arqueiro da Montanha Nevada",
+    "hp": 11039,
+    "gold": 22.1,
+    "exp": 168.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 24.1
+   },
+   {
+    "key": 30021,
+    "name": "Yeti",
+    "hp": 50464,
+    "gold": 44.2,
+    "exp": 672.0,
+    "type": "MONSTER",
+    "weight": 200,
+    "sharePct": 6.9
+   },
+   {
+    "key": 30013,
+    "name": "Elmo do Anjo Caído",
+    "hp": 6308,
+    "gold": 33.15,
+    "exp": 504.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 34.5
+   }
+  ],
+  "boss": {
+   "key": 20031,
+   "name": "Cobra",
+   "hp": 52041,
+   "gold": 99.45,
+   "exp": 7560.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 15.0
+  },
+  "totalHP": 2073809,
+  "totalGold": 4297,
+  "totalExp": 56309
+ },
+ "1304": {
+  "key": 1304,
+  "label": "3-4",
+  "stageLevel": 26,
+  "difficulty": "NORMAL",
+  "waves": 17,
+  "perWave": 9,
+  "normalCount": 153,
+  "hpMult": 175.7,
+  "goldMult": 24.0,
+  "expMult": 374.0,
+  "monsters": [
+   {
+    "key": 30041,
+    "name": "Guerreiro da Montanha Nevada",
+    "hp": 15813,
+    "gold": 24.0,
+    "exp": 187.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 24.4
+   },
+   {
+    "key": 30042,
+    "name": "Arqueiro da Montanha Nevada",
+    "hp": 12299,
+    "gold": 24.0,
+    "exp": 187.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 17.1
+   },
+   {
+    "key": 30021,
+    "name": "Yeti",
+    "hp": 56224,
+    "gold": 48.0,
+    "exp": 748.0,
+    "type": "MONSTER",
+    "weight": 400,
+    "sharePct": 9.8
+   },
+   {
+    "key": 30051,
+    "name": "Fantasma",
+    "hp": 11420,
+    "gold": 36.0,
+    "exp": 561.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 24.4
+   },
+   {
+    "key": 30043,
+    "name": "Guarda da Montanha Nevada",
+    "hp": 27234,
+    "gold": 24.0,
+    "exp": 187.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 24.4
+   }
+  ],
+  "boss": {
+   "key": 20041,
+   "name": "Inseto Venenoso",
+   "hp": 47439,
+   "gold": 108.0,
+   "exp": 8415.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 15.0
+  },
+  "totalHP": 3240508,
+  "totalGold": 4586,
+  "totalExp": 59357
+ },
+ "1305": {
+  "key": 1305,
+  "label": "3-5",
+  "stageLevel": 27,
+  "difficulty": "NORMAL",
+  "waves": 17,
+  "perWave": 9,
+  "normalCount": 153,
+  "hpMult": 194.7,
+  "goldMult": 26.0,
+  "expMult": 414.0,
+  "monsters": [
+   {
+    "key": 30031,
+    "name": "Filhote de Dragão",
+    "hp": 34072,
+    "gold": 26.0,
+    "exp": 207.0,
+    "type": "MONSTER",
+    "weight": 300,
+    "sharePct": 7.5
+   },
+   {
+    "key": 30051,
+    "name": "Fantasma",
+    "hp": 12656,
+    "gold": 39.0,
+    "exp": 621.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 17.5
+   },
+   {
+    "key": 30043,
+    "name": "Guarda da Montanha Nevada",
+    "hp": 30178,
+    "gold": 26.0,
+    "exp": 207.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 30011,
+    "name": "Gremlin",
+    "hp": 13629,
+    "gold": 26.0,
+    "exp": 414.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 30012,
+    "name": "Geônide",
+    "hp": 9735,
+    "gold": 31.2,
+    "exp": 496.8,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   }
+  ],
+  "boss": {
+   "key": 20071,
+   "name": "Homúnculo",
+   "hp": 134343,
+   "gold": 101.4,
+   "exp": 8073.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 15.0
+  },
+  "totalHP": 2912165,
+  "totalGold": 4626,
+  "totalExp": 69831
+ },
+ "1306": {
+  "key": 1306,
+  "label": "3-6",
+  "stageLevel": 28,
+  "difficulty": "NORMAL",
+  "waves": 17,
+  "perWave": 9,
+  "normalCount": 153,
+  "hpMult": 214.7,
+  "goldMult": 28.1,
+  "expMult": 456.0,
+  "monsters": [
+   {
+    "key": 30061,
+    "name": "Ser de Lava",
+    "hp": 16102,
+    "gold": 56.2,
+    "exp": 912.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 16.7
+   },
+   {
+    "key": 30081,
+    "name": "Soldado Demônio",
+    "hp": 15029,
+    "gold": 28.1,
+    "exp": 501.6,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 33.3
+   },
+   {
+    "key": 30082,
+    "name": "Comandante de Legião Demônio",
+    "hp": 9662,
+    "gold": 28.1,
+    "exp": 592.8,
+    "type": "MONSTER",
+    "weight": 200,
+    "sharePct": 6.7
+   },
+   {
+    "key": 30084,
+    "name": "Leitão Ardente",
+    "hp": 23617,
+    "gold": 84.3,
+    "exp": 1368.0,
+    "type": "MONSTER",
+    "weight": 300,
+    "sharePct": 10.0
+   },
+   {
+    "key": 30091,
+    "name": "Golem do Inferno",
+    "hp": 39720,
+    "gold": 84.3,
+    "exp": 1368.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 33.3
+   }
+  ],
+  "boss": {
+   "key": 20081,
+   "name": "Ghoul",
+   "hp": 289845,
+   "gold": 379.35,
+   "exp": 30780.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 15.0
+  },
+  "totalHP": 3952538,
+  "totalGold": 9121,
+  "totalExp": 176363
+ },
+ "1307": {
+  "key": 1307,
+  "label": "3-7",
+  "stageLevel": 29,
+  "difficulty": "NORMAL",
+  "waves": 17,
+  "perWave": 10,
+  "normalCount": 170,
+  "hpMult": 235.7,
+  "goldMult": 30.3,
+  "expMult": 500.0,
+  "monsters": [
+   {
+    "key": 30081,
+    "name": "Soldado Demônio",
+    "hp": 16499,
+    "gold": 30.3,
+    "exp": 550.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 37.7
+   },
+   {
+    "key": 30082,
+    "name": "Comandante de Legião Demônio",
+    "hp": 10606,
+    "gold": 30.3,
+    "exp": 650.0,
+    "type": "MONSTER",
+    "weight": 250,
+    "sharePct": 9.4
+   },
+   {
+    "key": 30083,
+    "name": "Tropa de Choque Demônio",
+    "hp": 21213,
+    "gold": 90.9,
+    "exp": 1500.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 18.9
+   },
+   {
+    "key": 30084,
+    "name": "Leitão Ardente",
+    "hp": 25927,
+    "gold": 90.9,
+    "exp": 1500.0,
+    "type": "MONSTER",
+    "weight": 600,
+    "sharePct": 22.6
+   },
+   {
+    "key": 30031,
+    "name": "Filhote de Dragão",
+    "hp": 41248,
+    "gold": 30.3,
+    "exp": 250.0,
+    "type": "MONSTER",
+    "weight": 300,
+    "sharePct": 11.3
+   }
+  ],
+  "boss": {
+   "key": 20023,
+   "name": "Rato da Peste",
+   "hp": 155562,
+   "gold": 181.8,
+   "exp": 15000.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 15.0
+  },
+  "totalHP": 3856276,
+  "totalGold": 9609,
+  "totalExp": 171368
+ },
+ "1308": {
+  "key": 1308,
+  "label": "3-8",
+  "stageLevel": 30,
+  "difficulty": "NORMAL",
+  "waves": 18,
+  "perWave": 10,
+  "normalCount": 180,
+  "hpMult": 257.7,
+  "goldMult": 32.6,
+  "expMult": 546.0,
+  "monsters": [
+   {
+    "key": 30083,
+    "name": "Tropa de Choque Demônio",
+    "hp": 23193,
+    "gold": 97.8,
+    "exp": 1638.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 39.2
+   },
+   {
+    "key": 30111,
+    "name": "Dedo da Morte",
+    "hp": 16750,
+    "gold": 97.8,
+    "exp": 1638.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 27.5
+   },
+   {
+    "key": 30051,
+    "name": "Fantasma",
+    "hp": 16750,
+    "gold": 48.9,
+    "exp": 819.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 19.6
+   },
+   {
+    "key": 30101,
+    "name": "Sacerdote do Inferno Ardente",
+    "hp": 24482,
+    "gold": 97.8,
+    "exp": 1638.0,
+    "type": "MONSTER",
+    "weight": 350,
+    "sharePct": 13.7
+   }
+  ],
+  "boss": {
+   "key": 20061,
+   "name": "Guarda Kobold",
+   "hp": 139158,
+   "gold": 166.26,
+   "exp": 13923.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 15.0
+  },
+  "totalHP": 3799984,
+  "totalGold": 16044,
+  "totalExp": 279857
+ },
+ "1309": {
+  "key": 1309,
+  "label": "3-9",
+  "stageLevel": 31,
+  "difficulty": "NORMAL",
+  "waves": 18,
+  "perWave": 11,
+  "normalCount": 198,
+  "hpMult": 280.7,
+  "goldMult": 35.0,
+  "expMult": 594.0,
+  "monsters": [
+   {
+    "key": 30083,
+    "name": "Tropa de Choque Demônio",
+    "hp": 25263,
+    "gold": 105.0,
+    "exp": 1782.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 23.8
+   },
+   {
+    "key": 30081,
+    "name": "Soldado Demônio",
+    "hp": 19649,
+    "gold": 35.0,
+    "exp": 653.4,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 23.8
+   },
+   {
+    "key": 30111,
+    "name": "Dedo da Morte",
+    "hp": 18246,
+    "gold": 105.0,
+    "exp": 1782.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 23.8
+   },
+   {
+    "key": 30051,
+    "name": "Fantasma",
+    "hp": 18246,
+    "gold": 52.5,
+    "exp": 891.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 16.7
+   },
+   {
+    "key": 30101,
+    "name": "Sacerdote do Inferno Ardente",
+    "hp": 26666,
+    "gold": 105.0,
+    "exp": 1782.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 11.9
+   }
+  ],
+  "boss": {
+   "key": 20111,
+   "name": "Múmia",
+   "hp": 437892,
+   "gold": 315.0,
+   "exp": 26730.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 15.0
+  },
+  "totalHP": 4646014,
+  "totalGold": 16072,
+  "totalExp": 296958
+ },
+ "1310": {
+  "key": 1310,
+  "label": "3-10",
+  "stageLevel": 32,
+  "difficulty": "NORMAL",
+  "waves": 0,
+  "perWave": 0,
+  "normalCount": 0,
+  "hpMult": 304.7,
+  "goldMult": 37.5,
+  "expMult": 644.0,
+  "monsters": [],
+  "boss": {
+   "key": 30901,
+   "name": "Arconte Morkar",
+   "hp": 776985,
+   "gold": 1875.0,
+   "exp": 64.4,
+   "hpMult": 1.0,
+   "goldMult": 1.0,
+   "expMult": 1.0
+  },
+  "totalHP": 776985,
+  "totalGold": 1875,
+  "totalExp": 64
+ },
+ "2101": {
+  "key": 2101,
+  "label": "1-1",
+  "stageLevel": 33,
+  "difficulty": "NIGHTMARE",
+  "waves": 20,
+  "perWave": 10,
+  "normalCount": 200,
+  "hpMult": 329.7,
+  "goldMult": 40.1,
+  "expMult": 696.0,
+  "monsters": [
+   {
+    "key": 10011,
+    "name": "Slime",
+    "hp": 16485,
+    "gold": 40.1,
+    "exp": 696.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 33.3
+   },
+   {
+    "key": 10021,
+    "name": "Goblin",
+    "hp": 11540,
+    "gold": 48.12,
+    "exp": 835.2,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 33.3
+   },
+   {
+    "key": 10022,
+    "name": "Ladrão goblin",
+    "hp": 14836,
+    "gold": 60.15,
+    "exp": 1044.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 33.3
+   }
+  ],
+  "boss": {
+   "key": 20024,
+   "name": "Berserker Ratuno",
+   "hp": 148365,
+   "gold": 300.75,
+   "exp": 10440.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 3005765,
+  "totalGold": 10192,
+  "totalExp": 182120
+ },
+ "2102": {
+  "key": 2102,
+  "label": "1-2",
+  "stageLevel": 34,
+  "difficulty": "NIGHTMARE",
+  "waves": 20,
+  "perWave": 10,
+  "normalCount": 200,
+  "hpMult": 355.7,
+  "goldMult": 42.8,
+  "expMult": 750.0,
+  "monsters": [
+   {
+    "key": 10011,
+    "name": "Slime",
+    "hp": 17785,
+    "gold": 42.8,
+    "exp": 750.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 10021,
+    "name": "Goblin",
+    "hp": 12450,
+    "gold": 51.36,
+    "exp": 900.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 10022,
+    "name": "Ladrão goblin",
+    "hp": 16006,
+    "gold": 64.2,
+    "exp": 1125.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 10023,
+    "name": "Xamã goblin",
+    "hp": 10671,
+    "gold": 85.6,
+    "exp": 1500.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   }
+  ],
+  "boss": {
+   "key": 20021,
+   "name": "Guerreiro Ratuno",
+   "hp": 74697,
+   "gold": 154.08,
+   "exp": 5400.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 2920297,
+  "totalGold": 12352,
+  "totalExp": 219150
+ },
+ "2103": {
+  "key": 2103,
+  "label": "1-3",
+  "stageLevel": 35,
+  "difficulty": "NIGHTMARE",
+  "waves": 20,
+  "perWave": 11,
+  "normalCount": 220,
+  "hpMult": 382.7,
+  "goldMult": 45.6,
+  "expMult": 806.0,
+  "monsters": [
+   {
+    "key": 10021,
+    "name": "Goblin",
+    "hp": 13394,
+    "gold": 54.72,
+    "exp": 967.2,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 10022,
+    "name": "Ladrão goblin",
+    "hp": 17222,
+    "gold": 68.4,
+    "exp": 1209.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 10023,
+    "name": "Xamã goblin",
+    "hp": 11481,
+    "gold": 91.2,
+    "exp": 1612.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 10031,
+    "name": "Morcego",
+    "hp": 5740,
+    "gold": 45.6,
+    "exp": 403.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   }
+  ],
+  "boss": {
+   "key": 20031,
+   "name": "Cobra",
+   "hp": 126291,
+   "gold": 205.2,
+   "exp": 7254.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 2757326,
+  "totalGold": 14501,
+  "totalExp": 237770
+ },
+ "2104": {
+  "key": 2104,
+  "label": "1-4",
+  "stageLevel": 35,
+  "difficulty": "NIGHTMARE",
+  "waves": 21,
+  "perWave": 11,
+  "normalCount": 231,
+  "hpMult": 382.7,
+  "goldMult": 45.6,
+  "expMult": 806.0,
+  "monsters": [
+   {
+    "key": 10011,
+    "name": "Slime",
+    "hp": 19135,
+    "gold": 45.6,
+    "exp": 806.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 10021,
+    "name": "Goblin",
+    "hp": 13394,
+    "gold": 54.72,
+    "exp": 967.2,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 10023,
+    "name": "Xamã goblin",
+    "hp": 11481,
+    "gold": 91.2,
+    "exp": 1612.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 10041,
+    "name": "Orc",
+    "hp": 24876,
+    "gold": 68.4,
+    "exp": 1209.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   }
+  ],
+  "boss": {
+   "key": 20041,
+   "name": "Inseto Venenoso",
+   "hp": 103329,
+   "gold": 205.2,
+   "exp": 7254.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 4081496,
+  "totalGold": 15216,
+  "totalExp": 272569
+ },
+ "2105": {
+  "key": 2105,
+  "label": "1-5",
+  "stageLevel": 36,
+  "difficulty": "NIGHTMARE",
+  "waves": 21,
+  "perWave": 12,
+  "normalCount": 252,
+  "hpMult": 410.7,
+  "goldMult": 48.5,
+  "expMult": 864.0,
+  "monsters": [
+   {
+    "key": 10021,
+    "name": "Goblin",
+    "hp": 14374,
+    "gold": 58.2,
+    "exp": 1036.8,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   },
+   {
+    "key": 10022,
+    "name": "Ladrão goblin",
+    "hp": 18482,
+    "gold": 72.75,
+    "exp": 1296.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   },
+   {
+    "key": 10023,
+    "name": "Xamã goblin",
+    "hp": 12321,
+    "gold": 97.0,
+    "exp": 1728.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   },
+   {
+    "key": 10041,
+    "name": "Orc",
+    "hp": 26696,
+    "gold": 72.75,
+    "exp": 1296.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   },
+   {
+    "key": 10042,
+    "name": "Guerreiro orc",
+    "hp": 39016,
+    "gold": 97.0,
+    "exp": 1728.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   }
+  ],
+  "boss": {
+   "key": 20071,
+   "name": "Homúnculo",
+   "hp": 283383,
+   "gold": 189.15,
+   "exp": 6739.2,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 5872189,
+  "totalGold": 20233,
+  "totalExp": 363813
+ },
+ "2106": {
+  "key": 2106,
+  "label": "1-6",
+  "stageLevel": 37,
+  "difficulty": "NIGHTMARE",
+  "waves": 21,
+  "perWave": 12,
+  "normalCount": 252,
+  "hpMult": 439.7,
+  "goldMult": 51.5,
+  "expMult": 924.0,
+  "monsters": [
+   {
+    "key": 10041,
+    "name": "Orc",
+    "hp": 28580,
+    "gold": 77.25,
+    "exp": 1386.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 27.8
+   },
+   {
+    "key": 10042,
+    "name": "Guerreiro orc",
+    "hp": 41772,
+    "gold": 103.0,
+    "exp": 1848.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 27.8
+   },
+   {
+    "key": 10043,
+    "name": "Orc de elite",
+    "hp": 81344,
+    "gold": 180.25,
+    "exp": 3234.0,
+    "type": "MONSTER",
+    "weight": 600,
+    "sharePct": 16.7
+   },
+   {
+    "key": 10011,
+    "name": "Slime",
+    "hp": 21985,
+    "gold": 51.5,
+    "exp": 924.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 27.8
+   }
+  ],
+  "boss": {
+   "key": 20081,
+   "name": "Ghoul",
+   "hp": 593595,
+   "gold": 695.25,
+   "exp": 24948.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 10473633,
+  "totalGold": 24488,
+  "totalExp": 451836
+ },
+ "2107": {
+  "key": 2107,
+  "label": "1-7",
+  "stageLevel": 38,
+  "difficulty": "NIGHTMARE",
+  "waves": 21,
+  "perWave": 13,
+  "normalCount": 273,
+  "hpMult": 469.7,
+  "goldMult": 54.6,
+  "expMult": 986.0,
+  "monsters": [
+   {
+    "key": 10051,
+    "name": "Esqueleto",
+    "hp": 23485,
+    "gold": 54.6,
+    "exp": 1084.6,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 37.0
+   },
+   {
+    "key": 10052,
+    "name": "Arqueiro esqueleto",
+    "hp": 16440,
+    "gold": 54.6,
+    "exp": 1281.8,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 25.9
+   },
+   {
+    "key": 10031,
+    "name": "Morcego",
+    "hp": 7046,
+    "gold": 54.6,
+    "exp": 493.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 37.0
+   }
+  ],
+  "boss": {
+   "key": 20023,
+   "name": "Rato da Peste",
+   "hp": 310002,
+   "gold": 327.6,
+   "exp": 11832.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 4560612,
+  "totalGold": 15233,
+  "totalExp": 262068
+ },
+ "2108": {
+  "key": 2108,
+  "label": "1-8",
+  "stageLevel": 39,
+  "difficulty": "NIGHTMARE",
+  "waves": 21,
+  "perWave": 13,
+  "normalCount": 273,
+  "hpMult": 500.7,
+  "goldMult": 57.8,
+  "expMult": 1050.0,
+  "monsters": [
+   {
+    "key": 10051,
+    "name": "Esqueleto",
+    "hp": 25035,
+    "gold": 57.8,
+    "exp": 1155.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 31.2
+   },
+   {
+    "key": 10052,
+    "name": "Arqueiro esqueleto",
+    "hp": 17524,
+    "gold": 57.8,
+    "exp": 1365.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 21.9
+   },
+   {
+    "key": 10053,
+    "name": "Guerreiro esqueleto",
+    "hp": 45063,
+    "gold": 173.4,
+    "exp": 3150.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 15.6
+   },
+   {
+    "key": 10031,
+    "name": "Morcego",
+    "hp": 7510,
+    "gold": 57.8,
+    "exp": 525.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 31.2
+   }
+  ],
+  "boss": {
+   "key": 20061,
+   "name": "Guarda Kobold",
+   "hp": 270378,
+   "gold": 294.78,
+   "exp": 10710.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 6015603,
+  "totalGold": 21005,
+  "totalExp": 369918
+ },
+ "2109": {
+  "key": 2109,
+  "label": "1-9",
+  "stageLevel": 40,
+  "difficulty": "NIGHTMARE",
+  "waves": 22,
+  "perWave": 13,
+  "normalCount": 286,
+  "hpMult": 532.7,
+  "goldMult": 61.1,
+  "expMult": 1116.0,
+  "monsters": [
+   {
+    "key": 10042,
+    "name": "Guerreiro orc",
+    "hp": 50607,
+    "gold": 122.2,
+    "exp": 2232.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.8
+   },
+   {
+    "key": 10043,
+    "name": "Orc de elite",
+    "hp": 98550,
+    "gold": 213.85,
+    "exp": 3906.0,
+    "type": "MONSTER",
+    "weight": 600,
+    "sharePct": 12.5
+   },
+   {
+    "key": 10051,
+    "name": "Esqueleto",
+    "hp": 26635,
+    "gold": 61.1,
+    "exp": 1227.6,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.8
+   },
+   {
+    "key": 10052,
+    "name": "Arqueiro esqueleto",
+    "hp": 18644,
+    "gold": 61.1,
+    "exp": 1450.8,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 14.6
+   },
+   {
+    "key": 10053,
+    "name": "Guerreiro esqueleto",
+    "hp": 47943,
+    "gold": 183.3,
+    "exp": 3348.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 10.4
+   },
+   {
+    "key": 10031,
+    "name": "Morcego",
+    "hp": 7991,
+    "gold": 61.1,
+    "exp": 558.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.8
+   }
+  ],
+  "boss": {
+   "key": 20111,
+   "name": "Múmia",
+   "hp": 831012,
+   "gold": 549.9,
+   "exp": 20088.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 11638553,
+  "totalGold": 30766,
+  "totalExp": 559362
+ },
+ "2110": {
+  "key": 2110,
+  "label": "1-10",
+  "stageLevel": 40,
+  "difficulty": "NIGHTMARE",
+  "waves": 0,
+  "perWave": 0,
+  "normalCount": 0,
+  "hpMult": 532.7,
+  "goldMult": 61.1,
+  "expMult": 1116.0,
+  "monsters": [],
+  "boss": {
+   "key": 10902,
+   "name": "Rei esqueleto",
+   "hp": 1251845,
+   "gold": 3055.0,
+   "exp": 1339.2,
+   "hpMult": 1.0,
+   "goldMult": 1.0,
+   "expMult": 1.0
+  },
+  "totalHP": 1251845,
+  "totalGold": 3055,
+  "totalExp": 1339
+ },
+ "2201": {
+  "key": 2201,
+  "label": "2-1",
+  "stageLevel": 41,
+  "difficulty": "NIGHTMARE",
+  "waves": 22,
+  "perWave": 13,
+  "normalCount": 286,
+  "hpMult": 565.7,
+  "goldMult": 64.5,
+  "expMult": 1184.0,
+  "monsters": [
+   {
+    "key": 20011,
+    "name": "Escorpião",
+    "hp": 28285,
+    "gold": 64.5,
+    "exp": 1184.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 33.3
+   },
+   {
+    "key": 20021,
+    "name": "Guerreiro Ratuno",
+    "hp": 19800,
+    "gold": 77.4,
+    "exp": 1420.8,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 33.3
+   },
+   {
+    "key": 20022,
+    "name": "Arqueiro Ratuno",
+    "hp": 25457,
+    "gold": 96.75,
+    "exp": 1776.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 33.3
+   }
+  ],
+  "boss": {
+   "key": 20024,
+   "name": "Berserker Ratuno",
+   "hp": 254565,
+   "gold": 483.75,
+   "exp": 17760.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 7265569,
+  "totalGold": 23235,
+  "totalExp": 435396
+ },
+ "2202": {
+  "key": 2202,
+  "label": "2-2",
+  "stageLevel": 41,
+  "difficulty": "NIGHTMARE",
+  "waves": 22,
+  "perWave": 13,
+  "normalCount": 286,
+  "hpMult": 565.7,
+  "goldMult": 64.5,
+  "expMult": 1184.0,
+  "monsters": [
+   {
+    "key": 20011,
+    "name": "Escorpião",
+    "hp": 28285,
+    "gold": 64.5,
+    "exp": 1184.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 20021,
+    "name": "Guerreiro Ratuno",
+    "hp": 19800,
+    "gold": 77.4,
+    "exp": 1420.8,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 20022,
+    "name": "Arqueiro Ratuno",
+    "hp": 25457,
+    "gold": 96.75,
+    "exp": 1776.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 20024,
+    "name": "Berserker Ratuno",
+    "hp": 42428,
+    "gold": 161.25,
+    "exp": 2960.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   }
+  ],
+  "boss": {
+   "key": 20021,
+   "name": "Guerreiro Ratuno",
+   "hp": 118797,
+   "gold": 232.2,
+   "exp": 8524.8,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 8410652,
+  "totalGold": 28825,
+  "totalExp": 533392
+ },
+ "2203": {
+  "key": 2203,
+  "label": "2-3",
+  "stageLevel": 42,
+  "difficulty": "NIGHTMARE",
+  "waves": 22,
+  "perWave": 13,
+  "normalCount": 286,
+  "hpMult": 599.7,
+  "goldMult": 68.0,
+  "expMult": 1254.0,
+  "monsters": [
+   {
+    "key": 20011,
+    "name": "Escorpião",
+    "hp": 29985,
+    "gold": 68.0,
+    "exp": 1254.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 27.8
+   },
+   {
+    "key": 20031,
+    "name": "Cobra",
+    "hp": 32984,
+    "gold": 102.0,
+    "exp": 1881.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 27.8
+   },
+   {
+    "key": 20023,
+    "name": "Rato da Peste",
+    "hp": 65967,
+    "gold": 136.0,
+    "exp": 2508.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 27.8
+   },
+   {
+    "key": 20041,
+    "name": "Inseto Venenoso",
+    "hp": 26987,
+    "gold": 102.0,
+    "exp": 1881.0,
+    "type": "MONSTER",
+    "weight": 300,
+    "sharePct": 8.3
+   },
+   {
+    "key": 10031,
+    "name": "Morcego",
+    "hp": 8996,
+    "gold": 68.0,
+    "exp": 627.0,
+    "type": "MONSTER",
+    "weight": 300,
+    "sharePct": 8.3
+   }
+  ],
+  "boss": {
+   "key": 20031,
+   "name": "Cobra",
+   "hp": 197901,
+   "gold": 306.0,
+   "exp": 11286.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 11298745,
+  "totalGold": 28668,
+  "totalExp": 519365
+ },
+ "2204": {
+  "key": 2204,
+  "label": "2-4",
+  "stageLevel": 42,
+  "difficulty": "NIGHTMARE",
+  "waves": 22,
+  "perWave": 13,
+  "normalCount": 286,
+  "hpMult": 599.7,
+  "goldMult": 68.0,
+  "expMult": 1254.0,
+  "monsters": [
+   {
+    "key": 20011,
+    "name": "Escorpião",
+    "hp": 29985,
+    "gold": 68.0,
+    "exp": 1254.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 22.7
+   },
+   {
+    "key": 20031,
+    "name": "Cobra",
+    "hp": 32984,
+    "gold": 102.0,
+    "exp": 1881.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 22.7
+   },
+   {
+    "key": 20023,
+    "name": "Rato da Peste",
+    "hp": 65967,
+    "gold": 136.0,
+    "exp": 2508.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 22.7
+   },
+   {
+    "key": 20041,
+    "name": "Inseto Venenoso",
+    "hp": 26987,
+    "gold": 102.0,
+    "exp": 1881.0,
+    "type": "MONSTER",
+    "weight": 400,
+    "sharePct": 9.1
+   },
+   {
+    "key": 20051,
+    "name": "Mosca Gigante",
+    "hp": 26987,
+    "gold": 74.8,
+    "exp": 1379.4,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 22.7
+   }
+  ],
+  "boss": {
+   "key": 20041,
+   "name": "Inseto Venenoso",
+   "hp": 161919,
+   "gold": 306.0,
+   "exp": 11286.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 10998576,
+  "totalGold": 27710,
+  "totalExp": 516648
+ },
+ "2205": {
+  "key": 2205,
+  "label": "2-5",
+  "stageLevel": 43,
+  "difficulty": "NIGHTMARE",
+  "waves": 22,
+  "perWave": 13,
+  "normalCount": 286,
+  "hpMult": 634.7,
+  "goldMult": 71.6,
+  "expMult": 1326.0,
+  "monsters": [
+   {
+    "key": 20011,
+    "name": "Escorpião",
+    "hp": 31735,
+    "gold": 71.6,
+    "exp": 1326.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   },
+   {
+    "key": 20021,
+    "name": "Guerreiro Ratuno",
+    "hp": 22214,
+    "gold": 85.92,
+    "exp": 1591.2,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   },
+   {
+    "key": 20022,
+    "name": "Arqueiro Ratuno",
+    "hp": 28562,
+    "gold": 107.4,
+    "exp": 1989.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   },
+   {
+    "key": 20051,
+    "name": "Mosca Gigante",
+    "hp": 28562,
+    "gold": 78.76,
+    "exp": 1458.6,
+    "type": "MONSTER",
+    "weight": 2000,
+    "sharePct": 40.0
+   }
+  ],
+  "boss": {
+   "key": 20071,
+   "name": "Homúnculo",
+   "hp": 437943,
+   "gold": 279.24,
+   "exp": 10342.8,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 8425065,
+  "totalGold": 24443,
+  "totalExp": 457841
+ },
+ "2206": {
+  "key": 2206,
+  "label": "2-6",
+  "stageLevel": 43,
+  "difficulty": "NIGHTMARE",
+  "waves": 22,
+  "perWave": 13,
+  "normalCount": 286,
+  "hpMult": 634.7,
+  "goldMult": 71.6,
+  "expMult": 1326.0,
+  "monsters": [
+   {
+    "key": 20031,
+    "name": "Cobra",
+    "hp": 34908,
+    "gold": 107.4,
+    "exp": 1989.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 20024,
+    "name": "Berserker Ratuno",
+    "hp": 47602,
+    "gold": 179.0,
+    "exp": 3315.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 20061,
+    "name": "Guarda Kobold",
+    "hp": 57123,
+    "gold": 121.72,
+    "exp": 2254.2,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 20071,
+    "name": "Homúnculo",
+    "hp": 72990,
+    "gold": 93.08,
+    "exp": 1723.8,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   }
+  ],
+  "boss": {
+   "key": 20081,
+   "name": "Ghoul",
+   "hp": 856845,
+   "gold": 966.6,
+   "exp": 35802.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 16059390,
+  "totalGold": 36802,
+  "totalExp": 699465
+ },
+ "2207": {
+  "key": 2207,
+  "label": "2-7",
+  "stageLevel": 44,
+  "difficulty": "NIGHTMARE",
+  "waves": 22,
+  "perWave": 14,
+  "normalCount": 308,
+  "hpMult": 670.7,
+  "goldMult": 75.3,
+  "expMult": 1400.0,
+  "monsters": [
+   {
+    "key": 20081,
+    "name": "Ghoul",
+    "hp": 150908,
+    "gold": 338.85,
+    "exp": 6300.0,
+    "type": "MONSTER",
+    "weight": 300,
+    "sharePct": 8.5
+   },
+   {
+    "key": 20071,
+    "name": "Homúnculo",
+    "hp": 77130,
+    "gold": 97.89,
+    "exp": 1820.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 28.2
+   },
+   {
+    "key": 20011,
+    "name": "Escorpião",
+    "hp": 33535,
+    "gold": 75.3,
+    "exp": 1400.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 28.2
+   },
+   {
+    "key": 20023,
+    "name": "Rato da Peste",
+    "hp": 73777,
+    "gold": 150.6,
+    "exp": 2800.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 19.7
+   },
+   {
+    "key": 10052,
+    "name": "Arqueiro esqueleto",
+    "hp": 23474,
+    "gold": 75.3,
+    "exp": 1820.0,
+    "type": "MONSTER",
+    "weight": 550,
+    "sharePct": 15.5
+   }
+  ],
+  "boss": {
+   "key": 20023,
+   "name": "Rato da Peste",
+   "hp": 442662,
+   "gold": 451.8,
+   "exp": 16800.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 19572672,
+  "totalGold": 37037,
+  "totalExp": 717045
+ },
+ "2208": {
+  "key": 2208,
+  "label": "2-8",
+  "stageLevel": 44,
+  "difficulty": "NIGHTMARE",
+  "waves": 22,
+  "perWave": 14,
+  "normalCount": 308,
+  "hpMult": 670.7,
+  "goldMult": 75.3,
+  "expMult": 1400.0,
+  "monsters": [
+   {
+    "key": 20061,
+    "name": "Guarda Kobold",
+    "hp": 60363,
+    "gold": 128.01,
+    "exp": 2380.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.8
+   },
+   {
+    "key": 20062,
+    "name": "Fundeiro Kobold",
+    "hp": 53656,
+    "gold": 105.42,
+    "exp": 1960.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.8
+   },
+   {
+    "key": 20091,
+    "name": "Elemental de Fogo",
+    "hp": 50302,
+    "gold": 173.19,
+    "exp": 3220.0,
+    "type": "MONSTER",
+    "weight": 800,
+    "sharePct": 16.7
+   },
+   {
+    "key": 20071,
+    "name": "Homúnculo",
+    "hp": 77130,
+    "gold": 97.89,
+    "exp": 1820.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.8
+   }
+  ],
+  "boss": {
+   "key": 20061,
+   "name": "Guarda Kobold",
+   "hp": 362178,
+   "gold": 384.03,
+   "exp": 14280.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 15209742,
+  "totalGold": 30534,
+  "totalExp": 574840
+ },
+ "2209": {
+  "key": 2209,
+  "label": "2-9",
+  "stageLevel": 45,
+  "difficulty": "NIGHTMARE",
+  "waves": 23,
+  "perWave": 14,
+  "normalCount": 322,
+  "hpMult": 707.7,
+  "goldMult": 79.1,
+  "expMult": 1476.0,
+  "monsters": [
+   {
+    "key": 20061,
+    "name": "Guarda Kobold",
+    "hp": 63693,
+    "gold": 134.47,
+    "exp": 2509.2,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 18.9
+   },
+   {
+    "key": 20062,
+    "name": "Fundeiro Kobold",
+    "hp": 56616,
+    "gold": 110.74,
+    "exp": 2066.4,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 18.9
+   },
+   {
+    "key": 20091,
+    "name": "Elemental de Fogo",
+    "hp": 53078,
+    "gold": 181.93,
+    "exp": 3394.8,
+    "type": "MONSTER",
+    "weight": 800,
+    "sharePct": 15.1
+   },
+   {
+    "key": 20111,
+    "name": "Múmia",
+    "hp": 184002,
+    "gold": 237.3,
+    "exp": 4428.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 18.9
+   },
+   {
+    "key": 20081,
+    "name": "Ghoul",
+    "hp": 159232,
+    "gold": 355.95,
+    "exp": 6642.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 9.4
+   }
+  ],
+  "boss": {
+   "key": 20111,
+   "name": "Múmia",
+   "hp": 1104012,
+   "gold": 711.9,
+   "exp": 26568.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 27009179,
+  "totalGold": 49682,
+  "totalExp": 940346
+ },
+ "2210": {
+  "key": 2210,
+  "label": "2-10",
+  "stageLevel": 45,
+  "difficulty": "NIGHTMARE",
+  "waves": 0,
+  "perWave": 0,
+  "normalCount": 0,
+  "hpMult": 707.7,
+  "goldMult": 79.1,
+  "expMult": 1476.0,
+  "monsters": [],
+  "boss": {
+   "key": 20902,
+   "name": "Senhor do Deserto",
+   "hp": 1380015,
+   "gold": 3955.0,
+   "exp": 2066.4,
+   "hpMult": 1.0,
+   "goldMult": 1.0,
+   "expMult": 1.0
+  },
+  "totalHP": 1380015,
+  "totalGold": 3955,
+  "totalExp": 2066
+ },
+ "2301": {
+  "key": 2301,
+  "label": "3-1",
+  "stageLevel": 46,
+  "difficulty": "NIGHTMARE",
+  "waves": 23,
+  "perWave": 14,
+  "normalCount": 322,
+  "hpMult": 745.7,
+  "goldMult": 83.0,
+  "expMult": 1554.0,
+  "monsters": [
+   {
+    "key": 30011,
+    "name": "Gremlin",
+    "hp": 52199,
+    "gold": 83.0,
+    "exp": 1554.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 40.0
+   },
+   {
+    "key": 30012,
+    "name": "Geônide",
+    "hp": 37285,
+    "gold": 99.6,
+    "exp": 1864.8,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 40.0
+   },
+   {
+    "key": 30013,
+    "name": "Elmo do Anjo Caído",
+    "hp": 29828,
+    "gold": 124.5,
+    "exp": 2331.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 20.0
+   }
+  ],
+  "boss": {
+   "key": 20024,
+   "name": "Berserker Ratuno",
+   "hp": 335565,
+   "gold": 622.5,
+   "exp": 23310.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 13782027,
+  "totalGold": 32159,
+  "totalExp": 613768
+ },
+ "2302": {
+  "key": 2302,
+  "label": "3-2",
+  "stageLevel": 47,
+  "difficulty": "NIGHTMARE",
+  "waves": 23,
+  "perWave": 14,
+  "normalCount": 322,
+  "hpMult": 784.7,
+  "goldMult": 87.0,
+  "expMult": 1634.0,
+  "monsters": [
+   {
+    "key": 30011,
+    "name": "Gremlin",
+    "hp": 54929,
+    "gold": 87.0,
+    "exp": 1634.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 22.2
+   },
+   {
+    "key": 30012,
+    "name": "Geônide",
+    "hp": 39235,
+    "gold": 104.4,
+    "exp": 1960.8,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 22.2
+   },
+   {
+    "key": 30013,
+    "name": "Elmo do Anjo Caído",
+    "hp": 31388,
+    "gold": 130.5,
+    "exp": 2451.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 11.1
+   },
+   {
+    "key": 30041,
+    "name": "Guerreiro da Montanha Nevada",
+    "hp": 70623,
+    "gold": 87.0,
+    "exp": 817.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 22.2
+   },
+   {
+    "key": 30021,
+    "name": "Yeti",
+    "hp": 251104,
+    "gold": 174.0,
+    "exp": 3268.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 22.2
+   }
+  ],
+  "boss": {
+   "key": 20021,
+   "name": "Guerreiro Ratuno",
+   "hp": 164787,
+   "gold": 313.2,
+   "exp": 11764.8,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 31047091,
+  "totalGold": 37354,
+  "totalExp": 648988
+ },
+ "2303": {
+  "key": 2303,
+  "label": "3-3",
+  "stageLevel": 48,
+  "difficulty": "NIGHTMARE",
+  "waves": 23,
+  "perWave": 14,
+  "normalCount": 322,
+  "hpMult": 824.7,
+  "goldMult": 91.1,
+  "expMult": 1716.0,
+  "monsters": [
+   {
+    "key": 30041,
+    "name": "Guerreiro da Montanha Nevada",
+    "hp": 74223,
+    "gold": 91.1,
+    "exp": 858.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 31.2
+   },
+   {
+    "key": 30042,
+    "name": "Arqueiro da Montanha Nevada",
+    "hp": 57729,
+    "gold": 91.1,
+    "exp": 858.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 21.9
+   },
+   {
+    "key": 30044,
+    "name": "Mago da Montanha Nevada",
+    "hp": 45358,
+    "gold": 91.1,
+    "exp": 858.0,
+    "type": "MONSTER",
+    "weight": 300,
+    "sharePct": 9.4
+   },
+   {
+    "key": 30021,
+    "name": "Yeti",
+    "hp": 263904,
+    "gold": 182.2,
+    "exp": 3432.0,
+    "type": "MONSTER",
+    "weight": 200,
+    "sharePct": 6.2
+   },
+   {
+    "key": 30013,
+    "name": "Elmo do Anjo Caído",
+    "hp": 32988,
+    "gold": 136.65,
+    "exp": 2574.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 31.2
+   }
+  ],
+  "boss": {
+   "key": 20031,
+   "name": "Cobra",
+   "hp": 272151,
+   "gold": 409.95,
+   "exp": 15444.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 21806857,
+  "totalGold": 36161,
+  "totalExp": 516194
+ },
+ "2304": {
+  "key": 2304,
+  "label": "3-4",
+  "stageLevel": 49,
+  "difficulty": "NIGHTMARE",
+  "waves": 23,
+  "perWave": 14,
+  "normalCount": 322,
+  "hpMult": 865.7,
+  "goldMult": 95.3,
+  "expMult": 1800.0,
+  "monsters": [
+   {
+    "key": 30041,
+    "name": "Guerreiro da Montanha Nevada",
+    "hp": 77913,
+    "gold": 95.3,
+    "exp": 900.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 22.7
+   },
+   {
+    "key": 30042,
+    "name": "Arqueiro da Montanha Nevada",
+    "hp": 60599,
+    "gold": 95.3,
+    "exp": 900.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 15.9
+   },
+   {
+    "key": 30044,
+    "name": "Mago da Montanha Nevada",
+    "hp": 47614,
+    "gold": 95.3,
+    "exp": 900.0,
+    "type": "MONSTER",
+    "weight": 300,
+    "sharePct": 6.8
+   },
+   {
+    "key": 30021,
+    "name": "Yeti",
+    "hp": 277024,
+    "gold": 190.6,
+    "exp": 3600.0,
+    "type": "MONSTER",
+    "weight": 400,
+    "sharePct": 9.1
+   },
+   {
+    "key": 30051,
+    "name": "Fantasma",
+    "hp": 56270,
+    "gold": 142.95,
+    "exp": 2700.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 22.7
+   },
+   {
+    "key": 30043,
+    "name": "Guarda da Montanha Nevada",
+    "hp": 134184,
+    "gold": 95.3,
+    "exp": 900.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 22.7
+   }
+  ],
+  "boss": {
+   "key": 20041,
+   "name": "Inseto Venenoso",
+   "hp": 233739,
+   "gold": 428.85,
+   "exp": 16200.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 32132237,
+  "totalGold": 37392,
+  "totalExp": 516764
+ },
+ "2305": {
+  "key": 2305,
+  "label": "3-5",
+  "stageLevel": 50,
+  "difficulty": "NIGHTMARE",
+  "waves": 23,
+  "perWave": 14,
+  "normalCount": 322,
+  "hpMult": 907.7,
+  "goldMult": 99.6,
+  "expMult": 1886.0,
+  "monsters": [
+   {
+    "key": 30031,
+    "name": "Filhote de Dragão",
+    "hp": 158848,
+    "gold": 99.6,
+    "exp": 943.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 14.9
+   },
+   {
+    "key": 30051,
+    "name": "Fantasma",
+    "hp": 59000,
+    "gold": 149.4,
+    "exp": 2829.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 14.9
+   },
+   {
+    "key": 30044,
+    "name": "Mago da Montanha Nevada",
+    "hp": 49924,
+    "gold": 99.6,
+    "exp": 943.0,
+    "type": "MONSTER",
+    "weight": 300,
+    "sharePct": 6.4
+   },
+   {
+    "key": 30043,
+    "name": "Guarda da Montanha Nevada",
+    "hp": 140694,
+    "gold": 99.6,
+    "exp": 943.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 21.3
+   },
+   {
+    "key": 30011,
+    "name": "Gremlin",
+    "hp": 63539,
+    "gold": 99.6,
+    "exp": 1886.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 21.3
+   },
+   {
+    "key": 30012,
+    "name": "Geônide",
+    "hp": 45385,
+    "gold": 119.52,
+    "exp": 2263.2,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 21.3
+   }
+  ],
+  "boss": {
+   "key": 20071,
+   "name": "Homúnculo",
+   "hp": 626313,
+   "gold": 388.44,
+   "exp": 14710.8,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 29201333,
+  "totalGold": 36213,
+  "totalExp": 563858
+ },
+ "2306": {
+  "key": 2306,
+  "label": "3-6",
+  "stageLevel": 50,
+  "difficulty": "NIGHTMARE",
+  "waves": 23,
+  "perWave": 14,
+  "normalCount": 322,
+  "hpMult": 907.7,
+  "goldMult": 99.6,
+  "expMult": 1886.0,
+  "monsters": [
+   {
+    "key": 30061,
+    "name": "Ser de Lava",
+    "hp": 68078,
+    "gold": 199.2,
+    "exp": 3772.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 26.3
+   },
+   {
+    "key": 30081,
+    "name": "Soldado Demônio",
+    "hp": 63539,
+    "gold": 99.6,
+    "exp": 2074.6,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 26.3
+   },
+   {
+    "key": 30082,
+    "name": "Comandante de Legião Demônio",
+    "hp": 40846,
+    "gold": 99.6,
+    "exp": 2451.8,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 13.2
+   },
+   {
+    "key": 30084,
+    "name": "Leitão Ardente",
+    "hp": 99847,
+    "gold": 298.8,
+    "exp": 5658.0,
+    "type": "MONSTER",
+    "weight": 300,
+    "sharePct": 7.9
+   },
+   {
+    "key": 30091,
+    "name": "Golem do Inferno",
+    "hp": 167924,
+    "gold": 298.8,
+    "exp": 5658.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 26.3
+   }
+  ],
+  "boss": {
+   "key": 20081,
+   "name": "Ghoul",
+   "hp": 1225395,
+   "gold": 1344.6,
+   "exp": 50922.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 30876350,
+  "totalGold": 63799,
+  "totalExp": 1273497
+ },
+ "2307": {
+  "key": 2307,
+  "label": "3-7",
+  "stageLevel": 51,
+  "difficulty": "NIGHTMARE",
+  "waves": 23,
+  "perWave": 15,
+  "normalCount": 345,
+  "hpMult": 950.7,
+  "goldMult": 104.0,
+  "expMult": 1974.0,
+  "monsters": [
+   {
+    "key": 30081,
+    "name": "Soldado Demônio",
+    "hp": 66549,
+    "gold": 104.0,
+    "exp": 2171.4,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 28.6
+   },
+   {
+    "key": 30082,
+    "name": "Comandante de Legião Demônio",
+    "hp": 42782,
+    "gold": 104.0,
+    "exp": 2566.2,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 20.0
+   },
+   {
+    "key": 30083,
+    "name": "Tropa de Choque Demônio",
+    "hp": 85563,
+    "gold": 312.0,
+    "exp": 5922.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 14.3
+   },
+   {
+    "key": 30084,
+    "name": "Leitão Ardente",
+    "hp": 104577,
+    "gold": 312.0,
+    "exp": 5922.0,
+    "type": "MONSTER",
+    "weight": 600,
+    "sharePct": 17.1
+   },
+   {
+    "key": 30031,
+    "name": "Filhote de Dragão",
+    "hp": 166372,
+    "gold": 104.0,
+    "exp": 987.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 20.0
+   }
+  ],
+  "boss": {
+   "key": 20023,
+   "name": "Rato da Peste",
+   "hp": 627462,
+   "gold": 624.0,
+   "exp": 23688.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 32020934,
+  "totalGold": 59057,
+  "totalExp": 1125011
+ },
+ "2308": {
+  "key": 2308,
+  "label": "3-8",
+  "stageLevel": 51,
+  "difficulty": "NIGHTMARE",
+  "waves": 23,
+  "perWave": 15,
+  "normalCount": 345,
+  "hpMult": 950.7,
+  "goldMult": 104.0,
+  "expMult": 1974.0,
+  "monsters": [
+   {
+    "key": 30083,
+    "name": "Tropa de Choque Demônio",
+    "hp": 85563,
+    "gold": 312.0,
+    "exp": 5922.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 27.8
+   },
+   {
+    "key": 30111,
+    "name": "Dedo da Morte",
+    "hp": 61796,
+    "gold": 312.0,
+    "exp": 5922.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 27.8
+   },
+   {
+    "key": 30051,
+    "name": "Fantasma",
+    "hp": 61796,
+    "gold": 156.0,
+    "exp": 2961.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 13.9
+   },
+   {
+    "key": 30101,
+    "name": "Sacerdote do Inferno Ardente",
+    "hp": 90316,
+    "gold": 312.0,
+    "exp": 5922.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 19.4
+   },
+   {
+    "key": 30102,
+    "name": "Sacerdote do Inferno Congelante",
+    "hp": 90316,
+    "gold": 312.0,
+    "exp": 5922.0,
+    "type": "MONSTER",
+    "weight": 400,
+    "sharePct": 11.1
+   }
+  ],
+  "boss": {
+   "key": 20061,
+   "name": "Guarda Kobold",
+   "hp": 513378,
+   "gold": 530.4,
+   "exp": 20134.8,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 27117152,
+  "totalGold": 100695,
+  "totalExp": 1921344
+ },
+ "2309": {
+  "key": 2309,
+  "label": "3-9",
+  "stageLevel": 52,
+  "difficulty": "NIGHTMARE",
+  "waves": 23,
+  "perWave": 15,
+  "normalCount": 345,
+  "hpMult": 994.7,
+  "goldMult": 108.5,
+  "expMult": 2064.0,
+  "monsters": [
+   {
+    "key": 30084,
+    "name": "Leitão Ardente",
+    "hp": 109417,
+    "gold": 325.5,
+    "exp": 6192.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 26.3
+   },
+   {
+    "key": 30111,
+    "name": "Dedo da Morte",
+    "hp": 64656,
+    "gold": 325.5,
+    "exp": 6192.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 26.3
+   },
+   {
+    "key": 30051,
+    "name": "Fantasma",
+    "hp": 64656,
+    "gold": 162.75,
+    "exp": 3096.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 18.4
+   },
+   {
+    "key": 30101,
+    "name": "Sacerdote do Inferno Ardente",
+    "hp": 94496,
+    "gold": 325.5,
+    "exp": 6192.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 13.2
+   },
+   {
+    "key": 30102,
+    "name": "Sacerdote do Inferno Congelante",
+    "hp": 94496,
+    "gold": 325.5,
+    "exp": 6192.0,
+    "type": "MONSTER",
+    "weight": 200,
+    "sharePct": 5.3
+   },
+   {
+    "key": 30103,
+    "name": "Sacerdote do Inferno Elétrico",
+    "hp": 94496,
+    "gold": 325.5,
+    "exp": 6192.0,
+    "type": "MONSTER",
+    "weight": 400,
+    "sharePct": 10.5
+   }
+  ],
+  "boss": {
+   "key": 20111,
+   "name": "Múmia",
+   "hp": 1551732,
+   "gold": 976.5,
+   "exp": 37152.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 30901953,
+  "totalGold": 102931,
+  "totalExp": 1976633
+ },
+ "2310": {
+  "key": 2310,
+  "label": "3-10",
+  "stageLevel": 52,
+  "difficulty": "NIGHTMARE",
+  "waves": 0,
+  "perWave": 0,
+  "normalCount": 0,
+  "hpMult": 994.7,
+  "goldMult": 108.5,
+  "expMult": 2064.0,
+  "monsters": [],
+  "boss": {
+   "key": 30902,
+   "name": "Arconte Morkar",
+   "hp": 2735425,
+   "gold": 5425.0,
+   "exp": 206.4,
+   "hpMult": 1.0,
+   "goldMult": 1.0,
+   "expMult": 1.0
+  },
+  "totalHP": 2735425,
+  "totalGold": 5425,
+  "totalExp": 206
+ },
+ "3101": {
+  "key": 3101,
+  "label": "1-1",
+  "stageLevel": 53,
+  "difficulty": "HELL",
+  "waves": 24,
+  "perWave": 15,
+  "normalCount": 360,
+  "hpMult": 1039.7,
+  "goldMult": 113.1,
+  "expMult": 2156.0,
+  "monsters": [
+   {
+    "key": 10011,
+    "name": "Slime",
+    "hp": 51985,
+    "gold": 113.1,
+    "exp": 2156.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 33.3
+   },
+   {
+    "key": 10021,
+    "name": "Goblin",
+    "hp": 36390,
+    "gold": 135.72,
+    "exp": 2587.2,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 33.3
+   },
+   {
+    "key": 10022,
+    "name": "Ladrão goblin",
+    "hp": 46786,
+    "gold": 169.65,
+    "exp": 3234.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 33.3
+   }
+  ],
+  "boss": {
+   "key": 20024,
+   "name": "Berserker Ratuno",
+   "hp": 467865,
+   "gold": 848.25,
+   "exp": 32340.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 16687185,
+  "totalGold": 51065,
+  "totalExp": 989604
+ },
+ "3102": {
+  "key": 3102,
+  "label": "1-2",
+  "stageLevel": 54,
+  "difficulty": "HELL",
+  "waves": 24,
+  "perWave": 15,
+  "normalCount": 360,
+  "hpMult": 1085.7,
+  "goldMult": 117.8,
+  "expMult": 2250.0,
+  "monsters": [
+   {
+    "key": 10011,
+    "name": "Slime",
+    "hp": 54285,
+    "gold": 117.8,
+    "exp": 2250.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 10021,
+    "name": "Goblin",
+    "hp": 38000,
+    "gold": 141.36,
+    "exp": 2700.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 10022,
+    "name": "Ladrão goblin",
+    "hp": 48856,
+    "gold": 176.7,
+    "exp": 3375.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 10023,
+    "name": "Xamã goblin",
+    "hp": 32571,
+    "gold": 235.6,
+    "exp": 4500.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   }
+  ],
+  "boss": {
+   "key": 20021,
+   "name": "Guerreiro Ratuno",
+   "hp": 227997,
+   "gold": 424.08,
+   "exp": 16200.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 15862077,
+  "totalGold": 60855,
+  "totalExp": 1170450
+ },
+ "3103": {
+  "key": 3103,
+  "label": "1-3",
+  "stageLevel": 55,
+  "difficulty": "HELL",
+  "waves": 25,
+  "perWave": 15,
+  "normalCount": 375,
+  "hpMult": 1132.7,
+  "goldMult": 122.6,
+  "expMult": 2346.0,
+  "monsters": [
+   {
+    "key": 10021,
+    "name": "Goblin",
+    "hp": 39644,
+    "gold": 147.12,
+    "exp": 2815.2,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 10022,
+    "name": "Ladrão goblin",
+    "hp": 50972,
+    "gold": 183.9,
+    "exp": 3519.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 10023,
+    "name": "Xamã goblin",
+    "hp": 33981,
+    "gold": 245.2,
+    "exp": 4692.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 10031,
+    "name": "Morcego",
+    "hp": 16990,
+    "gold": 122.6,
+    "exp": 1173.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   }
+  ],
+  "boss": {
+   "key": 20031,
+   "name": "Cobra",
+   "hp": 373791,
+   "gold": 551.7,
+   "exp": 21114.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 13647572,
+  "totalGold": 66066,
+  "totalExp": 1164789
+ },
+ "3104": {
+  "key": 3104,
+  "label": "1-4",
+  "stageLevel": 56,
+  "difficulty": "HELL",
+  "waves": 25,
+  "perWave": 15,
+  "normalCount": 375,
+  "hpMult": 1180.7,
+  "goldMult": 127.5,
+  "expMult": 2444.0,
+  "monsters": [
+   {
+    "key": 10011,
+    "name": "Slime",
+    "hp": 59035,
+    "gold": 127.5,
+    "exp": 2444.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 10021,
+    "name": "Goblin",
+    "hp": 41324,
+    "gold": 153.0,
+    "exp": 2932.8,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 10023,
+    "name": "Xamã goblin",
+    "hp": 35421,
+    "gold": 255.0,
+    "exp": 4888.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 10041,
+    "name": "Orc",
+    "hp": 76746,
+    "gold": 191.25,
+    "exp": 3666.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   }
+  ],
+  "boss": {
+   "key": 20041,
+   "name": "Inseto Venenoso",
+   "hp": 318789,
+   "gold": 573.75,
+   "exp": 21996.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 20243102,
+  "totalGold": 68707,
+  "totalExp": 1328008
+ },
+ "3105": {
+  "key": 3105,
+  "label": "1-5",
+  "stageLevel": 57,
+  "difficulty": "HELL",
+  "waves": 25,
+  "perWave": 15,
+  "normalCount": 375,
+  "hpMult": 1229.7,
+  "goldMult": 132.5,
+  "expMult": 2544.0,
+  "monsters": [
+   {
+    "key": 10021,
+    "name": "Goblin",
+    "hp": 43040,
+    "gold": 159.0,
+    "exp": 3052.8,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   },
+   {
+    "key": 10022,
+    "name": "Ladrão goblin",
+    "hp": 55336,
+    "gold": 198.75,
+    "exp": 3816.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   },
+   {
+    "key": 10023,
+    "name": "Xamã goblin",
+    "hp": 36891,
+    "gold": 265.0,
+    "exp": 5088.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   },
+   {
+    "key": 10041,
+    "name": "Orc",
+    "hp": 79930,
+    "gold": 198.75,
+    "exp": 3816.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   },
+   {
+    "key": 10042,
+    "name": "Guerreiro orc",
+    "hp": 116822,
+    "gold": 265.0,
+    "exp": 5088.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   }
+  ],
+  "boss": {
+   "key": 20071,
+   "name": "Homúnculo",
+   "hp": 848493,
+   "gold": 516.75,
+   "exp": 19843.2,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 25749918,
+  "totalGold": 82004,
+  "totalExp": 1584403
+ },
+ "3106": {
+  "key": 3106,
+  "label": "1-6",
+  "stageLevel": 58,
+  "difficulty": "HELL",
+  "waves": 25,
+  "perWave": 15,
+  "normalCount": 375,
+  "hpMult": 1279.7,
+  "goldMult": 137.6,
+  "expMult": 2646.0,
+  "monsters": [
+   {
+    "key": 10041,
+    "name": "Orc",
+    "hp": 83180,
+    "gold": 206.4,
+    "exp": 3969.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 27.8
+   },
+   {
+    "key": 10042,
+    "name": "Guerreiro orc",
+    "hp": 121572,
+    "gold": 275.2,
+    "exp": 5292.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 27.8
+   },
+   {
+    "key": 10043,
+    "name": "Orc de elite",
+    "hp": 236744,
+    "gold": 481.6,
+    "exp": 9261.0,
+    "type": "MONSTER",
+    "weight": 600,
+    "sharePct": 16.7
+   },
+   {
+    "key": 10011,
+    "name": "Slime",
+    "hp": 63985,
+    "gold": 137.6,
+    "exp": 2646.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 27.8
+   }
+  ],
+  "boss": {
+   "key": 20081,
+   "name": "Ghoul",
+   "hp": 1727595,
+   "gold": 1857.6,
+   "exp": 71442.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 44517532,
+  "totalGold": 96458,
+  "totalExp": 1890567
+ },
+ "3107": {
+  "key": 3107,
+  "label": "1-7",
+  "stageLevel": 59,
+  "difficulty": "HELL",
+  "waves": 25,
+  "perWave": 16,
+  "normalCount": 400,
+  "hpMult": 1330.7,
+  "goldMult": 142.8,
+  "expMult": 2750.0,
+  "monsters": [
+   {
+    "key": 10051,
+    "name": "Esqueleto",
+    "hp": 66535,
+    "gold": 142.8,
+    "exp": 3025.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 37.0
+   },
+   {
+    "key": 10052,
+    "name": "Arqueiro esqueleto",
+    "hp": 46574,
+    "gold": 142.8,
+    "exp": 3575.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 25.9
+   },
+   {
+    "key": 10031,
+    "name": "Morcego",
+    "hp": 19960,
+    "gold": 142.8,
+    "exp": 1375.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 37.0
+   }
+  ],
+  "boss": {
+   "key": 20023,
+   "name": "Rato da Peste",
+   "hp": 878262,
+   "gold": 856.8,
+   "exp": 33000.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 18522232,
+  "totalGold": 57977,
+  "totalExp": 1055593
+ },
+ "3108": {
+  "key": 3108,
+  "label": "1-8",
+  "stageLevel": 59,
+  "difficulty": "HELL",
+  "waves": 25,
+  "perWave": 16,
+  "normalCount": 400,
+  "hpMult": 1330.7,
+  "goldMult": 142.8,
+  "expMult": 2750.0,
+  "monsters": [
+   {
+    "key": 10051,
+    "name": "Esqueleto",
+    "hp": 66535,
+    "gold": 142.8,
+    "exp": 3025.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 31.2
+   },
+   {
+    "key": 10052,
+    "name": "Arqueiro esqueleto",
+    "hp": 46574,
+    "gold": 142.8,
+    "exp": 3575.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 21.9
+   },
+   {
+    "key": 10053,
+    "name": "Guerreiro esqueleto",
+    "hp": 119763,
+    "gold": 428.4,
+    "exp": 8250.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 15.6
+   },
+   {
+    "key": 10031,
+    "name": "Morcego",
+    "hp": 19960,
+    "gold": 142.8,
+    "exp": 1375.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 31.2
+   }
+  ],
+  "boss": {
+   "key": 20061,
+   "name": "Guarda Kobold",
+   "hp": 718578,
+   "gold": 728.28,
+   "exp": 28050.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 23090866,
+  "totalGold": 75698,
+  "totalExp": 1406488
+ },
+ "3109": {
+  "key": 3109,
+  "label": "1-9",
+  "stageLevel": 60,
+  "difficulty": "HELL",
+  "waves": 25,
+  "perWave": 16,
+  "normalCount": 400,
+  "hpMult": 1382.7,
+  "goldMult": 148.1,
+  "expMult": 2856.0,
+  "monsters": [
+   {
+    "key": 10042,
+    "name": "Guerreiro orc",
+    "hp": 131356,
+    "gold": 296.2,
+    "exp": 5712.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.8
+   },
+   {
+    "key": 10043,
+    "name": "Orc de elite",
+    "hp": 255800,
+    "gold": 518.35,
+    "exp": 9996.0,
+    "type": "MONSTER",
+    "weight": 600,
+    "sharePct": 12.5
+   },
+   {
+    "key": 10051,
+    "name": "Esqueleto",
+    "hp": 69135,
+    "gold": 148.1,
+    "exp": 3141.6,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.8
+   },
+   {
+    "key": 10052,
+    "name": "Arqueiro esqueleto",
+    "hp": 48394,
+    "gold": 148.1,
+    "exp": 3712.8,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 14.6
+   },
+   {
+    "key": 10053,
+    "name": "Guerreiro esqueleto",
+    "hp": 124443,
+    "gold": 444.3,
+    "exp": 8568.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 10.4
+   },
+   {
+    "key": 10031,
+    "name": "Morcego",
+    "hp": 20740,
+    "gold": 148.1,
+    "exp": 1428.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.8
+   }
+  ],
+  "boss": {
+   "key": 20111,
+   "name": "Múmia",
+   "hp": 2157012,
+   "gold": 1332.9,
+   "exp": 51408.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 41391037,
+  "totalGold": 103769,
+  "totalExp": 1981588
+ },
+ "3110": {
+  "key": 3110,
+  "label": "1-10",
+  "stageLevel": 60,
+  "difficulty": "HELL",
+  "waves": 0,
+  "perWave": 0,
+  "normalCount": 0,
+  "hpMult": 1382.7,
+  "goldMult": 148.1,
+  "expMult": 2856.0,
+  "monsters": [],
+  "boss": {
+   "key": 10903,
+   "name": "Rei esqueleto",
+   "hp": 3249345,
+   "gold": 7405.0,
+   "exp": 5140.8,
+   "hpMult": 1.0,
+   "goldMult": 1.0,
+   "expMult": 1.0
+  },
+  "totalHP": 3249345,
+  "totalGold": 7405,
+  "totalExp": 5141
+ },
+ "3201": {
+  "key": 3201,
+  "label": "2-1",
+  "stageLevel": 61,
+  "difficulty": "HELL",
+  "waves": 26,
+  "perWave": 16,
+  "normalCount": 416,
+  "hpMult": 1435.7,
+  "goldMult": 153.5,
+  "expMult": 2964.0,
+  "monsters": [
+   {
+    "key": 20011,
+    "name": "Escorpião",
+    "hp": 71785,
+    "gold": 153.5,
+    "exp": 2964.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 33.3
+   },
+   {
+    "key": 20021,
+    "name": "Guerreiro Ratuno",
+    "hp": 50250,
+    "gold": 184.2,
+    "exp": 3556.8,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 33.3
+   },
+   {
+    "key": 20022,
+    "name": "Arqueiro Ratuno",
+    "hp": 64606,
+    "gold": 230.25,
+    "exp": 4446.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 33.3
+   }
+  ],
+  "boss": {
+   "key": 20024,
+   "name": "Berserker Ratuno",
+   "hp": 646065,
+   "gold": 1151.25,
+   "exp": 44460.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 26526950,
+  "totalGold": 79907,
+  "totalExp": 1565190
+ },
+ "3202": {
+  "key": 3202,
+  "label": "2-2",
+  "stageLevel": 62,
+  "difficulty": "HELL",
+  "waves": 26,
+  "perWave": 16,
+  "normalCount": 416,
+  "hpMult": 1489.7,
+  "goldMult": 159.0,
+  "expMult": 3074.0,
+  "monsters": [
+   {
+    "key": 20011,
+    "name": "Escorpião",
+    "hp": 74485,
+    "gold": 159.0,
+    "exp": 3074.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 20021,
+    "name": "Guerreiro Ratuno",
+    "hp": 52140,
+    "gold": 190.8,
+    "exp": 3688.8,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 20022,
+    "name": "Arqueiro Ratuno",
+    "hp": 67036,
+    "gold": 238.5,
+    "exp": 4611.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 20024,
+    "name": "Berserker Ratuno",
+    "hp": 111728,
+    "gold": 397.5,
+    "exp": 7685.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   }
+  ],
+  "boss": {
+   "key": 20021,
+   "name": "Guerreiro Ratuno",
+   "hp": 312837,
+   "gold": 572.4,
+   "exp": 22132.8,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 32073293,
+  "totalGold": 103096,
+  "totalExp": 2004248
+ },
+ "3203": {
+  "key": 3203,
+  "label": "2-3",
+  "stageLevel": 63,
+  "difficulty": "HELL",
+  "waves": 26,
+  "perWave": 16,
+  "normalCount": 416,
+  "hpMult": 1544.7,
+  "goldMult": 164.6,
+  "expMult": 3186.0,
+  "monsters": [
+   {
+    "key": 20011,
+    "name": "Escorpião",
+    "hp": 77235,
+    "gold": 164.6,
+    "exp": 3186.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 20031,
+    "name": "Cobra",
+    "hp": 84958,
+    "gold": 246.9,
+    "exp": 4779.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 20023,
+    "name": "Rato da Peste",
+    "hp": 169917,
+    "gold": 329.2,
+    "exp": 6372.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 20041,
+    "name": "Inseto Venenoso",
+    "hp": 69512,
+    "gold": 246.9,
+    "exp": 4779.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 17.5
+   },
+   {
+    "key": 10031,
+    "name": "Morcego",
+    "hp": 23170,
+    "gold": 164.6,
+    "exp": 1593.0,
+    "type": "MONSTER",
+    "weight": 300,
+    "sharePct": 7.5
+   }
+  ],
+  "boss": {
+   "key": 20031,
+   "name": "Cobra",
+   "hp": 509751,
+   "gold": 740.7,
+   "exp": 28674.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 40832569,
+  "totalGold": 100883,
+  "totalExp": 1917335
+ },
+ "3204": {
+  "key": 3204,
+  "label": "2-4",
+  "stageLevel": 64,
+  "difficulty": "HELL",
+  "waves": 26,
+  "perWave": 16,
+  "normalCount": 416,
+  "hpMult": 1600.7,
+  "goldMult": 170.3,
+  "expMult": 3300.0,
+  "monsters": [
+   {
+    "key": 20011,
+    "name": "Escorpião",
+    "hp": 80035,
+    "gold": 170.3,
+    "exp": 3300.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 18.9
+   },
+   {
+    "key": 20031,
+    "name": "Cobra",
+    "hp": 88038,
+    "gold": 255.45,
+    "exp": 4950.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 18.9
+   },
+   {
+    "key": 20023,
+    "name": "Rato da Peste",
+    "hp": 176077,
+    "gold": 340.6,
+    "exp": 6600.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 18.9
+   },
+   {
+    "key": 20041,
+    "name": "Inseto Venenoso",
+    "hp": 72032,
+    "gold": 255.45,
+    "exp": 4950.0,
+    "type": "MONSTER",
+    "weight": 800,
+    "sharePct": 15.1
+   },
+   {
+    "key": 20042,
+    "name": "Senhor do Veneno",
+    "hp": 120052,
+    "gold": 596.05,
+    "exp": 11550.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 9.4
+   },
+   {
+    "key": 20051,
+    "name": "Mosca Gigante",
+    "hp": 72032,
+    "gold": 187.33,
+    "exp": 3630.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 18.9
+   }
+  ],
+  "boss": {
+   "key": 20041,
+   "name": "Inseto Venenoso",
+   "hp": 432189,
+   "gold": 766.35,
+   "exp": 29700.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 42333090,
+  "totalGold": 115054,
+  "totalExp": 2244311
+ },
+ "3205": {
+  "key": 3205,
+  "label": "2-5",
+  "stageLevel": 65,
+  "difficulty": "HELL",
+  "waves": 26,
+  "perWave": 16,
+  "normalCount": 416,
+  "hpMult": 1657.7,
+  "goldMult": 176.1,
+  "expMult": 3416.0,
+  "monsters": [
+   {
+    "key": 20011,
+    "name": "Escorpião",
+    "hp": 82885,
+    "gold": 176.1,
+    "exp": 3416.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 19.2
+   },
+   {
+    "key": 20021,
+    "name": "Guerreiro Ratuno",
+    "hp": 58020,
+    "gold": 211.32,
+    "exp": 4099.2,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 19.2
+   },
+   {
+    "key": 20022,
+    "name": "Arqueiro Ratuno",
+    "hp": 74596,
+    "gold": 264.15,
+    "exp": 5124.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 19.2
+   },
+   {
+    "key": 20051,
+    "name": "Mosca Gigante",
+    "hp": 74596,
+    "gold": 193.71,
+    "exp": 3757.6,
+    "type": "MONSTER",
+    "weight": 2000,
+    "sharePct": 38.5
+   },
+   {
+    "key": 20041,
+    "name": "Inseto Venenoso",
+    "hp": 74596,
+    "gold": 264.15,
+    "exp": 5124.0,
+    "type": "MONSTER",
+    "weight": 200,
+    "sharePct": 3.8
+   }
+  ],
+  "boss": {
+   "key": 20071,
+   "name": "Homúnculo",
+   "hp": 1143813,
+   "gold": 686.79,
+   "exp": 26644.8,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 31512789,
+  "totalGold": 88032,
+  "totalExp": 1720981
+ },
+ "3206": {
+  "key": 3206,
+  "label": "2-6",
+  "stageLevel": 66,
+  "difficulty": "HELL",
+  "waves": 26,
+  "perWave": 16,
+  "normalCount": 416,
+  "hpMult": 1715.7,
+  "goldMult": 182.0,
+  "expMult": 3534.0,
+  "monsters": [
+   {
+    "key": 20031,
+    "name": "Cobra",
+    "hp": 94364,
+    "gold": 273.0,
+    "exp": 5301.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 23.3
+   },
+   {
+    "key": 20024,
+    "name": "Berserker Ratuno",
+    "hp": 128678,
+    "gold": 455.0,
+    "exp": 8835.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 23.3
+   },
+   {
+    "key": 20061,
+    "name": "Guarda Kobold",
+    "hp": 154413,
+    "gold": 309.4,
+    "exp": 6007.8,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 23.3
+   },
+   {
+    "key": 20071,
+    "name": "Homúnculo",
+    "hp": 197306,
+    "gold": 236.6,
+    "exp": 4594.2,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 23.3
+   },
+   {
+    "key": 20041,
+    "name": "Inseto Venenoso",
+    "hp": 77206,
+    "gold": 273.0,
+    "exp": 5301.0,
+    "type": "MONSTER",
+    "weight": 300,
+    "sharePct": 7.0
+   }
+  ],
+  "boss": {
+   "key": 20081,
+   "name": "Ghoul",
+   "hp": 2316195,
+   "gold": 2457.0,
+   "exp": 95418.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 60161750,
+  "totalGold": 133632,
+  "totalExp": 2642528
+ },
+ "3207": {
+  "key": 3207,
+  "label": "2-7",
+  "stageLevel": 67,
+  "difficulty": "HELL",
+  "waves": 26,
+  "perWave": 17,
+  "normalCount": 442,
+  "hpMult": 1774.7,
+  "goldMult": 188.0,
+  "expMult": 3654.0,
+  "monsters": [
+   {
+    "key": 20081,
+    "name": "Ghoul",
+    "hp": 399308,
+    "gold": 846.0,
+    "exp": 16443.0,
+    "type": "MONSTER",
+    "weight": 300,
+    "sharePct": 7.4
+   },
+   {
+    "key": 20071,
+    "name": "Homúnculo",
+    "hp": 204090,
+    "gold": 244.4,
+    "exp": 4750.2,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 24.7
+   },
+   {
+    "key": 20042,
+    "name": "Senhor do Veneno",
+    "hp": 133102,
+    "gold": 658.0,
+    "exp": 12789.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 12.3
+   },
+   {
+    "key": 20011,
+    "name": "Escorpião",
+    "hp": 88735,
+    "gold": 188.0,
+    "exp": 3654.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 24.7
+   },
+   {
+    "key": 20023,
+    "name": "Rato da Peste",
+    "hp": 195217,
+    "gold": 376.0,
+    "exp": 7308.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 17.3
+   },
+   {
+    "key": 10052,
+    "name": "Arqueiro esqueleto",
+    "hp": 62114,
+    "gold": 188.0,
+    "exp": 4750.2,
+    "type": "MONSTER",
+    "weight": 550,
+    "sharePct": 13.6
+   }
+  ],
+  "boss": {
+   "key": 20023,
+   "name": "Rato da Peste",
+   "hp": 1171302,
+   "gold": 1128.0,
+   "exp": 43848.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 72107718,
+  "totalGold": 151932,
+  "totalExp": 3040696
+ },
+ "3208": {
+  "key": 3208,
+  "label": "2-8",
+  "stageLevel": 68,
+  "difficulty": "HELL",
+  "waves": 26,
+  "perWave": 17,
+  "normalCount": 442,
+  "hpMult": 1834.7,
+  "goldMult": 194.1,
+  "expMult": 3776.0,
+  "monsters": [
+   {
+    "key": 20061,
+    "name": "Guarda Kobold",
+    "hp": 165123,
+    "gold": 329.97,
+    "exp": 6419.2,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 17.9
+   },
+   {
+    "key": 20062,
+    "name": "Fundeiro Kobold",
+    "hp": 146776,
+    "gold": 271.74,
+    "exp": 5286.4,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 17.9
+   },
+   {
+    "key": 20091,
+    "name": "Elemental de Fogo",
+    "hp": 137602,
+    "gold": 446.43,
+    "exp": 8684.8,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 17.9
+   },
+   {
+    "key": 20071,
+    "name": "Homúnculo",
+    "hp": 210990,
+    "gold": 252.33,
+    "exp": 4908.8,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 17.9
+   },
+   {
+    "key": 20042,
+    "name": "Senhor do Veneno",
+    "hp": 137602,
+    "gold": 679.35,
+    "exp": 13216.0,
+    "type": "MONSTER",
+    "weight": 600,
+    "sharePct": 10.7
+   }
+  ],
+  "boss": {
+   "key": 20061,
+   "name": "Guarda Kobold",
+   "hp": 990738,
+   "gold": 989.91,
+   "exp": 38515.2,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 59638787,
+  "totalGold": 135806,
+  "totalExp": 2661217
+ },
+ "3209": {
+  "key": 3209,
+  "label": "2-9",
+  "stageLevel": 69,
+  "difficulty": "HELL",
+  "waves": 26,
+  "perWave": 17,
+  "normalCount": 442,
+  "hpMult": 1895.7,
+  "goldMult": 200.3,
+  "expMult": 3900.0,
+  "monsters": [
+   {
+    "key": 20061,
+    "name": "Guarda Kobold",
+    "hp": 170613,
+    "gold": 340.51,
+    "exp": 6630.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 18.2
+   },
+   {
+    "key": 20062,
+    "name": "Fundeiro Kobold",
+    "hp": 151656,
+    "gold": 280.42,
+    "exp": 5460.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 18.2
+   },
+   {
+    "key": 20091,
+    "name": "Elemental de Fogo",
+    "hp": 142178,
+    "gold": 460.69,
+    "exp": 8970.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 18.2
+   },
+   {
+    "key": 20111,
+    "name": "Múmia",
+    "hp": 492882,
+    "gold": 600.9,
+    "exp": 11700.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 18.2
+   },
+   {
+    "key": 20081,
+    "name": "Ghoul",
+    "hp": 426532,
+    "gold": 901.35,
+    "exp": 17550.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 9.1
+   }
+  ],
+  "boss": {
+   "key": 20111,
+   "name": "Múmia",
+   "hp": 2957292,
+   "gold": 1802.7,
+   "exp": 70200.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 97030563,
+  "totalGold": 173234,
+  "totalExp": 3408104
+ },
+ "3210": {
+  "key": 3210,
+  "label": "2-10",
+  "stageLevel": 69,
+  "difficulty": "HELL",
+  "waves": 0,
+  "perWave": 0,
+  "normalCount": 0,
+  "hpMult": 1895.7,
+  "goldMult": 200.3,
+  "expMult": 3900.0,
+  "monsters": [],
+  "boss": {
+   "key": 20903,
+   "name": "Senhor do Deserto",
+   "hp": 3886185,
+   "gold": 10015.0,
+   "exp": 12090.0,
+   "hpMult": 1.0,
+   "goldMult": 1.0,
+   "expMult": 1.0
+  },
+  "totalHP": 3886185,
+  "totalGold": 10015,
+  "totalExp": 12090
+ },
+ "3301": {
+  "key": 3301,
+  "label": "3-1",
+  "stageLevel": 70,
+  "difficulty": "HELL",
+  "waves": 27,
+  "perWave": 17,
+  "normalCount": 459,
+  "hpMult": 1957.7,
+  "goldMult": 206.6,
+  "expMult": 4026.0,
+  "monsters": [
+   {
+    "key": 30011,
+    "name": "Gremlin",
+    "hp": 137039,
+    "gold": 206.6,
+    "exp": 4026.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 45.5
+   },
+   {
+    "key": 30012,
+    "name": "Geônide",
+    "hp": 97885,
+    "gold": 247.92,
+    "exp": 4831.2,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 31.8
+   },
+   {
+    "key": 30013,
+    "name": "Elmo do Anjo Caído",
+    "hp": 78308,
+    "gold": 309.9,
+    "exp": 6039.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 22.7
+   }
+  ],
+  "boss": {
+   "key": 20024,
+   "name": "Berserker Ratuno",
+   "hp": 880965,
+   "gold": 1549.5,
+   "exp": 60390.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 51936891,
+  "totalGold": 113190,
+  "totalExp": 2235912
+ },
+ "3302": {
+  "key": 3302,
+  "label": "3-2",
+  "stageLevel": 71,
+  "difficulty": "HELL",
+  "waves": 27,
+  "perWave": 17,
+  "normalCount": 459,
+  "hpMult": 2020.7,
+  "goldMult": 213.0,
+  "expMult": 4154.0,
+  "monsters": [
+   {
+    "key": 30011,
+    "name": "Gremlin",
+    "hp": 141449,
+    "gold": 213.0,
+    "exp": 4154.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 23.8
+   },
+   {
+    "key": 30012,
+    "name": "Geônide",
+    "hp": 101035,
+    "gold": 255.6,
+    "exp": 4984.8,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 16.7
+   },
+   {
+    "key": 30013,
+    "name": "Elmo do Anjo Caído",
+    "hp": 80828,
+    "gold": 319.5,
+    "exp": 6231.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 11.9
+   },
+   {
+    "key": 30041,
+    "name": "Guerreiro da Montanha Nevada",
+    "hp": 181863,
+    "gold": 213.0,
+    "exp": 2077.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 23.8
+   },
+   {
+    "key": 30021,
+    "name": "Yeti",
+    "hp": 646624,
+    "gold": 426.0,
+    "exp": 8308.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 23.8
+   }
+  ],
+  "boss": {
+   "key": 20021,
+   "name": "Guerreiro Ratuno",
+   "hp": 424347,
+   "gold": 766.8,
+   "exp": 29908.8,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 118570346,
+  "totalGold": 130890,
+  "totalExp": 2340631
+ },
+ "3303": {
+  "key": 3303,
+  "label": "3-3",
+  "stageLevel": 72,
+  "difficulty": "HELL",
+  "waves": 27,
+  "perWave": 17,
+  "normalCount": 459,
+  "hpMult": 2084.7,
+  "goldMult": 219.5,
+  "expMult": 4284.0,
+  "monsters": [
+   {
+    "key": 30041,
+    "name": "Guerreiro da Montanha Nevada",
+    "hp": 187623,
+    "gold": 219.5,
+    "exp": 2142.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 29.4
+   },
+   {
+    "key": 30042,
+    "name": "Arqueiro da Montanha Nevada",
+    "hp": 145929,
+    "gold": 219.5,
+    "exp": 2142.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 20.6
+   },
+   {
+    "key": 30044,
+    "name": "Mago da Montanha Nevada",
+    "hp": 114658,
+    "gold": 219.5,
+    "exp": 2142.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 14.7
+   },
+   {
+    "key": 30021,
+    "name": "Yeti",
+    "hp": 667104,
+    "gold": 439.0,
+    "exp": 8568.0,
+    "type": "MONSTER",
+    "weight": 200,
+    "sharePct": 5.9
+   },
+   {
+    "key": 30013,
+    "name": "Elmo do Anjo Caído",
+    "hp": 83388,
+    "gold": 329.25,
+    "exp": 6426.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 29.4
+   }
+  ],
+  "boss": {
+   "key": 20031,
+   "name": "Cobra",
+   "hp": 687951,
+   "gold": 987.75,
+   "exp": 38556.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 76815950,
+  "totalGold": 122481,
+  "totalExp": 1773576
+ },
+ "3304": {
+  "key": 3304,
+  "label": "3-4",
+  "stageLevel": 73,
+  "difficulty": "HELL",
+  "waves": 27,
+  "perWave": 17,
+  "normalCount": 459,
+  "hpMult": 2149.7,
+  "goldMult": 226.1,
+  "expMult": 4416.0,
+  "monsters": [
+   {
+    "key": 30041,
+    "name": "Guerreiro da Montanha Nevada",
+    "hp": 193473,
+    "gold": 226.1,
+    "exp": 2208.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 21.7
+   },
+   {
+    "key": 30042,
+    "name": "Arqueiro da Montanha Nevada",
+    "hp": 150479,
+    "gold": 226.1,
+    "exp": 2208.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 15.2
+   },
+   {
+    "key": 30044,
+    "name": "Mago da Montanha Nevada",
+    "hp": 118233,
+    "gold": 226.1,
+    "exp": 2208.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 10.9
+   },
+   {
+    "key": 30021,
+    "name": "Yeti",
+    "hp": 687904,
+    "gold": 452.2,
+    "exp": 8832.0,
+    "type": "MONSTER",
+    "weight": 400,
+    "sharePct": 8.7
+   },
+   {
+    "key": 30051,
+    "name": "Fantasma",
+    "hp": 139730,
+    "gold": 339.15,
+    "exp": 6624.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 21.7
+   },
+   {
+    "key": 30043,
+    "name": "Guarda da Montanha Nevada",
+    "hp": 333204,
+    "gold": 226.1,
+    "exp": 2208.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 21.7
+   }
+  ],
+  "boss": {
+   "key": 20041,
+   "name": "Inseto Venenoso",
+   "hp": 580419,
+   "gold": 1017.45,
+   "exp": 39744.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 110942020,
+  "totalGold": 125102,
+  "totalExp": 1758240
+ },
+ "3305": {
+  "key": 3305,
+  "label": "3-5",
+  "stageLevel": 74,
+  "difficulty": "HELL",
+  "waves": 27,
+  "perWave": 17,
+  "normalCount": 459,
+  "hpMult": 2215.7,
+  "goldMult": 232.8,
+  "expMult": 4550.0,
+  "monsters": [
+   {
+    "key": 30031,
+    "name": "Filhote de Dragão",
+    "hp": 387747,
+    "gold": 232.8,
+    "exp": 2275.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 14.3
+   },
+   {
+    "key": 30051,
+    "name": "Fantasma",
+    "hp": 144020,
+    "gold": 349.2,
+    "exp": 6825.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 14.3
+   },
+   {
+    "key": 30044,
+    "name": "Mago da Montanha Nevada",
+    "hp": 121863,
+    "gold": 232.8,
+    "exp": 2275.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 10.2
+   },
+   {
+    "key": 30043,
+    "name": "Guarda da Montanha Nevada",
+    "hp": 343434,
+    "gold": 232.8,
+    "exp": 2275.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.4
+   },
+   {
+    "key": 30011,
+    "name": "Gremlin",
+    "hp": 155099,
+    "gold": 232.8,
+    "exp": 4550.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.4
+   },
+   {
+    "key": 30012,
+    "name": "Geônide",
+    "hp": 110785,
+    "gold": 279.36,
+    "exp": 5460.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.4
+   }
+  ],
+  "boss": {
+   "key": 20071,
+   "name": "Homúnculo",
+   "hp": 1528833,
+   "gold": 907.92,
+   "exp": 35490.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 99182151,
+  "totalGold": 119757,
+  "totalExp": 1889522
+ },
+ "3306": {
+  "key": 3306,
+  "label": "3-6",
+  "stageLevel": 75,
+  "difficulty": "HELL",
+  "waves": 27,
+  "perWave": 17,
+  "normalCount": 459,
+  "hpMult": 2282.7,
+  "goldMult": 239.6,
+  "expMult": 4686.0,
+  "monsters": [
+   {
+    "key": 30061,
+    "name": "Ser de Lava",
+    "hp": 171202,
+    "gold": 479.2,
+    "exp": 9372.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 28.6
+   },
+   {
+    "key": 30081,
+    "name": "Soldado Demônio",
+    "hp": 159789,
+    "gold": 239.6,
+    "exp": 5154.6,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 20.0
+   },
+   {
+    "key": 30082,
+    "name": "Comandante de Legião Demônio",
+    "hp": 102721,
+    "gold": 239.6,
+    "exp": 6091.8,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 14.3
+   },
+   {
+    "key": 30084,
+    "name": "Leitão Ardente",
+    "hp": 251097,
+    "gold": 718.8,
+    "exp": 14058.0,
+    "type": "MONSTER",
+    "weight": 300,
+    "sharePct": 8.6
+   },
+   {
+    "key": 30091,
+    "name": "Golem do Inferno",
+    "hp": 422299,
+    "gold": 718.8,
+    "exp": 14058.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 28.6
+   }
+  ],
+  "boss": {
+   "key": 20081,
+   "name": "Ghoul",
+   "hp": 3081645,
+   "gold": 3234.6,
+   "exp": 126522.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 112198128,
+  "totalGold": 226330,
+  "totalExp": 4624921
+ },
+ "3307": {
+  "key": 3307,
+  "label": "3-7",
+  "stageLevel": 76,
+  "difficulty": "HELL",
+  "waves": 27,
+  "perWave": 18,
+  "normalCount": 486,
+  "hpMult": 2350.7,
+  "goldMult": 246.5,
+  "expMult": 4824.0,
+  "monsters": [
+   {
+    "key": 30081,
+    "name": "Soldado Demônio",
+    "hp": 164549,
+    "gold": 246.5,
+    "exp": 5306.4,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 22.2
+   },
+   {
+    "key": 30082,
+    "name": "Comandante de Legião Demônio",
+    "hp": 105781,
+    "gold": 246.5,
+    "exp": 6271.2,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 15.6
+   },
+   {
+    "key": 30083,
+    "name": "Tropa de Choque Demônio",
+    "hp": 211563,
+    "gold": 739.5,
+    "exp": 14472.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 11.1
+   },
+   {
+    "key": 30084,
+    "name": "Leitão Ardente",
+    "hp": 258577,
+    "gold": 739.5,
+    "exp": 14472.0,
+    "type": "MONSTER",
+    "weight": 600,
+    "sharePct": 13.3
+   },
+   {
+    "key": 30071,
+    "name": "Sacerdote de Sangue",
+    "hp": 293838,
+    "gold": 862.75,
+    "exp": 16884.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 22.2
+   },
+   {
+    "key": 30031,
+    "name": "Filhote de Dragão",
+    "hp": 411372,
+    "gold": 246.5,
+    "exp": 2412.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 15.6
+   }
+  ],
+  "boss": {
+   "key": 20023,
+   "name": "Rato da Peste",
+   "hp": 1551462,
+   "gold": 1479.0,
+   "exp": 57888.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 118334216,
+  "totalGold": 246401,
+  "totalExp": 4830175
+ },
+ "3308": {
+  "key": 3308,
+  "label": "3-8",
+  "stageLevel": 76,
+  "difficulty": "HELL",
+  "waves": 27,
+  "perWave": 18,
+  "normalCount": 486,
+  "hpMult": 2350.7,
+  "goldMult": 246.5,
+  "expMult": 4824.0,
+  "monsters": [
+   {
+    "key": 30083,
+    "name": "Tropa de Choque Demônio",
+    "hp": 211563,
+    "gold": 739.5,
+    "exp": 14472.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 23.3
+   },
+   {
+    "key": 30111,
+    "name": "Dedo da Morte",
+    "hp": 152796,
+    "gold": 739.5,
+    "exp": 14472.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 16.3
+   },
+   {
+    "key": 30051,
+    "name": "Fantasma",
+    "hp": 152796,
+    "gold": 369.75,
+    "exp": 7236.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 11.6
+   },
+   {
+    "key": 30101,
+    "name": "Sacerdote do Inferno Ardente",
+    "hp": 223316,
+    "gold": 739.5,
+    "exp": 14472.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 16.3
+   },
+   {
+    "key": 30102,
+    "name": "Sacerdote do Inferno Congelante",
+    "hp": 223316,
+    "gold": 739.5,
+    "exp": 14472.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 16.3
+   },
+   {
+    "key": 30103,
+    "name": "Sacerdote do Inferno Elétrico",
+    "hp": 223316,
+    "gold": 739.5,
+    "exp": 14472.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 16.3
+   }
+  ],
+  "boss": {
+   "key": 20061,
+   "name": "Guarda Kobold",
+   "hp": 1269378,
+   "gold": 1257.15,
+   "exp": 49204.8,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 98908112,
+  "totalGold": 339759,
+  "totalExp": 6673679
+ },
+ "3309": {
+  "key": 3309,
+  "label": "3-9",
+  "stageLevel": 77,
+  "difficulty": "HELL",
+  "waves": 27,
+  "perWave": 18,
+  "normalCount": 486,
+  "hpMult": 2419.7,
+  "goldMult": 253.5,
+  "expMult": 4964.0,
+  "monsters": [
+   {
+    "key": 30111,
+    "name": "Dedo da Morte",
+    "hp": 157280,
+    "gold": 760.5,
+    "exp": 14892.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 23.3
+   },
+   {
+    "key": 30051,
+    "name": "Fantasma",
+    "hp": 157280,
+    "gold": 380.25,
+    "exp": 7446.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 16.3
+   },
+   {
+    "key": 30101,
+    "name": "Sacerdote do Inferno Ardente",
+    "hp": 229871,
+    "gold": 760.5,
+    "exp": 14892.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 16.3
+   },
+   {
+    "key": 30102,
+    "name": "Sacerdote do Inferno Congelante",
+    "hp": 229871,
+    "gold": 760.5,
+    "exp": 14892.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 16.3
+   },
+   {
+    "key": 30103,
+    "name": "Sacerdote do Inferno Elétrico",
+    "hp": 229871,
+    "gold": 760.5,
+    "exp": 14892.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 16.3
+   },
+   {
+    "key": 30104,
+    "name": "Sacerdote do Inferno do Caos",
+    "hp": 181478,
+    "gold": 760.5,
+    "exp": 14892.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 11.6
+   }
+  ],
+  "boss": {
+   "key": 20111,
+   "name": "Múmia",
+   "hp": 3774732,
+   "gold": 2281.5,
+   "exp": 89352.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 98809670,
+  "totalGold": 341801,
+  "totalExp": 6737764
+ },
+ "3310": {
+  "key": 3310,
+  "label": "3-10",
+  "stageLevel": 77,
+  "difficulty": "HELL",
+  "waves": 0,
+  "perWave": 0,
+  "normalCount": 0,
+  "hpMult": 2419.7,
+  "goldMult": 253.5,
+  "expMult": 4964.0,
+  "monsters": [],
+  "boss": {
+   "key": 30903,
+   "name": "Arconte Morkar",
+   "hp": 7380085,
+   "gold": 12675.0,
+   "exp": 496.4,
+   "hpMult": 1.0,
+   "goldMult": 1.0,
+   "expMult": 1.0
+  },
+  "totalHP": 7380085,
+  "totalGold": 12675,
+  "totalExp": 496
+ },
+ "4101": {
+  "key": 4101,
+  "label": "1-1",
+  "stageLevel": 78,
+  "difficulty": "TORMENT",
+  "waves": 29,
+  "perWave": 18,
+  "normalCount": 522,
+  "hpMult": 2489.7,
+  "goldMult": 260.6,
+  "expMult": 5106.0,
+  "monsters": [
+   {
+    "key": 10011,
+    "name": "Slime",
+    "hp": 124485,
+    "gold": 260.6,
+    "exp": 5106.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 33.3
+   },
+   {
+    "key": 10021,
+    "name": "Goblin",
+    "hp": 87140,
+    "gold": 312.72,
+    "exp": 6127.2,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 33.3
+   },
+   {
+    "key": 10022,
+    "name": "Ladrão goblin",
+    "hp": 112036,
+    "gold": 390.9,
+    "exp": 7659.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 33.3
+   }
+  ],
+  "boss": {
+   "key": 20024,
+   "name": "Berserker Ratuno",
+   "hp": 1120365,
+   "gold": 1954.5,
+   "exp": 76590.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 57437379,
+  "totalGold": 169729,
+  "totalExp": 3363833
+ },
+ "4102": {
+  "key": 4102,
+  "label": "1-2",
+  "stageLevel": 79,
+  "difficulty": "TORMENT",
+  "waves": 29,
+  "perWave": 18,
+  "normalCount": 522,
+  "hpMult": 2560.7,
+  "goldMult": 267.8,
+  "expMult": 5250.0,
+  "monsters": [
+   {
+    "key": 10011,
+    "name": "Slime",
+    "hp": 128035,
+    "gold": 267.8,
+    "exp": 5250.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 10021,
+    "name": "Goblin",
+    "hp": 89624,
+    "gold": 321.36,
+    "exp": 6300.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 10022,
+    "name": "Ladrão goblin",
+    "hp": 115231,
+    "gold": 401.7,
+    "exp": 7875.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 10023,
+    "name": "Xamã goblin",
+    "hp": 76821,
+    "gold": 535.6,
+    "exp": 10500.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   }
+  ],
+  "boss": {
+   "key": 20021,
+   "name": "Guerreiro Ratuno",
+   "hp": 537747,
+   "gold": 964.08,
+   "exp": 37800.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 54005032,
+  "totalGold": 200167,
+  "totalExp": 3943012
+ },
+ "4103": {
+  "key": 4103,
+  "label": "1-3",
+  "stageLevel": 80,
+  "difficulty": "TORMENT",
+  "waves": 29,
+  "perWave": 18,
+  "normalCount": 522,
+  "hpMult": 2632.7,
+  "goldMult": 275.1,
+  "expMult": 5396.0,
+  "monsters": [
+   {
+    "key": 10021,
+    "name": "Goblin",
+    "hp": 92144,
+    "gold": 330.12,
+    "exp": 6475.2,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 10022,
+    "name": "Ladrão goblin",
+    "hp": 118471,
+    "gold": 412.65,
+    "exp": 8094.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 10023,
+    "name": "Xamã goblin",
+    "hp": 78981,
+    "gold": 550.2,
+    "exp": 10792.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 10031,
+    "name": "Morcego",
+    "hp": 39490,
+    "gold": 275.1,
+    "exp": 2698.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   }
+  ],
+  "boss": {
+   "key": 20031,
+   "name": "Cobra",
+   "hp": 868791,
+   "gold": 1237.95,
+   "exp": 48564.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 43814514,
+  "totalGold": 205871,
+  "totalExp": 3710290
+ },
+ "4104": {
+  "key": 4104,
+  "label": "1-4",
+  "stageLevel": 81,
+  "difficulty": "TORMENT",
+  "waves": 29,
+  "perWave": 18,
+  "normalCount": 522,
+  "hpMult": 2705.7,
+  "goldMult": 282.5,
+  "expMult": 5544.0,
+  "monsters": [
+   {
+    "key": 10011,
+    "name": "Slime",
+    "hp": 135285,
+    "gold": 282.5,
+    "exp": 5544.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 10021,
+    "name": "Goblin",
+    "hp": 94700,
+    "gold": 339.0,
+    "exp": 6652.8,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 10023,
+    "name": "Xamã goblin",
+    "hp": 81171,
+    "gold": 565.0,
+    "exp": 11088.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 10041,
+    "name": "Orc",
+    "hp": 175870,
+    "gold": 423.75,
+    "exp": 8316.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   }
+  ],
+  "boss": {
+   "key": 20041,
+   "name": "Inseto Venenoso",
+   "hp": 730539,
+   "gold": 1271.25,
+   "exp": 49896.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 64287432,
+  "totalGold": 211409,
+  "totalExp": 4173800
+ },
+ "4105": {
+  "key": 4105,
+  "label": "1-5",
+  "stageLevel": 82,
+  "difficulty": "TORMENT",
+  "waves": 29,
+  "perWave": 18,
+  "normalCount": 522,
+  "hpMult": 2779.7,
+  "goldMult": 290.0,
+  "expMult": 5694.0,
+  "monsters": [
+   {
+    "key": 10021,
+    "name": "Goblin",
+    "hp": 97290,
+    "gold": 348.0,
+    "exp": 6832.8,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   },
+   {
+    "key": 10022,
+    "name": "Ladrão goblin",
+    "hp": 125086,
+    "gold": 435.0,
+    "exp": 8541.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   },
+   {
+    "key": 10023,
+    "name": "Xamã goblin",
+    "hp": 83391,
+    "gold": 580.0,
+    "exp": 11388.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   },
+   {
+    "key": 10041,
+    "name": "Orc",
+    "hp": 180680,
+    "gold": 435.0,
+    "exp": 8541.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   },
+   {
+    "key": 10042,
+    "name": "Guerreiro orc",
+    "hp": 264072,
+    "gold": 580.0,
+    "exp": 11388.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   }
+  ],
+  "boss": {
+   "key": 20071,
+   "name": "Homúnculo",
+   "hp": 1917993,
+   "gold": 1131.0,
+   "exp": 44413.2,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 80272177,
+  "totalGold": 249394,
+  "totalExp": 4918933
+ },
+ "4106": {
+  "key": 4106,
+  "label": "1-6",
+  "stageLevel": 83,
+  "difficulty": "TORMENT",
+  "waves": 29,
+  "perWave": 18,
+  "normalCount": 522,
+  "hpMult": 2854.7,
+  "goldMult": 297.6,
+  "expMult": 5846.0,
+  "monsters": [
+   {
+    "key": 10041,
+    "name": "Orc",
+    "hp": 185556,
+    "gold": 446.4,
+    "exp": 8769.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 27.8
+   },
+   {
+    "key": 10042,
+    "name": "Guerreiro orc",
+    "hp": 271196,
+    "gold": 595.2,
+    "exp": 11692.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 27.8
+   },
+   {
+    "key": 10043,
+    "name": "Orc de elite",
+    "hp": 528120,
+    "gold": 1041.6,
+    "exp": 20461.0,
+    "type": "MONSTER",
+    "weight": 600,
+    "sharePct": 16.7
+   },
+   {
+    "key": 10011,
+    "name": "Slime",
+    "hp": 142735,
+    "gold": 297.6,
+    "exp": 5846.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 27.8
+   }
+  ],
+  "boss": {
+   "key": 20081,
+   "name": "Ghoul",
+   "hp": 3853845,
+   "gold": 4017.6,
+   "exp": 157842.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 136725900,
+  "totalGold": 288821,
+  "totalExp": 5752464
+ },
+ "4107": {
+  "key": 4107,
+  "label": "1-7",
+  "stageLevel": 84,
+  "difficulty": "TORMENT",
+  "waves": 29,
+  "perWave": 19,
+  "normalCount": 551,
+  "hpMult": 2930.7,
+  "goldMult": 305.3,
+  "expMult": 6000.0,
+  "monsters": [
+   {
+    "key": 10051,
+    "name": "Esqueleto",
+    "hp": 146535,
+    "gold": 305.3,
+    "exp": 6600.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 37.0
+   },
+   {
+    "key": 10052,
+    "name": "Arqueiro esqueleto",
+    "hp": 102574,
+    "gold": 305.3,
+    "exp": 7800.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 25.9
+   },
+   {
+    "key": 10031,
+    "name": "Morcego",
+    "hp": 43960,
+    "gold": 305.3,
+    "exp": 3000.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 37.0
+   }
+  ],
+  "boss": {
+   "key": 20023,
+   "name": "Rato da Peste",
+   "hp": 1934262,
+   "gold": 1831.8,
+   "exp": 72000.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 55462239,
+  "totalGold": 170052,
+  "totalExp": 3145356
+ },
+ "4108": {
+  "key": 4108,
+  "label": "1-8",
+  "stageLevel": 84,
+  "difficulty": "TORMENT",
+  "waves": 29,
+  "perWave": 19,
+  "normalCount": 551,
+  "hpMult": 2930.7,
+  "goldMult": 305.3,
+  "expMult": 6000.0,
+  "monsters": [
+   {
+    "key": 10051,
+    "name": "Esqueleto",
+    "hp": 146535,
+    "gold": 305.3,
+    "exp": 6600.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 31.2
+   },
+   {
+    "key": 10052,
+    "name": "Arqueiro esqueleto",
+    "hp": 102574,
+    "gold": 305.3,
+    "exp": 7800.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 21.9
+   },
+   {
+    "key": 10053,
+    "name": "Guerreiro esqueleto",
+    "hp": 263763,
+    "gold": 915.9,
+    "exp": 18000.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 15.6
+   },
+   {
+    "key": 10031,
+    "name": "Morcego",
+    "hp": 43960,
+    "gold": 305.3,
+    "exp": 3000.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 31.2
+   }
+  ],
+  "boss": {
+   "key": 20061,
+   "name": "Guarda Kobold",
+   "hp": 1582578,
+   "gold": 1557.03,
+   "exp": 61200.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 69455154,
+  "totalGold": 222346,
+  "totalExp": 4204031
+ },
+ "4109": {
+  "key": 4109,
+  "label": "1-9",
+  "stageLevel": 85,
+  "difficulty": "TORMENT",
+  "waves": 29,
+  "perWave": 19,
+  "normalCount": 551,
+  "hpMult": 3007.7,
+  "goldMult": 313.1,
+  "expMult": 6156.0,
+  "monsters": [
+   {
+    "key": 10042,
+    "name": "Guerreiro orc",
+    "hp": 285732,
+    "gold": 626.2,
+    "exp": 12312.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.8
+   },
+   {
+    "key": 10043,
+    "name": "Orc de elite",
+    "hp": 556424,
+    "gold": 1095.85,
+    "exp": 21546.0,
+    "type": "MONSTER",
+    "weight": 600,
+    "sharePct": 12.5
+   },
+   {
+    "key": 10051,
+    "name": "Esqueleto",
+    "hp": 150385,
+    "gold": 313.1,
+    "exp": 6771.6,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.8
+   },
+   {
+    "key": 10052,
+    "name": "Arqueiro esqueleto",
+    "hp": 105270,
+    "gold": 313.1,
+    "exp": 8002.8,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 14.6
+   },
+   {
+    "key": 10053,
+    "name": "Guerreiro esqueleto",
+    "hp": 270693,
+    "gold": 939.3,
+    "exp": 18468.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 10.4
+   },
+   {
+    "key": 10031,
+    "name": "Morcego",
+    "hp": 45116,
+    "gold": 313.1,
+    "exp": 3078.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.8
+   }
+  ],
+  "boss": {
+   "key": 20111,
+   "name": "Múmia",
+   "hp": 4692012,
+   "gold": 2817.9,
+   "exp": 110808.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 122252787,
+  "totalGold": 301130,
+  "totalExp": 5841800
+ },
+ "4110": {
+  "key": 4110,
+  "label": "1-10",
+  "stageLevel": 85,
+  "difficulty": "TORMENT",
+  "waves": 0,
+  "perWave": 0,
+  "normalCount": 0,
+  "hpMult": 3007.7,
+  "goldMult": 313.1,
+  "expMult": 6156.0,
+  "monsters": [],
+  "boss": {
+   "key": 10904,
+   "name": "Rei esqueleto",
+   "hp": 7068095,
+   "gold": 15655.0,
+   "exp": 9234.0,
+   "hpMult": 1.0,
+   "goldMult": 1.0,
+   "expMult": 1.0
+  },
+  "totalHP": 7068095,
+  "totalGold": 15655,
+  "totalExp": 9234
+ },
+ "4201": {
+  "key": 4201,
+  "label": "2-1",
+  "stageLevel": 86,
+  "difficulty": "TORMENT",
+  "waves": 30,
+  "perWave": 19,
+  "normalCount": 570,
+  "hpMult": 3085.7,
+  "goldMult": 321.0,
+  "expMult": 6314.0,
+  "monsters": [
+   {
+    "key": 20011,
+    "name": "Escorpião",
+    "hp": 154285,
+    "gold": 321.0,
+    "exp": 6314.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 33.3
+   },
+   {
+    "key": 20021,
+    "name": "Guerreiro Ratuno",
+    "hp": 108000,
+    "gold": 385.2,
+    "exp": 7576.8,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 33.3
+   },
+   {
+    "key": 20022,
+    "name": "Arqueiro Ratuno",
+    "hp": 138856,
+    "gold": 481.5,
+    "exp": 9471.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 33.3
+   }
+  ],
+  "boss": {
+   "key": 20024,
+   "name": "Berserker Ratuno",
+   "hp": 1388565,
+   "gold": 2407.5,
+   "exp": 94710.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 77605355,
+  "totalGold": 228070,
+  "totalExp": 4533452
+ },
+ "4202": {
+  "key": 4202,
+  "label": "2-2",
+  "stageLevel": 86,
+  "difficulty": "TORMENT",
+  "waves": 30,
+  "perWave": 19,
+  "normalCount": 570,
+  "hpMult": 3085.7,
+  "goldMult": 321.0,
+  "expMult": 6314.0,
+  "monsters": [
+   {
+    "key": 20011,
+    "name": "Escorpião",
+    "hp": 154285,
+    "gold": 321.0,
+    "exp": 6314.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 20021,
+    "name": "Guerreiro Ratuno",
+    "hp": 108000,
+    "gold": 385.2,
+    "exp": 7576.8,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 20022,
+    "name": "Arqueiro Ratuno",
+    "hp": 138856,
+    "gold": 481.5,
+    "exp": 9471.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 20024,
+    "name": "Berserker Ratuno",
+    "hp": 231428,
+    "gold": 802.5,
+    "exp": 15785.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   }
+  ],
+  "boss": {
+   "key": 20021,
+   "name": "Guerreiro Ratuno",
+   "hp": 647997,
+   "gold": 1155.6,
+   "exp": 45460.8,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 90789080,
+  "totalGold": 284759,
+  "totalExp": 5623880
+ },
+ "4203": {
+  "key": 4203,
+  "label": "2-3",
+  "stageLevel": 87,
+  "difficulty": "TORMENT",
+  "waves": 30,
+  "perWave": 19,
+  "normalCount": 570,
+  "hpMult": 3164.7,
+  "goldMult": 329.0,
+  "expMult": 6474.0,
+  "monsters": [
+   {
+    "key": 20011,
+    "name": "Escorpião",
+    "hp": 158235,
+    "gold": 329.0,
+    "exp": 6474.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 23.3
+   },
+   {
+    "key": 20031,
+    "name": "Cobra",
+    "hp": 174058,
+    "gold": 493.5,
+    "exp": 9711.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 23.3
+   },
+   {
+    "key": 20023,
+    "name": "Rato da Peste",
+    "hp": 348117,
+    "gold": 658.0,
+    "exp": 12948.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 23.3
+   },
+   {
+    "key": 20041,
+    "name": "Inseto Venenoso",
+    "hp": 142412,
+    "gold": 493.5,
+    "exp": 9711.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 23.3
+   },
+   {
+    "key": 10031,
+    "name": "Morcego",
+    "hp": 47470,
+    "gold": 329.0,
+    "exp": 3237.0,
+    "type": "MONSTER",
+    "weight": 300,
+    "sharePct": 7.0
+   }
+  ],
+  "boss": {
+   "key": 20031,
+   "name": "Cobra",
+   "hp": 1044351,
+   "gold": 1480.5,
+   "exp": 58266.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 112003865,
+  "totalGold": 276234,
+  "totalExp": 5336082
+ },
+ "4204": {
+  "key": 4204,
+  "label": "2-4",
+  "stageLevel": 87,
+  "difficulty": "TORMENT",
+  "waves": 30,
+  "perWave": 19,
+  "normalCount": 570,
+  "hpMult": 3164.7,
+  "goldMult": 329.0,
+  "expMult": 6474.0,
+  "monsters": [
+   {
+    "key": 20011,
+    "name": "Escorpião",
+    "hp": 158235,
+    "gold": 329.0,
+    "exp": 6474.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 18.2
+   },
+   {
+    "key": 20031,
+    "name": "Cobra",
+    "hp": 174058,
+    "gold": 493.5,
+    "exp": 9711.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 18.2
+   },
+   {
+    "key": 20023,
+    "name": "Rato da Peste",
+    "hp": 348117,
+    "gold": 658.0,
+    "exp": 12948.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 18.2
+   },
+   {
+    "key": 20041,
+    "name": "Inseto Venenoso",
+    "hp": 142412,
+    "gold": 493.5,
+    "exp": 9711.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 18.2
+   },
+   {
+    "key": 20042,
+    "name": "Senhor do Veneno",
+    "hp": 237352,
+    "gold": 1151.5,
+    "exp": 22659.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 9.1
+   },
+   {
+    "key": 20051,
+    "name": "Mosca Gigante",
+    "hp": 142412,
+    "gold": 361.9,
+    "exp": 7121.4,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 18.2
+   }
+  ],
+  "boss": {
+   "key": 20041,
+   "name": "Inseto Venenoso",
+   "hp": 854469,
+   "gold": 1480.5,
+   "exp": 58266.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 113186960,
+  "totalGold": 303233,
+  "totalExp": 5996101
+ },
+ "4205": {
+  "key": 4205,
+  "label": "2-5",
+  "stageLevel": 88,
+  "difficulty": "TORMENT",
+  "waves": 30,
+  "perWave": 19,
+  "normalCount": 570,
+  "hpMult": 3244.7,
+  "goldMult": 337.1,
+  "expMult": 6636.0,
+  "monsters": [
+   {
+    "key": 20011,
+    "name": "Escorpião",
+    "hp": 162235,
+    "gold": 337.1,
+    "exp": 6636.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   },
+   {
+    "key": 20021,
+    "name": "Guerreiro Ratuno",
+    "hp": 113564,
+    "gold": 404.52,
+    "exp": 7963.2,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   },
+   {
+    "key": 20022,
+    "name": "Arqueiro Ratuno",
+    "hp": 146012,
+    "gold": 505.65,
+    "exp": 9954.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   },
+   {
+    "key": 20051,
+    "name": "Mosca Gigante",
+    "hp": 146012,
+    "gold": 370.81,
+    "exp": 7299.6,
+    "type": "MONSTER",
+    "weight": 2000,
+    "sharePct": 40.0
+   }
+  ],
+  "boss": {
+   "key": 20071,
+   "name": "Homúnculo",
+   "hp": 2238843,
+   "gold": 1314.69,
+   "exp": 51760.8,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 83616033,
+  "totalGold": 228048,
+  "totalExp": 4515134
+ },
+ "4206": {
+  "key": 4206,
+  "label": "2-6",
+  "stageLevel": 88,
+  "difficulty": "TORMENT",
+  "waves": 30,
+  "perWave": 19,
+  "normalCount": 570,
+  "hpMult": 3244.7,
+  "goldMult": 337.1,
+  "expMult": 6636.0,
+  "monsters": [
+   {
+    "key": 20031,
+    "name": "Cobra",
+    "hp": 178458,
+    "gold": 505.65,
+    "exp": 9954.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 20024,
+    "name": "Berserker Ratuno",
+    "hp": 243352,
+    "gold": 842.75,
+    "exp": 16590.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 20061,
+    "name": "Guarda Kobold",
+    "hp": 292023,
+    "gold": 573.07,
+    "exp": 11281.2,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   },
+   {
+    "key": 20071,
+    "name": "Homúnculo",
+    "hp": 373140,
+    "gold": 438.23,
+    "exp": 8626.8,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 25.0
+   }
+  ],
+  "boss": {
+   "key": 20081,
+   "name": "Ghoul",
+   "hp": 4380345,
+   "gold": 4550.85,
+   "exp": 179172.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 159273998,
+  "totalGold": 340808,
+  "totalExp": 6798582
+ },
+ "4207": {
+  "key": 4207,
+  "label": "2-7",
+  "stageLevel": 89,
+  "difficulty": "TORMENT",
+  "waves": 30,
+  "perWave": 20,
+  "normalCount": 600,
+  "hpMult": 3325.7,
+  "goldMult": 345.3,
+  "expMult": 6800.0,
+  "monsters": [
+   {
+    "key": 20081,
+    "name": "Ghoul",
+    "hp": 748282,
+    "gold": 1553.85,
+    "exp": 30600.0,
+    "type": "MONSTER",
+    "weight": 300,
+    "sharePct": 7.4
+   },
+   {
+    "key": 20071,
+    "name": "Homúnculo",
+    "hp": 382456,
+    "gold": 448.89,
+    "exp": 8840.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 24.7
+   },
+   {
+    "key": 20042,
+    "name": "Senhor do Veneno",
+    "hp": 249428,
+    "gold": 1208.55,
+    "exp": 23800.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 12.3
+   },
+   {
+    "key": 20011,
+    "name": "Escorpião",
+    "hp": 166285,
+    "gold": 345.3,
+    "exp": 6800.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 24.7
+   },
+   {
+    "key": 20023,
+    "name": "Rato da Peste",
+    "hp": 365827,
+    "gold": 690.6,
+    "exp": 13600.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 17.3
+   },
+   {
+    "key": 10052,
+    "name": "Arqueiro esqueleto",
+    "hp": 116400,
+    "gold": 345.3,
+    "exp": 8840.0,
+    "type": "MONSTER",
+    "weight": 550,
+    "sharePct": 13.6
+   }
+  ],
+  "boss": {
+   "key": 20023,
+   "name": "Rato da Peste",
+   "hp": 2194962,
+   "gold": 2071.8,
+   "exp": 81600.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 182645110,
+  "totalGold": 378065,
+  "totalExp": 7652267
+ },
+ "4208": {
+  "key": 4208,
+  "label": "2-8",
+  "stageLevel": 89,
+  "difficulty": "TORMENT",
+  "waves": 30,
+  "perWave": 20,
+  "normalCount": 600,
+  "hpMult": 3325.7,
+  "goldMult": 345.3,
+  "expMult": 6800.0,
+  "monsters": [
+   {
+    "key": 20061,
+    "name": "Guarda Kobold",
+    "hp": 299313,
+    "gold": 587.01,
+    "exp": 11560.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   },
+   {
+    "key": 20062,
+    "name": "Fundeiro Kobold",
+    "hp": 266056,
+    "gold": 483.42,
+    "exp": 9520.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   },
+   {
+    "key": 20091,
+    "name": "Elemental de Fogo",
+    "hp": 249428,
+    "gold": 794.19,
+    "exp": 15640.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   },
+   {
+    "key": 20071,
+    "name": "Homúnculo",
+    "hp": 382456,
+    "gold": 448.89,
+    "exp": 8840.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.0
+   }
+  ],
+  "boss": {
+   "key": 20061,
+   "name": "Guarda Kobold",
+   "hp": 1795878,
+   "gold": 1761.03,
+   "exp": 69360.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 145466238,
+  "totalGold": 279382,
+  "totalExp": 5536560
+ },
+ "4209": {
+  "key": 4209,
+  "label": "2-9",
+  "stageLevel": 90,
+  "difficulty": "TORMENT",
+  "waves": 30,
+  "perWave": 20,
+  "normalCount": 600,
+  "hpMult": 3407.7,
+  "goldMult": 353.6,
+  "expMult": 6966.0,
+  "monsters": [
+   {
+    "key": 20061,
+    "name": "Guarda Kobold",
+    "hp": 306693,
+    "gold": 601.12,
+    "exp": 11842.2,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 18.2
+   },
+   {
+    "key": 20062,
+    "name": "Fundeiro Kobold",
+    "hp": 272616,
+    "gold": 495.04,
+    "exp": 9752.4,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 18.2
+   },
+   {
+    "key": 20091,
+    "name": "Elemental de Fogo",
+    "hp": 255578,
+    "gold": 813.28,
+    "exp": 16021.8,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 18.2
+   },
+   {
+    "key": 20111,
+    "name": "Múmia",
+    "hp": 886002,
+    "gold": 1060.8,
+    "exp": 20898.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 18.2
+   },
+   {
+    "key": 20081,
+    "name": "Ghoul",
+    "hp": 766732,
+    "gold": 1591.2,
+    "exp": 31347.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 9.1
+   }
+  ],
+  "boss": {
+   "key": 20111,
+   "name": "Múmia",
+   "hp": 5316012,
+   "gold": 3182.4,
+   "exp": 125388.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 234871103,
+  "totalGold": 414001,
+  "totalExp": 8218613
+ },
+ "4210": {
+  "key": 4210,
+  "label": "2-10",
+  "stageLevel": 90,
+  "difficulty": "TORMENT",
+  "waves": 0,
+  "perWave": 0,
+  "normalCount": 0,
+  "hpMult": 3407.7,
+  "goldMult": 353.6,
+  "expMult": 6966.0,
+  "monsters": [],
+  "boss": {
+   "key": 20904,
+   "name": "Senhor do Deserto",
+   "hp": 8008095,
+   "gold": 17680.0,
+   "exp": 21594.6,
+   "hpMult": 1.0,
+   "goldMult": 1.0,
+   "expMult": 1.0
+  },
+  "totalHP": 8008095,
+  "totalGold": 17680,
+  "totalExp": 21595
+ },
+ "4301": {
+  "key": 4301,
+  "label": "3-1",
+  "stageLevel": 91,
+  "difficulty": "TORMENT",
+  "waves": 31,
+  "perWave": 20,
+  "normalCount": 620,
+  "hpMult": 3490.7,
+  "goldMult": 362.0,
+  "expMult": 7134.0,
+  "monsters": [
+   {
+    "key": 30011,
+    "name": "Gremlin",
+    "hp": 244349,
+    "gold": 362.0,
+    "exp": 7134.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 45.5
+   },
+   {
+    "key": 30012,
+    "name": "Geônide",
+    "hp": 174535,
+    "gold": 434.4,
+    "exp": 8560.8,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 31.8
+   },
+   {
+    "key": 30013,
+    "name": "Elmo do Anjo Caído",
+    "hp": 139628,
+    "gold": 543.0,
+    "exp": 10701.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 22.7
+   }
+  ],
+  "boss": {
+   "key": 20024,
+   "name": "Berserker Ratuno",
+   "hp": 1570815,
+   "gold": 2715.0,
+   "exp": 107010.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 124538656,
+  "totalGold": 266942,
+  "totalExp": 5314181
+ },
+ "4302": {
+  "key": 4302,
+  "label": "3-2",
+  "stageLevel": 91,
+  "difficulty": "TORMENT",
+  "waves": 31,
+  "perWave": 20,
+  "normalCount": 620,
+  "hpMult": 3490.7,
+  "goldMult": 362.0,
+  "expMult": 7134.0,
+  "monsters": [
+   {
+    "key": 30011,
+    "name": "Gremlin",
+    "hp": 244349,
+    "gold": 362.0,
+    "exp": 7134.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 23.8
+   },
+   {
+    "key": 30012,
+    "name": "Geônide",
+    "hp": 174535,
+    "gold": 434.4,
+    "exp": 8560.8,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 16.7
+   },
+   {
+    "key": 30013,
+    "name": "Elmo do Anjo Caído",
+    "hp": 139628,
+    "gold": 543.0,
+    "exp": 10701.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 11.9
+   },
+   {
+    "key": 30041,
+    "name": "Guerreiro da Montanha Nevada",
+    "hp": 314163,
+    "gold": 362.0,
+    "exp": 3567.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 23.8
+   },
+   {
+    "key": 30021,
+    "name": "Yeti",
+    "hp": 1117024,
+    "gold": 724.0,
+    "exp": 14268.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 23.8
+   }
+  ],
+  "boss": {
+   "key": 20021,
+   "name": "Guerreiro Ratuno",
+   "hp": 733047,
+   "gold": 1303.2,
+   "exp": 51364.8,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 276415235,
+  "totalGold": 300022,
+  "totalExp": 5411717
+ },
+ "4303": {
+  "key": 4303,
+  "label": "3-3",
+  "stageLevel": 92,
+  "difficulty": "TORMENT",
+  "waves": 31,
+  "perWave": 20,
+  "normalCount": 620,
+  "hpMult": 3574.7,
+  "goldMult": 370.5,
+  "expMult": 7304.0,
+  "monsters": [
+   {
+    "key": 30041,
+    "name": "Guerreiro da Montanha Nevada",
+    "hp": 321723,
+    "gold": 370.5,
+    "exp": 3652.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 22.7
+   },
+   {
+    "key": 30042,
+    "name": "Arqueiro da Montanha Nevada",
+    "hp": 250229,
+    "gold": 370.5,
+    "exp": 3652.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 15.9
+   },
+   {
+    "key": 30044,
+    "name": "Mago da Montanha Nevada",
+    "hp": 196608,
+    "gold": 370.5,
+    "exp": 3652.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 11.4
+   },
+   {
+    "key": 30021,
+    "name": "Yeti",
+    "hp": 1143904,
+    "gold": 741.0,
+    "exp": 14608.0,
+    "type": "MONSTER",
+    "weight": 200,
+    "sharePct": 4.5
+   },
+   {
+    "key": 30013,
+    "name": "Elmo do Anjo Caído",
+    "hp": 142988,
+    "gold": 555.75,
+    "exp": 10956.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 22.7
+   },
+   {
+    "key": 30102,
+    "name": "Sacerdote do Inferno Congelante",
+    "hp": 339596,
+    "gold": 1111.5,
+    "exp": 21912.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 22.7
+   }
+  ],
+  "boss": {
+   "key": 20031,
+   "name": "Cobra",
+   "hp": 1179651,
+   "gold": 1667.25,
+   "exp": 65736.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 185284720,
+  "totalGold": 372336,
+  "totalExp": 6240936
+ },
+ "4304": {
+  "key": 4304,
+  "label": "3-4",
+  "stageLevel": 92,
+  "difficulty": "TORMENT",
+  "waves": 31,
+  "perWave": 20,
+  "normalCount": 620,
+  "hpMult": 3574.7,
+  "goldMult": 370.5,
+  "expMult": 7304.0,
+  "monsters": [
+   {
+    "key": 30041,
+    "name": "Guerreiro da Montanha Nevada",
+    "hp": 321723,
+    "gold": 370.5,
+    "exp": 3652.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 21.7
+   },
+   {
+    "key": 30042,
+    "name": "Arqueiro da Montanha Nevada",
+    "hp": 250229,
+    "gold": 370.5,
+    "exp": 3652.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 15.2
+   },
+   {
+    "key": 30044,
+    "name": "Mago da Montanha Nevada",
+    "hp": 196608,
+    "gold": 370.5,
+    "exp": 3652.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 10.9
+   },
+   {
+    "key": 30021,
+    "name": "Yeti",
+    "hp": 1143904,
+    "gold": 741.0,
+    "exp": 14608.0,
+    "type": "MONSTER",
+    "weight": 400,
+    "sharePct": 8.7
+   },
+   {
+    "key": 30051,
+    "name": "Fantasma",
+    "hp": 232356,
+    "gold": 555.75,
+    "exp": 10956.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 21.7
+   },
+   {
+    "key": 30043,
+    "name": "Guarda da Montanha Nevada",
+    "hp": 554078,
+    "gold": 370.5,
+    "exp": 3652.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 21.7
+   }
+  ],
+  "boss": {
+   "key": 20041,
+   "name": "Inseto Venenoso",
+   "hp": 965169,
+   "gold": 1667.25,
+   "exp": 65736.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 248855038,
+  "totalGold": 276321,
+  "totalExp": 3905099
+ },
+ "4305": {
+  "key": 4305,
+  "label": "3-5",
+  "stageLevel": 93,
+  "difficulty": "TORMENT",
+  "waves": 31,
+  "perWave": 20,
+  "normalCount": 620,
+  "hpMult": 3659.7,
+  "goldMult": 379.1,
+  "expMult": 7476.0,
+  "monsters": [
+   {
+    "key": 30031,
+    "name": "Filhote de Dragão",
+    "hp": 640448,
+    "gold": 379.1,
+    "exp": 3738.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 19.2
+   },
+   {
+    "key": 30051,
+    "name": "Fantasma",
+    "hp": 237880,
+    "gold": 568.65,
+    "exp": 11214.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 13.5
+   },
+   {
+    "key": 30044,
+    "name": "Mago da Montanha Nevada",
+    "hp": 201284,
+    "gold": 379.1,
+    "exp": 3738.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 9.6
+   },
+   {
+    "key": 30043,
+    "name": "Guarda da Montanha Nevada",
+    "hp": 567254,
+    "gold": 379.1,
+    "exp": 3738.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 19.2
+   },
+   {
+    "key": 30011,
+    "name": "Gremlin",
+    "hp": 256179,
+    "gold": 379.1,
+    "exp": 7476.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 19.2
+   },
+   {
+    "key": 30103,
+    "name": "Sacerdote do Inferno Elétrico",
+    "hp": 347672,
+    "gold": 1137.3,
+    "exp": 22428.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 19.2
+   }
+  ],
+  "boss": {
+   "key": 20071,
+   "name": "Homúnculo",
+   "hp": 2525193,
+   "gold": 1478.49,
+   "exp": 58312.8,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 250371505,
+  "totalGold": 342741,
+  "totalExp": 5673939
+ },
+ "4306": {
+  "key": 4306,
+  "label": "3-6",
+  "stageLevel": 93,
+  "difficulty": "TORMENT",
+  "waves": 31,
+  "perWave": 20,
+  "normalCount": 620,
+  "hpMult": 3659.7,
+  "goldMult": 379.1,
+  "expMult": 7476.0,
+  "monsters": [
+   {
+    "key": 30061,
+    "name": "Ser de Lava",
+    "hp": 274478,
+    "gold": 758.2,
+    "exp": 14952.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 22.2
+   },
+   {
+    "key": 30081,
+    "name": "Soldado Demônio",
+    "hp": 256179,
+    "gold": 379.1,
+    "exp": 8223.6,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 15.6
+   },
+   {
+    "key": 30082,
+    "name": "Comandante de Legião Demônio",
+    "hp": 164686,
+    "gold": 379.1,
+    "exp": 9718.8,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 11.1
+   },
+   {
+    "key": 30084,
+    "name": "Leitão Ardente",
+    "hp": 402567,
+    "gold": 1137.3,
+    "exp": 22428.0,
+    "type": "MONSTER",
+    "weight": 300,
+    "sharePct": 6.7
+   },
+   {
+    "key": 30091,
+    "name": "Golem do Inferno",
+    "hp": 677044,
+    "gold": 1137.3,
+    "exp": 22428.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 22.2
+   },
+   {
+    "key": 30103,
+    "name": "Sacerdote do Inferno Elétrico",
+    "hp": 347672,
+    "gold": 1137.3,
+    "exp": 22428.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 22.2
+   }
+  ],
+  "boss": {
+   "key": 20081,
+   "name": "Ghoul",
+   "hp": 4940595,
+   "gold": 5117.85,
+   "exp": 201852.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 236632170,
+  "totalGold": 532657,
+  "totalExp": 10831727
+ },
+ "4307": {
+  "key": 4307,
+  "label": "3-7",
+  "stageLevel": 94,
+  "difficulty": "TORMENT",
+  "waves": 31,
+  "perWave": 21,
+  "normalCount": 651,
+  "hpMult": 3745.7,
+  "goldMult": 387.8,
+  "expMult": 7650.0,
+  "monsters": [
+   {
+    "key": 30081,
+    "name": "Soldado Demônio",
+    "hp": 262199,
+    "gold": 387.8,
+    "exp": 8415.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.8
+   },
+   {
+    "key": 30082,
+    "name": "Comandante de Legião Demônio",
+    "hp": 168556,
+    "gold": 387.8,
+    "exp": 9945.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 14.6
+   },
+   {
+    "key": 30083,
+    "name": "Tropa de Choque Demônio",
+    "hp": 337113,
+    "gold": 1163.4,
+    "exp": 22950.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 10.4
+   },
+   {
+    "key": 30084,
+    "name": "Leitão Ardente",
+    "hp": 412027,
+    "gold": 1163.4,
+    "exp": 22950.0,
+    "type": "MONSTER",
+    "weight": 600,
+    "sharePct": 12.5
+   },
+   {
+    "key": 30071,
+    "name": "Sacerdote de Sangue",
+    "hp": 468212,
+    "gold": 1357.3,
+    "exp": 26775.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.8
+   },
+   {
+    "key": 30104,
+    "name": "Sacerdote do Inferno do Caos",
+    "hp": 280928,
+    "gold": 1163.4,
+    "exp": 22950.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 20.8
+   }
+  ],
+  "boss": {
+   "key": 20023,
+   "name": "Rato da Peste",
+   "hp": 2472162,
+   "gold": 2326.8,
+   "exp": 91800.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 212026472,
+  "totalGold": 607174,
+  "totalExp": 12345044
+ },
+ "4308": {
+  "key": 4308,
+  "label": "3-8",
+  "stageLevel": 94,
+  "difficulty": "TORMENT",
+  "waves": 31,
+  "perWave": 21,
+  "normalCount": 651,
+  "hpMult": 3745.7,
+  "goldMult": 387.8,
+  "expMult": 7650.0,
+  "monsters": [
+   {
+    "key": 30083,
+    "name": "Tropa de Choque Demônio",
+    "hp": 337113,
+    "gold": 1163.4,
+    "exp": 22950.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 19.2
+   },
+   {
+    "key": 30111,
+    "name": "Dedo da Morte",
+    "hp": 243470,
+    "gold": 1163.4,
+    "exp": 22950.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 13.5
+   },
+   {
+    "key": 30051,
+    "name": "Fantasma",
+    "hp": 243470,
+    "gold": 581.7,
+    "exp": 11475.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 9.6
+   },
+   {
+    "key": 30101,
+    "name": "Sacerdote do Inferno Ardente",
+    "hp": 355842,
+    "gold": 1163.4,
+    "exp": 22950.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 19.2
+   },
+   {
+    "key": 30102,
+    "name": "Sacerdote do Inferno Congelante",
+    "hp": 355842,
+    "gold": 1163.4,
+    "exp": 22950.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 19.2
+   },
+   {
+    "key": 30104,
+    "name": "Sacerdote do Inferno do Caos",
+    "hp": 280928,
+    "gold": 1163.4,
+    "exp": 22950.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 19.2
+   }
+  ],
+  "boss": {
+   "key": 20061,
+   "name": "Guarda Kobold",
+   "hp": 2022678,
+   "gold": 1977.78,
+   "exp": 78030.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 205070705,
+  "totalGold": 722939,
+  "totalExp": 14300189
+ },
+ "4309": {
+  "key": 4309,
+  "label": "3-9",
+  "stageLevel": 95,
+  "difficulty": "TORMENT",
+  "waves": 31,
+  "perWave": 21,
+  "normalCount": 651,
+  "hpMult": 3832.7,
+  "goldMult": 396.6,
+  "expMult": 7826.0,
+  "monsters": [
+   {
+    "key": 30111,
+    "name": "Dedo da Morte",
+    "hp": 249126,
+    "gold": 1189.8,
+    "exp": 23478.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 19.2
+   },
+   {
+    "key": 30051,
+    "name": "Fantasma",
+    "hp": 249126,
+    "gold": 594.9,
+    "exp": 11739.0,
+    "type": "MONSTER",
+    "weight": 700,
+    "sharePct": 13.5
+   },
+   {
+    "key": 30101,
+    "name": "Sacerdote do Inferno Ardente",
+    "hp": 364106,
+    "gold": 1189.8,
+    "exp": 23478.0,
+    "type": "MONSTER",
+    "weight": 500,
+    "sharePct": 9.6
+   },
+   {
+    "key": 30102,
+    "name": "Sacerdote do Inferno Congelante",
+    "hp": 364106,
+    "gold": 1189.8,
+    "exp": 23478.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 19.2
+   },
+   {
+    "key": 30103,
+    "name": "Sacerdote do Inferno Elétrico",
+    "hp": 364106,
+    "gold": 1189.8,
+    "exp": 23478.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 19.2
+   },
+   {
+    "key": 30104,
+    "name": "Sacerdote do Inferno do Caos",
+    "hp": 287452,
+    "gold": 1189.8,
+    "exp": 23478.0,
+    "type": "MONSTER",
+    "weight": 1000,
+    "sharePct": 19.2
+   }
+  ],
+  "boss": {
+   "key": 20111,
+   "name": "Múmia",
+   "hp": 5979012,
+   "gold": 3569.4,
+   "exp": 140868.0,
+   "hpMult": 6.0,
+   "goldMult": 3.0,
+   "expMult": 6.0
+  },
+  "totalHP": 208944687,
+  "totalGold": 725995,
+  "totalExp": 14396303
+ },
+ "4310": {
+  "key": 4310,
+  "label": "3-10",
+  "stageLevel": 95,
+  "difficulty": "TORMENT",
+  "waves": 0,
+  "perWave": 0,
+  "normalCount": 0,
+  "hpMult": 3832.7,
+  "goldMult": 396.6,
+  "expMult": 7826.0,
+  "monsters": [],
+  "boss": {
+   "key": 30904,
+   "name": "Arconte Morkar",
+   "hp": 13606085,
+   "gold": 19830.0,
+   "exp": 782.6,
+   "hpMult": 1.0,
+   "goldMult": 1.0,
+   "expMult": 1.0
+  },
+  "totalHP": 13606085,
+  "totalGold": 19830,
+  "totalExp": 783
+ }
+}

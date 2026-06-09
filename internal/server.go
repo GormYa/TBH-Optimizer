@@ -110,7 +110,7 @@ func StartWebServer(ctrl *Control, webFiles embed.FS, dataDir string) {
 			timeSpentSeconds,
 			goldGain,
 			xpGain,
-			len(ctrl.HeroStates),
+			ctrl.numActiveHeroes(),
 		)
 		_ = ctrl.StageHistory.Save(HistoryFilePath)
 
@@ -167,6 +167,23 @@ func StartWebServer(ctrl *Control, webFiles embed.FS, dataDir string) {
 		w.Header().Set("Access-Control-Allow-Origin", "*")
 		w.Header().Set("Content-Type", "application/json")
 		fmt.Fprintf(w, `{"version":%q}`, Version)
+	})
+
+	http.HandleFunc("/api/quit", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodPost {
+			w.WriteHeader(http.StatusMethodNotAllowed)
+			return
+		}
+		if origin := r.Header.Get("Origin"); origin != "" && origin != "http://localhost:8080" {
+			w.WriteHeader(http.StatusForbidden)
+			return
+		}
+		w.Header().Set("Content-Type", "application/json")
+		w.Write([]byte(`{"status":"bye"}`))
+		if f, ok := w.(http.Flusher); ok {
+			f.Flush()
+		}
+		go func() { time.Sleep(200 * time.Millisecond); os.Exit(0) }()
 	})
 
 	http.HandleFunc("/api/update/apply", func(w http.ResponseWriter, r *http.Request) {

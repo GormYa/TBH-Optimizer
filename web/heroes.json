@@ -1,0 +1,32 @@
+{
+ "101": {
+  "name": "Cavaleiro",
+  "class": "Knight",
+  "icon": "hero_sprites/101.png"
+ },
+ "201": {
+  "name": "Explorador",
+  "class": "Ranger",
+  "icon": "hero_sprites/201.png"
+ },
+ "301": {
+  "name": "Feiticeiro",
+  "class": "Sorcerer",
+  "icon": "hero_sprites/301.png"
+ },
+ "401": {
+  "name": "Sacerdote",
+  "class": "Priest",
+  "icon": "hero_sprites/401.png"
+ },
+ "501": {
+  "name": "Caçador",
+  "class": "Hunter",
+  "icon": "hero_sprites/501.png"
+ },
+ "601": {
+  "name": "Matador",
+  "class": "Slayer",
+  "icon": "hero_sprites/601.png"
+ }
+}

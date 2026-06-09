@@ -21,6 +21,7 @@ type InnerSaveData struct {
 		CurrentStageWave  int     `json:"currentStageWave"`
 		PlayTime          float64 `json:"playTime"`
 		MaxCompletedStage int     `json:"maxCompletedStage"`
+		ArrangedHeroKey   []int   `json:"arrangedHeroKey"`
 	} `json:"commonSaveData"`
 	CurrenySaveDatas []Currency `json:"currenySaveDatas"`
 	HeroSaveDatas    []Hero     `json:"heroSaveDatas"`
@@ -48,6 +49,7 @@ type StageStats struct {
 	AvgXpPerHour     float64     `json:"avg_xp_per_hour"`
 	RawXpPerHour     float64     `json:"raw_xp_per_hour"`
 	AvgItemsPerHour  float64     `json:"avg_items_per_hour"`
+	ExpRetained      float64     `json:"exp_retained"`
 	ItemCatalog      map[int]int `json:"item_catalog"`
 	AccumulatedGold  float64     `json:"-"`
 	AccumulatedXp    float64     `json:"-"`
@@ -62,6 +64,7 @@ type FarmStageInfo struct {
 	ExpectedGold float64 `json:"expectedGold"`
 	ExpectedEXP  float64 `json:"expectedEXP"`
 	Waves        int     `json:"waves"`
+	Level        int     `json:"level"`
 }
 
 type StageHistoryStore struct {
@@ -79,10 +82,19 @@ type Control struct {
 	UseEMA              bool
 	EMAAlpha            float64
 	FarmStages          map[int]FarmStageInfo
+	HeroLevel           int
+	ActiveHeroCount     int
+	ActiveHeroes        []ActiveHero
+}
+type ActiveHero struct {
+	Key   int `json:"key"`
+	Level int `json:"level"`
 }
 type AnalyticsReport struct {
 	BestGoldStage int                 `json:"best_gold_stage"`
 	BestXpStage   int                 `json:"best_xp_stage"`
 	Stages        map[int]*StageStats `json:"stages"`
 	Calibrated    bool                `json:"calibrated"`
+	HeroLevel     int                 `json:"hero_level"`
+	ActiveHeroes  []ActiveHero        `json:"active_heroes"`
 }

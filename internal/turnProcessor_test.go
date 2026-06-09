@@ -10,6 +10,31 @@ import (
 
 const testSavePath = `C:\Users\x\AppData\LocalLow\TesseractStudio\TaskbarHero\SaveFile_Live.es3`
 
+// Regressao: uma fase de BAIXO HP (1-1) nao pode estimar tempo ~0s quando so ha
+// fases de ALTO HP medidas. O modelo antigo (tempo ~ HP) dava ~0,02s pra 1-1 e
+// fazia clears reais de ~38s serem descartados como outliers de tempo inflado.
+func TestLowHPStageNotRejected(t *testing.T) {
+	ctrl := Control{
+		UseEMA:   true,
+		EMAAlpha: 0.2,
+		FarmStages: map[int]FarmStageInfo{
+			1101: {Key: 1101, TotalHP: 560, Waves: 10},
+			1102: {Key: 1102, TotalHP: 2040, Waves: 11},
+			1305: {Key: 1305, TotalHP: 2912165, Waves: 17},
+		},
+	}
+	ctrl.StageHistory.Update(1102, 60, 0, 0, true, 0.2, 1, 0, nil)
+	ctrl.StageHistory.Update(1305, 250, 0, 0, true, 0.2, 1, 0, nil)
+
+	est := ctrl.estimateStageTime(1101)
+	if est > 0 && est < 5 {
+		t.Fatalf("1-1 estimado em %.2fs (~0): clears reais seriam descartados", est)
+	}
+	if est > 0 && !isTimeTrustworthy(38, est, timeOutlierFactor, false) {
+		t.Fatalf("clear real de 38s do 1-1 rejeitado (est=%.2fs)", est)
+	}
+}
+
 func dirEvent(name string, op fsnotify.Op) fsnotify.Event {
 	return fsnotify.Event{Name: filepath.Join(filepath.Dir(testSavePath), name), Op: op}
 }

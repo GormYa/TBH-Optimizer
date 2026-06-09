@@ -21,6 +21,14 @@ var farmStagesData []byte
 const gameDataDir = "gamedata"
 
 func main() {
+	if len(os.Args) > 1 && os.Args[1] == "-dump-save" {
+		if err := internal.DumpSaveStructure(); err != nil {
+			fmt.Println("Dump falhou:", err)
+			os.Exit(1)
+		}
+		return
+	}
+
 	if len(os.Args) > 1 && os.Args[1] == "-update" {
 		n, err := internal.UpdateChestData("web", time.Now().Format("2006-01-02 15:04"))
 		if err != nil {

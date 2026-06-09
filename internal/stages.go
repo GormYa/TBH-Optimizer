@@ -44,9 +44,11 @@ func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
 			continue
 		}
 		points = append(points, timePoint{HP: info.TotalHP, Waves: float64(info.Waves), Time: stats.AvgTimeSpent})
-		if measured && info.ExpectedGold > 0 && info.ExpectedEXP > 0 {
+
+		ret := expRetention(info.Level, ctrl.HeroLevel)
+		if measured && info.ExpectedGold > 0 && info.ExpectedEXP > 0 && ret > 0 {
 			goldMultSum += stats.AvgGoldPerRun / info.ExpectedGold
-			xpMultSum += stats.AvgXpPerRun / info.ExpectedEXP
+			xpMultSum += stats.AvgXpPerRun / (info.ExpectedEXP * ret)
 			multCount++
 		}
 	}
@@ -60,10 +62,7 @@ func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
 		xpMultiplier = xpMultSum / float64(multCount)
 	}
 
-	numHeroes := len(ctrl.HeroStates)
-	if numHeroes < 1 {
-		numHeroes = 1
-	}
+	numHeroes := ctrl.numActiveHeroes()
 
 	bestGoldStage := 0
 	bestXpStage := 0
@@ -86,10 +85,13 @@ func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
 			if key > lastRegistered {
 				continue
 			}
+			if info.Waves <= 0 {
+				continue
+			}
 
 			estTime := estimateTime(a, b, info.TotalHP, float64(info.Waves))
 			estGoldPerRun := info.ExpectedGold * goldMultiplier
-			estXpPerRun := info.ExpectedEXP * xpMultiplier
+			estXpPerRun := info.ExpectedEXP * xpMultiplier * expRetention(info.Level, ctrl.HeroLevel)
 			estGoldPerHour := (estGoldPerRun / estTime) * 3600.0
 			estXpPerHour := (estXpPerRun / float64(numHeroes) / estTime) * 3600.0
 
@@ -133,6 +135,7 @@ func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
 	for stageKey, stats := range stagesReport {
 		if ctrl.FarmStages != nil {
 			if info, exists := ctrl.FarmStages[stageKey]; exists {
+				stats.ExpRetained = expRetention(info.Level, ctrl.HeroLevel)
 				if stats.AvgTimeSpent > 0 {
 					stats.RawGoldPerHour = (info.ExpectedGold / stats.AvgTimeSpent) * 3600.0
 					stats.RawXpPerHour = (info.ExpectedEXP / stats.AvgTimeSpent) * 3600.0
@@ -152,5 +155,7 @@ func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
 		BestXpStage:   bestXpStage,
 		Stages:        stagesReport,
 		Calibrated:    calibrated,
+		HeroLevel:     ctrl.HeroLevel,
+		ActiveHeroes:  ctrl.ActiveHeroes,
 	}
 }

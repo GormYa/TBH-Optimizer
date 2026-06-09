@@ -23,6 +23,14 @@
 			</div>
 		</div>
 
+		<div class="quit-overlay" v-if="quitDone">
+			<div class="quit-card">
+				<div class="quit-ico"><icon name="check" :size="34"></icon></div>
+				<h3>Otimizador encerrado</h3>
+				<p>Pode fechar esta aba. Para voltar a monitorar o save, abra o programa de novo.</p>
+			</div>
+		</div>
+
 		<div class="toasts">
 			<div v-for="t in toasts" :key="t.id" class="toast" :class="'toast-' + t.type">
 				<span class="toast-ico"><icon :name="t.type === 'success' ? 'check' : (t.type === 'error' ? 'x' : 'info')" :size="14"></icon></span>
@@ -73,6 +81,7 @@
 				</div>
 				<div class="ver-msg" v-if="updateMsg">{{ updateMsg }}</div>
 				<div class="ver-game" v-if="chestData.gameVersion">Dados do jogo: <b>v{{ chestData.gameVersion }}</b></div>
+					<button class="btn-quit" @click="quitApp" title="Encerra o monitoramento e fecha o programa"><icon name="x" :size="13"></icon> Encerrar otimizador</button>
 			</div>
 		</aside>
 
@@ -165,6 +174,13 @@
 				</div>
 
 				<div class="panel">
+					<div class="hero-strip" v-if="activeHeroList.length">
+						<span class="hs-label">Time ativo</span>
+						<div class="hs-hero" v-for="h in activeHeroList" :key="h.key">
+							<img v-if="h.icon" :src="h.icon" class="hs-icon" loading="lazy" onerror="this.style.visibility='hidden'">
+							<div class="hs-meta"><span class="hs-name">{{ h.name }}</span><span class="hs-lvl">Nv {{ h.level }}</span></div>
+						</div>
+					</div>
 					<div class="perf-head" v-if="sortedStages.length > 0">
 						<h3 class="panel-title">Desempenho por Fase</h3>
 						<div class="rec-toggle">
@@ -188,12 +204,18 @@
 									<th>Por Corrida</th>
 									<th @click="setSort('avg_gold_per_hour')" class="sortable">Ouro / Hora<span v-html="sortArrow('avg_gold_per_hour')"></span></th>
 									<th @click="setSort('avg_xp_per_hour')" class="sortable">XP / Hora<span v-html="sortArrow('avg_xp_per_hour')"></span></th>
+									<th @click="setSort('exp_retained')" class="sortable" title="Fração do XP que a fase entrega no seu nível (over-level reduz)">Exp Mantida<span v-html="sortArrow('exp_retained')"></span></th>
 									<th>Baús / Hora</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr v-for="stage in sortedStages" :key="stage.stage_key" :class="{ projected: stage.total_runs === 0 && !(stage.manual_time > 0), seeded: stage.total_runs === 0 && stage.manual_time > 0 }">
-									<td><span class="stage-badge">{{ formatStageName(stage.stage_key) }}</span></td>
+									<td>
+										<button type="button" class="stage-badge stage-badge-btn" :class="{ clickable: stageDetails[stage.stage_key] }" @click="openStageTab(stage.stage_key)" :title="stageDetails[stage.stage_key] ? 'Ver detalhes da fase' : ''">
+											<span class="sb-id">{{ formatStageName(stage.stage_key) }}<icon v-if="stageDetails[stage.stage_key]" name="info" :size="11"></icon></span>
+											<span class="sb-name" v-if="stageName(stage.stage_key) || stageLevel(stage.stage_key)">{{ stageName(stage.stage_key) }}<template v-if="stageLevel(stage.stage_key)"> · Nv {{ stageLevel(stage.stage_key) }}</template></span>
+										</button>
+									</td>
 									<td>
 										<strong v-if="stage.total_runs > 0">{{ stage.total_runs }}</strong>
 										<span class="tag-seed" v-else-if="stage.manual_time > 0" title="Tempo que você digitou na calibração. As corridas reais vão refinando esse valor.">Digitado</span>
@@ -213,6 +235,9 @@
 									<td>
 										<div class="r1 g-xp">{{ formatNumber(stage.avg_xp_per_hour) }} <small>/h</small></div>
 										<div class="r2">bruto {{ formatNumber(stage.raw_xp_per_hour) }}</div>
+									</td>
+									<td>
+										<div class="r1" :class="{ 'ret-warn': (stage.exp_retained != null ? stage.exp_retained : 1) < 0.999 }">{{ Math.round((stage.exp_retained != null ? stage.exp_retained : 1) * 100) }}%</div>
 									</td>
 									<td>
 										<template v-if="chestRateByStage[stage.stage_key]">
@@ -358,6 +383,73 @@
 						<div class="empty" v-else><div class="empty-mark"><icon name="swords" :size="40"></icon></div><p>Selecione um item à esquerda.</p></div>
 					</div>
 				</div>
+			</section>
+
+			<!-- ===================== ABA: FASES ===================== -->
+			<section v-show="view === 'fases'" class="view">
+				<div class="fases-nav" v-if="stageDetail">
+					<button class="fnav-btn" :disabled="fasesIndex <= 0" @click="gotoStageDelta(-1)" title="Fase anterior"><icon name="arrow-left" :size="16"></icon></button>
+					<select class="fnav-sel" v-model.number="fasesStage">
+						<option v-for="k in detailStageKeys" :key="k" :value="k">{{ formatStageName(k) }}<template v-if="stageName(k)"> · {{ stageName(k) }}</template></option>
+					</select>
+					<button class="fnav-btn flip" :disabled="fasesIndex >= detailStageKeys.length - 1" @click="gotoStageDelta(1)" title="Próxima fase"><icon name="arrow-left" :size="16"></icon></button>
+				</div>
+				<div class="sm-card" v-if="stageDetail">
+					<div class="sm-head">
+						<div class="sm-badge">{{ formatStageName(fasesStage) }}</div>
+						<div>
+							<h3 class="sm-title">{{ stageName(fasesStage) || formatStageName(fasesStage) }}</h3>
+							<div class="sm-sub">{{ formatDifficulty(stageDetail.difficulty) }} · Nível da fase {{ stageDetail.stageLevel }} · {{ stageDetail.waves }} waves × {{ stageDetail.perWave }} monstro(s)<span v-if="stageDetail.boss"> + boss</span></div>
+						</div>
+					</div>
+					<div class="sm-stats">
+						<div class="sm-stat"><span class="sm-k">Vida total</span><b>{{ fmtInt(stageDetail.totalHP) }}</b></div>
+						<div class="sm-stat"><span class="sm-k">Ouro / clear</span><b class="g-gold">{{ fmtInt(stageDetail.totalGold) }}</b></div>
+						<div class="sm-stat"><span class="sm-k">XP / clear</span><b class="g-xp">{{ fmtInt(stageDetail.totalExp) }}</b></div>
+						<div class="sm-stat"><span class="sm-k">Monstros / clear</span><b>{{ stageDetail.normalCount }}<small v-if="stageDetail.boss"> + 1</small></b></div>
+					</div>
+					<p class="sm-note">Valores-base do jogo (sem seus bônus de runas/pets). A escala da fase já está aplicada (×{{ stageDetail.hpMult }} vida, ×{{ stageDetail.goldMult }} ouro, ×{{ stageDetail.expMult }} xp).</p>
+					<div class="sm-section" v-if="stageDetail.monsters.length">
+						<h4 class="sm-h">Monstros desta fase</h4>
+						<div class="mon-grid">
+							<div class="mon-card" v-for="m in stageDetail.monsters" :key="m.key">
+								<img v-if="monsterSprite(m.key)" class="mon-sprite" :src="monsterSprite(m.key)" loading="lazy" onerror="this.style.visibility='hidden'">
+								<div v-else class="mon-sprite ph"><icon name="shield" :size="22"></icon></div>
+								<div class="mon-info">
+									<div class="mon-name">{{ m.name }} <span class="mon-share">{{ m.sharePct }}%</span></div>
+									<div class="mon-stats"><span class="mono">{{ fmtInt(m.hp) }} hp</span><span class="mono g-gold">{{ fmtInt(m.gold) }} ouro</span><span class="mono g-xp">{{ fmtInt(m.exp) }} xp</span></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="sm-section" v-if="stageDetail.boss">
+						<h4 class="sm-h">Chefe</h4>
+						<div class="boss-card">
+							<img v-if="monsterSprite(stageDetail.boss.key)" class="mon-sprite big" :src="monsterSprite(stageDetail.boss.key)" loading="lazy" onerror="this.style.visibility='hidden'">
+							<div v-else class="mon-sprite big ph"><icon name="shield" :size="30"></icon></div>
+							<div>
+								<div class="sm-boss-name">{{ stageDetail.boss.name }}</div>
+								<div class="sm-boss-stats">
+									<span><span class="sm-k">Vida</span> {{ fmtInt(stageDetail.boss.hp) }}</span>
+									<span><span class="sm-k">Ouro</span> <b class="g-gold">{{ fmtInt(stageDetail.boss.gold) }}</b></span>
+									<span><span class="sm-k">XP</span> <b class="g-xp">{{ fmtInt(stageDetail.boss.exp) }}</b></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="sm-section" v-if="stageChests(fasesStage).length">
+						<h4 class="sm-h">Baús que caem aqui</h4>
+						<div class="sm-chest" v-for="(r, i) in stageChests(fasesStage)" :key="i" :class="typeClass(r.chest.type)" @click="view='chests'; selectedChest=r.chest">
+							<img class="li-sprite" :src="r.chest.iconUrl" loading="lazy" onerror="this.style.visibility='hidden'">
+							<div class="sm-chest-info">
+								<span class="sm-chest-name">{{ r.chest.name }}</span>
+								<span class="sm-chest-meta">{{ typeLabel(r.chest.type) }} · via {{ r.via }}</span>
+							</div>
+							<span class="sm-chest-rate">{{ fmtPct(r.rate) }}<small>por clear</small></span>
+						</div>
+					</div>
+				</div>
+				<div class="empty" v-else><div class="empty-mark"><icon name="clock" :size="40"></icon></div><h3>Carregando dados das fases…</h3></div>
 			</section>
 		</main>
 	</div>
@@ -556,6 +648,12 @@
 
 				const updating = ref(false);
 				// --- toasts: feedback no front (o exe não tem mais console) ---
+				const quitDone = ref(false);
+				const quitApp = async () => {
+					if (!confirm('Encerrar o otimizador? Ele para de monitorar o save até você abrir de novo.')) return;
+					try { await fetch('http://localhost:8080/api/quit', { method: 'POST' }); } catch (e) { /* já encerrou */ }
+					quitDone.value = true;
+				};
 				const toasts = ref([]);
 				let toastSeq = 0;
 				const pushToast = (type, msg, ttl = 4500) => {
@@ -578,6 +676,7 @@
 
 				const navItems = [
 					{ id: 'painel', label: 'Painel', icon: 'dashboard' },
+					{ id: 'fases', label: 'Fases', icon: 'shield' },
 					{ id: 'chests', label: 'Baús', icon: 'package' },
 					{ id: 'items', label: 'Itens', icon: 'swords' }
 				];
@@ -602,6 +701,62 @@
 					return (3600 / t) * ((chestRateByStage.value[stage.stage_key] || 0) / 100);
 				};
 				const formatItems = (n) => !n ? '0,0' : n.toLocaleString('pt-BR', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+
+				// --- Painel de detalhe da fase (dataset do jogo: monstros, HP, XP, waves, boss) ---
+				const stageDetails = ref({});
+				const loadStageDetails = async () => {
+					try {
+						const r = await fetch('stage_details.json');
+						if (r.ok) {
+							stageDetails.value = await r.json();
+							if (!fasesStage.value) { const ks = Object.keys(stageDetails.value).map(Number).sort((a, b) => a - b); if (ks.length) fasesStage.value = ks[0]; }
+						}
+					} catch (e) { console.error('Erro ao carregar detalhes de fase:', e); }
+				};
+				const monsterSprites = ref({});
+				const loadMonsterSprites = async () => {
+					try { const r = await fetch('monster_sprites.json'); if (r.ok) monsterSprites.value = await r.json(); }
+					catch (e) { /* sem sprites: usa fallback */ }
+				};
+				const monsterSprite = (key) => monsterSprites.value[key] || '';
+
+				// Heróis (nome/ícone/classe) + time ativo do save (vem no relatório).
+				const heroesData = ref({});
+				const loadHeroes = async () => {
+					try { const r = await fetch('heroes.json'); if (r.ok) heroesData.value = await r.json(); }
+					catch (e) { /* sem heroes.json: só mostra o nível */ }
+				};
+				const activeHeroList = computed(() => (statsReport.value.active_heroes || []).map(h => ({
+					key: h.key, level: h.level, ...(heroesData.value[h.key] || { name: 'Herói ' + h.key, icon: '', class: '' })
+				})));
+
+				// Aba "Fases": navega entre estágios sem modal. fasesStage = estágio em foco.
+				const fasesStage = ref(null);
+				const openStageTab = (key) => { if (stageDetails.value[key]) { fasesStage.value = key; view.value = 'fases'; } };
+				const stageDetail = computed(() => stageDetails.value[fasesStage.value] || null);
+				const stageSummary = computed(() => stageMap.value[fasesStage.value] || null);
+				// Lista ordenada de fases que têm detalhe (pra dropdown + prev/next).
+				const detailStageKeys = computed(() => Object.keys(stageDetails.value).map(Number).sort((a, b) => a - b));
+				const fasesIndex = computed(() => detailStageKeys.value.indexOf(Number(fasesStage.value)));
+				const gotoStageDelta = (d) => {
+					const ks = detailStageKeys.value; const i = fasesIndex.value + d;
+					if (i >= 0 && i < ks.length) fasesStage.value = ks[i];
+				};
+				// Baús que caem nesta fase, com a taxa por clear (maior entre monstro/boss).
+				const stageChests = (key) => {
+					const out = [];
+					(chestData.value.chests || []).forEach(c => {
+						const hit = (c.stages || []).filter(s => s.key === key);
+						if (hit.length) {
+							const rate = Math.max(...hit.map(s => s.dropRatePercent || 0));
+							out.push({ chest: c, rate, via: [...new Set(hit.map(s => s.via))].join(' + ') });
+						}
+					});
+					return out.sort((a, b) => b.rate - a.rate);
+				};
+				const fmtInt = (n) => (n || 0).toLocaleString('pt-BR');
+				const stageName = (key) => (stageMap.value[key] || {}).name || '';
+				const stageLevel = (key) => (stageMap.value[key] || {}).level || 0;
 
 				// #4 Indicador de confiança por nº de corridas reais.
 				const confidence = (runs) => runs >= 10 ? 'alta' : runs >= 3 ? 'media' : runs > 0 ? 'baixa' : 'est';
@@ -798,7 +953,7 @@
 				// um painel ativo e, na aba nova, cede em vez de rodar um 2º painel.
 				const duplicateTab = ref(false);
 				let dashChannel = null;
-				const startApp = () => { loadStagesList(); loadChests(); fetchStats(); initUpdate(); watchVersion(); setInterval(fetchStats, 2000); setInterval(watchVersion, 4000); setInterval(pollUpdateAvailability, 10 * 60 * 1000); };
+				const startApp = () => { loadStagesList(); loadStageDetails(); loadMonsterSprites(); loadHeroes(); loadChests(); fetchStats(); initUpdate(); watchVersion(); setInterval(fetchStats, 2000); setInterval(watchVersion, 4000); setInterval(pollUpdateAvailability, 10 * 60 * 1000); };
 				const useThisTab = () => { duplicateTab.value = false; startApp(); };
 				onMounted(() => {
 					if ('BroadcastChannel' in window) {
@@ -826,6 +981,8 @@
 					addStage, addTime, addMapTime, resetStage,
 					fetchStats, resetHistory, submitCalibration, setSort, rankBy, sortArrow,
 					stageHP, chestRateByStage, chestsPerHour, formatItems,
+					stageDetails, fasesStage, openStageTab, stageDetail, stageSummary, stageChests, fmtInt, stageName, stageLevel,
+					monsterSprite, detailStageKeys, gotoStageDelta, fasesIndex, activeHeroList,
 					confidence, confLabel,
 					formatDifficulty, formatStageName, formatNumber, formatTime,
 					chestData, chestType, chestStage, chestTypes, chestStageOptions, filteredChests,
@@ -833,7 +990,7 @@
 					selectedHeroes, allHeroes, toggleHero, chestHeroes,
 					selectedChest, itemSearch, selectedItem, itemList, filteredItems, itemChests, itemName, itemIcon, itemGrade, heroList,
 					appVersion, updateInfo, updateBusy, updateMsg, checkUpdate, applyUpdate, toasts,
-					duplicateTab, useThisTab
+					duplicateTab, useThisTab, quitApp, quitDone
 				};
 			}
 		});
