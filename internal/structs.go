@@ -65,6 +65,7 @@ type FarmStageInfo struct {
 	ExpectedEXP  float64 `json:"expectedEXP"`
 	Waves        int     `json:"waves"`
 	Level        int     `json:"level"`
+	Difficulty   string  `json:"difficulty"`
 }
 
 type StageHistoryStore struct {
@@ -85,6 +86,7 @@ type Control struct {
 	HeroLevel           int
 	ActiveHeroCount     int
 	ActiveHeroes        []ActiveHero
+	lastMidStage        int
 }
 type ActiveHero struct {
 	Key   int `json:"key"`

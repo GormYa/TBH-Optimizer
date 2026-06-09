@@ -57,8 +57,12 @@ func setupWatcher(ctrl *Control) (string, *fsnotify.Watcher, error) {
 		return "", nil, err
 	}
 
-	Logf("info", "Monitoramento iniciado. Fase atual: %s · heróis ativos: %d (nível %d). Conclua uma fase pra ver o registro aqui.",
-		ctrl.stageDisplay(ctrl.LastCurrentStageKey), ctrl.ActiveHeroCount, ctrl.HeroLevel)
+	totalWaves := 0
+	if info, ok := ctrl.FarmStages[ctrl.LastCurrentStageKey]; ok {
+		totalWaves = info.Waves
+	}
+	Logf("info", "Monitoramento iniciado · Fase atual: %s · wave %d/%d · heróis ativos: %d (nível %d). A corrida é registrada quando a wave volta a 0 (fim do ciclo).",
+		ctrl.stageDisplay(ctrl.LastCurrentStageKey), currentSave.CommonSaveData.CurrentStageWave, totalWaves, ctrl.ActiveHeroCount, ctrl.HeroLevel)
 
 	return archivePath, watcher, nil
 }
@@ -119,6 +123,16 @@ func processSaveChange(ctrl *Control) {
 		return
 	}
 	if currentSave.CommonSaveData.CurrentStageWave != 0 {
+		stg := currentSave.CommonSaveData.CurrentStageKey
+		if stg != ctrl.lastMidStage {
+			ctrl.lastMidStage = stg
+			total := 0
+			if info, ok := ctrl.FarmStages[stg]; ok {
+				total = info.Waves
+			}
+			Logf("info", "Fazendo %s · wave %d/%d — a corrida vai valer quando a wave voltar a 0 (fim do ciclo).",
+				ctrl.stageDisplay(stg), currentSave.CommonSaveData.CurrentStageWave, total)
+		}
 		return
 	}
 
@@ -162,53 +176,25 @@ const timeOutlierFactor = 3.0
 // menor que um clear real). So aplica quando a fase ja tem historico.
 const goldFloorFactor = 0.5
 
-// expectedClearGold estima o ouro de um clear real da fase: media propria
-// (>=3 corridas) ou, no cold start, ExpectedGold da fase x multiplicador de ouro
-// do jogador. 0 quando nao ha base alguma (sem piso).
-func expectedClearGold(ownAvg float64, ownRuns int, stageExpectedGold, goldMult float64) float64 {
+// expectedClearGold devolve o ouro esperado de um clear SÓ a partir da média própria
+// da fase (>=3 corridas). Sem histórico próprio -> 0 (sem piso). O piso de cold-start
+// via ExpectedGold x multiplicador errava feio entre dificuldades (ex.: esperar 1,5M
+// numa Nightmare 1-5 que dá 41k) e descartava clears reais. Igual à trava de tempo:
+// não julgamos uma fase nova com extrapolação de outras.
+func expectedClearGold(ownAvg float64, ownRuns int) float64 {
 	if ownRuns >= 3 && ownAvg > 0 {
 		return ownAvg
-	}
-	if stageExpectedGold > 0 && goldMult > 0 {
-		return stageExpectedGold * goldMult
 	}
 	return 0
 }
 
-// goldMultiplier mede o multiplicador de ouro do jogador (ouro real / ouro base)
-// a partir das fases ja medidas. 0 se nao houver base.
-func (ctrl *Control) goldMultiplier() float64 {
-	var sum float64
-	var n int
-	for _, st := range ctrl.StageHistory.AllStats() {
-		if st.TotalRuns < 3 || st.AvgGoldPerRun <= 0 {
-			continue
-		}
-		if info, ok := ctrl.FarmStages[st.StageKey]; ok && info.ExpectedGold > 0 {
-			sum += st.AvgGoldPerRun / info.ExpectedGold
-			n++
-		}
-	}
-	if n == 0 {
-		return 0
-	}
-	return sum / float64(n)
-}
-
-// estimateClearGold devolve o ouro esperado de um clear da fase (piso anti-morte),
-// funcionando ja no cold start via ExpectedGold x multiplicador.
+// estimateClearGold devolve o piso de ouro anti-morte da fase: só a média própria
+// medida (>=3 corridas). Cold-start não tem piso (ver expectedClearGold).
 func (ctrl *Control) estimateClearGold(stage int) float64 {
-	var ownAvg float64
-	var ownRuns int
 	if s, ok := ctrl.StageHistory.Get(stage); ok {
-		ownAvg = s.AvgGoldPerRun
-		ownRuns = s.TotalRuns
+		return expectedClearGold(s.AvgGoldPerRun, s.TotalRuns)
 	}
-	var stageExp float64
-	if info, ok := ctrl.FarmStages[stage]; ok {
-		stageExp = info.ExpectedGold
-	}
-	return expectedClearGold(ownAvg, ownRuns, stageExp, ctrl.goldMultiplier())
+	return 0
 }
 
 // estimatedRunTime estima quanto uma fase deveria levar (segundos). Prioriza o
@@ -247,12 +233,30 @@ func (ctrl *Control) estimateStageTime(stage int) float64 {
 	return 0
 }
 
-// stageDisplay devolve "3-8" (label da fase) ou o numero cru pro console.
+// stageDisplay devolve "Nightmare 1-5" (dificuldade + label) pro console.
 func (ctrl *Control) stageDisplay(stage int) string {
 	if info, ok := ctrl.FarmStages[stage]; ok && info.Label != "" {
+		if d := difficultyLabel(info.Difficulty); d != "" {
+			return d + " " + info.Label
+		}
 		return info.Label
 	}
 	return fmt.Sprintf("%d", stage)
+}
+
+func difficultyLabel(d string) string {
+	switch d {
+	case "NORMAL":
+		return "Normal"
+	case "NIGHTMARE":
+		return "Nightmare"
+	case "HELL":
+		return "Hell"
+	case "TORMENT":
+		return "Torment"
+	default:
+		return ""
+	}
 }
 
 func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
@@ -276,7 +280,7 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 	}()
 
 	if !isValidRound(timeSpent, goldGain, xpGain) {
-		Logf("info", "Fase %s: fim de ciclo sem ganho de ouro/xp — ignorado (tela de seleção ou ocioso).", ctrl.stageDisplay(stage))
+		Logf("info", "Fase %s: save em wave 0 sem ganho NOVO de ouro/xp — ignorado (normalmente um 2º save logo após um clear que já foi contado).", ctrl.stageDisplay(stage))
 		return
 	}
 

@@ -1,6 +1,7 @@
 package internal
 
 import (
+	"os"
 	"path/filepath"
 	"testing"
 	"time"
@@ -9,6 +10,88 @@ import (
 )
 
 const testSavePath = `C:\Users\x\AppData\LocalLow\TesseractStudio\TaskbarHero\SaveFile_Live.es3`
+
+// newClearSave monta um save representando um clear estavel da fase (wave 0), com
+// ganho de ouro e xp em relacao a baseline do ctrl.
+func newClearSave(stage int, playTime float64, gold int, heroKey int, heroLvl int, heroExp float64) *InnerSaveData {
+	s := &InnerSaveData{}
+	s.CommonSaveData.CurrentStageKey = stage
+	s.CommonSaveData.CurrentStageWave = 0
+	s.CommonSaveData.PlayTime = playTime
+	s.CommonSaveData.ArrangedHeroKey = []int{heroKey}
+	s.CurrenySaveDatas = []Currency{{Key: 100001, Quantity: gold}}
+	s.HeroSaveDatas = []Hero{{HeroKey: heroKey, HeroLevel: heroLvl, HeroExp: heroExp}}
+	return s
+}
+
+// PROVA do fix: uma fase NOVA (sem historico proprio) registra o clear real. O bug era
+// a trava de tempo usar um modelo estimado que subestimava a fase e descartava tudo.
+func TestNewStageRecordsRound(t *testing.T) {
+	old, _ := os.Getwd()
+	if err := os.Chdir(t.TempDir()); err != nil { // isola stage_history.json/historico_farm.txt
+		t.Fatal(err)
+	}
+	defer os.Chdir(old)
+
+	const stage = 1308
+	ctrl := Control{
+		UseEMA: true, EMAAlpha: 0.2,
+		FarmStages:          map[int]FarmStageInfo{stage: {Key: stage, Label: "3-8", TotalHP: 100000, ExpectedGold: 4000, ExpectedEXP: 60000, Waves: 17, Level: 30}},
+		HeroStates:          map[int]HeroState{201: {Level: 33, Xp: 1000}},
+		ActiveHeroCount:     1,
+		HeroLevel:           33,
+		LastCurrentStageKey: stage, // mesma fase no fim -> ciclo estavel
+		LastPlayTime:        1000,
+		LastGold:            500,
+	}
+	// clear de 148s, +10000 ouro, +500000 xp
+	calculateAndLogRound(&ctrl, newClearSave(stage, 1148, 10500, 201, 33, 501000))
+
+	s, ok := ctrl.StageHistory.Get(stage)
+	runs := 0
+	if s != nil {
+		runs = s.TotalRuns
+	}
+	if !ok || runs != 1 {
+		t.Fatalf("fase NOVA (sem histórico) deveria registrar o clear; ok=%v runs=%d", ok, runs)
+	}
+	if s.AvgTimeSpent != 148 {
+		t.Fatalf("tempo registrado = %.0fs, esperado 148s", s.AvgTimeSpent)
+	}
+}
+
+// A trava de tempo AINDA protege: numa fase com historico proprio (>=3 corridas), um
+// clear com tempo absurdamente inflado (morte/ociosidade) e descartado.
+func TestEstablishedStageRejectsInflatedTime(t *testing.T) {
+	old, _ := os.Getwd()
+	if err := os.Chdir(t.TempDir()); err != nil {
+		t.Fatal(err)
+	}
+	defer os.Chdir(old)
+
+	const stage = 1308
+	ctrl := Control{
+		UseEMA: true, EMAAlpha: 0.2,
+		FarmStages:          map[int]FarmStageInfo{stage: {Key: stage, Label: "3-8", TotalHP: 100000, ExpectedGold: 4000, ExpectedEXP: 60000, Waves: 17, Level: 30}},
+		HeroStates:          map[int]HeroState{201: {Level: 33, Xp: 0}},
+		ActiveHeroCount:     1,
+		HeroLevel:           33,
+		LastCurrentStageKey: stage,
+	}
+	// 3 corridas de ~148s pra estabelecer a media propria
+	for i := 0; i < 3; i++ {
+		ctrl.StageHistory.Update(stage, 148, 10000, 500000, true, 0.2, 1, 0, nil)
+	}
+	ctrl.LastPlayTime = 1000
+	ctrl.LastGold = 500
+
+	// clear com 600s (>3x148): deve ser DESCARTADO. Ouro normal pra isolar a trava de tempo.
+	calculateAndLogRound(&ctrl, newClearSave(stage, 1600, 10500, 201, 33, 500000))
+
+	if s, _ := ctrl.StageHistory.Get(stage); s.TotalRuns != 3 {
+		t.Fatalf("corrida com tempo inflado deveria ser descartada; TotalRuns=%d (esperado 3)", s.TotalRuns)
+	}
+}
 
 // Regressao: uma fase de BAIXO HP (1-1) nao pode estimar tempo ~0s quando so ha
 // fases de ALTO HP medidas. O modelo antigo (tempo ~ HP) dava ~0,02s pra 1-1 e
@@ -116,26 +199,22 @@ func TestIsValidRound(t *testing.T) {
 	}
 }
 
-// expectedClearGold estima o ouro de um clear real da fase: media propria
-// (>=3 corridas) ou, no cold start, ExpectedGold da fase x multiplicador de ouro
-// do jogador (medido em outras fases). 0 quando nao ha base -> sem piso.
+// expectedClearGold: piso de ouro SÓ pela média própria (>=3 corridas). Cold-start e
+// poucas corridas -> 0 (sem piso), pra não descartar clear de fase nova com palpite.
 func TestExpectedClearGold(t *testing.T) {
 	cases := []struct {
-		desc     string
-		ownAvg   float64
-		ownRuns  int
-		stageExp float64
-		goldMult float64
-		want     float64
+		desc    string
+		ownAvg  float64
+		ownRuns int
+		want    float64
 	}{
-		{"usa media propria com historico", 3000, 5, 2593, 1.2, 3000},
-		{"cold start: ExpectedGold x multiplicador", 0, 0, 2593, 1.2, 2593 * 1.2},
-		{"poucas corridas usa estimativa", 999, 2, 2000, 1.5, 3000},
-		{"sem base alguma -> 0 (sem piso)", 0, 0, 0, 0, 0},
-		{"sem multiplicador -> 0", 0, 0, 2000, 0, 0},
+		{"usa media propria com historico", 3000, 5, 3000},
+		{"exatamente 3 corridas usa a media", 2500, 3, 2500},
+		{"cold start sem historico -> 0 (sem piso)", 0, 0, 0},
+		{"poucas corridas (<3) -> 0 (sem piso)", 999, 2, 0},
 	}
 	for _, c := range cases {
-		if got := expectedClearGold(c.ownAvg, c.ownRuns, c.stageExp, c.goldMult); got != c.want {
+		if got := expectedClearGold(c.ownAvg, c.ownRuns); got != c.want {
 			t.Errorf("%s: expectedClearGold = %v, quero %v", c.desc, got, c.want)
 		}
 	}
