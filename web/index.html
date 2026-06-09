@@ -71,7 +71,7 @@
 
 			<nav class="nav">
 				<button v-for="item in navItems" :key="item.id"
-						:class="{ active: view === item.id }" @click="view = item.id">
+						:class="{ active: view === item.id }" @click="goView(item.id)">
 					<span class="nav-ico"><icon :name="item.icon" :size="18"></icon></span>
 					<span>{{ item.label }}</span>
 				</button>
@@ -469,54 +469,131 @@
 			</section>
 
 			<!-- ---------- ITENS (busca reversa) ---------- -->
-			<section v-show="view === 'items'" class="view">
-				<p class="view-intro">Busque um <strong>item</strong> e veja em quais baús ele cai e a chance de vir ao abrir. (% por item = chance do grupo ÷ nº de itens do grupo.)</p>
-				<div class="hero-toggles" v-if="heroList.length">
-					<span class="rec-toggle-lbl">Personagens que você possui:</span>
-					<button type="button" v-for="h in heroList" :key="h.key" :class="{ on: selectedHeroes.includes(h.key) }" @click="toggleHero(h.key)">
-						{{ h.name }}<span v-if="h.dlc" class="dlc-badge">DLC</span>
-					</button>
-				</div>
-				<div class="chip-row" style="margin-bottom:12px;">
-						<button v-for="c in itemCats" :key="c.v" :class="{ on: itemCatFilter === c.v }" @click="itemCatFilter = c.v">{{ c.label }}</button>
-					</div>
-					<input type="text" class="fld items-search" v-model="itemSearch" placeholder="Buscar item… (ex.: Espada Longa, Pedra da Alma)">
-				<div class="items-layout">
-					<div class="group-list">
-						<button v-for="it in filteredItems" :key="it.id" :class="{ on: selectedItem === it.id }" @click="selectedItem = it.id">
-							<img class="li-sprite" :src="itemIcon(it.id)" loading="lazy" onerror="this.style.visibility='hidden'">
-							<span class="li-text">
-								<span>{{ it.name }}</span>
-								<span class="li-grade" :class="'grade-' + (it.grade || '').toLowerCase()">{{ gradeLabel(it.grade) }}</span>
-							</span>
-						</button>
-						<div class="empty" v-if="filteredItems.length === 0"><p>Nada encontrado.</p></div>
-					</div>
-					<div class="group-detail">
-						<template v-if="selectedItem">
-							<div class="item-head">
-								<img class="li-sprite big" :src="itemIcon(selectedItem)" onerror="this.style.visibility='hidden'">
-								<div>
-									<h4 class="sec-title" style="margin:0;">{{ itemName(selectedItem) }}</h4>
-									<span class="li-grade" :class="'grade-' + (itemGrade(selectedItem) || '').toLowerCase()">{{ gradeLabel(itemGrade(selectedItem)) }}</span>
+				<section v-show="view === 'items'" class="view">
+					<!-- DETALHE DO ITEM -->
+					<div v-if="selectedItem && itemInfo(selectedItem)">
+						<button class="btn-back" @click="selectedItem = null"><icon name="arrow-left" :size="15"></icon> Itens</button>
+						<div class="detail-grid">
+							<div class="detail-card" :class="'ic-' + (itemGrade(selectedItem) || '').toLowerCase()">
+								<img class="detail-sprite" :src="itemIcon(selectedItem)" onerror="this.style.visibility='hidden'">
+								<div class="detail-name">{{ itemName(selectedItem) }}</div>
+								<span class="li-grade" :class="'grade-' + (itemGrade(selectedItem) || '').toLowerCase()">{{ gradeLabel(itemGrade(selectedItem)) }}</span>
+								<div class="dc-meta">
+									<span v-if="itemInfo(selectedItem).part">{{ partLabel(itemInfo(selectedItem).part) }}<template v-if="itemInfo(selectedItem).gear"> · {{ itemInfo(selectedItem).gear }}</template></span>
+									<span v-if="itemInfo(selectedItem).level">Nível {{ itemInfo(selectedItem).level }}</span>
+									<span v-if="itemInfo(selectedItem).slots && (itemInfo(selectedItem).slots.dec || itemInfo(selectedItem).slots.eng || itemInfo(selectedItem).slots.ins)">Slots <template v-if="itemInfo(selectedItem).slots.dec">D×{{ itemInfo(selectedItem).slots.dec }} </template><template v-if="itemInfo(selectedItem).slots.eng">E×{{ itemInfo(selectedItem).slots.eng }} </template><template v-if="itemInfo(selectedItem).slots.ins">I×{{ itemInfo(selectedItem).slots.ins }}</template></span>
+									<span :class="itemInfo(selectedItem).obtainable ? 'dc-ok' : 'dc-no'">{{ itemInfo(selectedItem).obtainable ? 'Obtível' : 'Não obtível (removido)' }}</span>
 								</div>
 							</div>
-							<p class="hint">Cai em {{ itemChests(selectedItem).length }} baú(s) · % = chance de vir ao abrir aquele baú.</p>
-							<div class="rev-card" v-for="(r, i) in itemChests(selectedItem)" :key="i" :class="typeClass(r.chest.type)">
-								<div class="rev-head" @click="view='chests'; selectedChest=r.chest">
-									<img class="rev-sprite" :src="r.chest.iconUrl" onerror="this.style.visibility='hidden'">
-									<div>
-										<div class="chest-name">{{ r.chest.name }}</div>
-										<span class="chest-type" :class="typeClass(r.chest.type)">{{ typeLabel(r.chest.type) }}</span>
+							<div class="detail-body">
+								<h4 class="sec-title" v-if="baseStatsShown(selectedItem).length || (itemInfo(selectedItem).inherent || []).length">Status</h4>
+								<div class="stat-grid" v-if="baseStatsShown(selectedItem).length || (itemInfo(selectedItem).inherent || []).length">
+									<div class="stat-box" v-for="(b, i) in baseStatsShown(selectedItem)" :key="'b' + i"><span class="sb-lbl">{{ combatLabel(b.stat) }} <em>base</em></span><span class="sb-val">{{ fmtCombat(b.stat, b.value) }}</span></div>
+									<div class="stat-box inh" v-for="(b, i) in (itemInfo(selectedItem).inherent || [])" :key="'i' + i"><span class="sb-lbl">{{ combatLabel(b.stat) }} <em>inerente</em></span><span class="sb-val">{{ fmtCombat(b.stat, b.value) }}</span></div>
+								</div>
+								<h4 class="sec-title">Valor de revenda</h4>
+								<div class="resale">
+									<div class="resale-box"><span class="rb-lbl">Ouro de Alquimia</span><span class="rb-val g-gold">{{ formatNumber(itemInfo(selectedItem).alchemyGold || 0) }}</span></div>
+									<div class="resale-box"><span class="rb-lbl">EXP do Cubo</span><span class="rb-val g-xp">{{ formatNumber(itemInfo(selectedItem).cubeExp || 0) }}</span></div>
+								</div>
+								<p class="resale-note">Ouro e EXP do cubo ganhos ao desmontar este item no Cubo.</p>
+								<h4 class="sec-title" style="margin-top:18px;">Como obter</h4>
+								<div class="obtain-note synth" v-if="gradeBelow(itemGrade(selectedItem))"><icon name="sparkles" :size="14"></icon> <span><b>Síntese:</b> combine equipamentos {{ gradeBelow(itemGrade(selectedItem)) }} do mesmo tipo (no Cubo de síntese).</span></div>
+								<div class="hero-toggles" v-if="itemChests(selectedItem).length && heroList.length">
+									<span class="rec-toggle-lbl">Personagens que você possui:</span>
+									<button type="button" v-for="h in heroList" :key="h.key" :class="{ on: selectedHeroes.includes(h.key) }" @click="toggleHero(h.key)">{{ h.name }}<span v-if="h.dlc" class="dlc-badge">DLC</span></button>
+								</div>
+								<p class="hint" v-if="itemChests(selectedItem).length">Dropa em {{ itemChests(selectedItem).length }} baú(s) · % = chance de vir ao abrir aquele baú.</p>
+								<div class="obtain-note" v-else><icon name="info" :size="14"></icon> <span>Não cai diretamente de baús{{ gradeBelow(itemGrade(selectedItem)) ? ' — obtido por síntese.' : '.' }}</span></div>
+								<div class="rev-card" v-for="(r, i) in itemChests(selectedItem)" :key="i" :class="typeClass(r.chest.type)">
+									<div class="rev-head" @click="selectedItem = null; selectedChest = r.chest; view = 'chests'">
+										<img class="rev-sprite" :src="r.chest.iconUrl" onerror="this.style.visibility='hidden'">
+										<div><div class="chest-name">{{ r.chest.name }}</div><span class="chest-type" :class="typeClass(r.chest.type)">{{ typeLabel(r.chest.type) }}</span></div>
+										<span class="rev-pct g-gold">{{ fmtPct(r.perItem) }}</span>
 									</div>
+									<div class="rev-stages"><span class="rev-stage" v-for="s in (r.chest.stages || [])" :key="s.key">{{ formatDifficulty(s.difficulty) }} {{ s.label }} · {{ fmtPct(s.dropRatePercent) }}</span></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- GRID DE ITENS -->
+					<div v-else>
+						<p class="view-intro">Catálogo completo de <strong>equipamentos</strong>. Filtre por raridade, tipo e nível; clique num item pra ver detalhes.</p>
+						<div class="item-filters">
+							<div class="if-row"><span class="if-lbl">Raridade</span>
+								<div class="chip-row grade-chips">
+									<button :class="{ on: gradeFilter === '' }" @click="gradeFilter = ''">Todos</button>
+									<button v-for="g in GRADES" :key="g" :class="['gc-' + g.toLowerCase(), { on: gradeFilter === g }]" @click="gradeFilter = gradeFilter === g ? '' : g">{{ gradeLabel(g) }}</button>
+								</div></div>
+							<div class="if-row"><span class="if-lbl">Tipo</span>
+								<div class="chip-row"><button v-for="t in partFilters" :key="t.v" :class="{ on: partFilter === t.v }" @click="partFilter = t.v">{{ t.label }}</button></div></div>
+							<div class="if-row"><span class="if-lbl">Nível</span>
+								<input type="number" class="fld lvl-in" v-model.number="lvlMin" min="1" max="100" placeholder="mín"><span class="lvl-sep">–</span><input type="number" class="fld lvl-in" v-model.number="lvlMax" min="1" max="100" placeholder="máx"></div>
+							<div class="if-row"><span class="if-lbl">Buscar</span>
+								<input type="text" class="fld items-search" v-model="itemSearch" placeholder="Filtrar por nome…"><label class="obt-toggle"><input type="checkbox" v-model="obtainableOnly"> Só obtíveis</label></div>
+						</div>
+						<div class="items-grid-wrap" @scroll="onItemsScroll">
+							<div class="gl-count">{{ filteredItems.length }} item(ns)</div>
+							<div class="items-grid">
+								<button class="item-card" v-for="it in shownItems" :key="it.id" :class="['ic-' + (it.grade || '').toLowerCase(), { on: selectedItem === it.id }]" @click="selectedItem = it.id">
+									<span class="ic-grade-tag" :class="'grade-' + (it.grade || '').toLowerCase()">{{ gradeLabel(it.grade) }}</span>
+									<img class="ic-sprite" :src="it.icon" loading="lazy" onerror="this.style.visibility='hidden'">
+									<span class="ic-name">{{ it.name }}<span v-if="!it.obtainable" class="li-unobt" title="Não é mais obtível">✖</span></span>
+									<span class="ic-slots" v-if="it.slots && (it.slots.dec || it.slots.eng || it.slots.ins)"><i v-if="it.slots.dec">D×{{ it.slots.dec }}</i><i v-if="it.slots.eng">E×{{ it.slots.eng }}</i><i v-if="it.slots.ins">I×{{ it.slots.ins }}</i></span>
+									<span class="ic-atk" v-if="it.atk">ATK {{ formatNumber(it.atk) }}</span>
+									<span class="ic-foot"><span class="ic-type">{{ it.gear }}</span><span class="ic-lvl">Nv {{ it.level }}</span></span>
+								</button>
+							</div>
+							<div class="gl-more" v-if="shownItems.length < filteredItems.length">carregando mais… ({{ shownItems.length }}/{{ filteredItems.length }})</div>
+							<div class="empty" v-if="filteredItems.length === 0"><p>Nada encontrado.</p></div>
+						</div>
+					</div>
+				</section>
+
+			<!-- ===================== ABA: MATERIAIS ===================== -->
+			<section v-show="view === 'materiais'" class="view">
+				<!-- DETALHE DO MATERIAL -->
+				<div v-if="selectedMaterial && itemInfo(selectedMaterial)">
+					<button class="btn-back" @click="selectedMaterial = null"><icon name="arrow-left" :size="15"></icon> Materiais</button>
+					<div class="detail-grid">
+						<div class="detail-card" :class="'ic-' + (itemGrade(selectedMaterial) || '').toLowerCase()">
+							<img class="detail-sprite" :src="itemIcon(selectedMaterial)" onerror="this.style.visibility='hidden'">
+							<div class="detail-name">{{ itemName(selectedMaterial) }}</div>
+							<span class="li-grade" :class="'grade-' + (itemGrade(selectedMaterial) || '').toLowerCase()">{{ gradeLabel(itemGrade(selectedMaterial)) }}</span>
+						</div>
+						<div class="detail-body">
+							<h4 class="sec-title">Onde cai</h4>
+							<div class="hero-toggles" v-if="itemChests(selectedMaterial).length && heroList.length">
+								<span class="rec-toggle-lbl">Personagens que você possui:</span>
+								<button type="button" v-for="h in heroList" :key="h.key" :class="{ on: selectedHeroes.includes(h.key) }" @click="toggleHero(h.key)">{{ h.name }}<span v-if="h.dlc" class="dlc-badge">DLC</span></button>
+							</div>
+							<p class="hint" v-if="itemChests(selectedMaterial).length">Cai em {{ itemChests(selectedMaterial).length }} baú(s) · % = chance de vir ao abrir.</p>
+							<div class="obtain-note" v-else><icon name="info" :size="14"></icon> <span>Não cai diretamente de baús.</span></div>
+							<div class="rev-card" v-for="(r, i) in itemChests(selectedMaterial)" :key="i" :class="typeClass(r.chest.type)">
+								<div class="rev-head" @click="selectedMaterial = null; selectedChest = r.chest; view = 'chests'">
+									<img class="rev-sprite" :src="r.chest.iconUrl" onerror="this.style.visibility='hidden'">
+									<div><div class="chest-name">{{ r.chest.name }}</div><span class="chest-type" :class="typeClass(r.chest.type)">{{ typeLabel(r.chest.type) }}</span></div>
 									<span class="rev-pct g-gold">{{ fmtPct(r.perItem) }}</span>
 								</div>
-								<div class="rev-stages">
-									<span class="rev-stage" v-for="s in (r.chest.stages || [])" :key="s.key">{{ formatDifficulty(s.difficulty) }} {{ s.label }} · {{ fmtPct(s.dropRatePercent) }}</span>
-								</div>
+								<div class="rev-stages"><span class="rev-stage" v-for="s in (r.chest.stages || [])" :key="s.key">{{ formatDifficulty(s.difficulty) }} {{ s.label }} · {{ fmtPct(s.dropRatePercent) }}</span></div>
 							</div>
-						</template>
-						<div class="empty" v-else><div class="empty-mark"><icon name="swords" :size="40"></icon></div><p>Selecione um item à esquerda.</p></div>
+						</div>
+					</div>
+				</div>
+				<!-- GRID DE MATERIAIS -->
+				<div v-else>
+					<p class="view-intro">Materiais de <strong>criação e síntese</strong>. Clique pra ver em quais baús cada um cai.</p>
+					<input type="text" class="fld items-search" v-model="matSearch" placeholder="Buscar material…" style="max-width:420px;margin-bottom:14px;">
+					<div class="items-grid-wrap">
+						<div class="gl-count">{{ materialsList.length }} material(is)</div>
+						<div class="items-grid">
+							<button class="item-card" v-for="it in materialsList" :key="it.id" :class="['ic-' + (it.grade || '').toLowerCase(), { on: selectedMaterial === it.id }]" @click="selectedMaterial = it.id">
+								<span class="ic-grade-tag" :class="'grade-' + (it.grade || '').toLowerCase()">{{ gradeLabel(it.grade) }}</span>
+								<img class="ic-sprite" :src="it.icon" loading="lazy" onerror="this.style.visibility='hidden'">
+								<span class="ic-name">{{ it.name }}</span>
+							</button>
+						</div>
+						<div class="empty" v-if="!materialsList.length"><p>Nada encontrado.</p></div>
 					</div>
 				</div>
 			</section>
@@ -610,6 +687,7 @@
 			clock: '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
 			paw: '<circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/>',
 			search: '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
+			gem: '<path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/>',
 			'arrow-left': '<path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>'
 		};
 		const Icon = {
@@ -663,9 +741,17 @@
 					return list;
 				});
 				const typeLabel = (t) => ({ 'Common': 'Comum', 'Stage Boss': 'Chefe de Fase', 'Act Boss': 'Chefe de Ato', 'Soul Stone': 'Pedra da Alma' }[t] || t);
-				const gradeLabel = (g) => ({ COMMON:'Comum', UNCOMMON:'Incomum', RARE:'Raro', EPIC:'Épico', LEGENDARY:'Lendário', MYTHIC:'Mítico', IMMORTAL:'Imortal', ARCANA:'Arcano', BEYOND:'Além', CELESTIAL:'Celestial' }[g] || (g || '').toLowerCase());
+				const gradeLabel = (g) => ({ COMMON:'Comum', UNCOMMON:'Incomum', RARE:'Raro', EPIC:'Épico', LEGENDARY:'Lendário', MYTHIC:'Mítico', IMMORTAL:'Imortal', ARCANA:'Arcano', BEYOND:'Além', CELESTIAL:'Celestial', DIVINE:'Divino', COSMIC:'Cósmico' }[g] || (g || '').toLowerCase());
 				const typeClass = (t) => ({ 'Common': 't-common', 'Stage Boss': 't-boss', 'Act Boss': 't-act', 'Soul Stone': 't-soul' }[t] || '');
-				const fmtPct = (x) => (x >= 100 ? '100%' : (x || 0).toFixed(1) + '%');
+				const fmtPct = (x) => {
+					x = x || 0;
+					if (x >= 100) return '100%';
+					if (x <= 0) return '0%';
+					if (x >= 1) return x.toFixed(1) + '%';
+					if (x >= 0.1) return x.toFixed(2) + '%';
+					if (x >= 0.001) return x.toFixed(3) + '%';
+					return '<0.001%';
+				};
 				const selectedHeroes = ref([]);
 				const allHeroes = computed(() => chestData.value.heroes || {});
 				const toggleHero = (k) => {
@@ -690,15 +776,30 @@
 				const selectedChest = ref(null);
 				const itemSearch = ref('');
 				const selectedItem = ref(null);
-				const itemInfo = (id) => (chestData.value.itemsById && chestData.value.itemsById[id]) || null;
+				// catálogo completo de equipamentos (items.json); materiais vêm do loot dos baús
+				const itemsCatalog = ref({});
+				const loadItems = async () => { try { const r = await fetch('items.json'); if (r.ok) itemsCatalog.value = (await r.json()).items || {}; } catch (e) { /* sem items.json */ } };
+				const itemInfo = (id) => itemsCatalog.value[id] || (chestData.value.itemsById && chestData.value.itemsById[id]) || null;
+				// labels e formatação dos atributos de combate (base + inerentes do equipamento)
+				const COMBAT_LABEL = { AttackDamage:'Dano de Ataque', AttackSpeed:'Vel. de Ataque', CastSpeed:'Vel. de Conjuração', CriticalChance:'Chance Crítica', CriticalDamage:'Dano Crítico', MaxHp:'Vida Máxima', Armor:'Armadura', MovementSpeed:'Vel. de Movimento', CooldownReduction:'Redução de Recarga', DodgeChance:'Esquiva', BlockChance:'Bloqueio', DamageReduction:'Redução de Dano', DamageAbsorption:'Absorção de Dano', AllElementalResistance:'Resist. Elemental', HpLeech:'Roubo de Vida', HpRegenPerSec:'Regen. de Vida/s', AddHpPerHit:'Vida por Acerto', AddHpPerKill:'Vida por Abate', Multistrike:'Múltiplos Golpes', ProjectileCount:'Projéteis', IncreaseProjectileDamage:'Dano de Projétil', AreaOfEffect:'Área de Efeito', AddAllSkillLevel:'Nível de Habilidades', BaseAttackCountReduction:'Red. Ataques Base', IncreaseExpAmount:'Ganho de Exp', SkillHealIncrease:'Cura de Habilidade', SkillDurationIncrease:'Duração de Habilidade', SkillRangeExpansion:'Alcance de Habilidade' };
+				const COMBAT_PCT = new Set(['CriticalChance','CriticalDamage','MovementSpeed','CooldownReduction','DodgeChance','BlockChance','DamageReduction','DamageAbsorption','AllElementalResistance','HpLeech','AreaOfEffect','IncreaseExpAmount','SkillHealIncrease','SkillDurationIncrease','SkillRangeExpansion','IncreaseProjectileDamage','CastSpeed']);
+				const combatLabel = (st) => COMBAT_LABEL[st] || st;
+				const fmtCombat = (st, v) => COMBAT_PCT.has(st) ? '+' + (v / 10) + '%' : '+' + formatNumber(v);
+				// base stats p/ mostrar (pula AttackSpeed: a unidade varia por tipo de arma)
+				const baseStatsShown = (id) => ((itemInfo(id) || {}).base || []).filter(b => b.stat !== 'AttackSpeed');
 				const itemName = (id) => (itemInfo(id) && itemInfo(id).name) || ('#' + id);
 				const itemIcon = (id) => (itemInfo(id) && itemInfo(id).icon) || '';
 				const itemGrade = (id) => (itemInfo(id) && itemInfo(id).grade) || '';
-				const itemCat = (id) => (itemInfo(id) && itemInfo(id).cat) || 'equip';
-				const itemCatFilter = ref('');
-				const itemCats = [{ v: '', label: 'Todos' }, { v: 'equip', label: 'Equipamentos' }, { v: 'material', label: 'Materiais' }];
-				// ordem das raridades pra desempatar itens de mesmo nome (ex.: Amuleto de Esmeralda)
-				const gradeRank = (g) => ({ COMMON:0, UNCOMMON:1, RARE:2, EPIC:3, LEGENDARY:4, MYTHIC:5, IMMORTAL:6, ARCANA:7, BEYOND:8, CELESTIAL:9 }[g] ?? 99);
+				const GRADES = ['COMMON', 'UNCOMMON', 'RARE', 'LEGENDARY', 'IMMORTAL', 'ARCANA', 'BEYOND', 'CELESTIAL', 'DIVINE', 'COSMIC'];
+				const gradeRank = (g) => ({ COMMON:0, UNCOMMON:1, RARE:2, EPIC:3, LEGENDARY:4, MYTHIC:5, IMMORTAL:6, ARCANA:7, BEYOND:8, CELESTIAL:9, DIVINE:10, COSMIC:11 }[g] ?? 99);
+				const gradeBelow = (g) => { const i = GRADES.indexOf(g); return i > 0 ? gradeLabel(GRADES[i - 1]) : ''; };
+				const partFilters = [{ v: '', label: 'Todos' }, { v: 'weapon', label: 'Arma' }, { v: 'offhand', label: 'Mão secundária' }, { v: 'armor', label: 'Armadura' }, { v: 'accessory', label: 'Acessório' }];
+				const partLabel = (p) => ({ weapon: 'Arma', offhand: 'Mão secundária', armor: 'Armadura', accessory: 'Acessório', material: 'Material' }[p] || '');
+				const gradeFilter = ref('');
+				const partFilter = ref('');
+				const lvlMin = ref(null);
+				const lvlMax = ref(null);
+				const obtainableOnly = ref(true);
 				const heroList = computed(() => Object.entries(chestData.value.heroes || {})
 					.map(([key, v]) => ({ key, name: v.name, dlc: v.dlc })));
 				const itemIndex = computed(() => {
@@ -712,14 +813,33 @@
 					});
 					return idx;
 				});
-				const itemList = computed(() => Object.keys(itemIndex.value)
-					.map(id => ({ id, name: itemName(id), grade: itemGrade(id), cat: itemCat(id) }))
-					.sort((a, b) => a.name.localeCompare(b.name) || gradeRank(a.grade) - gradeRank(b.grade)));
+				// lista unificada: equipamentos do catálogo + materiais do loot dos baús
+				const allItemsList = computed(() => Object.keys(itemsCatalog.value).map(id => { const v = itemsCatalog.value[id]; return { id, name: v.name, grade: v.grade, icon: v.icon, part: v.part, gear: v.gear, level: v.level, obtainable: v.obtainable, drops: v.drops, slots: v.slots, alchemyGold: v.alchemyGold, cubeExp: v.cubeExp }; }));
 				const filteredItems = computed(() => {
 					const q = itemSearch.value.trim().toLowerCase();
-					let list = itemCatFilter.value ? itemList.value.filter(it => it.cat === itemCatFilter.value) : itemList.value;
-					return q ? list.filter(it => it.name.toLowerCase().includes(q)) : list;
+					let list = allItemsList.value;
+					if (obtainableOnly.value) list = list.filter(it => it.obtainable);
+					if (gradeFilter.value) list = list.filter(it => it.grade === gradeFilter.value);
+					if (partFilter.value) list = list.filter(it => it.part === partFilter.value);
+					if (lvlMin.value) list = list.filter(it => it.level >= lvlMin.value);
+					if (lvlMax.value) list = list.filter(it => it.level <= lvlMax.value);
+					if (q) list = list.filter(it => it.name.toLowerCase().includes(q));
+					return list.slice().sort((a, b) => gradeRank(a.grade) - gradeRank(b.grade) || a.level - b.level || a.name.localeCompare(b.name));
 				});
+				const itemShown = ref(60);
+				const shownItems = computed(() => filteredItems.value.slice(0, itemShown.value));
+				const onItemsScroll = (e) => { const el = e.target; if (el.scrollHeight - el.scrollTop - el.clientHeight < 400 && itemShown.value < filteredItems.value.length) itemShown.value += 60; };
+				watch([gradeFilter, partFilter, lvlMin, lvlMax, itemSearch, obtainableOnly], () => { itemShown.value = 60; });
+				// MATERIAIS (aba própria)
+				const matSearch = ref('');
+				const materialsList = computed(() => {
+					const mat = chestData.value.itemsById || {};
+					const q = matSearch.value.trim().toLowerCase();
+					let out = Object.keys(mat).filter(id => mat[id].cat === 'material').map(id => ({ id, name: mat[id].name, grade: mat[id].grade, icon: mat[id].icon }));
+					if (q) out = out.filter(it => it.name.toLowerCase().includes(q));
+					return out.sort((a, b) => gradeRank(a.grade) - gradeRank(b.grade) || a.name.localeCompare(b.name));
+				});
+				const selectedMaterial = ref(null);
 				// um item pode estar em vários grupos do mesmo baú -> soma a chance por baú.
 				const itemChests = (id) => {
 					const byChest = {};
@@ -841,13 +961,16 @@
 					finally { updating.value = false; }
 				};
 
+				// trocar de aba limpa a seleção atual (baú/item/material) -> volta pro grid
+				const goView = (id) => { selectedChest.value = null; selectedItem.value = null; selectedMaterial.value = null; view.value = id; };
 				const navItems = [
 					{ id: 'painel', label: 'Painel', icon: 'dashboard' },
 					{ id: 'fases', label: 'Fases', icon: 'shield' },
 					{ id: 'runas', label: 'Runas', icon: 'sparkles' },
 					{ id: 'pets', label: 'Pets', icon: 'paw' },
 					{ id: 'chests', label: 'Baús', icon: 'package' },
-					{ id: 'items', label: 'Itens', icon: 'swords' }
+					{ id: 'items', label: 'Itens', icon: 'swords' },
+					{ id: 'materiais', label: 'Materiais', icon: 'gem' }
 				];
 				const addStage = ref('');
 				const addTime = ref('');
@@ -962,13 +1085,14 @@
 				};
 				const statGroup = (s) => STAT_GROUP[s] || 'recompensa';
 				const attrTab = ref('exploracao');
+				const ATTR_HIDE = new Set(['UnlockOfflineReward','UnlockAutoOpenNormalChest','UnlockAutoOpenStageBossChest','ReduceAutoOpenNormalChestTime','ReduceAutoOpenStageBossChestTime','OpenOneTypeChestAllAtOnce','OpenAllTypeChestAllAtOnce']);
 
 				// soma dos efeitos dos níveis JÁ possuídos -> Lista de atributos
 				const attributeTotals = computed(() => {
 					const t = {};
 					Object.values(runesData.value).forEach(rune => {
 						const lvl = runeLevel(rune.key);
-						(rune.levels || []).forEach(l => { if (l.level <= lvl && l.value) t[l.stat] = (t[l.stat] || 0) + l.value; });
+						(rune.levels || []).forEach(l => { if (l.level <= lvl && l.value && !ATTR_HIDE.has(l.stat)) t[l.stat] = (t[l.stat] || 0) + l.value; });
 					});
 					return Object.entries(t).map(([stat, value]) => ({ stat, value, label: statLabel(stat), unit: statUnit(stat), group: statGroup(stat) }))
 						.sort((a, b) => a.label.localeCompare(b.label));
@@ -1099,7 +1223,7 @@
 					petsData.value.forEach(pt => { if ((pt.name || '').toLowerCase().includes(q)) pe.push({ label: pt.name, sub: 'Pet', icon: 'paw', act: () => { view.value = 'pets'; } }); });
 					if (pe.length) groups.push({ cat: 'Pets', items: pe.slice(0, CAP) });
 					const im = [];
-					itemList.value.forEach(it => { if (it.name.toLowerCase().includes(q)) im.push({ label: it.name, sub: gradeLabel(it.grade), icon: 'swords', act: () => { itemSearch.value = ''; itemCatFilter.value = ''; selectedItem.value = it.id; view.value = 'items'; } }); });
+					allItemsList.value.forEach(it => { if (it.obtainable && it.name.toLowerCase().includes(q)) im.push({ label: it.name, sub: gradeLabel(it.grade), icon: 'swords', act: () => { itemSearch.value = ''; gradeFilter.value = ''; partFilter.value = ''; lvlMin.value = null; lvlMax.value = null; obtainableOnly.value = true; selectedItem.value = it.id; view.value = 'items'; } }); });
 					if (im.length) groups.push({ cat: 'Itens', items: im.slice(0, 8) });
 					const ch = [];
 					(chestData.value.chests || []).forEach(c => { if ((c.name || '').toLowerCase().includes(q)) ch.push({ label: c.name, sub: typeLabel(c.type), icon: 'package', act: () => { selectedChest.value = c; chestType.value = ''; chestStage.value = ''; view.value = 'chests'; } }); });
@@ -1327,7 +1451,7 @@
 				// um painel ativo e, na aba nova, cede em vez de rodar um 2º painel.
 				const duplicateTab = ref(false);
 				let dashChannel = null;
-				const startApp = () => { loadStagesList(); loadStageDetails(); loadMonsterSprites(); loadHeroes(); loadRunes(); loadPets(); loadChests(); fetchStats(); initUpdate(); watchVersion(); setInterval(fetchStats, 2000); setInterval(watchVersion, 4000); setInterval(pollUpdateAvailability, 10 * 60 * 1000); pollLogs(); setInterval(pollLogs, 1500); };
+				const startApp = () => { loadStagesList(); loadStageDetails(); loadMonsterSprites(); loadHeroes(); loadRunes(); loadPets(); loadChests(); loadItems(); fetchStats(); initUpdate(); watchVersion(); setInterval(fetchStats, 2000); setInterval(watchVersion, 4000); setInterval(pollUpdateAvailability, 10 * 60 * 1000); pollLogs(); setInterval(pollLogs, 1500); };
 				const useThisTab = () => { duplicateTab.value = false; startApp(); };
 				onMounted(() => {
 					if ('BroadcastChannel' in window) {
@@ -1350,23 +1474,24 @@
 
 				return {
 					statsReport, stagesList, calibBaseTime, calibLimitStage, calibLimitTime,
-					view, navItems, viewTitle, sortKey, sortDir, globalSearch, searchActive, searchResults, pickSearch,
+					view, navItems, viewTitle, goView, sortKey, sortDir, globalSearch, searchActive, searchResults, pickSearch,
 					sortedStages, bestGoldData, bestXpData, totalRunsAllStages,
 					addStage, addTime, addMapTime, resetStage,
 					fetchStats, resetHistory, submitCalibration, setSort, rankBy, sortArrow,
 					stageHP, chestRateByStage, chestsPerHour, formatItems,
 					stageDetails, fasesStage, openStageTab, stageDetail, stageSummary, stageChests, fmtInt, stageName, stageLevel,
 					monsterSprite, detailStageKeys, gotoStageDelta, fasesIndex, activeHeroList,
+					itemsCatalog, GRADES, partFilters, partLabel, combatLabel, fmtCombat, baseStatsShown, gradeFilter, partFilter, lvlMin, lvlMax, obtainableOnly, shownItems, gradeBelow, itemInfo,
 					runesData, playerGold, runeLevel, attributeTotals, attrGroups, attrTab, attrGroupOrder, ATTR_GROUP_LABEL, nextLevelCost, isUnlockable, unlockHint, runeState,
 					runeNX, runeNY, runeCanvasW, runeCanvasH, runeLineList, runeListSorted, selectedRune, fmtRuneVal, statLabel, statUnit,
 					runeZoom, runePanX, runePanY, onRuneWheel, onRuneDown, onRuneMove, onRuneUp, selectRune, zoomRunes, fitRunes,
 					petsData, petsSorted, activePet, activePetKey, petState, petStatList, petUnlockText, ownedPetSet, petTotals,
 					confidence, confLabel,
 					formatDifficulty, formatStageName, formatNumber, formatTime,
-					chestData, chestType, chestStage, chestTypes, chestStageOptions, filteredChests, itemCatFilter, itemCats,
+					chestData, chestType, chestStage, chestTypes, chestStageOptions, filteredChests,
 					fmtPct, typeLabel, typeClass, gradeLabel, activeLoot, lootCount, updating, updateChests,
 					selectedHeroes, allHeroes, toggleHero, chestHeroes,
-					selectedChest, itemSearch, selectedItem, itemList, filteredItems, itemChests, itemName, itemIcon, itemGrade, heroList,
+					selectedChest, itemSearch, selectedItem, filteredItems, shownItems, onItemsScroll, itemChests, itemName, itemIcon, itemGrade, heroList, matSearch, materialsList, selectedMaterial,
 					appVersion, updateInfo, updateBusy, updateMsg, checkUpdate, applyUpdate, toasts,
 					duplicateTab, useThisTab, quitApp, quitDone,
 					consoleLogs, consoleOpen, toggleConsole, clearConsole
