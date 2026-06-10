@@ -38,3 +38,10 @@ scripts/
 
 # tools/ contém o extract.py (essencial pro CI) -> VAI pro git; ignora só o cache do Python
 tools/__pycache__/
+
+# binário compilado (injeta a chave ES3 via ldflags; nunca commitar)
+optimizer.exe
+# ferramentas/temporários de análise (playwright, il2cpp dumps) — NÃO commitar
+tools/_scrape/
+tools/_il2cpp/
+node_modules/

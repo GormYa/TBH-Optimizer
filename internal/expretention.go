@@ -1,15 +1,49 @@
 package internal
 
-// Penalidade de XP por diferenca de nivel ("exp mantida"): o jogo reduz o XP quando a
-// fase esta longe do nivel do heroi -- tanto ACIMA (fase dificil demais) quanto ABAIXO
-// (fase facil demais). Mecanica escondida (sem dado/identificador nos arquivos); a curva
-// foi derivada da tabela do taskbarhero.wiki: 100% dentro de +-6 niveis do heroi, depois
-// -4% por nivel de distancia, em qualquer direcao.
-const (
-	expPenaltyThreshold = 6
-	expPenaltyPerLevel  = 0.04
-	expRetentionFloor   = 0.0
-)
+// Penalidade de XP por diferenca de nivel ("exp mantida").
+// E uma PARABOLA ate um piso, ASSIMETRICA por direcao:
+//   - over-leveled (heroi >= fase): cai mais rapido, piso 0.5
+//   - under-leveled (heroi <  fase): cai mais devagar, piso 0.4
+// Dentro de `flat` niveis de diferenca: 100%. De `flat` ate `end`: 1 - (1-piso)*t^2,
+// com t = (diff-flat)/(end-flat). A partir de `end`: piso. `flat`/`end` crescem
+// devagar com o nivel do heroi (bandas validadas contra a emulacao, erro < 0.06).
+func expRetentionBandsOver(hero int) (flat, end int) {
+	if hero < 3 {
+		flat = hero - 1
+	} else {
+		flat = 2
+	}
+	if hero <= 53 {
+		end = 8
+	} else {
+		end = 9
+	}
+	return
+}
+
+func expRetentionBandsUnder(hero int) (flat, end int) {
+	switch {
+	case hero <= 6:
+		flat = 5
+	case hero <= 53:
+		flat = 6
+	default:
+		flat = 7
+	}
+	switch {
+	case hero <= 4:
+		end = 11
+	case hero <= 6:
+		end = 12
+	case hero <= 27:
+		end = 13
+	case hero <= 53:
+		end = 14
+	default:
+		end = 15
+	}
+	return
+}
 
 // expRetention devolve a fracao de XP mantida (0..1) numa fase de nivel stageLevel
 // para um heroi de nivel heroLevel. 1.0 quando nao ha dado suficiente.
@@ -17,19 +51,28 @@ func expRetention(stageLevel, heroLevel int) float64 {
 	if stageLevel <= 0 || heroLevel <= 0 {
 		return 1.0
 	}
-	diff := stageLevel - heroLevel
+	hero := min(heroLevel, 100)
+	diff := stageLevel - hero
 	if diff < 0 {
 		diff = -diff
 	}
-	over := diff - expPenaltyThreshold
-	if over <= 0 {
+	var flat, end int
+	var floor float64
+	if hero >= stageLevel {
+		flat, end = expRetentionBandsOver(hero)
+		floor = 0.5
+	} else {
+		flat, end = expRetentionBandsUnder(hero)
+		floor = 0.4
+	}
+	if diff <= flat {
 		return 1.0
 	}
-	r := 1.0 - expPenaltyPerLevel*float64(over)
-	if r < expRetentionFloor {
-		return expRetentionFloor
+	if end <= flat || diff >= end {
+		return floor
 	}
-	return r
+	t := float64(diff-flat) / float64(end-flat)
+	return 1.0 - (1.0-floor)*t*t
 }
 
 // runeLevels devolve runeKey -> nivel a partir do save (runas que o jogador tem).

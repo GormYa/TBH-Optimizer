@@ -491,7 +491,8 @@
 									<div class="stat-box" v-for="(b, i) in baseStatsShown(selectedItem)" :key="'b' + i"><span class="sb-lbl">{{ combatLabel(b.stat) }} <em>base</em></span><span class="sb-val">{{ fmtBaseStat(b) }}</span></div>
 									<div class="stat-box inh" v-for="(b, i) in (itemInfo(selectedItem).inherent || [])" :key="'i' + i"><span class="sb-lbl">{{ combatLabel(b.stat) }} <em>inerente</em></span><span class="sb-val">{{ fmtInh(b) }}</span></div>
 								</div>
-								<h4 class="sec-title">Valor de revenda</h4>
+								<template v-if="itemInfo(selectedItem).unique"><h4 class="sec-title">Stats Únicas</h4><div class="unique-mod"><icon name="sparkles" :size="15"></icon> <span>{{ itemInfo(selectedItem).unique }}</span></div></template>
+									<h4 class="sec-title">Valor de revenda</h4>
 								<div class="resale">
 									<div class="resale-box"><span class="rb-lbl">Ouro de Alquimia</span><span class="rb-val g-gold">{{ formatNumber(itemInfo(selectedItem).alchemyGold || 0) }}</span></div>
 									<div class="resale-box"><span class="rb-lbl">EXP do Cubo</span><span class="rb-val g-xp">{{ formatNumber(itemInfo(selectedItem).cubeExp || 0) }}</span></div>
@@ -574,6 +575,10 @@
 								<div class="gt-sec-h">Atributos Inerentes</div>
 								<div class="gt-inh" v-for="(b, i) in hoverItem.inherent" :key="'gi' + i">{{ combatLabel(b.stat) }} <b>{{ fmtInh(b) }}</b></div>
 							</div>
+							<div class="gt-sec" v-if="hoverItem.unique">
+								<div class="gt-sec-h">Stats Únicas</div>
+								<div class="gt-unique">{{ hoverItem.unique }}</div>
+							</div>
 							<div class="gt-sec" v-if="tipSlots(hoverItem).length">
 								<div class="gt-sec-h">Espaços de gema (vazios)</div>
 								<div class="gt-slots">
@@ -652,8 +657,9 @@
 						<div class="map-canvas">
 							<img class="map-bg" :src="mapBg" alt="" onerror="this.style.opacity=.15">
 														<button v-for="s in mapStages" :key="s.key" class="map-hot" :class="{ boss: s.boss, on: fasesStage === s.key }" :style="{ left: s.pos.x + '%', top: s.pos.y + '%' }" @click="selectMapStage(s.key)" @mouseenter="onStageHover(s, $event)" @mouseleave="clearTip">
+								<img class="map-ring" v-if="fasesStage === s.key" src="map_marker.png" alt="">
 								<span class="map-flag" v-if="fasesStage === s.key"></span>
-								<span class="mh-num">{{ s.boss ? '★' : s.stageNo }}</span>
+								<span class="mh-label">[{{ s.act }}-{{ s.stageNo }}]</span>
 							</button>
 						</div>
 						<p class="fmap-cap">Ato {{ mapAct }} · {{ formatDifficulty(mapDiff) }} — clique num nó pra inspecionar.</p>
@@ -673,9 +679,10 @@
 								</div>
 								<div class="gt-sec">
 									<div class="gt-sec-h">Dados da fase</div>
-									<div class="gt-row"><span>Ondas</span><b>{{ hoverStage.waves }}</b></div>
-									<div class="gt-row"><span>Mobs / onda</span><b>{{ hoverStage.perWave }}</b></div>
-									<div class="gt-row"><span>Tipos de mobs</span><b>{{ hoverStage.monsterTypes }}</b></div>
+									<div class="gt-row" v-if="hoverStage.boss"><span>Tipo</span><b style="color:#ff9b6b">Chefe do ato</b></div>
+									<div class="gt-row" v-if="hoverStage.waves"><span>Ondas</span><b>{{ hoverStage.waves }}</b></div>
+									<div class="gt-row" v-if="hoverStage.perWave"><span>Mobs / onda</span><b>{{ hoverStage.perWave }}</b></div>
+									<div class="gt-row" v-if="hoverStage.monsterTypes"><span>Tipos de mobs</span><b>{{ hoverStage.monsterTypes }}</b></div>
 									<div class="gt-row"><span>Ouro / clear</span><b class="g-gold">{{ fmtInt(hoverStage.expectedGold) }}</b></div>
 									<div class="gt-row"><span>XP / clear</span><b class="g-xp">{{ fmtInt(hoverStage.expectedEXP) }}</b></div>
 								</div>
@@ -786,9 +793,9 @@
 					const mapActs = [1, 2, 3];
 					const mapDiffs = ['NORMAL', 'NIGHTMARE', 'HELL', 'TORMENT'];
 					const MAP_NODES = {
-						1: [{ x: 48.7, y: 90.9 }, { x: 56.0, y: 84.0 }, { x: 59.3, y: 75.6 }, { x: 60.7, y: 66.7 }, { x: 59.3, y: 57.9 }, { x: 55.3, y: 50.0 }, { x: 50.7, y: 42.1 }, { x: 42.7, y: 35.1 }, { x: 34.0, y: 29.1 }, { x: 44.0, y: 14.0, boss: true }],
-						2: [{ x: 44.7, y: 88.1 }, { x: 53.3, y: 81.2 }, { x: 58.0, y: 72.8 }, { x: 66.7, y: 65.3 }, { x: 55.3, y: 61.2 }, { x: 46.7, y: 53.7 }, { x: 43.3, y: 45.3 }, { x: 51.3, y: 37.9 }, { x: 53.3, y: 29.1 }, { x: 54.0, y: 15.0, boss: true }],
-						3: [{ x: 53.3, y: 88.1 }, { x: 48.7, y: 79.3 }, { x: 52.7, y: 70.5 }, { x: 46.0, y: 62.6 }, { x: 49.3, y: 53.7 }, { x: 38.7, y: 48.1 }, { x: 48.7, y: 42.6 }, { x: 58.7, y: 36.5 }, { x: 52.7, y: 28.6 }, { x: 50.0, y: 15.0, boss: true }],
+						1: [{ x: 48.83, y: 91.05 }, { x: 56.17, y: 84.07 }, { x: 59.5, y: 75.7 }, { x: 60.83, y: 66.86 }, { x: 59.5, y: 58.02 }, { x: 55.17, y: 50.12 }, { x: 50.5, y: 42.21 }, { x: 42.83, y: 35.23 }, { x: 34.17, y: 29.19 }, { x: 46.88, y: 22.8, boss: true }],
+						2: [{ x: 44.83, y: 88.26 }, { x: 53.5, y: 81.28 }, { x: 58.17, y: 72.91 }, { x: 66.83, y: 65.47 }, { x: 55.5, y: 61.28 }, { x: 46.83, y: 53.84 }, { x: 43.5, y: 45.47 }, { x: 51.5, y: 38.02 }, { x: 53.5, y: 29.19 }, { x: 53.5, y: 20.34, boss: true }],
+						3: [{ x: 53.5, y: 88.26 }, { x: 48.83, y: 79.42 }, { x: 52.83, y: 70.58 }, { x: 46.17, y: 62.67 }, { x: 49.5, y: 53.84 }, { x: 38.83, y: 48.26 }, { x: 48.83, y: 42.67 }, { x: 58.83, y: 36.63 }, { x: 52.83, y: 28.72 }, { x: 48.17, y: 20.34, boss: true }],
 					};
 					const mapBg = computed(() => 'act_bg/Act' + mapAct.value + '_Bg.png');
 					const mapStages = computed(() => {
@@ -867,7 +874,7 @@
 					const present = new Set((c.loot || []).map(g => g.hero).filter(Boolean));
 					const active = new Set(['']);
 					selectedHeroes.value.forEach(k => { if (present.has(k)) active.add(k); });
-					const groups = (c.loot || []).filter(g => active.has(g.hero || ''));
+					const groups = (c.loot || []).filter(g => active.has(g.hero || '') && (g.weight || 0) > 0);
 					const denom = groups.reduce((s, g) => s + (g.weight || 0), 0) || 1;
 					return groups.map(g => ({ ...g, probability: 100 * (g.weight || 0) / denom }))
 						.sort((a, b) => b.probability - a.probability);
@@ -970,7 +977,7 @@
 					return idx;
 				});
 				// lista unificada: equipamentos do catálogo + materiais do loot dos baús
-				const allItemsList = computed(() => Object.keys(itemsCatalog.value).map(id => { const v = itemsCatalog.value[id]; return { id, name: v.name, grade: v.grade, icon: v.icon, part: v.part, gear: v.gear, level: v.level, obtainable: v.obtainable, drops: v.drops, slots: v.slots, alchemyGold: v.alchemyGold, cubeExp: v.cubeExp, atk: v.atk, base: v.base, inherent: v.inherent, tradable: v.tradable }; }));
+				const allItemsList = computed(() => Object.keys(itemsCatalog.value).map(id => { const v = itemsCatalog.value[id]; return { id, name: v.name, grade: v.grade, icon: v.icon, part: v.part, gear: v.gear, level: v.level, obtainable: v.obtainable, drops: v.drops, slots: v.slots, alchemyGold: v.alchemyGold, cubeExp: v.cubeExp, atk: v.atk, base: v.base, inherent: v.inherent, tradable: v.tradable, unique: v.unique }; }));
 				const filteredItems = computed(() => {
 					const q = itemSearch.value.trim().toLowerCase();
 					let list = allItemsList.value;

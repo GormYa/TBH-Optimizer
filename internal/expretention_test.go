@@ -2,25 +2,34 @@ package internal
 
 import "testing"
 
-// Valida a curva de exp mantida contra a tabela do wiki (heroi nivel 32):
-// lvl<=38 = 100%, lvl39 = 96%, lvl40 = 92% (-4% por nivel acima de heroi+6).
+// Valida a curva REAL de exp mantida (decompilada do GameAssembly, metodo vy.jwe),
+// para heroi nivel 32. Parabola ate piso, assimetrica:
+//   over-leveled (heroi>=fase): flat 2, end 8, piso 0.5
+//   under-leveled (heroi< fase): flat 6, end 14, piso 0.4
 func TestExpRetention(t *testing.T) {
 	cases := []struct {
 		stage, hero int
 		want        float64
 	}{
-		// over-level (fase acima do heroi)
-		{30, 32, 1.00}, {36, 32, 1.00}, {38, 32, 1.00},
-		{39, 32, 0.96}, {40, 32, 0.92}, {44, 32, 0.76},
-		// under-level (fase abaixo do heroi) -- simetrico
-		{26, 32, 1.00}, {20, 32, 0.76}, {10, 32, 0.36},
+		// over-level (fase <= heroi): diff = 32-stage
+		{32, 32, 1.00},   // diff 0
+		{30, 32, 1.00},   // diff 2 (= flat)
+		{26, 32, 0.7778}, // diff 6: 1 - 0.5*(4/6)^2
+		{20, 32, 0.50},   // diff 12 >= end -> piso
+		{10, 32, 0.50},   // diff 22 -> piso
+		// under-level (fase > heroi): diff = stage-32
+		{36, 32, 1.00},   // diff 4
+		{38, 32, 1.00},   // diff 6 (= flat)
+		{40, 32, 0.9625}, // diff 8: 1 - 0.6*(2/8)^2
+		{44, 32, 0.6625}, // diff 12: 1 - 0.6*(6/8)^2
+		{50, 32, 0.40},   // diff 18 >= end -> piso
 		// guardas
 		{0, 32, 1.00}, {40, 0, 1.00},
 	}
 	for _, c := range cases {
 		got := expRetention(c.stage, c.hero)
-		if d := got - c.want; d > 1e-9 || d < -1e-9 {
-			t.Errorf("expRetention(%d,%d)=%.3f, quero %.3f", c.stage, c.hero, got, c.want)
+		if d := got - c.want; d > 5e-3 || d < -5e-3 {
+			t.Errorf("expRetention(%d,%d)=%.4f, quero %.4f", c.stage, c.hero, got, c.want)
 		}
 	}
 }
