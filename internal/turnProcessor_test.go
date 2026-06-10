@@ -198,6 +198,81 @@ func TestStageChangeInflatedTimeRejected(t *testing.T) {
 	}
 }
 
+// INICIO NO MEIO DO CICLO: quando o monitor abre com wave != 0, a 1a janela mede so
+// um pedaco do ciclo (ex.: 97s onde o clear real e ~255s). Deve ser DESCARTADA, e o
+// proximo clear completo conta.
+func TestStartMidCycleDiscardsFirstClear(t *testing.T) {
+	old, _ := os.Getwd()
+	if err := os.Chdir(t.TempDir()); err != nil {
+		t.Fatal(err)
+	}
+	defer os.Chdir(old)
+
+	const stage = 2209
+	ctrl := Control{
+		UseEMA: true, EMAAlpha: 0.2,
+		FarmStages:          map[int]FarmStageInfo{stage: {Key: stage, Label: "2-9", TotalHP: 27000000, ExpectedGold: 50000, ExpectedEXP: 940000, Waves: 23, Level: 45}},
+		HeroStates:          map[int]HeroState{201: {Level: 52, Xp: 0}},
+		ActiveHeroCount:     3,
+		HeroLevel:           52,
+		LastCurrentStageKey: stage,
+		LastPlayTime:        1000,
+		LastGold:            500,
+		primeFirstClear:     true, // monitor comecou no meio do ciclo
+	}
+	// "clear" parcial de 97s (meio ciclo) -> descartado
+	calculateAndLogRound(&ctrl, newClearSave(stage, 1097, 52000, 201, 52, 1987378))
+	if s, ok := ctrl.StageHistory.Get(stage); ok && s.TotalRuns > 0 {
+		t.Fatalf("1a janela parcial deveria ser descartada; runs=%d", s.TotalRuns)
+	}
+	if ctrl.primeFirstClear {
+		t.Fatal("primeFirstClear deveria ter sido limpo")
+	}
+	// proximo clear completo (255s) -> conta
+	calculateAndLogRound(&ctrl, newClearSave(stage, 1352, 147000, 201, 52, 5587378))
+	s, ok := ctrl.StageHistory.Get(stage)
+	runs := 0
+	if s != nil {
+		runs = s.TotalRuns
+	}
+	if !ok || runs != 1 {
+		t.Fatalf("o 2o clear (completo) deveria contar; runs=%d", runs)
+	}
+}
+
+// TROCA DE FASE com inflacao MODERADA (1.8x): antes a banda de 3x deixava passar
+// (era o bug do clear de 463s onde a media e 224s). Com a banda de troca em 1.5x, cai.
+func TestStageChangeModerateInflationRejected(t *testing.T) {
+	old, _ := os.Getwd()
+	if err := os.Chdir(t.TempDir()); err != nil {
+		t.Fatal(err)
+	}
+	defer os.Chdir(old)
+
+	const sA, sB = 2206, 2209
+	ctrl := Control{
+		UseEMA: true, EMAAlpha: 0.2,
+		FarmStages: map[int]FarmStageInfo{
+			sA:   {Key: sA, TotalHP: 100000, ExpectedGold: 4000, ExpectedEXP: 60000, Waves: 17, Level: 30},
+			sB:   {Key: sB, TotalHP: 120000, ExpectedGold: 4500, ExpectedEXP: 65000, Waves: 17, Level: 30},
+			1102: {Key: 1102, TotalHP: 50000, Waves: 15, Level: 25},
+		},
+		HeroStates:      map[int]HeroState{201: {Level: 33, Xp: 0}},
+		ActiveHeroCount: 1, HeroLevel: 33,
+	}
+	ctrl.StageHistory.Update(sA, 200, 80000, 3000000, true, 0.2, 1, 0, nil)
+	ctrl.StageHistory.Update(1102, 100, 40000, 1500000, true, 0.2, 1, 0, nil)
+	ctrl.LastCurrentStageKey = sA
+	ctrl.LastPlayTime = 1000
+	ctrl.LastGold = 500
+
+	// est sB ~240s; 430s = 1.8x numa fase TROCADA -> cai (1.5x), antes (3x) passava
+	calculateAndLogRound(&ctrl, newClearSave(sB, 1430, 100000, 201, 33, 4000000))
+	if s, ok := ctrl.StageHistory.Get(sB); ok && s.TotalRuns > 0 {
+		t.Fatalf("troca de fase inflada a 1.8x deveria cair; runs=%d", s.TotalRuns)
+	}
+}
+
 func dirEvent(name string, op fsnotify.Op) fsnotify.Event {
 	return fsnotify.Event{Name: filepath.Join(filepath.Dir(testSavePath), name), Op: op}
 }

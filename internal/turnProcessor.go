@@ -49,6 +49,7 @@ func setupWatcher(ctrl *Control) (string, *fsnotify.Watcher, error) {
 	ctrl.RuneLevels = runeLevels(currentSave)
 	ctrl.OwnedPets = ownedPets(currentSave)
 	ctrl.ActivePet = currentSave.CommonSaveData.ArrangedPetKey
+	ctrl.primeFirstClear = currentSave.CommonSaveData.CurrentStageWave != 0
 
 	archivePath := homeDir + `\AppData\LocalLow\TesseractStudio\TaskbarHero\SaveFile_Live.es3`
 	watcher, err := fsnotify.NewWatcher()
@@ -179,6 +180,11 @@ func isValidRound(timeSpent float64, goldGain int, xpGain float64) bool {
 // timeOutlierFactor: descarta a corrida se o tempo medido passar deste fator
 // vezes o tempo estimado da fase (pega o tempo inflado da troca manual de mapa).
 const timeOutlierFactor = 3.0
+
+// stageChangeOutlierFactor: banda mais apertada quando a fase MUDOU. Um auto-avanco
+// limpo dura ~o tempo esperado; uma troca manual/parcial carrega tempo do mapa anterior.
+// 1.5x aceita o avanco limpo e corta o clear inflado pela transicao.
+const stageChangeOutlierFactor = 1.5
 
 // goldFloorFactor: descarta a corrida se o ouro ficar abaixo deste fator vezes a
 // media da fase. Pega MORTE / clear parcial (o ganho parcial fica, mas e bem
@@ -341,15 +347,26 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 		return
 	}
 
+	if ctrl.primeFirstClear {
+		ctrl.primeFirstClear = false
+		advanceClock()
+		Logf("info", "Fase %s: o monitor começou no meio do ciclo — esta primeira janela é parcial (%.0fs) e foi descartada. Conto a partir do próximo clear completo.", ctrl.stageDisplay(stage), timeSpent)
+		return
+	}
+
 	if avg := ctrl.recordedAvgTime(stage); avg > 0 && timeSpent < avg/timeOutlierFactor {
 		Logf("reject", "Fase %s descartada: %.0fs curto demais para um clear (média ~%.0fs) — fragmento de save, não um ciclo completo. Junto com o próximo ciclo.", ctrl.stageDisplay(stage), timeSpent, avg)
 		return
 	}
 
-	if !isTimeTrustworthy(timeSpent, estTime, timeOutlierFactor, stageChanged) {
+	trustFactor := timeOutlierFactor
+	if stageChanged {
+		trustFactor = stageChangeOutlierFactor
+	}
+	if !isTimeTrustworthy(timeSpent, estTime, trustFactor, stageChanged) {
 		advanceClock()
 		if estTime > 0 {
-			Logf("reject", "Fase %s descartada: tempo %.0fs muito acima do esperado (~%.0fs). Provável ociosidade/troca manual no meio do ciclo.", ctrl.stageDisplay(stage), timeSpent, estTime)
+			Logf("reject", "Fase %s descartada: tempo %.0fs acima do esperado (~%.0fs). Provável troca de fase carregando tempo de outro mapa, ou ociosidade no meio do ciclo.", ctrl.stageDisplay(stage), timeSpent, estTime)
 		} else {
 			Logf("reject", "Fase %s descartada: a fase mudou e ainda não há base de tempo pra validar o clear. O próximo ciclo estável na fase conta normal.", ctrl.stageDisplay(stage))
 		}

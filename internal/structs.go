@@ -98,6 +98,7 @@ type Control struct {
 	ActiveHeroCount     int
 	ActiveHeroes        []ActiveHero
 	lastMidStage        int
+	primeFirstClear     bool
 	Gold                int
 	RuneLevels          map[int]int
 	OwnedPets           []int
