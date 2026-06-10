@@ -118,6 +118,86 @@ func TestLowHPStageNotRejected(t *testing.T) {
 	}
 }
 
+// AUTO-AVANCO: ao limpar uma fase e o jogo avancar pra proxima, o clear da fase nova
+// (sem historico proprio) deve ser CONTADO quando o tempo cabe na estimativa por HP --
+// antes era descartado cego so por a fase ter mudado, e o farm de progressao nunca
+// acumulava dado.
+func TestAutoAdvanceCleanClearIsCounted(t *testing.T) {
+	old, _ := os.Getwd()
+	if err := os.Chdir(t.TempDir()); err != nil {
+		t.Fatal(err)
+	}
+	defer os.Chdir(old)
+
+	const sA, sB = 2206, 2209
+	ctrl := Control{
+		UseEMA: true, EMAAlpha: 0.2,
+		FarmStages: map[int]FarmStageInfo{
+			sA:   {Key: sA, TotalHP: 100000, ExpectedGold: 4000, ExpectedEXP: 60000, Waves: 17, Level: 30},
+			sB:   {Key: sB, TotalHP: 120000, ExpectedGold: 4500, ExpectedEXP: 65000, Waves: 17, Level: 30},
+			1102: {Key: 1102, TotalHP: 50000, Waves: 15, Level: 25},
+		},
+		HeroStates:      map[int]HeroState{201: {Level: 33, Xp: 0}},
+		ActiveHeroCount: 1, HeroLevel: 33,
+	}
+	// dois pontos medidos -> regressao de tempo da o esperado pra sB (~240s)
+	ctrl.StageHistory.Update(sA, 200, 80000, 3000000, true, 0.2, 1, 0, nil)
+	ctrl.StageHistory.Update(1102, 100, 40000, 1500000, true, 0.2, 1, 0, nil)
+	ctrl.LastCurrentStageKey = sA // viemos de sA e auto-avancamos pra sB
+	ctrl.LastPlayTime = 1000
+	ctrl.LastGold = 500
+
+	// clear limpo de sB: 230s (dentro da banda de ~240s), ganho normal
+	calculateAndLogRound(&ctrl, newClearSave(sB, 1230, 100000, 201, 33, 4000000))
+
+	s, ok := ctrl.StageHistory.Get(sB)
+	runs := 0
+	if s != nil {
+		runs = s.TotalRuns
+	}
+	if !ok || runs != 1 {
+		t.Fatalf("auto-avanço limpo deveria contar o clear de sB; ok=%v runs=%d", ok, runs)
+	}
+	if s.AvgTimeSpent != 230 {
+		t.Fatalf("tempo de sB = %.0fs, esperado 230s (snap do 1o clear)", s.AvgTimeSpent)
+	}
+}
+
+// TROCA MANUAL: quando a fase muda mas o tempo vem inflado (ociosidade/decisao no
+// menu), o clear continua sendo DESCARTADO -- a banda de tempo separa avanco limpo
+// de troca com ociosidade.
+func TestStageChangeInflatedTimeRejected(t *testing.T) {
+	old, _ := os.Getwd()
+	if err := os.Chdir(t.TempDir()); err != nil {
+		t.Fatal(err)
+	}
+	defer os.Chdir(old)
+
+	const sA, sB = 2206, 2209
+	ctrl := Control{
+		UseEMA: true, EMAAlpha: 0.2,
+		FarmStages: map[int]FarmStageInfo{
+			sA:   {Key: sA, TotalHP: 100000, ExpectedGold: 4000, ExpectedEXP: 60000, Waves: 17, Level: 30},
+			sB:   {Key: sB, TotalHP: 120000, ExpectedGold: 4500, ExpectedEXP: 65000, Waves: 17, Level: 30},
+			1102: {Key: 1102, TotalHP: 50000, Waves: 15, Level: 25},
+		},
+		HeroStates:      map[int]HeroState{201: {Level: 33, Xp: 0}},
+		ActiveHeroCount: 1, HeroLevel: 33,
+	}
+	ctrl.StageHistory.Update(sA, 200, 80000, 3000000, true, 0.2, 1, 0, nil)
+	ctrl.StageHistory.Update(1102, 100, 40000, 1500000, true, 0.2, 1, 0, nil)
+	ctrl.LastCurrentStageKey = sA
+	ctrl.LastPlayTime = 1000
+	ctrl.LastGold = 500
+
+	// 800s para sB (esperado ~240s, >3x): troca manual com ociosidade -> descarta
+	calculateAndLogRound(&ctrl, newClearSave(sB, 1800, 100000, 201, 33, 4000000))
+
+	if s, ok := ctrl.StageHistory.Get(sB); ok && s.TotalRuns > 0 {
+		t.Fatalf("clear de sB com tempo inflado (800s) deveria ser descartado; runs=%d", s.TotalRuns)
+	}
+}
+
 func dirEvent(name string, op fsnotify.Op) fsnotify.Event {
 	return fsnotify.Event{Name: filepath.Join(filepath.Dir(testSavePath), name), Op: op}
 }

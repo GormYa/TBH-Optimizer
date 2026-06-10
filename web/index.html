@@ -88,6 +88,10 @@
 						{{ statsReport.calibrated ? 'Calibrado' : 'Aguardando' }}
 					</span>
 				</div>
+				<div class="mini-stat" v-if="statsReport.effective_dps > 0" title="DPS efetivo do seu time, deduzido dos clears reais (HP destruído por segundo). É a base das estimativas de tempo das fases que você ainda não rodou.">
+					<span class="mini-label">DPS efetivo</span>
+					<span class="mini-value">{{ formatNumber(Math.round(statsReport.effective_dps)) }}/s</span>
+				</div>
 				<button class="btn-reset" @click="resetHistory">Zerar Histórico</button>
 				<div class="ver-row">
 					<span class="ver-tag">v{{ appVersion || '—' }}</span>

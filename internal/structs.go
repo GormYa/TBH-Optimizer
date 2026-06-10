@@ -112,6 +112,7 @@ type AnalyticsReport struct {
 	BestXpStage   int                 `json:"best_xp_stage"`
 	Stages        map[int]*StageStats `json:"stages"`
 	Calibrated    bool                `json:"calibrated"`
+	EffectiveDPS  float64             `json:"effective_dps"`
 	HeroLevel     int                 `json:"hero_level"`
 	ActiveHeroes  []ActiveHero        `json:"active_heroes"`
 	Gold          int                 `json:"gold"`

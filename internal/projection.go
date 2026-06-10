@@ -25,11 +25,12 @@ type timePoint struct {
 	Time  float64
 }
 
-// fitTimeModel ajusta tempo = a*HP + b*Waves por minimos quadrados sobre todos os
-// pontos. a = segundos por HP (1/DPS efetivo), b = custo fixo por onda. Usar TODOS
-// os mapas medidos (em vez de 2 ancoras) evita que a 1-1 (HP ~ 0) distorca o DPS.
-// Retorna ok=false se houver menos de 2 pontos, sistema singular, ou a<=0.
-func fitTimeModel(pts []timePoint) (a, b float64, ok bool) {
+// effectiveDPS deduz o DPS do jogador ajustando tempo = HP/DPS + b*ondas por minimos
+// quadrados sobre as fases medidas. DPS = 1/a (HP por segundo), b = custo fixo por onda.
+// Testei a versao "robusta" por mediana de inclinacoes (Theil-Sen) com os dados reais e
+// ela errou MAIS (27% vs 20%): o tempo de clear nao e limpo o bastante em HP pra mediana
+// ganhar do ajuste global. ok=false com <2 pontos, sistema singular ou DPS<=0.
+func effectiveDPS(pts []timePoint) (dps, overheadPerWave float64, ok bool) {
 	if len(pts) < 2 {
 		return 0, 0, false
 	}
@@ -45,20 +46,23 @@ func fitTimeModel(pts []timePoint) (a, b float64, ok bool) {
 	if det == 0 {
 		return 0, 0, false
 	}
-	a = (sWW*sHt - sHW*sWt) / det
-	b = (sHH*sWt - sHW*sHt) / det
+	a := (sWW*sHt - sHW*sWt) / det
+	b := (sHH*sWt - sHW*sHt) / det
 	if a <= 0 {
 		return 0, 0, false
 	}
 	if b < 0 {
 		b = 0
 	}
-	return a, b, true
+	return 1 / a, b, true
 }
 
-// estimateTime aplica o modelo, com piso de 1s.
-func estimateTime(a, b, hp, waves float64) float64 {
-	t := a*hp + b*waves
+// estimateTimeDPS aplica o DPS: tempo = HP/DPS + ondas*custo_por_onda, piso de 1s.
+func estimateTimeDPS(dps, overheadPerWave, hp, waves float64) float64 {
+	if dps <= 0 {
+		return 0
+	}
+	t := hp/dps + overheadPerWave*waves
 	if t < 1 {
 		return 1
 	}

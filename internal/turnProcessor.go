@@ -247,14 +247,35 @@ func isTimeTrustworthy(timeSpent, estTime, factor float64, stageChanged bool) bo
 	return !stageChanged
 }
 
-// estimateStageTime monta os insumos (historico proprio e fase de referencia) e
-// delega para estimatedRunTime.
+// estimateStageTime estima o tempo de clear da fase. Prioriza o historico proprio
+// (>=3 corridas); senao ajusta o modelo tempo = a*HP + b*ondas sobre as fases ja
+// medidas e extrapola por HP. Esse fallback e o que permite validar um clear de
+// AUTO-AVANCO numa fase ainda sem historico (a banda de tempo separa o avanco limpo
+// da troca manual com ociosidade). 0 quando nao ha base alguma.
 func (ctrl *Control) estimateStageTime(stage int) float64 {
 	if s, ok := ctrl.StageHistory.Get(stage); ok && s.TotalRuns >= 3 && s.AvgTimeSpent > 0 {
 		return s.AvgTimeSpent
 	}
-
-	return 0
+	info, ok := ctrl.FarmStages[stage]
+	if !ok || info.TotalHP <= 0 {
+		return 0
+	}
+	var points []timePoint
+	for _, st := range ctrl.StageHistory.AllStats() {
+		if (st.TotalRuns == 0 && st.ManualTime == 0) || st.AvgTimeSpent <= 0 {
+			continue
+		}
+		fi, ok := ctrl.FarmStages[st.StageKey]
+		if !ok || fi.TotalHP <= 0 {
+			continue
+		}
+		points = append(points, timePoint{HP: fi.TotalHP, Waves: float64(fi.Waves), Time: st.AvgTimeSpent})
+	}
+	dps, overhead, ok := effectiveDPS(points)
+	if !ok {
+		return 0
+	}
+	return estimateTimeDPS(dps, overhead, info.TotalHP, float64(info.Waves))
 }
 
 // recordedAvgTime devolve a média de tempo já medida da fase (a partir de 1
@@ -320,21 +341,23 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 		return
 	}
 
-	if stageChanged {
-		advanceClock()
-		Logf("reject", "Fase %s descartada: a fase mudou no meio da janela (auto-avanço ou morte que trocou de mapa). Só conto ciclo estável na mesma fase.", ctrl.stageDisplay(stage))
-		return
-	}
-
 	if avg := ctrl.recordedAvgTime(stage); avg > 0 && timeSpent < avg/timeOutlierFactor {
 		Logf("reject", "Fase %s descartada: %.0fs curto demais para um clear (média ~%.0fs) — fragmento de save, não um ciclo completo. Junto com o próximo ciclo.", ctrl.stageDisplay(stage), timeSpent, avg)
 		return
 	}
 
-	if !isTimeTrustworthy(timeSpent, estTime, timeOutlierFactor, false) {
+	if !isTimeTrustworthy(timeSpent, estTime, timeOutlierFactor, stageChanged) {
 		advanceClock()
-		Logf("reject", "Fase %s descartada: tempo %.0fs muito acima do esperado (~%.0fs). Provável ociosidade/decisão no meio do ciclo.", ctrl.stageDisplay(stage), timeSpent, estTime)
+		if estTime > 0 {
+			Logf("reject", "Fase %s descartada: tempo %.0fs muito acima do esperado (~%.0fs). Provável ociosidade/troca manual no meio do ciclo.", ctrl.stageDisplay(stage), timeSpent, estTime)
+		} else {
+			Logf("reject", "Fase %s descartada: a fase mudou e ainda não há base de tempo pra validar o clear. O próximo ciclo estável na fase conta normal.", ctrl.stageDisplay(stage))
+		}
 		return
+	}
+
+	if stageChanged {
+		Logf("info", "Fase %s: auto-avanço detectado e o tempo %.0fs bate com o esperado (~%.0fs) — conto o clear da fase nova.", ctrl.stageDisplay(stage), timeSpent, estTime)
 	}
 
 	if len(levelUps) > 0 {

@@ -2,10 +2,10 @@ package internal
 
 import "testing"
 
-// Valida a curva REAL de exp mantida (decompilada do GameAssembly, metodo vy.jwe),
-// para heroi nivel 32. Parabola ate piso, assimetrica:
-//   over-leveled (heroi>=fase): flat 2, end 8, piso 0.5
-//   under-leveled (heroi< fase): flat 6, end 14, piso 0.4
+// Valida a curva REAL de exp mantida (emulada do GameAssembly, metodo vy.jwe) para
+// heroi nivel 32. Tres fases: 100% -> parabola ate factor -> geometrico ate o piso 0.01.
+//   over  (heroi>=fase): b1 2, e1 8,  factor 0.5, e2 = 8+round(32/3)  = 19
+//   under (heroi< fase): b1 6, e1 14, factor 0.4, e2 = 14+round(32/3) = 25
 func TestExpRetention(t *testing.T) {
 	cases := []struct {
 		stage, hero int
@@ -13,16 +13,18 @@ func TestExpRetention(t *testing.T) {
 	}{
 		// over-level (fase <= heroi): diff = 32-stage
 		{32, 32, 1.00},   // diff 0
-		{30, 32, 1.00},   // diff 2 (= flat)
+		{30, 32, 1.00},   // diff 2 (= b1)
 		{26, 32, 0.7778}, // diff 6: 1 - 0.5*(4/6)^2
-		{20, 32, 0.50},   // diff 12 >= end -> piso
-		{10, 32, 0.50},   // diff 22 -> piso
+		{20, 32, 0.1206}, // diff 12: cauda 0.5*(0.02)^(4/11)
+		{13, 32, 0.0100}, // diff 19 (= e2) -> piso 1%
+		{1, 32, 0.0100},  // diff 31 (1-1 com heroi alto) -> piso 1% (era 50%!)
 		// under-level (fase > heroi): diff = stage-32
 		{36, 32, 1.00},   // diff 4
-		{38, 32, 1.00},   // diff 6 (= flat)
+		{38, 32, 1.00},   // diff 6 (= b1)
 		{40, 32, 0.9625}, // diff 8: 1 - 0.6*(2/8)^2
 		{44, 32, 0.6625}, // diff 12: 1 - 0.6*(6/8)^2
-		{50, 32, 0.40},   // diff 18 >= end -> piso
+		{50, 32, 0.1046}, // diff 18: cauda 0.4*(0.025)^(4/11)
+		{60, 32, 0.0100}, // diff 28 >= e2 -> piso 1%
 		// guardas
 		{0, 32, 1.00}, {40, 0, 1.00},
 	}

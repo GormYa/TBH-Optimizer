@@ -77,7 +77,7 @@ func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
 		measured = append(measured, *stats)
 	}
 
-	a, b, calibrated := fitTimeModel(points)
+	dps, overhead, calibrated := effectiveDPS(points)
 
 	goldMultiplier, xpMultiplier := yieldMultipliers(measured, ctrl.FarmStages, ctrl.HeroLevel)
 
@@ -108,7 +108,7 @@ func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
 				continue
 			}
 
-			estTime := estimateTime(a, b, info.TotalHP, float64(info.Waves))
+			estTime := estimateTimeDPS(dps, overhead, info.TotalHP, float64(info.Waves))
 			estGoldPerRun := info.ExpectedGold * goldMultiplier
 			estXpPerRun := info.ExpectedEXP * xpMultiplier * expRetention(info.Level, ctrl.HeroLevel)
 			estGoldPerHour := (estGoldPerRun / estTime) * 3600.0
@@ -174,6 +174,7 @@ func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
 		BestXpStage:   bestXpStage,
 		Stages:        stagesReport,
 		Calibrated:    calibrated,
+		EffectiveDPS:  dps,
 		HeroLevel:     ctrl.HeroLevel,
 		ActiveHeroes:  ctrl.ActiveHeroes,
 		Gold:          ctrl.Gold,
