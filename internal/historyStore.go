@@ -49,7 +49,7 @@ func (s *StageHistoryStore) Update(stageKey int, timeSpent float64, goldGain flo
 		return
 	}
 	alpha := alphaConfig
-	if stats.TotalRuns == 1 && stats.ManualTime == 0 {
+	if stats.TotalRuns == 1 {
 		alpha = 1.0
 	}
 
@@ -71,12 +71,6 @@ func (s *StageHistoryStore) Update(stageKey int, timeSpent float64, goldGain flo
 }
 
 // SetManualTime grava o tempo digitado pelo usuario na calibracao como uma SEMENTE,
-// nao como uma corrida. Diferente de Update:
-//   - nao incrementa TotalRuns (a fase nao passa a contar como "medida");
-//   - SUBSTITUI o valor anterior em vez de empilhar (recalibrar nao "prende" a media);
-//   - so define a media exibida enquanto nao ha corridas reais (TotalRuns==0).
-//
-// Quando uma corrida real chega depois, Update mistura nela (ver alpha/ManualTime la).
 func (s *StageHistoryStore) SetManualTime(stageKey int, timeSpent, goldGain, xpGain float64, numHeroes int) {
 	s.mu.Lock()
 	defer s.mu.Unlock()

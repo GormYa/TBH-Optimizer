@@ -1,5 +1,23 @@
 package internal
 
+import "sort"
+
+// median devolve a mediana da amostra (robusta a outliers, ao contrario da media).
+// Ordena uma copia para nao mexer no slice do chamador.
+func median(xs []float64) float64 {
+	n := len(xs)
+	if n == 0 {
+		return 0
+	}
+	cp := make([]float64, n)
+	copy(cp, xs)
+	sort.Float64s(cp)
+	if n%2 == 1 {
+		return cp[n/2]
+	}
+	return (cp[n/2-1] + cp[n/2]) / 2
+}
+
 // timePoint e um mapa medido: HP total, numero de ondas e tempo real de clear.
 type timePoint struct {
 	HP    float64

@@ -211,6 +211,16 @@ func (ctrl *Control) estimateClearGold(stage int) float64 {
 	return 0
 }
 
+// estimateClearXp e o analogo do ouro pro XP: media propria do clear (>=3 corridas).
+// Serve pra distinguir venda de item (ouro sobe sozinho) de evolucao de poder (ouro
+// E XP sobem juntos) quando o ouro estoura o teto da media.
+func (ctrl *Control) estimateClearXp(stage int) float64 {
+	if s, ok := ctrl.StageHistory.Get(stage); ok && s.TotalRuns >= 3 && s.AvgXpPerRun > 0 {
+		return s.AvgXpPerRun
+	}
+	return 0
+}
+
 // estimatedRunTime estima quanto uma fase deveria levar (segundos). Prioriza o
 // historico proprio da fase (>=3 corridas); senao extrapola por HP a partir de
 // uma fase de referencia ja medida (tempo ~ proporcional ao HP total). Retorna 0
@@ -352,9 +362,14 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 			return
 		}
 		if float64(goldGain) > goldCeilFactor*floor {
-			advanceClock()
-			Logf("reject", "Fase %s descartada: ouro %.0f MUITO acima da média (~%.0f) — provável venda de itens/bônus, não ouro de farm. Não inflo a média.", ctrl.stageDisplay(stage), float64(goldGain), floor)
-			return
+			xpFloor := ctrl.estimateClearXp(stage)
+			powerJump := xpFloor > 0 && xpGain >= goldCeilFactor*xpFloor
+			if !powerJump {
+				advanceClock()
+				Logf("reject", "Fase %s descartada: ouro %.0f MUITO acima da média (~%.0f) sem XP equivalente — provável venda de itens/bônus, não ouro de farm. Não inflo a média.", ctrl.stageDisplay(stage), float64(goldGain), floor)
+				return
+			}
+			Logf("info", "Fase %s: ouro %.0f bem acima da média (~%.0f), mas o XP subiu junto — evolução de poder, conto como clear real.", ctrl.stageDisplay(stage), float64(goldGain), floor)
 		}
 	}
 
@@ -383,8 +398,9 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 
 	s, exists := ctrl.StageHistory.Get(stage)
 	if exists {
-		Logf("run", "Fase %s REGISTRADA: %.0fs · +%.0f ouro · +%.0f xp · total de corridas: %d",
-			ctrl.stageDisplay(stage), timeSpent, goldRec, xpGain, s.TotalRuns)
+		nh := ctrl.numActiveHeroes()
+		Logf("run", "Fase %s REGISTRADA: %.0fs · +%.0f ouro · +%.0f xp (%.0f/herói ÷%d) · total de corridas: %d",
+			ctrl.stageDisplay(stage), timeSpent, goldRec, xpGain, xpGain/float64(nh), nh, s.TotalRuns)
 	}
 }
 

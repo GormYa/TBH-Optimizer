@@ -20,18 +20,22 @@ func TestSetManualTimeIsSeedNotRun(t *testing.T) {
 	}
 }
 
-// A primeira corrida real MISTURA com a semente (nao a descarta com alpha=1).
-func TestManualSeedBlendsWithRealRun(t *testing.T) {
+// A primeira corrida real SUBSTITUI a semente (alpha=1): o tempo digitado e so um
+// placeholder ate o jogo dar a medicao de verdade, nunca prende a media.
+func TestManualSeedReplacedByFirstRealRun(t *testing.T) {
 	var s StageHistoryStore
 	s.SetManualTime(1101, 45, 14, 16, 1)
 
-	s.Update(1101, 50, 14, 16, true, 0.2, 1, 0, nil)
+	s.Update(1101, 50, 800, 900, true, 0.2, 1, 0, nil)
 	st, _ := s.Get(1101)
 	if st.TotalRuns != 1 {
 		t.Fatalf("a corrida real deveria contar: TotalRuns=%d", st.TotalRuns)
 	}
-	if d := st.AvgTimeSpent - 46.0; d > 0.001 || d < -0.001 {
-		t.Fatalf("esperava blend ~46s, veio %.3f", st.AvgTimeSpent)
+	if st.AvgTimeSpent != 50 {
+		t.Fatalf("a 1a corrida real deveria virar 50s (snap), veio %.3f", st.AvgTimeSpent)
+	}
+	if st.AvgGoldPerRun != 800 || st.AvgXpPerRun != 900 {
+		t.Fatalf("ouro/xp deveriam ser os da corrida (800/900), veio %.0f/%.0f", st.AvgGoldPerRun, st.AvgXpPerRun)
 	}
 }
 

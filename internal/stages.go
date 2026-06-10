@@ -16,6 +16,37 @@ func LoadFarmStages(data []byte) (map[int]FarmStageInfo, error) {
 	return stagesMap, nil
 }
 
+// yieldMultipliers devolve o multiplicador ganho-real/Expected (ouro, xp) calibrado
+// sobre as fases bem medidas (>=3 corridas), usando a MEDIANA (robusta a fases com
+// Expected quase-zero na tabela do jogo, que na media inflavam tudo 10-20x). E a
+// mesma calibracao pro painel (estimativa), pra semente digitada e pro 1o clear real.
+// Sem amostra suficiente, devolve 1.0 (Expected cru). Funcao pura: nao trava nada.
+func yieldMultipliers(stats []StageStats, farm map[int]FarmStageInfo, heroLevel int) (gold, xp float64) {
+	var gm, xm []float64
+	for _, st := range stats {
+		if st.TotalRuns < 3 {
+			continue
+		}
+		info, ok := farm[st.StageKey]
+		if !ok {
+			continue
+		}
+		ret := expRetention(info.Level, heroLevel)
+		if info.ExpectedGold > 0 && info.ExpectedEXP > 0 && ret > 0 {
+			gm = append(gm, st.AvgGoldPerRun/info.ExpectedGold)
+			xm = append(xm, st.AvgXpPerRun/(info.ExpectedEXP*ret))
+		}
+	}
+	gold, xp = 1.0, 1.0
+	if len(gm) > 0 {
+		gold = median(gm)
+	}
+	if len(xm) > 0 {
+		xp = median(xm)
+	}
+	return
+}
+
 func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
 	ctrl.StageHistory.mu.RLock()
 	defer ctrl.StageHistory.mu.RUnlock()
@@ -31,12 +62,11 @@ func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
 	// (em vez de 2 ancoras) evita que a 1-1, de HP desprezivel, distorca o DPS e
 	// gere absurdos (ex.: estimar uma fase de menos HP como mais demorada).
 	var points []timePoint
-	var goldMultSum, xpMultSum float64
-	var multCount int
+	var measured []StageStats
 	for key, stats := range ctrl.StageHistory.history {
-		measured := stats.TotalRuns > 0
+		isMeasured := stats.TotalRuns > 0
 		seeded := stats.ManualTime > 0
-		if (!measured && !seeded) || stats.AvgTimeSpent <= 0 {
+		if (!isMeasured && !seeded) || stats.AvgTimeSpent <= 0 {
 			continue
 		}
 		info, ok := ctrl.FarmStages[key]
@@ -44,23 +74,12 @@ func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
 			continue
 		}
 		points = append(points, timePoint{HP: info.TotalHP, Waves: float64(info.Waves), Time: stats.AvgTimeSpent})
-
-		ret := expRetention(info.Level, ctrl.HeroLevel)
-		if measured && info.ExpectedGold > 0 && info.ExpectedEXP > 0 && ret > 0 {
-			goldMultSum += stats.AvgGoldPerRun / info.ExpectedGold
-			xpMultSum += stats.AvgXpPerRun / (info.ExpectedEXP * ret)
-			multCount++
-		}
+		measured = append(measured, *stats)
 	}
 
 	a, b, calibrated := fitTimeModel(points)
 
-	goldMultiplier := 1.0
-	xpMultiplier := 1.0
-	if multCount > 0 {
-		goldMultiplier = goldMultSum / float64(multCount)
-		xpMultiplier = xpMultSum / float64(multCount)
-	}
+	goldMultiplier, xpMultiplier := yieldMultipliers(measured, ctrl.FarmStages, ctrl.HeroLevel)
 
 	numHeroes := ctrl.numActiveHeroes()
 

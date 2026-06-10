@@ -94,8 +94,9 @@ func StartWebServer(ctrl *Control, webFiles embed.FS, dataDir string) {
 		xpGain := 0.0
 		if ctrl.FarmStages != nil {
 			if info, exists := ctrl.FarmStages[req.StageKey]; exists {
-				goldGain = info.ExpectedGold
-				xpGain = info.ExpectedEXP
+				gMult, xMult := yieldMultipliers(ctrl.StageHistory.AllStats(), ctrl.FarmStages, ctrl.HeroLevel)
+				goldGain = info.ExpectedGold * gMult
+				xpGain = info.ExpectedEXP * xMult * expRetention(info.Level, ctrl.HeroLevel)
 			}
 		}
 
