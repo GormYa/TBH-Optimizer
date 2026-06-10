@@ -118,83 +118,77 @@ func TestLowHPStageNotRejected(t *testing.T) {
 	}
 }
 
-// AUTO-AVANCO: ao limpar uma fase e o jogo avancar pra proxima, o clear da fase nova
-// (sem historico proprio) deve ser CONTADO quando o tempo cabe na estimativa por HP --
-// antes era descartado cego so por a fase ter mudado, e o farm de progressao nunca
-// acumulava dado.
-func TestAutoAdvanceCleanClearIsCounted(t *testing.T) {
+// AUTO-AVANCO: ao concluir sA o jogo auto-avanca e o save de wave 0 ja vem com sB (o
+// PROXIMO mapa). O tempo desse ciclo e do sA (o que rodou), entao tem que ser creditado
+// no sA -- nao no sB. E conta de primeira (sem precisar concluir 2x).
+func TestAutoAdvanceCreditsPreviousStage(t *testing.T) {
 	old, _ := os.Getwd()
 	if err := os.Chdir(t.TempDir()); err != nil {
 		t.Fatal(err)
 	}
 	defer os.Chdir(old)
 
-	const sA, sB = 2206, 2209
+	const sA, sB = 2206, 2207 // contiguos: sB e o proximo de sA
 	ctrl := Control{
 		UseEMA: true, EMAAlpha: 0.2,
 		FarmStages: map[int]FarmStageInfo{
-			sA:   {Key: sA, TotalHP: 100000, ExpectedGold: 4000, ExpectedEXP: 60000, Waves: 17, Level: 30},
-			sB:   {Key: sB, TotalHP: 120000, ExpectedGold: 4500, ExpectedEXP: 65000, Waves: 17, Level: 30},
-			1102: {Key: 1102, TotalHP: 50000, Waves: 15, Level: 25},
+			sA: {Key: sA, TotalHP: 100000, ExpectedGold: 4000, ExpectedEXP: 60000, Waves: 17, Level: 30},
+			sB: {Key: sB, TotalHP: 110000, ExpectedGold: 4200, ExpectedEXP: 62000, Waves: 17, Level: 31},
 		},
-		HeroStates:      map[int]HeroState{201: {Level: 33, Xp: 0}},
-		ActiveHeroCount: 1, HeroLevel: 33,
+		HeroStates:          map[int]HeroState{201: {Level: 33, Xp: 0}},
+		ActiveHeroCount:     1,
+		HeroLevel:           33,
+		LastCurrentStageKey: sA, // estavamos rodando sA
+		LastPlayTime:        1000,
+		LastGold:            500,
 	}
-	// dois pontos medidos -> regressao de tempo da o esperado pra sB (~240s)
-	ctrl.StageHistory.Update(sA, 200, 80000, 3000000, true, 0.2, 1, 0, nil)
-	ctrl.StageHistory.Update(1102, 100, 40000, 1500000, true, 0.2, 1, 0, nil)
-	ctrl.LastCurrentStageKey = sA // viemos de sA e auto-avancamos pra sB
-	ctrl.LastPlayTime = 1000
-	ctrl.LastGold = 500
 
-	// clear limpo de sB: 230s (dentro da banda de ~240s), ganho normal
-	calculateAndLogRound(&ctrl, newClearSave(sB, 1230, 100000, 201, 33, 4000000))
+	// save de wave 0 ja com sB (auto-avancou), ciclo de 267s
+	calculateAndLogRound(&ctrl, newClearSave(sB, 1267, 60000, 201, 33, 4000000))
 
-	s, ok := ctrl.StageHistory.Get(sB)
-	runs := 0
-	if s != nil {
-		runs = s.TotalRuns
+	a, _ := ctrl.StageHistory.Get(sA)
+	if a == nil || a.TotalRuns != 1 {
+		t.Fatalf("o clear deveria ser creditado em sA (o que rodou); a=%v", a)
 	}
-	if !ok || runs != 1 {
-		t.Fatalf("auto-avanço limpo deveria contar o clear de sB; ok=%v runs=%d", ok, runs)
+	if a.AvgTimeSpent != 267 {
+		t.Fatalf("tempo de sA = %.0fs, esperado 267 (o ciclo que rodou)", a.AvgTimeSpent)
 	}
-	if s.AvgTimeSpent != 230 {
-		t.Fatalf("tempo de sB = %.0fs, esperado 230s (snap do 1o clear)", s.AvgTimeSpent)
+	if b, ok := ctrl.StageHistory.Get(sB); ok && b.TotalRuns > 0 {
+		t.Fatalf("sB (próximo mapa) não deveria ter corrida ainda; runs=%d", b.TotalRuns)
 	}
 }
 
-// TROCA MANUAL: quando a fase muda mas o tempo vem inflado (ociosidade/decisao no
-// menu), o clear continua sendo DESCARTADO -- a banda de tempo separa avanco limpo
-// de troca com ociosidade.
-func TestStageChangeInflatedTimeRejected(t *testing.T) {
+// PULO MANUAL: se o destino nao e nem o mesmo mapa nem o proximo na ordem, a janela
+// mistura tempo de mapas diferentes (+ menu) e e descartada -- nao credita ninguem.
+func TestManualJumpDiscarded(t *testing.T) {
 	old, _ := os.Getwd()
 	if err := os.Chdir(t.TempDir()); err != nil {
 		t.Fatal(err)
 	}
 	defer os.Chdir(old)
 
-	const sA, sB = 2206, 2209
+	const sA, sNext, sJump = 2206, 2207, 2209
 	ctrl := Control{
 		UseEMA: true, EMAAlpha: 0.2,
 		FarmStages: map[int]FarmStageInfo{
-			sA:   {Key: sA, TotalHP: 100000, ExpectedGold: 4000, ExpectedEXP: 60000, Waves: 17, Level: 30},
-			sB:   {Key: sB, TotalHP: 120000, ExpectedGold: 4500, ExpectedEXP: 65000, Waves: 17, Level: 30},
-			1102: {Key: 1102, TotalHP: 50000, Waves: 15, Level: 25},
+			sA:    {Key: sA, TotalHP: 100000, ExpectedGold: 4000, ExpectedEXP: 60000, Waves: 17, Level: 30},
+			sNext: {Key: sNext, TotalHP: 110000, ExpectedGold: 4200, ExpectedEXP: 62000, Waves: 17, Level: 31},
+			sJump: {Key: sJump, TotalHP: 130000, ExpectedGold: 4800, ExpectedEXP: 68000, Waves: 17, Level: 33},
 		},
-		HeroStates:      map[int]HeroState{201: {Level: 33, Xp: 0}},
-		ActiveHeroCount: 1, HeroLevel: 33,
+		HeroStates:          map[int]HeroState{201: {Level: 33, Xp: 0}},
+		ActiveHeroCount:     1,
+		HeroLevel:           33,
+		LastCurrentStageKey: sA, // rodavamos sA; o proximo seria sNext, mas pulou pra sJump
+		LastPlayTime:        1000,
+		LastGold:            500,
 	}
-	ctrl.StageHistory.Update(sA, 200, 80000, 3000000, true, 0.2, 1, 0, nil)
-	ctrl.StageHistory.Update(1102, 100, 40000, 1500000, true, 0.2, 1, 0, nil)
-	ctrl.LastCurrentStageKey = sA
-	ctrl.LastPlayTime = 1000
-	ctrl.LastGold = 500
 
-	// 800s para sB (esperado ~240s, >3x): troca manual com ociosidade -> descarta
-	calculateAndLogRound(&ctrl, newClearSave(sB, 1800, 100000, 201, 33, 4000000))
-
-	if s, ok := ctrl.StageHistory.Get(sB); ok && s.TotalRuns > 0 {
-		t.Fatalf("clear de sB com tempo inflado (800s) deveria ser descartado; runs=%d", s.TotalRuns)
+	calculateAndLogRound(&ctrl, newClearSave(sJump, 1300, 60000, 201, 33, 4000000))
+	if a, ok := ctrl.StageHistory.Get(sA); ok && a.TotalRuns > 0 {
+		t.Fatalf("pulo manual não deveria creditar em sA; runs=%d", a.TotalRuns)
+	}
+	if j, ok := ctrl.StageHistory.Get(sJump); ok && j.TotalRuns > 0 {
+		t.Fatalf("pulo manual não deveria creditar no destino; runs=%d", j.TotalRuns)
 	}
 }
 
@@ -237,39 +231,6 @@ func TestStartMidCycleDiscardsFirstClear(t *testing.T) {
 	}
 	if !ok || runs != 1 {
 		t.Fatalf("o 2o clear (completo) deveria contar; runs=%d", runs)
-	}
-}
-
-// TROCA DE FASE com inflacao MODERADA (1.8x): antes a banda de 3x deixava passar
-// (era o bug do clear de 463s onde a media e 224s). Com a banda de troca em 1.5x, cai.
-func TestStageChangeModerateInflationRejected(t *testing.T) {
-	old, _ := os.Getwd()
-	if err := os.Chdir(t.TempDir()); err != nil {
-		t.Fatal(err)
-	}
-	defer os.Chdir(old)
-
-	const sA, sB = 2206, 2209
-	ctrl := Control{
-		UseEMA: true, EMAAlpha: 0.2,
-		FarmStages: map[int]FarmStageInfo{
-			sA:   {Key: sA, TotalHP: 100000, ExpectedGold: 4000, ExpectedEXP: 60000, Waves: 17, Level: 30},
-			sB:   {Key: sB, TotalHP: 120000, ExpectedGold: 4500, ExpectedEXP: 65000, Waves: 17, Level: 30},
-			1102: {Key: 1102, TotalHP: 50000, Waves: 15, Level: 25},
-		},
-		HeroStates:      map[int]HeroState{201: {Level: 33, Xp: 0}},
-		ActiveHeroCount: 1, HeroLevel: 33,
-	}
-	ctrl.StageHistory.Update(sA, 200, 80000, 3000000, true, 0.2, 1, 0, nil)
-	ctrl.StageHistory.Update(1102, 100, 40000, 1500000, true, 0.2, 1, 0, nil)
-	ctrl.LastCurrentStageKey = sA
-	ctrl.LastPlayTime = 1000
-	ctrl.LastGold = 500
-
-	// est sB ~240s; 430s = 1.8x numa fase TROCADA -> cai (1.5x), antes (3x) passava
-	calculateAndLogRound(&ctrl, newClearSave(sB, 1430, 100000, 201, 33, 4000000))
-	if s, ok := ctrl.StageHistory.Get(sB); ok && s.TotalRuns > 0 {
-		t.Fatalf("troca de fase inflada a 1.8x deveria cair; runs=%d", s.TotalRuns)
 	}
 }
 

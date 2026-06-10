@@ -181,11 +181,6 @@ func isValidRound(timeSpent float64, goldGain int, xpGain float64) bool {
 // vezes o tempo estimado da fase (pega o tempo inflado da troca manual de mapa).
 const timeOutlierFactor = 3.0
 
-// stageChangeOutlierFactor: banda mais apertada quando a fase MUDOU. Um auto-avanco
-// limpo dura ~o tempo esperado; uma troca manual/parcial carrega tempo do mapa anterior.
-// 1.5x aceita o avanco limpo e corta o clear inflado pela transicao.
-const stageChangeOutlierFactor = 1.5
-
 // goldFloorFactor: descarta a corrida se o ouro ficar abaixo deste fator vezes a
 // media da fase. Pega MORTE / clear parcial (o ganho parcial fica, mas e bem
 // menor que um clear real). So aplica quando a fase ja tem historico.
@@ -293,6 +288,16 @@ func (ctrl *Control) recordedAvgTime(stage int) float64 {
 	return 0
 }
 
+func (ctrl *Control) nextStageKey(stage int) int {
+	best := 0
+	for k := range ctrl.FarmStages {
+		if k > stage && (best == 0 || k < best) {
+			best = k
+		}
+	}
+	return best
+}
+
 // stageDisplay devolve "Nightmare 1-5" (dificuldade + label) pro console.
 func (ctrl *Control) stageDisplay(stage int) string {
 	if info, ok := ctrl.FarmStages[stage]; ok && info.Label != "" {
@@ -320,18 +325,20 @@ func difficultyLabel(d string) string {
 }
 
 func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
-	stage := currentSave.CommonSaveData.CurrentStageKey
+	clearedStage := ctrl.LastCurrentStageKey
+	currStage := currentSave.CommonSaveData.CurrentStageKey
+
 	timeSpent := currentSave.CommonSaveData.PlayTime - ctrl.LastPlayTime
 	goldGain := ExtractGold(currentSave.CurrenySaveDatas) - ctrl.LastGold
 	levelUps := heroLevelUps(currentSave.HeroSaveDatas, ctrl.HeroStates)
 	xpGain := computeRoundXp(currentSave.HeroSaveDatas, ctrl.HeroStates)
 
-	stageChanged := stage != ctrl.LastCurrentStageKey
-	estTime := ctrl.estimateStageTime(stage)
+	cleanWindow := currStage == clearedStage || currStage == ctrl.nextStageKey(clearedStage)
+	estTime := ctrl.estimateStageTime(clearedStage)
 	dropCount, dropsByKey := countNewDrops(ctrl.LastItemIds, currentSave.ItemSaveDatas)
 
 	defer func() {
-		ctrl.LastCurrentStageKey = currentSave.CommonSaveData.CurrentStageKey
+		ctrl.LastCurrentStageKey = currStage
 		ctrl.MaxCompletedStage = currentSave.CommonSaveData.MaxCompletedStage
 		ctrl.LastItemIds = snapshotItemIds(currentSave.ItemSaveDatas)
 	}()
@@ -343,44 +350,42 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 	}
 
 	if !isValidRound(timeSpent, goldGain, xpGain) {
-		Logf("info", "Fase %s: save em wave 0 sem ganho NOVO de ouro/xp — ignorado (normalmente um 2º save logo após um clear que já foi contado).", ctrl.stageDisplay(stage))
+		Logf("info", "Fase %s: save em wave 0 sem ganho NOVO de ouro/xp — ignorado (normalmente um 2º save logo após um clear que já foi contado).", ctrl.stageDisplay(clearedStage))
 		return
 	}
 
 	if ctrl.primeFirstClear {
 		ctrl.primeFirstClear = false
 		advanceClock()
-		Logf("info", "Fase %s: o monitor começou no meio do ciclo — esta primeira janela é parcial (%.0fs) e foi descartada. Conto a partir do próximo clear completo.", ctrl.stageDisplay(stage), timeSpent)
+		Logf("info", "Fase %s: o monitor começou no meio do ciclo — esta primeira janela é parcial (%.0fs) e foi descartada. Conto a partir do próximo clear completo.", ctrl.stageDisplay(clearedStage), timeSpent)
 		return
 	}
 
-	if avg := ctrl.recordedAvgTime(stage); avg > 0 && timeSpent < avg/timeOutlierFactor {
-		Logf("reject", "Fase %s descartada: %.0fs curto demais para um clear (média ~%.0fs) — fragmento de save, não um ciclo completo. Junto com o próximo ciclo.", ctrl.stageDisplay(stage), timeSpent, avg)
-		return
-	}
-
-	trustFactor := timeOutlierFactor
-	if stageChanged {
-		trustFactor = stageChangeOutlierFactor
-	}
-	if !isTimeTrustworthy(timeSpent, estTime, trustFactor, stageChanged) {
+	if !cleanWindow {
 		advanceClock()
-		if estTime > 0 {
-			Logf("reject", "Fase %s descartada: tempo %.0fs acima do esperado (~%.0fs). Provável troca de fase carregando tempo de outro mapa, ou ociosidade no meio do ciclo.", ctrl.stageDisplay(stage), timeSpent, estTime)
-		} else {
-			Logf("reject", "Fase %s descartada: a fase mudou e ainda não há base de tempo pra validar o clear. O próximo ciclo estável na fase conta normal.", ctrl.stageDisplay(stage))
-		}
+		Logf("reject", "Fase %s descartada: a fase pulou pra %s (troca manual, não auto-avanço) — a janela mistura tempo de mapas diferentes. Re-sincronizando.", ctrl.stageDisplay(clearedStage), ctrl.stageDisplay(currStage))
 		return
 	}
 
-	if stageChanged {
-		Logf("info", "Fase %s: auto-avanço detectado e o tempo %.0fs bate com o esperado (~%.0fs) — conto o clear da fase nova.", ctrl.stageDisplay(stage), timeSpent, estTime)
+	if avg := ctrl.recordedAvgTime(clearedStage); avg > 0 && timeSpent < avg/timeOutlierFactor {
+		Logf("reject", "Fase %s descartada: %.0fs curto demais para um clear (média ~%.0fs) — fragmento de save, não um ciclo completo. Junto com o próximo ciclo.", ctrl.stageDisplay(clearedStage), timeSpent, avg)
+		return
+	}
+
+	if !isTimeTrustworthy(timeSpent, estTime, timeOutlierFactor, false) {
+		advanceClock()
+		Logf("reject", "Fase %s descartada: tempo %.0fs muito acima do esperado (~%.0fs). Provável ociosidade/decisão no meio do ciclo.", ctrl.stageDisplay(clearedStage), timeSpent, estTime)
+		return
 	}
 
 	if len(levelUps) > 0 {
 		advanceClock()
-		Logf("reject", "Fase %s descartada: %s — o XP de um clear com level-up fica distorcido pelo limiar do nível. A próxima corrida já conta normal.", ctrl.stageDisplay(stage), describeLevelUps(levelUps))
+		Logf("reject", "Fase %s descartada: %s — o XP de um clear com level-up fica distorcido pelo limiar do nível. A próxima corrida já conta normal.", ctrl.stageDisplay(clearedStage), describeLevelUps(levelUps))
 		return
+	}
+
+	if currStage != clearedStage {
+		Logf("info", "Fase %s: auto-avanço pro %s — o tempo deste ciclo é do %s, creditando nele (não no próximo mapa).", ctrl.stageDisplay(clearedStage), ctrl.stageDisplay(currStage), ctrl.stageDisplay(clearedStage))
 	}
 
 	// goldRec = o ouro que ENTRA na média. Eventos fora do farm distorcem o delta:
@@ -390,26 +395,26 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 	//   - ouro alto demais: venda/bônus -> descarta.
 	goldRec := float64(goldGain)
 	if goldGain < 0 {
-		if s, ok := ctrl.StageHistory.Get(stage); ok {
+		if s, ok := ctrl.StageHistory.Get(clearedStage); ok {
 			goldRec = s.AvgGoldPerRun
 		} else {
 			goldRec = 0
 		}
-		Logf("info", "Fase %s: ouro caiu %d no ciclo — provável compra de runa/item. Conto tempo/xp; o ouro não distorce a média.", ctrl.stageDisplay(stage), goldGain)
-	} else if floor := ctrl.estimateClearGold(stage); floor > 0 {
+		Logf("info", "Fase %s: ouro caiu %d no ciclo — provável compra de runa/item. Conto tempo/xp; o ouro não distorce a média.", ctrl.stageDisplay(clearedStage), goldGain)
+	} else if floor := ctrl.estimateClearGold(clearedStage); floor > 0 {
 		if float64(goldGain) < goldFloorFactor*floor {
-			Logf("reject", "Fase %s descartada: ouro %.0f baixo demais para um clear (média ~%.0f). Provável morte/clear parcial.", ctrl.stageDisplay(stage), float64(goldGain), floor)
+			Logf("reject", "Fase %s descartada: ouro %.0f baixo demais para um clear (média ~%.0f). Provável morte/clear parcial.", ctrl.stageDisplay(clearedStage), float64(goldGain), floor)
 			return
 		}
 		if float64(goldGain) > goldCeilFactor*floor {
-			xpFloor := ctrl.estimateClearXp(stage)
+			xpFloor := ctrl.estimateClearXp(clearedStage)
 			powerJump := xpFloor > 0 && xpGain >= goldCeilFactor*xpFloor
 			if !powerJump {
 				advanceClock()
-				Logf("reject", "Fase %s descartada: ouro %.0f MUITO acima da média (~%.0f) sem XP equivalente — provável venda de itens/bônus, não ouro de farm. Não inflo a média.", ctrl.stageDisplay(stage), float64(goldGain), floor)
+				Logf("reject", "Fase %s descartada: ouro %.0f MUITO acima da média (~%.0f) sem XP equivalente — provável venda de itens/bônus, não ouro de farm. Não inflo a média.", ctrl.stageDisplay(clearedStage), float64(goldGain), floor)
 				return
 			}
-			Logf("info", "Fase %s: ouro %.0f bem acima da média (~%.0f), mas o XP subiu junto — evolução de poder, conto como clear real.", ctrl.stageDisplay(stage), float64(goldGain), floor)
+			Logf("info", "Fase %s: ouro %.0f bem acima da média (~%.0f), mas o XP subiu junto — evolução de poder, conto como clear real.", ctrl.stageDisplay(clearedStage), float64(goldGain), floor)
 		}
 	}
 
@@ -418,10 +423,10 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 	xpPerHour := (xpGain / float64(ctrl.numActiveHeroes()) / timeSpent) * 3600
 	goldPerHour := (goldRec / timeSpent) * 3600
 
-	saveStageLog(stage, timeSpent, goldPerHour, xpPerHour)
+	saveStageLog(clearedStage, timeSpent, goldPerHour, xpPerHour)
 
 	ctrl.StageHistory.Update(
-		stage,
+		clearedStage,
 		timeSpent,
 		goldRec,
 		xpGain,
@@ -436,11 +441,11 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 		fmt.Println("Aviso: falha ao persistir o historico:", err)
 	}
 
-	s, exists := ctrl.StageHistory.Get(stage)
+	s, exists := ctrl.StageHistory.Get(clearedStage)
 	if exists {
 		nh := ctrl.numActiveHeroes()
 		Logf("run", "Fase %s REGISTRADA: %.0fs · +%.0f ouro · +%.0f xp (%.0f/herói ÷%d) · total de corridas: %d",
-			ctrl.stageDisplay(stage), timeSpent, goldRec, xpGain, xpGain/float64(nh), nh, s.TotalRuns)
+			ctrl.stageDisplay(clearedStage), timeSpent, goldRec, xpGain, xpGain/float64(nh), nh, s.TotalRuns)
 	}
 }
 
