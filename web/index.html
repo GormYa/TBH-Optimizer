@@ -481,15 +481,15 @@
 								<div class="dc-meta">
 									<span v-if="itemInfo(selectedItem).part">{{ partLabel(itemInfo(selectedItem).part) }}<template v-if="itemInfo(selectedItem).gear"> · {{ itemInfo(selectedItem).gear }}</template></span>
 									<span v-if="itemInfo(selectedItem).level">Nível {{ itemInfo(selectedItem).level }}</span>
-									<span v-if="itemInfo(selectedItem).slots && (itemInfo(selectedItem).slots.dec || itemInfo(selectedItem).slots.eng || itemInfo(selectedItem).slots.ins)">Slots <template v-if="itemInfo(selectedItem).slots.dec">D×{{ itemInfo(selectedItem).slots.dec }} </template><template v-if="itemInfo(selectedItem).slots.eng">E×{{ itemInfo(selectedItem).slots.eng }} </template><template v-if="itemInfo(selectedItem).slots.ins">I×{{ itemInfo(selectedItem).slots.ins }}</template></span>
+									<span class="im-slots" v-if="itemInfo(selectedItem).slots && (itemInfo(selectedItem).slots.dec || itemInfo(selectedItem).slots.eng || itemInfo(selectedItem).slots.ins)">Slots: <span class="ic-slot" v-if="itemInfo(selectedItem).slots.dec"><img src="slot_icons/dec.png">×{{ itemInfo(selectedItem).slots.dec }}</span><span class="ic-slot" v-if="itemInfo(selectedItem).slots.eng"><img src="slot_icons/eng.png">×{{ itemInfo(selectedItem).slots.eng }}</span><span class="ic-slot" v-if="itemInfo(selectedItem).slots.ins"><img src="slot_icons/ins.png">×{{ itemInfo(selectedItem).slots.ins }}</span></span>
 									<span :class="itemInfo(selectedItem).obtainable ? 'dc-ok' : 'dc-no'">{{ itemInfo(selectedItem).obtainable ? 'Obtível' : 'Não obtível (removido)' }}</span>
 								</div>
 							</div>
 							<div class="detail-body">
 								<h4 class="sec-title" v-if="baseStatsShown(selectedItem).length || (itemInfo(selectedItem).inherent || []).length">Status</h4>
 								<div class="stat-grid" v-if="baseStatsShown(selectedItem).length || (itemInfo(selectedItem).inherent || []).length">
-									<div class="stat-box" v-for="(b, i) in baseStatsShown(selectedItem)" :key="'b' + i"><span class="sb-lbl">{{ combatLabel(b.stat) }} <em>base</em></span><span class="sb-val">{{ fmtCombat(b.stat, b.value) }}</span></div>
-									<div class="stat-box inh" v-for="(b, i) in (itemInfo(selectedItem).inherent || [])" :key="'i' + i"><span class="sb-lbl">{{ combatLabel(b.stat) }} <em>inerente</em></span><span class="sb-val">{{ fmtCombat(b.stat, b.value) }}</span></div>
+									<div class="stat-box" v-for="(b, i) in baseStatsShown(selectedItem)" :key="'b' + i"><span class="sb-lbl">{{ combatLabel(b.stat) }} <em>base</em></span><span class="sb-val">{{ fmtBaseStat(b) }}</span></div>
+									<div class="stat-box inh" v-for="(b, i) in (itemInfo(selectedItem).inherent || [])" :key="'i' + i"><span class="sb-lbl">{{ combatLabel(b.stat) }} <em>inerente</em></span><span class="sb-val">{{ fmtInh(b) }}</span></div>
 								</div>
 								<h4 class="sec-title">Valor de revenda</h4>
 								<div class="resale">
@@ -539,9 +539,8 @@
 									<span class="ic-grade-tag" :class="'grade-' + (it.grade || '').toLowerCase()">{{ gradeLabel(it.grade) }}</span>
 									<img class="ic-sprite" :src="it.icon" loading="lazy" onerror="this.style.visibility='hidden'">
 									<span class="ic-name">{{ it.name }}<span v-if="!it.obtainable" class="li-unobt" title="Não é mais obtível">✖</span></span>
-									<span class="ic-slots" v-if="it.slots && (it.slots.dec || it.slots.eng || it.slots.ins)"><i v-if="it.slots.dec">D×{{ it.slots.dec }}</i><i v-if="it.slots.eng">E×{{ it.slots.eng }}</i><i v-if="it.slots.ins">I×{{ it.slots.ins }}</i></span>
-									<span class="ic-atk" v-if="it.atk">ATK {{ formatNumber(it.atk) }}</span>
-									<span class="ic-foot"><span class="ic-type">{{ it.gear }}</span><span class="ic-lvl">Nv {{ it.level }}</span></span>
+									<span class="ic-slots" v-if="it.slots && (it.slots.dec || it.slots.eng || it.slots.ins)"><span class="ic-slot" v-if="it.slots.dec"><img src="slot_icons/dec.png">×{{ it.slots.dec }}</span><span class="ic-slot" v-if="it.slots.eng"><img src="slot_icons/eng.png">×{{ it.slots.eng }}</span><span class="ic-slot" v-if="it.slots.ins"><img src="slot_icons/ins.png">×{{ it.slots.ins }}</span></span>
+									<span class="ic-foot"><span class="ic-lvl">Nv {{ it.level }}</span><span class="ic-stat">{{ cardStat(it) }}</span></span>
 								</button>
 							</div>
 							<div class="gl-more" v-if="shownItems.length < filteredItems.length">carregando mais… ({{ shownItems.length }}/{{ filteredItems.length }})</div>
@@ -783,10 +782,16 @@
 				// labels e formatação dos atributos de combate (base + inerentes do equipamento)
 				const COMBAT_LABEL = { AttackDamage:'Dano de Ataque', AttackSpeed:'Vel. de Ataque', CastSpeed:'Vel. de Conjuração', CriticalChance:'Chance Crítica', CriticalDamage:'Dano Crítico', MaxHp:'Vida Máxima', Armor:'Armadura', MovementSpeed:'Vel. de Movimento', CooldownReduction:'Redução de Recarga', DodgeChance:'Esquiva', BlockChance:'Bloqueio', DamageReduction:'Redução de Dano', DamageAbsorption:'Absorção de Dano', AllElementalResistance:'Resist. Elemental', HpLeech:'Roubo de Vida', HpRegenPerSec:'Regen. de Vida/s', AddHpPerHit:'Vida por Acerto', AddHpPerKill:'Vida por Abate', Multistrike:'Múltiplos Golpes', ProjectileCount:'Projéteis', IncreaseProjectileDamage:'Dano de Projétil', AreaOfEffect:'Área de Efeito', AddAllSkillLevel:'Nível de Habilidades', BaseAttackCountReduction:'Red. Ataques Base', IncreaseExpAmount:'Ganho de Exp', SkillHealIncrease:'Cura de Habilidade', SkillDurationIncrease:'Duração de Habilidade', SkillRangeExpansion:'Alcance de Habilidade' };
 				const COMBAT_PCT = new Set(['CriticalChance','CriticalDamage','MovementSpeed','CooldownReduction','DodgeChance','BlockChance','DamageReduction','DamageAbsorption','AllElementalResistance','HpLeech','AreaOfEffect','IncreaseExpAmount','SkillHealIncrease','SkillDurationIncrease','SkillRangeExpansion','IncreaseProjectileDamage','CastSpeed']);
+				const COMBAT_ABBR = { AttackDamage:'ATK', AttackSpeed:'ASPD', CastSpeed:'CSPD', CriticalChance:'CRIT', CriticalDamage:'CDMG', MaxHp:'HP', Armor:'ARM', MovementSpeed:'MSPD', CooldownReduction:'CDR', DodgeChance:'ESQ', BlockChance:'BLK', Multistrike:'MULTI', ProjectileCount:'PROJ', AddAllSkillLevel:'+HAB' };
 				const combatLabel = (st) => COMBAT_LABEL[st] || st;
-				const fmtCombat = (st, v) => COMBAT_PCT.has(st) ? '+' + (v / 10) + '%' : '+' + formatNumber(v);
-				// base stats p/ mostrar (pula AttackSpeed: a unidade varia por tipo de arma)
-				const baseStatsShown = (id) => ((itemInfo(id) || {}).base || []).filter(b => b.stat !== 'AttackSpeed');
+				// % se o modtype é aditivo/multiplicativo, ou se o stat é crítico (FLAT mas exibido em %)
+				const isPctStat = (b) => b.mod === 'ADDITIVE' || b.mod === 'MULTIPLICATIVE' || b.stat === 'CriticalChance' || b.stat === 'CriticalDamage';
+				// base: AttackSpeed/CastSpeed em /s (valor/100, confirmado no jogo); resto número
+				const fmtBaseStat = (b) => (b.stat === 'AttackSpeed' || b.stat === 'CastSpeed') ? (b.value / 100).toFixed(2) + '/s' : formatNumber(b.value);
+				const fmtInh = (b) => isPctStat(b) ? '+' + (b.value / 10) + '%' : '+' + formatNumber(b.value);
+				const baseStatsShown = (id) => ((itemInfo(id) || {}).base || []);
+				// stat de destaque no card: 1º inerente (abreviado) ou o tipo de arma
+				const cardStat = (it) => { const inh = (it.inherent || [])[0]; return inh ? (COMBAT_ABBR[inh.stat] || inh.stat) + ' ' + fmtInh(inh) : it.gear; };
 				const itemName = (id) => (itemInfo(id) && itemInfo(id).name) || ('#' + id);
 				const itemIcon = (id) => (itemInfo(id) && itemInfo(id).icon) || '';
 				const itemGrade = (id) => (itemInfo(id) && itemInfo(id).grade) || '';
@@ -814,7 +819,7 @@
 					return idx;
 				});
 				// lista unificada: equipamentos do catálogo + materiais do loot dos baús
-				const allItemsList = computed(() => Object.keys(itemsCatalog.value).map(id => { const v = itemsCatalog.value[id]; return { id, name: v.name, grade: v.grade, icon: v.icon, part: v.part, gear: v.gear, level: v.level, obtainable: v.obtainable, drops: v.drops, slots: v.slots, alchemyGold: v.alchemyGold, cubeExp: v.cubeExp }; }));
+				const allItemsList = computed(() => Object.keys(itemsCatalog.value).map(id => { const v = itemsCatalog.value[id]; return { id, name: v.name, grade: v.grade, icon: v.icon, part: v.part, gear: v.gear, level: v.level, obtainable: v.obtainable, drops: v.drops, slots: v.slots, alchemyGold: v.alchemyGold, cubeExp: v.cubeExp, atk: v.atk, inherent: v.inherent }; }));
 				const filteredItems = computed(() => {
 					const q = itemSearch.value.trim().toLowerCase();
 					let list = allItemsList.value;
@@ -1481,7 +1486,7 @@
 					stageHP, chestRateByStage, chestsPerHour, formatItems,
 					stageDetails, fasesStage, openStageTab, stageDetail, stageSummary, stageChests, fmtInt, stageName, stageLevel,
 					monsterSprite, detailStageKeys, gotoStageDelta, fasesIndex, activeHeroList,
-					itemsCatalog, GRADES, partFilters, partLabel, combatLabel, fmtCombat, baseStatsShown, gradeFilter, partFilter, lvlMin, lvlMax, obtainableOnly, shownItems, gradeBelow, itemInfo,
+					itemsCatalog, GRADES, partFilters, partLabel, combatLabel, fmtBaseStat, fmtInh, baseStatsShown, cardStat, gradeFilter, partFilter, lvlMin, lvlMax, obtainableOnly, shownItems, gradeBelow, itemInfo,
 					runesData, playerGold, runeLevel, attributeTotals, attrGroups, attrTab, attrGroupOrder, ATTR_GROUP_LABEL, nextLevelCost, isUnlockable, unlockHint, runeState,
 					runeNX, runeNY, runeCanvasW, runeCanvasH, runeLineList, runeListSorted, selectedRune, fmtRuneVal, statLabel, statUnit,
 					runeZoom, runePanX, runePanY, onRuneWheel, onRuneDown, onRuneMove, onRuneUp, selectRune, zoomRunes, fitRunes,

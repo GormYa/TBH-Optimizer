@@ -733,3 +733,12 @@ th.sortable span { color: var(--gold); font-size: 14px; }
 	.resale, .stat-grid { grid-template-columns: 1fr; }
 	.items-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
 }
+
+/* ícones de slot (decoração/gravação/inscrição) */
+.ic-slots { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
+.ic-slot { display: inline-flex; align-items: center; gap: 2px; font-size: 11px; font-weight: 700; color: var(--txt-dim); }
+.ic-slot img { width: 15px; height: 15px; image-rendering: pixelated; object-fit: contain; }
+.im-slots { display: inline-flex; align-items: center; gap: 6px; }
+.im-slots .ic-slot img { width: 16px; height: 16px; }
+.ic-foot { display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 2px; font-size: 11px; gap: 6px; }
+.ic-stat { color: #ff9b6b; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
