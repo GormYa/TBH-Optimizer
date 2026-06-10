@@ -229,7 +229,10 @@ func StartWebServer(ctrl *Control, webFiles embed.FS, dataDir string) {
 	}
 	embedded := http.FileServer(http.FS(webSubFS))
 
-	http.Handle("/", embedded)
+	http.Handle("/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Cache-Control", "no-cache, no-store, must-revalidate")
+		embedded.ServeHTTP(w, r)
+	}))
 
 	fmt.Println("Servidor HTTP iniciado em http://localhost:8080")
 	for i := 0; i < 30; i++ {

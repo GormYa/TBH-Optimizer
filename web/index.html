@@ -497,6 +497,16 @@
 									<div class="resale-box"><span class="rb-lbl">EXP do Cubo</span><span class="rb-val g-xp">{{ formatNumber(itemInfo(selectedItem).cubeExp || 0) }}</span></div>
 								</div>
 								<p class="resale-note">Ouro e EXP do cubo ganhos ao desmontar este item no Cubo.</p>
+								<template v-if="(itemInfo(selectedItem).crafting || []).length">
+									<h4 class="sec-title" style="margin-top:18px;">Criação</h4>
+									<p class="hint">Criável na forja — você recebe um equipamento aleatório do tipo/tier; este é um dos resultados possíveis.</p>
+									<div class="craft-card" v-for="(rc, i) in itemInfo(selectedItem).crafting" :key="'cr' + i">
+										<div class="craft-head"><span class="craft-tier">Tier {{ rc.tier }}</span><span class="craft-type">{{ rc.type }}</span></div>
+										<div class="craft-mats">
+											<span class="craft-mat" v-for="(m, j) in rc.materials" :key="j"><img :src="m.icon" onerror="this.style.visibility='hidden'"><span>{{ m.name }} <b>×{{ m.qty }}</b></span></span>
+										</div>
+									</div>
+								</template>
 								<h4 class="sec-title" style="margin-top:18px;">Como obter</h4>
 								<div class="obtain-note synth" v-if="gradeBelow(itemGrade(selectedItem))"><icon name="sparkles" :size="14"></icon> <span><b>Síntese:</b> combine equipamentos {{ gradeBelow(itemGrade(selectedItem)) }} do mesmo tipo (no Cubo de síntese).</span></div>
 								<div class="hero-toggles" v-if="itemChests(selectedItem).length && heroList.length">
@@ -532,21 +542,52 @@
 							<div class="if-row"><span class="if-lbl">Buscar</span>
 								<input type="text" class="fld items-search" v-model="itemSearch" placeholder="Filtrar por nome…"><label class="obt-toggle"><input type="checkbox" v-model="obtainableOnly"> Só obtíveis</label></div>
 						</div>
-						<div class="items-grid-wrap" @scroll="onItemsScroll">
+						<div class="items-grid-wrap">
 							<div class="gl-count">{{ filteredItems.length }} item(ns)</div>
 							<div class="items-grid">
-								<button class="item-card" v-for="it in shownItems" :key="it.id" :class="['ic-' + (it.grade || '').toLowerCase(), { on: selectedItem === it.id }]" @click="selectedItem = it.id">
+								<button class="item-card" v-for="it in shownItems" :key="it.id" :class="['ic-' + (it.grade || '').toLowerCase(), { on: selectedItem === it.id }]" @click="selectedItem = it.id; clearTip()" @mouseenter="onItemHover(it, $event)" @mouseleave="clearTip">
 									<span class="ic-grade-tag" :class="'grade-' + (it.grade || '').toLowerCase()">{{ gradeLabel(it.grade) }}</span>
 									<img class="ic-sprite" :src="it.icon" loading="lazy" onerror="this.style.visibility='hidden'">
 									<span class="ic-name">{{ it.name }}<span v-if="!it.obtainable" class="li-unobt" title="Não é mais obtível">✖</span></span>
 									<span class="ic-slots" v-if="it.slots && (it.slots.dec || it.slots.eng || it.slots.ins)"><span class="ic-slot" v-if="it.slots.dec"><img src="slot_icons/dec.png">×{{ it.slots.dec }}</span><span class="ic-slot" v-if="it.slots.eng"><img src="slot_icons/eng.png">×{{ it.slots.eng }}</span><span class="ic-slot" v-if="it.slots.ins"><img src="slot_icons/ins.png">×{{ it.slots.ins }}</span></span>
-									<span class="ic-foot"><span class="ic-lvl">Nv {{ it.level }}</span><span class="ic-stat">{{ cardStat(it) }}</span></span>
+									<span class="ic-foot"><span class="ic-line" v-if="(it.inherent || []).length"><b>Nv {{ it.level }}</b><i>|</i><span>{{ cardAttr(it) }}</span></span><span class="ic-line" v-else><b>Nv {{ it.level }}</b><i>|</i><span>{{ it.gear }} ({{ gradeLabel(it.grade) }})</span></span></span>
 								</button>
 							</div>
 							<div class="gl-more" v-if="shownItems.length < filteredItems.length">carregando mais… ({{ shownItems.length }}/{{ filteredItems.length }})</div>
 							<div class="empty" v-if="filteredItems.length === 0"><p>Nada encontrado.</p></div>
 						</div>
 					</div>
+					<!-- TOOLTIP ESTILO JOGO (hover no card) — teleport p/ body: escapa do containing block
+						 criado pela animação (transform) da .view, que quebrava o position:fixed -->
+					<teleport to="body">
+					<div class="game-tip" v-if="hoverItem" :class="'gt-' + (hoverItem.grade || '').toLowerCase()" :style="tipStyle">
+						<div class="gt-title">{{ hoverItem.name }}</div>
+						<div class="gt-body">
+							<div class="gt-top">
+								<img class="gt-icon" :src="hoverItem.icon" onerror="this.style.visibility='hidden'">
+								<div class="gt-meta">
+									<div class="gt-grade" :class="'grade-' + (hoverItem.grade || '').toLowerCase()">Grau {{ gradeLabel(hoverItem.grade) }}</div>
+									<div class="gt-power" v-for="(p, i) in tipPower(hoverItem)" :key="'gp' + i">{{ p.label }} <b>{{ p.val }}</b></div>
+								</div>
+							</div>
+							<div class="gt-sec" v-if="(hoverItem.inherent || []).length">
+								<div class="gt-sec-h">Atributos Inerentes</div>
+								<div class="gt-inh" v-for="(b, i) in hoverItem.inherent" :key="'gi' + i">{{ combatLabel(b.stat) }} <b>{{ fmtInh(b) }}</b></div>
+							</div>
+							<div class="gt-sec" v-if="tipSlots(hoverItem).length">
+								<div class="gt-sec-h">Espaços de gema (vazios)</div>
+								<div class="gt-slots">
+									<span class="gt-chip empty" v-for="(s, i) in tipSlots(hoverItem)" :key="'gs' + i"><img :src="s.icon">{{ s.label }} <b>×{{ s.count }}</b></span>
+								</div>
+							</div>
+							<div class="gt-foot">
+								<span class="gt-trade" :class="hoverItem.tradable ? 'yes' : 'no'">{{ hoverItem.tradable ? 'Negociável' : 'Não negociável' }}</span>
+								<span class="gt-req">Requer Nv.{{ hoverItem.level }}</span>
+							</div>
+							<div class="gt-gold-row"><span class="gt-gold">{{ formatNumber(hoverItem.alchemyGold || 0) }} ouro</span></div>
+						</div>
+					</div>
+					</teleport>
 				</section>
 
 			<!-- ===================== ABA: MATERIAIS ===================== -->
@@ -597,15 +638,51 @@
 				</div>
 			</section>
 
-			<!-- ===================== ABA: FASES ===================== -->
+			<!-- ===================== ABA: FASES (mapa + detalhe) ===================== -->
 			<section v-show="view === 'fases'" class="view">
-				<div class="fases-nav" v-if="stageDetail">
-					<button class="fnav-btn" :disabled="fasesIndex <= 0" @click="gotoStageDelta(-1)" title="Fase anterior"><icon name="arrow-left" :size="16"></icon></button>
-					<select class="fnav-sel" v-model.number="fasesStage">
-						<option v-for="k in detailStageKeys" :key="k" :value="k">{{ formatStageName(k) }}<template v-if="stageName(k)"> · {{ stageName(k) }}</template></option>
-					</select>
-					<button class="fnav-btn flip" :disabled="fasesIndex >= detailStageKeys.length - 1" @click="gotoStageDelta(1)" title="Próxima fase"><icon name="arrow-left" :size="16"></icon></button>
-				</div>
+				<p class="view-intro">3 atos · 4 dificuldades · 120 fases — monstros, chefes e tabelas de saque. Clique numa fase no mapa.</p>
+				<div class="fases-layout">
+					<div class="fmap">
+						<select class="fnav-sel fmap-diff" v-model="mapDiff">
+							<option v-for="d in mapDiffs" :key="d" :value="d">{{ formatDifficulty(d) }}</option>
+						</select>
+						<div class="fmap-acts">
+							<button v-for="a in mapActs" :key="a" :class="{ on: mapAct === a }" @click="mapAct = a">Ato {{ a }}</button>
+						</div>
+						<div class="map-canvas">
+							<img class="map-bg" :src="mapBg" alt="" onerror="this.style.opacity=.15">
+														<button v-for="s in mapStages" :key="s.key" class="map-hot" :class="{ boss: s.boss, on: fasesStage === s.key }" :style="{ left: s.pos.x + '%', top: s.pos.y + '%' }" @click="selectMapStage(s.key)" @mouseenter="onStageHover(s, $event)" @mouseleave="clearTip">
+								<span class="map-flag" v-if="fasesStage === s.key"></span>
+								<span class="mh-num">{{ s.boss ? '★' : s.stageNo }}</span>
+							</button>
+						</div>
+						<p class="fmap-cap">Ato {{ mapAct }} · {{ formatDifficulty(mapDiff) }} — clique num nó pra inspecionar.</p>
+					</div>
+					<!-- TOOLTIP DE FASE (hover no nó do mapa) -->
+						<teleport to="body">
+						<div class="game-tip" v-if="hoverStage" :style="tipStyle">
+							<div class="gt-title">{{ hoverStage.name || ('Fase ' + hoverStage.act + '-' + hoverStage.stageNo) }}</div>
+							<div class="gt-body">
+								<div class="gt-top">
+									<img class="gt-icon" v-if="stageTipMob && monsterSprite(stageTipMob.key)" :src="monsterSprite(stageTipMob.key)" onerror="this.style.visibility='hidden'">
+									<div class="gt-meta">
+										<div class="gt-grade" style="color:#cdd6e6">Ato {{ hoverStage.act }} · Fase {{ hoverStage.stageNo }}</div>
+										<div class="gt-power">{{ formatDifficulty(hoverStage.difficulty) }} · Nv.{{ hoverStage.level }}</div>
+										<div class="gt-power" v-if="stageTipMob" style="color:#cfe9a6">{{ stageTipMob.name }}<span v-if="hoverStage.boss"> (chefe)</span></div>
+									</div>
+								</div>
+								<div class="gt-sec">
+									<div class="gt-sec-h">Dados da fase</div>
+									<div class="gt-row"><span>Ondas</span><b>{{ hoverStage.waves }}</b></div>
+									<div class="gt-row"><span>Mobs / onda</span><b>{{ hoverStage.perWave }}</b></div>
+									<div class="gt-row"><span>Tipos de mobs</span><b>{{ hoverStage.monsterTypes }}</b></div>
+									<div class="gt-row"><span>Ouro / clear</span><b class="g-gold">{{ fmtInt(hoverStage.expectedGold) }}</b></div>
+									<div class="gt-row"><span>XP / clear</span><b class="g-xp">{{ fmtInt(hoverStage.expectedEXP) }}</b></div>
+								</div>
+							</div>
+						</div>
+						</teleport>
+						<div class="fmap-detail">
 				<div class="sm-card" v-if="stageDetail">
 					<div class="sm-head">
 						<div class="sm-badge">{{ formatStageName(fasesStage) }}</div>
@@ -662,6 +739,8 @@
 					</div>
 				</div>
 				<div class="empty" v-else><div class="empty-mark"><icon name="clock" :size="40"></icon></div><h3>Carregando dados das fases…</h3></div>
+					</div>
+				</div>
 			</section>
 		</main>
 	</div>
@@ -687,7 +766,8 @@
 			paw: '<circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/>',
 			search: '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
 			gem: '<path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/>',
-			'arrow-left': '<path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>'
+			'arrow-left': '<path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>',
+			map: '<path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0zM15 5.764v15M9 3.236v15"/>'
 		};
 		const Icon = {
 			props: { name: { type: String, required: true }, size: { type: [Number, String], default: 18 } },
@@ -699,6 +779,28 @@
 			setup() {
 				const statsReport = ref({ best_gold_stage: 0, best_xp_stage: 0, stages: {} });
 				const stagesList = ref([]);
+					// ---- Mapa de fases: nós nas POSIÇÕES REAIS das bolinhas do fundo (detectadas
+					// nas imagens Act*_Bg.png). 9 bolinhas (fases 1-9) + chefe do ato (fase 10). ----
+					const mapAct = ref(1);
+					const mapDiff = ref('NORMAL');
+					const mapActs = [1, 2, 3];
+					const mapDiffs = ['NORMAL', 'NIGHTMARE', 'HELL', 'TORMENT'];
+					const MAP_NODES = {
+						1: [{ x: 48.7, y: 90.9 }, { x: 56.0, y: 84.0 }, { x: 59.3, y: 75.6 }, { x: 60.7, y: 66.7 }, { x: 59.3, y: 57.9 }, { x: 55.3, y: 50.0 }, { x: 50.7, y: 42.1 }, { x: 42.7, y: 35.1 }, { x: 34.0, y: 29.1 }, { x: 44.0, y: 14.0, boss: true }],
+						2: [{ x: 44.7, y: 88.1 }, { x: 53.3, y: 81.2 }, { x: 58.0, y: 72.8 }, { x: 66.7, y: 65.3 }, { x: 55.3, y: 61.2 }, { x: 46.7, y: 53.7 }, { x: 43.3, y: 45.3 }, { x: 51.3, y: 37.9 }, { x: 53.3, y: 29.1 }, { x: 54.0, y: 15.0, boss: true }],
+						3: [{ x: 53.3, y: 88.1 }, { x: 48.7, y: 79.3 }, { x: 52.7, y: 70.5 }, { x: 46.0, y: 62.6 }, { x: 49.3, y: 53.7 }, { x: 38.7, y: 48.1 }, { x: 48.7, y: 42.6 }, { x: 58.7, y: 36.5 }, { x: 52.7, y: 28.6 }, { x: 50.0, y: 15.0, boss: true }],
+					};
+					const mapBg = computed(() => 'act_bg/Act' + mapAct.value + '_Bg.png');
+					const mapStages = computed(() => {
+						const nodes = MAP_NODES[mapAct.value] || [];
+						return (stagesList.value || [])
+							.filter(s => s.act === mapAct.value && s.difficulty === mapDiff.value)
+							.sort((a, b) => a.stageNo - b.stageNo)
+							.map(s => { const n = nodes[s.stageNo - 1] || { x: 50, y: 50 }; return { ...s, pos: n, boss: !!n.boss }; });
+					});
+					const mapLine = computed(() => mapStages.value.map(s => `${s.pos.x},${s.pos.y}`).join(' '));
+					// clicar num nó: seleciona a fase no detalhe ao lado
+					const selectMapStage = (key) => { fasesStage.value = key; };
 				const calibBaseTime = ref('');
 				const calibLimitStage = ref('');
 				const calibLimitTime = ref('');
@@ -782,7 +884,9 @@
 				// labels e formatação dos atributos de combate (base + inerentes do equipamento)
 				const COMBAT_LABEL = { AttackDamage:'Dano de Ataque', AttackSpeed:'Vel. de Ataque', CastSpeed:'Vel. de Conjuração', CriticalChance:'Chance Crítica', CriticalDamage:'Dano Crítico', MaxHp:'Vida Máxima', Armor:'Armadura', MovementSpeed:'Vel. de Movimento', CooldownReduction:'Redução de Recarga', DodgeChance:'Esquiva', BlockChance:'Bloqueio', DamageReduction:'Redução de Dano', DamageAbsorption:'Absorção de Dano', AllElementalResistance:'Resist. Elemental', HpLeech:'Roubo de Vida', HpRegenPerSec:'Regen. de Vida/s', AddHpPerHit:'Vida por Acerto', AddHpPerKill:'Vida por Abate', Multistrike:'Múltiplos Golpes', ProjectileCount:'Projéteis', IncreaseProjectileDamage:'Dano de Projétil', AreaOfEffect:'Área de Efeito', AddAllSkillLevel:'Nível de Habilidades', BaseAttackCountReduction:'Red. Ataques Base', IncreaseExpAmount:'Ganho de Exp', SkillHealIncrease:'Cura de Habilidade', SkillDurationIncrease:'Duração de Habilidade', SkillRangeExpansion:'Alcance de Habilidade' };
 				const COMBAT_PCT = new Set(['CriticalChance','CriticalDamage','MovementSpeed','CooldownReduction','DodgeChance','BlockChance','DamageReduction','DamageAbsorption','AllElementalResistance','HpLeech','AreaOfEffect','IncreaseExpAmount','SkillHealIncrease','SkillDurationIncrease','SkillRangeExpansion','IncreaseProjectileDamage','CastSpeed']);
-				const COMBAT_ABBR = { AttackDamage:'ATK', AttackSpeed:'ASPD', CastSpeed:'CSPD', CriticalChance:'CRIT', CriticalDamage:'CDMG', MaxHp:'HP', Armor:'ARM', MovementSpeed:'MSPD', CooldownReduction:'CDR', DodgeChance:'ESQ', BlockChance:'BLK', Multistrike:'MULTI', ProjectileCount:'PROJ', AddAllSkillLevel:'+HAB' };
+				const COMBAT_ABBR = { AttackDamage:'ATK', AttackSpeed:'ASPD', CastSpeed:'CAST', CriticalChance:'CRIT', CriticalDamage:'CRIT DMG', MaxHp:'HP', Armor:'ARM', MovementSpeed:'MSPD', CooldownReduction:'CDR', DodgeChance:'ESQ', BlockChance:'BLK', Multistrike:'MULTI', ProjectileCount:'PROJ', AddAllSkillLevel:'+HAB', AreaOfEffect:'AOE', IncreaseExpAmount:'EXP', IncreaseProjectileDamage:'DANO PROJ', DamageReduction:'RED DANO', DamageAbsorption:'ABS DANO', AllElementalResistance:'RES ELEM', HpLeech:'ROUBO VIDA', HpRegenPerSec:'REGEN/s' };
+					// rótulo curto p/ inerentes; cai pro nome completo quando não há sigla boa (ex.: AddHpPerHit)
+					const inhLabel = (st) => COMBAT_ABBR[st] || COMBAT_LABEL[st] || st;
 				const combatLabel = (st) => COMBAT_LABEL[st] || st;
 				// % se o modtype é aditivo/multiplicativo, ou se o stat é crítico (FLAT mas exibido em %)
 				const isPctStat = (b) => b.mod === 'ADDITIVE' || b.mod === 'MULTIPLICATIVE' || b.stat === 'CriticalChance' || b.stat === 'CriticalDamage';
@@ -792,6 +896,53 @@
 				const baseStatsShown = (id) => ((itemInfo(id) || {}).base || []);
 				// stat de destaque no card: 1º inerente (abreviado) ou o tipo de arma
 				const cardStat = (it) => { const inh = (it.inherent || [])[0]; return inh ? (COMBAT_ABBR[inh.stat] || inh.stat) + ' ' + fmtInh(inh) : it.gear; };
+					// atributo de destaque do card (1º inerente, rótulo completo)
+					const cardAttr = (it) => { const inh = (it.inherent || [])[0]; return inh ? inhLabel(inh.stat) + ' ' + fmtInh(inh) : ''; };
+					const tipBase = (it) => (it && it.base) || [];
+					// poder base como no jogo: AttackDamage->Poder de Ataque, Armor->Poder de Defesa
+					const tipPower = (it) => ((it && it.base) || []).map(b => {
+						if (b.stat === 'AttackDamage') return { label: 'Poder de Ataque', val: formatNumber(b.value) };
+						if (b.stat === 'Armor') return { label: 'Poder de Defesa', val: formatNumber(b.value) };
+						return { label: combatLabel(b.stat), val: fmtBaseStat(b) };
+					});
+					// espaços de GEMA por tipo: SÓ os Extra (dec/eng/ins). O "InherentSlotAmount" do
+					// jogo é a qtd de ATRIBUTOS inerentes (já listada acima), não é espaço de gema —
+					// por isso antes apareciam "3 slots de decoração" errados num Arcano (3 inerentes).
+					const SLOT_TYPES = [
+						{ key: 'dec', icon: 'slot_icons/dec.png', label: 'Decoração' },
+						{ key: 'eng', icon: 'slot_icons/eng.png', label: 'Gravação' },
+						{ key: 'ins', icon: 'slot_icons/ins.png', label: 'Inscrição' },
+					];
+					const tipSlots = (it) => {
+						const s = (it && it.slots) || {};
+						return SLOT_TYPES.filter(t => (s[t.key] || 0) > 0).map(t => ({ icon: t.icon, label: t.label, count: s[t.key] }));
+					};
+					// tooltip estilo jogo ao passar o mouse num card de item
+					// tooltip ancorada ao CARD (não ao cursor): fica ao lado, acompanha o scroll e
+					// nunca passa da viewport (clientWidth exclui a barra -> sem scroll horizontal).
+					const hoverItem = ref(null);
+					const hoverStage = ref(null);
+					let hoverEl = null;
+					const tipPos = ref({ left: 0, top: 0 });
+					const TIP_W = 256, TIP_H = 250;
+					const placeTip = () => {
+						if (!hoverEl) return;
+						const r = hoverEl.getBoundingClientRect();
+						const vw = document.documentElement.clientWidth, vh = window.innerHeight;
+						if (r.bottom < 4 || r.top > vh - 4) { clearTip(); return; } // card saiu da tela -> some
+						let left = r.right + 10;
+						if (left + TIP_W > vw - 6) left = r.left - TIP_W - 10; // sem espaço à direita -> joga pra esquerda
+						left = Math.max(6, Math.min(left, vw - TIP_W - 6));
+						let top = Math.max(6, Math.min(r.top, vh - TIP_H - 6));
+						tipPos.value = { left, top };
+					};
+					const onItemHover = (it, ev) => { hoverItem.value = it; hoverStage.value = null; hoverEl = ev.currentTarget; placeTip(); };
+					const onStageHover = (s, ev) => { hoverStage.value = s; hoverItem.value = null; hoverEl = ev.currentTarget; placeTip(); };
+					const clearTip = () => { hoverItem.value = null; hoverStage.value = null; hoverEl = null; };
+					const tipStyle = computed(() => ({ left: tipPos.value.left + 'px', top: tipPos.value.top + 'px' }));
+					// monstro/sprite p/ a tooltip da fase (do stage_details)
+					const stageTipDetail = computed(() => hoverStage.value ? (stageDetails.value[hoverStage.value.key] || null) : null);
+					const stageTipMob = computed(() => { const d = stageTipDetail.value; if (!d) return null; return d.boss || (d.monsters && d.monsters[0]) || null; });
 				const itemName = (id) => (itemInfo(id) && itemInfo(id).name) || ('#' + id);
 				const itemIcon = (id) => (itemInfo(id) && itemInfo(id).icon) || '';
 				const itemGrade = (id) => (itemInfo(id) && itemInfo(id).grade) || '';
@@ -819,7 +970,7 @@
 					return idx;
 				});
 				// lista unificada: equipamentos do catálogo + materiais do loot dos baús
-				const allItemsList = computed(() => Object.keys(itemsCatalog.value).map(id => { const v = itemsCatalog.value[id]; return { id, name: v.name, grade: v.grade, icon: v.icon, part: v.part, gear: v.gear, level: v.level, obtainable: v.obtainable, drops: v.drops, slots: v.slots, alchemyGold: v.alchemyGold, cubeExp: v.cubeExp, atk: v.atk, inherent: v.inherent }; }));
+				const allItemsList = computed(() => Object.keys(itemsCatalog.value).map(id => { const v = itemsCatalog.value[id]; return { id, name: v.name, grade: v.grade, icon: v.icon, part: v.part, gear: v.gear, level: v.level, obtainable: v.obtainable, drops: v.drops, slots: v.slots, alchemyGold: v.alchemyGold, cubeExp: v.cubeExp, atk: v.atk, base: v.base, inherent: v.inherent, tradable: v.tradable }; }));
 				const filteredItems = computed(() => {
 					const q = itemSearch.value.trim().toLowerCase();
 					let list = allItemsList.value;
@@ -833,8 +984,15 @@
 				});
 				const itemShown = ref(60);
 				const shownItems = computed(() => filteredItems.value.slice(0, itemShown.value));
-				const onItemsScroll = (e) => { const el = e.target; if (el.scrollHeight - el.scrollTop - el.clientHeight < 400 && itemShown.value < filteredItems.value.length) itemShown.value += 60; };
+				// scroll da PÁGINA (sem caixa interna): carrega mais ao chegar perto do fim
+					const onItemsScroll = () => {
+						if (hoverItem.value || hoverStage.value) placeTip(); // mantém a tooltip colada ao alvo ao rolar
+						if (view.value !== 'items') return;
+						const doc = document.documentElement;
+						if (doc.scrollHeight - window.scrollY - window.innerHeight < 600 && itemShown.value < filteredItems.value.length) itemShown.value += 60;
+					};
 				watch([gradeFilter, partFilter, lvlMin, lvlMax, itemSearch, obtainableOnly], () => { itemShown.value = 60; });
+					watch([view, selectedItem], () => clearTip()); // some a tooltip ao trocar de aba ou abrir detalhe
 				// MATERIAIS (aba própria)
 				const matSearch = ref('');
 				const materialsList = computed(() => {
@@ -970,7 +1128,7 @@
 				const goView = (id) => { selectedChest.value = null; selectedItem.value = null; selectedMaterial.value = null; view.value = id; };
 				const navItems = [
 					{ id: 'painel', label: 'Painel', icon: 'dashboard' },
-					{ id: 'fases', label: 'Fases', icon: 'shield' },
+					{ id: 'fases', label: 'Fases', icon: 'map' },
 					{ id: 'runas', label: 'Runas', icon: 'sparkles' },
 					{ id: 'pets', label: 'Pets', icon: 'paw' },
 					{ id: 'chests', label: 'Baús', icon: 'package' },
@@ -1210,6 +1368,17 @@
 
 				// Aba "Fases": navega entre estágios sem modal. fasesStage = estágio em foco.
 				const fasesStage = ref(null);
+					// sincroniza mapa <-> detalhe (sem loop: só atualiza quando difere)
+					watch([mapAct, mapDiff], () => {
+						const cur = stageMap.value[fasesStage.value];
+						if (!cur || cur.act !== mapAct.value || cur.difficulty !== mapDiff.value) {
+							const first = mapStages.value[0]; if (first) fasesStage.value = first.key;
+						}
+					});
+					watch(fasesStage, (k) => {
+						const s = stageMap.value[k];
+						if (s) { if (mapAct.value !== s.act) mapAct.value = s.act; if (mapDiff.value !== s.difficulty) mapDiff.value = s.difficulty; }
+					});
 				const openStageTab = (key) => { if (stageDetails.value[key]) { fasesStage.value = key; view.value = 'fases'; } };
 				// ----- busca global (fases, itens, baús, runas, pets) -----
 				const globalSearch = ref('');
@@ -1459,6 +1628,8 @@
 				const startApp = () => { loadStagesList(); loadStageDetails(); loadMonsterSprites(); loadHeroes(); loadRunes(); loadPets(); loadChests(); loadItems(); fetchStats(); initUpdate(); watchVersion(); setInterval(fetchStats, 2000); setInterval(watchVersion, 4000); setInterval(pollUpdateAvailability, 10 * 60 * 1000); pollLogs(); setInterval(pollLogs, 1500); };
 				const useThisTab = () => { duplicateTab.value = false; startApp(); };
 				onMounted(() => {
+					window.addEventListener('scroll', onItemsScroll, { passive: true });
+					window.addEventListener('resize', () => { if (hoverItem.value) placeTip(); }, { passive: true });
 					if ('BroadcastChannel' in window) {
 						dashChannel = new BroadcastChannel('tbh-dash');
 						let existing = false;
@@ -1486,7 +1657,8 @@
 					stageHP, chestRateByStage, chestsPerHour, formatItems,
 					stageDetails, fasesStage, openStageTab, stageDetail, stageSummary, stageChests, fmtInt, stageName, stageLevel,
 					monsterSprite, detailStageKeys, gotoStageDelta, fasesIndex, activeHeroList,
-					itemsCatalog, GRADES, partFilters, partLabel, combatLabel, fmtBaseStat, fmtInh, baseStatsShown, cardStat, gradeFilter, partFilter, lvlMin, lvlMax, obtainableOnly, shownItems, gradeBelow, itemInfo,
+					mapAct, mapDiff, mapActs, mapDiffs, mapBg, mapStages, mapLine, selectMapStage,
+					itemsCatalog, GRADES, partFilters, partLabel, combatLabel, fmtBaseStat, fmtInh, baseStatsShown, cardStat, cardAttr, inhLabel, tipBase, tipPower, tipSlots, hoverItem, onItemHover, clearTip, tipStyle, hoverStage, onStageHover, stageTipMob, gradeFilter, partFilter, lvlMin, lvlMax, obtainableOnly, shownItems, gradeBelow, itemInfo,
 					runesData, playerGold, runeLevel, attributeTotals, attrGroups, attrTab, attrGroupOrder, ATTR_GROUP_LABEL, nextLevelCost, isUnlockable, unlockHint, runeState,
 					runeNX, runeNY, runeCanvasW, runeCanvasH, runeLineList, runeListSorted, selectedRune, fmtRuneVal, statLabel, statUnit,
 					runeZoom, runePanX, runePanY, onRuneWheel, onRuneDown, onRuneMove, onRuneUp, selectRune, zoomRunes, fitRunes,

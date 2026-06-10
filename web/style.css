@@ -681,7 +681,7 @@ th.sortable span { color: var(--gold); font-size: 14px; }
 .obtain-note.synth { border-color: rgba(192,139,255,.3); color: #cdb0ff; }
 
 /* ---------- GRID DE ITENS (cards) ---------- */
-.items-grid-wrap { flex: 1; min-width: 0; max-height: 74vh; overflow-y: auto; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px; }
+.items-grid-wrap { min-width: 0; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px; }
 .items-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
 .item-card { position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 26px 8px 8px; background: var(--panel-2); border: 1.5px solid var(--line); border-radius: 11px; cursor: pointer; transition: transform .1s, border-color .12s, box-shadow .12s; }
 .item-card:hover { transform: translateY(-2px); }
@@ -740,5 +740,87 @@ th.sortable span { color: var(--gold); font-size: 14px; }
 .ic-slot img { width: 15px; height: 15px; image-rendering: pixelated; object-fit: contain; }
 .im-slots { display: inline-flex; align-items: center; gap: 6px; }
 .im-slots .ic-slot img { width: 16px; height: 16px; }
-.ic-foot { display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 2px; font-size: 11px; gap: 6px; }
-.ic-stat { color: #ff9b6b; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/* footer do card: linhas "Nv X | algo", alinhadas à esquerda, com wrap (sem reticências) */
+.ic-foot { display: flex; flex-direction: column; align-items: flex-start; width: 100%; margin-top: 3px; gap: 2px; font-size: 12px; }
+.ic-line { display: flex; align-items: baseline; gap: 4px; width: 100%; text-align: left; line-height: 1.25; color: var(--txt-dim); white-space: normal; overflow-wrap: anywhere; }
+.ic-line b { color: var(--gold); font-weight: 800; flex-shrink: 0; }
+.ic-line i { font-style: normal; opacity: .45; flex-shrink: 0; }
+.ic-line span { color: #ffb38a; font-weight: 600; }
+.ic-line:first-child span { color: var(--txt-dim); font-weight: 600; }
+
+/* tooltip estilo jogo ao passar o mouse num card — layout em BLOCO (margens explícitas,
+   nada de flex-column que possa esticar e criar buracos verticais) */
+.game-tip { position: fixed; z-index: 9999; width: 250px; pointer-events: none; background: #14110d; border: 2px solid var(--line); border-radius: 8px; box-shadow: 0 12px 32px rgba(0,0,0,.65); font-size: 13px; line-height: 1.25; }
+.game-tip * { margin: 0; }
+.game-tip .gt-title { font-family: var(--font-d); font-weight: 800; font-size: 14px; text-align: center; padding: 7px 10px; color: #fff; background: rgba(255,255,255,.05); border-bottom: 1px solid rgba(255,255,255,.08); border-radius: 6px 6px 0 0; }
+.gt-body { padding: 11px 13px; }
+.gt-top { display: flex; gap: 10px; align-items: flex-start; }
+.gt-icon { width: 44px; height: 44px; object-fit: contain; image-rendering: pixelated; background: rgba(0,0,0,.3); border: 1px solid rgba(255,255,255,.1); border-radius: 6px; padding: 2px; flex: none; }
+.gt-meta { min-width: 0; }
+.gt-grade { font-weight: 800; font-size: 12px; margin-bottom: 2px; }
+.gt-power { color: #ffd479; font-weight: 700; }
+.gt-power b { color: #fff; }
+.gt-sec { margin-top: 9px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,.08); }
+.gt-sec-h { font-size: 10.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--txt-faint); margin-bottom: 4px; }
+.gt-inh { color: #cfe9a6; font-weight: 600; margin-bottom: 2px; }
+.gt-inh:last-child { margin-bottom: 0; }
+.gt-inh b { color: #fff; }
+/* slots como chips horizontais (mesma estrutura flex-wrap dos cards, que funciona) */
+.gt-slots { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 9px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,.08); }
+.gt-chip { display: inline-flex; align-items: center; gap: 5px; padding: 3px 8px; border-radius: 7px; background: rgba(244,183,64,.12); border: 1px solid rgba(244,183,64,.34); color: #e7c98a; font-weight: 700; font-size: 11px; line-height: 1.15; white-space: nowrap; }
+.gt-chip.empty { background: rgba(255,255,255,.04); border-color: var(--line); color: var(--txt-dim); font-weight: 600; }
+.gt-chip b { color: #fff; font-weight: 800; }
+.gt-chip img { width: 13px; height: 13px; image-rendering: pixelated; object-fit: contain; }
+.gt-chip.empty img { filter: grayscale(1) brightness(.85); opacity: .8; }
+/* linhas "rótulo … valor" (tooltip de fase) */
+.gt-row { display: flex; justify-content: space-between; gap: 14px; margin-bottom: 2px; color: var(--txt-dim); }
+.gt-row:last-child { margin-bottom: 0; }
+.gt-row b { color: #fff; font-weight: 800; }
+.gt-foot { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,.08); }
+.gt-trade { font-weight: 700; font-size: 12px; }
+.gt-trade.yes { color: #7fd36a; } .gt-trade.no { color: #ff8585; }
+.gt-req { color: #ff8585; font-weight: 700; font-size: 12px; }
+.gt-gold-row { margin-top: 4px; }
+.gt-gold { color: var(--gold); font-weight: 800; }
+/* borda da tooltip por raridade */
+.gt-common { border-color: #4a525e; } .gt-uncommon { border-color: #3b7b1d; } .gt-rare { border-color: #21528e; }
+.gt-legendary { border-color: #904603; } .gt-immortal { border-color: #8c1818; } .gt-arcana { border-color: #652284; }
+.gt-beyond { border-color: #8f1e46; } .gt-celestial { border-color: #2f7d92; } .gt-divine { border-color: #b6a273; } .gt-cosmic { border-color: #6c301f; }
+
+/* aba Fases: 2 colunas — mapa (esquerda) + detalhe da fase (direita) */
+.fases-layout { display: grid; grid-template-columns: minmax(280px, 370px) 1fr; gap: 22px; align-items: start; }
+.fmap { position: sticky; top: 16px; display: flex; flex-direction: column; gap: 10px; }
+.fmap-diff { width: 100%; }
+.fmap-acts { display: flex; gap: 6px; }
+.fmap-acts button { flex: 1; padding: 8px 6px; font-family: var(--font-d); font-weight: 700; font-size: 13px; border: 1px solid var(--line); background: var(--panel-2); color: var(--txt-dim); border-radius: 9px 9px 0 0; cursor: pointer; transition: all .12s; }
+.fmap-acts button.on { background: linear-gradient(180deg, rgba(244,183,64,.22), rgba(244,183,64,.05)); border-color: var(--gold); color: var(--gold); }
+.fmap-cap { font-size: 12px; color: var(--txt-faint); text-align: center; }
+.map-canvas { position: relative; width: 100%; aspect-ratio: 300 / 430; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--panel-2); box-shadow: var(--shadow); }
+.map-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; }
+.map-canvas::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,10,16,.12), rgba(8,10,16,.4)); pointer-events: none; }
+.map-lines { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+/* nós = hotspots TRANSPARENTES em cima das bolinhas brancas do fundo (não cobre a arte).
+   Só o número fica ao lado, igual ao jogo; brilho ao passar o mouse / selecionar. */
+.map-hot { position: absolute; transform: translate(-50%, -50%); width: 22px; height: 22px; border-radius: 50%; background: transparent; border: 0; padding: 0; cursor: pointer; z-index: 2; transition: box-shadow .12s; }
+.map-hot:hover { box-shadow: 0 0 0 3px rgba(255,255,255,.45), 0 0 10px rgba(255,255,255,.3); z-index: 3; }
+.map-hot.on { box-shadow: 0 0 0 3px rgba(244,183,64,.9), 0 0 16px rgba(244,183,64,.6); z-index: 4; }
+.map-hot.boss { width: 26px; height: 26px; }
+.map-hot.boss.on { box-shadow: 0 0 0 3px rgba(255,120,120,.9), 0 0 16px rgba(255,90,90,.6); }
+.mh-num { position: absolute; left: calc(100% + 1px); top: 50%; transform: translateY(-50%); font-family: var(--font-d); font-weight: 800; font-size: 12px; color: #fff; text-shadow: -1px 0 2px #000, 1px 0 2px #000, 0 1px 2px #000, 0 0 4px #000; pointer-events: none; white-space: nowrap; }
+.map-hot.boss .mh-num { color: var(--gold); font-size: 14px; }
+/* bandeirinha no nó selecionado (balança como no jogo) */
+.map-flag { position: absolute; left: 50%; bottom: calc(50% + 8px); width: 14px; height: 11px; background: #e8403f; clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 76%, 0 100%); transform-origin: left bottom; animation: flagWave 1.05s ease-in-out infinite; z-index: 6; pointer-events: none; }
+.map-flag::before { content: ''; position: absolute; left: -2px; top: -1px; width: 2px; height: 19px; background: #7a5430; border-radius: 1px; }
+@keyframes flagWave { 0%, 100% { transform: rotate(-2deg) skewX(0deg); } 50% { transform: rotate(2deg) skewX(-7deg); } }
+/* responsivo: empilha mapa e detalhe */
+@media (max-width: 760px) { .fases-layout { grid-template-columns: 1fr; } .fmap { position: static; max-width: 380px; margin: 0 auto; } }
+
+/* seção Criação no detalhe */
+.craft-card { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; margin-bottom: 8px; }
+.craft-head { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.craft-tier { font-family: var(--font-d); font-weight: 800; font-size: 12px; color: #15110c; background: var(--gold); border-radius: 5px; padding: 2px 8px; }
+.craft-type { font-weight: 700; color: var(--txt); }
+.craft-mats { display: flex; flex-wrap: wrap; gap: 8px; }
+.craft-mat { display: inline-flex; align-items: center; gap: 6px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 5px 9px; font-size: 13px; color: var(--txt-dim); }
+.craft-mat img { width: 22px; height: 22px; image-rendering: pixelated; object-fit: contain; }
+.craft-mat b { color: var(--gold); font-weight: 800; }
