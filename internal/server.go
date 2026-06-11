@@ -154,6 +154,23 @@ func StartWebServer(ctrl *Control, webFiles embed.FS, dataDir string) {
 		_ = json.NewEncoder(w).Encode(out)
 	})
 
+	http.HandleFunc("/api/i18n/", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		code := strings.TrimPrefix(r.URL.Path, "/api/i18n/")
+		if !i18nLangs[code] {
+			http.Error(w, "idioma desconhecido", http.StatusNotFound)
+			return
+		}
+		data, err := i18nPack(&http.Client{Timeout: 15 * time.Second}, code)
+		if err != nil {
+			http.Error(w, "pack de idioma indisponível (offline e sem cache): "+err.Error(), http.StatusBadGateway)
+			return
+		}
+		w.Header().Set("Content-Type", "application/json; charset=utf-8")
+		w.Header().Set("Cache-Control", "max-age=3600")
+		_, _ = w.Write(data)
+	})
+
 	http.HandleFunc("/api/version", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", "*")
 		w.Header().Set("Content-Type", "application/json")

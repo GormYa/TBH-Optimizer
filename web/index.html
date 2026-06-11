@@ -17,30 +17,30 @@
 		<div class="dup-overlay" v-if="duplicateTab">
 			<div class="dup-card">
 				<div class="dup-ico"><icon name="shield" :size="32"></icon></div>
-				<h3>Painel já aberto</h3>
-				<p>O otimizador já está aberto em outra aba deste navegador. Volte para ela — ou continue por aqui.</p>
-				<button @click="useThisTab">Continuar nesta aba</button>
+				<h3>{{ t('Painel já aberto') }}</h3>
+				<p>{{ t('O otimizador já está aberto em outra aba deste navegador. Volte para ela — ou continue por aqui.') }}</p>
+				<button @click="useThisTab">{{ t('Continuar nesta aba') }}</button>
 			</div>
 		</div>
 
 		<div class="quit-overlay" v-if="quitDone">
 			<div class="quit-card">
 				<div class="quit-ico"><icon name="check" :size="34"></icon></div>
-				<h3>Otimizador encerrado</h3>
-				<p>Pode fechar esta aba. Para voltar a monitorar o save, abra o programa de novo.</p>
+				<h3>{{ t('Otimizador encerrado') }}</h3>
+				<p>{{ t('Pode fechar esta aba. Para voltar a monitorar o save, abra o programa de novo.') }}</p>
 			</div>
 		</div>
 
 		<div class="console-panel" v-if="consoleOpen">
 			<div class="console-head">
-				<span class="console-title"><icon name="info" :size="14"></icon> Console do otimizador</span>
+				<span class="console-title"><icon name="info" :size="14"></icon> {{ t('Console do otimizador') }}</span>
 				<div class="console-actions">
-					<button class="cbtn" @click="clearConsole">Limpar</button>
-					<button class="cbtn" @click="toggleConsole" title="Fechar"><icon name="x" :size="14"></icon></button>
+					<button class="cbtn" @click="clearConsole">{{ t('Limpar') }}</button>
+					<button class="cbtn" @click="toggleConsole" :title="t('Fechar')"><icon name="x" :size="14"></icon></button>
 				</div>
 			</div>
 			<div class="console-body">
-				<div v-if="!consoleLogs.length" class="console-empty">Aguardando eventos… conclua uma fase no jogo pra ver o registro (ou o motivo do descarte) aqui.</div>
+				<div v-if="!consoleLogs.length" class="console-empty">{{ t('Aguardando eventos… conclua uma fase no jogo pra ver o registro (ou o motivo do descarte) aqui.') }}</div>
 				<div v-for="l in consoleLogs" :key="l.seq" class="console-line" :class="'cl-' + l.kind">
 					<span class="cl-time">{{ l.time }}</span>
 					<span class="cl-msg">{{ l.msg }}</span>
@@ -60,50 +60,52 @@
 				<div class="brand-mark"><icon name="shield" :size="22"></icon></div>
 				<div class="brand-text">
 					<h1>TASKBAR<span>HERO</span></h1>
-					<p>Otimizador de Farm</p>
+					<p>{{ t('Otimizador de Farm') }}</p>
 				</div>
 			</div>
 
 			<div class="monitor">
 				<span class="pulse-dot"></span>
-				<span>Monitoramento Ativo</span>
+				<span>{{ t('Monitoramento Ativo') }}</span>
 			</div>
 
 			<nav class="nav">
 				<button v-for="item in navItems" :key="item.id"
 						:class="{ active: view === item.id }" @click="goView(item.id)">
 					<span class="nav-ico"><icon :name="item.icon" :size="18"></icon></span>
-					<span>{{ item.label }}</span>
+					<span>{{ t(item.label) }}</span>
 				</button>
 			</nav>
 
 			<div class="sidebar-foot">
 				<div class="mini-stat">
-					<span class="mini-label">Corridas</span>
+					<span class="mini-label">{{ t('Corridas') }}</span>
 					<span class="mini-value">{{ totalRunsAllStages }}</span>
 				</div>
 				<div class="mini-stat">
-					<span class="mini-label">Modelo</span>
+					<span class="mini-label">{{ t('Modelo') }}</span>
 					<span class="mini-value" :class="statsReport.calibrated ? 'ok' : 'wait'">
-						{{ statsReport.calibrated ? 'Calibrado' : 'Aguardando' }}
+						{{ statsReport.calibrated ? t('Calibrado') : t('Aguardando') }}
 					</span>
 				</div>
-				<div class="mini-stat" v-if="statsReport.effective_dps > 0" title="DPS efetivo do seu time, deduzido dos clears reais (HP destruído por segundo). É a base das estimativas de tempo das fases que você ainda não rodou.">
-					<span class="mini-label">DPS efetivo</span>
+				<div class="mini-stat" v-if="statsReport.effective_dps > 0" :title="t('DPS efetivo do seu time, deduzido dos clears reais (HP destruído por segundo). É a base das estimativas de tempo das fases que você ainda não rodou.')">
+					<span class="mini-label">{{ t('DPS efetivo') }}</span>
 					<span class="mini-value">{{ formatNumber(Math.round(statsReport.effective_dps)) }}/s</span>
 				</div>
-				<button class="btn-reset" @click="resetHistory">Zerar Histórico</button>
+				<select class="lang-sel" :value="lang" @change="setLang($event.target.value)" :title="t('Idioma')">
+					<option v-for="l in LANGS" :key="l.code" :value="l.code">{{ l.label }}</option>
+				</select>
+				<button class="btn-console" :class="{ on: consoleOpen }" @click="toggleConsole" :title="t('Mostra ao vivo o que o monitor está fazendo')"><icon name="info" :size="13"></icon> Console {{ consoleOpen ? '▾' : '▸' }}</button>
+				<button class="btn-reset" @click="resetHistory">{{ t('Zerar Histórico') }}</button>
+				<button class="btn-quit" @click="quitApp" :title="t('Encerra o monitoramento e fecha o programa')"><icon name="x" :size="13"></icon> {{ t('Encerrar otimizador') }}</button>
 				<div class="ver-row">
-					<span class="ver-tag">v{{ appVersion || '—' }}</span>
+					<span class="ver-tag" :title="chestData.gameVersion ? t('Dados do jogo:') + ' v' + chestData.gameVersion : ''">v{{ appVersion || '—' }}<template v-if="chestData.gameVersion"> · {{ t('jogo') }} v{{ chestData.gameVersion }}</template></span>
 					<button class="btn-ver" @click="checkUpdate" :disabled="updateBusy">
 						<template v-if="updateBusy">…</template>
-						<template v-else><icon :name="updateInfo.has_update ? 'download' : 'refresh'" :size="13"></icon> {{ updateInfo.has_update ? 'Atualizar' : 'Verificar' }}</template>
+						<template v-else><icon :name="updateInfo.has_update ? 'download' : 'refresh'" :size="13"></icon> {{ updateInfo.has_update ? t('Atualizar') : t('Verificar') }}</template>
 					</button>
 				</div>
 				<div class="ver-msg" v-if="updateMsg">{{ updateMsg }}</div>
-				<div class="ver-game" v-if="chestData.gameVersion">Dados do jogo: <b>v{{ chestData.gameVersion }}</b></div>
-					<button class="btn-console" :class="{ on: consoleOpen }" @click="toggleConsole" title="Mostra ao vivo o que o monitor está fazendo"><icon name="info" :size="13"></icon> Console {{ consoleOpen ? '▾' : '▸' }}</button>
-					<button class="btn-quit" @click="quitApp" title="Encerra o monitoramento e fecha o programa"><icon name="x" :size="13"></icon> Encerrar otimizador</button>
 			</div>
 		</aside>
 
@@ -113,35 +115,35 @@
 				<div class="ub-left">
 					<span class="ub-spark"><icon name="sparkles" :size="24"></icon></span>
 					<div>
-						<div class="ub-title">Nova versão <b>v{{ updateInfo.latest }}</b> disponível</div>
-						<div class="ub-sub">{{ updateInfo.notes || 'Clique para baixar e reabrir automaticamente.' }}</div>
+						<div class="ub-title">{{ t('Nova versão') }} <b>v{{ updateInfo.latest }}</b> {{ t('disponível') }}</div>
+						<div class="ub-sub">{{ updateInfo.notes || t('Clique para baixar e reabrir automaticamente.') }}</div>
 					</div>
 				</div>
-				<button class="ub-btn" @click="applyUpdate" :disabled="updateBusy"><icon name="download" :size="16"></icon> {{ updateBusy ? 'Atualizando…' : 'Atualizar agora' }}</button>
+				<button class="ub-btn" @click="applyUpdate" :disabled="updateBusy"><icon name="download" :size="16"></icon> {{ updateBusy ? t('Atualizando…') : t('Atualizar agora') }}</button>
 			</div>
 			<header class="content-head">
 				<div>
-					<div class="crumb">Painel</div>
-					<h2>{{ viewTitle }}</h2>
+					<div class="crumb">{{ t('Painel') }}</div>
+					<h2>{{ t(viewTitle) }}</h2>
 				</div>
 				<div class="head-right">
 					<div class="global-search">
 						<span class="gs-ico-search"><icon name="search" :size="16"></icon></span>
-						<input type="text" v-model="globalSearch" @focus="searchActive = true" @blur="searchActive = false" placeholder="Buscar fase, item, baú, runa, pet…">
+						<input type="text" v-model="globalSearch" @focus="searchActive = true" @blur="searchActive = false" :placeholder="t('Buscar fase, item, material, baú, runa, pet…')">
 						<button v-if="globalSearch" class="gs-clear" @mousedown.prevent="globalSearch = ''"><icon name="x" :size="14"></icon></button>
 						<div class="gs-results" v-if="searchActive && globalSearch.trim().length >= 2" @mousedown.prevent>
 							<div class="gs-group" v-for="g in searchResults" :key="g.cat">
-								<div class="gs-cat">{{ g.cat }}</div>
+								<div class="gs-cat">{{ t(g.cat) }}</div>
 								<button class="gs-item" v-for="(it, i) in g.items" :key="i" @click="pickSearch(it)">
 									<span class="gs-ico"><icon :name="it.icon" :size="14"></icon></span>
 									<span class="gs-label">{{ it.label }}</span>
-									<span class="gs-sub">{{ it.sub }}</span>
+									<span class="gs-sub">{{ t(it.sub) }}</span>
 								</button>
 							</div>
-							<div class="gs-empty" v-if="!searchResults.length">Nada encontrado para "{{ globalSearch }}".</div>
+							<div class="gs-empty" v-if="!searchResults.length">{{ t('Nada encontrado para') }} "{{ globalSearch }}".</div>
 						</div>
 					</div>
-					<span class="badge">{{ sortedStages.length }} fase(s)</span>
+					<span class="badge">{{ sortedStages.length }} {{ t('fase(s)') }}</span>
 				</div>
 			</header>
 
@@ -149,28 +151,28 @@
 			<section v-show="view === 'painel'" class="view">
 				<div class="cards-grid">
 					<div class="card accent-gold">
-						<div class="card-title">Melhor Mapa · Ouro/h</div>
+						<div class="card-title">{{ t('Melhor Mapa · Ouro/h') }}</div>
 						<div class="card-value">{{ statsReport.best_gold_stage ? formatStageName(statsReport.best_gold_stage) : '---' }}</div>
 						<div class="card-sub" v-if="bestGoldData">
-							<strong class="g-gold">{{ formatNumber(bestGoldData.avg_gold_per_hour) }}</strong>/h · {{ bestGoldData.total_runs }} corridas
+							<strong class="g-gold">{{ formatNumber(bestGoldData.avg_gold_per_hour) }}</strong>/h · {{ bestGoldData.total_runs }} {{ t('corridas') }}
 						</div>
-						<div class="card-sub muted" v-else>Sem dados ainda</div>
+						<div class="card-sub muted" v-else>{{ t('Sem dados ainda') }}</div>
 					</div>
 
 					<div class="card accent-xp">
-						<div class="card-title">Melhor Mapa · XP/h</div>
+						<div class="card-title">{{ t('Melhor Mapa · XP/h') }}</div>
 						<div class="card-value">{{ statsReport.best_xp_stage ? formatStageName(statsReport.best_xp_stage) : '---' }}</div>
 						<div class="card-sub" v-if="bestXpData">
-							<strong class="g-xp">{{ formatNumber(bestXpData.avg_xp_per_hour) }}</strong>/h · {{ bestXpData.total_runs }} corridas
+							<strong class="g-xp">{{ formatNumber(bestXpData.avg_xp_per_hour) }}</strong>/h · {{ bestXpData.total_runs }} {{ t('corridas') }}
 						</div>
-						<div class="card-sub muted" v-else>Sem dados ainda</div>
+						<div class="card-sub muted" v-else>{{ t('Sem dados ainda') }}</div>
 					</div>
 
 					<div class="card accent-blue wide">
-						<div class="card-title">Sessão</div>
-						<div class="card-value small">{{ totalRunsAllStages }} corridas monitoradas</div>
+						<div class="card-title">{{ t('Sessão') }}</div>
+						<div class="card-value small">{{ totalRunsAllStages }} {{ t('corridas monitoradas') }}</div>
 						<div class="card-sub muted">
-							Modo: <strong>{{ statsReport.calibrated ? 'Projeções ativas' : 'Aguardando 1-1 + outra fase' }}</strong> · Média Móvel (EMA)
+							{{ t('Modo:') }} <strong>{{ statsReport.calibrated ? t('Projeções ativas') : t('Aguardando 1-1 + outra fase') }}</strong> · {{ t('Média Móvel (EMA)') }}
 						</div>
 					</div>
 				</div>
@@ -180,102 +182,102 @@
 			<section v-show="view === 'painel'" class="view">
 				<div class="panel pad calib-bar">
 					<div class="calib-title">
-						<h3 class="panel-title">Calibrar Projeções</h3>
-						<p class="hint">Âncoras: <strong>1-1</strong> + o <strong>maior mapa que você alcança</strong>. Adicione quantos mapas quiser abaixo — quanto mais pontos, melhor a estimativa. O tempo digitado é só um ponto de partida: as <strong>corridas reais</strong> vão refinando o valor automaticamente.</p>
+						<h3 class="panel-title">{{ t('Calibrar Projeções') }}</h3>
+						<p class="hint" v-html="t('Âncoras: <strong>1-1</strong> + o <strong>maior mapa que você alcança</strong>. Adicione quantos mapas quiser abaixo — quanto mais pontos, melhor a estimativa. O tempo digitado é só um ponto de partida: as <strong>corridas reais</strong> vão refinando o valor automaticamente.')"></p>
 					</div>
 					<div class="calib-fields">
 						<div class="fld-group">
-							<label class="fld-label">Normal 1-1 (tempo)</label>
-							<input type="text" placeholder="Ex: 12 ou 0:12" v-model="calibBaseTime">
+							<label class="fld-label">{{ t('Normal 1-1 (tempo)') }}</label>
+							<input type="text" :placeholder="t('Ex: 12 ou 0:12')" v-model="calibBaseTime">
 						</div>
 						<div class="fld-group">
-							<label class="fld-label">Fase limite</label>
+							<label class="fld-label">{{ t('Fase limite') }}</label>
 							<select v-model="calibLimitStage" class="fld">
-								<option value="" disabled>Selecione…</option>
+								<option value="" disabled>{{ t('Selecione…') }}</option>
 								<option v-for="stg in stagesList" :key="stg.key" :value="stg.key" v-show="stg.key !== 1101">
 									{{ formatDifficulty(stg.difficulty) }} {{ stg.label }}
 								</option>
 							</select>
 						</div>
 						<div class="fld-group">
-							<label class="fld-label">Tempo da fase limite</label>
-							<input type="text" placeholder="Ex: 45 ou 0:45" v-model="calibLimitTime">
+							<label class="fld-label">{{ t('Tempo da fase limite') }}</label>
+							<input type="text" :placeholder="t('Ex: 45 ou 0:45')" v-model="calibLimitTime">
 						</div>
-						<button class="btn-submit slim" @click="submitCalibration">Calibrar âncoras</button>
+						<button class="btn-submit slim" @click="submitCalibration">{{ t('Calibrar âncoras') }}</button>
 					</div>
 					<div class="calib-add">
 						<select v-model="addStage" class="fld">
-							<option value="" disabled>Adicionar tempo de qualquer mapa…</option>
+							<option value="" disabled>{{ t('Adicionar tempo de qualquer mapa…') }}</option>
 							<option v-for="stg in stagesList" :key="stg.key" :value="stg.key">{{ formatDifficulty(stg.difficulty) }} {{ stg.label }}</option>
 						</select>
-						<input type="text" placeholder="Tempo (ex: 1:45)" v-model="addTime">
-						<button class="btn-submit slim ghost" @click="addMapTime">+ Adicionar mapa</button>
+						<input type="text" :placeholder="t('Tempo (ex: 1:45)')" v-model="addTime">
+						<button class="btn-submit slim ghost" @click="addMapTime">{{ t('+ Adicionar mapa') }}</button>
 					</div>
 				</div>
 
 				<div class="panel">
 					<div class="hero-strip" v-if="activeHeroList.length">
-						<span class="hs-label">Time ativo</span>
+						<span class="hs-label">{{ t('Time ativo') }}</span>
 						<div class="hs-hero" v-for="h in activeHeroList" :key="h.key">
 							<img v-if="h.icon" :src="h.icon" class="hs-icon" loading="lazy" onerror="this.style.visibility='hidden'">
-							<div class="hs-meta"><span class="hs-name">{{ h.name }}</span><span class="hs-lvl">Nv {{ h.level }}</span></div>
+							<div class="hs-meta"><span class="hs-name">{{ h.name }}</span><span class="hs-lvl">{{ t('Nv') }} {{ h.level }}</span></div>
 						</div>
 					</div>
 					<div class="perf-head" v-if="sortedStages.length > 0">
-						<h3 class="panel-title">Desempenho por Fase</h3>
+						<h3 class="panel-title">{{ t('Desempenho por Fase') }}</h3>
 						<div class="rec-toggle">
-							<span class="rec-toggle-lbl">Melhor mapa pra:</span>
-							<button type="button" :class="{ on: sortKey === 'avg_gold_per_hour' }" @click="rankBy('avg_gold_per_hour')"><icon name="coins" :size="15"></icon> Ouro</button>
+							<span class="rec-toggle-lbl">{{ t('Melhor mapa pra:') }}</span>
+							<button type="button" :class="{ on: sortKey === 'avg_gold_per_hour' }" @click="rankBy('avg_gold_per_hour')"><icon name="coins" :size="15"></icon> {{ t('Ouro') }}</button>
 							<button type="button" :class="{ on: sortKey === 'avg_xp_per_hour' }" @click="rankBy('avg_xp_per_hour')"><icon name="zap" :size="15"></icon> XP</button>
 						</div>
 					</div>
 					<div class="empty" v-if="sortedStages.length === 0">
 						<div class="empty-mark"><icon name="clock" :size="40"></icon></div>
-						<h3>Aguardando o save…</h3>
-						<p>A tabela aparece assim que você concluir a primeira corrida.</p>
+						<h3>{{ t('Aguardando o save…') }}</h3>
+						<p>{{ t('A tabela aparece assim que você concluir a primeira corrida.') }}</p>
 					</div>
 					<div class="table-wrap" v-else>
 						<table>
 							<thead>
 								<tr>
-									<th @click="setSort('stage_key')" class="sortable">Estágio<span v-html="sortArrow('stage_key')"></span></th>
-									<th @click="setSort('total_runs')" class="sortable">Corridas<span v-html="sortArrow('total_runs')"></span></th>
-									<th @click="setSort('avg_time_spent')" class="sortable">Tempo Médio<span v-html="sortArrow('avg_time_spent')"></span></th>
-									<th>Por Corrida</th>
-									<th @click="setSort('avg_gold_per_hour')" class="sortable">Ouro / Hora<span v-html="sortArrow('avg_gold_per_hour')"></span></th>
-									<th @click="setSort('avg_xp_per_hour')" class="sortable">XP / Hora<span v-html="sortArrow('avg_xp_per_hour')"></span></th>
-									<th @click="setSort('exp_retained')" class="sortable" title="Fração do XP que a fase entrega no seu nível (over-level reduz)">Exp Mantida<span v-html="sortArrow('exp_retained')"></span></th>
-									<th>Baús / Hora</th>
+									<th @click="setSort('stage_key')" class="sortable">{{ t('Estágio') }}<span v-html="sortArrow('stage_key')"></span></th>
+									<th @click="setSort('total_runs')" class="sortable">{{ t('Corridas') }}<span v-html="sortArrow('total_runs')"></span></th>
+									<th @click="setSort('avg_time_spent')" class="sortable">{{ t('Tempo Médio') }}<span v-html="sortArrow('avg_time_spent')"></span></th>
+									<th>{{ t('Por Corrida') }}</th>
+									<th @click="setSort('avg_gold_per_hour')" class="sortable">{{ t('Ouro / Hora') }}<span v-html="sortArrow('avg_gold_per_hour')"></span></th>
+									<th @click="setSort('avg_xp_per_hour')" class="sortable">{{ t('XP / Hora') }}<span v-html="sortArrow('avg_xp_per_hour')"></span></th>
+									<th @click="setSort('exp_retained')" class="sortable" :title="t('Fração do XP que a fase entrega no seu nível (over-level reduz)')">{{ t('Exp Mantida') }}<span v-html="sortArrow('exp_retained')"></span></th>
+									<th>{{ t('Baús / Hora') }}</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr v-for="stage in sortedStages" :key="stage.stage_key" :class="{ projected: stage.total_runs === 0 && !(stage.manual_time > 0), seeded: stage.total_runs === 0 && stage.manual_time > 0 }">
 									<td>
-										<button type="button" class="stage-badge stage-badge-btn" :class="{ clickable: stageDetails[stage.stage_key] }" @click="openStageTab(stage.stage_key)" :title="stageDetails[stage.stage_key] ? 'Ver detalhes da fase' : ''">
+										<button type="button" class="stage-badge stage-badge-btn" :class="{ clickable: stageDetails[stage.stage_key] }" @click="openStageTab(stage.stage_key)" :title="stageDetails[stage.stage_key] ? t('Ver detalhes da fase') : ''">
 											<span class="sb-id">{{ formatStageName(stage.stage_key) }}<icon v-if="stageDetails[stage.stage_key]" name="info" :size="11"></icon></span>
-											<span class="sb-name" v-if="stageName(stage.stage_key) || stageLevel(stage.stage_key)">{{ stageName(stage.stage_key) }}<template v-if="stageLevel(stage.stage_key)"> · Nv {{ stageLevel(stage.stage_key) }}</template></span>
+											<span class="sb-name" v-if="stageName(stage.stage_key) || stageLevel(stage.stage_key)">{{ stageName(stage.stage_key) }}<template v-if="stageLevel(stage.stage_key)"> · {{ t('Nv') }} {{ stageLevel(stage.stage_key) }}</template></span>
 										</button>
 									</td>
 									<td>
 										<strong v-if="stage.total_runs > 0">{{ stage.total_runs }}</strong>
-										<span class="tag-seed" v-else-if="stage.manual_time > 0" title="Tempo que você digitou na calibração. As corridas reais vão refinando esse valor.">Digitado</span>
-										<span class="tag-est" v-else>Estimado</span>
-										<span v-if="stage.stale" class="tag-stale" title="Medida em outro nível do herói (antes do app guardar o nível). Mostrando estimativa por DPS + retenção atual. Farme 1x pra virar medição real.">⚠ antiga</span>
+										<span class="tag-seed" v-else-if="stage.manual_time > 0" :title="t('Tempo que você digitou na calibração. As corridas reais vão refinando esse valor.')">{{ t('Digitado') }}</span>
+										<span class="tag-est" v-else>{{ t('Estimado') }}</span>
+										<span v-if="stage.stale" class="tag-stale" :title="t('Medida em outro nível do herói (antes do app guardar o nível). Mostrando estimativa por DPS + retenção atual. Farme 1x pra virar medição real.')">{{ t('⚠ antiga') }}</span>
 											<span v-if="stage.total_runs > 0 && !stage.stale" class="conf-dot" :class="'conf-' + confidence(stage.total_runs)" :title="confLabel(stage.total_runs)"></span>
-										<button v-if="stage.total_runs > 0 || stage.manual_time > 0" class="btn-clear-stage" @click="resetStage(stage.stage_key)" title="Limpar esta fase"><icon name="x" :size="13"></icon></button>
+										<button v-if="stage.total_runs > 0 || stage.manual_time > 0" class="btn-clear-stage" @click="resetStage(stage.stage_key)" :title="t('Limpar esta fase')"><icon name="x" :size="13"></icon></button>
 									</td>
 									<td class="mono">{{ formatTime(stage.avg_time_spent) }}<div class="r2" v-if="stageHP(stage.stage_key)">HP {{ formatNumber(stageHP(stage.stage_key)) }}</div></td>
 									<td>
-										<div class="r1 g-gold">+{{ formatNumber(stage.avg_gold_per_run) }} <small>ouro</small></div>
+										<div class="r1 g-gold">+{{ formatNumber(stage.avg_gold_per_run) }} <small>{{ t('ouro') }}</small></div>
 										<div class="r2">+{{ formatNumber(stage.avg_xp_per_run) }} <small>xp</small></div>
 									</td>
 									<td>
 										<div class="r1 g-gold">{{ formatNumber(stage.avg_gold_per_hour) }} <small>/h</small></div>
-										<div class="r2">bruto {{ formatNumber(stage.raw_gold_per_hour) }}</div>
+										<div class="r2">{{ t('bruto') }} {{ formatNumber(stage.raw_gold_per_hour) }}</div>
 									</td>
 									<td>
 										<div class="r1 g-xp">{{ formatNumber(stage.avg_xp_per_hour) }} <small>/h</small></div>
-										<div class="r2">bruto {{ formatNumber(stage.raw_xp_per_hour) }}</div>
+										<div class="r2">{{ t('bruto') }} {{ formatNumber(stage.raw_xp_per_hour) }}</div>
 									</td>
 									<td>
 										<div class="r1" :class="{ 'ret-warn': (stage.exp_retained != null ? stage.exp_retained : 1) < 0.999 }">{{ Math.round((stage.exp_retained != null ? stage.exp_retained : 1) * 100) }}%</div>
@@ -283,7 +285,7 @@
 									<td>
 										<template v-if="chestRateByStage[stage.stage_key]">
 											<div class="r1 g-drop">{{ formatItems(chestsPerHour(stage)) }} <small>/h</small></div>
-											<div class="r2">{{ fmtPct(chestRateByStage[stage.stage_key]) }} por clear</div>
+											<div class="r2">{{ fmtPct(chestRateByStage[stage.stage_key]) }} {{ t('por clear') }}</div>
 										</template>
 										<span class="r2 muted" v-else>—</span>
 									</td>
@@ -297,18 +299,18 @@
 			<!-- ---------- RUNAS ---------- -->
 			<section v-show="view === 'runas'" class="view">
 				<div class="runas-head">
-					<div class="runas-gold"><icon name="coins" :size="18"></icon> {{ formatNumber(playerGold) }} <small>ouro</small></div>
-					<p class="hint" style="margin:0;">Árvore de runas do jogo. <b style="color:var(--ok)">Verde</b> = dá pra subir agora · <b style="color:var(--xp)">azul</b> = desbloqueável (sem ouro) · cinza = bloqueado. Clique numa runa pra ver níveis e custo.</p>
+					<div class="runas-gold"><icon name="coins" :size="18"></icon> {{ formatNumber(playerGold) }} <small>{{ t('ouro') }}</small></div>
+					<p class="hint" style="margin:0;">{{ t('Árvore de runas do jogo.') }} <b style="color:var(--ok)">{{ t('Verde') }}</b> {{ t('= dá pra subir agora ·') }} <b style="color:var(--xp)">{{ t('azul') }}</b> {{ t('= desbloqueável (sem ouro) · cinza = bloqueado. Clique numa runa pra ver níveis e custo.') }}</p>
 				</div>
 				<div class="runas-body">
 					<div class="attr-panel">
-						<h4 class="sm-h">Lista de atributos</h4>
-						<div v-if="!attributeTotals.length" class="hint">Sem runas registradas ainda — abra o jogo com uma corrida pra sincronizar.</div>
+						<h4 class="sm-h">{{ t('Lista de atributos') }}</h4>
+						<div v-if="!attributeTotals.length" class="hint">{{ t('Sem runas registradas ainda — abra o jogo com uma corrida pra sincronizar.') }}</div>
 						<template v-else>
 							<div class="attr-tabs">
-								<button type="button" v-for="g in attrGroupOrder" :key="g" :class="{ on: attrTab === g }" @click="attrTab = g">{{ ATTR_GROUP_LABEL[g] }}</button>
+								<button type="button" v-for="g in attrGroupOrder" :key="g" :class="{ on: attrTab === g }" @click="attrTab = g">{{ t(ATTR_GROUP_LABEL[g]) }}</button>
 							</div>
-							<div v-if="!attrGroups[attrTab].length" class="hint">Nenhum atributo de {{ ATTR_GROUP_LABEL[attrTab].toLowerCase() }} ainda.</div>
+							<div v-if="!attrGroups[attrTab].length" class="hint">{{ t('Nenhum atributo de {g} ainda.', { g: t(ATTR_GROUP_LABEL[attrTab]).toLowerCase() }) }}</div>
 							<div class="attr-row" v-for="a in attrGroups[attrTab]" :key="a.stat">
 								<span class="attr-label">{{ a.label }}</span>
 								<span class="attr-val">{{ a.unit === '%' ? '+' + (a.value / 10) + '%' : '+' + formatNumber(a.value) }}</span>
@@ -319,14 +321,14 @@
 						<div class="rune-zoom-bar">
 							<button type="button" @click.stop="zoomRunes(1.2)" title="Zoom +">+</button>
 							<button type="button" @click.stop="zoomRunes(1/1.2)" title="Zoom −">−</button>
-							<button type="button" @click.stop="fitRunes()" title="Centralizar / ajustar"><icon name="refresh" :size="14"></icon></button>
+							<button type="button" @click.stop="fitRunes()" :title="t('Centralizar / ajustar')"><icon name="refresh" :size="14"></icon></button>
 						</div>
-						<div class="rune-hint">scroll = zoom · arrastar = mover</div>
+						<div class="rune-hint">{{ t('scroll = zoom · arrastar = mover') }}</div>
 						<div class="rune-tree" :style="{ width: runeCanvasW + 'px', height: runeCanvasH + 'px', transform: 'translate(' + runePanX + 'px,' + runePanY + 'px) scale(' + runeZoom + ')' }">
 							<svg class="rune-lines" :width="runeCanvasW" :height="runeCanvasH">
 								<line v-for="(l, i) in runeLineList" :key="i" :x1="l.x1" :y1="l.y1" :x2="l.x2" :y2="l.y2" :class="{ on: l.on }"></line>
 							</svg>
-							<button v-for="r in runeListSorted" :key="r.key" type="button" class="rune-node" :class="['rs-' + runeState(r), { sel: selectedRune === r.key }]" :style="{ left: runeNX(r) + 'px', top: runeNY(r) + 'px' }" @click="selectRune(r.key)" :title="r.name">
+							<button v-for="r in runeListSorted" :key="r.key" type="button" class="rune-node" :class="['rs-' + runeState(r), { sel: selectedRune === r.key }]" :style="{ left: runeNX(r) + 'px', top: runeNY(r) + 'px' }" @click="selectRune(r.key)" :title="runeName(r)">
 								<img v-if="r.icon" :src="r.icon" class="rune-ico" loading="lazy" onerror="this.style.visibility='hidden'">
 								<span class="rune-lvl" v-if="runeLevel(r.key)">{{ runeLevel(r.key) }}</span>
 							</button>
@@ -337,15 +339,15 @@
 					<div class="rd-head">
 						<img v-if="runesData[selectedRune].icon" :src="runesData[selectedRune].icon" class="rune-ico big">
 						<div>
-							<h4 class="sm-title" style="font-size:18px;margin:0;">{{ runesData[selectedRune].name }}</h4>
+							<h4 class="sm-title" style="font-size:18px;margin:0;">{{ runeName(runesData[selectedRune]) }}</h4>
 							<div class="sm-sub">
-								Nível {{ runeLevel(selectedRune) }}/{{ runesData[selectedRune].maxLevel }}
-								<template v-if="nextLevelCost(runesData[selectedRune]) != null"> · próximo nível: {{ formatNumber(nextLevelCost(runesData[selectedRune])) }} ouro
-									<span v-if="!isUnlockable(runesData[selectedRune])" class="rd-cant">(bloqueada)</span>
-									<span v-else-if="playerGold >= nextLevelCost(runesData[selectedRune])" class="rd-can">(dá pra comprar)</span>
-									<span v-else class="rd-cant">(falta ouro)</span>
+								{{ t('Nível') }} {{ runeLevel(selectedRune) }}/{{ runesData[selectedRune].maxLevel }}
+								<template v-if="nextLevelCost(runesData[selectedRune]) != null"> · {{ t('próximo nível:') }} {{ formatNumber(nextLevelCost(runesData[selectedRune])) }} {{ t('ouro') }}
+									<span v-if="!isUnlockable(runesData[selectedRune])" class="rd-cant">{{ t('(bloqueada)') }}</span>
+									<span v-else-if="playerGold >= nextLevelCost(runesData[selectedRune])" class="rd-can">{{ t('(dá pra comprar)') }}</span>
+									<span v-else class="rd-cant">{{ t('(falta ouro)') }}</span>
 								</template>
-								<template v-else> · <b>MÁX</b></template>
+								<template v-else> · <b>{{ t('MÁX') }}</b></template>
 							</div>
 							<div v-if="!isUnlockable(runesData[selectedRune])" class="rd-lock">🔒 {{ unlockHint(runesData[selectedRune]) }}</div>
 						</div>
@@ -353,9 +355,9 @@
 					<table class="sm-tbl">
 						<tbody>
 							<tr v-for="l in runesData[selectedRune].levels" :key="l.level" :class="{ rdhave: l.level <= runeLevel(selectedRune) }">
-								<td>Nível {{ l.level }}</td>
+								<td>{{ t('Nível') }} {{ l.level }}</td>
 								<td>{{ statLabel(l.stat) }} <b>{{ fmtRuneVal(l) }}</b></td>
-								<td class="mono g-gold">{{ formatNumber(l.cost) }} ouro</td>
+								<td class="mono g-gold">{{ formatNumber(l.cost) }} {{ t('ouro') }}</td>
 							</tr>
 						</tbody>
 					</table>
@@ -364,24 +366,24 @@
 
 			<!-- ---------- PETS ---------- -->
 			<section v-show="view === 'pets'" class="view">
-				<div v-if="!petsData.length" class="hint">Sem dados de pets ainda.</div>
+				<div v-if="!petsData.length" class="hint">{{ t('Sem dados de pets ainda.') }}</div>
 				<template v-else>
 					<div class="pet-totals">
 						<div class="pet-totals-head">
-							<h3>Atributos totais dos pets</h3>
-							<span class="pet-totals-note">Os efeitos de todos os pets que você já obteve se aplicam sempre — não precisa estar equipado. Equipar é só o visual.</span>
+							<h3>{{ t('Atributos totais dos pets') }}</h3>
+							<span class="pet-totals-note">{{ t('Os efeitos de todos os pets que você já obteve se aplicam sempre — não precisa estar equipado. Equipar é só o visual.') }}</span>
 						</div>
 						<div class="pet-stats" v-if="petTotals.length">
 							<span class="pet-stat" v-for="(st, i) in petTotals" :key="i">{{ st.label }} <b>{{ st.unit === '%' ? '+' + st.value + '%' : '+' + formatNumber(st.value) }}</b></span>
 						</div>
-						<div v-else class="hint">Você ainda não tem nenhum pet — veja abaixo como conseguir.</div>
+						<div v-else class="hint">{{ t('Você ainda não tem nenhum pet — veja abaixo como conseguir.') }}</div>
 					</div>
 					<div class="pet-grid">
 						<div class="pet-card" v-for="p in petsSorted" :key="p.key" :class="'ps-' + petState(p)">
 							<div class="pet-card-head">
 								<img v-if="p.icon" :src="p.icon" class="pet-ico" loading="lazy" onerror="this.style.visibility='hidden'">
-								<div class="pet-card-name">{{ p.name }}</div>
-								<span class="pet-badge" :class="'pb-' + petState(p)">{{ petState(p) === 'active' ? 'Equipado' : (petState(p) === 'owned' ? 'Você tem' : 'Bloqueado') }}</span>
+								<div class="pet-card-name">{{ petName(p) }}</div>
+								<span class="pet-badge" :class="'pb-' + petState(p)">{{ petState(p) === 'active' ? t('Equipado') : (petState(p) === 'owned' ? t('Você tem') : t('Bloqueado')) }}</span>
 							</div>
 							<div class="pet-stats">
 								<span class="pet-stat" v-for="(st, i) in petStatList(p)" :key="i">{{ st.label }} <b>{{ st.unit === '%' ? '+' + st.value + '%' : '+' + formatNumber(st.value) }}</b></span>
@@ -396,36 +398,36 @@
 			<section v-show="view === 'chests'" class="view">
 				<!-- DETALHE DE UM BAÚ -->
 				<div v-if="selectedChest">
-					<button class="btn-back" @click="selectedChest = null"><icon name="arrow-left" :size="15"></icon> Baús</button>
+					<button class="btn-back" @click="selectedChest = null"><icon name="arrow-left" :size="15"></icon> {{ t('Baús') }}</button>
 					<div class="detail-grid">
 						<div class="detail-card" :class="typeClass(selectedChest.type)">
-							<img class="detail-sprite" :src="selectedChest.iconUrl" :alt="selectedChest.name" onerror="this.style.visibility='hidden'">
-							<div class="detail-name">{{ selectedChest.name }}</div>
+							<img class="detail-sprite" :src="selectedChest.iconUrl" :alt="chestName(selectedChest)" onerror="this.style.visibility='hidden'">
+							<div class="detail-name">{{ chestName(selectedChest) }}</div>
 							<span class="chest-type" :class="typeClass(selectedChest.type)">{{ typeLabel(selectedChest.type) }}</span>
 						</div>
 						<div class="detail-body">
-							<h4 class="sec-title">Dropa em {{ (selectedChest.stages || []).length }} fase(s)</h4>
-							<div class="cs-head"><span>Fase</span><span>Taxa de drop</span></div>
+							<h4 class="sec-title">{{ t('Dropa em') }} {{ (selectedChest.stages || []).length }} {{ t('fase(s)') }}</h4>
+							<div class="cs-head"><span>{{ t('Fase') }}</span><span>{{ t('Taxa de drop') }}</span></div>
 							<div class="cs-row" v-for="s in (selectedChest.stages || [])" :key="s.key">
 								<span class="cs-label">{{ formatDifficulty(s.difficulty) }} {{ s.label }}</span>
 								<span class="cs-bar"><i :style="{ width: Math.min(100, s.dropRatePercent) + '%' }"></i></span>
 								<span class="cs-pct">{{ fmtPct(s.dropRatePercent) }}</span>
 							</div>
-							<h4 class="sec-title" style="margin-top:18px;">Tabela de saque <small>({{ lootCount(selectedChest) }} grupos · 1 item aleatório por grupo)</small></h4>
+							<h4 class="sec-title" style="margin-top:18px;">{{ t('Tabela de saque') }} <small>({{ lootCount(selectedChest) }} {{ t('grupos · 1 item aleatório por grupo') }})</small></h4>
 							<div class="hero-toggles" v-if="chestHeroes(selectedChest).length">
-								<span class="rec-toggle-lbl">Seus personagens:</span>
+								<span class="rec-toggle-lbl">{{ t('Seus personagens:') }}</span>
 								<button type="button" v-for="h in chestHeroes(selectedChest)" :key="h.key"
 										:class="{ on: selectedHeroes.includes(h.key) }" @click="toggleHero(h.key)">
 									{{ h.name }}<span v-if="h.dlc" class="dlc-badge">DLC</span>
 								</button>
-								<span class="hero-hint">A chance muda conforme os personagens que você possui.</span>
+								<span class="hero-hint">{{ t('A chance muda conforme os personagens que você possui.') }}</span>
 							</div>
 							<div class="loot-grp" v-for="(g, i) in activeLoot(selectedChest)" :key="i">
 								<span class="loot-pct">{{ fmtPct(g.probability) }}</span>
 								<div class="loot-body">
-									<div class="loot-rarity" :class="'grade-' + (g.grade || '').toLowerCase()">1 de {{ (g.items || []).length }} item(ns) {{ gradeLabel(g.grade) }}</div>
+									<div class="loot-rarity" :class="'grade-' + (g.grade || '').toLowerCase()">{{ t('1 de') }} {{ (g.items || []).length }} {{ t('item(ns)') }} {{ gradeLabel(g.grade) }}</div>
 									<span class="loot-items">
-										<span class="loot-item" v-for="id in g.items" :key="id" :class="'grade-' + (g.grade || '').toLowerCase()" :title="itemName(id) + ' — ' + fmtPct(g.probability / (g.items.length || 1)) + ' por item'">
+										<span class="loot-item" v-for="id in g.items" :key="id" :class="'grade-' + (g.grade || '').toLowerCase()" :title="itemName(id) + ' — ' + fmtPct(g.probability / (g.items.length || 1)) + ' ' + t('por item')">
 											<img :src="itemIcon(id)" loading="lazy" onerror="this.style.visibility='hidden'">
 											<span>{{ itemName(id) }}</span>
 										</span>
@@ -440,34 +442,34 @@
 				<div v-else>
 					<div class="chest-toolbar">
 						<div class="chip-row">
-							<button v-for="t in chestTypes" :key="t.v" :class="{ on: chestType === t.v }" @click="chestType = t.v">{{ t.label }}</button>
+							<button v-for="tp in chestTypes" :key="tp.v" :class="{ on: chestType === tp.v }" @click="chestType = tp.v">{{ t(tp.label) }}</button>
 						</div>
 						<div class="chest-tools-right">
 							<select v-model="chestStage" class="fld chest-stage-sel">
-								<option value="">Todas as fases</option>
+								<option value="">{{ t('Todas as fases') }}</option>
 								<option v-for="s in chestStageOptions" :key="s.val" :value="s.val">{{ s.text }}</option>
 							</select>
 						</div>
 					</div>
-					<p class="view-intro">Dados da <a href="https://taskbarhero.wiki" target="_blank" rel="noopener">taskbarhero.wiki</a> · {{ filteredChests.length }} baú(s). Clique num baú para ver fases e tabela de saque.</p>
+					<p class="view-intro">{{ t('Dados da') }} <a href="https://taskbarhero.wiki" target="_blank" rel="noopener">taskbarhero.wiki</a> · {{ filteredChests.length }} {{ t('baú(s). Clique num baú para ver fases e tabela de saque.') }}</p>
 
 					<div class="empty" v-if="filteredChests.length === 0">
 						<div class="empty-mark"><icon name="package" :size="40"></icon></div>
-						<h3>Nenhum baú para este filtro</h3>
+						<h3>{{ t('Nenhum baú para este filtro') }}</h3>
 					</div>
 
 					<div class="chest-grid" v-else>
 						<div class="chest-card clickable" v-for="c in filteredChests" :key="c.id" :class="typeClass(c.type)" @click="selectedChest = c">
 							<div class="chest-head">
-								<img class="chest-sprite" :src="c.iconUrl" :alt="c.name" loading="lazy" onerror="this.style.visibility='hidden'">
+								<img class="chest-sprite" :src="c.iconUrl" :alt="chestName(c)" loading="lazy" onerror="this.style.visibility='hidden'">
 								<div class="chest-id">
-									<div class="chest-name">{{ c.name }}</div>
+									<div class="chest-name">{{ chestName(c) }}</div>
 									<div class="chest-tags">
 										<span class="chest-type">{{ typeLabel(c.type) }}</span>
 									</div>
 								</div>
 							</div>
-							<div class="chest-foot">Dropa em {{ (c.stages || []).length }} fase(s) · {{ lootCount(c) }} grupos</div>
+							<div class="chest-foot">{{ t('Dropa em') }} {{ (c.stages || []).length }} {{ t('fase(s)') }} · {{ lootCount(c) }} {{ t('grupos') }}</div>
 						</div>
 					</div>
 				</div>
@@ -477,54 +479,54 @@
 				<section v-show="view === 'items'" class="view">
 					<!-- DETALHE DO ITEM -->
 					<div v-if="selectedItem && itemInfo(selectedItem)">
-						<button class="btn-back" @click="selectedItem = null"><icon name="arrow-left" :size="15"></icon> Itens</button>
+						<button class="btn-back" @click="selectedItem = null"><icon name="arrow-left" :size="15"></icon> {{ t('Itens') }}</button>
 						<div class="detail-grid">
 							<div class="detail-card" :class="'ic-' + (itemGrade(selectedItem) || '').toLowerCase()">
 								<img class="detail-sprite" :src="itemIcon(selectedItem)" onerror="this.style.visibility='hidden'">
 								<div class="detail-name">{{ itemName(selectedItem) }}</div>
 								<span class="li-grade" :class="'grade-' + (itemGrade(selectedItem) || '').toLowerCase()">{{ gradeLabel(itemGrade(selectedItem)) }}</span>
 								<div class="dc-meta">
-									<span v-if="itemInfo(selectedItem).part">{{ partLabel(itemInfo(selectedItem).part) }}<template v-if="itemInfo(selectedItem).gear"> · {{ itemInfo(selectedItem).gear }}</template></span>
-									<span v-if="itemInfo(selectedItem).level">Nível {{ itemInfo(selectedItem).level }}</span>
+									<span v-if="itemInfo(selectedItem).part">{{ partLabel(itemInfo(selectedItem).part) }}<template v-if="itemInfo(selectedItem).gear"> · {{ t(itemInfo(selectedItem).gear) }}</template></span>
+									<span v-if="itemInfo(selectedItem).level">{{ t('Nível') }} {{ itemInfo(selectedItem).level }}</span>
 									<span class="im-slots" v-if="itemInfo(selectedItem).slots && (itemInfo(selectedItem).slots.dec || itemInfo(selectedItem).slots.eng || itemInfo(selectedItem).slots.ins)">Slots: <span class="ic-slot" v-if="itemInfo(selectedItem).slots.dec"><img src="slot_icons/dec.png">×{{ itemInfo(selectedItem).slots.dec }}</span><span class="ic-slot" v-if="itemInfo(selectedItem).slots.eng"><img src="slot_icons/eng.png">×{{ itemInfo(selectedItem).slots.eng }}</span><span class="ic-slot" v-if="itemInfo(selectedItem).slots.ins"><img src="slot_icons/ins.png">×{{ itemInfo(selectedItem).slots.ins }}</span></span>
-									<span :class="itemInfo(selectedItem).obtainable ? 'dc-ok' : 'dc-no'">{{ itemInfo(selectedItem).obtainable ? 'Obtível' : 'Não obtível (removido)' }}</span>
+									<span :class="itemInfo(selectedItem).obtainable ? 'dc-ok' : 'dc-no'">{{ itemInfo(selectedItem).obtainable ? t('Obtível') : t('Não obtível (removido)') }}</span>
 								</div>
 							</div>
 							<div class="detail-body">
-								<h4 class="sec-title" v-if="baseStatsShown(selectedItem).length || (itemInfo(selectedItem).inherent || []).length">Status</h4>
+								<h4 class="sec-title" v-if="baseStatsShown(selectedItem).length || (itemInfo(selectedItem).inherent || []).length">{{ t('Status') }}</h4>
 								<div class="stat-grid" v-if="baseStatsShown(selectedItem).length || (itemInfo(selectedItem).inherent || []).length">
 									<div class="stat-box" v-for="(b, i) in baseStatsShown(selectedItem)" :key="'b' + i"><span class="sb-lbl">{{ combatLabel(b.stat) }} <em>base</em></span><span class="sb-val">{{ fmtBaseStat(b) }}</span></div>
-									<div class="stat-box inh" v-for="(b, i) in (itemInfo(selectedItem).inherent || [])" :key="'i' + i"><span class="sb-lbl">{{ combatLabel(b.stat) }} <em>inerente</em></span><span class="sb-val">{{ fmtInh(b) }}</span></div>
+									<div class="stat-box inh" v-for="(b, i) in (itemInfo(selectedItem).inherent || [])" :key="'i' + i"><span class="sb-lbl">{{ combatLabel(b.stat) }} <em>{{ t('inerente') }}</em></span><span class="sb-val">{{ fmtInh(b) }}</span></div>
 								</div>
-								<template v-if="itemInfo(selectedItem).unique"><h4 class="sec-title">Stats Únicas</h4><div class="unique-mod"><icon name="sparkles" :size="15"></icon> <span>{{ itemInfo(selectedItem).unique }}</span></div></template>
-									<h4 class="sec-title">Valor de revenda</h4>
+								<template v-if="itemInfo(selectedItem).unique"><h4 class="sec-title">{{ t('Stats Únicas') }}</h4><div class="unique-mod"><icon name="sparkles" :size="15"></icon> <span>{{ uniqueText(selectedItem, itemInfo(selectedItem).unique) }}</span></div></template>
+									<h4 class="sec-title">{{ t('Valor de revenda') }}</h4>
 								<div class="resale">
-									<div class="resale-box"><span class="rb-lbl">Ouro de Alquimia</span><span class="rb-val g-gold">{{ formatNumber(itemInfo(selectedItem).alchemyGold || 0) }}</span></div>
-									<div class="resale-box"><span class="rb-lbl">EXP do Cubo</span><span class="rb-val g-xp">{{ formatNumber(itemInfo(selectedItem).cubeExp || 0) }}</span></div>
+									<div class="resale-box"><span class="rb-lbl">{{ t('Ouro de Alquimia') }}</span><span class="rb-val g-gold">{{ formatNumber(itemInfo(selectedItem).alchemyGold || 0) }}</span></div>
+									<div class="resale-box"><span class="rb-lbl">{{ t('EXP do Cubo') }}</span><span class="rb-val g-xp">{{ formatNumber(itemInfo(selectedItem).cubeExp || 0) }}</span></div>
 								</div>
-								<p class="resale-note">Ouro e EXP do cubo ganhos ao desmontar este item no Cubo.</p>
+								<p class="resale-note">{{ t('Ouro e EXP do cubo ganhos ao desmontar este item no Cubo.') }}</p>
 								<template v-if="(itemInfo(selectedItem).crafting || []).length">
-									<h4 class="sec-title" style="margin-top:18px;">Criação</h4>
-									<p class="hint">Criável na forja — você recebe um equipamento aleatório do tipo/tier; este é um dos resultados possíveis.</p>
+									<h4 class="sec-title" style="margin-top:18px;">{{ t('Criação') }}</h4>
+									<p class="hint">{{ t('Criável na forja — você recebe um equipamento aleatório do tipo/tier; este é um dos resultados possíveis.') }}</p>
 									<div class="craft-card" v-for="(rc, i) in itemInfo(selectedItem).crafting" :key="'cr' + i">
-										<div class="craft-head"><span class="craft-tier">Tier {{ rc.tier }}</span><span class="craft-type">{{ rc.type }}</span></div>
+										<div class="craft-head"><span class="craft-tier">Tier {{ rc.tier }}</span><span class="craft-type">{{ t(rc.type) }}</span></div>
 										<div class="craft-mats">
-											<span class="craft-mat" v-for="(m, j) in rc.materials" :key="j"><img :src="m.icon" onerror="this.style.visibility='hidden'"><span>{{ m.name }} <b>×{{ m.qty }}</b></span></span>
+											<span class="craft-mat" v-for="(m, j) in rc.materials" :key="j"><img :src="m.icon" onerror="this.style.visibility='hidden'"><span>{{ matName(m) }} <b>×{{ m.qty }}</b></span></span>
 										</div>
 									</div>
 								</template>
-								<h4 class="sec-title" style="margin-top:18px;">Como obter</h4>
-								<div class="obtain-note synth" v-if="gradeBelow(itemGrade(selectedItem))"><icon name="sparkles" :size="14"></icon> <span><b>Síntese:</b> combine equipamentos {{ gradeBelow(itemGrade(selectedItem)) }} do mesmo tipo (no Cubo de síntese).</span></div>
+								<h4 class="sec-title" style="margin-top:18px;">{{ t('Como obter') }}</h4>
+								<div class="obtain-note synth" v-if="gradeBelow(itemGrade(selectedItem))"><icon name="sparkles" :size="14"></icon> <span><b>{{ t('Síntese:') }}</b> {{ t('combine equipamentos {g} do mesmo tipo (no Cubo de síntese).', { g: gradeBelow(itemGrade(selectedItem)) }) }}</span></div>
 								<div class="hero-toggles" v-if="itemChests(selectedItem).length && heroList.length">
-									<span class="rec-toggle-lbl">Personagens que você possui:</span>
+									<span class="rec-toggle-lbl">{{ t('Personagens que você possui:') }}</span>
 									<button type="button" v-for="h in heroList" :key="h.key" :class="{ on: selectedHeroes.includes(h.key) }" @click="toggleHero(h.key)">{{ h.name }}<span v-if="h.dlc" class="dlc-badge">DLC</span></button>
 								</div>
-								<p class="hint" v-if="itemChests(selectedItem).length">Dropa em {{ itemChests(selectedItem).length }} baú(s) · % = chance de vir ao abrir aquele baú.</p>
-								<div class="obtain-note" v-else><icon name="info" :size="14"></icon> <span>Não cai diretamente de baús{{ gradeBelow(itemGrade(selectedItem)) ? ' — obtido por síntese.' : '.' }}</span></div>
+								<p class="hint" v-if="itemChests(selectedItem).length">{{ t('Dropa em') }} {{ itemChests(selectedItem).length }} {{ t('baú(s) · % = chance de vir ao abrir aquele baú.') }}</p>
+								<div class="obtain-note" v-else><icon name="info" :size="14"></icon> <span>{{ t('Não cai diretamente de baús') }}{{ gradeBelow(itemGrade(selectedItem)) ? t(' — obtido por síntese.') : '.' }}</span></div>
 								<div class="rev-card" v-for="(r, i) in itemChests(selectedItem)" :key="i" :class="typeClass(r.chest.type)">
 									<div class="rev-head" @click="selectedItem = null; selectedChest = r.chest; view = 'chests'">
 										<img class="rev-sprite" :src="r.chest.iconUrl" onerror="this.style.visibility='hidden'">
-										<div><div class="chest-name">{{ r.chest.name }}</div><span class="chest-type" :class="typeClass(r.chest.type)">{{ typeLabel(r.chest.type) }}</span></div>
+										<div><div class="chest-name">{{ chestName(r.chest) }}</div><span class="chest-type" :class="typeClass(r.chest.type)">{{ typeLabel(r.chest.type) }}</span></div>
 										<span class="rev-pct g-gold">{{ fmtPct(r.perItem) }}</span>
 									</div>
 									<div class="rev-stages"><span class="rev-stage" v-for="s in (r.chest.stages || [])" :key="s.key">{{ formatDifficulty(s.difficulty) }} {{ s.label }} · {{ fmtPct(s.dropRatePercent) }}</span></div>
@@ -534,33 +536,33 @@
 					</div>
 					<!-- GRID DE ITENS -->
 					<div v-else>
-						<p class="view-intro">Catálogo completo de <strong>equipamentos</strong>. Filtre por raridade, tipo e nível; clique num item pra ver detalhes.</p>
+						<p class="view-intro" v-html="t('Catálogo completo de <strong>equipamentos</strong>. Filtre por raridade, tipo e nível; clique num item pra ver detalhes.')"></p>
 						<div class="item-filters">
-							<div class="if-row"><span class="if-lbl">Raridade</span>
+							<div class="if-row"><span class="if-lbl">{{ t('Raridade') }}</span>
 								<div class="chip-row grade-chips">
-									<button :class="{ on: gradeFilter === '' }" @click="gradeFilter = ''">Todos</button>
+									<button :class="{ on: gradeFilter === '' }" @click="gradeFilter = ''">{{ t('Todos') }}</button>
 									<button v-for="g in GRADES" :key="g" :class="['gc-' + g.toLowerCase(), { on: gradeFilter === g }]" @click="gradeFilter = gradeFilter === g ? '' : g">{{ gradeLabel(g) }}</button>
 								</div></div>
-							<div class="if-row"><span class="if-lbl">Tipo</span>
-								<div class="chip-row"><button v-for="t in partFilters" :key="t.v" :class="{ on: partFilter === t.v }" @click="partFilter = t.v">{{ t.label }}</button></div></div>
-							<div class="if-row"><span class="if-lbl">Nível</span>
-								<input type="number" class="fld lvl-in" v-model.number="lvlMin" min="1" max="100" placeholder="mín"><span class="lvl-sep">–</span><input type="number" class="fld lvl-in" v-model.number="lvlMax" min="1" max="100" placeholder="máx"></div>
-							<div class="if-row"><span class="if-lbl">Buscar</span>
-								<input type="text" class="fld items-search" v-model="itemSearch" placeholder="Filtrar por nome…"><label class="obt-toggle"><input type="checkbox" v-model="obtainableOnly"> Só obtíveis</label></div>
+							<div class="if-row"><span class="if-lbl">{{ t('Tipo') }}</span>
+								<div class="chip-row"><button v-for="tp in partFilters" :key="tp.v" :class="{ on: partFilter === tp.v }" @click="partFilter = tp.v">{{ t(tp.label) }}</button></div></div>
+							<div class="if-row"><span class="if-lbl">{{ t('Nível') }}</span>
+								<input type="number" class="fld lvl-in" v-model.number="lvlMin" min="1" max="100" :placeholder="t('mín')"><span class="lvl-sep">–</span><input type="number" class="fld lvl-in" v-model.number="lvlMax" min="1" max="100" :placeholder="t('máx')"></div>
+							<div class="if-row"><span class="if-lbl">{{ t('Buscar') }}</span>
+								<input type="text" class="fld items-search" v-model="itemSearch" :placeholder="t('Filtrar por nome…')"><label class="obt-toggle"><input type="checkbox" v-model="obtainableOnly"> {{ t('Só obtíveis') }}</label></div>
 						</div>
 						<div class="items-grid-wrap">
-							<div class="gl-count">{{ filteredItems.length }} item(ns)</div>
+							<div class="gl-count">{{ filteredItems.length }} {{ t('item(ns)') }}</div>
 							<div class="items-grid">
 								<button class="item-card" v-for="it in shownItems" :key="it.id" :class="['ic-' + (it.grade || '').toLowerCase(), { on: selectedItem === it.id }]" @click="selectedItem = it.id; clearTip()" @mouseenter="onItemHover(it, $event)" @mouseleave="clearTip">
 									<span class="ic-grade-tag" :class="'grade-' + (it.grade || '').toLowerCase()">{{ gradeLabel(it.grade) }}</span>
 									<img class="ic-sprite" :src="it.icon" loading="lazy" onerror="this.style.visibility='hidden'">
-									<span class="ic-name">{{ it.name }}<span v-if="!it.obtainable" class="li-unobt" title="Não é mais obtível">✖</span></span>
+									<span class="ic-name">{{ it.name }}<span v-if="!it.obtainable" class="li-unobt" :title="t('Não é mais obtível')">✖</span></span>
 									<span class="ic-slots" v-if="it.slots && (it.slots.dec || it.slots.eng || it.slots.ins)"><span class="ic-slot" v-if="it.slots.dec"><img src="slot_icons/dec.png">×{{ it.slots.dec }}</span><span class="ic-slot" v-if="it.slots.eng"><img src="slot_icons/eng.png">×{{ it.slots.eng }}</span><span class="ic-slot" v-if="it.slots.ins"><img src="slot_icons/ins.png">×{{ it.slots.ins }}</span></span>
-									<span class="ic-foot"><span class="ic-line" v-if="(it.inherent || []).length"><b>Nv {{ it.level }}</b><i>|</i><span>{{ cardAttr(it) }}</span></span><span class="ic-line" v-else><b>Nv {{ it.level }}</b><i>|</i><span>{{ it.gear }} ({{ gradeLabel(it.grade) }})</span></span></span>
+									<span class="ic-foot"><span class="ic-line" v-if="(it.inherent || []).length"><b>{{ t('Nv') }} {{ it.level }}</b><i>|</i><span>{{ cardAttr(it) }}</span></span><span class="ic-line" v-else><b>{{ t('Nv') }} {{ it.level }}</b><i>|</i><span>{{ t(it.gear) }} ({{ gradeLabel(it.grade) }})</span></span></span>
 								</button>
 							</div>
-							<div class="gl-more" v-if="shownItems.length < filteredItems.length">carregando mais… ({{ shownItems.length }}/{{ filteredItems.length }})</div>
-							<div class="empty" v-if="filteredItems.length === 0"><p>Nada encontrado.</p></div>
+							<div class="gl-more" v-if="shownItems.length < filteredItems.length">{{ t('carregando mais…') }} ({{ shownItems.length }}/{{ filteredItems.length }})</div>
+							<div class="empty" v-if="filteredItems.length === 0"><p>{{ t('Nada encontrado.') }}</p></div>
 						</div>
 					</div>
 					<!-- TOOLTIP ESTILO JOGO (hover no card) — teleport p/ body: escapa do containing block
@@ -572,29 +574,29 @@
 							<div class="gt-top">
 								<img class="gt-icon" :src="hoverItem.icon" onerror="this.style.visibility='hidden'">
 								<div class="gt-meta">
-									<div class="gt-grade" :class="'grade-' + (hoverItem.grade || '').toLowerCase()">Grau {{ gradeLabel(hoverItem.grade) }}</div>
+									<div class="gt-grade" :class="'grade-' + (hoverItem.grade || '').toLowerCase()">{{ t('Grau') }} {{ gradeLabel(hoverItem.grade) }}</div>
 									<div class="gt-power" v-for="(p, i) in tipPower(hoverItem)" :key="'gp' + i">{{ p.label }} <b>{{ p.val }}</b></div>
 								</div>
 							</div>
 							<div class="gt-sec" v-if="(hoverItem.inherent || []).length">
-								<div class="gt-sec-h">Atributos Inerentes</div>
+								<div class="gt-sec-h">{{ t('Atributos Inerentes') }}</div>
 								<div class="gt-inh" v-for="(b, i) in hoverItem.inherent" :key="'gi' + i">{{ combatLabel(b.stat) }} <b>{{ fmtInh(b) }}</b></div>
 							</div>
 							<div class="gt-sec" v-if="hoverItem.unique">
-								<div class="gt-sec-h">Stats Únicas</div>
-								<div class="gt-unique">{{ hoverItem.unique }}</div>
+								<div class="gt-sec-h">{{ t('Stats Únicas') }}</div>
+								<div class="gt-unique">{{ uniqueText(hoverItem.id, hoverItem.unique) }}</div>
 							</div>
 							<div class="gt-sec" v-if="tipSlots(hoverItem).length">
-								<div class="gt-sec-h">Espaços de gema (vazios)</div>
+								<div class="gt-sec-h">{{ t('Espaços de gema (vazios)') }}</div>
 								<div class="gt-slots">
 									<span class="gt-chip empty" v-for="(s, i) in tipSlots(hoverItem)" :key="'gs' + i"><img :src="s.icon">{{ s.label }} <b>×{{ s.count }}</b></span>
 								</div>
 							</div>
 							<div class="gt-foot">
-								<span class="gt-trade" :class="hoverItem.tradable ? 'yes' : 'no'">{{ hoverItem.tradable ? 'Negociável' : 'Não negociável' }}</span>
-								<span class="gt-req">Requer Nv.{{ hoverItem.level }}</span>
+								<span class="gt-trade" :class="hoverItem.tradable ? 'yes' : 'no'">{{ hoverItem.tradable ? t('Negociável') : t('Não negociável') }}</span>
+								<span class="gt-req">{{ t('Requer Nv.') }}{{ hoverItem.level }}</span>
 							</div>
-							<div class="gt-gold-row"><span class="gt-gold">{{ formatNumber(hoverItem.alchemyGold || 0) }} ouro</span></div>
+							<div class="gt-gold-row"><span class="gt-gold">{{ formatNumber(hoverItem.alchemyGold || 0) }} {{ t('ouro') }}</span></div>
 						</div>
 					</div>
 					</teleport>
@@ -604,25 +606,60 @@
 			<section v-show="view === 'materiais'" class="view">
 				<!-- DETALHE DO MATERIAL -->
 				<div v-if="selectedMaterial && itemInfo(selectedMaterial)">
-					<button class="btn-back" @click="selectedMaterial = null"><icon name="arrow-left" :size="15"></icon> Materiais</button>
+					<button class="btn-back" @click="selectedMaterial = null"><icon name="arrow-left" :size="15"></icon> {{ t('Materiais') }}</button>
 					<div class="detail-grid">
-						<div class="detail-card" :class="'ic-' + (itemGrade(selectedMaterial) || '').toLowerCase()">
+						<!-- tooltip no estilo do jogo -->
+						<div class="detail-card mat-tip" :class="'ic-' + (itemGrade(selectedMaterial) || '').toLowerCase()">
 							<img class="detail-sprite" :src="itemIcon(selectedMaterial)" onerror="this.style.visibility='hidden'">
-							<div class="detail-name">{{ itemName(selectedMaterial) }}</div>
-							<span class="li-grade" :class="'grade-' + (itemGrade(selectedMaterial) || '').toLowerCase()">{{ gradeLabel(itemGrade(selectedMaterial)) }}</span>
+							<div class="detail-name mat-tip-name" :class="'grade-' + (itemGrade(selectedMaterial) || '').toLowerCase()">{{ itemName(selectedMaterial) }}</div>
+							<div class="mat-tip-grade" :class="'grade-' + (itemGrade(selectedMaterial) || '').toLowerCase()">{{ t('Grau {g}', { g: gradeLabel(itemGrade(selectedMaterial)) }) }}</div>
+							<div class="mat-tip-type" v-if="matCat(selectedMaterial)">
+								<img v-if="matCatIcon(matCat(selectedMaterial))" :src="matCatIcon(matCat(selectedMaterial))" alt="">
+								<span>{{ matTypeLabel(matCat(selectedMaterial)) }}</span>
+							</div>
+							<p class="mat-tip-desc" v-if="matDesc(selectedMaterial)">{{ matDesc(selectedMaterial) }}</p>
+							<!-- efeitos por slot (decoração / gravação / inscrição) -->
+							<div class="mat-fx-group" v-for="grp in matSlotGroups(selectedMaterial)" :key="grp.key">
+								<div class="mat-fx-head">{{ grp.header }}</div>
+								<div class="mat-fx-line" v-for="(m, i) in grp.mods" :key="i">
+									<span class="tier-chip" :class="tierClass(m.tier)">T{{ m.tier }}</span>
+									<span class="fx-name" v-if="matFxText(m)">{{ matFxText(m) }}</span>
+									<template v-else>
+										<span class="fx-name">{{ matStatName(m.stat) }}</span>
+										<span class="fx-val">{{ matModVal(m) }}</span>
+									</template>
+								</div>
+							</div>
+							<!-- material de fabricação: onde é usado -->
+							<div class="mat-fx-group" v-if="matUses(selectedMaterial).length">
+								<div class="mat-fx-head">{{ t('Usado em') }}</div>
+								<div class="mat-use-line" v-for="(u, i) in matUses(selectedMaterial)" :key="i">{{ t('Tier {n}', { n: u.tier }) }} · {{ t('Cubo Nv {n}', { n: u.cubeLvl }) }} · {{ u.types.join(', ') }}</div>
+							</div>
+							<!-- oferenda: nível do Cubo -->
+							<div class="mat-fx-group" v-if="matCat(selectedMaterial) === 'offering' && itemInfo(selectedMaterial).cubeLvl">
+								<div class="mat-use-line">{{ t('Cubo Nv {n}', { n: itemInfo(selectedMaterial).cubeLvl }) }}</div>
+							</div>
+							<!-- rodapé: negociável + preço -->
+							<div class="mat-tip-foot">
+								<template v-if="itemInfo(selectedMaterial).tradable">
+									<span class="mat-trade">{{ t('Negociável') }}</span>
+									<span class="mat-price">{{ formatNumber(itemInfo(selectedMaterial).price || 0) }} <span class="mat-price-unit">{{ t('ouro') }}</span></span>
+								</template>
+								<span class="mat-untrade" v-else>{{ t('Não negociável') }}</span>
+							</div>
 						</div>
 						<div class="detail-body">
-							<h4 class="sec-title">Onde cai</h4>
+							<h4 class="sec-title">{{ t('Onde cai') }}</h4>
 							<div class="hero-toggles" v-if="itemChests(selectedMaterial).length && heroList.length">
-								<span class="rec-toggle-lbl">Personagens que você possui:</span>
+								<span class="rec-toggle-lbl">{{ t('Personagens que você possui:') }}</span>
 								<button type="button" v-for="h in heroList" :key="h.key" :class="{ on: selectedHeroes.includes(h.key) }" @click="toggleHero(h.key)">{{ h.name }}<span v-if="h.dlc" class="dlc-badge">DLC</span></button>
 							</div>
-							<p class="hint" v-if="itemChests(selectedMaterial).length">Cai em {{ itemChests(selectedMaterial).length }} baú(s) · % = chance de vir ao abrir.</p>
-							<div class="obtain-note" v-else><icon name="info" :size="14"></icon> <span>Não cai diretamente de baús.</span></div>
+							<p class="hint" v-if="itemChests(selectedMaterial).length">{{ t('Cai em') }} {{ itemChests(selectedMaterial).length }} {{ t('baú(s) · % = chance de vir ao abrir.') }}</p>
+							<div class="obtain-note" v-else><icon name="info" :size="14"></icon> <span>{{ t('Não cai diretamente de baús.') }}</span></div>
 							<div class="rev-card" v-for="(r, i) in itemChests(selectedMaterial)" :key="i" :class="typeClass(r.chest.type)">
 								<div class="rev-head" @click="selectedMaterial = null; selectedChest = r.chest; view = 'chests'">
 									<img class="rev-sprite" :src="r.chest.iconUrl" onerror="this.style.visibility='hidden'">
-									<div><div class="chest-name">{{ r.chest.name }}</div><span class="chest-type" :class="typeClass(r.chest.type)">{{ typeLabel(r.chest.type) }}</span></div>
+									<div><div class="chest-name">{{ chestName(r.chest) }}</div><span class="chest-type" :class="typeClass(r.chest.type)">{{ typeLabel(r.chest.type) }}</span></div>
 									<span class="rev-pct g-gold">{{ fmtPct(r.perItem) }}</span>
 								</div>
 								<div class="rev-stages"><span class="rev-stage" v-for="s in (r.chest.stages || [])" :key="s.key">{{ formatDifficulty(s.difficulty) }} {{ s.label }} · {{ fmtPct(s.dropRatePercent) }}</span></div>
@@ -632,32 +669,33 @@
 				</div>
 				<!-- GRID DE MATERIAIS -->
 				<div v-else>
-					<p class="view-intro">Materiais de <strong>criação e síntese</strong>. Clique pra ver em quais baús cada um cai.</p>
-					<input type="text" class="fld items-search" v-model="matSearch" placeholder="Buscar material…" style="max-width:420px;margin-bottom:14px;">
+					<p class="view-intro" v-html="t('Materiais de <strong>criação e síntese</strong>. Clique pra ver em quais baús cada um cai.')"></p>
+					<input type="text" class="fld items-search" v-model="matSearch" :placeholder="t('Buscar material…')" style="max-width:420px;margin-bottom:14px;">
 					<div class="items-grid-wrap">
-						<div class="gl-count">{{ materialsList.length }} material(is)</div>
+						<div class="gl-count">{{ materialsList.length }} {{ t('material(is)') }}</div>
 						<div class="items-grid">
 							<button class="item-card" v-for="it in materialsList" :key="it.id" :class="['ic-' + (it.grade || '').toLowerCase(), { on: selectedMaterial === it.id }]" @click="selectedMaterial = it.id">
 								<span class="ic-grade-tag" :class="'grade-' + (it.grade || '').toLowerCase()">{{ gradeLabel(it.grade) }}</span>
 								<img class="ic-sprite" :src="it.icon" loading="lazy" onerror="this.style.visibility='hidden'">
 								<span class="ic-name">{{ it.name }}</span>
+								<span class="mat-cat mat-cat-sm" v-if="it.mcat" :class="'mc-' + it.mcat">{{ matCatLabel(it.mcat) }}</span>
 							</button>
 						</div>
-						<div class="empty" v-if="!materialsList.length"><p>Nada encontrado.</p></div>
+						<div class="empty" v-if="!materialsList.length"><p>{{ t('Nada encontrado.') }}</p></div>
 					</div>
 				</div>
 			</section>
 
 			<!-- ===================== ABA: FASES (mapa + detalhe) ===================== -->
 			<section v-show="view === 'fases'" class="view">
-				<p class="view-intro">3 atos · 4 dificuldades · 120 fases — monstros, chefes e tabelas de saque. Clique numa fase no mapa.</p>
+				<p class="view-intro">{{ t('3 atos · 4 dificuldades · 120 fases — monstros, chefes e tabelas de saque. Clique numa fase no mapa.') }}</p>
 				<div class="fases-layout">
 					<div class="fmap">
 						<select class="fnav-sel fmap-diff" v-model="mapDiff">
 							<option v-for="d in mapDiffs" :key="d" :value="d">{{ formatDifficulty(d) }}</option>
 						</select>
 						<div class="fmap-acts">
-							<button v-for="a in mapActs" :key="a" :class="{ on: mapAct === a }" @click="mapAct = a">Ato {{ a }}</button>
+							<button v-for="a in mapActs" :key="a" :class="{ on: mapAct === a }" @click="mapAct = a">{{ t('Ato') }} {{ a }}</button>
 						</div>
 						<div class="map-canvas">
 							<img class="map-bg" :src="mapBg" alt="" onerror="this.style.opacity=.15">
@@ -667,29 +705,29 @@
 								<span class="mh-label">[{{ s.act }}-{{ s.stageNo }}]</span>
 							</button>
 						</div>
-						<p class="fmap-cap">Ato {{ mapAct }} · {{ formatDifficulty(mapDiff) }} — clique num nó pra inspecionar.</p>
+						<p class="fmap-cap">{{ t('Ato') }} {{ mapAct }} · {{ formatDifficulty(mapDiff) }} {{ t('— clique num nó pra inspecionar.') }}</p>
 					</div>
 					<!-- TOOLTIP DE FASE (hover no nó do mapa) -->
 						<teleport to="body">
 						<div class="game-tip" v-if="hoverStage" :style="tipStyle">
-							<div class="gt-title">{{ hoverStage.name || ('Fase ' + hoverStage.act + '-' + hoverStage.stageNo) }}</div>
+							<div class="gt-title">{{ stageName(hoverStage.key) || hoverStage.name || (t('Fase') + ' ' + hoverStage.act + '-' + hoverStage.stageNo) }}</div>
 							<div class="gt-body">
 								<div class="gt-top">
 									<img class="gt-icon" v-if="stageTipMob && monsterSprite(stageTipMob.key)" :src="monsterSprite(stageTipMob.key)" onerror="this.style.visibility='hidden'">
 									<div class="gt-meta">
-										<div class="gt-grade" style="color:#cdd6e6">Ato {{ hoverStage.act }} · Fase {{ hoverStage.stageNo }}</div>
-										<div class="gt-power">{{ formatDifficulty(hoverStage.difficulty) }} · Nv.{{ hoverStage.level }}</div>
-										<div class="gt-power" v-if="stageTipMob" style="color:#cfe9a6">{{ stageTipMob.name }}<span v-if="hoverStage.boss"> (chefe)</span></div>
+										<div class="gt-grade" style="color:#cdd6e6">{{ t('Ato') }} {{ hoverStage.act }} · {{ t('Fase') }} {{ hoverStage.stageNo }}</div>
+										<div class="gt-power">{{ formatDifficulty(hoverStage.difficulty) }} · {{ t('Nv') }}.{{ hoverStage.level }}</div>
+										<div class="gt-power" v-if="stageTipMob" style="color:#cfe9a6">{{ monsterName(stageTipMob) }}<span v-if="hoverStage.boss"> {{ t('(chefe)') }}</span></div>
 									</div>
 								</div>
 								<div class="gt-sec">
-									<div class="gt-sec-h">Dados da fase</div>
-									<div class="gt-row" v-if="hoverStage.boss"><span>Tipo</span><b style="color:#ff9b6b">Chefe do ato</b></div>
-									<div class="gt-row" v-if="hoverStage.waves"><span>Ondas</span><b>{{ hoverStage.waves }}</b></div>
-									<div class="gt-row" v-if="hoverStage.perWave"><span>Mobs / onda</span><b>{{ hoverStage.perWave }}</b></div>
-									<div class="gt-row" v-if="hoverStage.monsterTypes"><span>Tipos de mobs</span><b>{{ hoverStage.monsterTypes }}</b></div>
-									<div class="gt-row"><span>Ouro / clear</span><b class="g-gold">{{ fmtInt(hoverStage.expectedGold) }}</b></div>
-									<div class="gt-row"><span>XP / clear</span><b class="g-xp">{{ fmtInt(hoverStage.expectedEXP) }}</b></div>
+									<div class="gt-sec-h">{{ t('Dados da fase') }}</div>
+									<div class="gt-row" v-if="hoverStage.boss"><span>{{ t('Tipo') }}</span><b style="color:#ff9b6b">{{ t('Chefe do ato') }}</b></div>
+									<div class="gt-row" v-if="hoverStage.waves"><span>{{ t('Ondas') }}</span><b>{{ hoverStage.waves }}</b></div>
+									<div class="gt-row" v-if="hoverStage.perWave"><span>{{ t('Mobs / onda') }}</span><b>{{ hoverStage.perWave }}</b></div>
+									<div class="gt-row" v-if="hoverStage.monsterTypes"><span>{{ t('Tipos de mobs') }}</span><b>{{ hoverStage.monsterTypes }}</b></div>
+									<div class="gt-row"><span>{{ t('Ouro / clear') }}</span><b class="g-gold">{{ fmtInt(hoverStage.expectedGold) }}</b></div>
+									<div class="gt-row"><span>{{ t('XP / clear') }}</span><b class="g-xp">{{ fmtInt(hoverStage.expectedEXP) }}</b></div>
 								</div>
 							</div>
 						</div>
@@ -700,57 +738,57 @@
 						<div class="sm-badge">{{ formatStageName(fasesStage) }}</div>
 						<div>
 							<h3 class="sm-title">{{ stageName(fasesStage) || formatStageName(fasesStage) }}</h3>
-							<div class="sm-sub">{{ formatDifficulty(stageDetail.difficulty) }} · Nível da fase {{ stageDetail.stageLevel }} · {{ stageDetail.waves }} waves × {{ stageDetail.perWave }} monstro(s)<span v-if="stageDetail.boss"> + boss</span></div>
+							<div class="sm-sub">{{ formatDifficulty(stageDetail.difficulty) }} · {{ t('Nível da fase') }} {{ stageDetail.stageLevel }} · {{ stageDetail.waves }} waves × {{ stageDetail.perWave }} {{ t('monstro(s)') }}<span v-if="stageDetail.boss"> + boss</span></div>
 						</div>
 					</div>
 					<div class="sm-stats">
-						<div class="sm-stat"><span class="sm-k">Vida total</span><b>{{ fmtInt(stageDetail.totalHP) }}</b></div>
-						<div class="sm-stat"><span class="sm-k">Ouro / clear</span><b class="g-gold">{{ fmtInt(stageDetail.totalGold) }}</b></div>
-						<div class="sm-stat"><span class="sm-k">XP / clear</span><b class="g-xp">{{ fmtInt(stageDetail.totalExp) }}</b></div>
-						<div class="sm-stat"><span class="sm-k">Monstros / clear</span><b>{{ stageDetail.normalCount }}<small v-if="stageDetail.boss"> + 1</small></b></div>
+						<div class="sm-stat"><span class="sm-k">{{ t('Vida total') }}</span><b>{{ fmtInt(stageDetail.totalHP) }}</b></div>
+						<div class="sm-stat"><span class="sm-k">{{ t('Ouro / clear') }}</span><b class="g-gold">{{ fmtInt(stageDetail.totalGold) }}</b></div>
+						<div class="sm-stat"><span class="sm-k">{{ t('XP / clear') }}</span><b class="g-xp">{{ fmtInt(stageDetail.totalExp) }}</b></div>
+						<div class="sm-stat"><span class="sm-k">{{ t('Monstros / clear') }}</span><b>{{ stageDetail.normalCount }}<small v-if="stageDetail.boss"> + 1</small></b></div>
 					</div>
-					<p class="sm-note">Valores-base do jogo (sem seus bônus de runas/pets). A escala da fase já está aplicada (×{{ stageDetail.hpMult }} vida, ×{{ stageDetail.goldMult }} ouro, ×{{ stageDetail.expMult }} xp).</p>
+					<p class="sm-note">{{ t('Valores-base do jogo (sem seus bônus de runas/pets). A escala da fase já está aplicada') }} (×{{ stageDetail.hpMult }} {{ t('vida') }}, ×{{ stageDetail.goldMult }} {{ t('ouro') }}, ×{{ stageDetail.expMult }} xp).</p>
 					<div class="sm-section" v-if="stageDetail.monsters.length">
-						<h4 class="sm-h">Monstros desta fase</h4>
+						<h4 class="sm-h">{{ t('Monstros desta fase') }}</h4>
 						<div class="mon-grid">
 							<div class="mon-card" v-for="m in stageDetail.monsters" :key="m.key">
 								<img v-if="monsterSprite(m.key)" class="mon-sprite" :src="monsterSprite(m.key)" loading="lazy" onerror="this.style.visibility='hidden'">
 								<div v-else class="mon-sprite ph"><icon name="shield" :size="22"></icon></div>
 								<div class="mon-info">
-									<div class="mon-name">{{ m.name }} <span class="mon-share">{{ m.sharePct }}%</span></div>
-									<div class="mon-stats"><span class="mono">{{ fmtInt(m.hp) }} hp</span><span class="mono g-gold">{{ fmtInt(m.gold) }} ouro</span><span class="mono g-xp">{{ fmtInt(m.exp) }} xp</span></div>
+									<div class="mon-name">{{ monsterName(m) }} <span class="mon-share">{{ m.sharePct }}%</span></div>
+									<div class="mon-stats"><span class="mono">{{ fmtInt(m.hp) }} hp</span><span class="mono g-gold">{{ fmtInt(m.gold) }} {{ t('ouro') }}</span><span class="mono g-xp">{{ fmtInt(m.exp) }} xp</span></div>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="sm-section" v-if="stageDetail.boss">
-						<h4 class="sm-h">Chefe</h4>
+						<h4 class="sm-h">{{ t('Chefe') }}</h4>
 						<div class="boss-card">
 							<img v-if="monsterSprite(stageDetail.boss.key)" class="mon-sprite big" :src="monsterSprite(stageDetail.boss.key)" loading="lazy" onerror="this.style.visibility='hidden'">
 							<div v-else class="mon-sprite big ph"><icon name="shield" :size="30"></icon></div>
 							<div>
-								<div class="sm-boss-name">{{ stageDetail.boss.name }}</div>
+								<div class="sm-boss-name">{{ monsterName(stageDetail.boss) }}</div>
 								<div class="sm-boss-stats">
-									<span><span class="sm-k">Vida</span> {{ fmtInt(stageDetail.boss.hp) }}</span>
-									<span><span class="sm-k">Ouro</span> <b class="g-gold">{{ fmtInt(stageDetail.boss.gold) }}</b></span>
+									<span><span class="sm-k">{{ t('Vida') }}</span> {{ fmtInt(stageDetail.boss.hp) }}</span>
+									<span><span class="sm-k">{{ t('Ouro') }}</span> <b class="g-gold">{{ fmtInt(stageDetail.boss.gold) }}</b></span>
 									<span><span class="sm-k">XP</span> <b class="g-xp">{{ fmtInt(stageDetail.boss.exp) }}</b></span>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="sm-section" v-if="stageChests(fasesStage).length">
-						<h4 class="sm-h">Baús que caem aqui</h4>
+						<h4 class="sm-h">{{ t('Baús que caem aqui') }}</h4>
 						<div class="sm-chest" v-for="(r, i) in stageChests(fasesStage)" :key="i" :class="typeClass(r.chest.type)" @click="view='chests'; selectedChest=r.chest">
 							<img class="li-sprite" :src="r.chest.iconUrl" loading="lazy" onerror="this.style.visibility='hidden'">
 							<div class="sm-chest-info">
-								<span class="sm-chest-name">{{ r.chest.name }}</span>
+								<span class="sm-chest-name">{{ chestName(r.chest) }}</span>
 								<span class="sm-chest-meta">{{ typeLabel(r.chest.type) }} · via {{ r.via }}</span>
 							</div>
-							<span class="sm-chest-rate">{{ fmtPct(r.rate) }}<small>por clear</small></span>
+							<span class="sm-chest-rate">{{ fmtPct(r.rate) }}<small>{{ t('por clear') }}</small></span>
 						</div>
 					</div>
 				</div>
-				<div class="empty" v-else><div class="empty-mark"><icon name="clock" :size="40"></icon></div><h3>Carregando dados das fases…</h3></div>
+				<div class="empty" v-else><div class="empty-mark"><icon name="clock" :size="40"></icon></div><h3>{{ t('Carregando dados das fases…') }}</h3></div>
 					</div>
 				</div>
 			</section>
@@ -791,6 +829,66 @@
 			setup() {
 				const statsReport = ref({ best_gold_stage: 0, best_xp_stage: 0, stages: {} });
 				const stagesList = ref([]);
+					// ---------- i18n ----------
+					// A chave do t() é a própria string pt-BR; o dicionário do idioma ativo mapeia
+					// PT -> tradução e o fallback é a própria chave. {x} interpola variáveis.
+					const LANGS = [
+						{ code: 'pt-BR', label: 'Português (Brasil)' },
+						{ code: 'en-US', label: 'English' },
+						{ code: 'es-ES', label: 'Español' },
+						{ code: 'de-DE', label: 'Deutsch' },
+						{ code: 'fr-FR', label: 'Français' },
+						{ code: 'pl-PL', label: 'Polski' },
+						{ code: 'tr-TR', label: 'Türkçe' },
+						{ code: 'ru-RU', label: 'Русский' },
+						{ code: 'uk-UA', label: 'Українська' },
+						{ code: 'id-ID', label: 'Bahasa Indonesia' },
+						{ code: 'vi-VN', label: 'Tiếng Việt' },
+						{ code: 'th-TH', label: 'ไทย' },
+						{ code: 'ko-KR', label: '한국어' },
+						{ code: 'ja-JP', label: '日本語' },
+						{ code: 'zh-Hans', label: '简体中文' },
+						{ code: 'zh-Hant', label: '繁體中文' },
+					];
+					const lang = ref(localStorage.getItem('tbh_lang') || 'pt-BR');
+					const uiDict = ref({});       // PT -> tradução da UI (vazio em pt-BR)
+					const namePack = ref(null);   // nomes do jogo no idioma ativo (/api/i18n/<code>)
+					const ptItemIdByName = ref({}); // nomePT -> id (materiais de criação não têm id)
+					const t = (s, vars) => {
+						let out = uiDict.value[s] || s;
+						if (vars) for (const k in vars) out = out.split('{' + k + '}').join(vars[k]);
+						return out;
+					};
+					// nome localizado de um grupo do pack (items/chests/stages/monsters/heroes/runes/pets/unique)
+					const packName = (group, key, fb) => { const p = namePack.value; return (p && p[group] && p[group][key]) || fb; };
+					const loadLang = async () => {
+						const code = lang.value;
+						document.documentElement.lang = code;
+						if (code === 'pt-BR') { uiDict.value = {}; namePack.value = null; ptItemIdByName.value = {}; document.title = 'Taskbar Hero — Otimizador de Farm'; return; }
+						// UI: inglês é a base; se existir ui_<code>.json no futuro, aplica por cima
+						let dict = {};
+						try { const r = await fetch('i18n/ui_en-US.json'); if (r.ok) dict = await r.json(); } catch (e) { /* segue em PT */ }
+						if (code !== 'en-US') {
+							try { const r = await fetch('i18n/ui_' + code + '.json'); if (r.ok) Object.assign(dict, await r.json()); } catch (e) { /* sem UI nesse idioma: fica o EN */ }
+						}
+						uiDict.value = dict;
+						document.title = t('Taskbar Hero — Otimizador de Farm');
+						// nomes do jogo (backend busca no CDN); se falhar, segue com os nomes PT baked
+						try {
+							const r = await fetch('http://localhost:8080/api/i18n/' + encodeURIComponent(code));
+							namePack.value = r.ok ? await r.json() : null;
+						} catch (e) { namePack.value = null; }
+						// índice reverso nomePT -> id, pra traduzir materiais de criação (só têm nome)
+						try {
+							const r = await fetch('http://localhost:8080/api/i18n/pt-BR');
+							if (r.ok) {
+								const pt = await r.json(); const m = {};
+								Object.entries(pt.items || {}).forEach(([id, n]) => { if (m[n] === undefined) m[n] = id; });
+								ptItemIdByName.value = m;
+							}
+						} catch (e) { ptItemIdByName.value = {}; }
+					};
+					const setLang = (code) => { lang.value = code; try { localStorage.setItem('tbh_lang', code); } catch (e) { /* storage cheio/bloqueado */ } loadLang(); };
 					// ---- Mapa de fases: nós nas POSIÇÕES REAIS das bolinhas do fundo (detectadas
 					// nas imagens Act*_Bg.png). 9 bolinhas (fases 1-9) + chefe do ato (fase 10). ----
 					const mapAct = ref(1);
@@ -853,8 +951,8 @@
 					if (chestStage.value) list = list.filter(c => (c.stages || []).some(s => ((s.difficulty || '') + '|' + s.label) === chestStage.value));
 					return list;
 				});
-				const typeLabel = (t) => ({ 'Common': 'Comum', 'Stage Boss': 'Chefe de Fase', 'Act Boss': 'Chefe de Ato', 'Soul Stone': 'Pedra da Alma' }[t] || t);
-				const gradeLabel = (g) => ({ COMMON:'Comum', UNCOMMON:'Incomum', RARE:'Raro', EPIC:'Épico', LEGENDARY:'Lendário', MYTHIC:'Mítico', IMMORTAL:'Imortal', ARCANA:'Arcano', BEYOND:'Além', CELESTIAL:'Celestial', DIVINE:'Divino', COSMIC:'Cósmico' }[g] || (g || '').toLowerCase());
+				const typeLabel = (tp) => t({ 'Common': 'Comum', 'Stage Boss': 'Chefe de Fase', 'Act Boss': 'Chefe de Ato', 'Soul Stone': 'Pedra da Alma' }[tp] || tp);
+				const gradeLabel = (g) => t({ COMMON:'Comum', UNCOMMON:'Incomum', RARE:'Raro', EPIC:'Épico', LEGENDARY:'Lendário', MYTHIC:'Mítico', IMMORTAL:'Imortal', ARCANA:'Arcano', BEYOND:'Além', CELESTIAL:'Celestial', DIVINE:'Divino', COSMIC:'Cósmico' }[g] || (g || '').toLowerCase());
 				const typeClass = (t) => ({ 'Common': 't-common', 'Stage Boss': 't-boss', 'Act Boss': 't-act', 'Soul Stone': 't-soul' }[t] || '');
 				const fmtPct = (x) => {
 					x = x || 0;
@@ -873,7 +971,7 @@
 				};
 				const chestHeroes = (c) => {
 					const seen = new Set((c.loot || []).map(g => g.hero).filter(Boolean));
-					return [...seen].map(k => ({ key: k, name: (allHeroes.value[k] || {}).name || k, dlc: !!(allHeroes.value[k] || {}).dlc }));
+					return [...seen].map(k => ({ key: k, name: packName('heroes', k, (allHeroes.value[k] || {}).name || k), dlc: !!(allHeroes.value[k] || {}).dlc }));
 				};
 				const activeLoot = (c) => {
 					const present = new Set((c.loot || []).map(g => g.hero).filter(Boolean));
@@ -898,8 +996,8 @@
 				const COMBAT_PCT = new Set(['CriticalChance','CriticalDamage','MovementSpeed','CooldownReduction','DodgeChance','BlockChance','DamageReduction','DamageAbsorption','AllElementalResistance','HpLeech','AreaOfEffect','IncreaseExpAmount','SkillHealIncrease','SkillDurationIncrease','SkillRangeExpansion','IncreaseProjectileDamage','CastSpeed']);
 				const COMBAT_ABBR = { AttackDamage:'ATK', AttackSpeed:'ASPD', CastSpeed:'CAST', CriticalChance:'CRIT', CriticalDamage:'CRIT DMG', MaxHp:'HP', Armor:'ARM', MovementSpeed:'MSPD', CooldownReduction:'CDR', DodgeChance:'ESQ', BlockChance:'BLK', Multistrike:'MULTI', ProjectileCount:'PROJ', AddAllSkillLevel:'+HAB', AreaOfEffect:'AOE', IncreaseExpAmount:'EXP', IncreaseProjectileDamage:'DANO PROJ', DamageReduction:'RED DANO', DamageAbsorption:'ABS DANO', AllElementalResistance:'RES ELEM', HpLeech:'ROUBO VIDA', HpRegenPerSec:'REGEN/s' };
 					// rótulo curto p/ inerentes; cai pro nome completo quando não há sigla boa (ex.: AddHpPerHit)
-					const inhLabel = (st) => COMBAT_ABBR[st] || COMBAT_LABEL[st] || st;
-				const combatLabel = (st) => COMBAT_LABEL[st] || st;
+					const inhLabel = (st) => t(COMBAT_ABBR[st] || COMBAT_LABEL[st] || st);
+				const combatLabel = (st) => t(COMBAT_LABEL[st] || st);
 				// % se o modtype é aditivo/multiplicativo, ou se o stat é crítico (FLAT mas exibido em %)
 				const isPctStat = (b) => b.mod === 'ADDITIVE' || b.mod === 'MULTIPLICATIVE' || b.stat === 'CriticalChance' || b.stat === 'CriticalDamage';
 				// base: AttackSpeed/CastSpeed em /s (valor/100, confirmado no jogo); resto número
@@ -907,14 +1005,14 @@
 				const fmtInh = (b) => isPctStat(b) ? '+' + (b.value / 10) + '%' : '+' + formatNumber(b.value);
 				const baseStatsShown = (id) => ((itemInfo(id) || {}).base || []);
 				// stat de destaque no card: 1º inerente (abreviado) ou o tipo de arma
-				const cardStat = (it) => { const inh = (it.inherent || [])[0]; return inh ? (COMBAT_ABBR[inh.stat] || inh.stat) + ' ' + fmtInh(inh) : it.gear; };
+				const cardStat = (it) => { const inh = (it.inherent || [])[0]; return inh ? t(COMBAT_ABBR[inh.stat] || inh.stat) + ' ' + fmtInh(inh) : t(it.gear); };
 					// atributo de destaque do card (1º inerente, rótulo completo)
 					const cardAttr = (it) => { const inh = (it.inherent || [])[0]; return inh ? inhLabel(inh.stat) + ' ' + fmtInh(inh) : ''; };
 					const tipBase = (it) => (it && it.base) || [];
 					// poder base como no jogo: AttackDamage->Poder de Ataque, Armor->Poder de Defesa
 					const tipPower = (it) => ((it && it.base) || []).map(b => {
-						if (b.stat === 'AttackDamage') return { label: 'Poder de Ataque', val: formatNumber(b.value) };
-						if (b.stat === 'Armor') return { label: 'Poder de Defesa', val: formatNumber(b.value) };
+						if (b.stat === 'AttackDamage') return { label: t('Poder de Ataque'), val: formatNumber(b.value) };
+						if (b.stat === 'Armor') return { label: t('Poder de Defesa'), val: formatNumber(b.value) };
 						return { label: combatLabel(b.stat), val: fmtBaseStat(b) };
 					});
 					// espaços de GEMA por tipo: SÓ os Extra (dec/eng/ins). O "InherentSlotAmount" do
@@ -927,7 +1025,7 @@
 					];
 					const tipSlots = (it) => {
 						const s = (it && it.slots) || {};
-						return SLOT_TYPES.filter(t => (s[t.key] || 0) > 0).map(t => ({ icon: t.icon, label: t.label, count: s[t.key] }));
+						return SLOT_TYPES.filter(st => (s[st.key] || 0) > 0).map(st => ({ icon: st.icon, label: t(st.label), count: s[st.key] }));
 					};
 					// tooltip estilo jogo ao passar o mouse num card de item
 					// tooltip ancorada ao CARD (não ao cursor): fica ao lado, acompanha o scroll e
@@ -955,21 +1053,29 @@
 					// monstro/sprite p/ a tooltip da fase (do stage_details)
 					const stageTipDetail = computed(() => hoverStage.value ? (stageDetails.value[hoverStage.value.key] || null) : null);
 					const stageTipMob = computed(() => { const d = stageTipDetail.value; if (!d) return null; return d.boss || (d.monsters && d.monsters[0]) || null; });
-				const itemName = (id) => (itemInfo(id) && itemInfo(id).name) || ('#' + id);
+				const itemName = (id) => packName('items', id, (itemInfo(id) && itemInfo(id).name) || ('#' + id));
+				// nomes localizados com fallback pro nome PT baked nos dados
+				const chestName = (c) => c ? packName('chests', c.id, c.name) : '';
+				const monsterName = (m) => m ? packName('monsters', m.key, m.name) : '';
+				const runeName = (r) => r ? packName('runes', r.key, r.name) : '';
+				const petName = (p) => p ? packName('pets', p.key, p.name) : '';
+				// material de criação não tem id: nomePT -> id -> nome no idioma ativo
+				const matName = (m) => { const id = ptItemIdByName.value[m.name]; return (id !== undefined) ? packName('items', id, m.name) : m.name; };
+				const uniqueText = (id, fb) => packName('unique', id, fb);
 				const itemIcon = (id) => (itemInfo(id) && itemInfo(id).icon) || '';
 				const itemGrade = (id) => (itemInfo(id) && itemInfo(id).grade) || '';
 				const GRADES = ['COMMON', 'UNCOMMON', 'RARE', 'LEGENDARY', 'IMMORTAL', 'ARCANA', 'BEYOND', 'CELESTIAL', 'DIVINE', 'COSMIC'];
 				const gradeRank = (g) => ({ COMMON:0, UNCOMMON:1, RARE:2, EPIC:3, LEGENDARY:4, MYTHIC:5, IMMORTAL:6, ARCANA:7, BEYOND:8, CELESTIAL:9, DIVINE:10, COSMIC:11 }[g] ?? 99);
 				const gradeBelow = (g) => { const i = GRADES.indexOf(g); return i > 0 ? gradeLabel(GRADES[i - 1]) : ''; };
 				const partFilters = [{ v: '', label: 'Todos' }, { v: 'weapon', label: 'Arma' }, { v: 'offhand', label: 'Mão secundária' }, { v: 'armor', label: 'Armadura' }, { v: 'accessory', label: 'Acessório' }];
-				const partLabel = (p) => ({ weapon: 'Arma', offhand: 'Mão secundária', armor: 'Armadura', accessory: 'Acessório', material: 'Material' }[p] || '');
+				const partLabel = (p) => t({ weapon: 'Arma', offhand: 'Mão secundária', armor: 'Armadura', accessory: 'Acessório', material: 'Material' }[p] || '');
 				const gradeFilter = ref('');
 				const partFilter = ref('');
 				const lvlMin = ref(null);
 				const lvlMax = ref(null);
 				const obtainableOnly = ref(true);
 				const heroList = computed(() => Object.entries(chestData.value.heroes || {})
-					.map(([key, v]) => ({ key, name: v.name, dlc: v.dlc })));
+					.map(([key, v]) => ({ key, name: packName('heroes', key, v.name), dlc: v.dlc })));
 				const itemIndex = computed(() => {
 					const idx = {};
 					(chestData.value.chests || []).forEach(c => {
@@ -982,7 +1088,7 @@
 					return idx;
 				});
 				// lista unificada: equipamentos do catálogo + materiais do loot dos baús
-				const allItemsList = computed(() => Object.keys(itemsCatalog.value).map(id => { const v = itemsCatalog.value[id]; return { id, name: v.name, grade: v.grade, icon: v.icon, part: v.part, gear: v.gear, level: v.level, obtainable: v.obtainable, drops: v.drops, slots: v.slots, alchemyGold: v.alchemyGold, cubeExp: v.cubeExp, atk: v.atk, base: v.base, inherent: v.inherent, tradable: v.tradable, unique: v.unique }; }));
+				const allItemsList = computed(() => Object.keys(itemsCatalog.value).map(id => { const v = itemsCatalog.value[id]; return { id, name: packName('items', id, v.name), grade: v.grade, icon: v.icon, part: v.part, gear: v.gear, level: v.level, obtainable: v.obtainable, drops: v.drops, slots: v.slots, alchemyGold: v.alchemyGold, cubeExp: v.cubeExp, atk: v.atk, base: v.base, inherent: v.inherent, tradable: v.tradable, unique: v.unique }; }));
 				const filteredItems = computed(() => {
 					const q = itemSearch.value.trim().toLowerCase();
 					let list = allItemsList.value;
@@ -1010,11 +1116,70 @@
 				const materialsList = computed(() => {
 					const mat = chestData.value.itemsById || {};
 					const q = matSearch.value.trim().toLowerCase();
-					let out = Object.keys(mat).filter(id => mat[id].cat === 'material').map(id => ({ id, name: mat[id].name, grade: mat[id].grade, icon: mat[id].icon }));
+					let out = Object.keys(mat).filter(id => mat[id].cat === 'material').map(id => ({ id, name: packName('items', id, mat[id].name), grade: mat[id].grade, icon: mat[id].icon, mcat: mat[id].mcat }));
 					if (q) out = out.filter(it => it.name.toLowerCase().includes(q));
 					return out.sort((a, b) => gradeRank(a.grade) - gradeRank(b.grade) || a.name.localeCompare(b.name));
 				});
 				const selectedMaterial = ref(null);
+				// função do material: categoria (faixa do id, vinda da extração) + descrição do jogo
+				const MAT_CAT_PT = { decoration: 'Decoração', engraving: 'Gravação', inscription: 'Inscrição', craft: 'Criação', event: 'Evento', summon: 'Invocação', offering: 'Oferenda' };
+				const matCat = (id) => (itemInfo(id) || {}).mcat || '';
+				const matCatLabel = (c) => t(MAT_CAT_PT[c] || c);
+				const matDesc = (id) => packName('itemDesc', id, (itemInfo(id) || {}).desc || '');
+				// --- tooltip do material no estilo do jogo ---
+				// rótulos do pack de idioma (matTypes/stats/slotFx), caindo pros baked pt-BR do chest_drops.json
+				const matLbl = (group, key) => { const p = namePack.value; return (p && p[group] && p[group][key]) || ((chestData.value.matLabels || {})[group] || {})[key] || ''; };
+				const matTypeLabel = (mc) => matLbl('matTypes', mc) || matCatLabel(mc);
+				const matStatName = (s) => matLbl('stats', s) || statLabel(s);
+				const MAT_CAT_ICON = { decoration: 'slot_icons/dec.png', engraving: 'slot_icons/eng.png', inscription: 'slot_icons/ins.png' };
+				const matCatIcon = (mc) => MAT_CAT_ICON[mc] || '';
+				const SLOT_LBL = { WEAPON: 'Arma', ARMOR: 'Armadura', ACCESSORY: 'Acessório', COMMON: 'Comum' };
+				const SLOT_ORDER = { WEAPON: 0, ARMOR: 1, ACCESSORY: 2, COMMON: 3 };
+				// agrupa os mods por slot, com cabeçalho do jogo (slotFx) ou composto (inscrição não tem slotFx)
+				const matSlotGroups = (id) => {
+					const info = itemInfo(id) || {}; const mc = info.mcat; const by = {};
+					(info.mods || []).forEach(m => { (by[m.g] = by[m.g] || []).push(m); });
+					return Object.keys(by).sort((a, b) => (SLOT_ORDER[a] !== undefined ? SLOT_ORDER[a] : 9) - (SLOT_ORDER[b] !== undefined ? SLOT_ORDER[b] : 9)).map(g => ({
+						key: g,
+						header: matLbl('slotFx', mc + '_' + g) || (matTypeLabel(mc) + ' (' + t(SLOT_LBL[g] || g) + ')'),
+						mods: by[g],
+					}));
+				};
+				const tierClass = (n) => n >= 5 ? 'tc-5' : (n === 4 ? 'tc-4' : (n === 3 ? 'tc-3' : 'tc-12'));
+				// Linha PRONTA do tooltip do jogo (statFmt da extração): já vem com sinal,
+				// unidade e ordem certos por idioma (ex.: 'Redução de Recarga +{0}~{1}%',
+				// '{0}~{1}% Aumento Vel. Ataque'). Valores em décimos quando o formato tem '%'.
+				// Sem formato (não deve ocorrer): cai na composição manual abaixo.
+				const matFxText = (m) => {
+					const fmt = matLbl('statFmt', m.stat + '_' + m.mod);
+					if (!fmt) return '';
+					const pct = fmt.includes('%');
+					const f = (v) => (pct ? v / 10 : v).toLocaleString(lang.value, { maximumFractionDigits: 1 });
+					return fmt.split('{0}').join(f(m.min)).split('{1}').join(f(m.max));
+				};
+				// Como exibir min~max: ADDITIVE é sempre % em décimos (×10, mesma regra de runas/pets);
+				// FLAT depende do atributo: % em décimos (lista X10), % cru (resistências) ou valor plano.
+				const MAT_PCT_X10 = new Set(['CooldownReduction', 'BlockChance', 'DodgeChance', 'CriticalDamage', 'HpLeech', 'DamageReduction', 'FireDamagePercent', 'ColdDamagePercent', 'LightningDamagePercent', 'PhysicalDamagePercent']);
+				const MAT_PCT_RAW = new Set(['FireResistance', 'ColdResistance', 'LightningResistance', 'ChaosResistance', 'AllElementalResistance']);
+				const matModVal = (m) => {
+					const loc = lang.value;
+					if (statUnit(m.stat) === '%' || m.mod === 'ADDITIVE' || MAT_PCT_X10.has(m.stat)) {
+						const dec = (m.min % 10 || m.max % 10) ? 1 : 0;
+						const f = (v) => (v / 10).toLocaleString(loc, { minimumFractionDigits: dec, maximumFractionDigits: 1 });
+						return '+' + f(m.min) + '~' + f(m.max) + '%';
+					}
+					const f = (v) => v.toLocaleString(loc);
+					return '+' + f(m.min) + '~' + f(m.max) + (MAT_PCT_RAW.has(m.stat) ? '%' : '');
+				};
+				// material de fabricação: usos agrupados por tier (+ nível do Cubo)
+				const matUses = (id) => {
+					const by = {};
+					((itemInfo(id) || {}).uses || []).forEach(u => {
+						const k = u.tier + '|' + u.cubeLvl;
+						(by[k] = by[k] || { tier: u.tier, cubeLvl: u.cubeLvl, types: [] }).types.push(u.type === 'Accessory' ? t('Acessório') : t(u.type));
+					});
+					return Object.values(by).sort((a, b) => a.tier - b.tier || a.cubeLvl - b.cubeLvl);
+				};
 				// um item pode estar em vários grupos do mesmo baú -> soma a chance por baú.
 				const itemChests = (id) => {
 					const byChest = {};
@@ -1039,23 +1204,23 @@
 						const j = await r.json();
 						updateInfo.value = j;
 						appVersion.value = j.current || appVersion.value;
-						if (!j.enabled) updateMsg.value = 'Auto-update ainda não configurado (CDN).';
-						else if (j.error) updateMsg.value = 'Erro: ' + j.error;
-						else if (j.has_update) updateMsg.value = 'Nova versão ' + j.latest + ' disponível!' + (j.notes ? ' ' + j.notes : '');
-						else updateMsg.value = 'Você está na versão mais recente.';
-					} catch (e) { updateMsg.value = 'Falha ao verificar atualização.'; }
+						if (!j.enabled) updateMsg.value = t('Auto-update ainda não configurado (CDN).');
+						else if (j.error) updateMsg.value = t('Erro:') + ' ' + j.error;
+						else if (j.has_update) updateMsg.value = t('Nova versão {v} disponível!', { v: j.latest }) + (j.notes ? ' ' + j.notes : '');
+						else updateMsg.value = t('Você está na versão mais recente.');
+					} catch (e) { updateMsg.value = t('Falha ao verificar atualização.'); }
 					finally { updateBusy.value = false; }
 				};
 				const applyUpdate = async () => {
-					if (!confirm('Baixar e instalar a versão ' + updateInfo.value.latest + '? O app vai reabrir.')) return;
+					if (!confirm(t('Baixar e instalar a versão {v}? O app vai reabrir.', { v: updateInfo.value.latest }))) return;
 					const target = updateInfo.value.latest;
-					updateBusy.value = true; updateMsg.value = 'Baixando e instalando…';
+					updateBusy.value = true; updateMsg.value = t('Baixando e instalando…');
 					try {
 						const r = await fetch('http://localhost:8080/api/update/apply', { method: 'POST' });
 						const j = await r.json().catch(() => ({}));
 						if (j.status && j.status !== 'success') {
-							updateMsg.value = 'Falha: ' + (j.message || j.status);
-							pushToast('error', 'Falha ao atualizar: ' + (j.message || j.status));
+							updateMsg.value = t('Falha:') + ' ' + (j.message || j.status);
+							pushToast('error', t('Falha ao atualizar:') + ' ' + (j.message || j.status));
 							updateBusy.value = false;
 							return;
 						}
@@ -1071,7 +1236,7 @@
 				// Faz polling no /api/version (local, instantâneo) até o servidor da versão
 				// nova estar no ar (handoff da porta leva ~0,5–2s) e recarrega a aba.
 				const waitForNewVersionAndReload = async (target) => {
-					updateMsg.value = 'Reiniciando para a v' + (target || 'nova') + '…';
+					updateMsg.value = t('Reiniciando para a v{v}…', { v: target || '?' });
 					for (let i = 0; i < 40; i++) {            // ~24s de teto
 						await new Promise(res => setTimeout(res, 600));
 						try {
@@ -1079,7 +1244,7 @@
 							const j = await r.json();
 							// version mudou em relação à que carregou esta aba => exe novo no ar.
 							if (j.version && j.version !== loadedVersion && (!target || j.version === target)) {
-								updateMsg.value = 'Atualizado! Recarregando…';
+								updateMsg.value = t('Atualizado! Recarregando…');
 								location.reload();
 								return;
 							}
@@ -1112,7 +1277,7 @@
 
 				const quitDone = ref(false);
 				const quitApp = async () => {
-					if (!confirm('Encerrar o otimizador? Ele para de monitorar o save até você abrir de novo.')) return;
+					if (!confirm(t('Encerrar o otimizador? Ele para de monitorar o save até você abrir de novo.'))) return;
 					try { await fetch('http://localhost:8080/api/quit', { method: 'POST' }); } catch (e) { /* já encerrou */ }
 					quitDone.value = true;
 				};
@@ -1130,9 +1295,9 @@
 					try {
 						const r = await fetch('http://localhost:8080/api/chests/update', { method: 'POST' });
 						const j = await r.json().catch(() => ({}));
-						if (r.ok) { await loadChests(); pushToast('success', 'Catálogo atualizado: ' + (j.chests || '?') + ' baús.'); }
-						else pushToast('error', 'Falha ao atualizar: ' + (j.message || r.status));
-					} catch (e) { pushToast('error', 'Erro de conexão ao atualizar.'); }
+						if (r.ok) { await loadChests(); pushToast('success', t('Catálogo atualizado: {n} baús.', { n: j.chests || '?' })); }
+						else pushToast('error', t('Falha ao atualizar:') + ' ' + (j.message || r.status));
+					} catch (e) { pushToast('error', t('Erro de conexão ao atualizar.')); }
 					finally { updating.value = false; }
 				};
 
@@ -1167,7 +1332,7 @@
 					if (!t || t <= 0) return 0;
 					return (3600 / t) * ((chestRateByStage.value[stage.stage_key] || 0) / 100);
 				};
-				const formatItems = (n) => !n ? '0,0' : n.toLocaleString('pt-BR', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+				const formatItems = (n) => !n ? (0).toLocaleString(lang.value, { minimumFractionDigits: 1 }) : n.toLocaleString(lang.value, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 
 				// --- Painel de detalhe da fase (dataset do jogo: monstros, HP, XP, waves, boss) ---
 				const stageDetails = ref({});
@@ -1193,9 +1358,10 @@
 					try { const r = await fetch('heroes.json'); if (r.ok) heroesData.value = await r.json(); }
 					catch (e) { /* sem heroes.json: só mostra o nível */ }
 				};
-				const activeHeroList = computed(() => (statsReport.value.active_heroes || []).map(h => ({
-					key: h.key, level: h.level, ...(heroesData.value[h.key] || { name: 'Herói ' + h.key, icon: '', class: '' })
-				})));
+				const activeHeroList = computed(() => (statsReport.value.active_heroes || []).map(h => {
+					const base = heroesData.value[h.key] || { name: t('Herói') + ' ' + h.key, icon: '', class: '' };
+					return { key: h.key, level: h.level, ...base, name: packName('heroes', h.key, base.name) };
+				}));
 
 				// ---------- RUNAS (árvore do jogo: posições reais + níveis/custos) ----------
 				const runesData = ref({});
@@ -1224,7 +1390,7 @@
 					});
 					return Object.entries(t).map(([stat, raw]) => ({ stat, label: statLabel(stat), unit: statUnit(stat), value: statUnit(stat) === '%' ? raw / 10 : raw })).sort((a, b) => a.label.localeCompare(b.label));
 				});
-				const petUnlockText = (pet) => { const u = pet.unlock || {}; if (u.type === 'DLC') return 'Pacote Apoiador (DLC)'; if (u.type === 'KillMonster') { const st = (u.stages || []).length ? ' · fases: ' + u.stages.join(', ') : ''; return 'Derrote ' + formatNumber(u.count) + '× ' + (u.monsterName || 'monstro') + st; } return ''; };
+				const petUnlockText = (pet) => { const u = pet.unlock || {}; if (u.type === 'DLC') return t('Pacote Apoiador (DLC)'); if (u.type === 'KillMonster') { const st = (u.stages || []).length ? ' ' + t('· fases:') + ' ' + u.stages.join(', ') : ''; const mn = packName('monsters', u.monsterKey, u.monsterName || t('monstro')); return t('Derrote {n}× {m}', { n: formatNumber(u.count), m: mn }) + st; } return ''; };
 				const playerGold = computed(() => statsReport.value.gold || 0);
 				const ownedRuneLevels = computed(() => statsReport.value.rune_levels || {});
 				const runeLevel = (key) => ownedRuneLevels.value[key] || 0;
@@ -1244,7 +1410,7 @@
 					ReduceAutoOpenNormalChestTime: ['Tempo auto-abrir baú comum', ''], ReduceAutoOpenStageBossChestTime: ['Tempo auto-abrir baú de chefe', ''],
 					OpenOneTypeChestAllAtOnce: ['Abrir baús de um tipo de vez', ''], OpenAllTypeChestAllAtOnce: ['Abrir baús de todos os tipos', ''],
 				};
-				const statLabel = (s) => (STAT_LABEL[s] || [s, ''])[0];
+				const statLabel = (s) => t((STAT_LABEL[s] || [s, ''])[0]);
 				const statUnit = (s) => (STAT_LABEL[s] || [s, ''])[1];
 
 				// abas da Lista de atributos, como no jogo: Exploração / Combate / Recompensa
@@ -1304,8 +1470,8 @@
 					const parents = runeParents.value[rune.key] || [];
 					if (!parents.length) return '';
 					const req = unlockReq(rune);
-					const names = parents.map(pk => { const p = runesData.value[pk]; return p ? p.name + (req > 1 ? ' nivel ' + req : '') : null; }).filter(Boolean);
-					return names.length ? 'Libere ' + names.join(' ou ') + ' primeiro' : '';
+					const names = parents.map(pk => { const p = runesData.value[pk]; return p ? runeName(p) + (req > 1 ? ' ' + t('nivel') + ' ' + req : '') : null; }).filter(Boolean);
+					return names.length ? t('Libere {n} primeiro', { n: names.join(' ' + t('ou') + ' ') }) : '';
 				};
 				// estado visual: max | owned | buy (dá pra subir agora) | ready (desbloqueável, sem ouro) | locked
 				const runeState = (rune) => {
@@ -1392,7 +1558,7 @@
 						if (s) { if (mapAct.value !== s.act) mapAct.value = s.act; if (mapDiff.value !== s.difficulty) mapDiff.value = s.difficulty; }
 					});
 				const openStageTab = (key) => { if (stageDetails.value[key]) { fasesStage.value = key; view.value = 'fases'; } };
-				// ----- busca global (fases, itens, baús, runas, pets) -----
+				// ----- busca global (fases, itens, materiais, baús, runas, pets) -----
 				const globalSearch = ref('');
 				const searchActive = ref(false);
 				const searchResults = computed(() => {
@@ -1400,19 +1566,23 @@
 					if (q.length < 2) return [];
 					const groups = [], CAP = 6;
 					const fa = [];
-					stagesList.value.forEach(st => { const name = formatDifficulty(st.difficulty) + ' ' + st.label; if (name.toLowerCase().includes(q)) fa.push({ label: name, sub: 'Fase', icon: 'shield', act: () => openStageTab(st.key) }); });
+					stagesList.value.forEach(st => { const name = formatDifficulty(st.difficulty) + ' ' + st.label + (stageName(st.key) ? ' ' + stageName(st.key) : ''); if (name.toLowerCase().includes(q)) fa.push({ label: name, sub: 'Fase', icon: 'shield', act: () => openStageTab(st.key) }); });
 					if (fa.length) groups.push({ cat: 'Fases', items: fa.slice(0, CAP) });
 					const ru = [];
-					Object.values(runesData.value).forEach(r => { if ((r.name || '').toLowerCase().includes(q)) ru.push({ label: r.name, sub: 'Runa', icon: 'sparkles', act: () => { view.value = 'runas'; selectRune(r.key); } }); });
+					Object.values(runesData.value).forEach(r => { if ((runeName(r) || '').toLowerCase().includes(q)) ru.push({ label: runeName(r), sub: 'Runa', icon: 'sparkles', act: () => { view.value = 'runas'; selectRune(r.key); } }); });
 					if (ru.length) groups.push({ cat: 'Runas', items: ru.slice(0, CAP) });
 					const pe = [];
-					petsData.value.forEach(pt => { if ((pt.name || '').toLowerCase().includes(q)) pe.push({ label: pt.name, sub: 'Pet', icon: 'paw', act: () => { view.value = 'pets'; } }); });
+					petsData.value.forEach(pt => { if ((petName(pt) || '').toLowerCase().includes(q)) pe.push({ label: petName(pt), sub: 'Pet', icon: 'paw', act: () => { view.value = 'pets'; } }); });
 					if (pe.length) groups.push({ cat: 'Pets', items: pe.slice(0, CAP) });
 					const im = [];
 					allItemsList.value.forEach(it => { if (it.obtainable && it.name.toLowerCase().includes(q)) im.push({ label: it.name, sub: gradeLabel(it.grade), icon: 'swords', act: () => { itemSearch.value = ''; gradeFilter.value = ''; partFilter.value = ''; lvlMin.value = null; lvlMax.value = null; obtainableOnly.value = true; selectedItem.value = it.id; view.value = 'items'; } }); });
 					if (im.length) groups.push({ cat: 'Itens', items: im.slice(0, 8) });
+					const ma = [];
+					const matById = chestData.value.itemsById || {};
+					Object.keys(matById).forEach(id => { const m = matById[id]; if (m.cat !== 'material') return; const name = packName('items', id, m.name); if (name.toLowerCase().includes(q)) ma.push({ label: name, sub: MAT_CAT_PT[m.mcat] || 'Material', icon: 'gem', act: () => { matSearch.value = ''; selectedMaterial.value = id; view.value = 'materiais'; } }); });
+					if (ma.length) groups.push({ cat: 'Materiais', items: ma.slice(0, CAP) });
 					const ch = [];
-					(chestData.value.chests || []).forEach(c => { if ((c.name || '').toLowerCase().includes(q)) ch.push({ label: c.name, sub: typeLabel(c.type), icon: 'package', act: () => { selectedChest.value = c; chestType.value = ''; chestStage.value = ''; view.value = 'chests'; } }); });
+					(chestData.value.chests || []).forEach(c => { if ((chestName(c) || '').toLowerCase().includes(q)) ch.push({ label: chestName(c), sub: typeLabel(c.type), icon: 'package', act: () => { selectedChest.value = c; chestType.value = ''; chestStage.value = ''; view.value = 'chests'; } }); });
 					if (ch.length) groups.push({ cat: 'Baús', items: ch.slice(0, CAP) });
 					return groups;
 				});
@@ -1438,13 +1608,13 @@
 					});
 					return out.sort((a, b) => b.rate - a.rate);
 				};
-				const fmtInt = (n) => (n || 0).toLocaleString('pt-BR');
-				const stageName = (key) => (stageMap.value[key] || {}).name || '';
+				const fmtInt = (n) => (n || 0).toLocaleString(lang.value);
+				const stageName = (key) => packName('stages', key, (stageMap.value[key] || {}).name || '');
 				const stageLevel = (key) => (stageMap.value[key] || {}).level || 0;
 
 				// #4 Indicador de confiança por nº de corridas reais.
 				const confidence = (runs) => runs >= 10 ? 'alta' : runs >= 3 ? 'media' : runs > 0 ? 'baixa' : 'est';
-				const confLabel = (runs) => ({ alta: 'Confiança alta (10+ corridas)', media: 'Confiança média (3-9)', baixa: 'Confiança baixa (1-2 corridas)', est: 'Estimado' }[confidence(runs)]);
+				const confLabel = (runs) => t({ alta: 'Confiança alta (10+ corridas)', media: 'Confiança média (3-9)', baixa: 'Confiança baixa (1-2 corridas)', est: 'Estimado' }[confidence(runs)]);
 
 				const fetchStats = async () => {
 					try {
@@ -1458,13 +1628,13 @@
 							for (const k in cur) {
 								const before = (prev[k] && prev[k].total_runs) || 0;
 								if (cur[k].total_runs > before) {
-									pushToast('success', 'Corrida registrada — ' + formatStageName(parseInt(k, 10)) + ' (' + cur[k].total_runs + ')');
+									pushToast('success', t('Corrida registrada — {s} ({n})', { s: formatStageName(parseInt(k, 10)), n: cur[k].total_runs }));
 								}
 							}
 						}
 						suppressRunDetect = false;
 						firstStats = false;
-						if (wasOffline) { pushToast('success', 'Reconectado ao otimizador'); wasOffline = false; }
+						if (wasOffline) { pushToast('success', t('Reconectado ao otimizador')); wasOffline = false; }
 						statsReport.value = data;
 						const stages = statsReport.value.stages;
 						if (stages) {
@@ -1484,7 +1654,7 @@
 							}
 						}
 					} catch (e) {
-						if (!wasOffline) { pushToast('error', 'Sem conexão com o otimizador'); wasOffline = true; }
+						if (!wasOffline) { pushToast('error', t('Sem conexão com o otimizador')); wasOffline = true; }
 					}
 				};
 
@@ -1494,15 +1664,15 @@
 				};
 
 				const resetHistory = async () => {
-					if (!confirm('Apagar todas as médias acumuladas e o log historico_farm.txt?')) return;
+					if (!confirm(t('Apagar todas as médias acumuladas e o log historico_farm.txt?'))) return;
 					try {
 						const r = await fetch('http://localhost:8080/api/stats/reset', { method: 'POST' });
-						if (r.ok) { calibBaseTime.value = ''; calibLimitStage.value = ''; calibLimitTime.value = ''; suppressRunDetect = true; await fetchStats(); pushToast('info', 'Histórico apagado.'); }
-					} catch (e) { pushToast('error', 'Erro ao zerar o histórico.'); }
+						if (r.ok) { calibBaseTime.value = ''; calibLimitStage.value = ''; calibLimitTime.value = ''; suppressRunDetect = true; await fetchStats(); pushToast('info', t('Histórico apagado.')); }
+					} catch (e) { pushToast('error', t('Erro ao zerar o histórico.')); }
 				};
 
 				const submitCalibration = async () => {
-					if (!calibBaseTime.value) { pushToast('error', 'Preencha pelo menos o tempo da fase 1-1.'); return; }
+					if (!calibBaseTime.value) { pushToast('error', t('Preencha pelo menos o tempo da fase 1-1.')); return; }
 					try {
 						const reqs = [ fetch('http://localhost:8080/api/stats/add', {
 							method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -1510,47 +1680,47 @@
 						}) ];
 						if (calibLimitStage.value && calibLimitTime.value) {
 							const limitKey = parseInt(calibLimitStage.value, 10);
-							if (isNaN(limitKey)) { pushToast('error', 'Fase limite inválida.'); return; }
+							if (isNaN(limitKey)) { pushToast('error', t('Fase limite inválida.')); return; }
 							reqs.push(fetch('http://localhost:8080/api/stats/add', {
 								method: 'POST', headers: { 'Content-Type': 'application/json' },
 								body: JSON.stringify({ stage_key: limitKey, time_spent: calibLimitTime.value })
 							}));
 						}
 						const res = await Promise.all(reqs);
-						if (res.every(x => x.ok)) { suppressRunDetect = true; await fetchStats(); pushToast('success', 'Modelo calibrado com sucesso!'); }
-						else pushToast('error', 'Erro ao enviar dados de calibração.');
-					} catch (e) { pushToast('error', 'Erro de conexão ao calibrar.'); }
+						if (res.every(x => x.ok)) { suppressRunDetect = true; await fetchStats(); pushToast('success', t('Modelo calibrado com sucesso!')); }
+						else pushToast('error', t('Erro ao enviar dados de calibração.'));
+					} catch (e) { pushToast('error', t('Erro de conexão ao calibrar.')); }
 				};
 
 				const addMapTime = async () => {
 					const key = parseInt(addStage.value, 10);
-					if (isNaN(key) || !addTime.value) { pushToast('error', 'Escolha um mapa e informe o tempo.'); return; }
+					if (isNaN(key) || !addTime.value) { pushToast('error', t('Escolha um mapa e informe o tempo.')); return; }
 					try {
 						const r = await fetch('http://localhost:8080/api/stats/add', {
 							method: 'POST', headers: { 'Content-Type': 'application/json' },
 							body: JSON.stringify({ stage_key: key, time_spent: addTime.value })
 						});
-						if (r.ok) { addTime.value = ''; addStage.value = ''; suppressRunDetect = true; await fetchStats(); pushToast('success', 'Fase ' + formatStageName(key) + ' adicionada.'); }
-						else pushToast('error', 'Erro ao adicionar o tempo do mapa.');
-					} catch (e) { pushToast('error', 'Erro de conexão ao adicionar mapa.'); }
+						if (r.ok) { addTime.value = ''; addStage.value = ''; suppressRunDetect = true; await fetchStats(); pushToast('success', t('Fase {s} adicionada.', { s: formatStageName(key) })); }
+						else pushToast('error', t('Erro ao adicionar o tempo do mapa.'));
+					} catch (e) { pushToast('error', t('Erro de conexão ao adicionar mapa.')); }
 				};
 
 				const resetStage = async (key) => {
-					if (!confirm('Apagar as corridas registradas de ' + formatStageName(key) + '?')) return;
+					if (!confirm(t('Apagar as corridas registradas de {s}?', { s: formatStageName(key) }))) return;
 					try {
 						const r = await fetch('http://localhost:8080/api/stats/reset', {
 							method: 'POST', headers: { 'Content-Type': 'application/json' },
 							body: JSON.stringify({ stage_key: key })
 						});
-						if (r.ok) { suppressRunDetect = true; await fetchStats(); pushToast('info', 'Corridas de ' + formatStageName(key) + ' apagadas.'); }
-					} catch (e) { pushToast('error', 'Erro ao limpar a fase.'); }
+						if (r.ok) { suppressRunDetect = true; await fetchStats(); pushToast('info', t('Corridas de {s} apagadas.', { s: formatStageName(key) })); }
+					} catch (e) { pushToast('error', t('Erro ao limpar a fase.')); }
 				};
 
 				const formatDifficulty = (diff) => ({ NORMAL:'Normal', NIGHTMARE:'Nightmare', HELL:'Hell', TORMENT:'Torment' }[diff] || diff);
 				const formatStageName = (key) => {
 					if (!key) return '---';
 					const s = key.toString();
-					if (s.length < 4) return `Fase ${key}`;
+					if (s.length < 4) return t('Fase') + ` ${key}`;
 					const diff = { '1':'Normal','2':'Nightmare','3':'Hell','4':'Torment' }[s[0]] || `Dif.${s[0]}`;
 					return `${diff} ${s[1]}-${parseInt(s.slice(2),10)}`;
 				};
@@ -1580,7 +1750,7 @@
 				const bestXpData = computed(() => statsReport.value.stages ? statsReport.value.stages[statsReport.value.best_xp_stage] : null);
 				const totalRunsAllStages = computed(() => Object.values(statsReport.value.stages || {}).reduce((s, x) => s + x.total_runs, 0));
 
-				const formatNumber = (n) => (n === undefined || n === null) ? '0' : Math.round(n).toLocaleString('pt-BR');
+				const formatNumber = (n) => (n === undefined || n === null) ? '0' : Math.round(n).toLocaleString(lang.value);
 				// Sempre mostra os segundos; acima de 1 min, mostra também minutos+segundos.
 				const formatTime = (seconds) => {
 					if (!seconds || seconds <= 0) return '---';
@@ -1597,7 +1767,7 @@
 						const j = await r.json();
 						updateInfo.value = j; appVersion.value = j.current || '';
 						if (!loadedVersion && j.current) loadedVersion = j.current;
-						if (j.enabled && j.has_update) updateMsg.value = 'Nova versão ' + j.latest + ' disponível!';
+						if (j.enabled && j.has_update) updateMsg.value = t('Nova versão {v} disponível!', { v: j.latest });
 					} catch (e) { /* offline: ignora */ }
 				};
 
@@ -1612,7 +1782,7 @@
 						updateInfo.value = j;
 						appVersion.value = j.current || appVersion.value;
 						if (j.enabled && j.has_update && !eraDisponivel) {
-							pushToast('info', 'Nova versão v' + j.latest + ' disponível! Veja o banner no topo.', 9000);
+							pushToast('info', t('Nova versão v{v} disponível! Veja o banner no topo.', { v: j.latest }), 9000);
 						}
 					} catch (e) { /* offline: ignora */ }
 				};
@@ -1640,6 +1810,7 @@
 				const startApp = () => { loadStagesList(); loadStageDetails(); loadMonsterSprites(); loadHeroes(); loadRunes(); loadPets(); loadChests(); loadItems(); fetchStats(); initUpdate(); watchVersion(); setInterval(fetchStats, 2000); setInterval(watchVersion, 4000); setInterval(pollUpdateAvailability, 10 * 60 * 1000); pollLogs(); setInterval(pollLogs, 1500); };
 				const useThisTab = () => { duplicateTab.value = false; startApp(); };
 				onMounted(() => {
+					loadLang(); // idioma salvo: carrega dicionário de UI + nomes do jogo antes de tudo
 					window.addEventListener('scroll', onItemsScroll, { passive: true });
 					window.addEventListener('resize', () => { if (hoverItem.value) placeTip(); }, { passive: true });
 					if ('BroadcastChannel' in window) {
@@ -1661,6 +1832,7 @@
 				});
 
 				return {
+					lang, LANGS, t, setLang, chestName, monsterName, runeName, petName, matName, uniqueText,
 					statsReport, stagesList, calibBaseTime, calibLimitStage, calibLimitTime,
 					view, navItems, viewTitle, goView, sortKey, sortDir, globalSearch, searchActive, searchResults, pickSearch,
 					sortedStages, bestGoldData, bestXpData, totalRunsAllStages,
@@ -1680,7 +1852,7 @@
 					chestData, chestType, chestStage, chestTypes, chestStageOptions, filteredChests,
 					fmtPct, typeLabel, typeClass, gradeLabel, activeLoot, lootCount, updating, updateChests,
 					selectedHeroes, allHeroes, toggleHero, chestHeroes,
-					selectedChest, itemSearch, selectedItem, filteredItems, shownItems, onItemsScroll, itemChests, itemName, itemIcon, itemGrade, heroList, matSearch, materialsList, selectedMaterial,
+					selectedChest, itemSearch, selectedItem, filteredItems, shownItems, onItemsScroll, itemChests, itemName, itemIcon, itemGrade, heroList, matSearch, materialsList, selectedMaterial, matCat, matCatLabel, matDesc, matTypeLabel, matStatName, matCatIcon, matSlotGroups, tierClass, matModVal, matFxText, matUses,
 					appVersion, updateInfo, updateBusy, updateMsg, checkUpdate, applyUpdate, toasts,
 					duplicateTab, useThisTab, quitApp, quitDone,
 					consoleLogs, consoleOpen, toggleConsole, clearConsole

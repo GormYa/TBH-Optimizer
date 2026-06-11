@@ -8,6 +8,21 @@ window.CHANGELOG = {
 	entries: [
         {
             date: "11/06/2026",
+            version: "v1.0.32",
+            title: "O otimizador agora fala 16 idiomas",
+            items: [
+                "Seletor de idioma no painel com as 16 línguas do jogo — interface inteira traduzida em todas elas, e os nomes de itens, fases, monstros, runas, pets e baús extraídos direto dos arquivos do jogo (idênticos aos que você vê jogando).",
+                "Os pacotes de idioma ficam no site e são baixados só quando você troca de língua (com cache offline) — o app não ficou nem 1 KB mais pesado.",
+                "O site ganhou versão em 16 idiomas (tbh-optimizer.pages.dev/en/, /ja/, /de/, …) com seletor de idioma no topo e SEO internacional (hreflang + sitemap), gerado automaticamente a cada publicação.",
+                "Aba de materiais com o tooltip IGUAL ao do jogo: grau, tipo com ícone (decoração/gravação/inscrição/fabricação/oferenda/pedra da alma), descrição oficial, efeitos por slot com tier e faixa de atributo (ex.: \"Redução de Recarga +5,5~7,0%\"), preço de venda, e — nos materiais de fabricação — em quais receitas e em qual nível do Cubo ele é usado. Tudo nas 16 línguas, com os textos exatos do jogo.",
+                "Painel ~420 KB mais leve: trocada a build de desenvolvimento do Vue pela de produção.",
+                "Pedras da Alma passaram a usar o nome oficial do jogo (que agora as localiza) em vez do nosso nome aproximado.",
+                "Busca global agora encontra materiais também — o resultado mostra a categoria (decoração, gravação, …) e abre direto o detalhe na aba de materiais.",
+                "Rodapé da barra lateral reorganizado: idioma, console, zerar histórico e encerrar em sequência, com a versão do app e a dos dados do jogo numa linha só, mais compacta.",
+            ],
+        },
+        {
+            date: "11/06/2026",
             version: "v1.0.31",
             title: "Hotfix — fases não viram mais \"antiga\" ao reiniciar o app",
             items: [

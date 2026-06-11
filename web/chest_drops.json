@@ -38757,541 +38757,4319 @@
    "name": "Rubi menor",
    "grade": "COMMON",
    "icon": "sprites/Item_110001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração básico comum. Usado para decorar um item, concede um pequeno aumento de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 2,
+     "stat": "FireDamagePercent",
+     "mod": "FLAT",
+     "min": 200.0,
+     "max": 300.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 1,
+     "stat": "FireResistance",
+     "mod": "FLAT",
+     "min": 5.0,
+     "max": 10.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 1,
+     "stat": "AttackDamage",
+     "mod": "FLAT",
+     "min": 1.0,
+     "max": 2.0
+    }
+   ],
+   "price": 120,
+   "tradable": true
   },
   "110002": {
    "name": "Safira Menor",
    "grade": "COMMON",
    "icon": "sprites/Item_110002.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração básico comum. Usado para decorar um item, concede um pequeno aumento de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 2,
+     "stat": "ColdDamagePercent",
+     "mod": "FLAT",
+     "min": 200.0,
+     "max": 300.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 1,
+     "stat": "Armor",
+     "mod": "FLAT",
+     "min": 25.0,
+     "max": 50.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 1,
+     "stat": "CriticalChance",
+     "mod": "ADDITIVE",
+     "min": 100.0,
+     "max": 150.0
+    }
+   ],
+   "price": 120,
+   "tradable": true
   },
   "110003": {
    "name": "Topázio Menor",
    "grade": "COMMON",
    "icon": "sprites/Item_110003.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração básico comum. Usado para decorar um item, concede um pequeno aumento de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 2,
+     "stat": "LightningDamagePercent",
+     "mod": "FLAT",
+     "min": 200.0,
+     "max": 300.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 1,
+     "stat": "Armor",
+     "mod": "ADDITIVE",
+     "min": 100.0,
+     "max": 150.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 1,
+     "stat": "CastSpeed",
+     "mod": "ADDITIVE",
+     "min": 80.0,
+     "max": 100.0
+    }
+   ],
+   "price": 120,
+   "tradable": true
   },
   "110004": {
    "name": "Esmeralda menor",
    "grade": "COMMON",
    "icon": "sprites/Item_110004.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração básico comum. Usado para decorar um item, concede um pequeno aumento de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 2,
+     "stat": "AttackSpeed",
+     "mod": "ADDITIVE",
+     "min": 50.0,
+     "max": 60.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 1,
+     "stat": "DamageAbsorption",
+     "mod": "FLAT",
+     "min": 10.0,
+     "max": 10.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 1,
+     "stat": "MovementSpeed",
+     "mod": "ADDITIVE",
+     "min": 100.0,
+     "max": 150.0
+    }
+   ],
+   "price": 120,
+   "tradable": true
   },
   "110005": {
    "name": "Ametista Menor",
    "grade": "COMMON",
    "icon": "sprites/Item_110005.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração básico comum. Usado para decorar um item, concede um pequeno aumento de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 2,
+     "stat": "PhysicalDamagePercent",
+     "mod": "FLAT",
+     "min": 200.0,
+     "max": 300.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 1,
+     "stat": "MaxHp",
+     "mod": "FLAT",
+     "min": 10.0,
+     "max": 30.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 1,
+     "stat": "CooldownReduction",
+     "mod": "FLAT",
+     "min": 10.0,
+     "max": 25.0
+    }
+   ],
+   "price": 120,
+   "tradable": true
   },
   "111001": {
    "name": "Estilhaço de Obsidiana",
    "grade": "UNCOMMON",
    "icon": "sprites/Item_111001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração básico comum. Usado para decorar um item, concede um pequeno aumento de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 3,
+     "stat": "AttackDamage",
+     "mod": "FLAT",
+     "min": 3.0,
+     "max": 6.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 2,
+     "stat": "BlockChance",
+     "mod": "FLAT",
+     "min": 35.0,
+     "max": 45.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 2,
+     "stat": "AttackDamage",
+     "mod": "ADDITIVE",
+     "min": 100.0,
+     "max": 150.0
+    }
+   ],
+   "price": 360,
+   "tradable": true
   },
   "111002": {
    "name": "Fragmento de Coral",
    "grade": "UNCOMMON",
    "icon": "sprites/Item_111002.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração básico comum. Usado para decorar um item, concede um pequeno aumento de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 3,
+     "stat": "AddHpPerHit",
+     "mod": "FLAT",
+     "min": 1.0,
+     "max": 2.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 2,
+     "stat": "HpRegenPerSec",
+     "mod": "FLAT",
+     "min": 150.0,
+     "max": 200.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 2,
+     "stat": "HpLeech",
+     "mod": "FLAT",
+     "min": 15.0,
+     "max": 25.0
+    }
+   ],
+   "price": 360,
+   "tradable": true
   },
   "111003": {
    "name": "Pedra de Jade",
    "grade": "UNCOMMON",
    "icon": "sprites/Item_111003.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração básico comum. Usado para decorar um item, concede um pequeno aumento de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 3,
+     "stat": "CriticalChance",
+     "mod": "ADDITIVE",
+     "min": 200.0,
+     "max": 250.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 2,
+     "stat": "DodgeChance",
+     "mod": "FLAT",
+     "min": 35.0,
+     "max": 45.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 2,
+     "stat": "AttackSpeed",
+     "mod": "ADDITIVE",
+     "min": 50.0,
+     "max": 60.0
+    }
+   ],
+   "price": 360,
+   "tradable": true
   },
   "111004": {
    "name": "Gema de Âmbar",
    "grade": "UNCOMMON",
    "icon": "sprites/Item_111004.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração básico comum. Usado para decorar um item, concede um pequeno aumento de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 3,
+     "stat": "CriticalDamage",
+     "mod": "FLAT",
+     "min": 200.0,
+     "max": 250.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 2,
+     "stat": "MaxHp",
+     "mod": "ADDITIVE",
+     "min": 80.0,
+     "max": 110.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 2,
+     "stat": "AreaOfEffect",
+     "mod": "ADDITIVE",
+     "min": 80.0,
+     "max": 90.0
+    }
+   ],
+   "price": 360,
+   "tradable": true
   },
   "112001": {
    "name": "Rubi",
    "grade": "RARE",
    "icon": "sprites/Item_112001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração básico. Usado para decorar um item, concede um aumento de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 3,
+     "stat": "FireDamagePercent",
+     "mod": "FLAT",
+     "min": 300.0,
+     "max": 400.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 3,
+     "stat": "FireResistance",
+     "mod": "FLAT",
+     "min": 15.0,
+     "max": 20.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 3,
+     "stat": "AttackDamage",
+     "mod": "FLAT",
+     "min": 3.0,
+     "max": 6.0
+    }
+   ],
+   "price": 1080,
+   "tradable": true
   },
   "112002": {
    "name": "Safira",
    "grade": "RARE",
    "icon": "sprites/Item_112002.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração básico. Usado para decorar um item, concede um aumento de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 3,
+     "stat": "ColdDamagePercent",
+     "mod": "FLAT",
+     "min": 300.0,
+     "max": 400.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 3,
+     "stat": "ColdResistance",
+     "mod": "FLAT",
+     "min": 15.0,
+     "max": 20.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 3,
+     "stat": "CriticalChance",
+     "mod": "ADDITIVE",
+     "min": 200.0,
+     "max": 250.0
+    }
+   ],
+   "price": 1080,
+   "tradable": true
   },
   "112003": {
    "name": "Topázio",
    "grade": "RARE",
    "icon": "sprites/Item_112003.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração básico. Usado para decorar um item, concede um aumento de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 3,
+     "stat": "LightningDamagePercent",
+     "mod": "FLAT",
+     "min": 300.0,
+     "max": 400.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 3,
+     "stat": "LightningResistance",
+     "mod": "FLAT",
+     "min": 15.0,
+     "max": 20.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 3,
+     "stat": "CastSpeed",
+     "mod": "ADDITIVE",
+     "min": 120.0,
+     "max": 140.0
+    }
+   ],
+   "price": 1080,
+   "tradable": true
   },
   "112004": {
    "name": "Esmeralda",
    "grade": "RARE",
    "icon": "sprites/Item_112004.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração básico. Usado para decorar um item, concede um aumento de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 4,
+     "stat": "AttackSpeed",
+     "mod": "ADDITIVE",
+     "min": 70.0,
+     "max": 90.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 3,
+     "stat": "ChaosResistance",
+     "mod": "FLAT",
+     "min": 15.0,
+     "max": 20.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 3,
+     "stat": "MovementSpeed",
+     "mod": "ADDITIVE",
+     "min": 200.0,
+     "max": 250.0
+    }
+   ],
+   "price": 1080,
+   "tradable": true
   },
   "112005": {
    "name": "Ametista",
    "grade": "RARE",
    "icon": "sprites/Item_112005.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração básico. Usado para decorar um item, concede um aumento de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 3,
+     "stat": "PhysicalDamagePercent",
+     "mod": "FLAT",
+     "min": 300.0,
+     "max": 400.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 3,
+     "stat": "MaxHp",
+     "mod": "FLAT",
+     "min": 60.0,
+     "max": 90.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 3,
+     "stat": "CooldownReduction",
+     "mod": "FLAT",
+     "min": 40.0,
+     "max": 55.0
+    }
+   ],
+   "price": 1080,
+   "tradable": true
   },
   "113001": {
    "name": "Quartzo Cristalino",
    "grade": "LEGENDARY",
    "icon": "sprites/Item_113001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração básico. Usado para decorar um item, concede um aumento de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 5,
+     "stat": "AttackDamage",
+     "mod": "FLAT",
+     "min": 10.0,
+     "max": 15.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 4,
+     "stat": "HpRegenPerSec",
+     "mod": "FLAT",
+     "min": 250.0,
+     "max": 300.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 4,
+     "stat": "CriticalDamage",
+     "mod": "FLAT",
+     "min": 250.0,
+     "max": 300.0
+    }
+   ],
+   "price": 3240,
+   "tradable": true
   },
   "113002": {
    "name": "Pérola",
    "grade": "LEGENDARY",
    "icon": "sprites/Item_113002.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração básico. Usado para decorar um item, concede um aumento de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 5,
+     "stat": "CooldownReduction",
+     "mod": "FLAT",
+     "min": 70.0,
+     "max": 85.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 4,
+     "stat": "DamageReduction",
+     "mod": "FLAT",
+     "min": 40.0,
+     "max": 55.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 4,
+     "stat": "CriticalChance",
+     "mod": "ADDITIVE",
+     "min": 250.0,
+     "max": 300.0
+    }
+   ],
+   "price": 3240,
+   "tradable": true
   },
   "113003": {
    "name": "Turquesa",
    "grade": "LEGENDARY",
    "icon": "sprites/Item_113003.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração básico. Usado para decorar um item, concede um aumento de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 5,
+     "stat": "CriticalChance",
+     "mod": "ADDITIVE",
+     "min": 300.0,
+     "max": 350.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 4,
+     "stat": "CooldownReduction",
+     "mod": "FLAT",
+     "min": 55.0,
+     "max": 70.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 4,
+     "stat": "MaxHp",
+     "mod": "FLAT",
+     "min": 90.0,
+     "max": 120.0
+    }
+   ],
+   "price": 3240,
+   "tradable": true
   },
   "113004": {
    "name": "Granada",
    "grade": "LEGENDARY",
    "icon": "sprites/Item_113004.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração básico. Usado para decorar um item, concede um aumento de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 5,
+     "stat": "CriticalDamage",
+     "mod": "FLAT",
+     "min": 300.0,
+     "max": 400.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 4,
+     "stat": "Armor",
+     "mod": "ADDITIVE",
+     "min": 250.0,
+     "max": 300.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 4,
+     "stat": "AttackSpeed",
+     "mod": "ADDITIVE",
+     "min": 70.0,
+     "max": 90.0
+    }
+   ],
+   "price": 3240,
+   "tradable": true
   },
   "114001": {
    "name": "Diamante",
    "grade": "IMMORTAL",
    "icon": "sprites/Item_114001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração intermediário. Usado para decorar um item, concede um aumento especial de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 6,
+     "stat": "AttackDamage",
+     "mod": "FLAT",
+     "min": 15.0,
+     "max": 30.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 5,
+     "stat": "AllElementalResistance",
+     "mod": "FLAT",
+     "min": 13.0,
+     "max": 15.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 5,
+     "stat": "AreaOfEffect",
+     "mod": "ADDITIVE",
+     "min": 120.0,
+     "max": 140.0
+    }
+   ],
+   "price": 9720,
+   "tradable": true
   },
   "114002": {
    "name": "Opala",
    "grade": "IMMORTAL",
    "icon": "sprites/Item_114002.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração intermediário. Usado para decorar um item, concede um aumento especial de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 6,
+     "stat": "AttackSpeed",
+     "mod": "ADDITIVE",
+     "min": 110.0,
+     "max": 130.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 5,
+     "stat": "MaxHp",
+     "mod": "ADDITIVE",
+     "min": 170.0,
+     "max": 200.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 5,
+     "stat": "HpRegenPerSec",
+     "mod": "FLAT",
+     "min": 300.0,
+     "max": 400.0
+    }
+   ],
+   "price": 9720,
+   "tradable": true
   },
   "114003": {
    "name": "Lápis-lazúli",
    "grade": "IMMORTAL",
    "icon": "sprites/Item_114003.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração intermediário. Usado para decorar um item, concede um aumento especial de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 6,
+     "stat": "CriticalChance",
+     "mod": "ADDITIVE",
+     "min": 350.0,
+     "max": 400.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 5,
+     "stat": "DodgeChance",
+     "mod": "FLAT",
+     "min": 70.0,
+     "max": 90.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 5,
+     "stat": "MovementSpeed",
+     "mod": "ADDITIVE",
+     "min": 300.0,
+     "max": 350.0
+    }
+   ],
+   "price": 9720,
+   "tradable": true
   },
   "114004": {
    "name": "Pérola Negra",
    "grade": "IMMORTAL",
    "icon": "sprites/Item_114004.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração intermediário. Usado para decorar um item, concede um aumento especial de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 6,
+     "stat": "AreaOfEffect",
+     "mod": "ADDITIVE",
+     "min": 140.0,
+     "max": 170.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 5,
+     "stat": "BlockChance",
+     "mod": "FLAT",
+     "min": 70.0,
+     "max": 90.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 5,
+     "stat": "CastSpeed",
+     "mod": "ADDITIVE",
+     "min": 160.0,
+     "max": 200.0
+    }
+   ],
+   "price": 9720,
+   "tradable": true
   },
   "115001": {
    "name": "Cristal Arcano",
    "grade": "ARCANA",
    "icon": "sprites/Item_115001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração intermediário. Usado para decorar um item, concede um aumento especial de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 7,
+     "stat": "CastSpeed",
+     "mod": "ADDITIVE",
+     "min": 250.0,
+     "max": 300.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 6,
+     "stat": "CooldownReduction",
+     "mod": "FLAT",
+     "min": 85.0,
+     "max": 100.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 6,
+     "stat": "CriticalDamage",
+     "mod": "FLAT",
+     "min": 400.0,
+     "max": 500.0
+    }
+   ],
+   "price": 31104,
+   "tradable": true
   },
   "115002": {
    "name": "Topázio místico",
    "grade": "ARCANA",
    "icon": "sprites/Item_115002.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração intermediário. Usado para decorar um item, concede um aumento especial de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 7,
+     "stat": "LightningDamagePercent",
+     "mod": "FLAT",
+     "min": 800.0,
+     "max": 1000.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 6,
+     "stat": "LightningResistance",
+     "mod": "FLAT",
+     "min": 30.0,
+     "max": 35.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 6,
+     "stat": "CastSpeed",
+     "mod": "ADDITIVE",
+     "min": 200.0,
+     "max": 250.0
+    }
+   ],
+   "price": 31104,
+   "tradable": true
   },
   "115003": {
    "name": "Rubi Encantado",
    "grade": "ARCANA",
    "icon": "sprites/Item_115003.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração intermediário. Usado para decorar um item, concede um aumento especial de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 7,
+     "stat": "FireDamagePercent",
+     "mod": "FLAT",
+     "min": 800.0,
+     "max": 1000.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 6,
+     "stat": "FireResistance",
+     "mod": "FLAT",
+     "min": 30.0,
+     "max": 35.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 6,
+     "stat": "AttackDamage",
+     "mod": "FLAT",
+     "min": 15.0,
+     "max": 30.0
+    }
+   ],
+   "price": 31104,
+   "tradable": true
   },
   "115004": {
    "name": "Safira da Luz Estelar",
    "grade": "ARCANA",
    "icon": "sprites/Item_115004.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração intermediário. Usado para decorar um item, concede um aumento especial de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 7,
+     "stat": "ColdDamagePercent",
+     "mod": "FLAT",
+     "min": 800.0,
+     "max": 1000.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 6,
+     "stat": "ColdResistance",
+     "mod": "FLAT",
+     "min": 30.0,
+     "max": 35.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 6,
+     "stat": "CriticalChance",
+     "mod": "ADDITIVE",
+     "min": 350.0,
+     "max": 400.0
+    }
+   ],
+   "price": 31104,
+   "tradable": true
   },
   "116001": {
    "name": "Opala do Vazio",
    "grade": "BEYOND",
    "icon": "sprites/Item_116001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração avançado. Usado para decorar um item, concede um aumento poderoso de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 8,
+     "stat": "CooldownReduction",
+     "mod": "FLAT",
+     "min": 115.0,
+     "max": 130.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 7,
+     "stat": "MaxHp",
+     "mod": "ADDITIVE",
+     "min": 250.0,
+     "max": 300.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 7,
+     "stat": "MaxHp",
+     "mod": "FLAT",
+     "min": 180.0,
+     "max": 210.0
+    }
+   ],
+   "price": 99528,
+   "tradable": true
   },
   "116002": {
    "name": "Diamante Astral",
    "grade": "BEYOND",
    "icon": "sprites/Item_116002.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração avançado. Usado para decorar um item, concede um aumento poderoso de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 8,
+     "stat": "AttackDamage",
+     "mod": "FLAT",
+     "min": 50.0,
+     "max": 100.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 7,
+     "stat": "AllElementalResistance",
+     "mod": "FLAT",
+     "min": 17.0,
+     "max": 19.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 7,
+     "stat": "AreaOfEffect",
+     "mod": "ADDITIVE",
+     "min": 170.0,
+     "max": 200.0
+    }
+   ],
+   "price": 99528,
+   "tradable": true
   },
   "116003": {
    "name": "Esmeralda Fantasma",
    "grade": "BEYOND",
    "icon": "sprites/Item_116003.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração avançado. Usado para decorar um item, concede um aumento poderoso de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 8,
+     "stat": "AttackSpeed",
+     "mod": "ADDITIVE",
+     "min": 150.0,
+     "max": 170.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 7,
+     "stat": "ChaosResistance",
+     "mod": "FLAT",
+     "min": 35.0,
+     "max": 40.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 7,
+     "stat": "MovementSpeed",
+     "mod": "ADDITIVE",
+     "min": 400.0,
+     "max": 450.0
+    }
+   ],
+   "price": 99528,
+   "tradable": true
   },
   "116004": {
    "name": "Ametista do Crepúsculo",
    "grade": "BEYOND",
    "icon": "sprites/Item_116004.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de decoração avançado. Usado para decorar um item, concede um aumento poderoso de atributo definido pelo tipo de equipamento.",
+   "mcat": "decoration",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 8,
+     "stat": "PhysicalDamagePercent",
+     "mod": "FLAT",
+     "min": 1000.0,
+     "max": 1300.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 7,
+     "stat": "MaxHp",
+     "mod": "FLAT",
+     "min": 180.0,
+     "max": 210.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 6,
+     "stat": "CooldownReduction",
+     "mod": "FLAT",
+     "min": 85.0,
+     "max": 100.0
+    }
+   ],
+   "price": 99528,
+   "tradable": true
   },
   "120001": {
    "name": "Couro de Goblin",
    "grade": "COMMON",
    "icon": "sprites/Item_120001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de gravação básico comum. Usado para gravar um item, concede aleatoriamente um de dois pequenos aumentos de atributo definidos pelo tipo de equipamento.",
+   "mcat": "engraving",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 2,
+     "stat": "FireDamagePercent",
+     "mod": "FLAT",
+     "min": 200.0,
+     "max": 300.0
+    },
+    {
+     "g": "WEAPON",
+     "tier": 2,
+     "stat": "LightningDamagePercent",
+     "mod": "FLAT",
+     "min": 200.0,
+     "max": 300.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 1,
+     "stat": "ColdResistance",
+     "mod": "FLAT",
+     "min": 5.0,
+     "max": 10.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 1,
+     "stat": "FireResistance",
+     "mod": "FLAT",
+     "min": 5.0,
+     "max": 10.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 1,
+     "stat": "AttackSpeed",
+     "mod": "ADDITIVE",
+     "min": 40.0,
+     "max": 50.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 1,
+     "stat": "MaxHp",
+     "mod": "FLAT",
+     "min": 10.0,
+     "max": 30.0
+    }
+   ],
+   "price": 120,
+   "tradable": true
   },
   "120002": {
    "name": "Osso de Esqueleto",
    "grade": "COMMON",
    "icon": "sprites/Item_120002.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de gravação básico comum. Usado para gravar um item, concede aleatoriamente um de dois pequenos aumentos de atributo definidos pelo tipo de equipamento.",
+   "mcat": "engraving",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 2,
+     "stat": "CriticalDamage",
+     "mod": "FLAT",
+     "min": 150.0,
+     "max": 200.0
+    },
+    {
+     "g": "WEAPON",
+     "tier": 2,
+     "stat": "FireDamagePercent",
+     "mod": "FLAT",
+     "min": 200.0,
+     "max": 300.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 1,
+     "stat": "Armor",
+     "mod": "FLAT",
+     "min": 25.0,
+     "max": 50.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 1,
+     "stat": "Armor",
+     "mod": "ADDITIVE",
+     "min": 100.0,
+     "max": 150.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 1,
+     "stat": "AddHpPerHit",
+     "mod": "FLAT",
+     "min": 1.0,
+     "max": 2.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 1,
+     "stat": "AttackSpeed",
+     "mod": "ADDITIVE",
+     "min": 40.0,
+     "max": 50.0
+    }
+   ],
+   "price": 120,
+   "tradable": true
   },
   "120003": {
    "name": "Geleia de Slime",
    "grade": "COMMON",
    "icon": "sprites/Item_120003.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de gravação básico comum. Usado para gravar um item, concede aleatoriamente um de dois pequenos aumentos de atributo definidos pelo tipo de equipamento.",
+   "mcat": "engraving",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 2,
+     "stat": "AttackSpeed",
+     "mod": "ADDITIVE",
+     "min": 50.0,
+     "max": 60.0
+    },
+    {
+     "g": "WEAPON",
+     "tier": 2,
+     "stat": "AttackDamage",
+     "mod": "FLAT",
+     "min": 2.0,
+     "max": 3.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 1,
+     "stat": "DamageAbsorption",
+     "mod": "FLAT",
+     "min": 10.0,
+     "max": 10.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 1,
+     "stat": "BlockChance",
+     "mod": "FLAT",
+     "min": 25.0,
+     "max": 35.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 1,
+     "stat": "MaxHp",
+     "mod": "FLAT",
+     "min": 10.0,
+     "max": 30.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 1,
+     "stat": "CriticalChance",
+     "mod": "ADDITIVE",
+     "min": 100.0,
+     "max": 150.0
+    }
+   ],
+   "price": 120,
+   "tradable": true
   },
   "121001": {
    "name": "Presa de Lobo",
    "grade": "UNCOMMON",
    "icon": "sprites/Item_121001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de gravação básico comum. Usado para gravar um item, concede aleatoriamente um de dois pequenos aumentos de atributo definidos pelo tipo de equipamento.",
+   "mcat": "engraving",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 3,
+     "stat": "AreaOfEffect",
+     "mod": "ADDITIVE",
+     "min": 90.0,
+     "max": 100.0
+    },
+    {
+     "g": "WEAPON",
+     "tier": 3,
+     "stat": "CriticalChance",
+     "mod": "ADDITIVE",
+     "min": 200.0,
+     "max": 250.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 2,
+     "stat": "LightningResistance",
+     "mod": "FLAT",
+     "min": 10.0,
+     "max": 15.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 2,
+     "stat": "Armor",
+     "mod": "ADDITIVE",
+     "min": 150.0,
+     "max": 200.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 2,
+     "stat": "AddHpPerHit",
+     "mod": "FLAT",
+     "min": 2.0,
+     "max": 4.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 2,
+     "stat": "AttackDamage",
+     "mod": "FLAT",
+     "min": 2.0,
+     "max": 3.0
+    }
+   ],
+   "price": 360,
+   "tradable": true
   },
   "121002": {
    "name": "Seda de aranha",
    "grade": "UNCOMMON",
    "icon": "sprites/Item_121002.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de gravação básico comum. Usado para gravar um item, concede aleatoriamente um de dois pequenos aumentos de atributo definidos pelo tipo de equipamento.",
+   "mcat": "engraving",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 3,
+     "stat": "AreaOfEffect",
+     "mod": "ADDITIVE",
+     "min": 90.0,
+     "max": 100.0
+    },
+    {
+     "g": "WEAPON",
+     "tier": 3,
+     "stat": "PhysicalDamagePercent",
+     "mod": "FLAT",
+     "min": 300.0,
+     "max": 400.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 2,
+     "stat": "ColdResistance",
+     "mod": "FLAT",
+     "min": 10.0,
+     "max": 15.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 2,
+     "stat": "CooldownReduction",
+     "mod": "FLAT",
+     "min": 25.0,
+     "max": 40.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 2,
+     "stat": "CooldownReduction",
+     "mod": "FLAT",
+     "min": 25.0,
+     "max": 40.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 2,
+     "stat": "MaxHp",
+     "mod": "FLAT",
+     "min": 30.0,
+     "max": 60.0
+    }
+   ],
+   "price": 360,
+   "tradable": true
   },
   "121003": {
    "name": "Erva Venenosa",
    "grade": "UNCOMMON",
    "icon": "sprites/Item_121003.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de gravação básico comum. Usado para gravar um item, concede aleatoriamente um de dois pequenos aumentos de atributo definidos pelo tipo de equipamento.",
+   "mcat": "engraving",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 3,
+     "stat": "HpLeech",
+     "mod": "FLAT",
+     "min": 20.0,
+     "max": 30.0
+    },
+    {
+     "g": "WEAPON",
+     "tier": 3,
+     "stat": "LightningDamagePercent",
+     "mod": "FLAT",
+     "min": 300.0,
+     "max": 400.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 2,
+     "stat": "Armor",
+     "mod": "FLAT",
+     "min": 50.0,
+     "max": 100.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 2,
+     "stat": "DamageAbsorption",
+     "mod": "FLAT",
+     "min": 10.0,
+     "max": 14.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 2,
+     "stat": "AttackDamage",
+     "mod": "FLAT",
+     "min": 2.0,
+     "max": 3.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 2,
+     "stat": "MovementSpeed",
+     "mod": "ADDITIVE",
+     "min": 150.0,
+     "max": 200.0
+    }
+   ],
+   "price": 360,
+   "tradable": true
   },
   "121004": {
    "name": "Erva Curativa",
    "grade": "UNCOMMON",
    "icon": "sprites/Item_121004.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de gravação básico comum. Usado para gravar um item, concede aleatoriamente um de dois pequenos aumentos de atributo definidos pelo tipo de equipamento.",
+   "mcat": "engraving",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 3,
+     "stat": "FireDamagePercent",
+     "mod": "FLAT",
+     "min": 300.0,
+     "max": 400.0
+    },
+    {
+     "g": "WEAPON",
+     "tier": 3,
+     "stat": "ColdDamagePercent",
+     "mod": "FLAT",
+     "min": 300.0,
+     "max": 400.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 2,
+     "stat": "DodgeChance",
+     "mod": "FLAT",
+     "min": 35.0,
+     "max": 45.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 2,
+     "stat": "MaxHp",
+     "mod": "ADDITIVE",
+     "min": 80.0,
+     "max": 110.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 2,
+     "stat": "CriticalChance",
+     "mod": "ADDITIVE",
+     "min": 150.0,
+     "max": 200.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 2,
+     "stat": "AttackDamage",
+     "mod": "FLAT",
+     "min": 2.0,
+     "max": 3.0
+    }
+   ],
+   "price": 360,
+   "tradable": true
   },
   "122001": {
    "name": "Membrana de asa de morcego",
    "grade": "RARE",
    "icon": "sprites/Item_122001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de gravação básico. Usado para gravar um item, concede aleatoriamente um de dois aumentos de atributo definidos pelo tipo de equipamento.",
+   "mcat": "engraving",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 4,
+     "stat": "LightningDamagePercent",
+     "mod": "FLAT",
+     "min": 400.0,
+     "max": 500.0
+    },
+    {
+     "g": "WEAPON",
+     "tier": 4,
+     "stat": "FireDamagePercent",
+     "mod": "FLAT",
+     "min": 400.0,
+     "max": 500.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 3,
+     "stat": "DamageReduction",
+     "mod": "FLAT",
+     "min": 30.0,
+     "max": 40.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 3,
+     "stat": "MaxHp",
+     "mod": "FLAT",
+     "min": 60.0,
+     "max": 90.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 3,
+     "stat": "CriticalDamage",
+     "mod": "FLAT",
+     "min": 200.0,
+     "max": 250.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 3,
+     "stat": "AddHpPerHit",
+     "mod": "FLAT",
+     "min": 1.0,
+     "max": 2.0
+    }
+   ],
+   "price": 1080,
+   "tradable": true
   },
   "122002": {
    "name": "Sangue de Ogro",
    "grade": "RARE",
    "icon": "sprites/Item_122002.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de gravação básico. Usado para gravar um item, concede aleatoriamente um de dois aumentos de atributo definidos pelo tipo de equipamento.",
+   "mcat": "engraving",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 4,
+     "stat": "AreaOfEffect",
+     "mod": "ADDITIVE",
+     "min": 100.0,
+     "max": 120.0
+    },
+    {
+     "g": "WEAPON",
+     "tier": 4,
+     "stat": "AttackDamage",
+     "mod": "ADDITIVE",
+     "min": 200.0,
+     "max": 250.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 3,
+     "stat": "HpRegenPerSec",
+     "mod": "FLAT",
+     "min": 200.0,
+     "max": 250.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 3,
+     "stat": "ColdResistance",
+     "mod": "FLAT",
+     "min": 15.0,
+     "max": 20.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 3,
+     "stat": "MaxHp",
+     "mod": "FLAT",
+     "min": 60.0,
+     "max": 90.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 3,
+     "stat": "AttackDamage",
+     "mod": "FLAT",
+     "min": 3.0,
+     "max": 6.0
+    }
+   ],
+   "price": 1080,
+   "tradable": true
   },
   "122003": {
    "name": "Esporo de Cogumelo",
    "grade": "RARE",
    "icon": "sprites/Item_122003.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de gravação básico. Usado para gravar um item, concede aleatoriamente um de dois aumentos de atributo definidos pelo tipo de equipamento.",
+   "mcat": "engraving",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 4,
+     "stat": "CooldownReduction",
+     "mod": "FLAT",
+     "min": 55.0,
+     "max": 70.0
+    },
+    {
+     "g": "WEAPON",
+     "tier": 4,
+     "stat": "AddHpPerHit",
+     "mod": "FLAT",
+     "min": 4.0,
+     "max": 6.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 3,
+     "stat": "BlockChance",
+     "mod": "FLAT",
+     "min": 45.0,
+     "max": 55.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 3,
+     "stat": "LightningResistance",
+     "mod": "FLAT",
+     "min": 15.0,
+     "max": 20.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 3,
+     "stat": "HpRegenPerSec",
+     "mod": "FLAT",
+     "min": 200.0,
+     "max": 250.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 3,
+     "stat": "MaxHp",
+     "mod": "FLAT",
+     "min": 60.0,
+     "max": 90.0
+    }
+   ],
+   "price": 1080,
+   "tradable": true
   },
   "122004": {
    "name": "Seiva de Árvore Antiga",
    "grade": "RARE",
    "icon": "sprites/Item_122004.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de gravação básico. Usado para gravar um item, concede aleatoriamente um de dois aumentos de atributo definidos pelo tipo de equipamento.",
+   "mcat": "engraving",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 4,
+     "stat": "CriticalDamage",
+     "mod": "FLAT",
+     "min": 250.0,
+     "max": 300.0
+    },
+    {
+     "g": "WEAPON",
+     "tier": 4,
+     "stat": "AreaOfEffect",
+     "mod": "ADDITIVE",
+     "min": 100.0,
+     "max": 120.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 3,
+     "stat": "HpRegenPerSec",
+     "mod": "FLAT",
+     "min": 200.0,
+     "max": 250.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 3,
+     "stat": "DamageReduction",
+     "mod": "FLAT",
+     "min": 30.0,
+     "max": 40.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 3,
+     "stat": "CriticalDamage",
+     "mod": "FLAT",
+     "min": 200.0,
+     "max": 250.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 3,
+     "stat": "AttackSpeed",
+     "mod": "ADDITIVE",
+     "min": 60.0,
+     "max": 70.0
+    }
+   ],
+   "price": 1080,
+   "tradable": true
   },
   "123001": {
    "name": "Caveira",
    "grade": "LEGENDARY",
    "icon": "sprites/Item_123001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de gravação básico. Usado para gravar um item, concede aleatoriamente um de dois aumentos de atributo definidos pelo tipo de equipamento.",
+   "mcat": "engraving",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 5,
+     "stat": "CooldownReduction",
+     "mod": "FLAT",
+     "min": 70.0,
+     "max": 85.0
+    },
+    {
+     "g": "WEAPON",
+     "tier": 5,
+     "stat": "LightningDamagePercent",
+     "mod": "FLAT",
+     "min": 500.0,
+     "max": 600.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 4,
+     "stat": "LightningResistance",
+     "mod": "FLAT",
+     "min": 20.0,
+     "max": 25.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 4,
+     "stat": "ChaosResistance",
+     "mod": "FLAT",
+     "min": 20.0,
+     "max": 25.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 4,
+     "stat": "CastSpeed",
+     "mod": "ADDITIVE",
+     "min": 140.0,
+     "max": 160.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 4,
+     "stat": "CriticalDamage",
+     "mod": "FLAT",
+     "min": 250.0,
+     "max": 300.0
+    }
+   ],
+   "price": 3240,
+   "tradable": true
   },
   "123002": {
    "name": "Pena de Harpia",
    "grade": "LEGENDARY",
    "icon": "sprites/Item_123002.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de gravação básico. Usado para gravar um item, concede aleatoriamente um de dois aumentos de atributo definidos pelo tipo de equipamento.",
+   "mcat": "engraving",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 5,
+     "stat": "FireDamagePercent",
+     "mod": "FLAT",
+     "min": 500.0,
+     "max": 600.0
+    },
+    {
+     "g": "WEAPON",
+     "tier": 5,
+     "stat": "AttackDamage",
+     "mod": "ADDITIVE",
+     "min": 250.0,
+     "max": 300.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 4,
+     "stat": "BlockChance",
+     "mod": "FLAT",
+     "min": 55.0,
+     "max": 70.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 4,
+     "stat": "DamageReduction",
+     "mod": "FLAT",
+     "min": 40.0,
+     "max": 55.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 4,
+     "stat": "AttackDamage",
+     "mod": "FLAT",
+     "min": 6.0,
+     "max": 10.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 4,
+     "stat": "MaxHp",
+     "mod": "FLAT",
+     "min": 90.0,
+     "max": 120.0
+    }
+   ],
+   "price": 3240,
+   "tradable": true
   },
   "123003": {
    "name": "Raiz de Mandrágora",
    "grade": "LEGENDARY",
    "icon": "sprites/Item_123003.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de gravação básico. Usado para gravar um item, concede aleatoriamente um de dois aumentos de atributo definidos pelo tipo de equipamento.",
+   "mcat": "engraving",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 5,
+     "stat": "AddHpPerHit",
+     "mod": "FLAT",
+     "min": 5.0,
+     "max": 7.0
+    },
+    {
+     "g": "WEAPON",
+     "tier": 5,
+     "stat": "FireDamagePercent",
+     "mod": "FLAT",
+     "min": 500.0,
+     "max": 600.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 4,
+     "stat": "ColdResistance",
+     "mod": "FLAT",
+     "min": 20.0,
+     "max": 25.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 4,
+     "stat": "MaxHp",
+     "mod": "FLAT",
+     "min": 90.0,
+     "max": 120.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 4,
+     "stat": "HpLeech",
+     "mod": "FLAT",
+     "min": 25.0,
+     "max": 35.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 4,
+     "stat": "HpRegenPerSec",
+     "mod": "FLAT",
+     "min": 250.0,
+     "max": 300.0
+    }
+   ],
+   "price": 3240,
+   "tradable": true
   },
   "123004": {
    "name": "Extrato de Beladona",
    "grade": "LEGENDARY",
    "icon": "sprites/Item_123004.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de gravação básico. Usado para gravar um item, concede aleatoriamente um de dois aumentos de atributo definidos pelo tipo de equipamento.",
+   "mcat": "engraving",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 5,
+     "stat": "AttackDamage",
+     "mod": "ADDITIVE",
+     "min": 250.0,
+     "max": 300.0
+    },
+    {
+     "g": "WEAPON",
+     "tier": 5,
+     "stat": "CriticalChance",
+     "mod": "ADDITIVE",
+     "min": 300.0,
+     "max": 350.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 4,
+     "stat": "LightningResistance",
+     "mod": "FLAT",
+     "min": 20.0,
+     "max": 25.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 4,
+     "stat": "ColdResistance",
+     "mod": "FLAT",
+     "min": 20.0,
+     "max": 25.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 4,
+     "stat": "AddHpPerHit",
+     "mod": "FLAT",
+     "min": 4.0,
+     "max": 6.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 4,
+     "stat": "CriticalDamage",
+     "mod": "FLAT",
+     "min": 250.0,
+     "max": 300.0
+    }
+   ],
+   "price": 3240,
+   "tradable": true
   },
   "124001": {
    "name": "Escama de Basilisco",
    "grade": "IMMORTAL",
    "icon": "sprites/Item_124001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de gravação intermediário. Usado para gravar um item, concede aleatoriamente um de dois aumentos especiais de atributo definidos pelo tipo de equipamento.",
+   "mcat": "engraving",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 6,
+     "stat": "HpLeech",
+     "mod": "FLAT",
+     "min": 35.0,
+     "max": 45.0
+    },
+    {
+     "g": "WEAPON",
+     "tier": 6,
+     "stat": "AttackDamage",
+     "mod": "FLAT",
+     "min": 15.0,
+     "max": 30.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 5,
+     "stat": "MaxHp",
+     "mod": "FLAT",
+     "min": 120.0,
+     "max": 150.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 5,
+     "stat": "DamageReduction",
+     "mod": "FLAT",
+     "min": 55.0,
+     "max": 70.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 5,
+     "stat": "MovementSpeed",
+     "mod": "ADDITIVE",
+     "min": 300.0,
+     "max": 350.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 5,
+     "stat": "CastSpeed",
+     "mod": "ADDITIVE",
+     "min": 160.0,
+     "max": 200.0
+    }
+   ],
+   "price": 9720,
+   "tradable": true
   },
   "124002": {
    "name": "Garra de Wyvern",
    "grade": "IMMORTAL",
    "icon": "sprites/Item_124002.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de gravação intermediário. Usado para gravar um item, concede aleatoriamente um de dois aumentos especiais de atributo definidos pelo tipo de equipamento.",
+   "mcat": "engraving",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 6,
+     "stat": "ColdDamagePercent",
+     "mod": "FLAT",
+     "min": 600.0,
+     "max": 800.0
+    },
+    {
+     "g": "WEAPON",
+     "tier": 6,
+     "stat": "AddHpPerHit",
+     "mod": "FLAT",
+     "min": 6.0,
+     "max": 8.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 5,
+     "stat": "ColdResistance",
+     "mod": "FLAT",
+     "min": 25.0,
+     "max": 30.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 5,
+     "stat": "Armor",
+     "mod": "FLAT",
+     "min": 200.0,
+     "max": 250.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 5,
+     "stat": "CriticalChance",
+     "mod": "ADDITIVE",
+     "min": 300.0,
+     "max": 350.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 5,
+     "stat": "HpRegenPerSec",
+     "mod": "FLAT",
+     "min": 300.0,
+     "max": 400.0
+    }
+   ],
+   "price": 9720,
+   "tradable": true
   },
   "124003": {
    "name": "Dado",
    "grade": "IMMORTAL",
    "icon": "sprites/Item_124003.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de gravação intermediário. Usado para gravar um item, concede aleatoriamente um de dois aumentos especiais de atributo definidos pelo tipo de equipamento.",
+   "mcat": "engraving",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 6,
+     "stat": "PhysicalDamagePercent",
+     "mod": "FLAT",
+     "min": 600.0,
+     "max": 800.0
+    },
+    {
+     "g": "WEAPON",
+     "tier": 6,
+     "stat": "ColdDamagePercent",
+     "mod": "FLAT",
+     "min": 600.0,
+     "max": 800.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 5,
+     "stat": "DamageAbsorption",
+     "mod": "FLAT",
+     "min": 22.0,
+     "max": 26.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 5,
+     "stat": "BlockChance",
+     "mod": "FLAT",
+     "min": 70.0,
+     "max": 90.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 5,
+     "stat": "CooldownReduction",
+     "mod": "FLAT",
+     "min": 70.0,
+     "max": 85.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 5,
+     "stat": "MovementSpeed",
+     "mod": "ADDITIVE",
+     "min": 300.0,
+     "max": 350.0
+    }
+   ],
+   "price": 9720,
+   "tradable": true
   },
   "124004": {
    "name": "Sangue de Demônio",
    "grade": "IMMORTAL",
    "icon": "sprites/Item_124004.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de gravação intermediário. Usado para gravar um item, concede aleatoriamente um de dois aumentos especiais de atributo definidos pelo tipo de equipamento.",
+   "mcat": "engraving",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 6,
+     "stat": "AreaOfEffect",
+     "mod": "ADDITIVE",
+     "min": 140.0,
+     "max": 170.0
+    },
+    {
+     "g": "WEAPON",
+     "tier": 6,
+     "stat": "LightningDamagePercent",
+     "mod": "FLAT",
+     "min": 600.0,
+     "max": 800.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 5,
+     "stat": "BlockChance",
+     "mod": "FLAT",
+     "min": 70.0,
+     "max": 90.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 5,
+     "stat": "DodgeChance",
+     "mod": "FLAT",
+     "min": 70.0,
+     "max": 90.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 5,
+     "stat": "HpLeech",
+     "mod": "FLAT",
+     "min": 30.0,
+     "max": 40.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 5,
+     "stat": "CriticalChance",
+     "mod": "ADDITIVE",
+     "min": 300.0,
+     "max": 350.0
+    }
+   ],
+   "price": 9720,
+   "tradable": true
   },
   "125001": {
    "name": "Chifre de Minotauro",
    "grade": "ARCANA",
    "icon": "sprites/Item_125001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de gravação intermediário. Usado para gravar um item, concede aleatoriamente um de dois aumentos especiais de atributo definidos pelo tipo de equipamento.",
+   "mcat": "engraving",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 7,
+     "stat": "ColdDamagePercent",
+     "mod": "FLAT",
+     "min": 800.0,
+     "max": 1000.0
+    },
+    {
+     "g": "WEAPON",
+     "tier": 7,
+     "stat": "AttackSpeed",
+     "mod": "ADDITIVE",
+     "min": 130.0,
+     "max": 150.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 6,
+     "stat": "LightningResistance",
+     "mod": "FLAT",
+     "min": 30.0,
+     "max": 35.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 6,
+     "stat": "HpRegenPerSec",
+     "mod": "FLAT",
+     "min": 400.0,
+     "max": 500.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 6,
+     "stat": "AreaOfEffect",
+     "mod": "ADDITIVE",
+     "min": 140.0,
+     "max": 170.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 6,
+     "stat": "CooldownReduction",
+     "mod": "FLAT",
+     "min": 85.0,
+     "max": 100.0
+    }
+   ],
+   "price": 31104,
+   "tradable": true
   },
   "125002": {
    "name": "Bico de Grifo",
    "grade": "ARCANA",
    "icon": "sprites/Item_125002.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de gravação intermediário. Usado para gravar um item, concede aleatoriamente um de dois aumentos especiais de atributo definidos pelo tipo de equipamento.",
+   "mcat": "engraving",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 7,
+     "stat": "ColdDamagePercent",
+     "mod": "FLAT",
+     "min": 800.0,
+     "max": 1000.0
+    },
+    {
+     "g": "WEAPON",
+     "tier": 7,
+     "stat": "AttackDamage",
+     "mod": "FLAT",
+     "min": 30.0,
+     "max": 50.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 6,
+     "stat": "LightningResistance",
+     "mod": "FLAT",
+     "min": 30.0,
+     "max": 35.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 6,
+     "stat": "MaxHp",
+     "mod": "ADDITIVE",
+     "min": 200.0,
+     "max": 250.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 6,
+     "stat": "CastSpeed",
+     "mod": "ADDITIVE",
+     "min": 200.0,
+     "max": 250.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 6,
+     "stat": "CriticalDamage",
+     "mod": "FLAT",
+     "min": 400.0,
+     "max": 500.0
+    }
+   ],
+   "price": 31104,
+   "tradable": true
   },
   "125003": {
    "name": "Cinza de Fênix",
    "grade": "ARCANA",
    "icon": "sprites/Item_125003.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de gravação intermediário. Usado para gravar um item, concede aleatoriamente um de dois aumentos especiais de atributo definidos pelo tipo de equipamento.",
+   "mcat": "engraving",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 7,
+     "stat": "CriticalChance",
+     "mod": "ADDITIVE",
+     "min": 400.0,
+     "max": 450.0
+    },
+    {
+     "g": "WEAPON",
+     "tier": 7,
+     "stat": "AttackDamage",
+     "mod": "FLAT",
+     "min": 30.0,
+     "max": 50.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 6,
+     "stat": "DamageAbsorption",
+     "mod": "FLAT",
+     "min": 26.0,
+     "max": 30.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 6,
+     "stat": "DamageReduction",
+     "mod": "FLAT",
+     "min": 70.0,
+     "max": 85.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 6,
+     "stat": "AttackSpeed",
+     "mod": "ADDITIVE",
+     "min": 110.0,
+     "max": 130.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 6,
+     "stat": "CriticalDamage",
+     "mod": "FLAT",
+     "min": 400.0,
+     "max": 500.0
+    }
+   ],
+   "price": 31104,
+   "tradable": true
   },
   "125004": {
    "name": "Bile de Dragão",
    "grade": "ARCANA",
    "icon": "sprites/Item_125004.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de gravação intermediário. Usado para gravar um item, concede aleatoriamente um de dois aumentos especiais de atributo definidos pelo tipo de equipamento.",
+   "mcat": "engraving",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 7,
+     "stat": "CriticalDamage",
+     "mod": "FLAT",
+     "min": 500.0,
+     "max": 600.0
+    },
+    {
+     "g": "WEAPON",
+     "tier": 7,
+     "stat": "CriticalChance",
+     "mod": "ADDITIVE",
+     "min": 400.0,
+     "max": 450.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 6,
+     "stat": "DodgeChance",
+     "mod": "FLAT",
+     "min": 90.0,
+     "max": 110.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 6,
+     "stat": "BlockChance",
+     "mod": "FLAT",
+     "min": 90.0,
+     "max": 110.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 6,
+     "stat": "CriticalChance",
+     "mod": "ADDITIVE",
+     "min": 350.0,
+     "max": 400.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 6,
+     "stat": "AddHpPerHit",
+     "mod": "FLAT",
+     "min": 6.0,
+     "max": 8.0
+    }
+   ],
+   "price": 31104,
+   "tradable": true
   },
   "126001": {
    "name": "Essência do Espectro",
    "grade": "BEYOND",
    "icon": "sprites/Item_126001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de gravação avançado. Usado para gravar um item, concede aleatoriamente um de dois aumentos poderosos de atributo definidos pelo tipo de equipamento.",
+   "mcat": "engraving",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 8,
+     "stat": "CriticalDamage",
+     "mod": "FLAT",
+     "min": 600.0,
+     "max": 800.0
+    },
+    {
+     "g": "WEAPON",
+     "tier": 8,
+     "stat": "FireDamagePercent",
+     "mod": "FLAT",
+     "min": 1000.0,
+     "max": 1300.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 7,
+     "stat": "BlockChance",
+     "mod": "FLAT",
+     "min": 110.0,
+     "max": 130.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 7,
+     "stat": "MaxHp",
+     "mod": "FLAT",
+     "min": 180.0,
+     "max": 210.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 7,
+     "stat": "AddHpPerHit",
+     "mod": "FLAT",
+     "min": 7.0,
+     "max": 9.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 7,
+     "stat": "CriticalDamage",
+     "mod": "FLAT",
+     "min": 500.0,
+     "max": 600.0
+    }
+   ],
+   "price": 99528,
+   "tradable": true
   },
   "126002": {
    "name": "Tinta de Kraken",
    "grade": "BEYOND",
    "icon": "sprites/Item_126002.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de gravação avançado. Usado para gravar um item, concede aleatoriamente um de dois aumentos poderosos de atributo definidos pelo tipo de equipamento.",
+   "mcat": "engraving",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 8,
+     "stat": "ColdDamagePercent",
+     "mod": "FLAT",
+     "min": 1000.0,
+     "max": 1300.0
+    },
+    {
+     "g": "WEAPON",
+     "tier": 8,
+     "stat": "AreaOfEffect",
+     "mod": "ADDITIVE",
+     "min": 200.0,
+     "max": 230.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 7,
+     "stat": "LightningResistance",
+     "mod": "FLAT",
+     "min": 35.0,
+     "max": 40.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 7,
+     "stat": "DodgeChance",
+     "mod": "FLAT",
+     "min": 110.0,
+     "max": 130.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 7,
+     "stat": "AddHpPerHit",
+     "mod": "FLAT",
+     "min": 7.0,
+     "max": 9.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 7,
+     "stat": "AttackDamage",
+     "mod": "FLAT",
+     "min": 30.0,
+     "max": 50.0
+    }
+   ],
+   "price": 99528,
+   "tradable": true
   },
   "126003": {
    "name": "Tutano de Titã",
    "grade": "BEYOND",
    "icon": "sprites/Item_126003.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de gravação avançado. Usado para gravar um item, concede aleatoriamente um de dois aumentos poderosos de atributo definidos pelo tipo de equipamento.",
+   "mcat": "engraving",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 8,
+     "stat": "AttackDamage",
+     "mod": "ADDITIVE",
+     "min": 500.0,
+     "max": 700.0
+    },
+    {
+     "g": "WEAPON",
+     "tier": 8,
+     "stat": "FireDamagePercent",
+     "mod": "FLAT",
+     "min": 1000.0,
+     "max": 1300.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 7,
+     "stat": "LightningResistance",
+     "mod": "FLAT",
+     "min": 35.0,
+     "max": 40.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 7,
+     "stat": "DamageReduction",
+     "mod": "FLAT",
+     "min": 85.0,
+     "max": 100.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 7,
+     "stat": "HpRegenPerSec",
+     "mod": "FLAT",
+     "min": 500.0,
+     "max": 700.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 7,
+     "stat": "MaxHp",
+     "mod": "FLAT",
+     "min": 180.0,
+     "max": 210.0
+    }
+   ],
+   "price": 99528,
+   "tradable": true
   },
   "126004": {
    "name": "Ícor do Vazio",
    "grade": "BEYOND",
    "icon": "sprites/Item_126004.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material de gravação avançado. Usado para gravar um item, concede aleatoriamente um de dois aumentos poderosos de atributo definidos pelo tipo de equipamento.",
+   "mcat": "engraving",
+   "mods": [
+    {
+     "g": "WEAPON",
+     "tier": 8,
+     "stat": "CriticalChance",
+     "mod": "ADDITIVE",
+     "min": 450.0,
+     "max": 500.0
+    },
+    {
+     "g": "WEAPON",
+     "tier": 8,
+     "stat": "AddHpPerHit",
+     "mod": "FLAT",
+     "min": 8.0,
+     "max": 10.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 7,
+     "stat": "DamageReduction",
+     "mod": "FLAT",
+     "min": 85.0,
+     "max": 100.0
+    },
+    {
+     "g": "ARMOR",
+     "tier": 7,
+     "stat": "ColdResistance",
+     "mod": "FLAT",
+     "min": 35.0,
+     "max": 40.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 7,
+     "stat": "MovementSpeed",
+     "mod": "ADDITIVE",
+     "min": 400.0,
+     "max": 450.0
+    },
+    {
+     "g": "ACCESSORY",
+     "tier": 7,
+     "stat": "CriticalChance",
+     "mod": "ADDITIVE",
+     "min": 400.0,
+     "max": 450.0
+    }
+   ],
+   "price": 99528,
+   "tradable": true
   },
   "130001": {
    "name": "Pergaminho de Inscrição Comum",
    "grade": "COMMON",
    "icon": "sprites/Item_130001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Um pergaminho contendo poderes especiais. Inscrito em um item para conceder aleatoriamente um de vários aumentos de atributo.",
+   "mcat": "inscription",
+   "mods": [
+    {
+     "g": "COMMON",
+     "tier": 3,
+     "stat": "AttackDamage",
+     "mod": "FLAT",
+     "min": 1.0,
+     "max": 6.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 3,
+     "stat": "AttackDamage",
+     "mod": "ADDITIVE",
+     "min": 50.0,
+     "max": 200.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 3,
+     "stat": "Armor",
+     "mod": "FLAT",
+     "min": 25.0,
+     "max": 150.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 3,
+     "stat": "Armor",
+     "mod": "ADDITIVE",
+     "min": 100.0,
+     "max": 250.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 3,
+     "stat": "MaxHp",
+     "mod": "FLAT",
+     "min": 10.0,
+     "max": 90.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 3,
+     "stat": "AttackSpeed",
+     "mod": "ADDITIVE",
+     "min": 40.0,
+     "max": 70.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 3,
+     "stat": "CastSpeed",
+     "mod": "ADDITIVE",
+     "min": 80.0,
+     "max": 140.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 3,
+     "stat": "AreaOfEffect",
+     "mod": "ADDITIVE",
+     "min": 70.0,
+     "max": 100.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 3,
+     "stat": "PhysicalDamagePercent",
+     "mod": "FLAT",
+     "min": 100.0,
+     "max": 400.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 3,
+     "stat": "FireDamagePercent",
+     "mod": "FLAT",
+     "min": 100.0,
+     "max": 400.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 3,
+     "stat": "ColdDamagePercent",
+     "mod": "FLAT",
+     "min": 100.0,
+     "max": 400.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 3,
+     "stat": "LightningDamagePercent",
+     "mod": "FLAT",
+     "min": 100.0,
+     "max": 400.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 3,
+     "stat": "FireResistance",
+     "mod": "FLAT",
+     "min": 5.0,
+     "max": 20.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 3,
+     "stat": "ColdResistance",
+     "mod": "FLAT",
+     "min": 5.0,
+     "max": 20.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 3,
+     "stat": "LightningResistance",
+     "mod": "FLAT",
+     "min": 5.0,
+     "max": 20.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 3,
+     "stat": "AddHpPerKill",
+     "mod": "FLAT",
+     "min": 2.0,
+     "max": 8.0
+    }
+   ],
+   "price": 120,
+   "tradable": true
   },
   "131001": {
    "name": "Pergaminho de Inscrição Incomum",
    "grade": "UNCOMMON",
    "icon": "sprites/Item_131001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Um pergaminho contendo poderes especiais. Inscrito em um item para conceder aleatoriamente um de vários aumentos de atributo.",
+   "mcat": "inscription",
+   "mods": [
+    {
+     "g": "COMMON",
+     "tier": 4,
+     "stat": "AttackDamage",
+     "mod": "FLAT",
+     "min": 2.0,
+     "max": 10.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 4,
+     "stat": "AttackDamage",
+     "mod": "ADDITIVE",
+     "min": 100.0,
+     "max": 250.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 4,
+     "stat": "DodgeChance",
+     "mod": "FLAT",
+     "min": 35.0,
+     "max": 70.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 4,
+     "stat": "BlockChance",
+     "mod": "FLAT",
+     "min": 35.0,
+     "max": 70.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 4,
+     "stat": "MaxHp",
+     "mod": "FLAT",
+     "min": 30.0,
+     "max": 120.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 4,
+     "stat": "CooldownReduction",
+     "mod": "FLAT",
+     "min": 25.0,
+     "max": 70.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 4,
+     "stat": "CriticalChance",
+     "mod": "ADDITIVE",
+     "min": 150.0,
+     "max": 300.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 4,
+     "stat": "CriticalDamage",
+     "mod": "FLAT",
+     "min": 150.0,
+     "max": 300.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 4,
+     "stat": "PhysicalDamagePercent",
+     "mod": "FLAT",
+     "min": 200.0,
+     "max": 500.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 4,
+     "stat": "FireDamagePercent",
+     "mod": "FLAT",
+     "min": 200.0,
+     "max": 500.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 4,
+     "stat": "ColdDamagePercent",
+     "mod": "FLAT",
+     "min": 200.0,
+     "max": 500.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 4,
+     "stat": "LightningDamagePercent",
+     "mod": "FLAT",
+     "min": 200.0,
+     "max": 500.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 4,
+     "stat": "FireResistance",
+     "mod": "FLAT",
+     "min": 10.0,
+     "max": 25.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 4,
+     "stat": "ColdResistance",
+     "mod": "FLAT",
+     "min": 10.0,
+     "max": 25.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 4,
+     "stat": "LightningResistance",
+     "mod": "FLAT",
+     "min": 10.0,
+     "max": 25.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 4,
+     "stat": "HpRegenPerSec",
+     "mod": "FLAT",
+     "min": 150.0,
+     "max": 300.0
+    }
+   ],
+   "price": 360,
+   "tradable": true
   },
   "132001": {
    "name": "Pergaminho de Inscrição Rara",
    "grade": "RARE",
    "icon": "sprites/Item_132001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Um pergaminho contendo poderes especiais. Inscrito em um item para conceder aleatoriamente um de vários aumentos de atributo.",
+   "mcat": "inscription",
+   "mods": [
+    {
+     "g": "COMMON",
+     "tier": 5,
+     "stat": "AttackDamage",
+     "mod": "FLAT",
+     "min": 3.0,
+     "max": 15.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 5,
+     "stat": "AttackDamage",
+     "mod": "ADDITIVE",
+     "min": 150.0,
+     "max": 300.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 5,
+     "stat": "Armor",
+     "mod": "FLAT",
+     "min": 100.0,
+     "max": 250.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 5,
+     "stat": "Armor",
+     "mod": "ADDITIVE",
+     "min": 200.0,
+     "max": 350.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 5,
+     "stat": "MaxHp",
+     "mod": "FLAT",
+     "min": 60.0,
+     "max": 150.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 5,
+     "stat": "AttackSpeed",
+     "mod": "ADDITIVE",
+     "min": 60.0,
+     "max": 110.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 5,
+     "stat": "CastSpeed",
+     "mod": "ADDITIVE",
+     "min": 120.0,
+     "max": 200.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 5,
+     "stat": "AreaOfEffect",
+     "mod": "ADDITIVE",
+     "min": 90.0,
+     "max": 140.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 5,
+     "stat": "IncreaseAreaOfEffectDamage",
+     "mod": "ADDITIVE",
+     "min": 300.0,
+     "max": 600.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 5,
+     "stat": "IncreaseMeleeDamage",
+     "mod": "ADDITIVE",
+     "min": 300.0,
+     "max": 600.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 5,
+     "stat": "IncreaseProjectileDamage",
+     "mod": "ADDITIVE",
+     "min": 300.0,
+     "max": 600.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 5,
+     "stat": "IncreaseSummonDamage",
+     "mod": "ADDITIVE",
+     "min": 300.0,
+     "max": 600.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 5,
+     "stat": "FireResistance",
+     "mod": "FLAT",
+     "min": 15.0,
+     "max": 30.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 5,
+     "stat": "ColdResistance",
+     "mod": "FLAT",
+     "min": 15.0,
+     "max": 30.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 5,
+     "stat": "LightningResistance",
+     "mod": "FLAT",
+     "min": 15.0,
+     "max": 30.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 5,
+     "stat": "AddHpPerHit",
+     "mod": "FLAT",
+     "min": 1.0,
+     "max": 7.0
+    }
+   ],
+   "price": 1080,
+   "tradable": true
   },
   "133001": {
    "name": "Pergaminho de Inscrição Lendária",
    "grade": "LEGENDARY",
    "icon": "sprites/Item_133001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Um pergaminho contendo poderes especiais. Inscrito em um item para conceder aleatoriamente um de vários aumentos de atributo.",
+   "mcat": "inscription",
+   "mods": [
+    {
+     "g": "COMMON",
+     "tier": 6,
+     "stat": "AttackDamage",
+     "mod": "FLAT",
+     "min": 6.0,
+     "max": 30.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 6,
+     "stat": "AttackDamage",
+     "mod": "ADDITIVE",
+     "min": 200.0,
+     "max": 400.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 6,
+     "stat": "Armor",
+     "mod": "FLAT",
+     "min": 150.0,
+     "max": 300.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 6,
+     "stat": "Armor",
+     "mod": "ADDITIVE",
+     "min": 250.0,
+     "max": 400.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 6,
+     "stat": "DodgeChance",
+     "mod": "FLAT",
+     "min": 55.0,
+     "max": 110.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 6,
+     "stat": "BlockChance",
+     "mod": "FLAT",
+     "min": 55.0,
+     "max": 110.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 6,
+     "stat": "MaxHp",
+     "mod": "FLAT",
+     "min": 90.0,
+     "max": 180.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 6,
+     "stat": "CooldownReduction",
+     "mod": "FLAT",
+     "min": 55.0,
+     "max": 100.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 6,
+     "stat": "CriticalChance",
+     "mod": "ADDITIVE",
+     "min": 250.0,
+     "max": 400.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 6,
+     "stat": "CriticalDamage",
+     "mod": "FLAT",
+     "min": 250.0,
+     "max": 500.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 6,
+     "stat": "PhysicalDamagePercent",
+     "mod": "FLAT",
+     "min": 400.0,
+     "max": 800.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 6,
+     "stat": "FireDamagePercent",
+     "mod": "FLAT",
+     "min": 400.0,
+     "max": 800.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 6,
+     "stat": "ColdDamagePercent",
+     "mod": "FLAT",
+     "min": 400.0,
+     "max": 800.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 6,
+     "stat": "LightningDamagePercent",
+     "mod": "FLAT",
+     "min": 400.0,
+     "max": 800.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 6,
+     "stat": "FireResistance",
+     "mod": "FLAT",
+     "min": 20.0,
+     "max": 35.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 6,
+     "stat": "ColdResistance",
+     "mod": "FLAT",
+     "min": 20.0,
+     "max": 35.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 6,
+     "stat": "LightningResistance",
+     "mod": "FLAT",
+     "min": 20.0,
+     "max": 35.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 6,
+     "stat": "HpRegenPerSec",
+     "mod": "FLAT",
+     "min": 250.0,
+     "max": 500.0
+    }
+   ],
+   "price": 3240,
+   "tradable": true
   },
   "134001": {
    "name": "Pergaminho de inscrição imortal",
    "grade": "IMMORTAL",
    "icon": "sprites/Item_134001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Um pergaminho contendo poderes especiais. Inscrito em um item para conceder aleatoriamente um de vários aumentos de atributo.",
+   "mcat": "inscription",
+   "mods": [
+    {
+     "g": "COMMON",
+     "tier": 7,
+     "stat": "AttackDamage",
+     "mod": "FLAT",
+     "min": 10.0,
+     "max": 50.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 7,
+     "stat": "AttackDamage",
+     "mod": "ADDITIVE",
+     "min": 250.0,
+     "max": 500.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 7,
+     "stat": "MaxHp",
+     "mod": "FLAT",
+     "min": 120.0,
+     "max": 210.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 7,
+     "stat": "AttackSpeed",
+     "mod": "ADDITIVE",
+     "min": 90.0,
+     "max": 150.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 7,
+     "stat": "CastSpeed",
+     "mod": "ADDITIVE",
+     "min": 160.0,
+     "max": 300.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 7,
+     "stat": "AreaOfEffect",
+     "mod": "ADDITIVE",
+     "min": 120.0,
+     "max": 200.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 7,
+     "stat": "SkillDurationIncrease",
+     "mod": "ADDITIVE",
+     "min": 220.0,
+     "max": 360.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 7,
+     "stat": "PhysicalDamagePercent",
+     "mod": "FLAT",
+     "min": 500.0,
+     "max": 1000.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 7,
+     "stat": "FireDamagePercent",
+     "mod": "FLAT",
+     "min": 500.0,
+     "max": 1000.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 7,
+     "stat": "ColdDamagePercent",
+     "mod": "FLAT",
+     "min": 500.0,
+     "max": 1000.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 7,
+     "stat": "LightningDamagePercent",
+     "mod": "FLAT",
+     "min": 500.0,
+     "max": 1000.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 7,
+     "stat": "FireResistance",
+     "mod": "FLAT",
+     "min": 25.0,
+     "max": 40.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 7,
+     "stat": "ColdResistance",
+     "mod": "FLAT",
+     "min": 25.0,
+     "max": 40.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 7,
+     "stat": "LightningResistance",
+     "mod": "FLAT",
+     "min": 25.0,
+     "max": 40.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 7,
+     "stat": "HpLeech",
+     "mod": "FLAT",
+     "min": 30.0,
+     "max": 50.0
+    }
+   ],
+   "price": 9720,
+   "tradable": true
   },
   "135001": {
    "name": "Pergaminho de Inscrição Arcana",
    "grade": "ARCANA",
    "icon": "sprites/Item_135001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Um pergaminho contendo poderes especiais. Inscrito em um item para conceder aleatoriamente um de vários aumentos de atributo.",
+   "mcat": "inscription",
+   "mods": [
+    {
+     "g": "COMMON",
+     "tier": 8,
+     "stat": "AttackDamage",
+     "mod": "FLAT",
+     "min": 15.0,
+     "max": 100.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 8,
+     "stat": "AttackDamage",
+     "mod": "ADDITIVE",
+     "min": 300.0,
+     "max": 700.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 8,
+     "stat": "Armor",
+     "mod": "FLAT",
+     "min": 250.0,
+     "max": 400.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 8,
+     "stat": "Armor",
+     "mod": "ADDITIVE",
+     "min": 350.0,
+     "max": 500.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 8,
+     "stat": "MaxHp",
+     "mod": "ADDITIVE",
+     "min": 200.0,
+     "max": 350.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 8,
+     "stat": "CooldownReduction",
+     "mod": "FLAT",
+     "min": 85.0,
+     "max": 130.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 8,
+     "stat": "CriticalChance",
+     "mod": "ADDITIVE",
+     "min": 350.0,
+     "max": 500.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 8,
+     "stat": "CriticalDamage",
+     "mod": "FLAT",
+     "min": 400.0,
+     "max": 800.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 8,
+     "stat": "IncreaseAreaOfEffectDamage",
+     "mod": "ADDITIVE",
+     "min": 600.0,
+     "max": 1300.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 8,
+     "stat": "IncreaseMeleeDamage",
+     "mod": "ADDITIVE",
+     "min": 600.0,
+     "max": 1300.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 8,
+     "stat": "IncreaseProjectileDamage",
+     "mod": "ADDITIVE",
+     "min": 600.0,
+     "max": 1300.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 8,
+     "stat": "IncreaseSummonDamage",
+     "mod": "ADDITIVE",
+     "min": 600.0,
+     "max": 1300.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 8,
+     "stat": "FireResistance",
+     "mod": "FLAT",
+     "min": 30.0,
+     "max": 45.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 8,
+     "stat": "ColdResistance",
+     "mod": "FLAT",
+     "min": 30.0,
+     "max": 45.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 8,
+     "stat": "LightningResistance",
+     "mod": "FLAT",
+     "min": 30.0,
+     "max": 45.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 8,
+     "stat": "ChaosResistance",
+     "mod": "FLAT",
+     "min": 30.0,
+     "max": 45.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 8,
+     "stat": "HpRegenPerSec",
+     "mod": "FLAT",
+     "min": 400.0,
+     "max": 1000.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 8,
+     "stat": "SkillHealIncrease",
+     "mod": "ADDITIVE",
+     "min": 266.0,
+     "max": 406.0
+    }
+   ],
+   "price": 31104,
+   "tradable": true
   },
   "136001": {
    "name": "Pergaminho de Inscrição do Além",
    "grade": "BEYOND",
    "icon": "sprites/Item_136001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Um pergaminho contendo poderes especiais. Inscrito em um item para conceder aleatoriamente um de vários aumentos de atributo.",
+   "mcat": "inscription",
+   "mods": [
+    {
+     "g": "COMMON",
+     "tier": 9,
+     "stat": "AttackDamage",
+     "mod": "FLAT",
+     "min": 30.0,
+     "max": 150.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 9,
+     "stat": "AttackDamage",
+     "mod": "ADDITIVE",
+     "min": 400.0,
+     "max": 1000.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 9,
+     "stat": "Armor",
+     "mod": "FLAT",
+     "min": 300.0,
+     "max": 450.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 9,
+     "stat": "Armor",
+     "mod": "ADDITIVE",
+     "min": 400.0,
+     "max": 550.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 9,
+     "stat": "MaxHp",
+     "mod": "FLAT",
+     "min": 180.0,
+     "max": 270.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 9,
+     "stat": "AttackSpeed",
+     "mod": "ADDITIVE",
+     "min": 130.0,
+     "max": 200.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 9,
+     "stat": "CastSpeed",
+     "mod": "ADDITIVE",
+     "min": 250.0,
+     "max": 400.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 9,
+     "stat": "AreaOfEffect",
+     "mod": "ADDITIVE",
+     "min": 170.0,
+     "max": 280.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 9,
+     "stat": "PhysicalDamagePercent",
+     "mod": "FLAT",
+     "min": 800.0,
+     "max": 1800.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 9,
+     "stat": "FireDamagePercent",
+     "mod": "FLAT",
+     "min": 800.0,
+     "max": 1800.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 9,
+     "stat": "ColdDamagePercent",
+     "mod": "FLAT",
+     "min": 800.0,
+     "max": 1800.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 9,
+     "stat": "LightningDamagePercent",
+     "mod": "FLAT",
+     "min": 800.0,
+     "max": 1800.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 9,
+     "stat": "FireResistance",
+     "mod": "FLAT",
+     "min": 35.0,
+     "max": 50.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 9,
+     "stat": "ColdResistance",
+     "mod": "FLAT",
+     "min": 35.0,
+     "max": 50.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 9,
+     "stat": "LightningResistance",
+     "mod": "FLAT",
+     "min": 35.0,
+     "max": 50.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 9,
+     "stat": "ChaosResistance",
+     "mod": "FLAT",
+     "min": 35.0,
+     "max": 50.0
+    },
+    {
+     "g": "COMMON",
+     "tier": 9,
+     "stat": "AddHpPerKill",
+     "mod": "FLAT",
+     "min": 16.0,
+     "max": 30.0
+    }
+   ],
+   "price": 99528,
+   "tradable": true
   },
   "140001": {
    "name": "Madeira",
    "grade": "COMMON",
    "icon": "sprites/Item_140001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Um material comum que pode ser usado para criar algo.",
+   "mcat": "craft",
+   "price": 120,
+   "tradable": true,
+   "uses": [
+    {
+     "tier": 1,
+     "type": "Armadura",
+     "cubeLvl": 5
+    },
+    {
+     "tier": 1,
+     "type": "Botas",
+     "cubeLvl": 5
+    },
+    {
+     "tier": 1,
+     "type": "Elmo",
+     "cubeLvl": 5
+    },
+    {
+     "tier": 1,
+     "type": "Luvas",
+     "cubeLvl": 5
+    }
+   ]
   },
   "140002": {
    "name": "Pedra",
    "grade": "COMMON",
    "icon": "sprites/Item_140002.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Um material comum usado para criar algo.",
+   "mcat": "craft",
+   "price": 120,
+   "tradable": true,
+   "uses": [
+    {
+     "tier": 2,
+     "type": "Armadura",
+     "cubeLvl": 10
+    },
+    {
+     "tier": 2,
+     "type": "Botas",
+     "cubeLvl": 10
+    },
+    {
+     "tier": 2,
+     "type": "Elmo",
+     "cubeLvl": 10
+    },
+    {
+     "tier": 2,
+     "type": "Luvas",
+     "cubeLvl": 10
+    }
+   ]
   },
   "140003": {
    "name": "Couro",
    "grade": "COMMON",
    "icon": "sprites/Item_140003.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Um material comum que pode ser usado para criar algo.",
+   "mcat": "craft",
+   "price": 120,
+   "tradable": true,
+   "uses": [
+    {
+     "tier": 1,
+     "type": "Arma Principal",
+     "cubeLvl": 5
+    },
+    {
+     "tier": 1,
+     "type": "Arma Secundária",
+     "cubeLvl": 5
+    },
+    {
+     "tier": 2,
+     "type": "Arma Secundária",
+     "cubeLvl": 10
+    }
+   ]
   },
   "140004": {
    "name": "Pepita de Cobre",
    "grade": "COMMON",
    "icon": "sprites/Item_140004.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Um material comum que pode ser usado para criar algo.",
+   "mcat": "craft",
+   "price": 120,
+   "tradable": true,
+   "uses": [
+    {
+     "tier": 1,
+     "type": "Arma Secundária",
+     "cubeLvl": 5
+    },
+    {
+     "tier": 2,
+     "type": "Arma Principal",
+     "cubeLvl": 10
+    },
+    {
+     "tier": 2,
+     "type": "Arma Secundária",
+     "cubeLvl": 10
+    }
+   ]
   },
   "141001": {
    "name": "Lingote de bronze",
    "grade": "UNCOMMON",
    "icon": "sprites/Item_141001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Um material de criação comum usado para fazer algo.",
+   "mcat": "craft",
+   "price": 360,
+   "tradable": true,
+   "uses": [
+    {
+     "tier": 3,
+     "type": "Accessory",
+     "cubeLvl": 20
+    },
+    {
+     "tier": 3,
+     "type": "Arma Secundária",
+     "cubeLvl": 20
+    },
+    {
+     "tier": 3,
+     "type": "Armadura",
+     "cubeLvl": 20
+    },
+    {
+     "tier": 3,
+     "type": "Botas",
+     "cubeLvl": 20
+    },
+    {
+     "tier": 3,
+     "type": "Elmo",
+     "cubeLvl": 20
+    },
+    {
+     "tier": 3,
+     "type": "Luvas",
+     "cubeLvl": 20
+    },
+    {
+     "tier": 4,
+     "type": "Arma Secundária",
+     "cubeLvl": 30
+    },
+    {
+     "tier": 4,
+     "type": "Armadura",
+     "cubeLvl": 30
+    },
+    {
+     "tier": 4,
+     "type": "Botas",
+     "cubeLvl": 30
+    },
+    {
+     "tier": 4,
+     "type": "Elmo",
+     "cubeLvl": 30
+    },
+    {
+     "tier": 4,
+     "type": "Luvas",
+     "cubeLvl": 30
+    }
+   ]
   },
   "141002": {
    "name": "Lingote de Ferro",
    "grade": "UNCOMMON",
    "icon": "sprites/Item_141002.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Um material comum que pode ser usado para criar algo.",
+   "mcat": "craft",
+   "price": 360,
+   "tradable": true,
+   "uses": [
+    {
+     "tier": 3,
+     "type": "Arma Principal",
+     "cubeLvl": 20
+    },
+    {
+     "tier": 3,
+     "type": "Arma Secundária",
+     "cubeLvl": 20
+    },
+    {
+     "tier": 4,
+     "type": "Arma Principal",
+     "cubeLvl": 30
+    },
+    {
+     "tier": 4,
+     "type": "Arma Secundária",
+     "cubeLvl": 30
+    }
+   ]
   },
   "142001": {
    "name": "Lingote de Prata",
    "grade": "RARE",
    "icon": "sprites/Item_142001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Um material usado para criar algo.",
+   "mcat": "craft",
+   "price": 1080,
+   "tradable": true,
+   "uses": [
+    {
+     "tier": 5,
+     "type": "Arma Secundária",
+     "cubeLvl": 40
+    },
+    {
+     "tier": 5,
+     "type": "Armadura",
+     "cubeLvl": 40
+    },
+    {
+     "tier": 5,
+     "type": "Botas",
+     "cubeLvl": 40
+    },
+    {
+     "tier": 5,
+     "type": "Elmo",
+     "cubeLvl": 40
+    },
+    {
+     "tier": 5,
+     "type": "Luvas",
+     "cubeLvl": 40
+    }
+   ]
   },
   "142002": {
    "name": "Barra de Ouro",
    "grade": "RARE",
    "icon": "sprites/Item_142002.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Um material que pode ser usado para criar algo.",
+   "mcat": "craft",
+   "price": 1080,
+   "tradable": true,
+   "uses": [
+    {
+     "tier": 5,
+     "type": "Arma Principal",
+     "cubeLvl": 40
+    },
+    {
+     "tier": 5,
+     "type": "Arma Secundária",
+     "cubeLvl": 40
+    }
+   ]
   },
   "143001": {
    "name": "Barra de Poeira Estelar",
    "grade": "LEGENDARY",
    "icon": "sprites/Item_143001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Um material que pode ser usado para criar algo.",
+   "mcat": "craft",
+   "price": 3240,
+   "tradable": true,
+   "uses": [
+    {
+     "tier": 4,
+     "type": "Accessory",
+     "cubeLvl": 30
+    },
+    {
+     "tier": 6,
+     "type": "Arma Secundária",
+     "cubeLvl": 50
+    },
+    {
+     "tier": 6,
+     "type": "Armadura",
+     "cubeLvl": 50
+    },
+    {
+     "tier": 6,
+     "type": "Botas",
+     "cubeLvl": 50
+    },
+    {
+     "tier": 6,
+     "type": "Elmo",
+     "cubeLvl": 50
+    },
+    {
+     "tier": 6,
+     "type": "Luvas",
+     "cubeLvl": 50
+    }
+   ]
   },
   "143002": {
    "name": "Ferro do Vácuo",
    "grade": "LEGENDARY",
    "icon": "sprites/Item_143002.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Um material de criação usado para fazer algo.",
+   "mcat": "craft",
+   "price": 3240,
+   "tradable": true,
+   "uses": [
+    {
+     "tier": 5,
+     "type": "Accessory",
+     "cubeLvl": 40
+    },
+    {
+     "tier": 6,
+     "type": "Arma Principal",
+     "cubeLvl": 50
+    },
+    {
+     "tier": 6,
+     "type": "Arma Secundária",
+     "cubeLvl": 50
+    }
+   ]
   },
   "144001": {
    "name": "Pedra de Sangue",
    "grade": "IMMORTAL",
    "icon": "sprites/Item_144001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Um material intermediário que pode ser usado para criar algo.",
+   "mcat": "craft",
+   "price": 9720,
+   "tradable": true,
+   "uses": [
+    {
+     "tier": 7,
+     "type": "Arma Secundária",
+     "cubeLvl": 65
+    },
+    {
+     "tier": 7,
+     "type": "Armadura",
+     "cubeLvl": 65
+    },
+    {
+     "tier": 7,
+     "type": "Botas",
+     "cubeLvl": 65
+    },
+    {
+     "tier": 7,
+     "type": "Elmo",
+     "cubeLvl": 65
+    },
+    {
+     "tier": 7,
+     "type": "Luvas",
+     "cubeLvl": 65
+    },
+    {
+     "tier": 8,
+     "type": "Armadura",
+     "cubeLvl": 80
+    },
+    {
+     "tier": 8,
+     "type": "Botas",
+     "cubeLvl": 80
+    },
+    {
+     "tier": 8,
+     "type": "Elmo",
+     "cubeLvl": 80
+    },
+    {
+     "tier": 8,
+     "type": "Luvas",
+     "cubeLvl": 80
+    }
+   ]
   },
   "144002": {
    "name": "Pedra do Trovão",
    "grade": "IMMORTAL",
    "icon": "sprites/Item_144002.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Um material intermediário usado para criar algo.",
+   "mcat": "craft",
+   "price": 9720,
+   "tradable": true,
+   "uses": [
+    {
+     "tier": 6,
+     "type": "Accessory",
+     "cubeLvl": 50
+    },
+    {
+     "tier": 7,
+     "type": "Arma Principal",
+     "cubeLvl": 65
+    },
+    {
+     "tier": 7,
+     "type": "Arma Secundária",
+     "cubeLvl": 65
+    }
+   ]
   },
   "145001": {
    "name": "Fragmento do Caos",
    "grade": "ARCANA",
    "icon": "sprites/Item_145001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Um material intermediário que pode ser usado para criar algo.",
+   "mcat": "craft",
+   "price": 31104,
+   "tradable": true,
+   "uses": [
+    {
+     "tier": 8,
+     "type": "Arma Secundária",
+     "cubeLvl": 80
+    }
+   ]
   },
   "145002": {
    "name": "Minério Arcano",
    "grade": "ARCANA",
    "icon": "sprites/Item_145002.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Um material intermediário que pode ser usado para criar algo.",
+   "mcat": "craft",
+   "price": 31104,
+   "tradable": true,
+   "uses": [
+    {
+     "tier": 7,
+     "type": "Accessory",
+     "cubeLvl": 65
+    },
+    {
+     "tier": 8,
+     "type": "Arma Principal",
+     "cubeLvl": 80
+    },
+    {
+     "tier": 8,
+     "type": "Arma Secundária",
+     "cubeLvl": 80
+    }
+   ]
   },
   "146001": {
    "name": "Lingote de aço negro",
    "grade": "BEYOND",
    "icon": "sprites/Item_146001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Um material de criação avançado usado para fazer algo.",
+   "mcat": "craft",
+   "price": 99528,
+   "tradable": true
   },
   "146002": {
    "name": "Minério de Oricalco",
    "grade": "BEYOND",
    "icon": "sprites/Item_146002.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Um material de alta qualidade que pode ser usado para criar algo.",
+   "mcat": "craft",
+   "price": 99528,
+   "tradable": true,
+   "uses": [
+    {
+     "tier": 8,
+     "type": "Accessory",
+     "cubeLvl": 80
+    }
+   ]
   },
   "160001": {
    "name": "Moeda do 1º Aniversário do Reino",
    "grade": "COMMON",
    "icon": "sprites/Item_160001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Uma moeda comemorativa. Jogue-a no Cubo com um desejo sincero.",
+   "mcat": "offering",
+   "price": 120,
+   "tradable": true,
+   "cubeLvl": 20
   },
   "160002": {
    "name": "Moeda do 1º Aniversário do Império",
    "grade": "UNCOMMON",
    "icon": "sprites/Item_160002.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Uma moeda comemorativa. Jogue-a no Cubo com um desejo sincero.",
+   "mcat": "offering",
+   "price": 360,
+   "tradable": true,
+   "cubeLvl": 20
   },
   "160003": {
    "name": "Moeda do 10.º aniversário do reino",
    "grade": "RARE",
    "icon": "sprites/Item_160003.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Uma moeda comemorativa. Jogue-a no cubo com todos os seus desejos.",
+   "mcat": "offering",
+   "price": 1080,
+   "tradable": true,
+   "cubeLvl": 20
   },
   "160004": {
    "name": "Moeda do 10º Aniversário do Império",
    "grade": "LEGENDARY",
    "icon": "sprites/Item_160004.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Uma moeda comemorativa. Jogue-a no Cubo com um desejo sincero.",
+   "mcat": "offering",
+   "price": 3240,
+   "tradable": true,
+   "cubeLvl": 20
   },
   "160005": {
    "name": "Moeda do 50º Aniversário do Reino",
    "grade": "IMMORTAL",
    "icon": "sprites/Item_160005.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Uma moeda comemorativa. Jogue-a no Cubo com todo o desejo do seu coração.",
+   "mcat": "offering",
+   "price": 9720,
+   "tradable": true,
+   "cubeLvl": 20
   },
   "160006": {
    "name": "Moeda do 50º Aniversário do Império",
    "grade": "ARCANA",
    "icon": "sprites/Item_160006.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Uma moeda comemorativa. Jogue-a no Cubo com um desejo sincero.",
+   "mcat": "offering",
+   "price": 31104,
+   "tradable": true,
+   "cubeLvl": 20
   },
   "190001": {
-   "name": "Pedra da Alma (Normal)",
+   "name": "Pedra da Alma - Normal",
    "grade": "IMMORTAL",
    "icon": "sprites/Item_190001.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material necessário para invocar chefes de dificuldade Normal.",
+   "mcat": "summon",
+   "price": 9720,
+   "tradable": true
   },
   "190002": {
-   "name": "Pedra da Alma (Pesadelo)",
+   "name": "Pedra da Alma - Pesadelo",
    "grade": "ARCANA",
    "icon": "sprites/Item_190002.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material necessário para invocar chefes de dificuldade Pesadelo.",
+   "mcat": "summon",
+   "price": 31104,
+   "tradable": true
   },
   "190003": {
-   "name": "Pedra da Alma (Inferno)",
+   "name": "Pedra da Alma - Inferno",
    "grade": "BEYOND",
    "icon": "sprites/Item_190003.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material necessário para invocar chefes de dificuldade Inferno.",
+   "mcat": "summon",
+   "price": 99528,
+   "tradable": true
   },
   "190004": {
-   "name": "Pedra da Alma (Tormento)",
+   "name": "Pedra da Alma - Tormento",
    "grade": "CELESTIAL",
    "icon": "sprites/Item_190004.png",
-   "cat": "material"
+   "cat": "material",
+   "desc": "Material necessário para invocar chefes de dificuldade Tormento.",
+   "mcat": "summon",
+   "price": 348348,
+   "tradable": true
   },
   "300001": {
    "name": "Espada Longa",
@@ -45736,6 +49514,91 @@
    "grade": "IMMORTAL",
    "icon": "sprites/BRACER_630014.png",
    "cat": "equip"
+  }
+ },
+ "matLabels": {
+  "matTypes": {
+   "decoration": "Materiais de Decoração",
+   "engraving": "Material de Gravação",
+   "inscription": "Material de Inscrição",
+   "craft": "Material de Fabricação",
+   "offering": "Material de Oferenda",
+   "summon": "Pedra da Alma"
+  },
+  "stats": {
+   "AddHpPerKill": "Adicionar PV por Kill",
+   "Armor": "Poder de Defesa",
+   "AttackDamage": "Dano de Ataque",
+   "AttackSpeed": "Velocidade de Ataque",
+   "BlockChance": "Chance de Bloqueio",
+   "CastSpeed": "Vel. Lanç.",
+   "ColdResistance": "Resistência ao Frio",
+   "CooldownReduction": "Redução do Tempo de Recarga",
+   "CriticalChance": "Chance Crítica",
+   "CriticalDamage": "Dano Crítico",
+   "DamageAbsorption": "Absorção de Dano",
+   "DodgeChance": "Chance de Esquiva",
+   "FireResistance": "Resistência ao Fogo",
+   "IncreaseAreaOfEffectDamage": "Aumentar Dano em Área",
+   "IncreaseMeleeDamage": "Aumentar Dano Corpo a Corpo",
+   "IncreaseProjectileDamage": "Aumentar Dano de Projétil",
+   "IncreaseSummonDamage": "Aumentar Dano de Invocação",
+   "LightningResistance": "Resistência ao Raio",
+   "MaxHp": "HP Máximo",
+   "MovementSpeed": "Velocidade de Movimento",
+   "SkillDurationIncrease": "Aumentar Duração de Habilidade",
+   "SkillHealIncrease": "Aumentar Cura de Habilidade"
+  },
+  "slotFx": {
+   "decoration_WEAPON": "Efeito Decoração de Arma",
+   "decoration_ARMOR": "Efeito Decoração de Armadura",
+   "decoration_ACCESSORY": "Efeito Decoração de Acessório",
+   "engraving_WEAPON": "Lista de Efeitos de Gravação (Arma)",
+   "engraving_ARMOR": "Lista de Efeitos de Gravação (Armadura)",
+   "engraving_ACCESSORY": "Lista de Efeitos de Gravação (Acessório)"
+  },
+  "statFmt": {
+   "AddHpPerHit_FLAT": "PV por Acerto +{0}~{1}",
+   "AddHpPerKill_FLAT": "Adicionar PV por Kill +{0}~{1}",
+   "AllElementalResistance_FLAT": "Res. a Todos Elementos +{0}~{1}%",
+   "AreaOfEffect_ADDITIVE": "{0}~{1}% Aumento de Área de Efeito",
+   "Armor_ADDITIVE": "{0}~{1}% Aumento Armadura",
+   "Armor_FLAT": "Armadura +{0}~{1}",
+   "AttackDamage_ADDITIVE": "{0}~{1}% Aumento Dano Ataque",
+   "AttackDamage_FLAT": "Dano de Ataque +{0}~{1}",
+   "AttackSpeed_ADDITIVE": "{0}~{1}% Aumento Vel. Ataque",
+   "BaseAttackCountReduction_FLAT": "Red. Req. Ataque Bás. +{0}~{1}",
+   "BlockChance_FLAT": "Chance de Bloqueio +{0}~{1}%",
+   "CastSpeed_ADDITIVE": "{0}~{1}% Aumento de Vel. Lançamento",
+   "ChaosResistance_FLAT": "Res. ao Caos +{0}~{1}%",
+   "ColdDamagePercent_FLAT": "Dano de Frio +{0}~{1}%",
+   "ColdResistance_FLAT": "Res. ao Frio +{0}~{1}%",
+   "CooldownReduction_FLAT": "Redução de Recarga +{0}~{1}%",
+   "CriticalChance_ADDITIVE": "{0}~{1}% Aumento Multiplicador Chance Crítica",
+   "CriticalChance_FLAT": "Chance Crítica +{0}~{1}%",
+   "CriticalDamage_FLAT": "Dano Crítico +{0}~{1}%",
+   "DamageAbsorption_FLAT": "Abs. de Dano +{0}~{1}",
+   "DamageReduction_FLAT": "Red. Dano +{0}~{1}%",
+   "DodgeChance_FLAT": "Chance de Esquiva +{0}~{1}%",
+   "FireDamagePercent_FLAT": "Dano de Fogo +{0}~{1}%",
+   "FireResistance_FLAT": "Res. ao Fogo +{0}~{1}%",
+   "HpLeech_FLAT": "Roubo de Vida +{0}~{1}%",
+   "HpRegenPerSec_FLAT": "Reg. PV/s +{0}~{1}",
+   "IncreaseAreaOfEffectDamage_ADDITIVE": "{0}~{1}% Aumento Dano de Área",
+   "IncreaseMeleeDamage_ADDITIVE": "{0}~{1}% Aumento Dano Corpo a Corpo",
+   "IncreaseProjectileDamage_ADDITIVE": "{0}~{1}% Aumento Dano de Projétil",
+   "IncreaseSummonDamage_ADDITIVE": "{0}~{1}% Aumento Dano de Invocação",
+   "LightningDamagePercent_FLAT": "Dano de Raio +{0}~{1}%",
+   "LightningResistance_FLAT": "Res. a Raios +{0}~{1}%",
+   "MaxHp_ADDITIVE": "{0}~{1}% Aumento Vida Máx.",
+   "MaxHp_FLAT": "HP Máx. +{0}~{1}",
+   "MovementSpeed_ADDITIVE": "{0}~{1}% Aumento Vel. Movimento",
+   "MovementSpeed_FLAT": "Velocidade de Movimento +{0}~{1}",
+   "Multistrike_FLAT": "Multigolpe +{0}~{1}",
+   "PhysicalDamagePercent_FLAT": "Dano Físico +{0}~{1}%",
+   "ProjectileCount_FLAT": "Qtd. Projéteis +{0}~{1}",
+   "SkillDurationIncrease_ADDITIVE": "{0}~{1}% mais duração de habilidade",
+   "SkillHealIncrease_ADDITIVE": "{0}~{1}% Aumento Cura"
   }
  }
 }

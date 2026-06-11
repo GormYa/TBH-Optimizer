@@ -100,19 +100,25 @@ body::before {
 .mini-value.ok { color: var(--ok); }
 .mini-value.wait { color: var(--gold); }
 .btn-reset {
-	margin-top: 4px; font-family: var(--font-d); font-weight: 600; font-size: 13px; letter-spacing: .5px;
+	margin-top: 8px; font-family: var(--font-d); font-weight: 600; font-size: 13px; letter-spacing: .5px;
 	color: #ff9b9b; background: rgba(255,90,90,.08); border: 1px solid rgba(255,90,90,.25);
 	border-radius: 10px; padding: 10px; cursor: pointer; transition: background .15s, color .15s;
 }
 .btn-reset:hover { background: rgba(255,90,90,.18); color: #ffd0d0; }
-.ver-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 10px; }
+/* Seletor de idioma (rodapé da sidebar) */
+.lang-sel {
+	margin-top: 8px; width: 100%; font-family: var(--font-d); font-weight: 600; font-size: 12px; letter-spacing: .3px;
+	color: var(--txt-dim); background: var(--panel); border: 1px solid var(--line-soft);
+	border-radius: 9px; padding: 8px 10px; cursor: pointer; transition: border-color .15s, color .15s;
+}
+.lang-sel:hover { color: var(--xp); border-color: var(--xp-d); }
+.lang-sel option { background: var(--panel); color: var(--txt-dim); }
+.ver-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 8px; }
 .ver-tag { font-family: var(--font-d); font-size: 11px; letter-spacing: .5px; color: var(--txt-faint); }
 .btn-ver { font-family: var(--font-d); font-weight: 600; font-size: 11.5px; letter-spacing: .5px; color: var(--txt-dim); background: rgba(255,255,255,.04); border: 1px solid var(--line-soft); border-radius: 8px; padding: 6px 10px; cursor: pointer; transition: all .15s; }
 .btn-ver:hover:not(:disabled) { color: var(--xp); border-color: var(--xp-d); }
 .btn-ver:disabled { opacity: .5; cursor: default; }
 .ver-msg { margin-top: 6px; font-size: 11.5px; line-height: 1.4; color: var(--txt-dim); }
-.ver-game { margin-top: 6px; font-size: 11.5px; color: var(--txt-faint); }
-.ver-game b { color: var(--txt-dim); font-family: var(--font-d); }
 
 /* Ã­cones SVG inline */
 .ico { display: inline-block; vertical-align: -0.15em; flex-shrink: 0; }
@@ -305,7 +311,7 @@ tbody tr.seeded { opacity: .82; }
 .hs-lvl { font-size: 14px; color: var(--gold); font-weight: 600; }
 
 /* encerrar otimizador */
-.btn-quit { width: 100%; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 6px; background: rgba(255,107,107,.08); border: 1px solid rgba(255,107,107,.3); color: #ff8585; border-radius: 9px; padding: 8px 12px; font-family: var(--font-d); font-weight: 600; font-size: 14px; cursor: pointer; }
+.btn-quit { width: 100%; margin-top: 8px; display: flex; align-items: center; justify-content: center; gap: 6px; background: rgba(255,107,107,.08); border: 1px solid rgba(255,107,107,.3); color: #ff8585; border-radius: 9px; padding: 8px 12px; font-family: var(--font-d); font-weight: 600; font-size: 14px; cursor: pointer; }
 .btn-quit:hover { background: rgba(255,107,107,.16); border-color: #ff6b6b; color: #ff9d9d; }
 .quit-overlay { position: fixed; inset: 0; z-index: 300; background: rgba(5,8,13,.85); backdrop-filter: blur(4px); display: grid; place-items: center; }
 .quit-card { text-align: center; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 32px 40px; max-width: 380px; }
@@ -314,7 +320,7 @@ tbody tr.seeded { opacity: .82; }
 .quit-card p { color: var(--txt-dim); font-size: 14px; line-height: 1.5; margin: 0; }
 
 /* console do app */
-.btn-console { width: 100%; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 6px; background: var(--panel-2); border: 1px solid var(--line); color: var(--txt-dim); border-radius: 9px; padding: 8px 12px; font-family: var(--font-d); font-weight: 600; font-size: 14px; cursor: pointer; }
+.btn-console { width: 100%; margin-top: 8px; display: flex; align-items: center; justify-content: center; gap: 6px; background: var(--panel-2); border: 1px solid var(--line); color: var(--txt-dim); border-radius: 9px; padding: 8px 12px; font-family: var(--font-d); font-weight: 600; font-size: 14px; cursor: pointer; }
 .btn-console:hover, .btn-console.on { color: var(--xp); border-color: var(--xp-d); }
 .console-panel { position: fixed; left: 0; right: 0; bottom: 0; z-index: 150; height: 260px; display: flex; flex-direction: column; background: #0a0d13; border-top: 2px solid var(--xp-d); box-shadow: 0 -10px 30px rgba(0,0,0,.5); }
 .console-head { display: flex; align-items: center; justify-content: space-between; padding: 8px 14px; border-bottom: 1px solid var(--line-soft); background: var(--bg-2); }
@@ -831,3 +837,38 @@ th.sortable span { color: var(--gold); font-size: 14px; }
 .craft-mat { display: inline-flex; align-items: center; gap: 6px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 5px 9px; font-size: 13px; color: var(--txt-dim); }
 .craft-mat img { width: 22px; height: 22px; image-rendering: pixelated; object-fit: contain; }
 .craft-mat b { color: var(--gold); font-weight: 800; }
+
+/* função do material (aba Materiais): chip de categoria + descrição do jogo */
+.mat-cat { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; padding: 2px 9px; border-radius: 999px; background: var(--panel-2); border: 1px solid var(--line); color: var(--txt-dim); margin-top: 6px; display: inline-block; }
+.mat-cat-sm { font-size: 10px; padding: 1px 6px; margin-top: 3px; }
+.mc-decoration { color: #6fd3ff; border-color: rgba(111,211,255,.35); }
+.mc-engraving { color: #5fc26b; border-color: rgba(95,194,107,.35); }
+.mc-inscription { color: #b06bff; border-color: rgba(176,107,255,.35); }
+.mc-craft { color: #ffb13c; border-color: rgba(255,177,60,.35); }
+.mc-event { color: #ff8ad0; border-color: rgba(255,138,208,.35); }
+.mc-summon { color: #ff9b7a; border-color: rgba(255,155,122,.35); }
+.mc-offering { color: #ffd76a; border-color: rgba(255,215,106,.35); }
+.mat-desc { font-size: 14.5px; color: var(--txt-dim); margin: 0 0 16px; max-width: 56ch; }
+
+/* detalhe do material no estilo do tooltip do jogo */
+.mat-tip .mat-tip-name { margin-bottom: 0; }
+.mat-tip-grade { font-size: 13px; font-weight: 700; margin-top: 2px; }
+.mat-tip-type { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 7px; color: var(--txt-dim); font-size: 13px; font-weight: 600; }
+.mat-tip-type img { width: 17px; height: 17px; image-rendering: pixelated; object-fit: contain; }
+.mat-tip-desc { font-size: 13.5px; line-height: 1.5; color: var(--txt-dim); margin: 12px 0 0; text-align: left; }
+.mat-fx-group { margin-top: 14px; text-align: left; }
+.mat-fx-head { font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px; color: var(--gold); border-bottom: 1px solid var(--line); padding-bottom: 4px; margin-bottom: 6px; }
+.mat-fx-line { display: flex; align-items: center; gap: 7px; font-size: 13px; padding: 2px 0; }
+.mat-fx-line .fx-name { color: var(--txt-dim); }
+.mat-fx-line .fx-val { margin-left: auto; font-weight: 700; color: var(--txt); white-space: nowrap; }
+.tier-chip { flex: none; font-size: 10px; font-weight: 800; line-height: 1; padding: 3px 5px; border-radius: 4px; border: 1px solid; }
+.tc-12 { color: #a7adb6; border-color: rgba(167,173,182,.4); background: rgba(167,173,182,.08); }
+.tc-3 { color: #4aa3ff; border-color: rgba(74,163,255,.4); background: rgba(74,163,255,.08); }
+.tc-4 { color: #ffb13c; border-color: rgba(255,177,60,.4); background: rgba(255,177,60,.08); }
+.tc-5 { color: #b06bff; border-color: rgba(176,107,255,.4); background: rgba(176,107,255,.08); }
+.mat-use-line { font-size: 13px; color: var(--txt-dim); padding: 2px 0; }
+.mat-tip-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 16px; border-top: 1px solid var(--line); padding-top: 10px; font-size: 13px; }
+.mat-tip-foot .mat-trade { color: var(--txt-dim); font-weight: 600; }
+.mat-tip-foot .mat-price { color: var(--gold); font-weight: 800; }
+.mat-tip-foot .mat-price-unit { font-weight: 600; font-size: 12px; color: var(--gold-d); }
+.mat-tip-foot .mat-untrade { color: var(--txt-faint); }

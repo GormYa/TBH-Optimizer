@@ -33,6 +33,7 @@ jobs:
                 cp optimizer.exe public/
                 cp web/chest_drops.json public/
                 cp -r web/sprites public/
+                go run ./cmd/sitegen -site site -out public
                 SHA=$(sha256sum optimizer.exe | cut -d' ' -f1)
                 echo "{\"version\":\"1.0.${{ github.run_number }}\",\"exe\":\"optimizer.exe\",\"sha256\":\"$SHA\",\"notes\":\"Dados atualizados\"}" > public/version.json
 

@@ -1,10 +1,372 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 	<url>
 		<loc>https://tbh-optimizer.pages.dev/</loc>
 		<lastmod>2026-06-11</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>1.0</priority>
+		<xhtml:link rel="alternate" hreflang="pt-BR" href="https://tbh-optimizer.pages.dev/"/>
+		<xhtml:link rel="alternate" hreflang="de" href="https://tbh-optimizer.pages.dev/de/"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://tbh-optimizer.pages.dev/en/"/>
+		<xhtml:link rel="alternate" hreflang="es" href="https://tbh-optimizer.pages.dev/es/"/>
+		<xhtml:link rel="alternate" hreflang="fr" href="https://tbh-optimizer.pages.dev/fr/"/>
+		<xhtml:link rel="alternate" hreflang="id" href="https://tbh-optimizer.pages.dev/id/"/>
+		<xhtml:link rel="alternate" hreflang="ja" href="https://tbh-optimizer.pages.dev/ja/"/>
+		<xhtml:link rel="alternate" hreflang="ko" href="https://tbh-optimizer.pages.dev/ko/"/>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://tbh-optimizer.pages.dev/pl/"/>
+		<xhtml:link rel="alternate" hreflang="ru" href="https://tbh-optimizer.pages.dev/ru/"/>
+		<xhtml:link rel="alternate" hreflang="th" href="https://tbh-optimizer.pages.dev/th/"/>
+		<xhtml:link rel="alternate" hreflang="tr" href="https://tbh-optimizer.pages.dev/tr/"/>
+		<xhtml:link rel="alternate" hreflang="uk" href="https://tbh-optimizer.pages.dev/uk/"/>
+		<xhtml:link rel="alternate" hreflang="vi" href="https://tbh-optimizer.pages.dev/vi/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hans" href="https://tbh-optimizer.pages.dev/zh-Hans/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tbh-optimizer.pages.dev/zh-Hant/"/>
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://tbh-optimizer.pages.dev/"/>
+	</url>
+	<url>
+		<loc>https://tbh-optimizer.pages.dev/de/</loc>
+		<lastmod>2026-06-11</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.9</priority>
+		<xhtml:link rel="alternate" hreflang="pt-BR" href="https://tbh-optimizer.pages.dev/"/>
+		<xhtml:link rel="alternate" hreflang="de" href="https://tbh-optimizer.pages.dev/de/"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://tbh-optimizer.pages.dev/en/"/>
+		<xhtml:link rel="alternate" hreflang="es" href="https://tbh-optimizer.pages.dev/es/"/>
+		<xhtml:link rel="alternate" hreflang="fr" href="https://tbh-optimizer.pages.dev/fr/"/>
+		<xhtml:link rel="alternate" hreflang="id" href="https://tbh-optimizer.pages.dev/id/"/>
+		<xhtml:link rel="alternate" hreflang="ja" href="https://tbh-optimizer.pages.dev/ja/"/>
+		<xhtml:link rel="alternate" hreflang="ko" href="https://tbh-optimizer.pages.dev/ko/"/>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://tbh-optimizer.pages.dev/pl/"/>
+		<xhtml:link rel="alternate" hreflang="ru" href="https://tbh-optimizer.pages.dev/ru/"/>
+		<xhtml:link rel="alternate" hreflang="th" href="https://tbh-optimizer.pages.dev/th/"/>
+		<xhtml:link rel="alternate" hreflang="tr" href="https://tbh-optimizer.pages.dev/tr/"/>
+		<xhtml:link rel="alternate" hreflang="uk" href="https://tbh-optimizer.pages.dev/uk/"/>
+		<xhtml:link rel="alternate" hreflang="vi" href="https://tbh-optimizer.pages.dev/vi/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hans" href="https://tbh-optimizer.pages.dev/zh-Hans/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tbh-optimizer.pages.dev/zh-Hant/"/>
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://tbh-optimizer.pages.dev/"/>
+	</url>
+	<url>
+		<loc>https://tbh-optimizer.pages.dev/en/</loc>
+		<lastmod>2026-06-11</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.9</priority>
+		<xhtml:link rel="alternate" hreflang="pt-BR" href="https://tbh-optimizer.pages.dev/"/>
+		<xhtml:link rel="alternate" hreflang="de" href="https://tbh-optimizer.pages.dev/de/"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://tbh-optimizer.pages.dev/en/"/>
+		<xhtml:link rel="alternate" hreflang="es" href="https://tbh-optimizer.pages.dev/es/"/>
+		<xhtml:link rel="alternate" hreflang="fr" href="https://tbh-optimizer.pages.dev/fr/"/>
+		<xhtml:link rel="alternate" hreflang="id" href="https://tbh-optimizer.pages.dev/id/"/>
+		<xhtml:link rel="alternate" hreflang="ja" href="https://tbh-optimizer.pages.dev/ja/"/>
+		<xhtml:link rel="alternate" hreflang="ko" href="https://tbh-optimizer.pages.dev/ko/"/>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://tbh-optimizer.pages.dev/pl/"/>
+		<xhtml:link rel="alternate" hreflang="ru" href="https://tbh-optimizer.pages.dev/ru/"/>
+		<xhtml:link rel="alternate" hreflang="th" href="https://tbh-optimizer.pages.dev/th/"/>
+		<xhtml:link rel="alternate" hreflang="tr" href="https://tbh-optimizer.pages.dev/tr/"/>
+		<xhtml:link rel="alternate" hreflang="uk" href="https://tbh-optimizer.pages.dev/uk/"/>
+		<xhtml:link rel="alternate" hreflang="vi" href="https://tbh-optimizer.pages.dev/vi/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hans" href="https://tbh-optimizer.pages.dev/zh-Hans/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tbh-optimizer.pages.dev/zh-Hant/"/>
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://tbh-optimizer.pages.dev/"/>
+	</url>
+	<url>
+		<loc>https://tbh-optimizer.pages.dev/es/</loc>
+		<lastmod>2026-06-11</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.9</priority>
+		<xhtml:link rel="alternate" hreflang="pt-BR" href="https://tbh-optimizer.pages.dev/"/>
+		<xhtml:link rel="alternate" hreflang="de" href="https://tbh-optimizer.pages.dev/de/"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://tbh-optimizer.pages.dev/en/"/>
+		<xhtml:link rel="alternate" hreflang="es" href="https://tbh-optimizer.pages.dev/es/"/>
+		<xhtml:link rel="alternate" hreflang="fr" href="https://tbh-optimizer.pages.dev/fr/"/>
+		<xhtml:link rel="alternate" hreflang="id" href="https://tbh-optimizer.pages.dev/id/"/>
+		<xhtml:link rel="alternate" hreflang="ja" href="https://tbh-optimizer.pages.dev/ja/"/>
+		<xhtml:link rel="alternate" hreflang="ko" href="https://tbh-optimizer.pages.dev/ko/"/>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://tbh-optimizer.pages.dev/pl/"/>
+		<xhtml:link rel="alternate" hreflang="ru" href="https://tbh-optimizer.pages.dev/ru/"/>
+		<xhtml:link rel="alternate" hreflang="th" href="https://tbh-optimizer.pages.dev/th/"/>
+		<xhtml:link rel="alternate" hreflang="tr" href="https://tbh-optimizer.pages.dev/tr/"/>
+		<xhtml:link rel="alternate" hreflang="uk" href="https://tbh-optimizer.pages.dev/uk/"/>
+		<xhtml:link rel="alternate" hreflang="vi" href="https://tbh-optimizer.pages.dev/vi/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hans" href="https://tbh-optimizer.pages.dev/zh-Hans/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tbh-optimizer.pages.dev/zh-Hant/"/>
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://tbh-optimizer.pages.dev/"/>
+	</url>
+	<url>
+		<loc>https://tbh-optimizer.pages.dev/fr/</loc>
+		<lastmod>2026-06-11</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.9</priority>
+		<xhtml:link rel="alternate" hreflang="pt-BR" href="https://tbh-optimizer.pages.dev/"/>
+		<xhtml:link rel="alternate" hreflang="de" href="https://tbh-optimizer.pages.dev/de/"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://tbh-optimizer.pages.dev/en/"/>
+		<xhtml:link rel="alternate" hreflang="es" href="https://tbh-optimizer.pages.dev/es/"/>
+		<xhtml:link rel="alternate" hreflang="fr" href="https://tbh-optimizer.pages.dev/fr/"/>
+		<xhtml:link rel="alternate" hreflang="id" href="https://tbh-optimizer.pages.dev/id/"/>
+		<xhtml:link rel="alternate" hreflang="ja" href="https://tbh-optimizer.pages.dev/ja/"/>
+		<xhtml:link rel="alternate" hreflang="ko" href="https://tbh-optimizer.pages.dev/ko/"/>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://tbh-optimizer.pages.dev/pl/"/>
+		<xhtml:link rel="alternate" hreflang="ru" href="https://tbh-optimizer.pages.dev/ru/"/>
+		<xhtml:link rel="alternate" hreflang="th" href="https://tbh-optimizer.pages.dev/th/"/>
+		<xhtml:link rel="alternate" hreflang="tr" href="https://tbh-optimizer.pages.dev/tr/"/>
+		<xhtml:link rel="alternate" hreflang="uk" href="https://tbh-optimizer.pages.dev/uk/"/>
+		<xhtml:link rel="alternate" hreflang="vi" href="https://tbh-optimizer.pages.dev/vi/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hans" href="https://tbh-optimizer.pages.dev/zh-Hans/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tbh-optimizer.pages.dev/zh-Hant/"/>
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://tbh-optimizer.pages.dev/"/>
+	</url>
+	<url>
+		<loc>https://tbh-optimizer.pages.dev/id/</loc>
+		<lastmod>2026-06-11</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.9</priority>
+		<xhtml:link rel="alternate" hreflang="pt-BR" href="https://tbh-optimizer.pages.dev/"/>
+		<xhtml:link rel="alternate" hreflang="de" href="https://tbh-optimizer.pages.dev/de/"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://tbh-optimizer.pages.dev/en/"/>
+		<xhtml:link rel="alternate" hreflang="es" href="https://tbh-optimizer.pages.dev/es/"/>
+		<xhtml:link rel="alternate" hreflang="fr" href="https://tbh-optimizer.pages.dev/fr/"/>
+		<xhtml:link rel="alternate" hreflang="id" href="https://tbh-optimizer.pages.dev/id/"/>
+		<xhtml:link rel="alternate" hreflang="ja" href="https://tbh-optimizer.pages.dev/ja/"/>
+		<xhtml:link rel="alternate" hreflang="ko" href="https://tbh-optimizer.pages.dev/ko/"/>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://tbh-optimizer.pages.dev/pl/"/>
+		<xhtml:link rel="alternate" hreflang="ru" href="https://tbh-optimizer.pages.dev/ru/"/>
+		<xhtml:link rel="alternate" hreflang="th" href="https://tbh-optimizer.pages.dev/th/"/>
+		<xhtml:link rel="alternate" hreflang="tr" href="https://tbh-optimizer.pages.dev/tr/"/>
+		<xhtml:link rel="alternate" hreflang="uk" href="https://tbh-optimizer.pages.dev/uk/"/>
+		<xhtml:link rel="alternate" hreflang="vi" href="https://tbh-optimizer.pages.dev/vi/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hans" href="https://tbh-optimizer.pages.dev/zh-Hans/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tbh-optimizer.pages.dev/zh-Hant/"/>
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://tbh-optimizer.pages.dev/"/>
+	</url>
+	<url>
+		<loc>https://tbh-optimizer.pages.dev/ja/</loc>
+		<lastmod>2026-06-11</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.9</priority>
+		<xhtml:link rel="alternate" hreflang="pt-BR" href="https://tbh-optimizer.pages.dev/"/>
+		<xhtml:link rel="alternate" hreflang="de" href="https://tbh-optimizer.pages.dev/de/"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://tbh-optimizer.pages.dev/en/"/>
+		<xhtml:link rel="alternate" hreflang="es" href="https://tbh-optimizer.pages.dev/es/"/>
+		<xhtml:link rel="alternate" hreflang="fr" href="https://tbh-optimizer.pages.dev/fr/"/>
+		<xhtml:link rel="alternate" hreflang="id" href="https://tbh-optimizer.pages.dev/id/"/>
+		<xhtml:link rel="alternate" hreflang="ja" href="https://tbh-optimizer.pages.dev/ja/"/>
+		<xhtml:link rel="alternate" hreflang="ko" href="https://tbh-optimizer.pages.dev/ko/"/>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://tbh-optimizer.pages.dev/pl/"/>
+		<xhtml:link rel="alternate" hreflang="ru" href="https://tbh-optimizer.pages.dev/ru/"/>
+		<xhtml:link rel="alternate" hreflang="th" href="https://tbh-optimizer.pages.dev/th/"/>
+		<xhtml:link rel="alternate" hreflang="tr" href="https://tbh-optimizer.pages.dev/tr/"/>
+		<xhtml:link rel="alternate" hreflang="uk" href="https://tbh-optimizer.pages.dev/uk/"/>
+		<xhtml:link rel="alternate" hreflang="vi" href="https://tbh-optimizer.pages.dev/vi/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hans" href="https://tbh-optimizer.pages.dev/zh-Hans/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tbh-optimizer.pages.dev/zh-Hant/"/>
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://tbh-optimizer.pages.dev/"/>
+	</url>
+	<url>
+		<loc>https://tbh-optimizer.pages.dev/ko/</loc>
+		<lastmod>2026-06-11</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.9</priority>
+		<xhtml:link rel="alternate" hreflang="pt-BR" href="https://tbh-optimizer.pages.dev/"/>
+		<xhtml:link rel="alternate" hreflang="de" href="https://tbh-optimizer.pages.dev/de/"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://tbh-optimizer.pages.dev/en/"/>
+		<xhtml:link rel="alternate" hreflang="es" href="https://tbh-optimizer.pages.dev/es/"/>
+		<xhtml:link rel="alternate" hreflang="fr" href="https://tbh-optimizer.pages.dev/fr/"/>
+		<xhtml:link rel="alternate" hreflang="id" href="https://tbh-optimizer.pages.dev/id/"/>
+		<xhtml:link rel="alternate" hreflang="ja" href="https://tbh-optimizer.pages.dev/ja/"/>
+		<xhtml:link rel="alternate" hreflang="ko" href="https://tbh-optimizer.pages.dev/ko/"/>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://tbh-optimizer.pages.dev/pl/"/>
+		<xhtml:link rel="alternate" hreflang="ru" href="https://tbh-optimizer.pages.dev/ru/"/>
+		<xhtml:link rel="alternate" hreflang="th" href="https://tbh-optimizer.pages.dev/th/"/>
+		<xhtml:link rel="alternate" hreflang="tr" href="https://tbh-optimizer.pages.dev/tr/"/>
+		<xhtml:link rel="alternate" hreflang="uk" href="https://tbh-optimizer.pages.dev/uk/"/>
+		<xhtml:link rel="alternate" hreflang="vi" href="https://tbh-optimizer.pages.dev/vi/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hans" href="https://tbh-optimizer.pages.dev/zh-Hans/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tbh-optimizer.pages.dev/zh-Hant/"/>
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://tbh-optimizer.pages.dev/"/>
+	</url>
+	<url>
+		<loc>https://tbh-optimizer.pages.dev/pl/</loc>
+		<lastmod>2026-06-11</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.9</priority>
+		<xhtml:link rel="alternate" hreflang="pt-BR" href="https://tbh-optimizer.pages.dev/"/>
+		<xhtml:link rel="alternate" hreflang="de" href="https://tbh-optimizer.pages.dev/de/"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://tbh-optimizer.pages.dev/en/"/>
+		<xhtml:link rel="alternate" hreflang="es" href="https://tbh-optimizer.pages.dev/es/"/>
+		<xhtml:link rel="alternate" hreflang="fr" href="https://tbh-optimizer.pages.dev/fr/"/>
+		<xhtml:link rel="alternate" hreflang="id" href="https://tbh-optimizer.pages.dev/id/"/>
+		<xhtml:link rel="alternate" hreflang="ja" href="https://tbh-optimizer.pages.dev/ja/"/>
+		<xhtml:link rel="alternate" hreflang="ko" href="https://tbh-optimizer.pages.dev/ko/"/>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://tbh-optimizer.pages.dev/pl/"/>
+		<xhtml:link rel="alternate" hreflang="ru" href="https://tbh-optimizer.pages.dev/ru/"/>
+		<xhtml:link rel="alternate" hreflang="th" href="https://tbh-optimizer.pages.dev/th/"/>
+		<xhtml:link rel="alternate" hreflang="tr" href="https://tbh-optimizer.pages.dev/tr/"/>
+		<xhtml:link rel="alternate" hreflang="uk" href="https://tbh-optimizer.pages.dev/uk/"/>
+		<xhtml:link rel="alternate" hreflang="vi" href="https://tbh-optimizer.pages.dev/vi/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hans" href="https://tbh-optimizer.pages.dev/zh-Hans/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tbh-optimizer.pages.dev/zh-Hant/"/>
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://tbh-optimizer.pages.dev/"/>
+	</url>
+	<url>
+		<loc>https://tbh-optimizer.pages.dev/ru/</loc>
+		<lastmod>2026-06-11</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.9</priority>
+		<xhtml:link rel="alternate" hreflang="pt-BR" href="https://tbh-optimizer.pages.dev/"/>
+		<xhtml:link rel="alternate" hreflang="de" href="https://tbh-optimizer.pages.dev/de/"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://tbh-optimizer.pages.dev/en/"/>
+		<xhtml:link rel="alternate" hreflang="es" href="https://tbh-optimizer.pages.dev/es/"/>
+		<xhtml:link rel="alternate" hreflang="fr" href="https://tbh-optimizer.pages.dev/fr/"/>
+		<xhtml:link rel="alternate" hreflang="id" href="https://tbh-optimizer.pages.dev/id/"/>
+		<xhtml:link rel="alternate" hreflang="ja" href="https://tbh-optimizer.pages.dev/ja/"/>
+		<xhtml:link rel="alternate" hreflang="ko" href="https://tbh-optimizer.pages.dev/ko/"/>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://tbh-optimizer.pages.dev/pl/"/>
+		<xhtml:link rel="alternate" hreflang="ru" href="https://tbh-optimizer.pages.dev/ru/"/>
+		<xhtml:link rel="alternate" hreflang="th" href="https://tbh-optimizer.pages.dev/th/"/>
+		<xhtml:link rel="alternate" hreflang="tr" href="https://tbh-optimizer.pages.dev/tr/"/>
+		<xhtml:link rel="alternate" hreflang="uk" href="https://tbh-optimizer.pages.dev/uk/"/>
+		<xhtml:link rel="alternate" hreflang="vi" href="https://tbh-optimizer.pages.dev/vi/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hans" href="https://tbh-optimizer.pages.dev/zh-Hans/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tbh-optimizer.pages.dev/zh-Hant/"/>
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://tbh-optimizer.pages.dev/"/>
+	</url>
+	<url>
+		<loc>https://tbh-optimizer.pages.dev/th/</loc>
+		<lastmod>2026-06-11</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.9</priority>
+		<xhtml:link rel="alternate" hreflang="pt-BR" href="https://tbh-optimizer.pages.dev/"/>
+		<xhtml:link rel="alternate" hreflang="de" href="https://tbh-optimizer.pages.dev/de/"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://tbh-optimizer.pages.dev/en/"/>
+		<xhtml:link rel="alternate" hreflang="es" href="https://tbh-optimizer.pages.dev/es/"/>
+		<xhtml:link rel="alternate" hreflang="fr" href="https://tbh-optimizer.pages.dev/fr/"/>
+		<xhtml:link rel="alternate" hreflang="id" href="https://tbh-optimizer.pages.dev/id/"/>
+		<xhtml:link rel="alternate" hreflang="ja" href="https://tbh-optimizer.pages.dev/ja/"/>
+		<xhtml:link rel="alternate" hreflang="ko" href="https://tbh-optimizer.pages.dev/ko/"/>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://tbh-optimizer.pages.dev/pl/"/>
+		<xhtml:link rel="alternate" hreflang="ru" href="https://tbh-optimizer.pages.dev/ru/"/>
+		<xhtml:link rel="alternate" hreflang="th" href="https://tbh-optimizer.pages.dev/th/"/>
+		<xhtml:link rel="alternate" hreflang="tr" href="https://tbh-optimizer.pages.dev/tr/"/>
+		<xhtml:link rel="alternate" hreflang="uk" href="https://tbh-optimizer.pages.dev/uk/"/>
+		<xhtml:link rel="alternate" hreflang="vi" href="https://tbh-optimizer.pages.dev/vi/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hans" href="https://tbh-optimizer.pages.dev/zh-Hans/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tbh-optimizer.pages.dev/zh-Hant/"/>
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://tbh-optimizer.pages.dev/"/>
+	</url>
+	<url>
+		<loc>https://tbh-optimizer.pages.dev/tr/</loc>
+		<lastmod>2026-06-11</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.9</priority>
+		<xhtml:link rel="alternate" hreflang="pt-BR" href="https://tbh-optimizer.pages.dev/"/>
+		<xhtml:link rel="alternate" hreflang="de" href="https://tbh-optimizer.pages.dev/de/"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://tbh-optimizer.pages.dev/en/"/>
+		<xhtml:link rel="alternate" hreflang="es" href="https://tbh-optimizer.pages.dev/es/"/>
+		<xhtml:link rel="alternate" hreflang="fr" href="https://tbh-optimizer.pages.dev/fr/"/>
+		<xhtml:link rel="alternate" hreflang="id" href="https://tbh-optimizer.pages.dev/id/"/>
+		<xhtml:link rel="alternate" hreflang="ja" href="https://tbh-optimizer.pages.dev/ja/"/>
+		<xhtml:link rel="alternate" hreflang="ko" href="https://tbh-optimizer.pages.dev/ko/"/>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://tbh-optimizer.pages.dev/pl/"/>
+		<xhtml:link rel="alternate" hreflang="ru" href="https://tbh-optimizer.pages.dev/ru/"/>
+		<xhtml:link rel="alternate" hreflang="th" href="https://tbh-optimizer.pages.dev/th/"/>
+		<xhtml:link rel="alternate" hreflang="tr" href="https://tbh-optimizer.pages.dev/tr/"/>
+		<xhtml:link rel="alternate" hreflang="uk" href="https://tbh-optimizer.pages.dev/uk/"/>
+		<xhtml:link rel="alternate" hreflang="vi" href="https://tbh-optimizer.pages.dev/vi/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hans" href="https://tbh-optimizer.pages.dev/zh-Hans/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tbh-optimizer.pages.dev/zh-Hant/"/>
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://tbh-optimizer.pages.dev/"/>
+	</url>
+	<url>
+		<loc>https://tbh-optimizer.pages.dev/uk/</loc>
+		<lastmod>2026-06-11</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.9</priority>
+		<xhtml:link rel="alternate" hreflang="pt-BR" href="https://tbh-optimizer.pages.dev/"/>
+		<xhtml:link rel="alternate" hreflang="de" href="https://tbh-optimizer.pages.dev/de/"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://tbh-optimizer.pages.dev/en/"/>
+		<xhtml:link rel="alternate" hreflang="es" href="https://tbh-optimizer.pages.dev/es/"/>
+		<xhtml:link rel="alternate" hreflang="fr" href="https://tbh-optimizer.pages.dev/fr/"/>
+		<xhtml:link rel="alternate" hreflang="id" href="https://tbh-optimizer.pages.dev/id/"/>
+		<xhtml:link rel="alternate" hreflang="ja" href="https://tbh-optimizer.pages.dev/ja/"/>
+		<xhtml:link rel="alternate" hreflang="ko" href="https://tbh-optimizer.pages.dev/ko/"/>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://tbh-optimizer.pages.dev/pl/"/>
+		<xhtml:link rel="alternate" hreflang="ru" href="https://tbh-optimizer.pages.dev/ru/"/>
+		<xhtml:link rel="alternate" hreflang="th" href="https://tbh-optimizer.pages.dev/th/"/>
+		<xhtml:link rel="alternate" hreflang="tr" href="https://tbh-optimizer.pages.dev/tr/"/>
+		<xhtml:link rel="alternate" hreflang="uk" href="https://tbh-optimizer.pages.dev/uk/"/>
+		<xhtml:link rel="alternate" hreflang="vi" href="https://tbh-optimizer.pages.dev/vi/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hans" href="https://tbh-optimizer.pages.dev/zh-Hans/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tbh-optimizer.pages.dev/zh-Hant/"/>
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://tbh-optimizer.pages.dev/"/>
+	</url>
+	<url>
+		<loc>https://tbh-optimizer.pages.dev/vi/</loc>
+		<lastmod>2026-06-11</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.9</priority>
+		<xhtml:link rel="alternate" hreflang="pt-BR" href="https://tbh-optimizer.pages.dev/"/>
+		<xhtml:link rel="alternate" hreflang="de" href="https://tbh-optimizer.pages.dev/de/"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://tbh-optimizer.pages.dev/en/"/>
+		<xhtml:link rel="alternate" hreflang="es" href="https://tbh-optimizer.pages.dev/es/"/>
+		<xhtml:link rel="alternate" hreflang="fr" href="https://tbh-optimizer.pages.dev/fr/"/>
+		<xhtml:link rel="alternate" hreflang="id" href="https://tbh-optimizer.pages.dev/id/"/>
+		<xhtml:link rel="alternate" hreflang="ja" href="https://tbh-optimizer.pages.dev/ja/"/>
+		<xhtml:link rel="alternate" hreflang="ko" href="https://tbh-optimizer.pages.dev/ko/"/>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://tbh-optimizer.pages.dev/pl/"/>
+		<xhtml:link rel="alternate" hreflang="ru" href="https://tbh-optimizer.pages.dev/ru/"/>
+		<xhtml:link rel="alternate" hreflang="th" href="https://tbh-optimizer.pages.dev/th/"/>
+		<xhtml:link rel="alternate" hreflang="tr" href="https://tbh-optimizer.pages.dev/tr/"/>
+		<xhtml:link rel="alternate" hreflang="uk" href="https://tbh-optimizer.pages.dev/uk/"/>
+		<xhtml:link rel="alternate" hreflang="vi" href="https://tbh-optimizer.pages.dev/vi/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hans" href="https://tbh-optimizer.pages.dev/zh-Hans/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tbh-optimizer.pages.dev/zh-Hant/"/>
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://tbh-optimizer.pages.dev/"/>
+	</url>
+	<url>
+		<loc>https://tbh-optimizer.pages.dev/zh-Hans/</loc>
+		<lastmod>2026-06-11</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.9</priority>
+		<xhtml:link rel="alternate" hreflang="pt-BR" href="https://tbh-optimizer.pages.dev/"/>
+		<xhtml:link rel="alternate" hreflang="de" href="https://tbh-optimizer.pages.dev/de/"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://tbh-optimizer.pages.dev/en/"/>
+		<xhtml:link rel="alternate" hreflang="es" href="https://tbh-optimizer.pages.dev/es/"/>
+		<xhtml:link rel="alternate" hreflang="fr" href="https://tbh-optimizer.pages.dev/fr/"/>
+		<xhtml:link rel="alternate" hreflang="id" href="https://tbh-optimizer.pages.dev/id/"/>
+		<xhtml:link rel="alternate" hreflang="ja" href="https://tbh-optimizer.pages.dev/ja/"/>
+		<xhtml:link rel="alternate" hreflang="ko" href="https://tbh-optimizer.pages.dev/ko/"/>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://tbh-optimizer.pages.dev/pl/"/>
+		<xhtml:link rel="alternate" hreflang="ru" href="https://tbh-optimizer.pages.dev/ru/"/>
+		<xhtml:link rel="alternate" hreflang="th" href="https://tbh-optimizer.pages.dev/th/"/>
+		<xhtml:link rel="alternate" hreflang="tr" href="https://tbh-optimizer.pages.dev/tr/"/>
+		<xhtml:link rel="alternate" hreflang="uk" href="https://tbh-optimizer.pages.dev/uk/"/>
+		<xhtml:link rel="alternate" hreflang="vi" href="https://tbh-optimizer.pages.dev/vi/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hans" href="https://tbh-optimizer.pages.dev/zh-Hans/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tbh-optimizer.pages.dev/zh-Hant/"/>
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://tbh-optimizer.pages.dev/"/>
+	</url>
+	<url>
+		<loc>https://tbh-optimizer.pages.dev/zh-Hant/</loc>
+		<lastmod>2026-06-11</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.9</priority>
+		<xhtml:link rel="alternate" hreflang="pt-BR" href="https://tbh-optimizer.pages.dev/"/>
+		<xhtml:link rel="alternate" hreflang="de" href="https://tbh-optimizer.pages.dev/de/"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://tbh-optimizer.pages.dev/en/"/>
+		<xhtml:link rel="alternate" hreflang="es" href="https://tbh-optimizer.pages.dev/es/"/>
+		<xhtml:link rel="alternate" hreflang="fr" href="https://tbh-optimizer.pages.dev/fr/"/>
+		<xhtml:link rel="alternate" hreflang="id" href="https://tbh-optimizer.pages.dev/id/"/>
+		<xhtml:link rel="alternate" hreflang="ja" href="https://tbh-optimizer.pages.dev/ja/"/>
+		<xhtml:link rel="alternate" hreflang="ko" href="https://tbh-optimizer.pages.dev/ko/"/>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://tbh-optimizer.pages.dev/pl/"/>
+		<xhtml:link rel="alternate" hreflang="ru" href="https://tbh-optimizer.pages.dev/ru/"/>
+		<xhtml:link rel="alternate" hreflang="th" href="https://tbh-optimizer.pages.dev/th/"/>
+		<xhtml:link rel="alternate" hreflang="tr" href="https://tbh-optimizer.pages.dev/tr/"/>
+		<xhtml:link rel="alternate" hreflang="uk" href="https://tbh-optimizer.pages.dev/uk/"/>
+		<xhtml:link rel="alternate" hreflang="vi" href="https://tbh-optimizer.pages.dev/vi/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hans" href="https://tbh-optimizer.pages.dev/zh-Hans/"/>
+		<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tbh-optimizer.pages.dev/zh-Hant/"/>
+		<xhtml:link rel="alternate" hreflang="x-default" href="https://tbh-optimizer.pages.dev/"/>
 	</url>
 	<url>
 		<loc>https://tbh-optimizer.pages.dev/privacy.html</loc>
