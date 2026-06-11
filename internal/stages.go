@@ -106,9 +106,12 @@ func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
 			if calibrated {
 				estTime := estimateTimeDPS(dps, overhead, info.TotalHP, float64(info.Waves))
 				if estTime > 0 {
-					st.AvgGoldPerHour = (info.ExpectedGold * goldMultiplier / estTime) * 3600.0
+					st.AvgTimeSpent = estTime
+					st.AvgGoldPerRun = info.ExpectedGold * goldMultiplier
+					st.AvgGoldPerHour = (st.AvgGoldPerRun / estTime) * 3600.0
 					if numHeroes > 0 {
-						st.AvgXpPerHour = (info.ExpectedEXP * xpMultiplier * retNow / float64(numHeroes) / estTime) * 3600.0
+						st.AvgXpPerRun = info.ExpectedEXP * xpMultiplier * retNow
+						st.AvgXpPerHour = (st.AvgXpPerRun / float64(numHeroes) / estTime) * 3600.0
 					}
 				}
 			}
@@ -117,6 +120,7 @@ func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
 		retThen := expRetention(info.Level, st.MeasuredHeroLevel)
 		if retThen > 0 && retNow != retThen {
 			st.AvgXpPerHour *= retNow / retThen
+			st.AvgXpPerRun *= retNow / retThen
 		}
 	}
 

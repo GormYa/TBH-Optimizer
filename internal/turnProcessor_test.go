@@ -658,3 +658,117 @@ func TestNormalClearOnNewStagePassesXpCeiling(t *testing.T) {
 		t.Fatalf("xp registrado = %.0f, esperado 610000", s.AvgXpPerRun)
 	}
 }
+
+// trackMidWave: waves subindo no mesmo mapa = janela limpa; mapa diferente marca
+// janela mista; wave RECUANDO no mesmo mapa marca reinicio (morte/recomeco).
+func TestTrackMidWave(t *testing.T) {
+	ctrl := &Control{}
+
+	ctrl.trackMidWave(2206, 3)
+	ctrl.trackMidWave(2206, 9)
+	ctrl.trackMidWave(2206, 15)
+	if ctrl.midWindowMixed || ctrl.midWindowRestart {
+		t.Fatalf("waves subindo no mesmo mapa não deveriam marcar nada; mixed=%v restart=%v", ctrl.midWindowMixed, ctrl.midWindowRestart)
+	}
+
+	ctrl.trackMidWave(2206, 4) // recuou 15 -> 4: a fase reiniciou
+	if !ctrl.midWindowRestart {
+		t.Fatal("wave recuando no mesmo mapa deveria marcar reinício")
+	}
+
+	ctrl2 := &Control{}
+	ctrl2.trackMidWave(2206, 10)
+	ctrl2.trackMidWave(2207, 2) // outro mapa: mistura, mas nao e reinicio
+	if !ctrl2.midWindowMixed {
+		t.Fatal("mapa diferente na mesma janela deveria marcar mistura")
+	}
+	if ctrl2.midWindowRestart {
+		t.Fatal("trocar de mapa não é reinício de wave")
+	}
+}
+
+// MORTE VISTA PELA WAVE: o save de meio de ciclo mostrou wave 20 e depois wave 4 no
+// MESMO mapa -> a fase reiniciou (morte). A janela do wave 0 soma as tentativas e
+// nao pode entrar na media, mesmo com ouro/xp/tempo dentro das outras travas.
+func TestWaveRegressionDiscardsDeathWindow(t *testing.T) {
+	old, _ := os.Getwd()
+	if err := os.Chdir(t.TempDir()); err != nil {
+		t.Fatal(err)
+	}
+	defer os.Chdir(old)
+
+	const stage = 2206
+	ctrl := Control{
+		UseEMA: true, EMAAlpha: 0.2,
+		FarmStages:          map[int]FarmStageInfo{stage: {Key: stage, TotalHP: 100000, ExpectedGold: 4000, ExpectedEXP: 60000, Waves: 24, Level: 53}},
+		HeroStates:          map[int]HeroState{201: {Level: 55, Xp: 1000}},
+		ActiveHeroCount:     1,
+		HeroLevel:           55,
+		LastCurrentStageKey: stage,
+		LastPlayTime:        1000,
+		LastGold:            500,
+	}
+	for range 3 {
+		ctrl.StageHistory.Update(stage, 250, 10000, 500000, true, 0.2, 1, 55, 0, nil)
+	}
+
+	ctrl.trackMidWave(stage, 20)
+	ctrl.trackMidWave(stage, 4) // morreu na 20, recomecou
+
+	// janela de 700s (2 tentativas + clear), ganhos que passariam nas outras travas
+	calculateAndLogRound(&ctrl, newClearSave(stage, 1700, 12000, 201, 55, 1000+900000))
+
+	if s, _ := ctrl.StageHistory.Get(stage); s.TotalRuns != 3 {
+		t.Fatalf("janela com reinício de wave deveria ser descartada; runs=%d (esperado 3)", s.TotalRuns)
+	}
+	if ctrl.LastPlayTime != 1700 {
+		t.Fatalf("descarte deveria re-sincronizar o relógio (1700), foi %.0f", ctrl.LastPlayTime)
+	}
+	if ctrl.midWindowRestart || ctrl.midWindowMaxWave != 0 {
+		t.Fatal("os marcadores de wave deveriam zerar ao fechar a janela")
+	}
+}
+
+// COMPRA + MORTE EM FASE ESTABELECIDA: ouro negativo (compra de runa) desliga o
+// piso/teto de ouro, mas o xp 3x a media propria entrega a janela com tentativas
+// multiplas -> descarta. E o caso do 3-9 numa fase que JA tem historico.
+func TestNegativeGoldWithInflatedXpRejected(t *testing.T) {
+	old, _ := os.Getwd()
+	if err := os.Chdir(t.TempDir()); err != nil {
+		t.Fatal(err)
+	}
+	defer os.Chdir(old)
+
+	const stage = 2206
+	ctrl := Control{
+		UseEMA: true, EMAAlpha: 0.2,
+		FarmStages:          map[int]FarmStageInfo{stage: {Key: stage, TotalHP: 100000, ExpectedGold: 4000, ExpectedEXP: 60000, Waves: 24, Level: 53}},
+		HeroStates:          map[int]HeroState{201: {Level: 55, Xp: 1000}},
+		ActiveHeroCount:     1,
+		HeroLevel:           55,
+		LastCurrentStageKey: stage,
+		LastPlayTime:        1000,
+		LastGold:            20000000,
+	}
+	for range 3 {
+		ctrl.StageHistory.Update(stage, 250, 10000, 500000, true, 0.2, 1, 55, 0, nil)
+	}
+
+	// 700s, ouro -12M (compra), xp 1.5M (3x a média de 500k) -> descarta
+	calculateAndLogRound(&ctrl, newClearSave(stage, 1700, 20000000-12000000, 201, 55, 1000+1500000))
+
+	if s, _ := ctrl.StageHistory.Get(stage); s.TotalRuns != 3 {
+		t.Fatalf("compra escondendo morte deveria ser descartada; runs=%d (esperado 3)", s.TotalRuns)
+	}
+	if ctrl.LastPlayTime != 1700 {
+		t.Fatalf("descarte deveria re-sincronizar o relógio (1700), foi %.0f", ctrl.LastPlayTime)
+	}
+
+	// Compra LEGITIMA (xp normal ~1x) continua contando com o ouro neutralizado.
+	calculateAndLogRound(&ctrl, newClearSave(stage, 1955, 8000000-30000, 201, 55, 1000+1500000+510000))
+
+	s, _ := ctrl.StageHistory.Get(stage)
+	if s.TotalRuns != 4 {
+		t.Fatalf("compra com xp normal deveria contar; runs=%d (esperado 4)", s.TotalRuns)
+	}
+}

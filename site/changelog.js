@@ -8,6 +8,16 @@ window.CHANGELOG = {
 	entries: [
         {
             date: "11/06/2026",
+            version: "v1.0.30",
+            title: "Casos de morte agora tem fallback para não inflar o tempo",
+            items: [
+                "Detecção direta de morte pela wave: se a wave recuar no mesmo mapa dentro do ciclo (a fase reiniciou), a janela é descartada — funciona em qualquer fase, com ou sem histórico.",
+                "Compra de runa no meio do ciclo não esconde mais uma morte em fase já medida: XP muito acima da média própria descarta a janela em vez de só neutralizar o ouro.",
+                "Fases com etiqueta \"antiga\" agora mostram tempo, ganho por corrida e ganho por hora contando a mesma história (tudo reprojetado pro seu nível atual) — antes o por corrida exibia a medição velha ao lado de um por hora recalculado.",
+            ],
+        },
+        {
+            date: "11/06/2026",
             version: "v1.0.29",
             title: "Detecção de troca de mapa ainda mais esperta",
             items: [

@@ -102,6 +102,8 @@ type Control struct {
 	lastMidStage        int
 	midWindowStage      int
 	midWindowMixed      bool
+	midWindowMaxWave    int
+	midWindowRestart    bool
 	primeFirstClear     bool
 	Gold                int
 	RuneLevels          map[int]int

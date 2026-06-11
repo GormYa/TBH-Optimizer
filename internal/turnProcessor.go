@@ -134,10 +134,7 @@ func processSaveChange(ctrl *Control) {
 	ctrl.ActivePet = currentSave.CommonSaveData.ArrangedPetKey
 	if currentSave.CommonSaveData.CurrentStageWave != 0 {
 		stg := currentSave.CommonSaveData.CurrentStageKey
-		if ctrl.midWindowStage != 0 && ctrl.midWindowStage != stg {
-			ctrl.midWindowMixed = true
-		}
-		ctrl.midWindowStage = stg
+		ctrl.trackMidWave(stg, currentSave.CommonSaveData.CurrentStageWave)
 		if stg != ctrl.lastMidStage {
 			ctrl.lastMidStage = stg
 			total := 0
@@ -156,6 +153,23 @@ func processSaveChange(ctrl *Control) {
 	calculateAndLogRound(ctrl, currentSave)
 }
 
+func (ctrl *Control) trackMidWave(stg, wave int) {
+	if ctrl.midWindowStage == stg {
+		if wave < ctrl.midWindowMaxWave {
+			ctrl.midWindowRestart = true
+		}
+	} else {
+		if ctrl.midWindowStage != 0 {
+			ctrl.midWindowMixed = true
+		}
+		ctrl.midWindowStage = stg
+		ctrl.midWindowMaxWave = 0
+	}
+	if wave > ctrl.midWindowMaxWave {
+		ctrl.midWindowMaxWave = wave
+	}
+}
+
 func loadSaveWithRetry() (*InnerSaveData, error) {
 	var currentSave *InnerSaveData
 	var err error
@@ -170,10 +184,6 @@ func loadSaveWithRetry() (*InnerSaveData, error) {
 	return nil, err
 }
 
-// isValidRound faz as checagens de sanidade da janela medida: tempo minimo,
-// ganhos nao-negativos E ganho real (>0). Uma conclusao de fase sempre concede
-// ouro/xp; um save em wave 0 SEM conclusao (autosave ocioso, tela de selecao ao
-// abrir o app) tem ganho zero -> nao e corrida, nao deve inflar a contagem.
 func isValidRound(timeSpent float64, goldGain int, xpGain float64) bool {
 	if timeSpent < 3 || xpGain < 0 {
 		return false
@@ -181,25 +191,12 @@ func isValidRound(timeSpent float64, goldGain int, xpGain float64) bool {
 	return xpGain > 0 || goldGain > 0
 }
 
-// timeOutlierFactor: descarta a corrida se o tempo medido passar deste fator
-// vezes o tempo estimado da fase (pega o tempo inflado da troca manual de mapa).
 const timeOutlierFactor = 3.0
 
-// goldFloorFactor: descarta a corrida se o ouro ficar abaixo deste fator vezes a
-// media da fase. Pega MORTE / clear parcial (o ganho parcial fica, mas e bem
-// menor que um clear real). So aplica quando a fase ja tem historico.
 const goldFloorFactor = 0.5
 
-// goldCeilFactor: descarta a corrida se o ouro passar deste fator vezes a media da
-// fase. Pega ganho de ouro que NAO veio do farm (venda de itens, baus grandes, bonus)
-// e que senao inflaria a media/h (ex.: um pico de 11M puxando a media movel pra 3M).
 const goldCeilFactor = 3.0
 
-// expectedClearGold devolve o ouro esperado de um clear SÓ a partir da média própria
-// da fase (>=3 corridas). Sem histórico próprio -> 0 (sem piso). O piso de cold-start
-// via ExpectedGold x multiplicador errava feio entre dificuldades (ex.: esperar 1,5M
-// numa Nightmare 1-5 que dá 41k) e descartava clears reais. Igual à trava de tempo:
-// não julgamos uma fase nova com extrapolação de outras.
 func expectedClearGold(ownAvg float64, ownRuns int) float64 {
 	if ownRuns >= 3 && ownAvg > 0 {
 		return ownAvg
@@ -243,10 +240,6 @@ func (ctrl *Control) projectedClearXp(stage int) float64 {
 	return info.ExpectedEXP * xm * expRetention(info.Level, ctrl.HeroLevel)
 }
 
-// estimatedRunTime estima quanto uma fase deveria levar (segundos). Prioriza o
-// historico proprio da fase (>=3 corridas); senao extrapola por HP a partir de
-// uma fase de referencia ja medida (tempo ~ proporcional ao HP total). Retorna 0
-// quando nao ha base de comparacao alguma.
 func estimatedRunTime(ownAvg float64, ownRuns int, stageHP, refHP, refAvg float64) float64 {
 	if ownRuns >= 3 && ownAvg > 0 {
 		return ownAvg
@@ -257,11 +250,6 @@ func estimatedRunTime(ownAvg float64, ownRuns int, stageHP, refHP, refAvg float6
 	return 0
 }
 
-// isTimeTrustworthy decide se o tempo da janela e confiavel. Com estimativa
-// disponivel, confia enquanto timeSpent <= fator*estimativa: o auto-avanco (tempo
-// normal) passa e a troca manual de mapa (tempo inflado pela decisao/ocioso) cai.
-// Sem estimativa, so confia se a fase NAO mudou -- a 1a corrida apos uma troca
-// carrega o tempo da transicao e e descartada.
 func isTimeTrustworthy(timeSpent, estTime, factor float64, stageChanged bool) bool {
 	if estTime > 0 {
 		return timeSpent <= factor*estTime
@@ -269,11 +257,6 @@ func isTimeTrustworthy(timeSpent, estTime, factor float64, stageChanged bool) bo
 	return !stageChanged
 }
 
-// estimateStageTime estima o tempo de clear da fase. Prioriza o historico proprio
-// (>=3 corridas); senao ajusta o modelo tempo = a*HP + b*ondas sobre as fases ja
-// medidas e extrapola por HP. Esse fallback e o que permite validar um clear de
-// AUTO-AVANCO numa fase ainda sem historico (a banda de tempo separa o avanco limpo
-// da troca manual com ociosidade). 0 quando nao ha base alguma.
 func (ctrl *Control) estimateStageTime(stage int) float64 {
 	if s, ok := ctrl.StageHistory.Get(stage); ok && s.TotalRuns >= 3 && s.AvgTimeSpent > 0 {
 		return s.AvgTimeSpent
@@ -370,6 +353,8 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 		commitHeroStates(currentSave.HeroSaveDatas, ctrl.HeroStates)
 		ctrl.midWindowStage = 0
 		ctrl.midWindowMixed = false
+		ctrl.midWindowMaxWave = 0
+		ctrl.midWindowRestart = false
 	}
 
 	if !isValidRound(timeSpent, goldGain, xpGain) {
@@ -394,6 +379,12 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 		witness := ctrl.midWindowStage
 		advanceClock()
 		Logf("reject", "Fase %s descartada: durante o ciclo o jogo esteve em %s — troca manual de mapa no meio da janela (não auto-avanço). Re-sincronizando.", ctrl.stageDisplay(clearedStage), ctrl.stageDisplay(witness))
+		return
+	}
+
+	if ctrl.midWindowRestart {
+		advanceClock()
+		Logf("reject", "Fase %s descartada: a wave recuou no meio da janela — a fase reiniciou (morte/recomeço), o tempo soma tentativas e não um clear só. Re-sincronizando.", ctrl.stageDisplay(clearedStage))
 		return
 	}
 
@@ -432,6 +423,11 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 
 	goldRec := float64(goldGain)
 	if goldGain < 0 {
+		if xpFloor := ctrl.estimateClearXp(clearedStage); xpFloor > 0 && xpGain > xpCeilFactor*xpFloor {
+			advanceClock()
+			Logf("reject", "Fase %s descartada: ouro negativo (compra no meio) E +%.0f xp (%.1fx a média de um clear) — janela com mortes/tentativas múltiplas escondida pela compra. Re-sincronizando.", ctrl.stageDisplay(clearedStage), xpGain, xpGain/xpFloor)
+			return
+		}
 		if s, ok := ctrl.StageHistory.Get(clearedStage); ok {
 			goldRec = s.AvgGoldPerRun
 		} else {
