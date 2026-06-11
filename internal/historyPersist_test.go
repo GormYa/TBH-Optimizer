@@ -41,6 +41,12 @@ func TestStageHistoryPersistRoundTrip(t *testing.T) {
 	if sb.AccumulatedTime != sa.AccumulatedTime {
 		t.Errorf("AccumulatedTime: got %v want %v", sb.AccumulatedTime, sa.AccumulatedTime)
 	}
+	// O carimbo de nivel e o que separa fase medida de fase "antiga". Perde-lo no
+	// restart marcava TODAS as fases como antigas e zerava as amostras do
+	// multiplicador de XP -> xp/h reprojetado sem base depois de cada auto-update.
+	if sb.MeasuredHeroLevel != 40 {
+		t.Errorf("MeasuredHeroLevel: got %d want 40 (carimbo perdido no round-trip)", sb.MeasuredHeroLevel)
+	}
 }
 
 // Arquivo inexistente (primeiro boot) nao e erro: comeca com historico vazio.

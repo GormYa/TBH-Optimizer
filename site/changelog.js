@@ -8,6 +8,14 @@ window.CHANGELOG = {
 	entries: [
         {
             date: "11/06/2026",
+            version: "v1.0.31",
+            title: "Hotfix — fases não viram mais \"antiga\" ao reiniciar o app",
+            items: [
+                "Corrigido: reiniciar o app (ex.: auto-update) marcava TODAS as fases como \"antiga\" e derrubava o XP/h pra valores sem base — o nível em que cada fase foi medida não estava sendo salvo no histórico em disco e se perdia a cada restart. A primeira corrida em cada fase re-carimba e normaliza tudo.",
+            ],
+        },
+        {
+            date: "11/06/2026",
             version: "v1.0.30",
             title: "Casos de morte agora tem fallback para não inflar o tempo",
             items: [
