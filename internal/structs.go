@@ -49,25 +49,25 @@ type HeroState struct {
 	Xp    float64
 }
 type StageStats struct {
-	StageKey         int         `json:"stage_key"`
-	TotalRuns        int         `json:"total_runs"`
-	ManualTime       float64     `json:"manual_time"`
-	AvgTimeSpent     float64     `json:"avg_time_spent"`
-	AvgGoldPerRun    float64     `json:"avg_gold_per_run"`
-	AvgGoldPerHour   float64     `json:"avg_gold_per_hour"`
-	RawGoldPerHour   float64     `json:"raw_gold_per_hour"`
-	AvgXpPerRun      float64     `json:"avg_xp_per_run"`
-	AvgXpPerHour     float64     `json:"avg_xp_per_hour"`
-	RawXpPerHour     float64     `json:"raw_xp_per_hour"`
-	AvgItemsPerHour  float64     `json:"avg_items_per_hour"`
-	ExpRetained      float64     `json:"exp_retained"`
-	MeasuredHeroLevel int        `json:"measured_hero_level"`
-	Stale            bool        `json:"stale"`
-	ItemCatalog      map[int]int `json:"item_catalog"`
-	AccumulatedGold  float64     `json:"-"`
-	AccumulatedXp    float64     `json:"-"`
-	AccumulatedTime  float64     `json:"-"`
-	AccumulatedItems float64     `json:"-"`
+	StageKey          int         `json:"stage_key"`
+	TotalRuns         int         `json:"total_runs"`
+	ManualTime        float64     `json:"manual_time"`
+	AvgTimeSpent      float64     `json:"avg_time_spent"`
+	AvgGoldPerRun     float64     `json:"avg_gold_per_run"`
+	AvgGoldPerHour    float64     `json:"avg_gold_per_hour"`
+	RawGoldPerHour    float64     `json:"raw_gold_per_hour"`
+	AvgXpPerRun       float64     `json:"avg_xp_per_run"`
+	AvgXpPerHour      float64     `json:"avg_xp_per_hour"`
+	RawXpPerHour      float64     `json:"raw_xp_per_hour"`
+	AvgItemsPerHour   float64     `json:"avg_items_per_hour"`
+	ExpRetained       float64     `json:"exp_retained"`
+	MeasuredHeroLevel int         `json:"measured_hero_level"`
+	Stale             bool        `json:"stale"`
+	ItemCatalog       map[int]int `json:"item_catalog"`
+	AccumulatedGold   float64     `json:"-"`
+	AccumulatedXp     float64     `json:"-"`
+	AccumulatedTime   float64     `json:"-"`
+	AccumulatedItems  float64     `json:"-"`
 }
 
 type FarmStageInfo struct {
@@ -100,6 +100,8 @@ type Control struct {
 	ActiveHeroCount     int
 	ActiveHeroes        []ActiveHero
 	lastMidStage        int
+	midWindowStage      int
+	midWindowMixed      bool
 	primeFirstClear     bool
 	Gold                int
 	RuneLevels          map[int]int

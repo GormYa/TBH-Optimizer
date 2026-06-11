@@ -17,7 +17,7 @@ func LoadFarmStages(data []byte) (map[int]FarmStageInfo, error) {
 }
 
 func yieldMultipliers(stats []StageStats, farm map[int]FarmStageInfo) (gold, xp float64) {
-	var gm, xm []float64
+	var gm []float64
 	for _, st := range stats {
 		if st.TotalRuns < 3 {
 			continue
@@ -29,7 +29,23 @@ func yieldMultipliers(stats []StageStats, farm map[int]FarmStageInfo) (gold, xp 
 		if info.ExpectedGold > 0 {
 			gm = append(gm, st.AvgGoldPerRun/info.ExpectedGold)
 		}
-		if st.MeasuredHeroLevel <= 0 || info.ExpectedEXP <= 0 {
+	}
+	gold = 1.0
+	if len(gm) > 0 {
+		gold = median(gm)
+	}
+	xp, _ = xpMultiplierMeasured(stats, farm)
+	return
+}
+
+func xpMultiplierMeasured(stats []StageStats, farm map[int]FarmStageInfo) (float64, bool) {
+	var xm []float64
+	for _, st := range stats {
+		if st.TotalRuns < 3 || st.MeasuredHeroLevel <= 0 {
+			continue
+		}
+		info, ok := farm[st.StageKey]
+		if !ok || info.ExpectedEXP <= 0 {
 			continue
 		}
 		retThen := expRetention(info.Level, st.MeasuredHeroLevel)
@@ -37,14 +53,10 @@ func yieldMultipliers(stats []StageStats, farm map[int]FarmStageInfo) (gold, xp 
 			xm = append(xm, st.AvgXpPerRun/(info.ExpectedEXP*retThen))
 		}
 	}
-	gold, xp = 1.0, 1.0
-	if len(gm) > 0 {
-		gold = median(gm)
+	if len(xm) == 0 {
+		return 1.0, false
 	}
-	if len(xm) > 0 {
-		xp = median(xm)
-	}
-	return
+	return median(xm), true
 }
 
 func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {

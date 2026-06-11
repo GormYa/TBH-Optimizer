@@ -8,6 +8,16 @@ window.CHANGELOG = {
 	entries: [
         {
             date: "11/06/2026",
+            version: "v1.0.29",
+            title: "Detecção de troca de mapa ainda mais esperta",
+            items: [
+                "Trocar de mapa no meio do ciclo não é mais confundido com auto-avanço: os saves de meio de ciclo agora servem de testemunha de onde as waves realmente rodaram, e janelas que misturam mapas são descartadas em vez de creditar a corrida no mapa errado.",
+                "Saves atrasados logo após uma troca de mapa (ex.: uma \"corrida\" de 6 segundos com a recompensa do mapa anterior) não viram mais corrida em fases sem histórico — o tempo estimado da fase agora também serve de piso.",
+                "Morrer numa fase nova não infla mais a média: uma janela com falhas + clear rende um múltiplo do XP de um clear só, e agora isso é detectado comparando com o XP projetado pelas outras fases medidas — mesmo quando uma compra de runa no meio esconde o ouro.",
+            ],
+        },
+        {
+            date: "11/06/2026",
             version: "v1.0.28",
             title: "Atualizações no site",
             items: [

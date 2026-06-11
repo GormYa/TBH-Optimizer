@@ -143,6 +143,9 @@ func TestAutoAdvanceCreditsPreviousStage(t *testing.T) {
 		LastGold:            500,
 	}
 
+	// saves de meio de ciclo viram as waves rodando no PROPRIO sA (auto-avanco real)
+	ctrl.midWindowStage = sA
+
 	// save de wave 0 ja com sB (auto-avancou), ciclo de 267s
 	calculateAndLogRound(&ctrl, newClearSave(sB, 1267, 60000, 201, 33, 4000000))
 
@@ -485,5 +488,173 @@ func TestFragmentRejectedAndBaselineKept(t *testing.T) {
 	s, _ = ctrl.StageHistory.Get(stage)
 	if s.TotalRuns != 2 {
 		t.Fatalf("clear real apos fragmento nao registrou (runs=%d, esperado 2)", s.TotalRuns)
+	}
+}
+
+// TROCA MANUAL DISFARCADA DE AUTO-AVANCO: o jogador comeca sA, troca pra sB no meio
+// e conclui sB. O save de wave 0 chega identico a um auto-avanco sA->sB, mas os saves
+// de meio de ciclo (testemunha) mostraram as waves rodando em sB -- a janela mistura
+// tempo dos dois mapas e nao pode ser creditada em sA (nem em sB).
+func TestMidWindowWitnessRejectsFakeAutoAdvance(t *testing.T) {
+	old, _ := os.Getwd()
+	if err := os.Chdir(t.TempDir()); err != nil {
+		t.Fatal(err)
+	}
+	defer os.Chdir(old)
+
+	const sA, sB = 2206, 2207
+	ctrl := Control{
+		UseEMA: true, EMAAlpha: 0.2,
+		FarmStages: map[int]FarmStageInfo{
+			sA: {Key: sA, TotalHP: 100000, ExpectedGold: 4000, ExpectedEXP: 60000, Waves: 17, Level: 30},
+			sB: {Key: sB, TotalHP: 110000, ExpectedGold: 4200, ExpectedEXP: 62000, Waves: 17, Level: 31},
+		},
+		HeroStates:          map[int]HeroState{201: {Level: 33, Xp: 0}},
+		ActiveHeroCount:     1,
+		HeroLevel:           33,
+		LastCurrentStageKey: sA,
+		LastPlayTime:        1000,
+		LastGold:            500,
+	}
+	ctrl.midWindowStage = sB // save de meio de ciclo viu as waves rodando em sB
+
+	calculateAndLogRound(&ctrl, newClearSave(sB, 1256, 60000, 201, 33, 4000000))
+
+	if a, ok := ctrl.StageHistory.Get(sA); ok && a.TotalRuns > 0 {
+		t.Fatalf("janela mista não deveria creditar sA; runs=%d", a.TotalRuns)
+	}
+	if b, ok := ctrl.StageHistory.Get(sB); ok && b.TotalRuns > 0 {
+		t.Fatalf("janela mista não deveria creditar sB; runs=%d", b.TotalRuns)
+	}
+	if ctrl.LastPlayTime != 1256 {
+		t.Fatalf("descarte deveria re-sincronizar o relógio (1256), foi %.0f", ctrl.LastPlayTime)
+	}
+	if ctrl.midWindowStage != 0 || ctrl.midWindowMixed {
+		t.Fatal("testemunha deveria zerar ao fechar a janela")
+	}
+
+	// Janela que viu DOIS mapas no meio (sA -> sB -> volta pra sA e conclui): mesmo
+	// com o wave-0 no proprio sA, a mistura descarta.
+	ctrl.LastCurrentStageKey = sA
+	ctrl.midWindowStage = sA
+	ctrl.midWindowMixed = true
+	calculateAndLogRound(&ctrl, newClearSave(sA, 1556, 120000, 201, 33, 8000000))
+	if a, ok := ctrl.StageHistory.Get(sA); ok && a.TotalRuns > 0 {
+		t.Fatalf("janela com mapas misturados não deveria creditar sA; runs=%d", a.TotalRuns)
+	}
+}
+
+// FANTASMA POS-RESYNC: depois de uma troca manual descartada, um save atrasado chega
+// segundos depois com ganhos (recompensa do mapa anterior creditada tarde) numa fase
+// SEM historico proprio. Sem media propria, o piso anti-fragmento usa o tempo estimado
+// por regressao: 6s nao e uma corrida -- descarta e re-sincroniza (nao soma no proximo
+// ciclo, que herdaria xp de outro mapa).
+func TestGhostFragmentOnNewStageDiscarded(t *testing.T) {
+	old, _ := os.Getwd()
+	if err := os.Chdir(t.TempDir()); err != nil {
+		t.Fatal(err)
+	}
+	defer os.Chdir(old)
+
+	const s1, s2, sNew = 2206, 2208, 2307
+	ctrl := Control{
+		UseEMA: true, EMAAlpha: 0.2,
+		FarmStages: map[int]FarmStageInfo{
+			s1:   {Key: s1, TotalHP: 100000, ExpectedGold: 4000, ExpectedEXP: 60000, Waves: 17, Level: 30},
+			s2:   {Key: s2, TotalHP: 500000, ExpectedGold: 5000, ExpectedEXP: 70000, Waves: 20, Level: 32},
+			sNew: {Key: sNew, TotalHP: 120000, ExpectedGold: 4500, ExpectedEXP: 65000, Waves: 23, Level: 47},
+		},
+		HeroStates:          map[int]HeroState{201: {Level: 55, Xp: 1000}},
+		ActiveHeroCount:     1,
+		HeroLevel:           55,
+		LastCurrentStageKey: sNew, // o resync da troca manual deixou o baseline aqui
+		LastPlayTime:        1000,
+		LastGold:            500,
+	}
+	// outras fases medidas calibram a regressao de tempo (a*HP + b*ondas)
+	ctrl.StageHistory.Update(s1, 148, 10000, 500000, true, 0.2, 1, 55, 0, nil)
+	ctrl.StageHistory.Update(s2, 262, 12000, 600000, true, 0.2, 1, 55, 0, nil)
+
+	// 6s depois do resync, save em wave 0 com +9240 ouro e +507714 xp -> fantasma.
+	calculateAndLogRound(&ctrl, newClearSave(sNew, 1006, 500+9240, 201, 55, 1000+507714))
+
+	if s, ok := ctrl.StageHistory.Get(sNew); ok && s.TotalRuns > 0 {
+		t.Fatalf("fantasma de 6s não deveria virar corrida; runs=%d", s.TotalRuns)
+	}
+	if ctrl.LastPlayTime != 1006 {
+		t.Fatalf("fantasma deveria re-sincronizar o relógio (1006), foi %.0f", ctrl.LastPlayTime)
+	}
+}
+
+// newDeathCtrl monta o cenario do teto anti-morte: uma fase de referencia ja medida
+// com carimbo de nivel (multiplicador de xp = 9) e uma fase NOVA sem media propria.
+func newDeathCtrl(sRef, sNew int) *Control {
+	ctrl := &Control{
+		UseEMA: true, EMAAlpha: 0.2,
+		FarmStages: map[int]FarmStageInfo{
+			sRef: {Key: sRef, TotalHP: 100000, ExpectedGold: 4000, ExpectedEXP: 60000, Waves: 17, Level: 53},
+			sNew: {Key: sNew, TotalHP: 120000, ExpectedGold: 4500, ExpectedEXP: 65000, Waves: 23, Level: 54},
+		},
+		HeroStates:          map[int]HeroState{201: {Level: 55, Xp: 1000}},
+		ActiveHeroCount:     1,
+		HeroLevel:           55,
+		LastCurrentStageKey: sNew,
+		LastPlayTime:        1000,
+		LastGold:            20000000,
+	}
+	// referencia: 3 corridas carimbadas no nivel 55, retencao 100% -> multiplicador 9
+	for range 3 {
+		ctrl.StageHistory.Update(sRef, 250, 10000, 540000, true, 0.2, 1, 55, 0, nil)
+	}
+	return ctrl
+}
+
+// JANELA COM MORTES NUMA FASE NOVA: 2 falhas tardias + 1 clear rendem ~3x o xp de um
+// clear, o ouro fica negativo por uma compra de runa no meio (morte nao mexe no ouro)
+// e a fase nao tem media propria pra nenhum piso/teto. O clear PROJETADO pelas outras
+// fases medidas (esperado x multiplicador x retencao) e o teto que descarta a janela.
+func TestDeathWindowOnNewStageRejected(t *testing.T) {
+	old, _ := os.Getwd()
+	if err := os.Chdir(t.TempDir()); err != nil {
+		t.Fatal(err)
+	}
+	defer os.Chdir(old)
+
+	const sRef, sNew = 2206, 2309
+	ctrl := newDeathCtrl(sRef, sNew)
+
+	// projetado de sNew: 65000 x 9 x ret(54,55)=1.0 = 585000. Janela de 727s com
+	// +1.700.000 xp (~2,9x) e ouro -12.471.800 (compra de runa) -> descarta.
+	calculateAndLogRound(ctrl, newClearSave(sNew, 1727, 20000000-12471800, 201, 55, 1000+1700000))
+
+	if s, ok := ctrl.StageHistory.Get(sNew); ok && s.TotalRuns > 0 {
+		t.Fatalf("janela com mortes não deveria virar corrida; runs=%d", s.TotalRuns)
+	}
+	if ctrl.LastPlayTime != 1727 {
+		t.Fatalf("descarte deveria re-sincronizar o relógio (1727), foi %.0f", ctrl.LastPlayTime)
+	}
+}
+
+// O teto anti-morte NAO pode rejeitar um clear normal de fase nova: xp ~1x o projetado
+// registra de primeira, como sempre.
+func TestNormalClearOnNewStagePassesXpCeiling(t *testing.T) {
+	old, _ := os.Getwd()
+	if err := os.Chdir(t.TempDir()); err != nil {
+		t.Fatal(err)
+	}
+	defer os.Chdir(old)
+
+	const sRef, sNew = 2206, 2309
+	ctrl := newDeathCtrl(sRef, sNew)
+
+	// clear limpo: 280s, +4600 ouro, +610000 xp (~1,04x o projetado de 585000)
+	calculateAndLogRound(ctrl, newClearSave(sNew, 1280, 20000000+4600, 201, 55, 1000+610000))
+
+	s, ok := ctrl.StageHistory.Get(sNew)
+	if !ok || s.TotalRuns != 1 {
+		t.Fatalf("clear normal de fase nova deveria registrar; %v", s)
+	}
+	if s.AvgXpPerRun != 610000 {
+		t.Fatalf("xp registrado = %.0f, esperado 610000", s.AvgXpPerRun)
 	}
 }
