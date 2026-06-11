@@ -94,7 +94,7 @@ func StartWebServer(ctrl *Control, webFiles embed.FS, dataDir string) {
 		xpGain := 0.0
 		if ctrl.FarmStages != nil {
 			if info, exists := ctrl.FarmStages[req.StageKey]; exists {
-				gMult, xMult := yieldMultipliers(ctrl.StageHistory.AllStats(), ctrl.FarmStages, ctrl.HeroLevel)
+				gMult, xMult := yieldMultipliers(ctrl.StageHistory.AllStats(), ctrl.FarmStages)
 				goldGain = info.ExpectedGold * gMult
 				xpGain = info.ExpectedEXP * xMult * expRetention(info.Level, ctrl.HeroLevel)
 			}
@@ -102,9 +102,6 @@ func StartWebServer(ctrl *Control, webFiles embed.FS, dataDir string) {
 
 		timeSpentSeconds := ParseTimeSpent(req.TimeSpent)
 
-		// Tempo digitado na calibracao entra como SEMENTE (nao como corrida): nao
-		// infla o contador, substitui o valor anterior (sem empilhar) e e diluido
-		// pelas corridas reais conforme elas chegam.
 		ctrl.StageHistory.SetManualTime(
 			req.StageKey,
 			timeSpentSeconds,

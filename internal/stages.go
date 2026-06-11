@@ -16,12 +16,7 @@ func LoadFarmStages(data []byte) (map[int]FarmStageInfo, error) {
 	return stagesMap, nil
 }
 
-// yieldMultipliers devolve o multiplicador ganho-real/Expected (ouro, xp) calibrado
-// sobre as fases bem medidas (>=3 corridas), usando a MEDIANA (robusta a fases com
-// Expected quase-zero na tabela do jogo, que na media inflavam tudo 10-20x). E a
-// mesma calibracao pro painel (estimativa), pra semente digitada e pro 1o clear real.
-// Sem amostra suficiente, devolve 1.0 (Expected cru). Funcao pura: nao trava nada.
-func yieldMultipliers(stats []StageStats, farm map[int]FarmStageInfo, heroLevel int) (gold, xp float64) {
+func yieldMultipliers(stats []StageStats, farm map[int]FarmStageInfo) (gold, xp float64) {
 	var gm, xm []float64
 	for _, st := range stats {
 		if st.TotalRuns < 3 {
@@ -31,10 +26,15 @@ func yieldMultipliers(stats []StageStats, farm map[int]FarmStageInfo, heroLevel 
 		if !ok {
 			continue
 		}
-		ret := expRetention(info.Level, heroLevel)
-		if info.ExpectedGold > 0 && info.ExpectedEXP > 0 && ret > 0 {
+		if info.ExpectedGold > 0 {
 			gm = append(gm, st.AvgGoldPerRun/info.ExpectedGold)
-			xm = append(xm, st.AvgXpPerRun/(info.ExpectedEXP*ret))
+		}
+		if st.MeasuredHeroLevel <= 0 || info.ExpectedEXP <= 0 {
+			continue
+		}
+		retThen := expRetention(info.Level, st.MeasuredHeroLevel)
+		if retThen > 0 {
+			xm = append(xm, st.AvgXpPerRun/(info.ExpectedEXP*retThen))
 		}
 	}
 	gold, xp = 1.0, 1.0
@@ -79,16 +79,10 @@ func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
 
 	dps, overhead, calibrated := effectiveDPS(points)
 
-	goldMultiplier, xpMultiplier := yieldMultipliers(measured, ctrl.FarmStages, ctrl.HeroLevel)
+	goldMultiplier, xpMultiplier := yieldMultipliers(measured, ctrl.FarmStages)
 
 	numHeroes := ctrl.numActiveHeroes()
 
-	// Reprojeta as medicoes pro nivel atual antes de ranquear/exibir:
-	//  - legado (sem carimbo de nivel): a media velha foi tirada noutro nivel e nao da
-	//    pra corrigir com precisao -> marca Stale e troca pelo valor ESTIMADO (DPS +
-	//    retencao atual). Some que cura no proximo clear (snap no Update).
-	//  - carimbada: corrige so o XP pela razao de retencao (over-level mudou desde a
-	//    medicao); ouro nao muda com nivel e o tempo medido segue valido.
 	for key, st := range stagesReport {
 		info, ok := ctrl.FarmStages[key]
 		if !ok || st.TotalRuns == 0 {
