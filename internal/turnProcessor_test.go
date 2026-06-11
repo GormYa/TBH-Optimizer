@@ -772,3 +772,63 @@ func TestNegativeGoldWithInflatedXpRejected(t *testing.T) {
 		t.Fatalf("compra com xp normal deveria contar; runs=%d (esperado 4)", s.TotalRuns)
 	}
 }
+
+// TENTATIVAS DE BOSS SEM TESTEMUNHA: o jogador tenta o boss do ato 3x entre
+// autosaves (nenhum save flagra o outro mapa) e volta a farmar. A janela fecha com
+// ganhos de UM clear normal mas tempo somando as tentativas. Caso real: 3-9 com
+// média ~260s registrou 432s (+454k ouro, +21,5M xp — ambos ~1x a média).
+// Descarta; mas se o tempo alto se repetir em 3 janelas seguidas, é o novo ritmo
+// real da fase (time mais fraco) e a 3ª registra.
+func TestBossAttemptsInflatedTimeRejected(t *testing.T) {
+	old, _ := os.Getwd()
+	if err := os.Chdir(t.TempDir()); err != nil {
+		t.Fatal(err)
+	}
+	defer os.Chdir(old)
+
+	const stage = 2309
+	ctrl := Control{
+		UseEMA: true, EMAAlpha: 0.2,
+		FarmStages:          map[int]FarmStageInfo{stage: {Key: stage, TotalHP: 2000000, ExpectedGold: 50000, ExpectedEXP: 2400000, Waves: 24, Level: 52}},
+		HeroStates:          map[int]HeroState{201: {Level: 55, Xp: 1000}},
+		ActiveHeroCount:     1,
+		HeroLevel:           55,
+		LastCurrentStageKey: stage,
+		LastPlayTime:        1000,
+		LastGold:            500,
+	}
+	for range 3 {
+		ctrl.StageHistory.Update(stage, 260, 450000, 21500000, true, 0.2, 1, 55, 0, nil)
+	}
+
+	// 1ª janela contaminada: 432s, ouro e xp de um clear só -> descarta e re-sincroniza
+	calculateAndLogRound(&ctrl, newClearSave(stage, 1432, 500+454332, 201, 55, 1000+21508410))
+	if s, _ := ctrl.StageHistory.Get(stage); s.TotalRuns != 3 {
+		t.Fatalf("janela com tempo de tentativas de boss deveria ser descartada; runs=%d (esperado 3)", s.TotalRuns)
+	}
+	if ctrl.LastPlayTime != 1432 {
+		t.Fatalf("descarte deveria re-sincronizar o relógio (1432), foi %.0f", ctrl.LastPlayTime)
+	}
+
+	// 2ª janela igual: ainda descarta
+	calculateAndLogRound(&ctrl, newClearSave(stage, 1864, 500+2*454332, 201, 55, 1000+2*21508410))
+	if s, _ := ctrl.StageHistory.Get(stage); s.TotalRuns != 3 {
+		t.Fatalf("2ª janela contaminada seguida deveria ser descartada; runs=%d (esperado 3)", s.TotalRuns)
+	}
+
+	// 3ª seguida: consistente demais pra ser tentativa — é o ritmo novo, registra
+	calculateAndLogRound(&ctrl, newClearSave(stage, 2296, 500+3*454332, 201, 55, 1000+3*21508410))
+	s, _ := ctrl.StageHistory.Get(stage)
+	if s.TotalRuns != 4 {
+		t.Fatalf("3ª janela lenta seguida deveria registrar (novo ritmo); runs=%d (esperado 4)", s.TotalRuns)
+	}
+	if len(ctrl.timeContamStreak) != 0 {
+		t.Fatalf("registrar deveria zerar o streak da fase; streak=%v", ctrl.timeContamStreak)
+	}
+
+	// Corrida normal (260s, ganhos ~1x) continua registrando como sempre.
+	calculateAndLogRound(&ctrl, newClearSave(stage, 2556, 500+3*454332+450000, 201, 55, 1000+3*21508410+21500000))
+	if s, _ := ctrl.StageHistory.Get(stage); s.TotalRuns != 5 {
+		t.Fatalf("corrida normal após a sequência deveria contar; runs=%d (esperado 5)", s.TotalRuns)
+	}
+}

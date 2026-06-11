@@ -104,6 +104,7 @@ type Control struct {
 	midWindowMixed      bool
 	midWindowMaxWave    int
 	midWindowRestart    bool
+	timeContamStreak    map[int]int
 	primeFirstClear     bool
 	Gold                int
 	RuneLevels          map[int]int

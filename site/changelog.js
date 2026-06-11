@@ -8,6 +8,14 @@ window.CHANGELOG = {
 	entries: [
         {
             date: "11/06/2026",
+            version: "v1.0.33",
+            title: "Hotfix — tentativas de boss não inflam mais o tempo da fase",
+            items: [
+                "Tentativas rápidas de boss em outro mapa não inflam mais o tempo da fase: janela com ganhos de um clear normal mas tempo bem acima da própria média é descartada (era o caso de tentar o boss do ato 3x e voltar — registrava 432s numa fase de ~260s). Se o tempo maior se repetir em 3 corridas seguidas, é aceito como o novo ritmo real da fase.",
+            ],
+        },
+        {
+            date: "11/06/2026",
             version: "v1.0.32",
             title: "O otimizador agora fala 16 idiomas",
             items: [

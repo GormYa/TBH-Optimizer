@@ -193,6 +193,15 @@ func isValidRound(timeSpent float64, goldGain int, xpGain float64) bool {
 
 const timeOutlierFactor = 3.0
 
+// Janela com ganhos de UM clear mas tempo bem acima da própria média = o tempo
+// extra foi gasto em OUTRO mapa sem nenhum save testemunhar (tentativas curtas de
+// boss entre autosaves). Acima de timeContamFactor x a média própria descarta;
+// na timeContamAccept-ésima janela seguida assim, aceita — repetição consistente
+// não é tentativa de boss, é o ritmo real da fase que mudou (time mais fraco).
+const timeContamFactor = 1.4
+
+const timeContamAccept = 3
+
 const goldFloorFactor = 0.5
 
 const goldCeilFactor = 3.0
@@ -403,6 +412,21 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 		return
 	}
 
+	if avg := ctrl.recordedAvgTime(clearedStage); avg > 0 && timeSpent > timeContamFactor*avg {
+		if xpAvg := ctrl.estimateClearXp(clearedStage); xpAvg > 0 && xpGain < timeContamFactor*xpAvg {
+			if ctrl.timeContamStreak == nil {
+				ctrl.timeContamStreak = make(map[int]int)
+			}
+			ctrl.timeContamStreak[clearedStage]++
+			if ctrl.timeContamStreak[clearedStage] < timeContamAccept {
+				advanceClock()
+				Logf("reject", "Fase %s descartada: %.0fs com ganhos de UM clear só (média ~%.0fs) — o tempo extra foi gasto em outro mapa (tentativas de boss) sem nenhum save flagrar. Re-sincronizando.", ctrl.stageDisplay(clearedStage), timeSpent, avg)
+				return
+			}
+			Logf("info", "Fase %s: tempo %.0fs acima da média (~%.0fs) pela %dª janela seguida — consistente demais pra ser tentativa de boss; aceito como o novo ritmo real da fase.", ctrl.stageDisplay(clearedStage), timeSpent, avg, ctrl.timeContamStreak[clearedStage])
+		}
+	}
+
 	if len(levelUps) > 0 {
 		advanceClock()
 		Logf("reject", "Fase %s descartada: %s — o XP de um clear com level-up fica distorcido pelo limiar do nível. A próxima corrida já conta normal.", ctrl.stageDisplay(clearedStage), describeLevelUps(levelUps))
@@ -470,6 +494,8 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 		dropCount,
 		dropsByKey,
 	)
+
+	delete(ctrl.timeContamStreak, clearedStage)
 
 	if err := ctrl.StageHistory.Save(HistoryFilePath); err != nil {
 		fmt.Println("Aviso: falha ao persistir o historico:", err)
