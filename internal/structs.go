@@ -61,6 +61,8 @@ type StageStats struct {
 	RawXpPerHour     float64     `json:"raw_xp_per_hour"`
 	AvgItemsPerHour  float64     `json:"avg_items_per_hour"`
 	ExpRetained      float64     `json:"exp_retained"`
+	MeasuredHeroLevel int        `json:"measured_hero_level"`
+	Stale            bool        `json:"stale"`
 	ItemCatalog      map[int]int `json:"item_catalog"`
 	AccumulatedGold  float64     `json:"-"`
 	AccumulatedXp    float64     `json:"-"`

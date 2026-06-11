@@ -224,6 +224,7 @@ tbody tr.projected { opacity: .62; }
 .stage-badge { font-family: var(--font-d); font-weight: 700; font-size: 14px; color: var(--txt); background: var(--panel-2); border: 1px solid var(--line); padding: 5px 11px; border-radius: 8px; white-space: nowrap; }
 .tag-est { font-size: 14px; font-weight: 700; color: var(--gold); background: rgba(244,183,64,.1); border: 1px solid rgba(244,183,64,.28); padding: 3px 9px; border-radius: 999px; text-transform: uppercase; letter-spacing: .5px; }
 .tag-seed { font-size: 14px; font-weight: 700; color: #5fb3e6; background: rgba(95,179,230,.1); border: 1px solid rgba(95,179,230,.3); padding: 3px 9px; border-radius: 999px; text-transform: uppercase; letter-spacing: .5px; cursor: help; }
+.tag-stale { font-size: 12px; font-weight: 700; color: #e0934a; background: rgba(224,147,74,.1); border: 1px solid rgba(224,147,74,.32); padding: 3px 8px; border-radius: 999px; letter-spacing: .3px; cursor: help; }
 tbody tr.seeded { opacity: .82; }
 
 /* ===================== badge clicÃ¡vel + modal de detalhe da fase ===================== */

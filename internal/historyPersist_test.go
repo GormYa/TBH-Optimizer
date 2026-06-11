@@ -12,8 +12,8 @@ func TestStageHistoryPersistRoundTrip(t *testing.T) {
 	path := filepath.Join(t.TempDir(), "stage_history.json")
 
 	a := &StageHistoryStore{}
-	a.Update(1204, 135, 3700, 9000, false, 0.2, 3, 2, map[int]int{522031: 2})
-	a.Update(1204, 140, 3800, 9100, false, 0.2, 3, 1, map[int]int{410003: 1})
+	a.Update(1204, 135, 3700, 9000, false, 0.2, 3, 40, 2, map[int]int{522031: 2})
+	a.Update(1204, 140, 3800, 9100, false, 0.2, 3, 40, 1, map[int]int{410003: 1})
 
 	if err := a.Save(path); err != nil {
 		t.Fatalf("Save: %v", err)

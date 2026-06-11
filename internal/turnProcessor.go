@@ -423,7 +423,7 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 	xpPerHour := (xpGain / float64(ctrl.numActiveHeroes()) / timeSpent) * 3600
 	goldPerHour := (goldRec / timeSpent) * 3600
 
-	saveStageLog(clearedStage, timeSpent, goldPerHour, xpPerHour)
+	saveStageLog(clearedStage, timeSpent, goldPerHour, xpPerHour, ctrl.HeroLevel)
 
 	ctrl.StageHistory.Update(
 		clearedStage,
@@ -433,6 +433,7 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 		ctrl.UseEMA,
 		ctrl.EMAAlpha,
 		ctrl.numActiveHeroes(),
+		ctrl.HeroLevel,
 		dropCount,
 		dropsByKey,
 	)
@@ -463,7 +464,7 @@ func describeLevelUps(ups []HeroLevelUp) string {
 	return "os heróis " + joined + " subiram de nível"
 }
 
-func saveStageLog(stageKey int, timeSpent float64, goldGain float64, xpGain float64) {
+func saveStageLog(stageKey int, timeSpent float64, goldGain float64, xpGain float64, heroLevel int) {
 	file, err := os.OpenFile("historico_farm.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		fmt.Println("Erro ao abrir o bloco de notas:", err)
@@ -471,8 +472,8 @@ func saveStageLog(stageKey int, timeSpent float64, goldGain float64, xpGain floa
 	}
 	defer file.Close()
 
-	logLine := fmt.Sprintf("[%s] Estágio Concluído: %d | Tempo Gasto: %.2fs | Ouro/h: %.0f | XP/h: %.0f\n",
-		time.Now().Format("2006-01-02 15:04:05"), stageKey, timeSpent, goldGain, xpGain)
+	logLine := fmt.Sprintf("[%s] Estágio Concluído: %d | Tempo Gasto: %.2fs | Ouro/h: %.0f | XP/h: %.0f | Nível: %d\n",
+		time.Now().Format("2006-01-02 15:04:05"), stageKey, timeSpent, goldGain, xpGain, heroLevel)
 	_, err = file.WriteString(logLine)
 	if err != nil {
 		fmt.Println("Erro ao descarregar os dados no bloco de notas:", err)

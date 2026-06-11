@@ -83,6 +83,37 @@ func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
 
 	numHeroes := ctrl.numActiveHeroes()
 
+	// Reprojeta as medicoes pro nivel atual antes de ranquear/exibir:
+	//  - legado (sem carimbo de nivel): a media velha foi tirada noutro nivel e nao da
+	//    pra corrigir com precisao -> marca Stale e troca pelo valor ESTIMADO (DPS +
+	//    retencao atual). Some que cura no proximo clear (snap no Update).
+	//  - carimbada: corrige so o XP pela razao de retencao (over-level mudou desde a
+	//    medicao); ouro nao muda com nivel e o tempo medido segue valido.
+	for key, st := range stagesReport {
+		info, ok := ctrl.FarmStages[key]
+		if !ok || st.TotalRuns == 0 {
+			continue
+		}
+		retNow := expRetention(info.Level, ctrl.HeroLevel)
+		if st.MeasuredHeroLevel == 0 {
+			st.Stale = true
+			if calibrated {
+				estTime := estimateTimeDPS(dps, overhead, info.TotalHP, float64(info.Waves))
+				if estTime > 0 {
+					st.AvgGoldPerHour = (info.ExpectedGold * goldMultiplier / estTime) * 3600.0
+					if numHeroes > 0 {
+						st.AvgXpPerHour = (info.ExpectedEXP * xpMultiplier * retNow / float64(numHeroes) / estTime) * 3600.0
+					}
+				}
+			}
+			continue
+		}
+		retThen := expRetention(info.Level, st.MeasuredHeroLevel)
+		if retThen > 0 && retNow != retThen {
+			st.AvgXpPerHour *= retNow / retThen
+		}
+	}
+
 	bestGoldStage := 0
 	bestXpStage := 0
 

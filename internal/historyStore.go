@@ -1,6 +1,6 @@
 package internal
 
-func (s *StageHistoryStore) Update(stageKey int, timeSpent float64, goldGain float64, xpGain float64, useEMA bool, alphaConfig float64, numHeroes int, dropCount int, dropsByKey map[int]int) {
+func (s *StageHistoryStore) Update(stageKey int, timeSpent float64, goldGain float64, xpGain float64, useEMA bool, alphaConfig float64, numHeroes int, heroLevel int, dropCount int, dropsByKey map[int]int) {
 	s.mu.Lock()
 	defer s.mu.Unlock()
 	if s.history == nil {
@@ -11,6 +11,14 @@ func (s *StageHistoryStore) Update(stageKey int, timeSpent float64, goldGain flo
 	if !exists {
 		stats = &StageStats{StageKey: stageKey}
 		s.history[stageKey] = stats
+	}
+
+	// Medicao legada (corridas antigas sem carimbo de nivel): a media velha foi
+	// tirada num nivel diferente e nao da pra reprojetar com precisao. Esta corrida
+	// fresca a cura -> snap (alpha=1) substitui o valor podre de uma vez.
+	wasLegacy := stats.TotalRuns > 0 && stats.MeasuredHeroLevel == 0
+	if heroLevel > 0 {
+		stats.MeasuredHeroLevel = heroLevel
 	}
 
 	stats.TotalRuns++
@@ -49,7 +57,7 @@ func (s *StageHistoryStore) Update(stageKey int, timeSpent float64, goldGain flo
 		return
 	}
 	alpha := alphaConfig
-	if stats.TotalRuns == 1 {
+	if stats.TotalRuns == 1 || wasLegacy {
 		alpha = 1.0
 	}
 

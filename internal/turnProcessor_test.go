@@ -80,7 +80,7 @@ func TestEstablishedStageRejectsInflatedTime(t *testing.T) {
 	}
 	// 3 corridas de ~148s pra estabelecer a media propria
 	for i := 0; i < 3; i++ {
-		ctrl.StageHistory.Update(stage, 148, 10000, 500000, true, 0.2, 1, 0, nil)
+		ctrl.StageHistory.Update(stage, 148, 10000, 500000, true, 0.2, 1, 33, 0, nil)
 	}
 	ctrl.LastPlayTime = 1000
 	ctrl.LastGold = 500
@@ -106,8 +106,8 @@ func TestLowHPStageNotRejected(t *testing.T) {
 			1305: {Key: 1305, TotalHP: 2912165, Waves: 17},
 		},
 	}
-	ctrl.StageHistory.Update(1102, 60, 0, 0, true, 0.2, 1, 0, nil)
-	ctrl.StageHistory.Update(1305, 250, 0, 0, true, 0.2, 1, 0, nil)
+	ctrl.StageHistory.Update(1102, 60, 0, 0, true, 0.2, 1, 30, 0, nil)
+	ctrl.StageHistory.Update(1305, 250, 0, 0, true, 0.2, 1, 30, 0, nil)
 
 	est := ctrl.estimateStageTime(1101)
 	if est > 0 && est < 5 {

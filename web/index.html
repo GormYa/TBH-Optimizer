@@ -260,7 +260,8 @@
 										<strong v-if="stage.total_runs > 0">{{ stage.total_runs }}</strong>
 										<span class="tag-seed" v-else-if="stage.manual_time > 0" title="Tempo que você digitou na calibração. As corridas reais vão refinando esse valor.">Digitado</span>
 										<span class="tag-est" v-else>Estimado</span>
-										<span v-if="stage.total_runs > 0" class="conf-dot" :class="'conf-' + confidence(stage.total_runs)" :title="confLabel(stage.total_runs)"></span>
+										<span v-if="stage.stale" class="tag-stale" title="Medida em outro nível do herói (antes do app guardar o nível). Mostrando estimativa por DPS + retenção atual. Farme 1x pra virar medição real.">⚠ antiga</span>
+											<span v-if="stage.total_runs > 0 && !stage.stale" class="conf-dot" :class="'conf-' + confidence(stage.total_runs)" :title="confLabel(stage.total_runs)"></span>
 										<button v-if="stage.total_runs > 0 || stage.manual_time > 0" class="btn-clear-stage" @click="resetStage(stage.stage_key)" title="Limpar esta fase"><icon name="x" :size="13"></icon></button>
 									</td>
 									<td class="mono">{{ formatTime(stage.avg_time_spent) }}<div class="r2" v-if="stageHP(stage.stage_key)">HP {{ formatNumber(stageHP(stage.stage_key)) }}</div></td>
