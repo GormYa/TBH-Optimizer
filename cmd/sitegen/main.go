@@ -40,7 +40,7 @@ type langDict struct {
 func main() {
 	siteDir := flag.String("site", "site", "pasta com index.html e i18n/site_*.json")
 	outDir := flag.String("out", "public", "pasta de saída")
-	baseURL := flag.String("base", "https://tbh-optimizer.pages.dev", "URL pública do site, sem barra final")
+	baseURL := flag.String("base", "https://taskbarhero.fun", "URL pública do site, sem barra final")
 	flag.Parse()
 
 	base := strings.TrimSuffix(*baseURL, "/")
@@ -148,9 +148,6 @@ func localizeMeta(page string, d *langDict, base string) string {
 	page = replaceMarker(page, d.code, "json-ld url",
 		fmt.Sprintf(`"url": "%s/"`, base),
 		fmt.Sprintf(`"url": "%s"`, langURL))
-	page = replaceMarker(page, d.code, "json-ld inLanguage",
-		`"inLanguage": "pt-BR"`,
-		fmt.Sprintf(`"inLanguage": "%s"`, d.InLanguage))
 	return page
 }
 
