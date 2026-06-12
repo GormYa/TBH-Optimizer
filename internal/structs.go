@@ -7,17 +7,75 @@ type Currency struct {
 	Quantity int `json:"Quantity"`
 }
 type Hero struct {
-	HeroKey   int     `json:"heroKey"`
-	HeroLevel int     `json:"HeroLevel"`
-	HeroExp   float64 `json:"HeroExp"`
+	HeroKey                    int     `json:"heroKey"`
+	HeroLevel                  int     `json:"HeroLevel"`
+	HeroExp                    float64 `json:"HeroExp"`
+	IsUnLock                   bool    `json:"IsUnLock"`
+	AbilityPoint               int     `json:"AbilityPoint"`
+	AllocatedHeroAbilityPoint  int     `json:"AllocatedHeroAbilityPoint"`
+	EquippedItemIds            []int64 `json:"equippedItemIds"` // 10 slots posicionais -> Item.UniqueId (0 = vazio)
+	EquippedSkillKey           []int   `json:"equippedSKillKey"`
+	UnlockedAttributeGroupKeys []int   `json:"unlockedAttributeGroupKeys"`
+}
+
+// ItemEnchant é um mod rolado num item (decoração/gravação/inscrição):
+// StatModKey/Value/Tier são o roll; MaterialKey é o material consumido.
+type ItemEnchant struct {
+	StatModKey  int `json:"StatModKey"`
+	Tier        int `json:"Tier"`
+	Value       int `json:"Value"`
+	RecipeType  int `json:"RecipeType"`
+	ModType     int `json:"ModType"`
+	MaterialKey int `json:"MaterialKey"`
+	StatType    int `json:"StatType"`
 }
 type Item struct {
-	ItemKey  int   `json:"ItemKey"`
-	UniqueId int64 `json:"UniqueId"`
+	ItemKey                      int           `json:"ItemKey"`
+	UniqueId                     int64         `json:"UniqueId"`
+	IsChaotic                    bool          `json:"IsChaotic"`
+	EnchantCount                 []int         `json:"EnchantCount"` // [decoração, gravação, inscrição]
+	EnchantData                  []ItemEnchant `json:"EnchantData"`  // 6 slots fixos; vazio = zeros
+	DecorationAppliedTotalCount  int           `json:"DecorationAppliedTotalCount"`
+	EngravingAppliedTotalCount   int           `json:"EngravingAppliedTotalCount"`
+	InscriptionAppliedTotalCount int           `json:"InscriptionAppliedTotalCount"`
 }
 type RuneSave struct {
 	RuneKey int `json:"RuneKey"`
 	Level   int `json:"Level"`
+}
+
+// InventorySlot/StashSlot mapeiam slot -> item (UniqueId, 0 = vazio). Os itens
+// em si vivem todos em itemSaveDatas; mochila/armazém/banca só apontam pra lá.
+// (No stash ficam os itens guardados pra síntese/criação no Cubo.)
+type InventorySlot struct {
+	Index            int   `json:"Index"`
+	ItemUniqueId     int64 `json:"ItemUniqueId"`
+	IsUnlock         bool  `json:"IsUnlock"`
+	IsUnlockedByRune bool  `json:"IsUnlockedByRune"`
+}
+type StashSlot struct {
+	Index        int   `json:"Index"`
+	ItemUniqueId int64 `json:"ItemUniqueId"`
+	IsUnLock     bool  `json:"IsUnLock"`
+}
+
+// AttributeSave é um nó alocado da árvore de atributos; o herói vem codificado
+// no prefixo do Key (ex.: 201001 -> herói 201).
+type AttributeSave struct {
+	Key   int `json:"Key"`
+	Level int `json:"Level"`
+}
+type CubeLevel struct {
+	Level int     `json:"Level"`
+	Exp   float64 `json:"Exp"`
+}
+
+// BoxData são os baús não abertos (3 listas paralelas por índice).
+// Tipos: 0=NORMAL, 1=BOSS, 2=ACTBOSS.
+type BoxData struct {
+	BoxTypes    []int   `json:"BoxTypes"`
+	BoxUniqueId []int64 `json:"BoxUniqueId"`
+	BoxQuantity []int   `json:"BoxQuantity"`
 }
 type InnerSaveData struct {
 	CommonSaveData struct {
@@ -28,11 +86,17 @@ type InnerSaveData struct {
 		ArrangedHeroKey   []int   `json:"arrangedHeroKey"`
 		ArrangedPetKey    int     `json:"ArrangedPetKey"`
 	} `json:"commonSaveData"`
-	CurrenySaveDatas []Currency `json:"currenySaveDatas"`
-	HeroSaveDatas    []Hero     `json:"heroSaveDatas"`
-	ItemSaveDatas    []Item     `json:"itemSaveDatas"`
-	RuneSaveDatas    []RuneSave `json:"RuneSaveData"`
-	PetSaveDatas     []PetSave  `json:"PetSaveData"`
+	BoxData            BoxData         `json:"BoxData"`
+	CurrenySaveDatas   []Currency      `json:"currenySaveDatas"`
+	HeroSaveDatas      []Hero          `json:"heroSaveDatas"`
+	AttributeSaveDatas []AttributeSave `json:"attributeSaveDatas"`
+	ItemSaveDatas      []Item          `json:"itemSaveDatas"`
+	RuneSaveDatas      []RuneSave      `json:"RuneSaveData"`
+	PetSaveDatas       []PetSave       `json:"PetSaveData"`
+	InventorySaveDatas []InventorySlot `json:"inventorySaveDatas"`
+	StashSaveDatas     []StashSlot     `json:"stashSaveDatas"`
+	TradingStashDatas  []StashSlot     `json:"tradingStashSaveDatas"`
+	CubeSaveLevelData  CubeLevel       `json:"cubeSaveLevelData"`
 }
 type PetSave struct {
 	PetKey   int  `json:"PetKey"`

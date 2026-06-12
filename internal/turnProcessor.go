@@ -235,8 +235,8 @@ func (ctrl *Control) estimateClearXp(stage int) float64 {
 const xpCeilFactor = 2.0
 
 // projectedClearXp projeta o XP de UM clear da fase: esperado dos dados do jogo x
-// multiplicador medido (mediana das fases com carimbo de nivel) x retencao no nivel
-// atual.
+// multiplicador medido (mediana das fases com carimbo de nivel) x retencao MEDIA
+// do time ativo.
 func (ctrl *Control) projectedClearXp(stage int) float64 {
 	info, ok := ctrl.FarmStages[stage]
 	if !ok || info.ExpectedEXP <= 0 {
@@ -246,7 +246,22 @@ func (ctrl *Control) projectedClearXp(stage int) float64 {
 	if !measured {
 		return 0
 	}
-	return info.ExpectedEXP * xm * expRetention(info.Level, ctrl.HeroLevel)
+	return info.ExpectedEXP * xm * ctrl.meanActiveRetention(info.Level)
+}
+
+// meanActiveRetention é a média das retenções de XP dos heróis ATIVOS. A retenção
+// é por herói: num time misto (upando herói novo em mapa baixo) o herói baixo
+// retém ~100% enquanto os altos ficam no piso de 1% — projetar pelo nível máximo
+// do time subestima o clear em dezenas de vezes e descarta corrida legítima.
+func (ctrl *Control) meanActiveRetention(stageLevel int) float64 {
+	if len(ctrl.ActiveHeroes) == 0 {
+		return expRetention(stageLevel, ctrl.HeroLevel)
+	}
+	sum := 0.0
+	for _, h := range ctrl.ActiveHeroes {
+		sum += expRetention(stageLevel, h.Level)
+	}
+	return sum / float64(len(ctrl.ActiveHeroes))
 }
 
 func estimatedRunTime(ownAvg float64, ownRuns int, stageHP, refHP, refAvg float64) float64 {
@@ -436,7 +451,7 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 	if ctrl.estimateClearXp(clearedStage) == 0 {
 		if xpEst := ctrl.projectedClearXp(clearedStage); xpEst > 0 && xpGain > xpCeilFactor*xpEst {
 			advanceClock()
-			Logf("reject", "Fase %s descartada: +%.0f xp é %.1fx o esperado de UM clear (~%.0f) — a janela contém mortes/tentativas múltiplas, não uma corrida só.", ctrl.stageDisplay(clearedStage), xpGain, xpGain/xpEst, xpEst)
+			Logf("reject", "Fase %s descartada: +%.0f xp é %.1fx o esperado de UM clear (~%.0f xp, não segundos) — a janela contém mortes/tentativas múltiplas, não uma corrida só.", ctrl.stageDisplay(clearedStage), xpGain, xpGain/xpEst, xpEst)
 			return
 		}
 	}

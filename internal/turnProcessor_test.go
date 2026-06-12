@@ -832,3 +832,63 @@ func TestBossAttemptsInflatedTimeRejected(t *testing.T) {
 		t.Fatalf("corrida normal após a sequência deveria contar; runs=%d (esperado 5)", s.TotalRuns)
 	}
 }
+
+// TIME MISTO UPANDO HERÓI NOVO EM MAPA BAIXO: herói 55 + herói 5 farmando a 1-4
+// (nível 4). A retenção do 55 é o piso (1%), mas a do herói 5 é 100% — projetar o
+// clear pelo nível MÁXIMO do time dava ~30 xp e descartava corrida legítima como
+// "mortes/tentativas múltiplas" (caso real do console). A projeção agora usa a
+// retenção média do time ativo.
+func TestPowerLevelingMixedTeamPassesXpCeiling(t *testing.T) {
+	old, _ := os.Getwd()
+	if err := os.Chdir(t.TempDir()); err != nil {
+		t.Fatal(err)
+	}
+	defer os.Chdir(old)
+
+	const sRef, sNew = 2206, 1104
+	mixedCtrl := func(activeHeroes []ActiveHero, heroStates map[int]HeroState, n int) *Control {
+		ctrl := &Control{
+			UseEMA: true, EMAAlpha: 0.2,
+			FarmStages: map[int]FarmStageInfo{
+				sRef: {Key: sRef, TotalHP: 100000, ExpectedGold: 4000, ExpectedEXP: 60000, Waves: 17, Level: 53},
+				sNew: {Key: sNew, TotalHP: 8000, ExpectedGold: 300, ExpectedEXP: 324, Waves: 24, Level: 4},
+			},
+			HeroStates:          heroStates,
+			ActiveHeroCount:     n,
+			ActiveHeroes:        activeHeroes,
+			HeroLevel:           55,
+			LastCurrentStageKey: sNew,
+			LastPlayTime:        1000,
+			LastGold:            500,
+		}
+		// referência carimbada no 55 com retenção 100% -> multiplicador ~9
+		for range 3 {
+			ctrl.StageHistory.Update(sRef, 250, 10000, 540000, true, 0.2, 1, 55, 0, nil)
+		}
+		return ctrl
+	}
+
+	// time [55, 5]: retenção média ~0,505 -> projeção ~1472; clear real de ~1400 xp passa
+	ctrl := mixedCtrl(
+		[]ActiveHero{{Key: 201, Level: 55}, {Key: 202, Level: 5}},
+		map[int]HeroState{201: {Level: 55, Xp: 1000}, 202: {Level: 5, Xp: 100}}, 2)
+	save := newClearSave(sNew, 1046, 500+320, 201, 55, 1000+20)
+	save.CommonSaveData.ArrangedHeroKey = []int{201, 202}
+	save.HeroSaveDatas = append(save.HeroSaveDatas, Hero{HeroKey: 202, HeroLevel: 5, HeroExp: 100 + 1380})
+	calculateAndLogRound(ctrl, save)
+	if s, _ := ctrl.StageHistory.Get(sNew); s.TotalRuns != 1 {
+		t.Fatalf("clear legítimo de power-leveling deveria registrar; runs=%d (esperado 1)", s.TotalRuns)
+	}
+
+	// contra-caso: time só de 55 (retenção 1%) com o MESMO xp continua descartado
+	ctrl2 := mixedCtrl(
+		[]ActiveHero{{Key: 201, Level: 55}, {Key: 203, Level: 55}},
+		map[int]HeroState{201: {Level: 55, Xp: 1000}, 203: {Level: 55, Xp: 1000}}, 2)
+	save2 := newClearSave(sNew, 1046, 500+320, 201, 55, 1000+700)
+	save2.CommonSaveData.ArrangedHeroKey = []int{201, 203}
+	save2.HeroSaveDatas = append(save2.HeroSaveDatas, Hero{HeroKey: 203, HeroLevel: 55, HeroExp: 1000 + 700})
+	calculateAndLogRound(ctrl2, save2)
+	if s, ok := ctrl2.StageHistory.Get(sNew); ok && s.TotalRuns != 0 {
+		t.Fatalf("xp 1400 com time todo 55 (projeção ~59) deveria continuar descartado; runs=%d", s.TotalRuns)
+	}
+}

@@ -12,10 +12,10 @@
   "monsterTypes": 2,
   "count": 10,
   "totalHP": 560,
-  "expectedGold": 14,
-  "expectedEXP": 16,
-  "goldPerHP": 0.025,
-  "expPerHP": 0.0286
+  "expectedGold": 140,
+  "expectedEXP": 155,
+  "goldPerHP": 0.25,
+  "expPerHP": 0.2768
  },
  {
   "key": 1102,
@@ -30,10 +30,10 @@
   "monsterTypes": 3,
   "count": 22,
   "totalHP": 2040,
-  "expectedGold": 50,
-  "expectedEXP": 46,
-  "goldPerHP": 0.0245,
-  "expPerHP": 0.0225
+  "expectedGold": 497,
+  "expectedEXP": 457,
+  "goldPerHP": 0.2436,
+  "expPerHP": 0.224
  },
  {
   "key": 1103,
@@ -48,10 +48,10 @@
   "monsterTypes": 4,
   "count": 33,
   "totalHP": 3137,
-  "expectedGold": 99,
-  "expectedEXP": 79,
-  "goldPerHP": 0.0316,
-  "expPerHP": 0.0252
+  "expectedGold": 988,
+  "expectedEXP": 789,
+  "goldPerHP": 0.315,
+  "expPerHP": 0.2515
  },
  {
   "key": 1104,
@@ -66,10 +66,10 @@
   "monsterTypes": 4,
   "count": 36,
   "totalHP": 6795,
-  "expectedGold": 197,
-  "expectedEXP": 298,
-  "goldPerHP": 0.029,
-  "expPerHP": 0.0439
+  "expectedGold": 1967,
+  "expectedEXP": 2979,
+  "goldPerHP": 0.2895,
+  "expPerHP": 0.4384
  },
  {
   "key": 1105,
@@ -84,10 +84,10 @@
   "monsterTypes": 5,
   "count": 48,
   "totalHP": 15475,
-  "expectedGold": 339,
-  "expectedEXP": 739,
-  "goldPerHP": 0.0219,
-  "expPerHP": 0.0478
+  "expectedGold": 3390,
+  "expectedEXP": 7392,
+  "goldPerHP": 0.2191,
+  "expPerHP": 0.4777
  },
  {
   "key": 1106,
@@ -102,10 +102,10 @@
   "monsterTypes": 4,
   "count": 60,
   "totalHP": 33340,
-  "expectedGold": 463,
-  "expectedEXP": 1170,
-  "goldPerHP": 0.0139,
-  "expPerHP": 0.0351
+  "expectedGold": 4633,
+  "expectedEXP": 11704,
+  "goldPerHP": 0.139,
+  "expPerHP": 0.351
  },
  {
   "key": 1107,
@@ -120,10 +120,10 @@
   "monsterTypes": 3,
   "count": 72,
   "totalHP": 21072,
-  "expectedGold": 356,
-  "expectedEXP": 1511,
-  "goldPerHP": 0.0169,
-  "expPerHP": 0.0717
+  "expectedGold": 3564,
+  "expectedEXP": 15111,
+  "goldPerHP": 0.1691,
+  "expPerHP": 0.7171
  },
  {
   "key": 1108,
@@ -138,10 +138,10 @@
   "monsterTypes": 4,
   "count": 78,
   "totalHP": 33859,
-  "expectedGold": 580,
-  "expectedEXP": 2697,
-  "goldPerHP": 0.0171,
-  "expPerHP": 0.0797
+  "expectedGold": 5796,
+  "expectedEXP": 26966,
+  "goldPerHP": 0.1712,
+  "expPerHP": 0.7964
  },
  {
   "key": 1109,
@@ -156,10 +156,10 @@
   "monsterTypes": 6,
   "count": 91,
   "totalHP": 80918,
-  "expectedGold": 1007,
-  "expectedEXP": 5981,
-  "goldPerHP": 0.0124,
-  "expPerHP": 0.0739
+  "expectedGold": 10071,
+  "expectedEXP": 59813,
+  "goldPerHP": 0.1245,
+  "expPerHP": 0.7392
  },
  {
   "key": 1110,
@@ -174,10 +174,10 @@
   "monsterTypes": 0,
   "count": 0,
   "totalHP": 15435,
-  "expectedGold": 325,
-  "expectedEXP": 133,
-  "goldPerHP": 0.0211,
-  "expPerHP": 0.0086
+  "expectedGold": 3250,
+  "expectedEXP": 1332,
+  "goldPerHP": 0.2106,
+  "expPerHP": 0.0863
  },
  {
   "key": 1201,
@@ -192,10 +192,10 @@
   "monsterTypes": 3,
   "count": 98,
   "totalHP": 92524,
-  "expectedGold": 911,
-  "expectedEXP": 7443,
-  "goldPerHP": 0.0098,
-  "expPerHP": 0.0804
+  "expectedGold": 9114,
+  "expectedEXP": 74432,
+  "goldPerHP": 0.0985,
+  "expPerHP": 0.8045
  },
  {
   "key": 1202,
@@ -210,10 +210,10 @@
   "monsterTypes": 4,
   "count": 98,
   "totalHP": 134488,
-  "expectedGold": 1213,
-  "expectedEXP": 10024,
-  "goldPerHP": 0.009,
-  "expPerHP": 0.0745
+  "expectedGold": 12129,
+  "expectedEXP": 100241,
+  "goldPerHP": 0.0902,
+  "expPerHP": 0.7454
  },
  {
   "key": 1203,
@@ -228,10 +228,10 @@
   "monsterTypes": 5,
   "count": 98,
   "totalHP": 221938,
-  "expectedGold": 1266,
-  "expectedEXP": 11742,
-  "goldPerHP": 0.0057,
-  "expPerHP": 0.0529
+  "expectedGold": 12657,
+  "expectedEXP": 117423,
+  "goldPerHP": 0.057,
+  "expPerHP": 0.5291
  },
  {
   "key": 1204,
@@ -246,10 +246,10 @@
   "monsterTypes": 5,
   "count": 105,
   "totalHP": 284699,
-  "expectedGold": 1444,
-  "expectedEXP": 15130,
-  "goldPerHP": 0.0051,
-  "expPerHP": 0.0531
+  "expectedGold": 14440,
+  "expectedEXP": 151300,
+  "goldPerHP": 0.0507,
+  "expPerHP": 0.5314
  },
  {
   "key": 1205,
@@ -264,10 +264,10 @@
   "monsterTypes": 4,
   "count": 105,
   "totalHP": 263886,
-  "expectedGold": 1342,
-  "expectedEXP": 15344,
-  "goldPerHP": 0.0051,
-  "expPerHP": 0.0581
+  "expectedGold": 13419,
+  "expectedEXP": 153438,
+  "goldPerHP": 0.0509,
+  "expPerHP": 0.5815
  },
  {
   "key": 1206,
@@ -282,10 +282,10 @@
   "monsterTypes": 4,
   "count": 120,
   "totalHP": 680625,
-  "expectedGold": 2593,
-  "expectedEXP": 35242,
-  "goldPerHP": 0.0038,
-  "expPerHP": 0.0518
+  "expectedGold": 25926,
+  "expectedEXP": 352425,
+  "goldPerHP": 0.0381,
+  "expPerHP": 0.5178
  },
  {
   "key": 1207,
@@ -300,10 +300,10 @@
   "monsterTypes": 5,
   "count": 120,
   "totalHP": 891560,
-  "expectedGold": 2645,
-  "expectedEXP": 35572,
-  "goldPerHP": 0.003,
-  "expPerHP": 0.0399
+  "expectedGold": 26452,
+  "expectedEXP": 355721,
+  "goldPerHP": 0.0297,
+  "expPerHP": 0.399
  },
  {
   "key": 1208,
@@ -318,10 +318,10 @@
   "monsterTypes": 4,
   "count": 128,
   "totalHP": 800754,
-  "expectedGold": 2160,
-  "expectedEXP": 30556,
-  "goldPerHP": 0.0027,
-  "expPerHP": 0.0382
+  "expectedGold": 21603,
+  "expectedEXP": 305561,
+  "goldPerHP": 0.027,
+  "expPerHP": 0.3816
  },
  {
   "key": 1209,
@@ -336,10 +336,10 @@
   "monsterTypes": 5,
   "count": 128,
   "totalHP": 1580494,
-  "expectedGold": 3893,
-  "expectedEXP": 58580,
-  "goldPerHP": 0.0025,
-  "expPerHP": 0.0371
+  "expectedGold": 38929,
+  "expectedEXP": 585796,
+  "goldPerHP": 0.0246,
+  "expPerHP": 0.3706
  },
  {
   "key": 1210,
@@ -354,10 +354,10 @@
   "monsterTypes": 0,
   "count": 0,
   "totalHP": 202945,
-  "expectedGold": 850,
-  "expectedEXP": 281,
-  "goldPerHP": 0.0042,
-  "expPerHP": 0.0014
+  "expectedGold": 8500,
+  "expectedEXP": 2808,
+  "goldPerHP": 0.0419,
+  "expPerHP": 0.0138
  },
  {
   "key": 1301,
@@ -372,10 +372,10 @@
   "monsterTypes": 3,
   "count": 128,
   "totalHP": 963024,
-  "expectedGold": 2942,
-  "expectedEXP": 50059,
-  "goldPerHP": 0.0031,
-  "expPerHP": 0.052
+  "expectedGold": 29424,
+  "expectedEXP": 500588,
+  "goldPerHP": 0.0306,
+  "expPerHP": 0.5198
  },
  {
   "key": 1302,
@@ -390,10 +390,10 @@
   "monsterTypes": 5,
   "count": 128,
   "totalHP": 1507394,
-  "expectedGold": 3122,
-  "expectedEXP": 44816,
-  "goldPerHP": 0.0021,
-  "expPerHP": 0.0297
+  "expectedGold": 31224,
+  "expectedEXP": 448165,
+  "goldPerHP": 0.0207,
+  "expPerHP": 0.2973
  },
  {
   "key": 1303,
@@ -408,10 +408,10 @@
   "monsterTypes": 4,
   "count": 153,
   "totalHP": 2073809,
-  "expectedGold": 4297,
-  "expectedEXP": 56309,
-  "goldPerHP": 0.0021,
-  "expPerHP": 0.0272
+  "expectedGold": 42969,
+  "expectedEXP": 563090,
+  "goldPerHP": 0.0207,
+  "expPerHP": 0.2715
  },
  {
   "key": 1304,
@@ -426,10 +426,10 @@
   "monsterTypes": 5,
   "count": 153,
   "totalHP": 3240508,
-  "expectedGold": 4586,
-  "expectedEXP": 59357,
-  "goldPerHP": 0.0014,
-  "expPerHP": 0.0183
+  "expectedGold": 45860,
+  "expectedEXP": 593565,
+  "goldPerHP": 0.0142,
+  "expPerHP": 0.1832
  },
  {
   "key": 1305,
@@ -444,10 +444,10 @@
   "monsterTypes": 5,
   "count": 153,
   "totalHP": 2912165,
-  "expectedGold": 4626,
-  "expectedEXP": 69831,
-  "goldPerHP": 0.0016,
-  "expPerHP": 0.024
+  "expectedGold": 46264,
+  "expectedEXP": 698314,
+  "goldPerHP": 0.0159,
+  "expPerHP": 0.2398
  },
  {
   "key": 1306,
@@ -462,10 +462,10 @@
   "monsterTypes": 5,
   "count": 153,
   "totalHP": 3952538,
-  "expectedGold": 9121,
-  "expectedEXP": 176363,
-  "goldPerHP": 0.0023,
-  "expPerHP": 0.0446
+  "expectedGold": 91213,
+  "expectedEXP": 1763626,
+  "goldPerHP": 0.0231,
+  "expPerHP": 0.4462
  },
  {
   "key": 1307,
@@ -480,10 +480,10 @@
   "monsterTypes": 5,
   "count": 170,
   "totalHP": 3856276,
-  "expectedGold": 9609,
-  "expectedEXP": 171368,
-  "goldPerHP": 0.0025,
-  "expPerHP": 0.0444
+  "expectedGold": 96091,
+  "expectedEXP": 1713679,
+  "goldPerHP": 0.0249,
+  "expPerHP": 0.4444
  },
  {
   "key": 1308,
@@ -498,10 +498,10 @@
   "monsterTypes": 4,
   "count": 180,
   "totalHP": 3799984,
-  "expectedGold": 16044,
-  "expectedEXP": 279857,
-  "goldPerHP": 0.0042,
-  "expPerHP": 0.0736
+  "expectedGold": 160444,
+  "expectedEXP": 2798571,
+  "goldPerHP": 0.0422,
+  "expPerHP": 0.7365
  },
  {
   "key": 1309,
@@ -516,10 +516,10 @@
   "monsterTypes": 5,
   "count": 198,
   "totalHP": 4646014,
-  "expectedGold": 16072,
-  "expectedEXP": 296958,
-  "goldPerHP": 0.0035,
-  "expPerHP": 0.0639
+  "expectedGold": 160725,
+  "expectedEXP": 2969576,
+  "goldPerHP": 0.0346,
+  "expPerHP": 0.6392
  },
  {
   "key": 1310,
@@ -534,10 +534,10 @@
   "monsterTypes": 0,
   "count": 0,
   "totalHP": 776985,
-  "expectedGold": 1875,
-  "expectedEXP": 64,
-  "goldPerHP": 0.0024,
-  "expPerHP": 0.0001
+  "expectedGold": 18750,
+  "expectedEXP": 644,
+  "goldPerHP": 0.0241,
+  "expPerHP": 0.0008
  },
  {
   "key": 2101,
@@ -552,10 +552,10 @@
   "monsterTypes": 3,
   "count": 200,
   "totalHP": 3005765,
-  "expectedGold": 10192,
-  "expectedEXP": 182120,
-  "goldPerHP": 0.0034,
-  "expPerHP": 0.0606
+  "expectedGold": 101921,
+  "expectedEXP": 1821200,
+  "goldPerHP": 0.0339,
+  "expPerHP": 0.6059
  },
  {
   "key": 2102,
@@ -570,10 +570,10 @@
   "monsterTypes": 4,
   "count": 200,
   "totalHP": 2920297,
-  "expectedGold": 12352,
-  "expectedEXP": 219150,
-  "goldPerHP": 0.0042,
-  "expPerHP": 0.075
+  "expectedGold": 123521,
+  "expectedEXP": 2191500,
+  "goldPerHP": 0.0423,
+  "expPerHP": 0.7504
  },
  {
   "key": 2103,
@@ -588,10 +588,10 @@
   "monsterTypes": 4,
   "count": 220,
   "totalHP": 2757326,
-  "expectedGold": 14501,
-  "expectedEXP": 237770,
-  "goldPerHP": 0.0053,
-  "expPerHP": 0.0862
+  "expectedGold": 145008,
+  "expectedEXP": 2377700,
+  "goldPerHP": 0.0526,
+  "expPerHP": 0.8623
  },
  {
   "key": 2104,
@@ -606,10 +606,10 @@
   "monsterTypes": 4,
   "count": 231,
   "totalHP": 4081496,
-  "expectedGold": 15216,
-  "expectedEXP": 272569,
-  "goldPerHP": 0.0037,
-  "expPerHP": 0.0668
+  "expectedGold": 152156,
+  "expectedEXP": 2725690,
+  "goldPerHP": 0.0373,
+  "expPerHP": 0.6678
  },
  {
   "key": 2105,
@@ -624,10 +624,10 @@
   "monsterTypes": 5,
   "count": 252,
   "totalHP": 5872189,
-  "expectedGold": 20233,
-  "expectedEXP": 363813,
-  "goldPerHP": 0.0034,
-  "expPerHP": 0.062
+  "expectedGold": 202332,
+  "expectedEXP": 3638131,
+  "goldPerHP": 0.0345,
+  "expPerHP": 0.6196
  },
  {
   "key": 2106,
@@ -642,10 +642,10 @@
   "monsterTypes": 4,
   "count": 252,
   "totalHP": 10473633,
-  "expectedGold": 24488,
-  "expectedEXP": 451836,
-  "goldPerHP": 0.0023,
-  "expPerHP": 0.0431
+  "expectedGold": 244882,
+  "expectedEXP": 4518360,
+  "goldPerHP": 0.0234,
+  "expPerHP": 0.4314
  },
  {
   "key": 2107,
@@ -660,10 +660,10 @@
   "monsterTypes": 3,
   "count": 273,
   "totalHP": 4560612,
-  "expectedGold": 15233,
-  "expectedEXP": 262068,
-  "goldPerHP": 0.0033,
-  "expPerHP": 0.0575
+  "expectedGold": 152334,
+  "expectedEXP": 2620678,
+  "goldPerHP": 0.0334,
+  "expPerHP": 0.5746
  },
  {
   "key": 2108,
@@ -678,10 +678,10 @@
   "monsterTypes": 4,
   "count": 273,
   "totalHP": 6015603,
-  "expectedGold": 21005,
-  "expectedEXP": 369918,
-  "goldPerHP": 0.0035,
-  "expPerHP": 0.0615
+  "expectedGold": 210052,
+  "expectedEXP": 3699183,
+  "goldPerHP": 0.0349,
+  "expPerHP": 0.6149
  },
  {
   "key": 2109,
@@ -696,10 +696,10 @@
   "monsterTypes": 6,
   "count": 286,
   "totalHP": 11638553,
-  "expectedGold": 30766,
-  "expectedEXP": 559362,
-  "goldPerHP": 0.0026,
-  "expPerHP": 0.0481
+  "expectedGold": 307664,
+  "expectedEXP": 5593624,
+  "goldPerHP": 0.0264,
+  "expPerHP": 0.4806
  },
  {
   "key": 2110,
@@ -714,10 +714,10 @@
   "monsterTypes": 0,
   "count": 0,
   "totalHP": 1251845,
-  "expectedGold": 3055,
-  "expectedEXP": 1339,
-  "goldPerHP": 0.0024,
-  "expPerHP": 0.0011
+  "expectedGold": 30550,
+  "expectedEXP": 13392,
+  "goldPerHP": 0.0244,
+  "expPerHP": 0.0107
  },
  {
   "key": 2201,
@@ -732,10 +732,10 @@
   "monsterTypes": 3,
   "count": 286,
   "totalHP": 7265569,
-  "expectedGold": 23235,
-  "expectedEXP": 435396,
-  "goldPerHP": 0.0032,
-  "expPerHP": 0.0599
+  "expectedGold": 232350,
+  "expectedEXP": 4353963,
+  "goldPerHP": 0.032,
+  "expPerHP": 0.5993
  },
  {
   "key": 2202,
@@ -750,10 +750,10 @@
   "monsterTypes": 4,
   "count": 286,
   "totalHP": 8410652,
-  "expectedGold": 28825,
-  "expectedEXP": 533392,
-  "goldPerHP": 0.0034,
-  "expPerHP": 0.0634
+  "expectedGold": 288250,
+  "expectedEXP": 5333920,
+  "goldPerHP": 0.0343,
+  "expPerHP": 0.6342
  },
  {
   "key": 2203,
@@ -768,10 +768,10 @@
   "monsterTypes": 5,
   "count": 286,
   "totalHP": 11298745,
-  "expectedGold": 28668,
-  "expectedEXP": 519365,
-  "goldPerHP": 0.0025,
-  "expPerHP": 0.046
+  "expectedGold": 286677,
+  "expectedEXP": 5193650,
+  "goldPerHP": 0.0254,
+  "expPerHP": 0.4597
  },
  {
   "key": 2204,
@@ -786,10 +786,10 @@
   "monsterTypes": 5,
   "count": 286,
   "totalHP": 10998576,
-  "expectedGold": 27710,
-  "expectedEXP": 516648,
-  "goldPerHP": 0.0025,
-  "expPerHP": 0.047
+  "expectedGold": 277100,
+  "expectedEXP": 5166480,
+  "goldPerHP": 0.0252,
+  "expPerHP": 0.4697
  },
  {
   "key": 2205,
@@ -804,10 +804,10 @@
   "monsterTypes": 4,
   "count": 286,
   "totalHP": 8425065,
-  "expectedGold": 24443,
-  "expectedEXP": 457841,
-  "goldPerHP": 0.0029,
-  "expPerHP": 0.0543
+  "expectedGold": 244428,
+  "expectedEXP": 4578413,
+  "goldPerHP": 0.029,
+  "expPerHP": 0.5434
  },
  {
   "key": 2206,
@@ -822,10 +822,10 @@
   "monsterTypes": 4,
   "count": 286,
   "totalHP": 16059390,
-  "expectedGold": 36802,
-  "expectedEXP": 699465,
-  "goldPerHP": 0.0023,
-  "expPerHP": 0.0436
+  "expectedGold": 368024,
+  "expectedEXP": 6994650,
+  "goldPerHP": 0.0229,
+  "expPerHP": 0.4355
  },
  {
   "key": 2207,
@@ -840,10 +840,10 @@
   "monsterTypes": 5,
   "count": 308,
   "totalHP": 19572672,
-  "expectedGold": 37037,
-  "expectedEXP": 717045,
-  "goldPerHP": 0.0019,
-  "expPerHP": 0.0366
+  "expectedGold": 370370,
+  "expectedEXP": 7170445,
+  "goldPerHP": 0.0189,
+  "expPerHP": 0.3663
  },
  {
   "key": 2208,
@@ -858,10 +858,10 @@
   "monsterTypes": 4,
   "count": 308,
   "totalHP": 15209742,
-  "expectedGold": 30534,
-  "expectedEXP": 574840,
-  "goldPerHP": 0.002,
-  "expPerHP": 0.0378
+  "expectedGold": 305342,
+  "expectedEXP": 5748400,
+  "goldPerHP": 0.0201,
+  "expPerHP": 0.3779
  },
  {
   "key": 2209,
@@ -876,10 +876,10 @@
   "monsterTypes": 5,
   "count": 322,
   "totalHP": 27009179,
-  "expectedGold": 49682,
-  "expectedEXP": 940346,
-  "goldPerHP": 0.0018,
-  "expPerHP": 0.0348
+  "expectedGold": 496820,
+  "expectedEXP": 9403457,
+  "goldPerHP": 0.0184,
+  "expPerHP": 0.3482
  },
  {
   "key": 2210,
@@ -894,10 +894,10 @@
   "monsterTypes": 0,
   "count": 0,
   "totalHP": 1380015,
-  "expectedGold": 3955,
-  "expectedEXP": 2066,
-  "goldPerHP": 0.0029,
-  "expPerHP": 0.0015
+  "expectedGold": 39550,
+  "expectedEXP": 20664,
+  "goldPerHP": 0.0287,
+  "expPerHP": 0.015
  },
  {
   "key": 2301,
@@ -912,10 +912,10 @@
   "monsterTypes": 3,
   "count": 322,
   "totalHP": 13782027,
-  "expectedGold": 32159,
-  "expectedEXP": 613768,
-  "goldPerHP": 0.0023,
-  "expPerHP": 0.0445
+  "expectedGold": 321592,
+  "expectedEXP": 6137678,
+  "goldPerHP": 0.0233,
+  "expPerHP": 0.4453
  },
  {
   "key": 2302,
@@ -930,10 +930,10 @@
   "monsterTypes": 5,
   "count": 322,
   "totalHP": 31047091,
-  "expectedGold": 37354,
-  "expectedEXP": 648988,
-  "goldPerHP": 0.0012,
-  "expPerHP": 0.0209
+  "expectedGold": 373539,
+  "expectedEXP": 6489885,
+  "goldPerHP": 0.012,
+  "expPerHP": 0.209
  },
  {
   "key": 2303,
@@ -948,10 +948,10 @@
   "monsterTypes": 5,
   "count": 322,
   "totalHP": 21806857,
-  "expectedGold": 36161,
-  "expectedEXP": 516194,
-  "goldPerHP": 0.0017,
-  "expPerHP": 0.0237
+  "expectedGold": 361610,
+  "expectedEXP": 5161942,
+  "goldPerHP": 0.0166,
+  "expPerHP": 0.2367
  },
  {
   "key": 2304,
@@ -966,10 +966,10 @@
   "monsterTypes": 6,
   "count": 322,
   "totalHP": 32132237,
-  "expectedGold": 37392,
-  "expectedEXP": 516764,
-  "goldPerHP": 0.0012,
-  "expPerHP": 0.0161
+  "expectedGold": 373923,
+  "expectedEXP": 5167636,
+  "goldPerHP": 0.0116,
+  "expPerHP": 0.1608
  },
  {
   "key": 2305,
@@ -984,10 +984,10 @@
   "monsterTypes": 6,
   "count": 322,
   "totalHP": 29201333,
-  "expectedGold": 36213,
-  "expectedEXP": 563858,
-  "goldPerHP": 0.0012,
-  "expPerHP": 0.0193
+  "expectedGold": 362127,
+  "expectedEXP": 5638578,
+  "goldPerHP": 0.0124,
+  "expPerHP": 0.1931
  },
  {
   "key": 2306,
@@ -1002,10 +1002,10 @@
   "monsterTypes": 5,
   "count": 322,
   "totalHP": 30876350,
-  "expectedGold": 63799,
-  "expectedEXP": 1273497,
-  "goldPerHP": 0.0021,
-  "expPerHP": 0.0412
+  "expectedGold": 637990,
+  "expectedEXP": 12734967,
+  "goldPerHP": 0.0207,
+  "expPerHP": 0.4125
  },
  {
   "key": 2307,
@@ -1020,10 +1020,10 @@
   "monsterTypes": 5,
   "count": 345,
   "totalHP": 32020934,
-  "expectedGold": 59057,
-  "expectedEXP": 1125011,
-  "goldPerHP": 0.0018,
-  "expPerHP": 0.0351
+  "expectedGold": 590571,
+  "expectedEXP": 11250108,
+  "goldPerHP": 0.0184,
+  "expPerHP": 0.3513
  },
  {
   "key": 2308,
@@ -1038,10 +1038,10 @@
   "monsterTypes": 5,
   "count": 345,
   "totalHP": 27117152,
-  "expectedGold": 100695,
-  "expectedEXP": 1921344,
-  "goldPerHP": 0.0037,
-  "expPerHP": 0.0709
+  "expectedGold": 1006954,
+  "expectedEXP": 19213436,
+  "goldPerHP": 0.0371,
+  "expPerHP": 0.7085
  },
  {
   "key": 2309,
@@ -1056,10 +1056,10 @@
   "monsterTypes": 6,
   "count": 345,
   "totalHP": 30901953,
-  "expectedGold": 102931,
-  "expectedEXP": 1976633,
-  "goldPerHP": 0.0033,
-  "expPerHP": 0.064
+  "expectedGold": 1029308,
+  "expectedEXP": 19766331,
+  "goldPerHP": 0.0333,
+  "expPerHP": 0.6396
  },
  {
   "key": 2310,
@@ -1074,10 +1074,10 @@
   "monsterTypes": 0,
   "count": 0,
   "totalHP": 2735425,
-  "expectedGold": 5425,
-  "expectedEXP": 206,
-  "goldPerHP": 0.002,
-  "expPerHP": 0.0001
+  "expectedGold": 54250,
+  "expectedEXP": 2064,
+  "goldPerHP": 0.0198,
+  "expPerHP": 0.0008
  },
  {
   "key": 3101,
@@ -1092,10 +1092,10 @@
   "monsterTypes": 3,
   "count": 360,
   "totalHP": 16687185,
-  "expectedGold": 51065,
-  "expectedEXP": 989604,
-  "goldPerHP": 0.0031,
-  "expPerHP": 0.0593
+  "expectedGold": 510647,
+  "expectedEXP": 9896040,
+  "goldPerHP": 0.0306,
+  "expPerHP": 0.593
  },
  {
   "key": 3102,
@@ -1110,10 +1110,10 @@
   "monsterTypes": 4,
   "count": 360,
   "totalHP": 15862077,
-  "expectedGold": 60855,
-  "expectedEXP": 1170450,
-  "goldPerHP": 0.0038,
-  "expPerHP": 0.0738
+  "expectedGold": 608555,
+  "expectedEXP": 11704500,
+  "goldPerHP": 0.0384,
+  "expPerHP": 0.7379
  },
  {
   "key": 3103,
@@ -1128,10 +1128,10 @@
   "monsterTypes": 4,
   "count": 375,
   "totalHP": 13647572,
-  "expectedGold": 66066,
-  "expectedEXP": 1164789,
-  "goldPerHP": 0.0048,
-  "expPerHP": 0.0853
+  "expectedGold": 660661,
+  "expectedEXP": 11647890,
+  "goldPerHP": 0.0484,
+  "expPerHP": 0.8535
  },
  {
   "key": 3104,
@@ -1146,10 +1146,10 @@
   "monsterTypes": 4,
   "count": 375,
   "totalHP": 20243102,
-  "expectedGold": 68707,
-  "expectedEXP": 1328008,
-  "goldPerHP": 0.0034,
-  "expPerHP": 0.0656
+  "expectedGold": 687066,
+  "expectedEXP": 13280085,
+  "goldPerHP": 0.0339,
+  "expPerHP": 0.656
  },
  {
   "key": 3105,
@@ -1164,10 +1164,10 @@
   "monsterTypes": 5,
   "count": 375,
   "totalHP": 25749918,
-  "expectedGold": 82004,
-  "expectedEXP": 1584403,
-  "goldPerHP": 0.0032,
-  "expPerHP": 0.0615
+  "expectedGold": 820042,
+  "expectedEXP": 15844032,
+  "goldPerHP": 0.0318,
+  "expPerHP": 0.6153
  },
  {
   "key": 3106,
@@ -1182,10 +1182,10 @@
   "monsterTypes": 4,
   "count": 375,
   "totalHP": 44517532,
-  "expectedGold": 96458,
-  "expectedEXP": 1890567,
-  "goldPerHP": 0.0022,
-  "expPerHP": 0.0425
+  "expectedGold": 964576,
+  "expectedEXP": 18905670,
+  "goldPerHP": 0.0217,
+  "expPerHP": 0.4247
  },
  {
   "key": 3107,
@@ -1200,10 +1200,10 @@
   "monsterTypes": 3,
   "count": 400,
   "totalHP": 18522232,
-  "expectedGold": 57977,
-  "expectedEXP": 1055593,
-  "goldPerHP": 0.0031,
-  "expPerHP": 0.057
+  "expectedGold": 579768,
+  "expectedEXP": 10555926,
+  "goldPerHP": 0.0313,
+  "expPerHP": 0.5699
  },
  {
   "key": 3108,
@@ -1218,10 +1218,10 @@
   "monsterTypes": 4,
   "count": 400,
   "totalHP": 23090866,
-  "expectedGold": 75698,
-  "expectedEXP": 1406488,
-  "goldPerHP": 0.0033,
-  "expPerHP": 0.0609
+  "expectedGold": 756983,
+  "expectedEXP": 14064875,
+  "goldPerHP": 0.0328,
+  "expPerHP": 0.6091
  },
  {
   "key": 3109,
@@ -1236,10 +1236,10 @@
   "monsterTypes": 6,
   "count": 400,
   "totalHP": 41391037,
-  "expectedGold": 103769,
-  "expectedEXP": 1981588,
-  "goldPerHP": 0.0025,
-  "expPerHP": 0.0479
+  "expectedGold": 1037687,
+  "expectedEXP": 19815880,
+  "goldPerHP": 0.0251,
+  "expPerHP": 0.4787
  },
  {
   "key": 3110,
@@ -1254,10 +1254,10 @@
   "monsterTypes": 0,
   "count": 0,
   "totalHP": 3249345,
-  "expectedGold": 7405,
-  "expectedEXP": 5141,
-  "goldPerHP": 0.0023,
-  "expPerHP": 0.0016
+  "expectedGold": 74050,
+  "expectedEXP": 51408,
+  "goldPerHP": 0.0228,
+  "expPerHP": 0.0158
  },
  {
   "key": 3201,
@@ -1272,10 +1272,10 @@
   "monsterTypes": 3,
   "count": 416,
   "totalHP": 26526950,
-  "expectedGold": 79907,
-  "expectedEXP": 1565190,
-  "goldPerHP": 0.003,
-  "expPerHP": 0.059
+  "expectedGold": 799070,
+  "expectedEXP": 15651896,
+  "goldPerHP": 0.0301,
+  "expPerHP": 0.59
  },
  {
   "key": 3202,
@@ -1290,10 +1290,10 @@
   "monsterTypes": 4,
   "count": 416,
   "totalHP": 32073293,
-  "expectedGold": 103096,
-  "expectedEXP": 2004248,
-  "goldPerHP": 0.0032,
-  "expPerHP": 0.0625
+  "expectedGold": 1030956,
+  "expectedEXP": 20042480,
+  "goldPerHP": 0.0321,
+  "expPerHP": 0.6249
  },
  {
   "key": 3203,
@@ -1308,10 +1308,10 @@
   "monsterTypes": 5,
   "count": 416,
   "totalHP": 40832569,
-  "expectedGold": 100883,
-  "expectedEXP": 1917335,
-  "goldPerHP": 0.0025,
-  "expPerHP": 0.047
+  "expectedGold": 1008833,
+  "expectedEXP": 19173348,
+  "goldPerHP": 0.0247,
+  "expPerHP": 0.4696
  },
  {
   "key": 3204,
@@ -1326,10 +1326,10 @@
   "monsterTypes": 6,
   "count": 416,
   "totalHP": 42333090,
-  "expectedGold": 115054,
-  "expectedEXP": 2244311,
-  "goldPerHP": 0.0027,
-  "expPerHP": 0.053
+  "expectedGold": 1150537,
+  "expectedEXP": 22443113,
+  "goldPerHP": 0.0272,
+  "expPerHP": 0.5302
  },
  {
   "key": 3205,
@@ -1344,10 +1344,10 @@
   "monsterTypes": 5,
   "count": 416,
   "totalHP": 31512789,
-  "expectedGold": 88032,
-  "expectedEXP": 1720981,
-  "goldPerHP": 0.0028,
-  "expPerHP": 0.0546
+  "expectedGold": 880324,
+  "expectedEXP": 17209808,
+  "goldPerHP": 0.0279,
+  "expPerHP": 0.5461
  },
  {
   "key": 3206,
@@ -1362,10 +1362,10 @@
   "monsterTypes": 5,
   "count": 416,
   "totalHP": 60161750,
-  "expectedGold": 133632,
-  "expectedEXP": 2642528,
-  "goldPerHP": 0.0022,
-  "expPerHP": 0.0439
+  "expectedGold": 1336324,
+  "expectedEXP": 26425280,
+  "goldPerHP": 0.0222,
+  "expPerHP": 0.4392
  },
  {
   "key": 3207,
@@ -1380,10 +1380,10 @@
   "monsterTypes": 6,
   "count": 442,
   "totalHP": 72107718,
-  "expectedGold": 151932,
-  "expectedEXP": 3040696,
-  "goldPerHP": 0.0021,
-  "expPerHP": 0.0422
+  "expectedGold": 1519319,
+  "expectedEXP": 30406964,
+  "goldPerHP": 0.0211,
+  "expPerHP": 0.4217
  },
  {
   "key": 3208,
@@ -1398,10 +1398,10 @@
   "monsterTypes": 5,
   "count": 442,
   "totalHP": 59638787,
-  "expectedGold": 135806,
-  "expectedEXP": 2661217,
-  "goldPerHP": 0.0023,
-  "expPerHP": 0.0446
+  "expectedGold": 1358062,
+  "expectedEXP": 26612169,
+  "goldPerHP": 0.0228,
+  "expPerHP": 0.4462
  },
  {
   "key": 3209,
@@ -1416,10 +1416,10 @@
   "monsterTypes": 5,
   "count": 442,
   "totalHP": 97030563,
-  "expectedGold": 173234,
-  "expectedEXP": 3408104,
-  "goldPerHP": 0.0018,
-  "expPerHP": 0.0351
+  "expectedGold": 1732340,
+  "expectedEXP": 34081036,
+  "goldPerHP": 0.0179,
+  "expPerHP": 0.3512
  },
  {
   "key": 3210,
@@ -1434,10 +1434,10 @@
   "monsterTypes": 0,
   "count": 0,
   "totalHP": 3886185,
-  "expectedGold": 10015,
-  "expectedEXP": 12090,
-  "goldPerHP": 0.0026,
-  "expPerHP": 0.0031
+  "expectedGold": 100150,
+  "expectedEXP": 120900,
+  "goldPerHP": 0.0258,
+  "expPerHP": 0.0311
  },
  {
   "key": 3301,
@@ -1452,10 +1452,10 @@
   "monsterTypes": 3,
   "count": 459,
   "totalHP": 51936891,
-  "expectedGold": 113190,
-  "expectedEXP": 2235912,
-  "goldPerHP": 0.0022,
-  "expPerHP": 0.0431
+  "expectedGold": 1131896,
+  "expectedEXP": 22359123,
+  "goldPerHP": 0.0218,
+  "expPerHP": 0.4305
  },
  {
   "key": 3302,
@@ -1470,10 +1470,10 @@
   "monsterTypes": 5,
   "count": 459,
   "totalHP": 118570346,
-  "expectedGold": 130890,
-  "expectedEXP": 2340631,
-  "goldPerHP": 0.0011,
-  "expPerHP": 0.0197
+  "expectedGold": 1308900,
+  "expectedEXP": 23406306,
+  "goldPerHP": 0.011,
+  "expPerHP": 0.1974
  },
  {
   "key": 3303,
@@ -1488,10 +1488,10 @@
   "monsterTypes": 5,
   "count": 459,
   "totalHP": 76815950,
-  "expectedGold": 122481,
-  "expectedEXP": 1773576,
-  "goldPerHP": 0.0016,
-  "expPerHP": 0.0231
+  "expectedGold": 1224810,
+  "expectedEXP": 17735760,
+  "goldPerHP": 0.0159,
+  "expPerHP": 0.2309
  },
  {
   "key": 3304,
@@ -1506,10 +1506,10 @@
   "monsterTypes": 6,
   "count": 459,
   "totalHP": 110942020,
-  "expectedGold": 125102,
-  "expectedEXP": 1758240,
-  "goldPerHP": 0.0011,
-  "expPerHP": 0.0158
+  "expectedGold": 1251021,
+  "expectedEXP": 17582400,
+  "goldPerHP": 0.0113,
+  "expPerHP": 0.1585
  },
  {
   "key": 3305,
@@ -1524,10 +1524,10 @@
   "monsterTypes": 6,
   "count": 459,
   "totalHP": 99182151,
-  "expectedGold": 119757,
-  "expectedEXP": 1889522,
-  "goldPerHP": 0.0012,
-  "expPerHP": 0.0191
+  "expectedGold": 1197571,
+  "expectedEXP": 18895221,
+  "goldPerHP": 0.0121,
+  "expPerHP": 0.1905
  },
  {
   "key": 3306,
@@ -1542,10 +1542,10 @@
   "monsterTypes": 5,
   "count": 459,
   "totalHP": 112198128,
-  "expectedGold": 226330,
-  "expectedEXP": 4624921,
-  "goldPerHP": 0.002,
-  "expPerHP": 0.0412
+  "expectedGold": 2263296,
+  "expectedEXP": 46249213,
+  "goldPerHP": 0.0202,
+  "expPerHP": 0.4122
  },
  {
   "key": 3307,
@@ -1560,10 +1560,10 @@
   "monsterTypes": 6,
   "count": 486,
   "totalHP": 118334216,
-  "expectedGold": 246401,
-  "expectedEXP": 4830175,
-  "goldPerHP": 0.0021,
-  "expPerHP": 0.0408
+  "expectedGold": 2464014,
+  "expectedEXP": 48301747,
+  "goldPerHP": 0.0208,
+  "expPerHP": 0.4082
  },
  {
   "key": 3308,
@@ -1578,10 +1578,10 @@
   "monsterTypes": 6,
   "count": 486,
   "totalHP": 98908112,
-  "expectedGold": 339759,
-  "expectedEXP": 6673679,
-  "goldPerHP": 0.0034,
-  "expPerHP": 0.0675
+  "expectedGold": 3397590,
+  "expectedEXP": 66736787,
+  "goldPerHP": 0.0344,
+  "expPerHP": 0.6747
  },
  {
   "key": 3309,
@@ -1596,10 +1596,10 @@
   "monsterTypes": 6,
   "count": 486,
   "totalHP": 98809670,
-  "expectedGold": 341801,
-  "expectedEXP": 6737764,
-  "goldPerHP": 0.0035,
-  "expPerHP": 0.0682
+  "expectedGold": 3418005,
+  "expectedEXP": 67377642,
+  "goldPerHP": 0.0346,
+  "expPerHP": 0.6819
  },
  {
   "key": 3310,
@@ -1614,10 +1614,10 @@
   "monsterTypes": 0,
   "count": 0,
   "totalHP": 7380085,
-  "expectedGold": 12675,
-  "expectedEXP": 496,
-  "goldPerHP": 0.0017,
-  "expPerHP": 0.0001
+  "expectedGold": 126750,
+  "expectedEXP": 4964,
+  "goldPerHP": 0.0172,
+  "expPerHP": 0.0007
  },
  {
   "key": 4101,
@@ -1632,10 +1632,10 @@
   "monsterTypes": 3,
   "count": 522,
   "totalHP": 57437379,
-  "expectedGold": 169729,
-  "expectedEXP": 3363833,
-  "goldPerHP": 0.003,
-  "expPerHP": 0.0586
+  "expectedGold": 1697288,
+  "expectedEXP": 33638328,
+  "goldPerHP": 0.0296,
+  "expPerHP": 0.5857
  },
  {
   "key": 4102,
@@ -1650,10 +1650,10 @@
   "monsterTypes": 4,
   "count": 522,
   "totalHP": 54005032,
-  "expectedGold": 200167,
-  "expectedEXP": 3943012,
-  "goldPerHP": 0.0037,
-  "expPerHP": 0.073
+  "expectedGold": 2001671,
+  "expectedEXP": 39430125,
+  "goldPerHP": 0.0371,
+  "expPerHP": 0.7301
  },
  {
   "key": 4103,
@@ -1668,10 +1668,10 @@
   "monsterTypes": 4,
   "count": 522,
   "totalHP": 43814514,
-  "expectedGold": 205871,
-  "expectedEXP": 3710290,
-  "goldPerHP": 0.0047,
-  "expPerHP": 0.0847
+  "expectedGold": 2058711,
+  "expectedEXP": 37102896,
+  "goldPerHP": 0.047,
+  "expPerHP": 0.8468
  },
  {
   "key": 4104,
@@ -1686,10 +1686,10 @@
   "monsterTypes": 4,
   "count": 522,
   "totalHP": 64287432,
-  "expectedGold": 211409,
-  "expectedEXP": 4173800,
-  "goldPerHP": 0.0033,
-  "expPerHP": 0.0649
+  "expectedGold": 2114089,
+  "expectedEXP": 41738004,
+  "goldPerHP": 0.0329,
+  "expPerHP": 0.6492
  },
  {
   "key": 4105,
@@ -1704,10 +1704,10 @@
   "monsterTypes": 5,
   "count": 522,
   "totalHP": 80272177,
-  "expectedGold": 249394,
-  "expectedEXP": 4918933,
-  "goldPerHP": 0.0031,
-  "expPerHP": 0.0613
+  "expectedGold": 2493942,
+  "expectedEXP": 49189327,
+  "goldPerHP": 0.0311,
+  "expPerHP": 0.6128
  },
  {
   "key": 4106,
@@ -1722,10 +1722,10 @@
   "monsterTypes": 4,
   "count": 522,
   "totalHP": 136725900,
-  "expectedGold": 288821,
-  "expectedEXP": 5752464,
-  "goldPerHP": 0.0021,
-  "expPerHP": 0.0421
+  "expectedGold": 2888208,
+  "expectedEXP": 57524640,
+  "goldPerHP": 0.0211,
+  "expPerHP": 0.4207
  },
  {
   "key": 4107,
@@ -1740,10 +1740,10 @@
   "monsterTypes": 3,
   "count": 551,
   "totalHP": 55462239,
-  "expectedGold": 170052,
-  "expectedEXP": 3145356,
-  "goldPerHP": 0.0031,
-  "expPerHP": 0.0567
+  "expectedGold": 1700521,
+  "expectedEXP": 31453556,
+  "goldPerHP": 0.0307,
+  "expPerHP": 0.5671
  },
  {
   "key": 4108,
@@ -1758,10 +1758,10 @@
   "monsterTypes": 4,
   "count": 551,
   "totalHP": 69455154,
-  "expectedGold": 222346,
-  "expectedEXP": 4204031,
-  "goldPerHP": 0.0032,
-  "expPerHP": 0.0605
+  "expectedGold": 2223462,
+  "expectedEXP": 42040312,
+  "goldPerHP": 0.032,
+  "expPerHP": 0.6053
  },
  {
   "key": 4109,
@@ -1776,10 +1776,10 @@
   "monsterTypes": 6,
   "count": 551,
   "totalHP": 122252787,
-  "expectedGold": 301130,
-  "expectedEXP": 5841800,
-  "goldPerHP": 0.0025,
-  "expPerHP": 0.0478
+  "expectedGold": 3011304,
+  "expectedEXP": 58418003,
+  "goldPerHP": 0.0246,
+  "expPerHP": 0.4778
  },
  {
   "key": 4110,
@@ -1794,10 +1794,10 @@
   "monsterTypes": 0,
   "count": 0,
   "totalHP": 7068095,
-  "expectedGold": 15655,
-  "expectedEXP": 9234,
-  "goldPerHP": 0.0022,
-  "expPerHP": 0.0013
+  "expectedGold": 156550,
+  "expectedEXP": 92340,
+  "goldPerHP": 0.0221,
+  "expPerHP": 0.0131
  },
  {
   "key": 4201,
@@ -1812,10 +1812,10 @@
   "monsterTypes": 3,
   "count": 570,
   "totalHP": 77605355,
-  "expectedGold": 228070,
-  "expectedEXP": 4533452,
-  "goldPerHP": 0.0029,
-  "expPerHP": 0.0584
+  "expectedGold": 2280705,
+  "expectedEXP": 45334520,
+  "goldPerHP": 0.0294,
+  "expPerHP": 0.5842
  },
  {
   "key": 4202,
@@ -1830,10 +1830,10 @@
   "monsterTypes": 4,
   "count": 570,
   "totalHP": 90789080,
-  "expectedGold": 284759,
-  "expectedEXP": 5623880,
-  "goldPerHP": 0.0031,
-  "expPerHP": 0.0619
+  "expectedGold": 2847591,
+  "expectedEXP": 56238798,
+  "goldPerHP": 0.0314,
+  "expPerHP": 0.6194
  },
  {
   "key": 4203,
@@ -1848,10 +1848,10 @@
   "monsterTypes": 5,
   "count": 570,
   "totalHP": 112003865,
-  "expectedGold": 276234,
-  "expectedEXP": 5336082,
-  "goldPerHP": 0.0025,
-  "expPerHP": 0.0476
+  "expectedGold": 2762338,
+  "expectedEXP": 53360816,
+  "goldPerHP": 0.0247,
+  "expPerHP": 0.4764
  },
  {
   "key": 4204,
@@ -1866,10 +1866,10 @@
   "monsterTypes": 6,
   "count": 570,
   "totalHP": 113186960,
-  "expectedGold": 303233,
-  "expectedEXP": 5996101,
-  "goldPerHP": 0.0027,
-  "expPerHP": 0.053
+  "expectedGold": 3032333,
+  "expectedEXP": 59961011,
+  "goldPerHP": 0.0268,
+  "expPerHP": 0.5298
  },
  {
   "key": 4205,
@@ -1884,10 +1884,10 @@
   "monsterTypes": 4,
   "count": 570,
   "totalHP": 83616033,
-  "expectedGold": 228048,
-  "expectedEXP": 4515134,
-  "goldPerHP": 0.0027,
-  "expPerHP": 0.054
+  "expectedGold": 2280482,
+  "expectedEXP": 45151344,
+  "goldPerHP": 0.0273,
+  "expPerHP": 0.54
  },
  {
   "key": 4206,
@@ -1902,10 +1902,10 @@
   "monsterTypes": 4,
   "count": 570,
   "totalHP": 159273998,
-  "expectedGold": 340808,
-  "expectedEXP": 6798582,
-  "goldPerHP": 0.0021,
-  "expPerHP": 0.0427
+  "expectedGold": 3408081,
+  "expectedEXP": 67985820,
+  "goldPerHP": 0.0214,
+  "expPerHP": 0.4268
  },
  {
   "key": 4207,
@@ -1920,10 +1920,10 @@
   "monsterTypes": 6,
   "count": 600,
   "totalHP": 182645110,
-  "expectedGold": 378065,
-  "expectedEXP": 7652267,
-  "goldPerHP": 0.0021,
-  "expPerHP": 0.0419
+  "expectedGold": 3780651,
+  "expectedEXP": 76522667,
+  "goldPerHP": 0.0207,
+  "expPerHP": 0.419
  },
  {
   "key": 4208,
@@ -1938,10 +1938,10 @@
   "monsterTypes": 4,
   "count": 600,
   "totalHP": 145466238,
-  "expectedGold": 279382,
-  "expectedEXP": 5536560,
-  "goldPerHP": 0.0019,
-  "expPerHP": 0.0381
+  "expectedGold": 2793822,
+  "expectedEXP": 55365600,
+  "goldPerHP": 0.0192,
+  "expPerHP": 0.3806
  },
  {
   "key": 4209,
@@ -1956,10 +1956,10 @@
   "monsterTypes": 5,
   "count": 600,
   "totalHP": 234871103,
-  "expectedGold": 414001,
-  "expectedEXP": 8218613,
-  "goldPerHP": 0.0018,
-  "expPerHP": 0.035
+  "expectedGold": 4140013,
+  "expectedEXP": 82186135,
+  "goldPerHP": 0.0176,
+  "expPerHP": 0.3499
  },
  {
   "key": 4210,
@@ -1974,10 +1974,10 @@
   "monsterTypes": 0,
   "count": 0,
   "totalHP": 8008095,
-  "expectedGold": 17680,
-  "expectedEXP": 21595,
-  "goldPerHP": 0.0022,
-  "expPerHP": 0.0027
+  "expectedGold": 176800,
+  "expectedEXP": 215946,
+  "goldPerHP": 0.0221,
+  "expPerHP": 0.027
  },
  {
   "key": 4301,
@@ -1992,10 +1992,10 @@
   "monsterTypes": 3,
   "count": 620,
   "totalHP": 124538656,
-  "expectedGold": 266942,
-  "expectedEXP": 5314181,
-  "goldPerHP": 0.0021,
-  "expPerHP": 0.0427
+  "expectedGold": 2669421,
+  "expectedEXP": 53141815,
+  "goldPerHP": 0.0214,
+  "expPerHP": 0.4267
  },
  {
   "key": 4302,
@@ -2010,10 +2010,10 @@
   "monsterTypes": 5,
   "count": 620,
   "totalHP": 276415235,
-  "expectedGold": 300022,
-  "expectedEXP": 5411717,
-  "goldPerHP": 0.0011,
-  "expPerHP": 0.0196
+  "expectedGold": 3000222,
+  "expectedEXP": 54117165,
+  "goldPerHP": 0.0109,
+  "expPerHP": 0.1958
  },
  {
   "key": 4303,
@@ -2028,10 +2028,10 @@
   "monsterTypes": 6,
   "count": 620,
   "totalHP": 185284720,
-  "expectedGold": 372336,
-  "expectedEXP": 6240936,
-  "goldPerHP": 0.002,
-  "expPerHP": 0.0337
+  "expectedGold": 3723357,
+  "expectedEXP": 62409360,
+  "goldPerHP": 0.0201,
+  "expPerHP": 0.3368
  },
  {
   "key": 4304,
@@ -2046,10 +2046,10 @@
   "monsterTypes": 6,
   "count": 620,
   "totalHP": 248855038,
-  "expectedGold": 276321,
-  "expectedEXP": 3905099,
-  "goldPerHP": 0.0011,
-  "expPerHP": 0.0157
+  "expectedGold": 2763205,
+  "expectedEXP": 39050995,
+  "goldPerHP": 0.0111,
+  "expPerHP": 0.1569
  },
  {
   "key": 4305,
@@ -2064,10 +2064,10 @@
   "monsterTypes": 6,
   "count": 620,
   "totalHP": 250371505,
-  "expectedGold": 342741,
-  "expectedEXP": 5673939,
-  "goldPerHP": 0.0014,
-  "expPerHP": 0.0227
+  "expectedGold": 3427414,
+  "expectedEXP": 56739390,
+  "goldPerHP": 0.0137,
+  "expPerHP": 0.2266
  },
  {
   "key": 4306,
@@ -2082,10 +2082,10 @@
   "monsterTypes": 6,
   "count": 620,
   "totalHP": 236632170,
-  "expectedGold": 532657,
-  "expectedEXP": 10831727,
-  "goldPerHP": 0.0023,
-  "expPerHP": 0.0458
+  "expectedGold": 5326566,
+  "expectedEXP": 108317272,
+  "goldPerHP": 0.0225,
+  "expPerHP": 0.4577
  },
  {
   "key": 4307,
@@ -2100,10 +2100,10 @@
   "monsterTypes": 6,
   "count": 651,
   "totalHP": 212026472,
-  "expectedGold": 607174,
-  "expectedEXP": 12345044,
-  "goldPerHP": 0.0029,
-  "expPerHP": 0.0582
+  "expectedGold": 6071736,
+  "expectedEXP": 123450441,
+  "goldPerHP": 0.0286,
+  "expPerHP": 0.5822
  },
  {
   "key": 4308,
@@ -2118,10 +2118,10 @@
   "monsterTypes": 6,
   "count": 651,
   "totalHP": 205070705,
-  "expectedGold": 722939,
-  "expectedEXP": 14300189,
-  "goldPerHP": 0.0035,
-  "expPerHP": 0.0697
+  "expectedGold": 7229390,
+  "expectedEXP": 143001891,
+  "goldPerHP": 0.0353,
+  "expPerHP": 0.6973
  },
  {
   "key": 4309,
@@ -2136,10 +2136,10 @@
   "monsterTypes": 6,
   "count": 651,
   "totalHP": 208944687,
-  "expectedGold": 725995,
-  "expectedEXP": 14396303,
-  "goldPerHP": 0.0035,
-  "expPerHP": 0.0689
+  "expectedGold": 7259954,
+  "expectedEXP": 143963032,
+  "goldPerHP": 0.0347,
+  "expPerHP": 0.689
  },
  {
   "key": 4310,
@@ -2154,9 +2154,9 @@
   "monsterTypes": 0,
   "count": 0,
   "totalHP": 13606085,
-  "expectedGold": 19830,
-  "expectedEXP": 783,
-  "goldPerHP": 0.0015,
-  "expPerHP": 0.0001
+  "expectedGold": 198300,
+  "expectedEXP": 7826,
+  "goldPerHP": 0.0146,
+  "expPerHP": 0.0006
  }
 ]

@@ -7,11 +7,24 @@
 window.CHANGELOG = {
 	entries: [
         {
+            date: "12/06/2026",
+            version: "v1.0.34",
+            title: "Hotfix — guardas do rastreador mais espertas e dados de recompensa auditados",
+            items: [
+                "Upar herói novo em mapa baixo não é mais confundido com morte: a projeção de XP de um clear agora usa a retenção média do time ativo (herói baixo retém ~100% enquanto os altos ficam no piso de 1%) em vez do nível mais alto do time.",
+                "Ouro e XP esperados das fases auditados contra as tabelas do jogo: um fator empírico antigo dividia tudo por 10 e era compensado em silêncio pela calibração — os valores exibidos agora são os oficiais (ex.: 3-9 espera 19,77M de XP por clear a 100%).",
+                "Mensagem do descarte por XP acima do esperado agora deixa claro que o valor é XP, não segundos.",
+            ],
+        },
+        {
             date: "11/06/2026",
             version: "v1.0.33",
-            title: "Hotfix — tentativas de boss não inflam mais o tempo da fase",
+            title: "Hotfix — guardas do rastreador mais espertas e dados de recompensa auditados",
             items: [
                 "Tentativas rápidas de boss em outro mapa não inflam mais o tempo da fase: janela com ganhos de um clear normal mas tempo bem acima da própria média é descartada (era o caso de tentar o boss do ato 3x e voltar — registrava 432s numa fase de ~260s). Se o tempo maior se repetir em 3 corridas seguidas, é aceito como o novo ritmo real da fase.",
+                "Upar herói novo em mapa baixo não é mais confundido com morte: a projeção de XP de um clear agora usa a retenção média do time ativo (herói baixo retém ~100% enquanto os altos ficam no piso de 1%) em vez do nível mais alto do time.",
+                "Ouro e XP esperados das fases auditados contra as tabelas do jogo: um fator empírico antigo dividia tudo por 10 e era compensado em silêncio pela calibração — os valores exibidos agora são os oficiais (ex.: 3-9 espera 19,77M de XP por clear a 100%).",
+                "Mensagem do descarte por XP acima do esperado agora deixa claro que o valor é XP, não segundos.",
             ],
         },
         {
