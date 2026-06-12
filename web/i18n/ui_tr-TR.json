@@ -381,5 +381,12 @@
 	"Usado em": "Kullanım yeri",
 	"Cubo Nv {n}": "Küp Sv. {n}",
 	"Tier {n}": "Kademe {n}",
-	"Oferenda": "Adak"
+	"Oferenda": "Adak",
+	"Tracker de Baús (Steam Inventory)": "Sandık Takibi (Steam Envanteri)",
+	"Sugestão de Farm": "Farm Önerisi",
+	"Mapa ideal para farmar agora para obter baús sem cooldown.": "Bekleme süresi olmadan sandık almak için şu an farmlanacak en iyi harita.",
+	"Nenhum mapa recomendado ou todos em cooldown.": "Önerilen harita yok ya da hepsi beklemede.",
+	"Disponível": "Hazır",
+	"Projeções": "Projeksiyonlar",
+	"Calibrando": "Kalibre ediliyor"
 }

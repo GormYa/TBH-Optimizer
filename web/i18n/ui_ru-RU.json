@@ -381,5 +381,12 @@
 	"Usado em": "Используется в",
 	"Cubo Nv {n}": "Куб ур. {n}",
 	"Tier {n}": "Тир {n}",
-	"Oferenda": "Подношение"
+	"Oferenda": "Подношение",
+	"Tracker de Baús (Steam Inventory)": "Трекер сундуков (инвентарь Steam)",
+	"Sugestão de Farm": "Рекомендация для фарма",
+	"Mapa ideal para farmar agora para obter baús sem cooldown.": "Лучшая карта для фарма прямо сейчас — сундуки без кулдауна.",
+	"Nenhum mapa recomendado ou todos em cooldown.": "Нет рекомендованной карты, либо все на кулдауне.",
+	"Disponível": "Доступен",
+	"Projeções": "Прогнозы",
+	"Calibrando": "Калибровка"
 }

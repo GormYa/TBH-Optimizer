@@ -69,9 +69,11 @@ func main() {
 	internal.LoadHeroNames(heroesData)
 
 	ctrl := internal.Control{
-		UseEMA:     true,
-		EMAAlpha:   0.2,
-		FarmStages: farmStages,
+		UseEMA:      true,
+		EMAAlpha:    0.2,
+		FarmStages:  farmStages,
+		WebFiles:    webFiles,
+		GameDataDir: gameDataDir,
 	}
 
 	if err := ctrl.StageHistory.Load(internal.HistoryFilePath); err != nil {

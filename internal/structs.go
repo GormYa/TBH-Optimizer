@@ -1,6 +1,9 @@
 package internal
 
-import "sync"
+import (
+	"embed"
+	"sync"
+)
 
 type Currency struct {
 	Key      int `json:"Key"`
@@ -174,6 +177,11 @@ type Control struct {
 	RuneLevels          map[int]int
 	OwnedPets           []int
 	ActivePet           int
+	LastBoxQuantity     map[int64]int
+	LastBoxTypes        map[int64]int
+	ChestHistory        []ChestDropEvent
+	WebFiles            embed.FS
+	GameDataDir         string
 }
 type ActiveHero struct {
 	Key   int `json:"key"`
@@ -191,4 +199,5 @@ type AnalyticsReport struct {
 	RuneLevels    map[int]int         `json:"rune_levels"`
 	OwnedPets     []int               `json:"owned_pets"`
 	ActivePet     int                 `json:"active_pet"`
+	ChestTracker  ChestTrackerStatus  `json:"chest_tracker"`
 }

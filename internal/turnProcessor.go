@@ -51,6 +51,19 @@ func setupWatcher(ctrl *Control) (string, *fsnotify.Watcher, error) {
 	ctrl.ActivePet = currentSave.CommonSaveData.ArrangedPetKey
 	ctrl.primeFirstClear = currentSave.CommonSaveData.CurrentStageWave != 0
 
+	InitializeChestLookup(ctrl.WebFiles, ctrl.GameDataDir)
+	if hist, err := LoadChestHistory(); err == nil {
+		ctrl.ChestHistory = hist
+	}
+	ctrl.LastBoxQuantity = make(map[int64]int)
+	ctrl.LastBoxTypes = make(map[int64]int)
+	for i, uniqueId := range currentSave.BoxData.BoxUniqueId {
+		if uniqueId != 0 {
+			ctrl.LastBoxQuantity[uniqueId] = currentSave.BoxData.BoxQuantity[i]
+			ctrl.LastBoxTypes[uniqueId] = currentSave.BoxData.BoxTypes[i]
+		}
+	}
+
 	archivePath := homeDir + `\AppData\LocalLow\TesseractStudio\TaskbarHero\SaveFile_Live.es3`
 	watcher, err := fsnotify.NewWatcher()
 	if err != nil {
@@ -132,6 +145,7 @@ func processSaveChange(ctrl *Control) {
 	ctrl.RuneLevels = runeLevels(currentSave)
 	ctrl.OwnedPets = ownedPets(currentSave)
 	ctrl.ActivePet = currentSave.CommonSaveData.ArrangedPetKey
+	ProcessChestDrops(ctrl, currentSave)
 	if currentSave.CommonSaveData.CurrentStageWave != 0 {
 		stg := currentSave.CommonSaveData.CurrentStageKey
 		ctrl.trackMidWave(stg, currentSave.CommonSaveData.CurrentStageWave)

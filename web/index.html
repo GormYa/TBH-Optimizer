@@ -168,13 +168,14 @@
 						<div class="card-sub muted" v-else>{{ t('Sem dados ainda') }}</div>
 					</div>
 
-					<div class="card accent-blue wide">
+					<div class="card accent-blue">
 						<div class="card-title">{{ t('Sessão') }}</div>
-						<div class="card-value small">{{ totalRunsAllStages }} {{ t('corridas monitoradas') }}</div>
+						<div class="card-value small">{{ totalRunsAllStages }} {{ t('corridas') }}</div>
 						<div class="card-sub muted">
-							{{ t('Modo:') }} <strong>{{ statsReport.calibrated ? t('Projeções ativas') : t('Aguardando 1-1 + outra fase') }}</strong> · {{ t('Média Móvel (EMA)') }}
+							{{ t('Modo:') }} <strong>{{ statsReport.calibrated ? t('Projeções') : t('Calibrando') }}</strong>
 						</div>
 					</div>
+
 				</div>
 			</section>
 
@@ -451,7 +452,47 @@
 							</select>
 						</div>
 					</div>
-					<p class="view-intro">{{ t('Dados da') }} <a href="https://taskbarhero.wiki" target="_blank" rel="noopener">taskbarhero.wiki</a> · {{ filteredChests.length }} {{ t('baú(s). Clique num baú para ver fases e tabela de saque.') }}</p>
+					<p class="view-intro">{{ filteredChests.length }} {{ t('baú(s). Clique num baú para ver fases e tabela de saque.') }}</p>
+
+					<div class="card accent-drop wide chest-tracker-card">
+						<div class="card-title" style="display:flex; justify-content:space-between; align-items:center;">
+							<span>{{ t('Tracker de Baús (Steam Inventory)') }}</span>
+							<button class="cbtn" @click="hideCommon = !hideCommon" style="font-size:11px; padding:4px 8px; border-radius:6px; font-family:var(--font-d); font-weight:600;">
+								{{ hideCommon ? t('Mostrar Comuns') : t('Ocultar Comuns') }}
+							</button>
+						</div>
+						<div class="chest-tracker-layout">
+							<div class="chest-suggestion-panel">
+								<div class="suggest-label">{{ t('Sugestão de Farm') }}</div>
+								<div class="suggest-value">
+									<span v-if="chestTracker.suggest_map">{{ formatStageName(chestTracker.suggest_map) }}</span>
+									<span v-else>---</span>
+								</div>
+								<div class="suggest-sub">
+									<span v-if="chestTracker.suggest_map">{{ t('Mapa ideal para farmar agora para obter baús sem cooldown.') }}</span>
+									<span v-else>{{ t('Nenhum mapa recomendado ou todos em cooldown.') }}</span>
+								</div>
+							</div>
+							<div class="chest-families-grid">
+								<div v-for="fam in sortedChestFamilies" :key="fam.item_def_id" class="chest-family-item" :class="fam.status">
+									<div class="chest-fam-icon-wrap">
+										<img :src="chestIcon(fam.item_def_id) || fam.icon_url" class="chest-fam-icon" onerror="this.style.visibility='hidden'">
+										<span class="chest-fam-badge" v-if="fam.dropped_in_window > 0">{{ fam.dropped_in_window }}</span>
+									</div>
+									<div class="chest-fam-info">
+										<div class="chest-fam-name">{{ chestName({ id: fam.item_def_id, name: fam.name }) }}</div>
+										<div class="chest-fam-stage">{{ fam.optimal_stage_name }}</div>
+										<div class="chest-fam-status">
+											<span v-if="fam.status === 'available'" class="status-ok">{{ t('Disponível') }}</span>
+											<span v-else class="status-warn">
+												{{ formatCooldownTimer(fam.cooldown_remaining_seconds) }}
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
 					<div class="empty" v-if="filteredChests.length === 0">
 						<div class="empty-mark"><icon name="package" :size="40"></icon></div>
@@ -829,6 +870,31 @@
 			setup() {
 				const statsReport = ref({ best_gold_stage: 0, best_xp_stage: 0, stages: {} });
 				const stagesList = ref([]);
+				const hideCommon = ref(true);
+				const chestTracker = computed(() => statsReport.value.chest_tracker || { families: [], suggest_map: 0 });
+				const sortedChestFamilies = computed(() => {
+					let list = chestTracker.value.families || [];
+					if (hideCommon.value) {
+						list = list.filter(f => f.rarity !== 'common');
+					}
+					return [...list].sort((a, b) => {
+						const rarityOrder = { rare: 0, common: 1, legendary: 2 };
+						const rA = rarityOrder[a.rarity] !== undefined ? rarityOrder[a.rarity] : 99;
+						const rB = rarityOrder[b.rarity] !== undefined ? rarityOrder[b.rarity] : 99;
+						if (rA !== rB) return rA - rB;
+						return a.item_def_id - b.item_def_id;
+					});
+				});
+				const formatCooldownTimer = (totalSeconds) => {
+					if (!totalSeconds || totalSeconds <= 0) return '00:00';
+					const h = Math.floor(totalSeconds / 3600);
+					const m = Math.floor((totalSeconds % 3600) / 60);
+					const s = totalSeconds % 60;
+					if (h > 0) {
+						return `${h}h ${m.toString().padStart(2, '0')}m`;
+					}
+					return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+				};
 					// ---------- i18n ----------
 					// A chave do t() é a própria string pt-BR; o dicionário do idioma ativo mapeia
 					// PT -> tradução e o fallback é a própria chave. {x} interpola variáveis.
@@ -1056,6 +1122,9 @@
 				const itemName = (id) => packName('items', id, (itemInfo(id) && itemInfo(id).name) || ('#' + id));
 				// nomes localizados com fallback pro nome PT baked nos dados
 				const chestName = (c) => c ? packName('chests', c.id, c.name) : '';
+				// ícone do baú pelo catálogo embutido: o iconUrl que vem do backend pode ser do
+				// catálogo do CDN (gamedata/), cujos caminhos novos o painel não serve (404).
+				const chestIcon = (id) => { const c = (chestData.value.chests || []).find(x => x.id === id); return (c && c.iconUrl) || ''; };
 				const monsterName = (m) => m ? packName('monsters', m.key, m.name) : '';
 				const runeName = (r) => r ? packName('runes', r.key, r.name) : '';
 				const petName = (p) => p ? packName('pets', p.key, p.name) : '';
@@ -1807,7 +1876,7 @@
 				// um painel ativo e, na aba nova, cede em vez de rodar um 2º painel.
 				const duplicateTab = ref(false);
 				let dashChannel = null;
-				const startApp = () => { loadStagesList(); loadStageDetails(); loadMonsterSprites(); loadHeroes(); loadRunes(); loadPets(); loadChests(); loadItems(); fetchStats(); initUpdate(); watchVersion(); setInterval(fetchStats, 2000); setInterval(watchVersion, 4000); setInterval(pollUpdateAvailability, 10 * 60 * 1000); pollLogs(); setInterval(pollLogs, 1500); };
+				const startApp = () => { loadStagesList(); loadStageDetails(); loadMonsterSprites(); loadHeroes(); loadRunes(); loadPets(); loadChests(); loadItems(); fetchStats(); initUpdate(); watchVersion(); setInterval(fetchStats, 2000); setInterval(watchVersion, 4000); setInterval(pollUpdateAvailability, 10 * 60 * 1000); pollLogs(); setInterval(pollLogs, 1500); setInterval(() => { const fams = statsReport.value.chest_tracker?.families; if (fams) { fams.forEach(fam => { if (fam.cooldown_remaining_seconds > 0) fam.cooldown_remaining_seconds--; }); } }, 1000); };
 				const useThisTab = () => { duplicateTab.value = false; startApp(); };
 				onMounted(() => {
 					loadLang(); // idioma salvo: carrega dicionário de UI + nomes do jogo antes de tudo
@@ -1855,7 +1924,8 @@
 					selectedChest, itemSearch, selectedItem, filteredItems, shownItems, onItemsScroll, itemChests, itemName, itemIcon, itemGrade, heroList, matSearch, materialsList, selectedMaterial, matCat, matCatLabel, matDesc, matTypeLabel, matStatName, matCatIcon, matSlotGroups, tierClass, matModVal, matFxText, matUses,
 					appVersion, updateInfo, updateBusy, updateMsg, checkUpdate, applyUpdate, toasts,
 					duplicateTab, useThisTab, quitApp, quitDone,
-					consoleLogs, consoleOpen, toggleConsole, clearConsole
+					consoleLogs, consoleOpen, toggleConsole, clearConsole,
+					chestTracker, sortedChestFamilies, formatCooldownTimer, chestIcon, hideCommon
 				};
 			}
 		});

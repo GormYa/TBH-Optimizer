@@ -7,14 +7,24 @@
 window.CHANGELOG = {
 	entries: [
         {
-            date: "12/06/2026",
-            version: "v1.0.35",
-            title: "Tracker de baús — saiba o que farmar e quando",
+            date: "2026-06-12",
+            version: "v1.0.36",
+            title: "Tracker de baús em tempo real — saiba o que farmar e quando",
             items: [
-                "Novo card \"Tracker de Baús\" no painel: cada baú detectado automaticamente ao dropar (sem precisar clicar em nada), com timer de cooldown, quantos caíram na janela atual (ex.: 2/3) e o mapa ideal de farm de cada família.",
-                "Sugestão de farm em tempo real: o painel aponta qual mapa rende baú agora — disponíveis primeiro; se tudo estiver em cooldown, mostra qual libera antes.",
-                "Os cooldowns vêm do cache local do Steam (com os valores oficiais embutidos de reserva) — se o jogo mudar os intervalos, o tracker se ajusta sozinho.",
-                "Detecção funciona pelo próprio save do jogo (baús não abertos), distinguindo baú comum, de chefe de fase e de chefe de ato.",
+                "Novo card \"Tracker de Baús\" no painel: cada baú é detectado automaticamente ao dropar, calculando individualmente as janelas deslizantes de recarga (cooldowns de 9 min para chefes e 11 min para monstros).",
+                "Mapeamento inteligente da Steam: o rastreador lê de forma assíncrona o cache local da Steam (ScanSteamInventoryCache) para obter os temporizadores oficiais de drop configurados na API do jogo.",
+                "Auto-correção de drops retroativa: corrige automaticamente o ID de baús associados incorretamente a fases de nível baixo (como 1-9 após trocar de mapa rápido) assim que a cache da Steam atualiza na máquina.",
+                "Filtro e estabilização de grade: adicionado um botão de alternância no painel para ocultar baús comuns de monstros (focando apenas nos azuis de boss), além de ordenamento estável por raridade para evitar que os baús fiquem mudando de posição visual.",
+            ],
+        },
+        {
+            date: "2026-06-12",
+            version: "v1.0.35",
+            title: "Domínio próprio adicionado",
+            items: [
+                "Agora não é mais apenas um subdomínio do Cloudflare",
+                "Melhorias para o SEO do projeto",
+                "URL antiga agora redireciona dinamicamente para taskbarhero.fun",
             ],
         },
         {

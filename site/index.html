@@ -11,17 +11,17 @@
 	<meta name="theme-color" content="#0b0e14">
 	<meta name="google-site-verification" content="YMqH51suS9lk1qoE9cOLYtoRtgsxYoEsVJgOv5lIudI">
 	<meta name="msvalidate.01" content="28C7287FD788C82E315D0750F158677A">
-	<link rel="canonical" href="https://tbh-optimizer.pages.dev/">
+	<link rel="canonical" href="https://taskbarhero.fun/">
 	<link rel="icon" type="image/svg+xml" href="./favicon.svg">
 
 	<!-- Open Graph (compartilhamento em redes/Discord) -->
 	<meta property="og:type" content="website">
 	<meta property="og:site_name" content="Taskbar Hero Otimizador de Farm">
 	<meta property="og:locale" content="pt_BR">
-	<meta property="og:url" content="https://tbh-optimizer.pages.dev/">
-	<meta property="og:title" content="Taskbar Hero Otimizador de Farm — Melhor Mapa de Ouro e XP">
+	<meta property="og:url" content="https://taskbarhero.fun/">
+	<meta property="og:title" content="Taskbar Hero Optimizer — Otimizador de Farm de Ouro e XP">
 	<meta property="og:description" content="Lê seu save do Taskbar Hero (TBH) em tempo real e aponta o melhor mapa pra farmar ouro e XP. Taxas de baú e loot por raridade. Grátis pra Windows.">
-	<meta property="og:image" content="https://tbh-optimizer.pages.dev/og.png">
+	<meta property="og:image" content="https://taskbarhero.fun/og.png">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
 
@@ -29,7 +29,7 @@
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Taskbar Hero Otimizador de Farm — Melhor Mapa de Ouro e XP">
 	<meta name="twitter:description" content="Lê seu save do Taskbar Hero (TBH) em tempo real e aponta o melhor mapa pra ouro e XP. Grátis pra Windows.">
-	<meta name="twitter:image" content="https://tbh-optimizer.pages.dev/og.png">
+	<meta name="twitter:image" content="https://taskbarhero.fun/og.png">
 
 	<!-- Dados estruturados: app de software gratuito (ajuda o Google a entender e exibir rich result) -->
 	<script type="application/ld+json">
@@ -40,15 +40,16 @@
 		"alternateName": ["TBH Optimizer", "Taskbar Hero Optimizer", "Task Bar Hero Otimizador"],
 		"applicationCategory": "GameApplication",
 		"operatingSystem": "Windows 10, Windows 11",
-		"url": "https://tbh-optimizer.pages.dev/",
-		"downloadUrl": "https://tbh-optimizer.pages.dev/optimizer.exe",
+		"url": "https://taskbarhero.fun/",
+		"downloadUrl": "https://taskbarhero.fun/optimizer.exe",
 		"description": "Otimizador de farm para o jogo Taskbar Hero (TBH). Lê o save em tempo real e calcula ouro/hora, XP/hora, taxas de baú e loot por raridade, apontando o melhor mapa para cada objetivo.",
-		"inLanguage": "pt-BR",
+		"inLanguage": ["pt-BR", "en-US", "de-DE", "es-ES", "fr-FR", "id-ID", "ja-JP", "ko-KR", "pl-PL", "ru-RU", "th-TH", "tr-TR", "uk-UA", "vi-VN", "zh-Hans", "zh-Hant"],
 		"isAccessibleForFree": true,
+		"featureList": "Real-time save parsing, Steam chest cooldown tracking, gold/hour and XP/hour metrics, progression advisor, interactive world map, items catalog",
 		"offers": {
 			"@type": "Offer",
 			"price": "0",
-			"priceCurrency": "BRL"
+			"priceCurrency": "USD"
 		}
 	}
 	</script>
@@ -154,11 +155,15 @@
 		.notes-box p{font-size:14.5px;color:var(--txt-dim)}
 		.cl-entry{padding:16px 0;border-top:1px solid var(--line-soft)}
 		.cl-entry:first-child{padding-top:0;border-top:none}
-		.cl-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:9px}
+		.cl-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:0px;cursor:pointer;user-select:none;position:relative;padding-right:24px}
+		.cl-head::after{content:"▼";position:absolute;right:0;top:50%;transform:translateY(-50%) scale(0.85);font-size:10px;color:var(--txt-faint);transition:transform 0.2s ease}
+		.cl-entry.active .cl-head{margin-bottom:9px}
+		.cl-entry.active .cl-head::after{transform:translateY(-50%) rotate(-180deg) scale(0.85)}
 		.cl-ver{font-family:var(--font-d);font-weight:700;font-size:12px;color:var(--gold);background:rgba(244,183,64,.1);border:1px solid rgba(244,183,64,.28);border-radius:7px;padding:2px 8px;letter-spacing:.3px}
 		.cl-title{font-family:var(--font-d);font-weight:700;font-size:15.5px;color:var(--txt)}
 		.cl-date{font-family:var(--font-d);font-size:12px;letter-spacing:.5px;color:var(--txt-faint)}
-		.cl-list{list-style:none;display:flex;flex-direction:column;gap:7px}
+		.cl-list{list-style:none;display:none;flex-direction:column;gap:7px}
+		.cl-entry.active .cl-list{display:flex}
 		.cl-list li{font-size:14px;color:var(--txt-dim);padding-left:18px;position:relative}
 		.cl-list li::before{content:"";position:absolute;left:2px;top:8px;width:5px;height:5px;border-radius:50%;background:var(--gold);opacity:.65}
 
@@ -174,6 +179,13 @@
 		.fade.d1{animation-delay:.06s}.fade.d2{animation-delay:.14s}.fade.d3{animation-delay:.22s}.fade.d4{animation-delay:.3s}
 		@keyframes rise{to{opacity:1;transform:none}}
 		@media (prefers-reduced-motion:reduce){.fade{animation:none;opacity:1;transform:none}}
+
+		/* FAQ Styles */
+		.faq-item[open] { border-color: var(--gold-d) !important; }
+		.faq-item[open] .faq-icon { transform: rotate(45deg); color: var(--gold); }
+		.faq-item:hover { border-color: rgba(244,183,64,.4) !important; }
+		.faq-item summary::-webkit-details-marker { display: none; }
+		.faq-item summary { outline: none; }
 	</style>
 </head>
 <body>
@@ -238,6 +250,51 @@
 				<p id="notes">Carregando novidades…</p>
 			</div>
 		</section>
+
+		<section id="faq" class="fade" style="margin-top: 40px;">
+			<div class="sec-h">Perguntas Frequentes (FAQ)</div>
+			<div class="faq-container" style="max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px;">
+				<details class="faq-item" style="background: var(--bg-2); border: 1px solid var(--line-soft); border-radius: 12px; padding: 16px 20px; cursor: pointer; transition: border-color 0.2s;">
+					<summary style="font-family: var(--font-d); font-weight: 700; font-size: 16px; color: var(--txt); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+						<span>O que é o Taskbar Hero Optimizer?</span>
+						<span class="faq-icon" style="color: var(--gold); transition: transform 0.2s;">+</span>
+					</summary>
+					<p style="margin-top: 12px; font-size: 14.5px; color: var(--txt-dim); line-height: 1.6;">O Taskbar Hero Optimizer (TBH Optimizer) é uma ferramenta gratuita de código aberto feita para otimizar o ganho de Ouro (Gold), Experiência (XP) e Gerenciamento de Baús no jogo ocioso <i>Taskbar Hero</i>. Ele analisa o arquivo de salvamento do jogo em tempo real para calcular estatísticas exatas de eficiência por fase.</p>
+				</details>
+
+				<details class="faq-item" style="background: var(--bg-2); border: 1px solid var(--line-soft); border-radius: 12px; padding: 16px 20px; cursor: pointer; transition: border-color 0.2s;">
+					<summary style="font-family: var(--font-d); font-weight: 700; font-size: 16px; color: var(--txt); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+						<span>Como encontrar o arquivo de save (SaveFile_Live.es3) do jogo?</span>
+						<span class="faq-icon" style="color: var(--gold); transition: transform 0.2s;">+</span>
+					</summary>
+					<p style="margin-top: 12px; font-size: 14.5px; color: var(--txt-dim); line-height: 1.6;">O arquivo de save padrão do jogo é monitorado automaticamente pelo aplicativo no Windows. Ele fica localizado na pasta <code>%USERPROFILE%\AppData\LocalLow\TesseractStudio\TaskbarHero\SaveFile_Live.es3</code>. O aplicativo lê este arquivo a cada atualização em tempo real, sem modificar seus dados.</p>
+				</details>
+
+				<details class="faq-item" style="background: var(--bg-2); border: 1px solid var(--line-soft); border-radius: 12px; padding: 16px 20px; cursor: pointer; transition: border-color 0.2s;">
+					<summary style="font-family: var(--font-d); font-weight: 700; font-size: 16px; color: var(--txt); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+						<span>Como funciona o Cooldown e o Tracker de Baús?</span>
+						<span class="faq-icon" style="color: var(--gold); transition: transform 0.2s;">+</span>
+					</summary>
+					<p style="margin-top: 12px; font-size: 14.5px; color: var(--txt-dim); line-height: 1.6;">Os baús de Taskbar Hero são itens do Steam Inventory Service e possuem cooldowns validados no servidor da Steam. O monitor lê esses dados diretamente do cache do Steam local (<code>inventorymsgcache</code>). Os baús normais (cinza) possuem cooldown de 11 minutos (limite de 3 drops por 33 min), enquanto os baús de chefe de fase (azuis) possuem cooldown de 9 minutos (limite de 3 drops por 27 min).</p>
+				</details>
+
+				<details class="faq-item" style="background: var(--bg-2); border: 1px solid var(--line-soft); border-radius: 12px; padding: 16px 20px; cursor: pointer; transition: border-color 0.2s;">
+					<summary style="font-family: var(--font-d); font-weight: 700; font-size: 16px; color: var(--txt); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+						<span>O acúmulo de baús comuns melhora o drop de baús de boss?</span>
+						<span class="faq-icon" style="color: var(--gold); transition: transform 0.2s;">+</span>
+					</summary>
+					<p style="margin-top: 12px; font-size: 14.5px; color: var(--txt-dim); line-height: 1.6;">Sim! Deixar o inventário de baús comuns cheio impede que o jogo envie requisições de drops comuns para os servidores da Steam. Isso evita que você gaste o seu <b>Limite Diário de Drops da Steam (Daily Drop Limit)</b> com baús de menor valor, permitindo que todas as suas requisições diárias de drop sejam direcionadas exclusivamente para os valiosos baús de boss (azuis).</p>
+				</details>
+
+				<details class="faq-item" style="background: var(--bg-2); border: 1px solid var(--line-soft); border-radius: 12px; padding: 16px 20px; cursor: pointer; transition: border-color 0.2s;">
+					<summary style="font-family: var(--font-d); font-weight: 700; font-size: 16px; color: var(--txt); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+						<span>A ferramenta é segura? Pode causar banimento?</span>
+						<span class="faq-icon" style="color: var(--gold); transition: transform 0.2s;">+</span>
+					</summary>
+					<p style="margin-top: 12px; font-size: 14.5px; color: var(--txt-dim); line-height: 1.6;">Sim, é 100% segura. O otimizador opera estritamente de forma <b>somente leitura (read-only)</b>, analisando o save e o cache local sem alterar a memória do jogo, sem injetar código e sem alterar arquivos de salvamento. O código-fonte é totalmente aberto e auditável no GitHub.</p>
+				</details>
+			</div>
+		</section>
 	</div>
 
 	<footer>
@@ -279,8 +336,8 @@
 			const data = window.CHANGELOG || {};
 			const entries = (data && data.entries) || [];
 			if (entries.length) {
-				document.getElementById('changelog').innerHTML = entries.map(e => `
-					<div class="cl-entry">
+				document.getElementById('changelog').innerHTML = entries.map((e, idx) => `
+					<div class="cl-entry${idx === 0 ? ' active' : ''}">
 						<div class="cl-head">
 							${e.version ? `<span class="cl-ver">${escHtml(e.version)}</span>` : ''}
 							<span class="cl-title">${escHtml(e.title || '')}</span>
@@ -288,10 +345,35 @@
 						</div>
 						<ul class="cl-list">${(e.items || []).map(it => `<li>${escHtml(it)}</li>`).join('')}</ul>
 					</div>`).join('');
+
+				document.getElementById('changelog').addEventListener('click', ev => {
+					const head = ev.target.closest('.cl-head');
+					if (!head) return;
+					const entry = head.closest('.cl-entry');
+					const isActive = entry.classList.contains('active');
+					document.querySelectorAll('#changelog .cl-entry').forEach(el => el.classList.remove('active'));
+					if (!isActive) {
+						entry.classList.add('active');
+					}
+				});
 			}
 		} catch (_) {
 			document.getElementById('notes').textContent = 'Baixe a versão mais recente acima.';
 		}
+
+		// Acordeão do FAQ
+		document.querySelectorAll('.faq-item summary').forEach(summary => {
+			summary.addEventListener('click', ev => {
+				const currentDetails = summary.parentElement;
+				if (!currentDetails.hasAttribute('open')) {
+					document.querySelectorAll('.faq-item').forEach(details => {
+						if (details !== currentDetails) {
+							details.removeAttribute('open');
+						}
+					});
+				}
+			});
+		});
 
 		// Lê o gameVersion do chest_drops.json pra mostrar de qual patch do jogo são os dados.
 		fetch('./chest_drops.json', { cache: 'no-store' })

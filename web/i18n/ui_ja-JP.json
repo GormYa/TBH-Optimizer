@@ -382,5 +382,12 @@
 	"Usado em": "使用先",
 	"Cubo Nv {n}": "キューブLv{n}",
 	"Tier {n}": "ティア{n}",
-	"Oferenda": "供物"
+	"Oferenda": "供物",
+	"Tracker de Baús (Steam Inventory)": "宝箱トラッカー（Steamインベントリ）",
+	"Sugestão de Farm": "おすすめ周回",
+	"Mapa ideal para farmar agora para obter baús sem cooldown.": "クールダウンなしで宝箱を入手できる、今周回すべき最適なマップ。",
+	"Nenhum mapa recomendado ou todos em cooldown.": "おすすめマップなし、または全てクールダウン中。",
+	"Disponível": "入手可能",
+	"Projeções": "予測",
+	"Calibrando": "調整中"
 }

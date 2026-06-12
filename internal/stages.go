@@ -222,5 +222,6 @@ func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
 		RuneLevels:    ctrl.RuneLevels,
 		OwnedPets:     ctrl.OwnedPets,
 		ActivePet:     ctrl.ActivePet,
+		ChestTracker:  GetChestTrackerStatus(ctrl),
 	}
 }

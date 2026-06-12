@@ -382,5 +382,12 @@
 	"Usado em": "ใช้ใน",
 	"Cubo Nv {n}": "คิวบ์ Lv {n}",
 	"Tier {n}": "เทียร์ {n}",
-	"Oferenda": "เครื่องบูชา"
+	"Oferenda": "เครื่องบูชา",
+	"Tracker de Baús (Steam Inventory)": "ตัวติดตามหีบ (คลัง Steam)",
+	"Sugestão de Farm": "คำแนะนำการฟาร์ม",
+	"Mapa ideal para farmar agora para obter baús sem cooldown.": "แมพที่เหมาะที่สุดสำหรับฟาร์มตอนนี้เพื่อรับหีบโดยไม่มีคูลดาวน์",
+	"Nenhum mapa recomendado ou todos em cooldown.": "ไม่มีแมพที่แนะนำ หรือทั้งหมดติดคูลดาวน์",
+	"Disponível": "พร้อมดรอป",
+	"Projeções": "การคาดการณ์",
+	"Calibrando": "กำลังปรับเทียบ"
 }

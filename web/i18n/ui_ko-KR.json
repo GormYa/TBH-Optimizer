@@ -382,5 +382,12 @@
 	"Usado em": "사용처",
 	"Cubo Nv {n}": "큐브 Lv{n}",
 	"Tier {n}": "티어 {n}",
-	"Oferenda": "공물"
+	"Oferenda": "공물",
+	"Tracker de Baús (Steam Inventory)": "상자 트래커 (Steam 인벤토리)",
+	"Sugestão de Farm": "파밍 추천",
+	"Mapa ideal para farmar agora para obter baús sem cooldown.": "지금 쿨다운 없이 상자를 얻을 수 있는 최적의 맵.",
+	"Nenhum mapa recomendado ou todos em cooldown.": "추천 맵이 없거나 모두 쿨다운 중입니다.",
+	"Disponível": "사용 가능",
+	"Projeções": "예측",
+	"Calibrando": "보정 중"
 }

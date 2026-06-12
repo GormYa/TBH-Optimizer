@@ -382,5 +382,12 @@
 	"Usado em": "用於",
 	"Cubo Nv {n}": "魔方等級 {n}",
 	"Tier {n}": "{n}階",
-	"Oferenda": "供品"
+	"Oferenda": "供品",
+	"Tracker de Baús (Steam Inventory)": "寶箱追蹤器（Steam 庫存）",
+	"Sugestão de Farm": "刷圖建議",
+	"Mapa ideal para farmar agora para obter baús sem cooldown.": "目前最適合刷寶箱（無冷卻）的地圖。",
+	"Nenhum mapa recomendado ou todos em cooldown.": "沒有推薦地圖，或全部處於冷卻中。",
+	"Disponível": "可獲取",
+	"Projeções": "預測",
+	"Calibrando": "校準中"
 }
