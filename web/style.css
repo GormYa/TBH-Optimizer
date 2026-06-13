@@ -184,6 +184,7 @@ body::before {
 .card.accent-xp::after { background: linear-gradient(90deg, var(--xp), transparent); }
 .card.accent-drop::after { background: linear-gradient(90deg, var(--drop), transparent); }
 .card.accent-blue::after { background: linear-gradient(90deg, var(--blue), transparent); }
+.card.accent-combo::after { background: linear-gradient(90deg, var(--gold), var(--xp)); }
 .card-title { font-size: 14px; text-transform: uppercase; letter-spacing: 2px; color: var(--txt-faint); }
 .card-value { font-family: var(--font-d); font-size: 28px; font-weight: 800; margin: 10px 0 8px; letter-spacing: .5px; }
 .card-value.small { font-size: 20px; }

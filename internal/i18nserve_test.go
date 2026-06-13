@@ -24,7 +24,7 @@ func TestI18nPackLocalFile(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	got, err := i18nPack(&http.Client{Timeout: time.Nanosecond}, "en-US")
+	got, err := i18nPack(&http.Client{Timeout: time.Nanosecond}, "gamedata", "en-US")
 	if err != nil || string(got) != want {
 		t.Fatalf("pack local deveria ser servido sem rede; got=%q err=%v", got, err)
 	}
@@ -39,12 +39,15 @@ func TestI18nPackCacheFallback(t *testing.T) {
 	defer os.Chdir(old)
 
 	want := `{"items":{"2":"Bow"}}`
-	if err := os.WriteFile("i18n_names_de-DE.json", []byte(want), 0644); err != nil {
+	if err := os.MkdirAll(filepath.Join("gamedata", "i18n"), 0755); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.WriteFile(filepath.Join("gamedata", "i18n", "names_de-DE.json"), []byte(want), 0644); err != nil {
 		t.Fatal(err)
 	}
 
 	// timeout de 1ns força falha imediata do CDN -> tem que cair pro cache
-	got, err := i18nPack(&http.Client{Timeout: time.Nanosecond}, "de-DE")
+	got, err := i18nPack(&http.Client{Timeout: time.Nanosecond}, "gamedata", "de-DE")
 	if err != nil || string(got) != want {
 		t.Fatalf("cache em disco deveria segurar o offline; got=%q err=%v", got, err)
 	}

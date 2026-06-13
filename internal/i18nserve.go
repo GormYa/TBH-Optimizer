@@ -13,15 +13,17 @@ var i18nLangs = map[string]bool{
 	"ko-KR": true, "ja-JP": true, "zh-Hans": true, "zh-Hant": true,
 }
 
-func i18nPack(client *http.Client, code string) ([]byte, error) {
+func i18nPack(client *http.Client, dataDir, code string) ([]byte, error) {
 	name := "names_" + code + ".json"
 	if b, err := os.ReadFile(filepath.Join("site", "i18n", name)); err == nil {
 		return b, nil
 	}
-	cache := "i18n_" + name
+	cache := filepath.Join(dataDir, "i18n", name)
 	b, err := httpGet(client, updateBaseURL+"i18n/"+name)
 	if err == nil {
-		_ = os.WriteFile(cache, b, 0644)
+		if mkErr := os.MkdirAll(filepath.Dir(cache), 0755); mkErr == nil {
+			_ = os.WriteFile(cache, b, 0644)
+		}
 		return b, nil
 	}
 	if cached, cerr := os.ReadFile(cache); cerr == nil {

@@ -43,7 +43,7 @@
 				<div v-if="!consoleLogs.length" class="console-empty">{{ t('Aguardando eventos… conclua uma fase no jogo pra ver o registro (ou o motivo do descarte) aqui.') }}</div>
 				<div v-for="l in consoleLogs" :key="l.seq" class="console-line" :class="'cl-' + l.kind">
 					<span class="cl-time">{{ l.time }}</span>
-					<span class="cl-msg">{{ l.msg }}</span>
+					<span class="cl-msg">{{ tlog(l) }}</span>
 				</div>
 			</div>
 		</div>
@@ -164,6 +164,15 @@
 						<div class="card-value">{{ statsReport.best_xp_stage ? formatStageName(statsReport.best_xp_stage) : '---' }}</div>
 						<div class="card-sub" v-if="bestXpData">
 							<strong class="g-xp">{{ formatNumber(bestXpData.avg_xp_per_hour) }}</strong>/h · {{ bestXpData.total_runs }} {{ t('corridas') }}
+						</div>
+						<div class="card-sub muted" v-else>{{ t('Sem dados ainda') }}</div>
+					</div>
+
+					<div class="card accent-combo">
+						<div class="card-title">{{ t('Melhor Mapa · Ouro + XP') }}</div>
+						<div class="card-value">{{ statsReport.best_combo_stage ? formatStageName(statsReport.best_combo_stage) : '---' }}</div>
+						<div class="card-sub" v-if="bestComboData">
+							<strong class="g-gold">{{ formatNumber(bestComboData.avg_gold_per_hour) }}</strong>/h · <strong class="g-xp">{{ formatNumber(bestComboData.avg_xp_per_hour) }}</strong>/h
 						</div>
 						<div class="card-sub muted" v-else>{{ t('Sem dados ainda') }}</div>
 					</div>
@@ -882,7 +891,9 @@
 						const rA = rarityOrder[a.rarity] !== undefined ? rarityOrder[a.rarity] : 99;
 						const rB = rarityOrder[b.rarity] !== undefined ? rarityOrder[b.rarity] : 99;
 						if (rA !== rB) return rA - rB;
-						return a.item_def_id - b.item_def_id;
+						// dentro da raridade: mapa mais alto primeiro (baú de nível maior = loot melhor)
+						if (a.optimal_stage !== b.optimal_stage) return b.optimal_stage - a.optimal_stage;
+						return b.item_def_id - a.item_def_id;
 					});
 				});
 				const formatCooldownTimer = (totalSeconds) => {
@@ -981,7 +992,7 @@
 				const calibLimitStage = ref('');
 				const calibLimitTime = ref('');
 				const view = ref('painel');
-				const sortKey = ref('avg_gold_per_hour');
+				const sortKey = ref('stage_key'); // abre ordenado por fase (maior → menor); "Melhor mapa pra:" vem vazio (usuário escolhe)
 				const sortDir = ref('desc'); // 'asc' | 'desc'
 
 				// --- Baús (dados da wiki) ---
@@ -1342,6 +1353,16 @@
 					} catch (e) { /* offline */ }
 				};
 				const clearConsole = () => { consoleLogs.value = []; };
+				// tlog traduz a linha do console: t(key) pega o template no idioma ativo (ou PT
+				// no fallback) e reinjetamos os args já formatados nos verbos %s/%.0f/... na ordem.
+				const LOG_VERB_RE = /%[-+# 0-9.*]*[bcdeEfFgGoqstTvxXUp]/g;
+				const tlog = (l) => {
+					if (!l.key) return l.msg;
+					const tpl = t(l.key);
+					if (!l.args || !l.args.length) return tpl;
+					let i = 0;
+					return tpl.replace(LOG_VERB_RE, () => i < l.args.length ? l.args[i++] : '');
+				};
 				const toggleConsole = () => { consoleOpen.value = !consoleOpen.value; if (consoleOpen.value) nextTick(() => { const el = document.querySelector('.console-body'); if (el) el.scrollTop = el.scrollHeight; }); };
 
 				const quitDone = ref(false);
@@ -1798,7 +1819,7 @@
 				// grupo, ordena pela coluna escolhida (clicável no cabeçalho).
 				const setSort = (key) => {
 					if (sortKey.value === key) { sortDir.value = sortDir.value === 'desc' ? 'asc' : 'desc'; }
-					else { sortKey.value = key; sortDir.value = key === 'stage_key' ? 'asc' : 'desc'; }
+					else { sortKey.value = key; sortDir.value = 'desc'; }
 				};
 				// Atalho "Melhor mapa pra Ouro/XP": sempre decrescente (melhor no topo).
 				const rankBy = (key) => { sortKey.value = key; sortDir.value = 'desc'; };
@@ -1817,6 +1838,7 @@
 
 				const bestGoldData = computed(() => statsReport.value.stages ? statsReport.value.stages[statsReport.value.best_gold_stage] : null);
 				const bestXpData = computed(() => statsReport.value.stages ? statsReport.value.stages[statsReport.value.best_xp_stage] : null);
+				const bestComboData = computed(() => statsReport.value.stages ? statsReport.value.stages[statsReport.value.best_combo_stage] : null);
 				const totalRunsAllStages = computed(() => Object.values(statsReport.value.stages || {}).reduce((s, x) => s + x.total_runs, 0));
 
 				const formatNumber = (n) => (n === undefined || n === null) ? '0' : Math.round(n).toLocaleString(lang.value);
@@ -1904,7 +1926,7 @@
 					lang, LANGS, t, setLang, chestName, monsterName, runeName, petName, matName, uniqueText,
 					statsReport, stagesList, calibBaseTime, calibLimitStage, calibLimitTime,
 					view, navItems, viewTitle, goView, sortKey, sortDir, globalSearch, searchActive, searchResults, pickSearch,
-					sortedStages, bestGoldData, bestXpData, totalRunsAllStages,
+					sortedStages, bestGoldData, bestXpData, bestComboData, totalRunsAllStages,
 					addStage, addTime, addMapTime, resetStage,
 					fetchStats, resetHistory, submitCalibration, setSort, rankBy, sortArrow,
 					stageHP, chestRateByStage, chestsPerHour, formatItems,
@@ -1924,7 +1946,7 @@
 					selectedChest, itemSearch, selectedItem, filteredItems, shownItems, onItemsScroll, itemChests, itemName, itemIcon, itemGrade, heroList, matSearch, materialsList, selectedMaterial, matCat, matCatLabel, matDesc, matTypeLabel, matStatName, matCatIcon, matSlotGroups, tierClass, matModVal, matFxText, matUses,
 					appVersion, updateInfo, updateBusy, updateMsg, checkUpdate, applyUpdate, toasts,
 					duplicateTab, useThisTab, quitApp, quitDone,
-					consoleLogs, consoleOpen, toggleConsole, clearConsole,
+					consoleLogs, consoleOpen, toggleConsole, clearConsole, tlog,
 					chestTracker, sortedChestFamilies, formatCooldownTimer, chestIcon, hideCommon
 				};
 			}

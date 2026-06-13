@@ -22,9 +22,7 @@ var heroLevelsData []byte
 //go:embed web/heroes.json
 var heroesData []byte
 
-// gameDataDir guarda o catalogo atualizavel em runtime (chest_drops.json + sprites),
-// ao lado do executavel. Servido com prioridade sobre o baseline embarcado.
-const gameDataDir = "gamedata"
+var gameDataDir = internal.DataDir
 
 func main() {
 	if len(os.Args) > 1 && os.Args[1] == "-dump-save" {
@@ -48,6 +46,7 @@ func main() {
 	}
 
 	internal.CleanupOldBinary()
+	internal.MigrateDataFiles()
 
 	relaunch := false
 	for _, a := range os.Args[1:] {

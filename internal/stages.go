@@ -126,6 +126,7 @@ func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
 
 	bestGoldStage := 0
 	bestXpStage := 0
+	bestComboStage := 0
 
 	if calibrated && ctrl.FarmStages != nil {
 		lastRegistered := 0
@@ -177,6 +178,24 @@ func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
 				bestXpStage = key
 			}
 		}
+
+		if maxGoldPerHour > 0 && maxXpPerHour > 0 {
+			bestComboScore := 0.0
+			for key, info := range ctrl.FarmStages {
+				if key > lastRegistered || info.Waves <= 0 {
+					continue
+				}
+				st := stagesReport[key]
+				if st == nil {
+					continue
+				}
+				score := st.AvgGoldPerHour/maxGoldPerHour + st.AvgXpPerHour/maxXpPerHour
+				if score > bestComboScore {
+					bestComboScore = score
+					bestComboStage = key
+				}
+			}
+		}
 	} else {
 		maxGold := 0.0
 		maxXp := 0.0
@@ -188,6 +207,16 @@ func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
 			if stats.AvgXpPerHour > maxXp {
 				maxXp = stats.AvgXpPerHour
 				bestXpStage = key
+			}
+		}
+		if maxGold > 0 && maxXp > 0 {
+			bestComboScore := 0.0
+			for key, stats := range ctrl.StageHistory.history {
+				score := stats.AvgGoldPerHour/maxGold + stats.AvgXpPerHour/maxXp
+				if score > bestComboScore {
+					bestComboScore = score
+					bestComboStage = key
+				}
 			}
 		}
 	}
@@ -211,17 +240,19 @@ func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
 	}
 
 	return AnalyticsReport{
-		BestGoldStage: bestGoldStage,
-		BestXpStage:   bestXpStage,
-		Stages:        stagesReport,
-		Calibrated:    calibrated,
-		EffectiveDPS:  dps,
-		HeroLevel:     ctrl.HeroLevel,
-		ActiveHeroes:  ctrl.ActiveHeroes,
-		Gold:          ctrl.Gold,
-		RuneLevels:    ctrl.RuneLevels,
-		OwnedPets:     ctrl.OwnedPets,
-		ActivePet:     ctrl.ActivePet,
-		ChestTracker:  GetChestTrackerStatus(ctrl),
+		BestGoldStage:  bestGoldStage,
+		BestXpStage:    bestXpStage,
+		BestComboStage: bestComboStage,
+		Stages:         stagesReport,
+		Calibrated:     calibrated,
+		EffectiveDPS:   dps,
+		HeroLevel:      ctrl.HeroLevel,
+		ActiveHeroes:   ctrl.ActiveHeroes,
+		Gold:           ctrl.Gold,
+		RuneLevels:     ctrl.RuneLevels,
+		OwnedPets:      ctrl.OwnedPets,
+		ActivePet:      ctrl.ActivePet,
+		ChestTracker:   GetChestTrackerStatus(ctrl),
+		HeroEquipment:  ctrl.HeroEquipment,
 	}
 }

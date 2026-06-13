@@ -39,12 +39,14 @@ func setupWatcher(ctrl *Control) (string, *fsnotify.Watcher, error) {
 	ctrl.LastPlayTime = currentSave.CommonSaveData.PlayTime
 	ctrl.LastCurrentStageKey = currentSave.CommonSaveData.CurrentStageKey
 	ctrl.LastGold = ExtractGold(currentSave.CurrenySaveDatas)
+	ctrl.LastRuneLevels = runeLevels(currentSave)
 	ctrl.HeroStates = CalibrateHeroStates(currentSave.HeroSaveDatas)
 	ctrl.MaxCompletedStage = currentSave.CommonSaveData.MaxCompletedStage
 	ctrl.LastItemIds = snapshotItemIds(currentSave.ItemSaveDatas)
 	ctrl.HeroLevel = activeHeroLevel(currentSave)
 	ctrl.ActiveHeroCount = len(currentSave.CommonSaveData.ArrangedHeroKey)
 	ctrl.ActiveHeroes = activeHeroes(currentSave)
+	ctrl.HeroEquipment = resolveHeroEquipment(currentSave)
 	ctrl.Gold = ctrl.LastGold
 	ctrl.RuneLevels = runeLevels(currentSave)
 	ctrl.OwnedPets = ownedPets(currentSave)
@@ -52,6 +54,7 @@ func setupWatcher(ctrl *Control) (string, *fsnotify.Watcher, error) {
 	ctrl.primeFirstClear = currentSave.CommonSaveData.CurrentStageWave != 0
 
 	InitializeChestLookup(ctrl.WebFiles, ctrl.GameDataDir)
+	InitializeRuneCosts(ctrl.WebFiles, ctrl.GameDataDir)
 	if hist, err := LoadChestHistory(); err == nil {
 		ctrl.ChestHistory = hist
 	}
@@ -148,6 +151,19 @@ func processSaveChange(ctrl *Control) {
 	ProcessChestDrops(ctrl, currentSave)
 	if currentSave.CommonSaveData.CurrentStageWave != 0 {
 		stg := currentSave.CommonSaveData.CurrentStageKey
+		if stg != ctrl.LastCurrentStageKey && stg != ctrl.nextStageKey(ctrl.LastCurrentStageKey) {
+			prev := ctrl.LastCurrentStageKey
+			ctrl.resyncTimingBaseline(currentSave)
+			ctrl.LastCurrentStageKey = stg
+			ctrl.lastMidStage = stg
+			ctrl.reanchorWave = currentSave.CommonSaveData.CurrentStageWave
+			ctrl.HeroLevel = activeHeroLevel(currentSave)
+			ctrl.ActiveHeroCount = len(currentSave.CommonSaveData.ArrangedHeroKey)
+			ctrl.ActiveHeroes = activeHeroes(currentSave)
+			Logf("info", "Troca de mapa: %s → %s. O app só enxerga o jogo pelos saves (gravados a cada ~3 min ou em eventos) e peguei o mapa novo já no meio de uma corrida (wave %d) — então esta primeira corrida sai parcial e será descartada; a próxima corrida completa no mapa novo já conta.",
+				ctrl.stageDisplay(prev), ctrl.stageDisplay(stg), ctrl.reanchorWave)
+			return
+		}
 		ctrl.trackMidWave(stg, currentSave.CommonSaveData.CurrentStageWave)
 		if stg != ctrl.lastMidStage {
 			ctrl.lastMidStage = stg
@@ -164,7 +180,19 @@ func processSaveChange(ctrl *Control) {
 	ctrl.HeroLevel = activeHeroLevel(currentSave)
 	ctrl.ActiveHeroCount = len(currentSave.CommonSaveData.ArrangedHeroKey)
 	ctrl.ActiveHeroes = activeHeroes(currentSave)
+	ctrl.HeroEquipment = resolveHeroEquipment(currentSave)
 	calculateAndLogRound(ctrl, currentSave)
+}
+
+func (ctrl *Control) resyncTimingBaseline(save *InnerSaveData) {
+	ctrl.LastPlayTime = save.CommonSaveData.PlayTime
+	ctrl.LastGold = ExtractGold(save.CurrenySaveDatas)
+	ctrl.LastRuneLevels = runeLevels(save)
+	commitHeroStates(save.HeroSaveDatas, ctrl.HeroStates)
+	ctrl.midWindowStage = 0
+	ctrl.midWindowMixed = false
+	ctrl.midWindowMaxWave = 0
+	ctrl.midWindowRestart = false
 }
 
 func (ctrl *Control) trackMidWave(stg, wave int) {
@@ -386,13 +414,7 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 	}()
 
 	advanceClock := func() {
-		ctrl.LastPlayTime = currentSave.CommonSaveData.PlayTime
-		ctrl.LastGold = ExtractGold(currentSave.CurrenySaveDatas)
-		commitHeroStates(currentSave.HeroSaveDatas, ctrl.HeroStates)
-		ctrl.midWindowStage = 0
-		ctrl.midWindowMixed = false
-		ctrl.midWindowMaxWave = 0
-		ctrl.midWindowRestart = false
+		ctrl.resyncTimingBaseline(currentSave)
 	}
 
 	if !isValidRound(timeSpent, goldGain, xpGain) {
@@ -425,6 +447,14 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 		Logf("reject", "Fase %s descartada: a wave recuou no meio da janela — a fase reiniciou (morte/recomeço), o tempo soma tentativas e não um clear só. Re-sincronizando.", ctrl.stageDisplay(clearedStage))
 		return
 	}
+
+	if ctrl.reanchorWave > 0 {
+		ctrl.reanchorWave = 0
+		advanceClock()
+		Logf("info", "Fase %s: primeira corrida após a troca de mapa descartada — só %.0fs medidos (parte de uma corrida, não a corrida inteira), porque o save anterior já estava no meio dela. A próxima corrida completa conta.", ctrl.stageDisplay(clearedStage), timeSpent)
+		return
+	}
+	ctrl.reanchorWave = 0
 
 	if avg := ctrl.recordedAvgTime(clearedStage); avg > 0 && timeSpent < avg/timeOutlierFactor {
 		Logf("reject", "Fase %s descartada: %.0fs curto demais para um clear (média ~%.0fs) — fragmento de save, não um ciclo completo. Junto com o próximo ciclo.", ctrl.stageDisplay(clearedStage), timeSpent, avg)
@@ -481,12 +511,20 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 			Logf("reject", "Fase %s descartada: ouro negativo (compra no meio) E +%.0f xp (%.1fx a média de um clear) — janela com mortes/tentativas múltiplas escondida pela compra. Re-sincronizando.", ctrl.stageDisplay(clearedStage), xpGain, xpGain/xpFloor)
 			return
 		}
-		if s, ok := ctrl.StageHistory.Get(clearedStage); ok {
+		spend := ctrl.runeSpendSince(currentSave)
+		recovered := float64(goldGain) + spend
+		floor := ctrl.estimateClearGold(clearedStage)
+		if spend > 0 && recovered >= 0 && (floor <= 0 || recovered <= goldCeilFactor*floor) {
+			goldRec = recovered
+			Logf("info", "Fase %s: ouro caiu %d, mas o gasto foi em upgrade de runa (~%.0f) — recuperei o ganho real do ciclo somando o gasto de volta: +%.0f ouro. Conto como clear normal.", ctrl.stageDisplay(clearedStage), goldGain, spend, recovered)
+		} else if s, ok := ctrl.StageHistory.Get(clearedStage); ok {
 			goldRec = s.AvgGoldPerRun
+			Logf("info", "Fase %s: ouro caiu %d no ciclo — provável compra de runa/item. Conto tempo/xp; o ouro não distorce a média.", ctrl.stageDisplay(clearedStage), goldGain)
 		} else {
-			goldRec = 0
+			advanceClock()
+			Logf("info", "Fase %s: ouro caiu %d (provável compra de runa/item) e esta fase ainda não tem média de ouro — descarto esta corrida pra não registrar ouro zerado; o próximo clear sem compra semeia a fase.", ctrl.stageDisplay(clearedStage), goldGain)
+			return
 		}
-		Logf("info", "Fase %s: ouro caiu %d no ciclo — provável compra de runa/item. Conto tempo/xp; o ouro não distorce a média.", ctrl.stageDisplay(clearedStage), goldGain)
 	} else if floor := ctrl.estimateClearGold(clearedStage); floor > 0 {
 		if float64(goldGain) < goldFloorFactor*floor {
 			Logf("reject", "Fase %s descartada: ouro %.0f baixo demais para um clear (média ~%.0f). Provável morte/clear parcial.", ctrl.stageDisplay(clearedStage), float64(goldGain), floor)
@@ -553,7 +591,8 @@ func describeLevelUps(ups []HeroLevelUp) string {
 }
 
 func saveStageLog(stageKey int, timeSpent float64, goldGain float64, xpGain float64, heroLevel int) {
-	file, err := os.OpenFile("historico_farm.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	ensureDataDir()
+	file, err := os.OpenFile(FarmLogPath, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		fmt.Println("Erro ao abrir o bloco de notas:", err)
 		return

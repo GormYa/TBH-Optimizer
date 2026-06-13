@@ -59,7 +59,7 @@ func StartWebServer(ctrl *Control, webFiles embed.FS, dataDir string) {
 			ctrl.StageHistory.Remove(req.StageKey)
 		} else {
 			ctrl.StageHistory.Clear()
-			_ = os.Truncate("historico_farm.txt", 0)
+			_ = os.Truncate(FarmLogPath, 0)
 		}
 		_ = ctrl.StageHistory.Save(HistoryFilePath)
 
@@ -161,7 +161,7 @@ func StartWebServer(ctrl *Control, webFiles embed.FS, dataDir string) {
 			http.Error(w, "idioma desconhecido", http.StatusNotFound)
 			return
 		}
-		data, err := i18nPack(&http.Client{Timeout: 15 * time.Second}, code)
+		data, err := i18nPack(&http.Client{Timeout: 15 * time.Second}, dataDir, code)
 		if err != nil {
 			http.Error(w, "pack de idioma indisponível (offline e sem cache): "+err.Error(), http.StatusBadGateway)
 			return

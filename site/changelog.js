@@ -7,6 +7,19 @@
 window.CHANGELOG = {
 	entries: [
         {
+            date: "2026-06-13",
+            version: "v1.0.37",
+            title: "Combined Gold+XP pick, smarter map-switch handling & a 16-language console",
+            items: [
+                "New \"Best Map · Gold + XP\" recommendation: scores every map against the best gold/h and the best xp/h and adds them up, so a map with slightly less gold but far more XP wins over the pure-gold pick.",
+                "The stats panel now opens sorted by stage instead of by gold, and the \"Best map for:\" ranking starts empty — pick Gold or XP yourself when you want it ranked.",
+                "Switching maps no longer corrupts a map's stats: the timer re-anchors on the new map and a run that mixed two maps is never credited to the wrong one. Since the app reads the game only through its periodic saves, a run it joined partway can't be timed accurately — so that first partial run is skipped (with a console note explaining why) and the next full run counts.",
+                "Fixed a +0 gold reading after buying runes: a clear where you spent gold mid-cycle used to register +0 gold (zeroing the map's gold/h). The optimizer now adds the rune-upgrade cost back — real gain = gold change + amount spent — and records the true gold, even on a brand-new map. If the spend can't be attributed to rune upgrades, it falls back to skipping that run.",
+                "The live console now follows the selected language: every monitor message is fully translated across all 16 languages (it used to stay in Portuguese).",
+                "Chest tracker ordering fixed: the highest-level maps are listed first and the farm suggestion targets the highest-level chest you can reach, instead of pointing at 1-1.",
+            ],
+        },
+        {
             date: "2026-06-12",
             version: "v1.0.36",
             title: "Tracker de baús em tempo real — saiba o que farmar e quando",

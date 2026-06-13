@@ -237,6 +237,130 @@ func TestStartMidCycleDiscardsFirstClear(t *testing.T) {
 	}
 }
 
+func TestReanchorMidCycleDiscardsFirstPartial(t *testing.T) {
+	old, _ := os.Getwd()
+	if err := os.Chdir(t.TempDir()); err != nil {
+		t.Fatal(err)
+	}
+	defer os.Chdir(old)
+
+	const stage = 1308
+	ctrl := Control{
+		UseEMA: true, EMAAlpha: 0.2,
+		FarmStages:          map[int]FarmStageInfo{stage: {Key: stage, Label: "3-8", TotalHP: 100000, ExpectedGold: 4000, ExpectedEXP: 60000, Waves: 17, Level: 30}},
+		HeroStates:          map[int]HeroState{201: {Level: 33, Xp: 1000}},
+		ActiveHeroCount:     1,
+		HeroLevel:           33,
+		LastCurrentStageKey: stage,
+		LastPlayTime:        1000,
+		LastGold:            500,
+		reanchorWave:        5, // re-ancorei no MEIO do ciclo (wave 5) -> 1a volta é parcial
+	}
+	// 1o fechamento após a re-âncora: parcial (tempo menor que o real), deve ser descartado
+	calculateAndLogRound(&ctrl, newClearSave(stage, 1148, 10500, 201, 33, 501000))
+	if s, ok := ctrl.StageHistory.Get(stage); ok && s.TotalRuns > 0 {
+		t.Fatalf("1a volta após re-âncora no meio do ciclo deveria ser descartada; runs=%d", s.TotalRuns)
+	}
+	if ctrl.reanchorWave != 0 {
+		t.Fatal("reanchorWave deveria ter sido limpo após o descarte")
+	}
+	// próxima volta completa -> conta normal
+	calculateAndLogRound(&ctrl, newClearSave(stage, 1296, 20500, 201, 33, 1001000))
+	s, ok := ctrl.StageHistory.Get(stage)
+	runs := 0
+	if s != nil {
+		runs = s.TotalRuns
+	}
+	if !ok || runs != 1 {
+		t.Fatalf("a 2a volta (completa) deveria contar; runs=%d", runs)
+	}
+}
+
+func TestReanchorWave1AlsoDiscards(t *testing.T) {
+	// O ciclo começa na wave 0, então re-ancorar já na wave 1 significa que perdemos a
+	// wave 0 -> a 1a volta é parcial e DEVE ser descartada (não é o início real).
+	old, _ := os.Getwd()
+	if err := os.Chdir(t.TempDir()); err != nil {
+		t.Fatal(err)
+	}
+	defer os.Chdir(old)
+
+	const stage = 1308
+	ctrl := Control{
+		UseEMA: true, EMAAlpha: 0.2,
+		FarmStages:          map[int]FarmStageInfo{stage: {Key: stage, Label: "3-8", TotalHP: 100000, ExpectedGold: 4000, ExpectedEXP: 60000, Waves: 17, Level: 30}},
+		HeroStates:          map[int]HeroState{201: {Level: 33, Xp: 1000}},
+		ActiveHeroCount:     1,
+		HeroLevel:           33,
+		LastCurrentStageKey: stage,
+		LastPlayTime:        1000,
+		LastGold:            500,
+		reanchorWave:        1, // peguei o mapa novo na wave 1 -> já passei da wave 0 (início)
+	}
+	calculateAndLogRound(&ctrl, newClearSave(stage, 1148, 10500, 201, 33, 501000))
+	if s, ok := ctrl.StageHistory.Get(stage); ok && s.TotalRuns > 0 {
+		t.Fatalf("re-âncora na wave 1 (perdeu a wave 0): a 1a volta deveria ser descartada; runs=%d", s.TotalRuns)
+	}
+	if ctrl.reanchorWave != 0 {
+		t.Fatal("reanchorWave deveria ter sido limpo após o descarte")
+	}
+	// próxima volta completa -> conta
+	calculateAndLogRound(&ctrl, newClearSave(stage, 1296, 20500, 201, 33, 1001000))
+	s, ok := ctrl.StageHistory.Get(stage)
+	runs := 0
+	if s != nil {
+		runs = s.TotalRuns
+	}
+	if !ok || runs != 1 {
+		t.Fatalf("a 2a volta (completa) deveria contar; runs=%d", runs)
+	}
+}
+
+func TestRuneSpendRecoversGold(t *testing.T) {
+	old, _ := os.Getwd()
+	if err := os.Chdir(t.TempDir()); err != nil {
+		t.Fatal(err)
+	}
+	defer os.Chdir(old)
+
+	// tabela de custo de runa (normalmente vem de runes.json); restaura no fim
+	savedCosts := runeLevelCost
+	runeLevelCost = map[int]map[int]float64{10: {1: 200, 2: 300, 3: 500}} // total 0->3 = 1000
+	defer func() { runeLevelCost = savedCosts }()
+
+	const stage = 1308
+	ctrl := Control{
+		UseEMA: true, EMAAlpha: 0.2,
+		FarmStages:          map[int]FarmStageInfo{stage: {Key: stage, Label: "3-8", TotalHP: 100000, ExpectedGold: 4000, ExpectedEXP: 60000, Waves: 17, Level: 30}},
+		HeroStates:          map[int]HeroState{201: {Level: 33, Xp: 1000}},
+		ActiveHeroCount:     1,
+		HeroLevel:           33,
+		LastCurrentStageKey: stage,
+		LastPlayTime:        1000,
+		LastGold:            1000,            // tinha 1000 de ouro no início
+		LastRuneLevels:      map[int]int{10: 0}, // runa 10 no nível 0
+	}
+	// Ciclo: ganhou 800 de ouro E subiu a runa 10 pro nível 3 (gastou 1000).
+	// Ouro final = 1000 + 800 - 1000 = 800 -> delta = -200 (negativo).
+	// recuperado = delta + gasto = -200 + 1000 = 800 (= o ganho real).
+	save := newClearSave(stage, 1148, 800, 201, 33, 501000)
+	save.RuneSaveDatas = []RuneSave{{RuneKey: 10, Level: 3}}
+
+	calculateAndLogRound(&ctrl, save)
+
+	s, ok := ctrl.StageHistory.Get(stage)
+	if !ok || s.TotalRuns != 1 {
+		runs := 0
+		if s != nil {
+			runs = s.TotalRuns
+		}
+		t.Fatalf("a corrida deveria contar (ouro recuperado), ok=%v runs=%d", ok, runs)
+	}
+	if s.AvgGoldPerRun != 800 {
+		t.Fatalf("esperava ouro real recuperado = 800 (delta -200 + gasto 1000), veio %.0f", s.AvgGoldPerRun)
+	}
+}
+
 func dirEvent(name string, op fsnotify.Op) fsnotify.Event {
 	return fsnotify.Event{Name: filepath.Join(filepath.Dir(testSavePath), name), Op: op}
 }

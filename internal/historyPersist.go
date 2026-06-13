@@ -3,15 +3,9 @@ package internal
 import (
 	"encoding/json"
 	"os"
+	"path/filepath"
 )
 
-// HistoryFilePath e o snapshot em disco que sobrevive ao restart do app.
-const HistoryFilePath = "stage_history.json"
-
-// persistedStageStats espelha StageStats incluindo os campos acumulados (que em
-// StageStats sao json:"-" para nao vazar na API). Eles sao necessarios para
-// continuar as medias cumulativas depois de reiniciar. RawGoldPerHour/RawXpPerHour
-// nao entram: sao recalculados em GenerateReportWithEstimates.
 type persistedStageStats struct {
 	StageKey          int         `json:"stage_key"`
 	TotalRuns         int         `json:"total_runs"`
@@ -61,6 +55,9 @@ func (s *StageHistoryStore) Save(path string) error {
 		return err
 	}
 
+	if err := os.MkdirAll(filepath.Dir(path), 0o755); err != nil {
+		return err
+	}
 	tmp := path + ".tmp"
 	if err := os.WriteFile(tmp, data, 0644); err != nil {
 		return err

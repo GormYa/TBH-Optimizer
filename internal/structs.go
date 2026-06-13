@@ -171,12 +171,15 @@ type Control struct {
 	midWindowMixed      bool
 	midWindowMaxWave    int
 	midWindowRestart    bool
+	reanchorWave        int
 	timeContamStreak    map[int]int
 	primeFirstClear     bool
 	Gold                int
 	RuneLevels          map[int]int
+	LastRuneLevels      map[int]int
 	OwnedPets           []int
 	ActivePet           int
+	HeroEquipment       []HeroEquipment
 	LastBoxQuantity     map[int64]int
 	LastBoxTypes        map[int64]int
 	ChestHistory        []ChestDropEvent
@@ -188,16 +191,18 @@ type ActiveHero struct {
 	Level int `json:"level"`
 }
 type AnalyticsReport struct {
-	BestGoldStage int                 `json:"best_gold_stage"`
-	BestXpStage   int                 `json:"best_xp_stage"`
-	Stages        map[int]*StageStats `json:"stages"`
-	Calibrated    bool                `json:"calibrated"`
-	EffectiveDPS  float64             `json:"effective_dps"`
-	HeroLevel     int                 `json:"hero_level"`
-	ActiveHeroes  []ActiveHero        `json:"active_heroes"`
-	Gold          int                 `json:"gold"`
-	RuneLevels    map[int]int         `json:"rune_levels"`
-	OwnedPets     []int               `json:"owned_pets"`
-	ActivePet     int                 `json:"active_pet"`
-	ChestTracker  ChestTrackerStatus  `json:"chest_tracker"`
+	BestGoldStage  int                 `json:"best_gold_stage"`
+	BestXpStage    int                 `json:"best_xp_stage"`
+	BestComboStage int                 `json:"best_combo_stage"`
+	Stages         map[int]*StageStats `json:"stages"`
+	Calibrated     bool                `json:"calibrated"`
+	EffectiveDPS   float64             `json:"effective_dps"`
+	HeroLevel      int                 `json:"hero_level"`
+	ActiveHeroes   []ActiveHero        `json:"active_heroes"`
+	Gold           int                 `json:"gold"`
+	RuneLevels     map[int]int         `json:"rune_levels"`
+	OwnedPets      []int               `json:"owned_pets"`
+	ActivePet      int                 `json:"active_pet"`
+	ChestTracker   ChestTrackerStatus  `json:"chest_tracker"`
+	HeroEquipment  []HeroEquipment     `json:"hero_equipment"`
 }

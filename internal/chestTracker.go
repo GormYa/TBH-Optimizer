@@ -295,8 +295,6 @@ func InitializeChestLookup(webFiles embed.FS, gameDataDir string) {
 	}
 }
 
-const ChestHistoryPath = "chest_history.json"
-
 func LoadChestHistory() ([]ChestDropEvent, error) {
 	data, err := os.ReadFile(ChestHistoryPath)
 	if err != nil {
@@ -313,8 +311,6 @@ func LoadChestHistory() ([]ChestDropEvent, error) {
 }
 
 func SaveChestHistory(history []ChestDropEvent) error {
-	// Reter mais que o maior ciclo conhecido: 920001–006 têm cooldown de 3600 min (60h)
-	// e janela de 10800 min (7,5 dias) — 48h apagaria o drop antes do cooldown acabar.
 	cutoff := time.Now().Add(-8 * 24 * time.Hour)
 	var filtered []ChestDropEvent
 	for _, ev := range history {
@@ -326,6 +322,7 @@ func SaveChestHistory(history []ChestDropEvent) error {
 	if err != nil {
 		return err
 	}
+	ensureDataDir()
 	tmp := ChestHistoryPath + ".tmp"
 	if err := os.WriteFile(tmp, data, 0644); err != nil {
 		return err
@@ -375,8 +372,6 @@ func GetBoxItemDefID(boxType int, boxUniqueId int64, currentStageKey int, itemId
 	if boxType == 0 {
 		return 910011
 	} else if boxType == 1 {
-		// 920011 e não 920001: a família 920001–006 é a exceção de 3600 min — atribuir
-		// um drop desconhecido a ela mostraria 60h de cooldown em vez dos 9 min normais.
 		return 920011
 	} else if boxType == 2 {
 		return 930101
@@ -412,14 +407,12 @@ func ProcessChestDrops(ctrl *Control, currentSave *InnerSaveData) {
 	}
 	itemIdMap, _ := scanSteamCached()
 
-	// Calculate total quantity by box type in the last baseline
 	oldTotalByType := make(map[int]int)
 	for uniqueId, qty := range ctrl.LastBoxQuantity {
 		bType := ctrl.LastBoxTypes[uniqueId]
 		oldTotalByType[bType] += qty
 	}
 
-	// Calculate total quantity by box type in the current save
 	newTotalByType := make(map[int]int)
 	for i, uniqueId := range currentSave.BoxData.BoxUniqueId {
 		if uniqueId != 0 {
@@ -435,13 +428,11 @@ func ProcessChestDrops(ctrl *Control, currentSave *InnerSaveData) {
 	}
 	var newDrops []dropToRecord
 
-	// Check if the total count of any box type increased to avoid false drops on ID regeneration
 	for bType, newQty := range newTotalByType {
 		oldQty := oldTotalByType[bType]
 		if newQty > oldQty {
 			diff := newQty - oldQty
-			
-			// Find the new unique IDs of this box type in the current save
+
 			var newUniqueIds []int64
 			for i, uniqueId := range currentSave.BoxData.BoxUniqueId {
 				if uniqueId != 0 && currentSave.BoxData.BoxTypes[i] == bType {
@@ -450,14 +441,13 @@ func ProcessChestDrops(ctrl *Control, currentSave *InnerSaveData) {
 					}
 				}
 			}
-			
-			// Associate the drops to these new unique IDs (up to diff drops)
+
 			for i := 0; i < diff; i++ {
 				var uniqueId int64 = 0
 				if i < len(newUniqueIds) {
 					uniqueId = newUniqueIds[i]
 				}
-				
+
 				defId := 0
 				if uniqueId != 0 {
 					defId = GetBoxItemDefID(bType, uniqueId, currentSave.CommonSaveData.CurrentStageKey, itemIdMap)
@@ -465,7 +455,7 @@ func ProcessChestDrops(ctrl *Control, currentSave *InnerSaveData) {
 				if defId == 0 {
 					defId = GetBoxItemDefID(bType, 0, currentSave.CommonSaveData.CurrentStageKey, itemIdMap)
 				}
-				
+
 				if defId != 0 {
 					newDrops = append(newDrops, dropToRecord{defId: defId, uid: uniqueId})
 				}
@@ -473,7 +463,6 @@ func ProcessChestDrops(ctrl *Control, currentSave *InnerSaveData) {
 		}
 	}
 
-	// Update baseline
 	ctrl.LastBoxQuantity = make(map[int64]int)
 	ctrl.LastBoxTypes = make(map[int64]int)
 	for i, uniqueId := range currentSave.BoxData.BoxUniqueId {
@@ -526,8 +515,7 @@ func CalculateCooldowns(itemDefId int, history []ChestDropEvent, cfg ChestCooldo
 	if timeSinceLast < intervalDur {
 		cooldownRemaining = int((intervalDur - timeSinceLast).Seconds())
 	}
-	
-	// Sliding rolling window: count how many drops happened in the last cfg.DropWindow minutes
+
 	var activeDrops []time.Time
 	for _, t := range myDrops {
 		if now.Sub(t) < windowDur {
@@ -536,7 +524,6 @@ func CalculateCooldowns(itemDefId int, history []ChestDropEvent, cfg ChestCooldo
 	}
 	droppedInWindow = len(activeDrops)
 
-	// If there are active drops, the window remaining is when the oldest active drop expires
 	if len(activeDrops) > 0 {
 		oldestActive := activeDrops[0]
 		timeSinceOldest := now.Sub(oldestActive)
@@ -598,7 +585,6 @@ func GetChestTrackerStatus(ctrl *Control) ChestTrackerStatus {
 			Status:            status,
 		})
 	}
-	// Find all boss chest defIds and their optimal (lowest) stages dynamically
 	allBossChests := make(map[int]int)
 	for key, val := range stageAndTypeToBoxId {
 		if key.BoxType == 1 && val >= 920000 && val < 930000 {
@@ -612,12 +598,11 @@ func GetChestTrackerStatus(ctrl *Control) ChestTrackerStatus {
 	for defId, optStage := range allBossChests {
 		cfg := GetChestCooldownConfig(defId, steamConfigs)
 		dropped, winRem, coolRem, status := CalculateCooldowns(defId, history, cfg)
-		
-		// Only list the boss chest if the player has unlocked its optimal stage
+
 		if optStage > ctrl.MaxCompletedStage && optStage != 1101 {
 			continue
 		}
-		
+
 		name := GetChestName(defId)
 		icon := ""
 		if url, ok := chestIconURLs[defId]; ok {
@@ -645,7 +630,6 @@ func GetChestTrackerStatus(ctrl *Control) ChestTrackerStatus {
 	var cooldownStages []ChestFamilyStatus
 	var cappedStages []ChestFamilyStatus
 	for _, fam := range families {
-		// Prioritize blue (boss) chests over common chests for farm suggestion
 		if fam.Rarity != "rare" {
 			continue
 		}
@@ -660,29 +644,20 @@ func GetChestTrackerStatus(ctrl *Control) ChestTrackerStatus {
 			cappedStages = append(cappedStages, fam)
 		}
 	}
-	if len(availableStages) > 0 {
-		for _, fam := range availableStages {
+	pickHighest := func(fams []ChestFamilyStatus) {
+		for _, fam := range fams {
 			if fam.OptimalStage > bestStageKey {
 				bestStageKey = fam.OptimalStage
 				suggestMap = fam.OptimalStage
 			}
 		}
+	}
+	if len(availableStages) > 0 {
+		pickHighest(availableStages)
 	} else if len(cooldownStages) > 0 {
-		minCool := 9999999
-		for _, fam := range cooldownStages {
-			if fam.CooldownRemaining < minCool {
-				minCool = fam.CooldownRemaining
-				suggestMap = fam.OptimalStage
-			}
-		}
+		pickHighest(cooldownStages)
 	} else if len(cappedStages) > 0 {
-		minWin := 9999999
-		for _, fam := range cappedStages {
-			if fam.WindowRemaining < minWin {
-				minWin = fam.WindowRemaining
-				suggestMap = fam.OptimalStage
-			}
-		}
+		pickHighest(cappedStages)
 	}
 	return ChestTrackerStatus{
 		Families:   families,
