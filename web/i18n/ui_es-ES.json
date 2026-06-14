@@ -430,5 +430,8 @@
 	"Itens travados não entram na síntese": "Los objetos bloqueados no se usan en la síntesis",
 	"Configurações": "Configuración",
 	"Verificar atualização": "Buscar actualización",
-	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "Error al iniciar el monitoreo (intento %d): %s. Reintento en 5s."
+	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "Error al iniciar el monitoreo (intento %d): %s. Reintento en 5s.",
+	"Ouro / h": "Oro / h",
+	"XP / h": "XP / h",
+	"estimado": "estimado"
 }

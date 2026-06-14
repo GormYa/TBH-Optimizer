@@ -430,5 +430,8 @@
 	"Itens travados não entram na síntese": "锁定的物品不会用于合成",
 	"Configurações": "设置",
 	"Verificar atualização": "检查更新",
-	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "启动监控失败（第 %d 次尝试）：%s。5 秒后重试。"
+	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "启动监控失败（第 %d 次尝试）：%s。5 秒后重试。",
+	"Ouro / h": "金币 / h",
+	"XP / h": "XP / h",
+	"estimado": "估算"
 }

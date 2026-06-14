@@ -430,5 +430,8 @@
 	"Itens travados não entram na síntese": "Zablokowane przedmioty nie są używane w syntezie",
 	"Configurações": "Ustawienia",
 	"Verificar atualização": "Sprawdź aktualizację",
-	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "Nie udało się uruchomić monitorowania (próba %d): %s. Ponawiam za 5 s."
+	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "Nie udało się uruchomić monitorowania (próba %d): %s. Ponawiam za 5 s.",
+	"Ouro / h": "Złoto / h",
+	"XP / h": "XP / h",
+	"estimado": "szacowany"
 }

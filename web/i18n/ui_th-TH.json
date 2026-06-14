@@ -430,5 +430,8 @@
 	"Itens travados não entram na síntese": "ไอเทมที่ล็อกจะไม่ถูกใช้ในการสังเคราะห์",
 	"Configurações": "การตั้งค่า",
 	"Verificar atualização": "ตรวจสอบการอัปเดต",
-	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "เริ่มการติดตามล้มเหลว (ครั้งที่ %d): %s จะลองใหม่ใน 5 วินาที"
+	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "เริ่มการติดตามล้มเหลว (ครั้งที่ %d): %s จะลองใหม่ใน 5 วินาที",
+	"Ouro / h": "ทอง / h",
+	"XP / h": "XP / h",
+	"estimado": "ประเมิน"
 }

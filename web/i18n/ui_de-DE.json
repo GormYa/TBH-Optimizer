@@ -430,5 +430,8 @@
 	"Itens travados não entram na síntese": "Gesperrte Gegenstände werden nicht für die Synthese verwendet",
 	"Configurações": "Einstellungen",
 	"Verificar atualização": "Auf Updates prüfen",
-	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "Überwachung konnte nicht gestartet werden (Versuch %d): %s. Neuer Versuch in 5s."
+	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "Überwachung konnte nicht gestartet werden (Versuch %d): %s. Neuer Versuch in 5s.",
+	"Ouro / h": "Gold / h",
+	"XP / h": "XP / h",
+	"estimado": "geschätzt"
 }

@@ -430,5 +430,8 @@
 	"Itens travados não entram na síntese": "Kilitli eşyalar sentezde kullanılmaz",
 	"Configurações": "Ayarlar",
 	"Verificar atualização": "Güncellemeleri denetle",
-	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "İzleme başlatılamadı (deneme %d): %s. 5 sn içinde yeniden deneniyor."
+	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "İzleme başlatılamadı (deneme %d): %s. 5 sn içinde yeniden deneniyor.",
+	"Ouro / h": "Altın / h",
+	"XP / h": "XP / h",
+	"estimado": "tahmini"
 }

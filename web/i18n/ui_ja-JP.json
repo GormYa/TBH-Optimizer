@@ -430,5 +430,8 @@
 	"Itens travados não entram na síntese": "ロック中のアイテムは合成に使われません",
 	"Configurações": "設定",
 	"Verificar atualização": "アップデートを確認",
-	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "監視の開始に失敗しました（試行 %d 回目）: %s。5秒後に再試行します。"
+	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "監視の開始に失敗しました（試行 %d 回目）: %s。5秒後に再試行します。",
+	"Ouro / h": "ゴールド / h",
+	"XP / h": "XP / h",
+	"estimado": "推定"
 }

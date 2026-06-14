@@ -430,5 +430,8 @@
 	"Itens travados não entram na síntese": "Заблоковані предмети не використовуються в синтезі",
 	"Configurações": "Налаштування",
 	"Verificar atualização": "Перевірити оновлення",
-	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "Не вдалося запустити моніторинг (спроба %d): %s. Повтор за 5 с."
+	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "Не вдалося запустити моніторинг (спроба %d): %s. Повтор за 5 с.",
+	"Ouro / h": "Золото / h",
+	"XP / h": "XP / h",
+	"estimado": "оцінка"
 }

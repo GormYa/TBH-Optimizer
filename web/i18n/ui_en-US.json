@@ -430,5 +430,8 @@
  "Itens travados não entram na síntese": "Locked items aren't used in synthesis",
  "Configurações": "Settings",
  "Verificar atualização": "Check for update",
- "Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "Failed to start monitoring (attempt %d): %s. Retrying in 5s."
+ "Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "Failed to start monitoring (attempt %d): %s. Retrying in 5s.",
+ "Ouro / h": "Gold / h",
+ "XP / h": "XP / h",
+ "estimado": "estimated"
 }

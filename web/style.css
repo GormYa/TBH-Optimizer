@@ -296,6 +296,9 @@ tbody tr.seeded { opacity: .82; }
 .sm-chest-meta { font-size: 14px; color: var(--txt-faint); }
 .sm-chest-rate { font-family: var(--font-d); font-weight: 700; color: var(--drop); font-size: 16px; display: flex; flex-direction: column; align-items: flex-end; }
 .sm-chest-rate small { font-size: 13px; color: var(--txt-faint); font-weight: 500; }
+/* Bloco C: faixa de itens contidos no baú (loot base, só ícones com borda de raridade) */
+.sm-chest-loot { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 5px; }
+.cl-ic { width: 22px; height: 22px; object-fit: contain; image-rendering: pixelated; background: var(--bg-2); border: 1.5px solid var(--grade, var(--line-soft)); border-radius: 5px; padding: 1px; }
 @media (max-width: 560px) { .sm-stats { grid-template-columns: repeat(2, 1fr); } }
 
 /* ===================== aba Fases ===================== */
@@ -803,6 +806,7 @@ th.sortable span { color: var(--gold); font-size: 14px; }
 .gt-row { display: flex; justify-content: space-between; gap: 14px; margin-bottom: 2px; color: var(--txt-dim); }
 .gt-row:last-child { margin-bottom: 0; }
 .gt-row b { color: #fff; font-weight: 800; }
+.gt-est { font-size: 10px; font-weight: 600; color: var(--txt-faint); text-transform: lowercase; }
 .gt-unique { color: #e6cfff; font-weight: 700; font-size: 12px; line-height: 1.32; }
 /* mod único (skill especial) dos equipamentos arcano+ */
 .unique-mod { display: flex; align-items: flex-start; gap: 8px; padding: 11px 13px; background: linear-gradient(135deg, rgba(190,120,255,.14), rgba(120,90,255,.05)); border: 1px solid rgba(190,120,255,.42); border-radius: 10px; color: #e6cfff; font-weight: 600; font-size: 14px; line-height: 1.4; margin-bottom: 4px; }
@@ -831,20 +835,31 @@ th.sortable span { color: var(--gold); font-size: 14px; }
 .map-canvas::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,10,16,.12), rgba(8,10,16,.4)); pointer-events: none; }
 .map-lines { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
 /* nós = hotspots TRANSPARENTES nas bolinhas do fundo (igual wiki/jogo): rótulo [ato-fase]
-   centralizado na bolinha; hover marca; selecionado = anel verde + bandeirinha balançando. */
+   à direita da bolinha; hover marca; selecionado = anel verde + bandeirinha centralizada balançando. */
 .map-hot { position: absolute; transform: translate(-50%, -50%); width: 28px; height: 28px; border-radius: 50%; background: transparent; border: 0; padding: 0; cursor: pointer; z-index: 2; transition: box-shadow .12s; }
 .map-hot:hover { box-shadow: 0 0 0 3px rgba(255,255,255,.6), 0 0 11px rgba(255,255,255,.4); z-index: 5; }
-.mh-label { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-family: var(--font-d); font-weight: 800; font-size: 12px; color: #e8eaf1; text-shadow: -1px -1px 2px #000, 1px -1px 2px #000, -1px 1px 2px #000, 1px 1px 2px #000, 0 0 4px #000; pointer-events: none; white-space: nowrap; }
+.mh-label { position: absolute; left: calc(50% + 17px); top: 50%; transform: translateY(-50%); font-family: var(--font-d); font-weight: 800; font-size: 12px; color: #e8eaf1; text-shadow: -1px -1px 2px #000, 1px -1px 2px #000, -1px 1px 2px #000, 1px 1px 2px #000, 0 0 4px #000; pointer-events: none; white-space: nowrap; }
 .map-hot.on .mh-label { color: #8dffa1; }
 .map-hot.boss .mh-label { color: #ffd479; }
 .map-hot.on { z-index: 6; }
 /* anel verde do nó selecionado (sprite real do jogo: StageIcon_Occupied_Base) */
 .map-ring { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 30px; height: 30px; image-rendering: pixelated; object-fit: contain; pointer-events: none; }
 .map-hot.boss .map-ring { width: 34px; height: 34px; }
-/* bandeirinha balançando (acima da bolinha), como no jogo */
-.map-flag { position: absolute; left: calc(50% + 1px); bottom: calc(50% + 11px); width: 14px; height: 11px; background: #e8403f; clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 76%, 0 100%); transform-origin: left bottom; animation: flagWave 1.05s ease-in-out infinite; z-index: 7; pointer-events: none; }
-.map-flag::before { content: ''; position: absolute; left: -2px; top: -1px; width: 2px; height: 20px; background: #7a5430; border-radius: 1px; }
-@keyframes flagWave { 0%, 100% { transform: rotate(-2deg) skewX(0deg); } 50% { transform: rotate(2deg) skewX(-7deg); } }
+/* bandeirinha balançando (acima da bolinha) — 8 frames extraídos do jogo
+   (StageIcon_Occupied_Flag_0..7 -> map/flag_0..7.png). Sem os PNGs ela só não aparece. */
+/* o mastro fica na coluna ~0-1 do sprite (16px) e o pano voa pra direita; por isso
+   ancoramos pelo MASTRO no centro do nó (translateX ≈ -2px), não pela imagem inteira. */
+.map-flag { position: absolute; left: 50%; bottom: calc(50% + 4px); transform: translateX(-2px); width: 24px; height: 24px; background: center / contain no-repeat url(map/flag_0.png); image-rendering: pixelated; z-index: 7; pointer-events: none; animation: flagFrames 0.8s step-end infinite; }
+@keyframes flagFrames {
+	0%    { background-image: url(map/flag_0.png); }
+	12.5% { background-image: url(map/flag_1.png); }
+	25%   { background-image: url(map/flag_2.png); }
+	37.5% { background-image: url(map/flag_3.png); }
+	50%   { background-image: url(map/flag_4.png); }
+	62.5% { background-image: url(map/flag_5.png); }
+	75%   { background-image: url(map/flag_6.png); }
+	87.5% { background-image: url(map/flag_7.png); }
+}
 /* responsivo: empilha mapa e detalhe */
 @media (max-width: 760px) { .fases-layout { grid-template-columns: 1fr; } .fmap { position: static; max-width: 380px; margin: 0 auto; } }
 

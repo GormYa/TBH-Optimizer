@@ -898,6 +898,8 @@
 									<div class="gt-row" v-if="hoverStage.monsterTypes"><span>{{ t('Tipos de mobs') }}</span><b>{{ hoverStage.monsterTypes }}</b></div>
 									<div class="gt-row"><span>{{ t('Ouro / clear') }}</span><b class="g-gold">{{ fmtInt(hoverStage.expectedGold) }}</b></div>
 									<div class="gt-row"><span>{{ t('XP / clear') }}</span><b class="g-xp">{{ fmtInt(hoverStage.expectedEXP) }}</b></div>
+									<div class="gt-row" v-if="hoverStage.goldPH"><span>{{ t('Ouro / h') }}</span><b class="g-gold">{{ formatNumber(hoverStage.goldPH) }}<span class="gt-est" v-if="!hoverStage.runs"> {{ t('estimado') }}</span></b></div>
+									<div class="gt-row" v-if="hoverStage.xpPH"><span>{{ t('XP / h') }}</span><b class="g-xp">{{ formatNumber(hoverStage.xpPH) }}<span class="gt-est" v-if="!hoverStage.runs"> {{ t('estimado') }}</span></b></div>
 								</div>
 							</div>
 						</div>
@@ -953,6 +955,9 @@
 							<div class="sm-chest-info">
 								<span class="sm-chest-name">{{ chestName(r.chest) }}</span>
 								<span class="sm-chest-meta">{{ typeLabel(r.chest.type) }} · via {{ r.via }}</span>
+								<div class="sm-chest-loot" v-if="chestBaseItems(r.chest).length">
+									<img v-for="it in chestBaseItems(r.chest)" :key="it.id" class="cl-ic" :class="'ic-' + (it.grade || '').toLowerCase()" :src="itemIcon(it.id)" :title="itemName(it.id)" loading="lazy" onerror="this.style.display='none'">
+								</div>
 							</div>
 							<span class="sm-chest-rate">{{ fmtPct(r.rate) }}<small>{{ t('por clear') }}</small></span>
 						</div>
@@ -1104,10 +1109,16 @@
 					const mapBg = computed(() => 'act_bg/Act' + mapAct.value + '_Bg.png');
 					const mapStages = computed(() => {
 						const nodes = MAP_NODES[mapAct.value] || [];
+						const sr = statsReport.value.stages || {};
 						return (stagesList.value || [])
 							.filter(s => s.act === mapAct.value && s.difficulty === mapDiff.value)
 							.sort((a, b) => a.stageNo - b.stageNo)
-							.map(s => { const n = nodes[s.stageNo - 1] || { x: 50, y: 50 }; return { ...s, pos: n, boss: !!n.boss }; });
+							.map(s => {
+								const n = nodes[s.stageNo - 1] || { x: 50, y: 50 };
+								const st = sr[s.key] || {};
+								// ouro/h + xp/h calculados (os SEUS números) anexados por nó para o tooltip (Bloco A)
+								return { ...s, pos: n, boss: !!n.boss, goldPH: st.avg_gold_per_hour || 0, xpPH: st.avg_xp_per_hour || 0, runs: st.total_runs || 0 };
+							});
 					});
 					const mapLine = computed(() => mapStages.value.map(s => `${s.pos.x},${s.pos.y}`).join(' '));
 					// clicar num nó: seleciona a fase no detalhe ao lado
@@ -1949,6 +1960,16 @@
 					});
 					return out.sort((a, b) => b.rate - a.rate);
 				};
+				// Bloco C: itens contidos no baú — união dos items[] dos grupos BASE (hero==='')
+				// deduplicada; cada item leva a raridade do grupo de origem (pra borda .ic-<grade>).
+				const chestBaseItems = (c) => {
+					const seen = new Set(); const out = [];
+					(c.loot || []).forEach(g => {
+						if ((g.hero || '') !== '') return;
+						(g.items || []).forEach(id => { if (!seen.has(id)) { seen.add(id); out.push({ id, grade: g.grade || '' }); } });
+					});
+					return out;
+				};
 				const fmtInt = (n) => (n || 0).toLocaleString(lang.value);
 				const stageName = (key) => packName('stages', key, (stageMap.value[key] || {}).name || '');
 				const stageLevel = (key) => (stageMap.value[key] || {}).level || 0;
@@ -2181,7 +2202,7 @@
 					addStage, addTime, addMapTime, resetStage,
 					fetchStats, resetHistory, submitCalibration, setSort, rankBy, sortArrow,
 					stageHP, chestRateByStage, chestsPerHour, formatItems,
-					stageDetails, fasesStage, openStageTab, stageDetail, stageSummary, stageChests, fmtInt, stageName, stageLevel,
+					stageDetails, fasesStage, openStageTab, stageDetail, stageSummary, stageChests, chestBaseItems, fmtInt, stageName, stageLevel,
 					monsterSprite, detailStageKeys, gotoStageDelta, fasesIndex, activeHeroList,
 					mapAct, mapDiff, mapActs, mapDiffs, mapBg, mapStages, mapLine, selectMapStage,
 					itemsCatalog, GRADES, partFilters, partLabel, combatLabel, fmtBaseStat, fmtInh, baseStatsShown, cardStat, cardAttr, inhLabel, tipBase, tipPower, tipSlots, hoverItem, onItemHover, clearTip, tipStyle, hoverStage, onStageHover, stageTipMob, gradeFilter, partFilter, lvlMin, lvlMax, obtainableOnly, shownItems, gradeBelow, itemInfo,

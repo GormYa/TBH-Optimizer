@@ -430,5 +430,8 @@
 	"Itens travados não entram na síntese": "잠긴 아이템은 합성에 사용되지 않습니다",
 	"Configurações": "설정",
 	"Verificar atualização": "업데이트 확인",
-	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "모니터링 시작 실패 (시도 %d회): %s. 5초 후 재시도합니다."
+	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "모니터링 시작 실패 (시도 %d회): %s. 5초 후 재시도합니다.",
+	"Ouro / h": "골드 / h",
+	"XP / h": "XP / h",
+	"estimado": "추정치"
 }

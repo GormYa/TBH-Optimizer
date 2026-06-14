@@ -430,5 +430,8 @@
 	"Itens travados não entram na síntese": "鎖定的物品不會用於合成",
 	"Configurações": "設定",
 	"Verificar atualização": "檢查更新",
-	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "啟動監控失敗（第 %d 次嘗試）：%s。5 秒後重試。"
+	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "啟動監控失敗（第 %d 次嘗試）：%s。5 秒後重試。",
+	"Ouro / h": "金幣 / h",
+	"XP / h": "XP / h",
+	"estimado": "估算"
 }

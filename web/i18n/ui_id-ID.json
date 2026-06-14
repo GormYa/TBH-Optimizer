@@ -430,5 +430,8 @@
 	"Itens travados não entram na síntese": "Item terkunci tidak dipakai dalam sintesis",
 	"Configurações": "Pengaturan",
 	"Verificar atualização": "Periksa pembaruan",
-	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "Gagal memulai pemantauan (percobaan %d): %s. Mencoba lagi dalam 5 dtk."
+	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "Gagal memulai pemantauan (percobaan %d): %s. Mencoba lagi dalam 5 dtk.",
+	"Ouro / h": "Gold / h",
+	"XP / h": "XP / h",
+	"estimado": "estimasi"
 }

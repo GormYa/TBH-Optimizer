@@ -430,5 +430,8 @@
 	"Itens travados não entram na síntese": "Vật phẩm đã khóa không dùng để tổng hợp",
 	"Configurações": "Cài đặt",
 	"Verificar atualização": "Kiểm tra cập nhật",
-	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "Không thể bắt đầu theo dõi (lần thử %d): %s. Thử lại sau 5 giây."
+	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "Không thể bắt đầu theo dõi (lần thử %d): %s. Thử lại sau 5 giây.",
+	"Ouro / h": "Vàng / h",
+	"XP / h": "XP / h",
+	"estimado": "ước tính"
 }
