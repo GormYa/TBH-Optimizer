@@ -5,6 +5,29 @@ import (
 	"testing"
 )
 
+// TestHeroExpAceitaStringOuNumero: o jogo às vezes serializa HeroExp como string
+// ("1000.5") em vez de número, o que quebrava o parse com "cannot unmarshal string
+// ... of type float64". FlexFloat deve aceitar ambas as formas (e "" / null = 0).
+func TestHeroExpAceitaStringOuNumero(t *testing.T) {
+	cases := map[string]float64{
+		`{"HeroExp": 1000.5}`:   1000.5,
+		`{"HeroExp": "1000.5"}`: 1000.5,
+		`{"HeroExp": "0"}`:      0,
+		`{"HeroExp": ""}`:       0,
+		`{"HeroExp": null}`:     0,
+		`{}`:                    0,
+	}
+	for raw, want := range cases {
+		var h Hero
+		if err := json.Unmarshal([]byte(raw), &h); err != nil {
+			t.Fatalf("%s: erro inesperado: %v", raw, err)
+		}
+		if float64(h.HeroExp) != want {
+			t.Errorf("%s: HeroExp = %v, esperado %v", raw, float64(h.HeroExp), want)
+		}
+	}
+}
+
 // O save real (PlayerSaveData) traz equipados/enchants/atributos/cubo/baús —
 // campos novos do roadmap. Fixture com a forma exata vista no save de verdade.
 func TestInnerSaveDataParseiaCamposNovos(t *testing.T) {

@@ -27,7 +27,7 @@ func LoadLevelCurve(data []byte) {
 func CalibrateHeroStates(heroes []Hero) map[int]HeroState {
 	heroesXp := make(map[int]HeroState)
 	for _, hero := range heroes {
-		heroesXp[hero.HeroKey] = HeroState{Level: hero.HeroLevel, Xp: hero.HeroExp}
+		heroesXp[hero.HeroKey] = HeroState{Level: hero.HeroLevel, Xp: float64(hero.HeroExp)}
 	}
 	return heroesXp
 }
@@ -98,7 +98,7 @@ func computeRoundXp(heroes []Hero, history map[int]HeroState) float64 {
 		if !exists || hero.HeroLevel != oldState.Level {
 			continue
 		}
-		if diff := hero.HeroExp - oldState.Xp; diff > 0 {
+		if diff := float64(hero.HeroExp) - oldState.Xp; diff > 0 {
 			xpGainedInTheRound += diff
 		}
 	}
@@ -109,6 +109,6 @@ func computeRoundXp(heroes []Hero, history map[int]HeroState) float64 {
 // quando o relogio do clear avanca (clear contabilizado / fronteira real).
 func commitHeroStates(heroes []Hero, history map[int]HeroState) {
 	for _, hero := range heroes {
-		history[hero.HeroKey] = HeroState{Level: hero.HeroLevel, Xp: hero.HeroExp}
+		history[hero.HeroKey] = HeroState{Level: hero.HeroLevel, Xp: float64(hero.HeroExp)}
 	}
 }

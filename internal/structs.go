@@ -2,8 +2,30 @@ package internal
 
 import (
 	"embed"
+	"strconv"
+	"strings"
 	"sync"
 )
+
+// FlexFloat aceita número OU string no JSON do save. O jogo às vezes serializa
+// campos numéricos (ex.: HeroExp) como string ("1000.5"); um float64 puro
+// quebrava o parse ("cannot unmarshal string ... of type float64"). Trata
+// "", null e ausência como 0.
+type FlexFloat float64
+
+func (f *FlexFloat) UnmarshalJSON(b []byte) error {
+	s := strings.Trim(strings.TrimSpace(string(b)), `"`)
+	if s == "" || s == "null" {
+		*f = 0
+		return nil
+	}
+	v, err := strconv.ParseFloat(s, 64)
+	if err != nil {
+		return err
+	}
+	*f = FlexFloat(v)
+	return nil
+}
 
 type Currency struct {
 	Key      int `json:"Key"`
@@ -12,7 +34,7 @@ type Currency struct {
 type Hero struct {
 	HeroKey                    int     `json:"heroKey"`
 	HeroLevel                  int     `json:"HeroLevel"`
-	HeroExp                    float64 `json:"HeroExp"`
+	HeroExp                    FlexFloat `json:"HeroExp"`
 	IsUnLock                   bool    `json:"IsUnLock"`
 	AbilityPoint               int     `json:"AbilityPoint"`
 	AllocatedHeroAbilityPoint  int     `json:"AllocatedHeroAbilityPoint"`

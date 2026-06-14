@@ -20,7 +20,7 @@ func newClearSave(stage int, playTime float64, gold int, heroKey int, heroLvl in
 	s.CommonSaveData.PlayTime = playTime
 	s.CommonSaveData.ArrangedHeroKey = []int{heroKey}
 	s.CurrenySaveDatas = []Currency{{Key: 100001, Quantity: gold}}
-	s.HeroSaveDatas = []Hero{{HeroKey: heroKey, HeroLevel: heroLvl, HeroExp: heroExp}}
+	s.HeroSaveDatas = []Hero{{HeroKey: heroKey, HeroLevel: heroLvl, HeroExp: FlexFloat(heroExp)}}
 	return s
 }
 
