@@ -2,13 +2,11 @@
 	"Taskbar Hero — Otimizador de Farm": "Taskbar Hero — Optymalizator farmienia",
 	"Otimizador de Farm": "Optymalizator farmienia",
 	"Idioma": "Język",
-
 	"Painel já aberto": "Panel już otwarty",
 	"O otimizador já está aberto em outra aba deste navegador. Volte para ela — ou continue por aqui.": "Optymalizator jest już otwarty w innej karcie tej przeglądarki. Wróć do niej — albo kontynuuj tutaj.",
 	"Continuar nesta aba": "Kontynuuj w tej karcie",
 	"Otimizador encerrado": "Optymalizator zamknięty",
 	"Pode fechar esta aba. Para voltar a monitorar o save, abra o programa de novo.": "Możesz zamknąć tę kartę. Aby znów monitorować zapis gry, uruchom program ponownie.",
-
 	"Console do otimizador": "Konsola optymalizatora",
 	"Limpar": "Wyczyść",
 	"Fechar": "Zamknij",
@@ -16,7 +14,6 @@
 	"Mostra ao vivo o que o monitor está fazendo": "Pokazuje na żywo, co robi monitor",
 	"Encerrar otimizador": "Zamknij optymalizator",
 	"Encerra o monitoramento e fecha o programa": "Zatrzymuje monitorowanie i zamyka program",
-
 	"Monitoramento Ativo": "Monitorowanie aktywne",
 	"Painel": "Panel",
 	"Fases": "Etapy",
@@ -36,20 +33,17 @@
 	"Verificar": "Sprawdź",
 	"Dados do jogo:": "Dane gry:",
 	"jogo": "gra",
-
 	"Nova versão": "Nowa wersja",
 	"disponível": "dostępna",
 	"Clique para baixar e reabrir automaticamente.": "Kliknij, aby pobrać i automatycznie uruchomić ponownie.",
 	"Atualizando…": "Aktualizowanie…",
 	"Atualizar agora": "Aktualizuj teraz",
-
 	"Buscar fase, item, material, baú, runa, pet…": "Szukaj etapu, przedmiotu, skrzyni, runy, zwierzaka, materiału…",
 	"Nada encontrado para": "Nic nie znaleziono dla",
 	"fase(s)": "etap(y)",
 	"Fase": "Etap",
 	"Runa": "Runa",
 	"Pet": "Zwierzak",
-
 	"Melhor Mapa · Ouro/h": "Najlepsza mapa · Złoto/h",
 	"Melhor Mapa · XP/h": "Najlepsza mapa · XP/h",
 	"corridas": "podejść",
@@ -60,7 +54,6 @@
 	"Projeções ativas": "Projekcje aktywne",
 	"Aguardando 1-1 + outra fase": "Czekam na 1-1 + inny etap",
 	"Média Móvel (EMA)": "Średnia ruchoma (EMA)",
-
 	"Calibrar Projeções": "Kalibruj projekcje",
 	"Âncoras: <strong>1-1</strong> + o <strong>maior mapa que você alcança</strong>. Adicione quantos mapas quiser abaixo — quanto mais pontos, melhor a estimativa. O tempo digitado é só um ponto de partida: as <strong>corridas reais</strong> vão refinando o valor automaticamente.": "Kotwice: <strong>1-1</strong> + <strong>najwyższa mapa, na którą docierasz</strong>. Dodaj poniżej dowolną liczbę map — im więcej punktów, tym lepsze oszacowanie. Wpisany czas to tylko punkt wyjścia: <strong>prawdziwe podejścia</strong> będą automatycznie doprecyzowywać wartość.",
 	"Normal 1-1 (tempo)": "Normal 1-1 (czas)",
@@ -73,7 +66,6 @@
 	"Adicionar tempo de qualquer mapa…": "Dodaj czas dowolnej mapy…",
 	"Tempo (ex: 1:45)": "Czas (np. 1:45)",
 	"+ Adicionar mapa": "+ Dodaj mapę",
-
 	"Time ativo": "Aktywna drużyna",
 	"Nv": "Poz.",
 	"Desempenho por Fase": "Wyniki według etapu",
@@ -102,7 +94,6 @@
 	"Confiança alta (10+ corridas)": "Wysoka pewność (10+ podejść)",
 	"Confiança média (3-9)": "Średnia pewność (3-9)",
 	"Confiança baixa (1-2 corridas)": "Niska pewność (1-2 podejścia)",
-
 	"Árvore de runas do jogo.": "Drzewko run z gry.",
 	"Verde": "Zielona",
 	"= dá pra subir agora ·": "= można teraz ulepszyć ·",
@@ -125,7 +116,6 @@
 	"Libere {n} primeiro": "Najpierw odblokuj {n}",
 	"ou": "lub",
 	"nivel": "poziom",
-
 	"Sem dados de pets ainda.": "Brak danych o zwierzakach.",
 	"Atributos totais dos pets": "Łączne atrybuty zwierzaków",
 	"Os efeitos de todos os pets que você já obteve se aplicam sempre — não precisa estar equipado. Equipar é só o visual.": "Efekty wszystkich zdobytych zwierzaków działają zawsze — nie trzeba ich zakładać. Założenie to tylko kwestia wyglądu.",
@@ -137,7 +127,6 @@
 	"Derrote {n}× {m}": "Pokonaj {n}× {m}",
 	"· fases:": "· etapy:",
 	"monstro": "potwór",
-
 	"Dropa em": "Wypada w",
 	"Taxa de drop": "Szansa na drop",
 	"Tabela de saque": "Tabela łupów",
@@ -157,7 +146,6 @@
 	"baú(s). Clique num baú para ver fases e tabela de saque.": "skrzynia(e). Kliknij skrzynię, żeby zobaczyć etapy i tabelę łupów.",
 	"Nenhum baú para este filtro": "Brak skrzyń dla tego filtra",
 	"grupos": "grup",
-
 	"Incomum": "Niezwykły",
 	"Raro": "Rzadki",
 	"Épico": "Epicki",
@@ -201,7 +189,6 @@
 	"baú(s) · % = chance de vir ao abrir aquele baú.": "skrzynia(e) · % = szansa na zdobycie przy otwarciu tej skrzyni.",
 	"Não cai diretamente de baús": "Nie wypada bezpośrednio ze skrzyń",
 	" — obtido por síntese.": " — zdobywany przez syntezę.",
-
 	"Grau": "Ranga",
 	"Poder de Ataque": "Siła ataku",
 	"Poder de Defesa": "Siła obrony",
@@ -213,7 +200,6 @@
 	"Negociável": "Wymienialny",
 	"Não negociável": "Niewymienialny",
 	"Requer Nv.": "Wymaga poz.",
-
 	"Onde cai": "Gdzie wypada",
 	"Cai em": "Wypada w",
 	"baú(s) · % = chance de vir ao abrir.": "skrzynia(e) · % = szansa przy otwarciu.",
@@ -221,7 +207,6 @@
 	"Materiais de <strong>criação e síntese</strong>. Clique pra ver em quais baús cada um cai.": "Materiały do <strong>wytwarzania i syntezy</strong>. Kliknij, żeby zobaczyć, z których skrzyń wypada.",
 	"Buscar material…": "Szukaj materiału…",
 	"material(is)": "materiał(y)",
-
 	"3 atos · 4 dificuldades · 120 fases — monstros, chefes e tabelas de saque. Clique numa fase no mapa.": "3 akty · 4 poziomy trudności · 120 etapów — potwory, bossowie i tabele łupów. Kliknij etap na mapie.",
 	"Ato": "Akt",
 	"— clique num nó pra inspecionar.": "— kliknij węzeł, żeby go obejrzeć.",
@@ -244,7 +229,6 @@
 	"Vida": "HP",
 	"Baús que caem aqui": "Skrzynie, które tu wypadają",
 	"Carregando dados das fases…": "Wczytywanie danych etapów…",
-
 	"Espada": "Miecz",
 	"Arco": "Łuk",
 	"Cajado": "Kostur",
@@ -267,7 +251,6 @@
 	"Bracelete": "Bransoleta",
 	"Arma Principal": "Broń główna",
 	"Arma Secundária": "Broń do drugiej ręki",
-
 	"Dano de Ataque": "Obrażenia ataku",
 	"Vel. de Ataque": "Szybkość ataku",
 	"Vel. de Conjuração": "Szybkość rzucania",
@@ -302,7 +285,6 @@
 	"ABS DANO": "ABS OBR",
 	"RES ELEM": "ODP ŻYW",
 	"ROUBO VIDA": "KRADZ ŻYCIA",
-
 	"Aumento de Ganho de Exp": "Zwiększony zysk Exp",
 	"Aumento de Ganho de Ouro": "Zwiększony zysk złota",
 	"Exp Adicional": "Dodatkowy Exp",
@@ -338,7 +320,6 @@
 	"Tempo auto-abrir baú de chefe": "Czas auto-otwierania skrzyń bossa",
 	"Abrir baús de um tipo de vez": "Otwieranie wszystkich skrzyń jednego typu naraz",
 	"Abrir baús de todos os tipos": "Otwieranie skrzyń wszystkich typów naraz",
-
 	"Herói": "Bohater",
 	"Função": "Funkcja",
 	"Evento": "Wydarzenie",
@@ -376,7 +357,6 @@
 	"Apagar as corridas registradas de {s}?": "Usunąć zarejestrowane podejścia dla {s}?",
 	"Corridas de {s} apagadas.": "Podejścia dla {s} usunięte.",
 	"Erro ao limpar a fase.": "Błąd przy czyszczeniu etapu.",
-
 	"Grau {g}": "Stopień: {g}",
 	"Usado em": "Używane w",
 	"Cubo Nv {n}": "Kostka poz. {n}",
@@ -421,5 +401,34 @@
 	"Troca de mapa: %s → %s. O app só enxerga o jogo pelos saves (gravados a cada ~3 min ou em eventos) e peguei o mapa novo já no meio de uma corrida (wave %d) — então esta primeira corrida sai parcial e será descartada; a próxima corrida completa no mapa novo já conta.": "Zmiana mapy: %s → %s. Aplikacja widzi grę tylko przez zapisy (zapisywane co ~3 min lub przy zdarzeniach), a nową mapę złapałem w środku biegu (fala %d) — więc ten pierwszy bieg jest częściowy i zostanie odrzucony; następny pełny bieg na nowej mapie już się liczy.",
 	"Fase %s: primeira corrida após a troca de mapa descartada — só %.0fs medidos (parte de uma corrida, não a corrida inteira), porque o save anterior já estava no meio dela. A próxima corrida completa conta.": "Etap %s: pierwszy bieg po zmianie mapy odrzucony — zmierzono tylko %.0fs (część biegu, nie cały bieg), bo poprzedni zapis był już w środku biegu. Następny pełny bieg się liczy.",
 	"Fase %s: ouro caiu %d (provável compra de runa/item) e esta fase ainda não tem média de ouro — descarto esta corrida pra não registrar ouro zerado; o próximo clear sem compra semeia a fase.": "Etap %s: złoto spadło o %d (prawdopodobnie zakup runy/przedmiotu), a ten etap nie ma jeszcze średniej złota — odrzucam ten bieg, by nie zapisać zerowego złota; następne przejście bez zakupu zasiewa etap.",
-	"Fase %s: ouro caiu %d, mas o gasto foi em upgrade de runa (~%.0f) — recuperei o ganho real do ciclo somando o gasto de volta: +%.0f ouro. Conto como clear normal.": "Etap %s: złoto spadło o %d, ale wydatek to ulepszenie runy (~%.0f) — odzyskałem rzeczywisty zysk cyklu, doliczając wydatek: +%.0f złota. Liczę jako normalne przejście."
+	"Fase %s: ouro caiu %d, mas o gasto foi em upgrade de runa (~%.0f) — recuperei o ganho real do ciclo somando o gasto de volta: +%.0f ouro. Conto como clear normal.": "Etap %s: złoto spadło o %d, ale wydatek to ulepszenie runy (~%.0f) — odzyskałem rzeczywisty zysk cyklu, doliczając wydatek: +%.0f złota. Liczę jako normalne przejście.",
+	"Heróis": "Bohaterowie",
+	"Caótico": "Chaotyczny",
+	"Encantamentos": "Zaklęcia",
+	"do teto": "maks.",
+	"No time": "W drużynie",
+	"Este item não tem encantamentos.": "Ten przedmiot nie ma zaklęć.",
+	"Seus <strong>heróis</strong> e o equipamento de cada um — clique num item pra ver os <strong>rolls</strong> dos encantamentos e o quão perto do teto cada um ficou.": "Twoi <strong>bohaterowie</strong> i ich ekwipunek — kliknij przedmiot, aby zobaczyć <strong>rolle</strong> zaklęć i jak blisko maksimum wypadł każdy z nich.",
+	"Abra o jogo para ver seus heróis e o equipamento de cada um.": "Otwórz grę, aby zobaczyć swoich bohaterów i ich ekwipunek.",
+	"Inventário": "Ekwipunek",
+	"Síntese": "Synteza",
+	"fundível": "do scalenia",
+	"Mochila": "Plecak",
+	"Armazém": "Magazyn",
+	"Banca": "Skład handlowy",
+	"Equipamento": "Sprzęt",
+	"Tudo que está guardado fora dos heróis — <strong>mochila</strong>, <strong>armazém</strong> e banca. Agrupado por tipo e grau pra você ver o que dá pra <strong>fundir</strong> (síntese).": "Wszystko przechowywane poza bohaterami — <strong>plecak</strong>, <strong>magazyn</strong> i skład handlowy. Pogrupowane wg typu i klasy, byś widział, co możesz <strong>scalić</strong> (synteza).",
+	"Abra o jogo para ver seus itens guardados.": "Otwórz grę, aby zobaczyć przechowywane przedmioty.",
+	"Marcado como fundível a partir de 9 itens; a contagem exata por grau ainda será refinada por uma extração dos dados do jogo.": "Oznaczane jako do scalenia od 9 przedmiotów; dokładna liczba na klasę zostanie doprecyzowana przyszłą ekstrakcją danych gry.",
+	"Cubo": "Kostka",
+	"Quantidade e chances de fusão vêm dos dados do jogo.": "Liczba i szanse scalenia pochodzą z danych gry.",
+	"Junte itens do mesmo tipo e grau pra fundir num grau acima (o resultado é sorteado: pode subir ou manter — graus altos sobem menos).": "Połącz przedmioty tego samego typu i klasy, by scalić je w wyższą klasę (wynik losowy: może wzrosnąć lub zostać — wysokie klasy rzadziej rosną).",
+	"Funções do Cubo": "Funkcje Kostki",
+	"Alquimia": "Alchemia",
+	"Extração": "Ekstrakcja",
+	"Travado": "Zablokowany",
+	"Itens travados não entram na síntese": "Zablokowane przedmioty nie są używane w syntezie",
+	"Configurações": "Ustawienia",
+	"Verificar atualização": "Sprawdź aktualizację",
+	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "Nie udało się uruchomić monitorowania (próba %d): %s. Ponawiam za 5 s."
 }

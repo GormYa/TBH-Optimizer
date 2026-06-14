@@ -2,13 +2,11 @@
 	"Taskbar Hero — Otimizador de Farm": "Taskbar Hero — 파밍 최적화 도구",
 	"Otimizador de Farm": "파밍 최적화 도구",
 	"Idioma": "언어",
-
 	"Painel já aberto": "패널이 이미 열려 있음",
 	"O otimizador já está aberto em outra aba deste navegador. Volte para ela — ou continue por aqui.": "이 브라우저의 다른 탭에서 이미 옵티마이저가 열려 있습니다. 그 탭으로 돌아가거나 여기서 계속하세요.",
 	"Continuar nesta aba": "이 탭에서 계속하기",
 	"Otimizador encerrado": "옵티마이저 종료됨",
 	"Pode fechar esta aba. Para voltar a monitorar o save, abra o programa de novo.": "이 탭을 닫아도 됩니다. 세이브를 다시 모니터링하려면 프로그램을 다시 실행하세요.",
-
 	"Console do otimizador": "옵티마이저 콘솔",
 	"Limpar": "지우기",
 	"Fechar": "닫기",
@@ -16,7 +14,6 @@
 	"Mostra ao vivo o que o monitor está fazendo": "모니터가 무엇을 하고 있는지 실시간으로 표시합니다",
 	"Encerrar otimizador": "옵티마이저 종료",
 	"Encerra o monitoramento e fecha o programa": "모니터링을 중단하고 프로그램을 닫습니다",
-
 	"Monitoramento Ativo": "모니터링 중",
 	"Painel": "대시보드",
 	"Fases": "스테이지",
@@ -36,20 +33,17 @@
 	"Verificar": "확인",
 	"Dados do jogo:": "게임 데이터:",
 	"jogo": "게임",
-
 	"Nova versão": "새 버전",
 	"disponível": "사용 가능",
 	"Clique para baixar e reabrir automaticamente.": "클릭하면 다운로드 후 자동으로 다시 실행됩니다.",
 	"Atualizando…": "업데이트 중…",
 	"Atualizar agora": "지금 업데이트",
-
 	"Buscar fase, item, material, baú, runa, pet…": "스테이지, 아이템, 상자, 룬, 펫, 재료 검색…",
 	"Nada encontrado para": "검색 결과 없음:",
 	"fase(s)": "개 스테이지",
 	"Fase": "스테이지",
 	"Runa": "룬",
 	"Pet": "펫",
-
 	"Melhor Mapa · Ouro/h": "최적 맵 · 골드/시간",
 	"Melhor Mapa · XP/h": "최적 맵 · XP/시간",
 	"corridas": "런",
@@ -60,7 +54,6 @@
 	"Projeções ativas": "예측 활성화됨",
 	"Aguardando 1-1 + outra fase": "1-1 + 다른 스테이지 하나 대기 중",
 	"Média Móvel (EMA)": "이동 평균 (EMA)",
-
 	"Calibrar Projeções": "예측 보정",
 	"Âncoras: <strong>1-1</strong> + o <strong>maior mapa que você alcança</strong>. Adicione quantos mapas quiser abaixo — quanto mais pontos, melhor a estimativa. O tempo digitado é só um ponto de partida: as <strong>corridas reais</strong> vão refinando o valor automaticamente.": "기준점: <strong>1-1</strong> + <strong>도달 가능한 최고 맵</strong>. 아래에 원하는 만큼 맵을 추가하세요 — 데이터가 많을수록 예측이 정확해집니다. 입력한 시간은 출발점일 뿐이며 <strong>실제 런</strong>이 값을 자동으로 다듬어 갑니다.",
 	"Normal 1-1 (tempo)": "Normal 1-1 (시간)",
@@ -73,7 +66,6 @@
 	"Adicionar tempo de qualquer mapa…": "아무 맵의 시간 추가…",
 	"Tempo (ex: 1:45)": "시간 (예: 1:45)",
 	"+ Adicionar mapa": "+ 맵 추가",
-
 	"Time ativo": "현재 팀",
 	"Nv": "Lv",
 	"Desempenho por Fase": "스테이지별 성과",
@@ -102,7 +94,6 @@
 	"Confiança alta (10+ corridas)": "신뢰도 높음 (10회 이상)",
 	"Confiança média (3-9)": "신뢰도 보통 (3-9회)",
 	"Confiança baixa (1-2 corridas)": "신뢰도 낮음 (1-2회)",
-
 	"Árvore de runas do jogo.": "게임의 룬 트리입니다.",
 	"Verde": "초록",
 	"= dá pra subir agora ·": "= 지금 레벨업 가능 ·",
@@ -125,7 +116,6 @@
 	"Libere {n} primeiro": "{n} 먼저 해금하세요",
 	"ou": "또는",
 	"nivel": "레벨",
-
 	"Sem dados de pets ainda.": "아직 펫 데이터가 없습니다.",
 	"Atributos totais dos pets": "펫 능력치 합계",
 	"Os efeitos de todos os pets que você já obteve se aplicam sempre — não precisa estar equipado. Equipar é só o visual.": "한 번 획득한 펫의 효과는 항상 적용됩니다 — 장착할 필요가 없습니다. 장착은 외형용일 뿐입니다.",
@@ -137,7 +127,6 @@
 	"Derrote {n}× {m}": "{m} {n}회 처치",
 	"· fases:": "· 스테이지:",
 	"monstro": "몬스터",
-
 	"Dropa em": "드롭 위치",
 	"Taxa de drop": "드롭률",
 	"Tabela de saque": "드롭 테이블",
@@ -157,7 +146,6 @@
 	"baú(s). Clique num baú para ver fases e tabela de saque.": "개 상자. 상자를 클릭하면 스테이지와 드롭 테이블을 볼 수 있습니다.",
 	"Nenhum baú para este filtro": "이 필터에 해당하는 상자 없음",
 	"grupos": "그룹",
-
 	"Incomum": "고급",
 	"Raro": "희귀",
 	"Épico": "에픽",
@@ -201,7 +189,6 @@
 	"baú(s) · % = chance de vir ao abrir aquele baú.": "개 상자 · % = 해당 상자를 열 때 나올 확률.",
 	"Não cai diretamente de baús": "상자에서 직접 드롭되지 않음",
 	" — obtido por síntese.": " — 합성으로 획득합니다.",
-
 	"Grau": "등급",
 	"Poder de Ataque": "공격력",
 	"Poder de Defesa": "방어력",
@@ -213,7 +200,6 @@
 	"Negociável": "거래 가능",
 	"Não negociável": "거래 불가",
 	"Requer Nv.": "필요 Lv.",
-
 	"Onde cai": "드롭 위치",
 	"Cai em": "드롭:",
 	"baú(s) · % = chance de vir ao abrir.": "개 상자 · % = 열었을 때 나올 확률.",
@@ -221,7 +207,6 @@
 	"Materiais de <strong>criação e síntese</strong>. Clique pra ver em quais baús cada um cai.": "<strong>제작과 합성</strong>에 쓰이는 재료입니다. 클릭하면 어떤 상자에서 드롭되는지 볼 수 있습니다.",
 	"Buscar material…": "재료 검색…",
 	"material(is)": "개 재료",
-
 	"3 atos · 4 dificuldades · 120 fases — monstros, chefes e tabelas de saque. Clique numa fase no mapa.": "3개 액트 · 4개 난이도 · 120개 스테이지 — 몬스터, 보스, 드롭 테이블. 지도에서 스테이지를 클릭하세요.",
 	"Ato": "액트",
 	"— clique num nó pra inspecionar.": "— 노드를 클릭하면 상세 정보를 볼 수 있습니다.",
@@ -244,7 +229,6 @@
 	"Vida": "HP",
 	"Baús que caem aqui": "여기서 드롭되는 상자",
 	"Carregando dados das fases…": "스테이지 데이터 불러오는 중…",
-
 	"Espada": "검",
 	"Arco": "활",
 	"Cajado": "지팡이",
@@ -267,7 +251,6 @@
 	"Bracelete": "팔찌",
 	"Arma Principal": "주무기",
 	"Arma Secundária": "보조 무기",
-
 	"Dano de Ataque": "공격 피해",
 	"Vel. de Ataque": "공격 속도",
 	"Vel. de Conjuração": "시전 속도",
@@ -302,7 +285,6 @@
 	"ABS DANO": "피해 흡수",
 	"RES ELEM": "원소 저항",
 	"ROUBO VIDA": "흡혈",
-
 	"Aumento de Ganho de Exp": "Exp 획득량 증가",
 	"Aumento de Ganho de Ouro": "골드 획득량 증가",
 	"Exp Adicional": "추가 Exp",
@@ -338,7 +320,6 @@
 	"Tempo auto-abrir baú de chefe": "보스 상자 자동 열기 시간",
 	"Abrir baús de um tipo de vez": "같은 종류 상자 한 번에 열기",
 	"Abrir baús de todos os tipos": "모든 종류 상자 한 번에 열기",
-
 	"Herói": "영웅",
 	"Auto-update ainda não configurado (CDN).": "자동 업데이트가 아직 설정되지 않았습니다 (CDN).",
 	"Erro:": "오류:",
@@ -373,11 +354,9 @@
 	"Apagar as corridas registradas de {s}?": "{s}의 기록된 런을 삭제할까요?",
 	"Corridas de {s} apagadas.": "{s}의 런이 삭제되었습니다.",
 	"Erro ao limpar a fase.": "스테이지 기록 삭제 중 오류가 발생했습니다.",
-
 	"Função": "기능",
 	"Evento": "이벤트",
 	"Invocação": "소환",
-
 	"Grau {g}": "{g} 등급",
 	"Usado em": "사용처",
 	"Cubo Nv {n}": "큐브 Lv{n}",
@@ -422,5 +401,34 @@
 	"Troca de mapa: %s → %s. O app só enxerga o jogo pelos saves (gravados a cada ~3 min ou em eventos) e peguei o mapa novo já no meio de uma corrida (wave %d) — então esta primeira corrida sai parcial e será descartada; a próxima corrida completa no mapa novo já conta.": "맵 전환: %s → %s. 앱은 세이브(약 3분마다 또는 이벤트 시 기록)로만 게임을 봅니다. 새 맵을 런 도중(웨이브 %d)에 잡았기 때문에 이 첫 런은 부분적이라 폐기됩니다. 새 맵에서의 다음 완전한 런부터 집계됩니다.",
 	"Fase %s: primeira corrida após a troca de mapa descartada — só %.0fs medidos (parte de uma corrida, não a corrida inteira), porque o save anterior já estava no meio dela. A próxima corrida completa conta.": "스테이지 %s: 맵 전환 후 첫 런 폐기 — %.0fs 만 측정됨(런의 일부이며 전체 런이 아님). 이전 세이브가 이미 런 도중이었기 때문입니다. 다음 완전한 런부터 집계됩니다.",
 	"Fase %s: ouro caiu %d (provável compra de runa/item) e esta fase ainda não tem média de ouro — descarto esta corrida pra não registrar ouro zerado; o próximo clear sem compra semeia a fase.": "스테이지 %s: 골드가 %d 감소(룬/아이템 구매로 추정)했고 이 스테이지는 아직 골드 평균이 없습니다 — 골드 0으로 기록하지 않도록 이 런을 폐기합니다. 구매 없는 다음 클리어가 스테이지를 초기화합니다.",
-	"Fase %s: ouro caiu %d, mas o gasto foi em upgrade de runa (~%.0f) — recuperei o ganho real do ciclo somando o gasto de volta: +%.0f ouro. Conto como clear normal.": "스테이지 %s: 골드가 %d 감소했지만 지출은 룬 업그레이드(~%.0f)였습니다 — 지출을 다시 더해 사이클의 실제 획득을 복원했습니다: +%.0f 골드. 정상 클리어로 집계합니다."
+	"Fase %s: ouro caiu %d, mas o gasto foi em upgrade de runa (~%.0f) — recuperei o ganho real do ciclo somando o gasto de volta: +%.0f ouro. Conto como clear normal.": "스테이지 %s: 골드가 %d 감소했지만 지출은 룬 업그레이드(~%.0f)였습니다 — 지출을 다시 더해 사이클의 실제 획득을 복원했습니다: +%.0f 골드. 정상 클리어로 집계합니다.",
+	"Heróis": "영웅",
+	"Caótico": "혼돈",
+	"Encantamentos": "인챈트",
+	"do teto": "최대치 대비",
+	"No time": "팀에 편성",
+	"Este item não tem encantamentos.": "이 아이템에는 인챈트가 없습니다.",
+	"Seus <strong>heróis</strong> e o equipamento de cada um — clique num item pra ver os <strong>rolls</strong> dos encantamentos e o quão perto do teto cada um ficou.": "당신의 <strong>영웅</strong>과 각자의 장비 — 아이템을 클릭하면 인챈트 <strong>롤</strong> 값과 각 롤이 최대치에 얼마나 가까운지 볼 수 있습니다.",
+	"Abra o jogo para ver seus heróis e o equipamento de cada um.": "게임을 열어 영웅과 장비를 확인하세요.",
+	"Inventário": "인벤토리",
+	"Síntese": "합성",
+	"fundível": "합성 가능",
+	"Mochila": "가방",
+	"Armazém": "창고",
+	"Banca": "거래 보관함",
+	"Equipamento": "장비",
+	"Tudo que está guardado fora dos heróis — <strong>mochila</strong>, <strong>armazém</strong> e banca. Agrupado por tipo e grau pra você ver o que dá pra <strong>fundir</strong> (síntese).": "영웅 외에 보관 중인 모든 것 — <strong>가방</strong>, <strong>창고</strong>, 거래 보관함. 종류와 등급별로 묶어 무엇을 <strong>합성</strong>할 수 있는지 보여줍니다.",
+	"Abra o jogo para ver seus itens guardados.": "게임을 열어 보관된 아이템을 확인하세요.",
+	"Marcado como fundível a partir de 9 itens; a contagem exata por grau ainda será refinada por uma extração dos dados do jogo.": "9개부터 합성 가능으로 표시됩니다. 등급별 정확한 개수는 향후 게임 데이터 추출로 보정됩니다.",
+	"Cubo": "큐브",
+	"Quantidade e chances de fusão vêm dos dados do jogo.": "수량과 합성 확률은 게임 데이터에서 가져옵니다.",
+	"Junte itens do mesmo tipo e grau pra fundir num grau acima (o resultado é sorteado: pode subir ou manter — graus altos sobem menos).": "같은 종류·등급 아이템을 합쳐 상위 등급으로 합성하세요 (결과는 무작위: 오르거나 유지되며, 높은 등급일수록 덜 오릅니다).",
+	"Funções do Cubo": "큐브 기능",
+	"Alquimia": "연금술",
+	"Extração": "추출",
+	"Travado": "잠김",
+	"Itens travados não entram na síntese": "잠긴 아이템은 합성에 사용되지 않습니다",
+	"Configurações": "설정",
+	"Verificar atualização": "업데이트 확인",
+	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "모니터링 시작 실패 (시도 %d회): %s. 5초 후 재시도합니다."
 }

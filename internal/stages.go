@@ -254,5 +254,9 @@ func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
 		ActivePet:      ctrl.ActivePet,
 		ChestTracker:   GetChestTrackerStatus(ctrl),
 		HeroEquipment:  ctrl.HeroEquipment,
+		Inventory:      ctrl.Inventory,
+		CubeLevel:      ctrl.CubeLevel,
+		CubeExp:        ctrl.CubeExp,
+		CubeRecipes:    ctrl.CubeRecipes,
 	}
 }

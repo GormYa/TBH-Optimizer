@@ -1,0 +1,12 @@
+# Cloudflare Pages headers. Copiado pra public/ pelo CI (cp -r site/*), igual ao _redirects.
+#
+# changelog.js e version.json mudam a cada publicação. Sem isso, o navegador
+# guardava o changelog.js por 4h (max-age padrão) e mostrava a build nova
+# (version.json é no-store) ao lado de um changelog velho. no-cache não desliga
+# o cache: obriga a revalidar via ETag a cada carga (304 quando nada mudou).
+# Como todas as páginas (raiz + /en/, /ja/, ...) carregam estes via caminho
+# absoluto, estas duas regras cobrem o site inteiro.
+/changelog.js
+  Cache-Control: no-cache
+/version.json
+  Cache-Control: no-cache

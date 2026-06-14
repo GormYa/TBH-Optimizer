@@ -2,13 +2,11 @@
 	"Taskbar Hero — Otimizador de Farm": "Taskbar Hero — ตัวช่วยฟาร์ม",
 	"Otimizador de Farm": "ตัวช่วยฟาร์ม",
 	"Idioma": "ภาษา",
-
 	"Painel já aberto": "แผงควบคุมเปิดอยู่แล้ว",
 	"O otimizador já está aberto em outra aba deste navegador. Volte para ela — ou continue por aqui.": "ตัวช่วยฟาร์มเปิดอยู่ในแท็บอื่นของเบราว์เซอร์นี้แล้ว กลับไปที่แท็บนั้น — หรือใช้งานต่อที่นี่ก็ได้",
 	"Continuar nesta aba": "ใช้งานต่อในแท็บนี้",
 	"Otimizador encerrado": "ปิดตัวช่วยฟาร์มแล้ว",
 	"Pode fechar esta aba. Para voltar a monitorar o save, abra o programa de novo.": "ปิดแท็บนี้ได้เลย หากต้องการติดตามเซฟอีกครั้ง ให้เปิดโปรแกรมใหม่",
-
 	"Console do otimizador": "คอนโซลของตัวช่วยฟาร์ม",
 	"Limpar": "ล้าง",
 	"Fechar": "ปิด",
@@ -16,7 +14,6 @@
 	"Mostra ao vivo o que o monitor está fazendo": "แสดงแบบสดว่าตัวติดตามกำลังทำอะไรอยู่",
 	"Encerrar otimizador": "ปิดตัวช่วยฟาร์ม",
 	"Encerra o monitoramento e fecha o programa": "หยุดการติดตามและปิดโปรแกรม",
-
 	"Monitoramento Ativo": "กำลังติดตาม",
 	"Painel": "แดชบอร์ด",
 	"Fases": "ด่าน",
@@ -36,20 +33,17 @@
 	"Verificar": "ตรวจสอบ",
 	"Dados do jogo:": "ข้อมูลเกม:",
 	"jogo": "เกม",
-
 	"Nova versão": "เวอร์ชันใหม่",
 	"disponível": "พร้อมใช้งาน",
 	"Clique para baixar e reabrir automaticamente.": "คลิกเพื่อดาวน์โหลดและเปิดใหม่อัตโนมัติ",
 	"Atualizando…": "กำลังอัปเดต…",
 	"Atualizar agora": "อัปเดตเลย",
-
 	"Buscar fase, item, material, baú, runa, pet…": "ค้นหาด่าน ไอเทม หีบ รูน เพ็ท วัสดุ…",
 	"Nada encontrado para": "ไม่พบผลลัพธ์สำหรับ",
 	"fase(s)": "ด่าน",
 	"Fase": "ด่าน",
 	"Runa": "รูน",
 	"Pet": "เพ็ท",
-
 	"Melhor Mapa · Ouro/h": "แมพที่ดีที่สุด · ทอง/ชม.",
 	"Melhor Mapa · XP/h": "แมพที่ดีที่สุด · XP/ชม.",
 	"corridas": "รอบ",
@@ -60,7 +54,6 @@
 	"Projeções ativas": "การคาดการณ์เปิดใช้งานอยู่",
 	"Aguardando 1-1 + outra fase": "รอข้อมูล 1-1 + อีกหนึ่งด่าน",
 	"Média Móvel (EMA)": "ค่าเฉลี่ยเคลื่อนที่ (EMA)",
-
 	"Calibrar Projeções": "ปรับเทียบการคาดการณ์",
 	"Âncoras: <strong>1-1</strong> + o <strong>maior mapa que você alcança</strong>. Adicione quantos mapas quiser abaixo — quanto mais pontos, melhor a estimativa. O tempo digitado é só um ponto de partida: as <strong>corridas reais</strong> vão refinando o valor automaticamente.": "จุดยึด: <strong>1-1</strong> + <strong>แมพสูงสุดที่คุณไปถึง</strong> เพิ่มแมพด้านล่างได้ตามต้องการ — ยิ่งมีจุดข้อมูลมาก การประเมินยิ่งแม่นยำ เวลาที่พิมพ์เป็นแค่จุดเริ่มต้น: <strong>รอบฟาร์มจริง</strong>จะคอยปรับค่าให้แม่นขึ้นโดยอัตโนมัติ",
 	"Normal 1-1 (tempo)": "Normal 1-1 (เวลา)",
@@ -73,7 +66,6 @@
 	"Adicionar tempo de qualquer mapa…": "เพิ่มเวลาของแมพไหนก็ได้…",
 	"Tempo (ex: 1:45)": "เวลา (เช่น 1:45)",
 	"+ Adicionar mapa": "+ เพิ่มแมพ",
-
 	"Time ativo": "ทีมปัจจุบัน",
 	"Nv": "Lv",
 	"Desempenho por Fase": "ประสิทธิภาพรายด่าน",
@@ -102,7 +94,6 @@
 	"Confiança alta (10+ corridas)": "ความเชื่อมั่นสูง (10+ รอบ)",
 	"Confiança média (3-9)": "ความเชื่อมั่นปานกลาง (3-9)",
 	"Confiança baixa (1-2 corridas)": "ความเชื่อมั่นต่ำ (1-2 รอบ)",
-
 	"Árvore de runas do jogo.": "ผังรูนของเกม",
 	"Verde": "เขียว",
 	"= dá pra subir agora ·": "= อัปเกรดได้เลย ·",
@@ -125,7 +116,6 @@
 	"Libere {n} primeiro": "ปลดล็อก {n} ก่อน",
 	"ou": "หรือ",
 	"nivel": "เลเวล",
-
 	"Sem dados de pets ainda.": "ยังไม่มีข้อมูลเพ็ท",
 	"Atributos totais dos pets": "ค่าสถานะรวมจากเพ็ท",
 	"Os efeitos de todos os pets que você já obteve se aplicam sempre — não precisa estar equipado. Equipar é só o visual.": "เอฟเฟกต์ของเพ็ททุกตัวที่คุณเคยได้มามีผลตลอดเวลา — ไม่ต้องสวมใส่ การสวมใส่เป็นแค่เรื่องหน้าตาเท่านั้น",
@@ -137,7 +127,6 @@
 	"Derrote {n}× {m}": "กำจัด {m} จำนวน {n} ตัว",
 	"· fases:": "· ด่าน:",
 	"monstro": "มอนสเตอร์",
-
 	"Dropa em": "ดรอปที่",
 	"Taxa de drop": "อัตราดรอป",
 	"Tabela de saque": "ตารางดรอป",
@@ -157,7 +146,6 @@
 	"baú(s). Clique num baú para ver fases e tabela de saque.": "หีบ คลิกที่หีบเพื่อดูด่านและตารางดรอป",
 	"Nenhum baú para este filtro": "ไม่มีหีบตรงกับตัวกรองนี้",
 	"grupos": "กลุ่ม",
-
 	"Incomum": "ไม่ธรรมดา",
 	"Raro": "หายาก",
 	"Épico": "เอปิก",
@@ -201,7 +189,6 @@
 	"baú(s) · % = chance de vir ao abrir aquele baú.": "หีบ · % = โอกาสได้เมื่อเปิดหีบนั้น",
 	"Não cai diretamente de baús": "ไม่ดรอปจากหีบโดยตรง",
 	" — obtido por síntese.": " — ได้จากการสังเคราะห์",
-
 	"Grau": "เกรด",
 	"Poder de Ataque": "พลังโจมตี",
 	"Poder de Defesa": "พลังป้องกัน",
@@ -213,7 +200,6 @@
 	"Negociável": "แลกเปลี่ยนได้",
 	"Não negociável": "แลกเปลี่ยนไม่ได้",
 	"Requer Nv.": "ต้องการ Lv.",
-
 	"Onde cai": "ดรอปที่ไหน",
 	"Cai em": "ดรอปที่",
 	"baú(s) · % = chance de vir ao abrir.": "หีบ · % = โอกาสได้เมื่อเปิด",
@@ -221,7 +207,6 @@
 	"Materiais de <strong>criação e síntese</strong>. Clique pra ver em quais baús cada um cai.": "วัสดุสำหรับ<strong>การคราฟต์และการสังเคราะห์</strong> คลิกเพื่อดูว่าแต่ละชิ้นดรอปจากหีบไหนบ้าง",
 	"Buscar material…": "ค้นหาวัสดุ…",
 	"material(is)": "วัสดุ",
-
 	"3 atos · 4 dificuldades · 120 fases — monstros, chefes e tabelas de saque. Clique numa fase no mapa.": "3 องก์ · 4 ระดับความยาก · 120 ด่าน — มอนสเตอร์ บอส และตารางดรอป คลิกที่ด่านบนแผนที่",
 	"Ato": "องก์",
 	"— clique num nó pra inspecionar.": "— คลิกที่จุดเพื่อดูรายละเอียด",
@@ -244,7 +229,6 @@
 	"Vida": "HP",
 	"Baús que caem aqui": "หีบที่ดรอปที่นี่",
 	"Carregando dados das fases…": "กำลังโหลดข้อมูลด่าน…",
-
 	"Espada": "ดาบ",
 	"Arco": "ธนู",
 	"Cajado": "ไม้เท้า",
@@ -267,7 +251,6 @@
 	"Bracelete": "กำไล",
 	"Arma Principal": "อาวุธหลัก",
 	"Arma Secundária": "อาวุธรอง",
-
 	"Dano de Ataque": "ดาเมจโจมตี",
 	"Vel. de Ataque": "ความเร็วโจมตี",
 	"Vel. de Conjuração": "ความเร็วร่าย",
@@ -302,7 +285,6 @@
 	"ABS DANO": "ดูดซับดาเมจ",
 	"RES ELEM": "ต้านธาตุ",
 	"ROUBO VIDA": "ดูดเลือด",
-
 	"Aumento de Ganho de Exp": "เพิ่ม Exp ที่ได้รับ",
 	"Aumento de Ganho de Ouro": "เพิ่มทองที่ได้รับ",
 	"Exp Adicional": "Exp เพิ่มเติม",
@@ -338,7 +320,6 @@
 	"Tempo auto-abrir baú de chefe": "เวลาเปิดหีบบอสอัตโนมัติ",
 	"Abrir baús de um tipo de vez": "เปิดหีบชนิดเดียวกันทั้งหมดในครั้งเดียว",
 	"Abrir baús de todos os tipos": "เปิดหีบทุกชนิดพร้อมกัน",
-
 	"Herói": "ฮีโร่",
 	"Auto-update ainda não configurado (CDN).": "ยังไม่ได้ตั้งค่าอัปเดตอัตโนมัติ (CDN)",
 	"Erro:": "ข้อผิดพลาด:",
@@ -373,11 +354,9 @@
 	"Apagar as corridas registradas de {s}?": "ลบรอบที่บันทึกไว้ของ {s}?",
 	"Corridas de {s} apagadas.": "ลบรอบของ {s} แล้ว",
 	"Erro ao limpar a fase.": "เกิดข้อผิดพลาดขณะล้างข้อมูลด่าน",
-
 	"Função": "ฟังก์ชัน",
 	"Evento": "อีเวนต์",
 	"Invocação": "การอัญเชิญ",
-
 	"Grau {g}": "ระดับ {g}",
 	"Usado em": "ใช้ใน",
 	"Cubo Nv {n}": "คิวบ์ Lv {n}",
@@ -422,5 +401,34 @@
 	"Troca de mapa: %s → %s. O app só enxerga o jogo pelos saves (gravados a cada ~3 min ou em eventos) e peguei o mapa novo já no meio de uma corrida (wave %d) — então esta primeira corrida sai parcial e será descartada; a próxima corrida completa no mapa novo já conta.": "เปลี่ยนแมพ: %s → %s แอปเห็นเกมผ่านเซฟเท่านั้น (บันทึกทุก ~3 นาทีหรือเมื่อมีเหตุการณ์) และจับแมพใหม่ได้กลางรอบ (เวฟ %d) — รอบแรกนี้จึงไม่สมบูรณ์และจะถูกตัดทิ้ง; รอบเต็มถัดไปบนแมพใหม่นับแล้ว",
 	"Fase %s: primeira corrida após a troca de mapa descartada — só %.0fs medidos (parte de uma corrida, não a corrida inteira), porque o save anterior já estava no meio dela. A próxima corrida completa conta.": "ด่าน %s: รอบแรกหลังเปลี่ยนแมพถูกตัดทิ้ง — วัดได้แค่ %.0fs (เป็นส่วนหนึ่งของรอบ ไม่ใช่ทั้งรอบ) เพราะเซฟก่อนหน้าอยู่กลางรอบแล้ว รอบเต็มถัดไปนับ",
 	"Fase %s: ouro caiu %d (provável compra de runa/item) e esta fase ainda não tem média de ouro — descarto esta corrida pra não registrar ouro zerado; o próximo clear sem compra semeia a fase.": "ด่าน %s: ทองลดลง %d (น่าจะซื้อรูน/ไอเทม) และด่านนี้ยังไม่มีค่าเฉลี่ยทอง — ตัดรอบนี้ทิ้งเพื่อไม่ให้บันทึกทองเป็นศูนย์; การเคลียร์ครั้งถัดไปที่ไม่ซื้อของจะตั้งค่าด่าน",
-	"Fase %s: ouro caiu %d, mas o gasto foi em upgrade de runa (~%.0f) — recuperei o ganho real do ciclo somando o gasto de volta: +%.0f ouro. Conto como clear normal.": "ด่าน %s: ทองลดลง %d แต่ที่ใช้ไปคืออัปเกรดรูน (~%.0f) — กู้กำไรจริงของรอบคืนมาโดยบวกค่าใช้จ่ายกลับ: +%.0f ทอง นับเป็นการเคลียร์ปกติ"
+	"Fase %s: ouro caiu %d, mas o gasto foi em upgrade de runa (~%.0f) — recuperei o ganho real do ciclo somando o gasto de volta: +%.0f ouro. Conto como clear normal.": "ด่าน %s: ทองลดลง %d แต่ที่ใช้ไปคืออัปเกรดรูน (~%.0f) — กู้กำไรจริงของรอบคืนมาโดยบวกค่าใช้จ่ายกลับ: +%.0f ทอง นับเป็นการเคลียร์ปกติ",
+	"Heróis": "ฮีโร่",
+	"Caótico": "โกลาหล",
+	"Encantamentos": "การร่ายมนตร์",
+	"do teto": "ของค่าสูงสุด",
+	"No time": "ในทีม",
+	"Este item não tem encantamentos.": "ไอเทมนี้ไม่มีการร่ายมนตร์",
+	"Seus <strong>heróis</strong> e o equipamento de cada um — clique num item pra ver os <strong>rolls</strong> dos encantamentos e o quão perto do teto cada um ficou.": "<strong>ฮีโร่</strong> ของคุณและอุปกรณ์ของแต่ละคน — คลิกที่ไอเทมเพื่อดู <strong>ค่าสุ่ม</strong> ของการร่ายมนตร์ และแต่ละค่าใกล้ค่าสูงสุดแค่ไหน",
+	"Abra o jogo para ver seus heróis e o equipamento de cada um.": "เปิดเกมเพื่อดูฮีโร่และอุปกรณ์ของแต่ละคน",
+	"Inventário": "คลังไอเทม",
+	"Síntese": "การสังเคราะห์",
+	"fundível": "หลอมรวมได้",
+	"Mochila": "เป้",
+	"Armazém": "คลังเก็บ",
+	"Banca": "คลังซื้อขาย",
+	"Equipamento": "อุปกรณ์",
+	"Tudo que está guardado fora dos heróis — <strong>mochila</strong>, <strong>armazém</strong> e banca. Agrupado por tipo e grau pra você ver o que dá pra <strong>fundir</strong> (síntese).": "ทุกอย่างที่เก็บไว้นอกฮีโร่ — <strong>เป้</strong>, <strong>คลังเก็บ</strong> และคลังซื้อขาย จัดกลุ่มตามชนิดและระดับเพื่อให้เห็นว่าอะไร <strong>หลอมรวม</strong> ได้ (การสังเคราะห์)",
+	"Abra o jogo para ver seus itens guardados.": "เปิดเกมเพื่อดูไอเทมที่เก็บไว้",
+	"Marcado como fundível a partir de 9 itens; a contagem exata por grau ainda será refinada por uma extração dos dados do jogo.": "ทำเครื่องหมายว่าหลอมรวมได้ตั้งแต่ 9 ชิ้นขึ้นไป จำนวนที่แน่นอนต่อระดับจะปรับให้แม่นยำด้วยการดึงข้อมูลเกมในอนาคต",
+	"Cubo": "ลูกบาศก์",
+	"Quantidade e chances de fusão vêm dos dados do jogo.": "จำนวนและโอกาสในการหลอมรวมมาจากข้อมูลของเกม",
+	"Junte itens do mesmo tipo e grau pra fundir num grau acima (o resultado é sorteado: pode subir ou manter — graus altos sobem menos).": "รวมไอเทมชนิดและระดับเดียวกันเพื่อหลอมเป็นระดับสูงขึ้น (ผลลัพธ์สุ่ม: อาจขึ้นหรือคงเดิม — ระดับสูงขึ้นยากกว่า)",
+	"Funções do Cubo": "ฟังก์ชันลูกบาศก์",
+	"Alquimia": "เล่นแร่แปรธาตุ",
+	"Extração": "การสกัด",
+	"Travado": "ล็อก",
+	"Itens travados não entram na síntese": "ไอเทมที่ล็อกจะไม่ถูกใช้ในการสังเคราะห์",
+	"Configurações": "การตั้งค่า",
+	"Verificar atualização": "ตรวจสอบการอัปเดต",
+	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "เริ่มการติดตามล้มเหลว (ครั้งที่ %d): %s จะลองใหม่ใน 5 วินาที"
 }

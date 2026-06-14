@@ -16,7 +16,7 @@ type Hero struct {
 	IsUnLock                   bool    `json:"IsUnLock"`
 	AbilityPoint               int     `json:"AbilityPoint"`
 	AllocatedHeroAbilityPoint  int     `json:"AllocatedHeroAbilityPoint"`
-	EquippedItemIds            []int64 `json:"equippedItemIds"` // 10 slots posicionais -> Item.UniqueId (0 = vazio)
+	EquippedItemIds            []int64 `json:"equippedItemIds"`
 	EquippedSkillKey           []int   `json:"equippedSKillKey"`
 	UnlockedAttributeGroupKeys []int   `json:"unlockedAttributeGroupKeys"`
 }
@@ -36,8 +36,9 @@ type Item struct {
 	ItemKey                      int           `json:"ItemKey"`
 	UniqueId                     int64         `json:"UniqueId"`
 	IsChaotic                    bool          `json:"IsChaotic"`
-	EnchantCount                 []int         `json:"EnchantCount"` // [decoração, gravação, inscrição]
-	EnchantData                  []ItemEnchant `json:"EnchantData"`  // 6 slots fixos; vazio = zeros
+	IsBlocked                    bool          `json:"IsBlocked"`
+	EnchantCount                 []int         `json:"EnchantCount"`
+	EnchantData                  []ItemEnchant `json:"EnchantData"`
 	DecorationAppliedTotalCount  int           `json:"DecorationAppliedTotalCount"`
 	EngravingAppliedTotalCount   int           `json:"EngravingAppliedTotalCount"`
 	InscriptionAppliedTotalCount int           `json:"InscriptionAppliedTotalCount"`
@@ -73,6 +74,12 @@ type CubeLevel struct {
 	Exp   float64 `json:"Exp"`
 }
 
+type CubeRecipeSave struct {
+	CubeRecipeTypeInt  int `json:"CubeRecipeTypeInt"`
+	CubeKey            int `json:"CubeKey"`
+	MaxUnlockRecipeKey int `json:"MaxUnlockRecipeKey"`
+}
+
 // BoxData são os baús não abertos (3 listas paralelas por índice).
 // Tipos: 0=NORMAL, 1=BOSS, 2=ACTBOSS.
 type BoxData struct {
@@ -89,17 +96,18 @@ type InnerSaveData struct {
 		ArrangedHeroKey   []int   `json:"arrangedHeroKey"`
 		ArrangedPetKey    int     `json:"ArrangedPetKey"`
 	} `json:"commonSaveData"`
-	BoxData            BoxData         `json:"BoxData"`
-	CurrenySaveDatas   []Currency      `json:"currenySaveDatas"`
-	HeroSaveDatas      []Hero          `json:"heroSaveDatas"`
-	AttributeSaveDatas []AttributeSave `json:"attributeSaveDatas"`
-	ItemSaveDatas      []Item          `json:"itemSaveDatas"`
-	RuneSaveDatas      []RuneSave      `json:"RuneSaveData"`
-	PetSaveDatas       []PetSave       `json:"PetSaveData"`
-	InventorySaveDatas []InventorySlot `json:"inventorySaveDatas"`
-	StashSaveDatas     []StashSlot     `json:"stashSaveDatas"`
-	TradingStashDatas  []StashSlot     `json:"tradingStashSaveDatas"`
-	CubeSaveLevelData  CubeLevel       `json:"cubeSaveLevelData"`
+	BoxData             BoxData          `json:"BoxData"`
+	CurrenySaveDatas    []Currency       `json:"currenySaveDatas"`
+	HeroSaveDatas       []Hero           `json:"heroSaveDatas"`
+	AttributeSaveDatas  []AttributeSave  `json:"attributeSaveDatas"`
+	ItemSaveDatas       []Item           `json:"itemSaveDatas"`
+	RuneSaveDatas       []RuneSave       `json:"RuneSaveData"`
+	PetSaveDatas        []PetSave        `json:"PetSaveData"`
+	InventorySaveDatas  []InventorySlot  `json:"inventorySaveDatas"`
+	StashSaveDatas      []StashSlot      `json:"stashSaveDatas"`
+	TradingStashDatas   []StashSlot      `json:"tradingStashSaveDatas"`
+	CubeSaveLevelData   CubeLevel        `json:"cubeSaveLevelData"`
+	CubeRecipeSaveDatas []CubeRecipeSave `json:"cubeRecipeSaveDatas"`
 }
 type PetSave struct {
 	PetKey   int  `json:"PetKey"`
@@ -180,6 +188,10 @@ type Control struct {
 	OwnedPets           []int
 	ActivePet           int
 	HeroEquipment       []HeroEquipment
+	Inventory           []StoredItem
+	CubeLevel           int
+	CubeExp             float64
+	CubeRecipes         []CubeRecipeSave
 	LastBoxQuantity     map[int64]int
 	LastBoxTypes        map[int64]int
 	ChestHistory        []ChestDropEvent
@@ -205,4 +217,8 @@ type AnalyticsReport struct {
 	ActivePet      int                 `json:"active_pet"`
 	ChestTracker   ChestTrackerStatus  `json:"chest_tracker"`
 	HeroEquipment  []HeroEquipment     `json:"hero_equipment"`
+	Inventory      []StoredItem        `json:"inventory"`
+	CubeLevel      int                 `json:"cube_level"`
+	CubeExp        float64             `json:"cube_exp"`
+	CubeRecipes    []CubeRecipeSave    `json:"cube_recipes"`
 }

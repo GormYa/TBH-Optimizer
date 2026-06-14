@@ -39,7 +39,12 @@ func TestInnerSaveDataParseiaCamposNovos(t *testing.T) {
 		"inventorySaveDatas": [{"Index": 0, "ItemUniqueId": 515245594311006810, "IsUnlock": true, "IsUnlockedByRune": false}],
 		"stashSaveDatas": [{"Index": 0, "ItemUniqueId": 515245594311006811, "IsUnLock": true}, {"Index": 1, "ItemUniqueId": 0, "IsUnLock": true}],
 		"tradingStashSaveDatas": [{"Index": 0, "ItemUniqueId": 0, "IsUnLock": false}],
-		"cubeSaveLevelData": {"Level": 36, "Exp": 207314.266}
+		"cubeSaveLevelData": {"Level": 36, "Exp": 207314.266},
+		"cubeRecipeSaveDatas": [
+			{"CubeRecipeTypeInt": 1, "CubeKey": 100001, "MaxUnlockRecipeKey": 100003},
+			{"CubeRecipeTypeInt": 0, "CubeKey": 200001, "MaxUnlockRecipeKey": 200001},
+			{"CubeRecipeTypeInt": 2, "CubeKey": 600001, "MaxUnlockRecipeKey": 0}
+		]
 	}`
 
 	var s InnerSaveData
@@ -80,5 +85,9 @@ func TestInnerSaveDataParseiaCamposNovos(t *testing.T) {
 	}
 	if s.TradingStashDatas[0].IsUnLock {
 		t.Fatalf("banca mal parseada: %+v", s.TradingStashDatas)
+	}
+	if len(s.CubeRecipeSaveDatas) != 3 || s.CubeRecipeSaveDatas[0].CubeKey != 100001 ||
+		s.CubeRecipeSaveDatas[0].MaxUnlockRecipeKey != 100003 || s.CubeRecipeSaveDatas[2].MaxUnlockRecipeKey != 0 {
+		t.Fatalf("receitas do cubo mal parseadas: %+v", s.CubeRecipeSaveDatas)
 	}
 }

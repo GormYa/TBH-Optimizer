@@ -2,13 +2,11 @@
 	"Taskbar Hero — Otimizador de Farm": "Taskbar Hero — Оптимизатор фарма",
 	"Otimizador de Farm": "Оптимизатор фарма",
 	"Idioma": "Язык",
-
 	"Painel já aberto": "Панель уже открыта",
 	"O otimizador já está aberto em outra aba deste navegador. Volte para ela — ou continue por aqui.": "Оптимизатор уже открыт в другой вкладке этого браузера. Вернись туда — или продолжай здесь.",
 	"Continuar nesta aba": "Продолжить в этой вкладке",
 	"Otimizador encerrado": "Оптимизатор закрыт",
 	"Pode fechar esta aba. Para voltar a monitorar o save, abra o programa de novo.": "Можешь закрыть эту вкладку. Чтобы снова отслеживать сейв, открой программу заново.",
-
 	"Console do otimizador": "Консоль оптимизатора",
 	"Limpar": "Очистить",
 	"Fechar": "Закрыть",
@@ -16,7 +14,6 @@
 	"Mostra ao vivo o que o monitor está fazendo": "Показывает в реальном времени, что делает монитор",
 	"Encerrar otimizador": "Завершить оптимизатор",
 	"Encerra o monitoramento e fecha o programa": "Останавливает мониторинг и закрывает программу",
-
 	"Monitoramento Ativo": "Мониторинг активен",
 	"Painel": "Панель",
 	"Fases": "Этапы",
@@ -36,20 +33,17 @@
 	"Verificar": "Проверить",
 	"Dados do jogo:": "Данные игры:",
 	"jogo": "игра",
-
 	"Nova versão": "Новая версия",
 	"disponível": "доступна",
 	"Clique para baixar e reabrir automaticamente.": "Нажми, чтобы скачать и автоматически перезапустить.",
 	"Atualizando…": "Обновление…",
 	"Atualizar agora": "Обновить сейчас",
-
 	"Buscar fase, item, material, baú, runa, pet…": "Искать этап, предмет, сундук, руну, питомца, материал…",
 	"Nada encontrado para": "Ничего не найдено по запросу",
 	"fase(s)": "этап(ы)",
 	"Fase": "Этап",
 	"Runa": "Руна",
 	"Pet": "Питомец",
-
 	"Melhor Mapa · Ouro/h": "Лучшая карта · Золото/ч",
 	"Melhor Mapa · XP/h": "Лучшая карта · XP/ч",
 	"corridas": "забегов",
@@ -60,7 +54,6 @@
 	"Projeções ativas": "Проекции активны",
 	"Aguardando 1-1 + outra fase": "Ожидание 1-1 + ещё одного этапа",
 	"Média Móvel (EMA)": "Скользящее среднее (EMA)",
-
 	"Calibrar Projeções": "Калибровка проекций",
 	"Âncoras: <strong>1-1</strong> + o <strong>maior mapa que você alcança</strong>. Adicione quantos mapas quiser abaixo — quanto mais pontos, melhor a estimativa. O tempo digitado é só um ponto de partida: as <strong>corridas reais</strong> vão refinando o valor automaticamente.": "Якоря: <strong>1-1</strong> + <strong>самая высокая карта, до которой ты доходишь</strong>. Добавляй ниже сколько угодно карт — чем больше точек, тем точнее оценка. Введённое время — лишь отправная точка: <strong>реальные забеги</strong> будут автоматически уточнять значение.",
 	"Normal 1-1 (tempo)": "Normal 1-1 (время)",
@@ -73,7 +66,6 @@
 	"Adicionar tempo de qualquer mapa…": "Добавить время любой карты…",
 	"Tempo (ex: 1:45)": "Время (напр. 1:45)",
 	"+ Adicionar mapa": "+ Добавить карту",
-
 	"Time ativo": "Активная команда",
 	"Nv": "Ур.",
 	"Desempenho por Fase": "Эффективность по этапам",
@@ -102,7 +94,6 @@
 	"Confiança alta (10+ corridas)": "Высокая достоверность (10+ забегов)",
 	"Confiança média (3-9)": "Средняя достоверность (3-9)",
 	"Confiança baixa (1-2 corridas)": "Низкая достоверность (1-2 забега)",
-
 	"Árvore de runas do jogo.": "Дерево рун игры.",
 	"Verde": "Зелёная",
 	"= dá pra subir agora ·": "= можно прокачать сейчас ·",
@@ -125,7 +116,6 @@
 	"Libere {n} primeiro": "Сначала разблокируй {n}",
 	"ou": "или",
 	"nivel": "уровень",
-
 	"Sem dados de pets ainda.": "Данных о питомцах пока нет.",
 	"Atributos totais dos pets": "Суммарные атрибуты питомцев",
 	"Os efeitos de todos os pets que você já obteve se aplicam sempre — não precisa estar equipado. Equipar é só o visual.": "Эффекты всех питомцев, которых ты когда-либо получал, действуют всегда — экипировать не нужно. Экипировка — чисто визуал.",
@@ -137,7 +127,6 @@
 	"Derrote {n}× {m}": "Победи {n}× {m}",
 	"· fases:": "· этапы:",
 	"monstro": "монстр",
-
 	"Dropa em": "Падает в",
 	"Taxa de drop": "Шанс дропа",
 	"Tabela de saque": "Таблица лута",
@@ -157,7 +146,6 @@
 	"baú(s). Clique num baú para ver fases e tabela de saque.": "сундук(ов). Нажми на сундук, чтобы увидеть этапы и таблицу лута.",
 	"Nenhum baú para este filtro": "Нет сундуков по этому фильтру",
 	"grupos": "групп",
-
 	"Incomum": "Необычный",
 	"Raro": "Редкий",
 	"Épico": "Эпический",
@@ -201,7 +189,6 @@
 	"baú(s) · % = chance de vir ao abrir aquele baú.": "сундук(ов) · % = шанс выпадения при открытии этого сундука.",
 	"Não cai diretamente de baús": "Не падает напрямую из сундуков",
 	" — obtido por síntese.": " — получается синтезом.",
-
 	"Grau": "Ранг",
 	"Poder de Ataque": "Сила атаки",
 	"Poder de Defesa": "Сила защиты",
@@ -213,7 +200,6 @@
 	"Negociável": "Можно обменять",
 	"Não negociável": "Нельзя обменять",
 	"Requer Nv.": "Требуется ур.",
-
 	"Onde cai": "Где падает",
 	"Cai em": "Падает в",
 	"baú(s) · % = chance de vir ao abrir.": "сундук(ов) · % = шанс при открытии.",
@@ -221,7 +207,6 @@
 	"Materiais de <strong>criação e síntese</strong>. Clique pra ver em quais baús cada um cai.": "Материалы для <strong>крафта и синтеза</strong>. Нажми на материал, чтобы увидеть, из каких сундуков он падает.",
 	"Buscar material…": "Искать материал…",
 	"material(is)": "материал(ы)",
-
 	"3 atos · 4 dificuldades · 120 fases — monstros, chefes e tabelas de saque. Clique numa fase no mapa.": "3 акта · 4 сложности · 120 этапов — монстры, боссы и таблицы лута. Нажми на этап на карте.",
 	"Ato": "Акт",
 	"— clique num nó pra inspecionar.": "— нажми на узел, чтобы рассмотреть.",
@@ -244,7 +229,6 @@
 	"Vida": "HP",
 	"Baús que caem aqui": "Сундуки, которые здесь падают",
 	"Carregando dados das fases…": "Загрузка данных этапов…",
-
 	"Espada": "Меч",
 	"Arco": "Лук",
 	"Cajado": "Посох",
@@ -267,7 +251,6 @@
 	"Bracelete": "Браслет",
 	"Arma Principal": "Основное оружие",
 	"Arma Secundária": "Оружие второй руки",
-
 	"Dano de Ataque": "Урон атаки",
 	"Vel. de Ataque": "Скорость атаки",
 	"Vel. de Conjuração": "Скорость каста",
@@ -302,7 +285,6 @@
 	"ABS DANO": "ПОГЛ УРОН",
 	"RES ELEM": "СТИХ СОПР",
 	"ROUBO VIDA": "ВАМПИРИЗМ",
-
 	"Aumento de Ganho de Exp": "Увеличение прироста Exp",
 	"Aumento de Ganho de Ouro": "Увеличение прироста золота",
 	"Exp Adicional": "Дополнительный Exp",
@@ -338,7 +320,6 @@
 	"Tempo auto-abrir baú de chefe": "Время автооткрытия сундуков босса",
 	"Abrir baús de um tipo de vez": "Открывать все сундуки одного типа сразу",
 	"Abrir baús de todos os tipos": "Открывать сундуки всех типов сразу",
-
 	"Herói": "Герой",
 	"Função": "Функция",
 	"Evento": "Событие",
@@ -376,7 +357,6 @@
 	"Apagar as corridas registradas de {s}?": "Удалить записанные забеги {s}?",
 	"Corridas de {s} apagadas.": "Забеги {s} удалены.",
 	"Erro ao limpar a fase.": "Ошибка при очистке этапа.",
-
 	"Grau {g}": "Ранг: {g}",
 	"Usado em": "Используется в",
 	"Cubo Nv {n}": "Куб ур. {n}",
@@ -421,5 +401,34 @@
 	"Troca de mapa: %s → %s. O app só enxerga o jogo pelos saves (gravados a cada ~3 min ou em eventos) e peguei o mapa novo já no meio de uma corrida (wave %d) — então esta primeira corrida sai parcial e será descartada; a próxima corrida completa no mapa novo já conta.": "Смена карты: %s → %s. Приложение видит игру только через сохранения (пишутся каждые ~3 мин или по событиям), а новую карту я застал посреди забега (волна %d) — поэтому этот первый забег неполный и будет отброшен; следующий полный забег на новой карте уже засчитывается.",
 	"Fase %s: primeira corrida após a troca de mapa descartada — só %.0fs medidos (parte de uma corrida, não a corrida inteira), porque o save anterior já estava no meio dela. A próxima corrida completa conta.": "Этап %s: первый забег после смены карты отброшен — измерено только %.0fs (часть забега, а не весь забег), потому что предыдущее сохранение было уже посреди забега. Следующий полный забег засчитывается.",
 	"Fase %s: ouro caiu %d (provável compra de runa/item) e esta fase ainda não tem média de ouro — descarto esta corrida pra não registrar ouro zerado; o próximo clear sem compra semeia a fase.": "Этап %s: золото упало на %d (вероятно покупка руны/предмета), а у этого этапа ещё нет среднего по золоту — отбрасываю этот забег, чтобы не записать нулевое золото; следующее прохождение без покупки задаёт этап.",
-	"Fase %s: ouro caiu %d, mas o gasto foi em upgrade de runa (~%.0f) — recuperei o ganho real do ciclo somando o gasto de volta: +%.0f ouro. Conto como clear normal.": "Этап %s: золото упало на %d, но трата — это улучшение руны (~%.0f) — я восстановил реальный доход цикла, прибавив трату обратно: +%.0f золота. Засчитываю как обычное прохождение."
+	"Fase %s: ouro caiu %d, mas o gasto foi em upgrade de runa (~%.0f) — recuperei o ganho real do ciclo somando o gasto de volta: +%.0f ouro. Conto como clear normal.": "Этап %s: золото упало на %d, но трата — это улучшение руны (~%.0f) — я восстановил реальный доход цикла, прибавив трату обратно: +%.0f золота. Засчитываю как обычное прохождение.",
+	"Heróis": "Герои",
+	"Caótico": "Хаотичный",
+	"Encantamentos": "Зачарования",
+	"do teto": "от макс.",
+	"No time": "В команде",
+	"Este item não tem encantamentos.": "На этом предмете нет зачарований.",
+	"Seus <strong>heróis</strong> e o equipamento de cada um — clique num item pra ver os <strong>rolls</strong> dos encantamentos e o quão perto do teto cada um ficou.": "Твои <strong>герои</strong> и снаряжение каждого — нажми на предмет, чтобы увидеть <strong>роллы</strong> зачарований и насколько близко каждый к максимуму.",
+	"Abra o jogo para ver seus heróis e o equipamento de cada um.": "Откройте игру, чтобы увидеть своих героев и их снаряжение.",
+	"Inventário": "Инвентарь",
+	"Síntese": "Синтез",
+	"fundível": "можно слить",
+	"Mochila": "Рюкзак",
+	"Armazém": "Хранилище",
+	"Banca": "Торговый склад",
+	"Equipamento": "Снаряжение",
+	"Tudo que está guardado fora dos heróis — <strong>mochila</strong>, <strong>armazém</strong> e banca. Agrupado por tipo e grau pra você ver o que dá pra <strong>fundir</strong> (síntese).": "Всё, что хранится вне героев — <strong>рюкзак</strong>, <strong>хранилище</strong> и торговый склад. Сгруппировано по типу и грейду, чтобы видеть, что можно <strong>слить</strong> (синтез).",
+	"Abra o jogo para ver seus itens guardados.": "Откройте игру, чтобы увидеть хранящиеся предметы.",
+	"Marcado como fundível a partir de 9 itens; a contagem exata por grau ainda será refinada por uma extração dos dados do jogo.": "Помечается как «можно слить» от 9 предметов; точное число на грейд уточнит будущая выгрузка игровых данных.",
+	"Cubo": "Куб",
+	"Quantidade e chances de fusão vêm dos dados do jogo.": "Количество и шансы синтеза взяты из данных игры.",
+	"Junte itens do mesmo tipo e grau pra fundir num grau acima (o resultado é sorteado: pode subir ou manter — graus altos sobem menos).": "Объедините предметы одного типа и грейда, чтобы слить в более высокий (результат случаен: вверх или тот же — высокие грейды растут реже).",
+	"Funções do Cubo": "Функции Куба",
+	"Alquimia": "Алхимия",
+	"Extração": "Извлечение",
+	"Travado": "Заблокирован",
+	"Itens travados não entram na síntese": "Заблокированные предметы не используются в синтезе",
+	"Configurações": "Настройки",
+	"Verificar atualização": "Проверить обновление",
+	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "Не удалось запустить мониторинг (попытка %d): %s. Повтор через 5 с."
 }

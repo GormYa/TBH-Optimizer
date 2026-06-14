@@ -14,10 +14,16 @@ import (
 const saveDebounce = 250 * time.Millisecond
 
 func StartMonitoring(ctrl *Control) {
-	archivePath, watcher, err := setupWatcher(ctrl)
-	if err != nil {
-		fmt.Println("Falha na inicialização do monitoramento:", err)
-		return
+	var archivePath string
+	var watcher *fsnotify.Watcher
+	var err error
+	for attempt := 1; ; attempt++ {
+		archivePath, watcher, err = setupWatcher(ctrl)
+		if err == nil {
+			break
+		}
+		Logf("reject", "Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.", attempt, err.Error())
+		time.Sleep(5 * time.Second)
 	}
 	defer watcher.Close()
 
@@ -27,7 +33,7 @@ func StartMonitoring(ctrl *Control) {
 }
 
 func setupWatcher(ctrl *Control) (string, *fsnotify.Watcher, error) {
-	currentSave, err := LoadSave()
+	currentSave, err := loadSaveWithRetry()
 	if err != nil {
 		return "", nil, err
 	}
@@ -47,6 +53,10 @@ func setupWatcher(ctrl *Control) (string, *fsnotify.Watcher, error) {
 	ctrl.ActiveHeroCount = len(currentSave.CommonSaveData.ArrangedHeroKey)
 	ctrl.ActiveHeroes = activeHeroes(currentSave)
 	ctrl.HeroEquipment = resolveHeroEquipment(currentSave)
+	ctrl.Inventory = resolveInventory(currentSave)
+	ctrl.CubeLevel = currentSave.CubeSaveLevelData.Level
+	ctrl.CubeExp = currentSave.CubeSaveLevelData.Exp
+	ctrl.CubeRecipes = currentSave.CubeRecipeSaveDatas
 	ctrl.Gold = ctrl.LastGold
 	ctrl.RuneLevels = runeLevels(currentSave)
 	ctrl.OwnedPets = ownedPets(currentSave)
@@ -181,6 +191,10 @@ func processSaveChange(ctrl *Control) {
 	ctrl.ActiveHeroCount = len(currentSave.CommonSaveData.ArrangedHeroKey)
 	ctrl.ActiveHeroes = activeHeroes(currentSave)
 	ctrl.HeroEquipment = resolveHeroEquipment(currentSave)
+	ctrl.Inventory = resolveInventory(currentSave)
+	ctrl.CubeLevel = currentSave.CubeSaveLevelData.Level
+	ctrl.CubeExp = currentSave.CubeSaveLevelData.Exp
+	ctrl.CubeRecipes = currentSave.CubeRecipeSaveDatas
 	calculateAndLogRound(ctrl, currentSave)
 }
 

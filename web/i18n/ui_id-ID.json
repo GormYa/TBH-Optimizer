@@ -2,13 +2,11 @@
 	"Taskbar Hero — Otimizador de Farm": "Taskbar Hero — Optimizer Farming",
 	"Otimizador de Farm": "Optimizer Farming",
 	"Idioma": "Bahasa",
-
 	"Painel já aberto": "Panel sudah terbuka",
 	"O otimizador já está aberto em outra aba deste navegador. Volte para ela — ou continue por aqui.": "Optimizer sudah terbuka di tab lain browser ini. Kembali ke sana — atau lanjutkan di sini.",
 	"Continuar nesta aba": "Lanjutkan di tab ini",
 	"Otimizador encerrado": "Optimizer ditutup",
 	"Pode fechar esta aba. Para voltar a monitorar o save, abra o programa de novo.": "Tab ini boleh ditutup. Untuk memantau save lagi, buka programnya kembali.",
-
 	"Console do otimizador": "Konsol optimizer",
 	"Limpar": "Bersihkan",
 	"Fechar": "Tutup",
@@ -16,7 +14,6 @@
 	"Mostra ao vivo o que o monitor está fazendo": "Menampilkan secara live apa yang sedang dilakukan monitor",
 	"Encerrar otimizador": "Keluar dari optimizer",
 	"Encerra o monitoramento e fecha o programa": "Menghentikan pemantauan dan menutup program",
-
 	"Monitoramento Ativo": "Pemantauan Aktif",
 	"Painel": "Dasbor",
 	"Fases": "Stage",
@@ -36,20 +33,17 @@
 	"Verificar": "Periksa",
 	"Dados do jogo:": "Data game:",
 	"jogo": "game",
-
 	"Nova versão": "Versi baru",
 	"disponível": "tersedia",
 	"Clique para baixar e reabrir automaticamente.": "Klik untuk mengunduh dan membuka ulang secara otomatis.",
 	"Atualizando…": "Memperbarui…",
 	"Atualizar agora": "Perbarui sekarang",
-
 	"Buscar fase, item, material, baú, runa, pet…": "Cari stage, item, peti, rune, pet, material…",
 	"Nada encontrado para": "Tidak ada hasil untuk",
 	"fase(s)": "stage",
 	"Fase": "Stage",
 	"Runa": "Rune",
 	"Pet": "Pet",
-
 	"Melhor Mapa · Ouro/h": "Map Terbaik · Gold/jam",
 	"Melhor Mapa · XP/h": "Map Terbaik · XP/jam",
 	"corridas": "run",
@@ -60,7 +54,6 @@
 	"Projeções ativas": "Proyeksi aktif",
 	"Aguardando 1-1 + outra fase": "Menunggu 1-1 + satu stage lain",
 	"Média Móvel (EMA)": "Rata-rata Bergerak (EMA)",
-
 	"Calibrar Projeções": "Kalibrasi Proyeksi",
 	"Âncoras: <strong>1-1</strong> + o <strong>maior mapa que você alcança</strong>. Adicione quantos mapas quiser abaixo — quanto mais pontos, melhor a estimativa. O tempo digitado é só um ponto de partida: as <strong>corridas reais</strong> vão refinando o valor automaticamente.": "Jangkar: <strong>1-1</strong> + <strong>map tertinggi yang bisa kamu capai</strong>. Tambahkan map sebanyak yang kamu mau di bawah — makin banyak titik, makin akurat estimasinya. Waktu yang diketik hanya titik awal: <strong>run sungguhan</strong> akan terus menyempurnakan nilainya secara otomatis.",
 	"Normal 1-1 (tempo)": "Normal 1-1 (waktu)",
@@ -73,7 +66,6 @@
 	"Adicionar tempo de qualquer mapa…": "Tambahkan waktu map mana pun…",
 	"Tempo (ex: 1:45)": "Waktu (contoh: 1:45)",
 	"+ Adicionar mapa": "+ Tambah map",
-
 	"Time ativo": "Tim aktif",
 	"Nv": "Lv",
 	"Desempenho por Fase": "Performa per Stage",
@@ -102,7 +94,6 @@
 	"Confiança alta (10+ corridas)": "Keyakinan tinggi (10+ run)",
 	"Confiança média (3-9)": "Keyakinan sedang (3-9)",
 	"Confiança baixa (1-2 corridas)": "Keyakinan rendah (1-2 run)",
-
 	"Árvore de runas do jogo.": "Pohon rune dalam game.",
 	"Verde": "Hijau",
 	"= dá pra subir agora ·": "= bisa di-upgrade sekarang ·",
@@ -125,7 +116,6 @@
 	"Libere {n} primeiro": "Buka {n} dulu",
 	"ou": "atau",
 	"nivel": "level",
-
 	"Sem dados de pets ainda.": "Belum ada data pet.",
 	"Atributos totais dos pets": "Total atribut pet",
 	"Os efeitos de todos os pets que você já obteve se aplicam sempre — não precisa estar equipado. Equipar é só o visual.": "Efek semua pet yang sudah kamu dapatkan selalu aktif — tidak perlu dipasang. Memasang pet hanya soal tampilan.",
@@ -137,7 +127,6 @@
 	"Derrote {n}× {m}": "Kalahkan {n}× {m}",
 	"· fases:": "· stage:",
 	"monstro": "monster",
-
 	"Dropa em": "Drop di",
 	"Taxa de drop": "Drop rate",
 	"Tabela de saque": "Tabel loot",
@@ -157,7 +146,6 @@
 	"baú(s). Clique num baú para ver fases e tabela de saque.": "peti. Klik sebuah peti untuk melihat stage dan tabel loot-nya.",
 	"Nenhum baú para este filtro": "Tidak ada peti untuk filter ini",
 	"grupos": "grup",
-
 	"Incomum": "Tidak Umum",
 	"Raro": "Langka",
 	"Épico": "Epik",
@@ -201,7 +189,6 @@
 	"baú(s) · % = chance de vir ao abrir aquele baú.": "peti · % = peluang mendapatkannya saat membuka peti itu.",
 	"Não cai diretamente de baús": "Tidak drop langsung dari peti",
 	" — obtido por síntese.": " — didapat lewat sintesis.",
-
 	"Grau": "Grade",
 	"Poder de Ataque": "Kekuatan Serangan",
 	"Poder de Defesa": "Kekuatan Pertahanan",
@@ -213,7 +200,6 @@
 	"Negociável": "Bisa diperdagangkan",
 	"Não negociável": "Tidak bisa diperdagangkan",
 	"Requer Nv.": "Butuh Lv.",
-
 	"Onde cai": "Tempat drop",
 	"Cai em": "Drop di",
 	"baú(s) · % = chance de vir ao abrir.": "peti · % = peluang mendapatkannya saat dibuka.",
@@ -221,7 +207,6 @@
 	"Materiais de <strong>criação e síntese</strong>. Clique pra ver em quais baús cada um cai.": "Material untuk <strong>crafting dan sintesis</strong>. Klik salah satu untuk melihat peti mana saja yang menjatuhkannya.",
 	"Buscar material…": "Cari material…",
 	"material(is)": "material",
-
 	"3 atos · 4 dificuldades · 120 fases — monstros, chefes e tabelas de saque. Clique numa fase no mapa.": "3 act · 4 tingkat kesulitan · 120 stage — monster, boss, dan tabel loot. Klik sebuah stage di peta.",
 	"Ato": "Act",
 	"— clique num nó pra inspecionar.": "— klik sebuah titik untuk memeriksanya.",
@@ -244,7 +229,6 @@
 	"Vida": "HP",
 	"Baús que caem aqui": "Peti yang drop di sini",
 	"Carregando dados das fases…": "Memuat data stage…",
-
 	"Espada": "Pedang",
 	"Arco": "Busur",
 	"Cajado": "Tongkat",
@@ -267,7 +251,6 @@
 	"Bracelete": "Gelang",
 	"Arma Principal": "Senjata Utama",
 	"Arma Secundária": "Senjata Off-hand",
-
 	"Dano de Ataque": "Damage Serangan",
 	"Vel. de Ataque": "Kecepatan Serangan",
 	"Vel. de Conjuração": "Kecepatan Cast",
@@ -302,7 +285,6 @@
 	"ABS DANO": "ABS DMG",
 	"RES ELEM": "RES ELEM",
 	"ROUBO VIDA": "LIFESTEAL",
-
 	"Aumento de Ganho de Exp": "Peningkatan Perolehan Exp",
 	"Aumento de Ganho de Ouro": "Peningkatan Perolehan Gold",
 	"Exp Adicional": "Exp Tambahan",
@@ -338,7 +320,6 @@
 	"Tempo auto-abrir baú de chefe": "Waktu buka otomatis peti boss",
 	"Abrir baús de um tipo de vez": "Buka semua peti satu tipe sekaligus",
 	"Abrir baús de todos os tipos": "Buka peti semua tipe sekaligus",
-
 	"Herói": "Hero",
 	"Auto-update ainda não configurado (CDN).": "Auto-update belum dikonfigurasi (CDN).",
 	"Erro:": "Error:",
@@ -373,11 +354,9 @@
 	"Apagar as corridas registradas de {s}?": "Hapus run yang tercatat untuk {s}?",
 	"Corridas de {s} apagadas.": "Run {s} dihapus.",
 	"Erro ao limpar a fase.": "Gagal menghapus data stage.",
-
 	"Função": "Fungsi",
 	"Evento": "Event",
 	"Invocação": "Summon",
-
 	"Grau {g}": "Tingkat {g}",
 	"Usado em": "Digunakan untuk",
 	"Cubo Nv {n}": "Kubus Lv. {n}",
@@ -422,5 +401,34 @@
 	"Troca de mapa: %s → %s. O app só enxerga o jogo pelos saves (gravados a cada ~3 min ou em eventos) e peguei o mapa novo já no meio de uma corrida (wave %d) — então esta primeira corrida sai parcial e será descartada; a próxima corrida completa no mapa novo já conta.": "Ganti peta: %s → %s. Aplikasi hanya melihat game lewat save-nya (ditulis tiap ~3 mnt atau saat event) dan saya menangkap peta baru di tengah run (gelombang %d) — jadi run pertama ini parsial dan akan dibuang; run penuh berikutnya di peta baru sudah dihitung.",
 	"Fase %s: primeira corrida após a troca de mapa descartada — só %.0fs medidos (parte de uma corrida, não a corrida inteira), porque o save anterior já estava no meio dela. A próxima corrida completa conta.": "Tahap %s: run pertama setelah ganti peta dibuang — hanya %.0fs terukur (sebagian run, bukan run utuh), karena save sebelumnya sudah di tengah run. Run penuh berikutnya dihitung.",
 	"Fase %s: ouro caiu %d (provável compra de runa/item) e esta fase ainda não tem média de ouro — descarto esta corrida pra não registrar ouro zerado; o próximo clear sem compra semeia a fase.": "Tahap %s: emas turun %d (kemungkinan pembelian rune/item) dan tahap ini belum punya rata-rata emas — saya buang run ini agar tidak mencatat emas nol; clear berikutnya tanpa pembelian menyemai tahap.",
-	"Fase %s: ouro caiu %d, mas o gasto foi em upgrade de runa (~%.0f) — recuperei o ganho real do ciclo somando o gasto de volta: +%.0f ouro. Conto como clear normal.": "Tahap %s: emas turun %d, tetapi pengeluarannya adalah upgrade rune (~%.0f) — saya memulihkan perolehan asli siklus dengan menambahkan kembali pengeluaran: +%.0f emas. Dihitung sebagai clear normal."
+	"Fase %s: ouro caiu %d, mas o gasto foi em upgrade de runa (~%.0f) — recuperei o ganho real do ciclo somando o gasto de volta: +%.0f ouro. Conto como clear normal.": "Tahap %s: emas turun %d, tetapi pengeluarannya adalah upgrade rune (~%.0f) — saya memulihkan perolehan asli siklus dengan menambahkan kembali pengeluaran: +%.0f emas. Dihitung sebagai clear normal.",
+	"Heróis": "Pahlawan",
+	"Caótico": "Kacau",
+	"Encantamentos": "Pesona",
+	"do teto": "dari maks",
+	"No time": "Di tim",
+	"Este item não tem encantamentos.": "Item ini tidak punya pesona.",
+	"Seus <strong>heróis</strong> e o equipamento de cada um — clique num item pra ver os <strong>rolls</strong> dos encantamentos e o quão perto do teto cada um ficou.": "<strong>Pahlawan</strong> kamu dan perlengkapan masing-masing — klik item untuk melihat <strong>roll</strong> pesona dan seberapa dekat tiap roll ke maksimum.",
+	"Abra o jogo para ver seus heróis e o equipamento de cada um.": "Buka game untuk melihat pahlawan dan perlengkapan mereka.",
+	"Inventário": "Inventaris",
+	"Síntese": "Sintesis",
+	"fundível": "bisa fusi",
+	"Mochila": "Tas",
+	"Armazém": "Gudang",
+	"Banca": "Lapak dagang",
+	"Equipamento": "Perlengkapan",
+	"Tudo que está guardado fora dos heróis — <strong>mochila</strong>, <strong>armazém</strong> e banca. Agrupado por tipo e grau pra você ver o que dá pra <strong>fundir</strong> (síntese).": "Semua yang disimpan di luar pahlawan — <strong>tas</strong>, <strong>gudang</strong>, dan lapak dagang. Dikelompokkan per tipe dan grade agar kamu tahu apa yang bisa di-<strong>fusi</strong> (sintesis).",
+	"Abra o jogo para ver seus itens guardados.": "Buka game untuk melihat item tersimpan.",
+	"Marcado como fundível a partir de 9 itens; a contagem exata por grau ainda será refinada por uma extração dos dados do jogo.": "Ditandai bisa fusi mulai 9 item; jumlah pasti per grade akan disempurnakan lewat ekstraksi data game nanti.",
+	"Cubo": "Kubus",
+	"Quantidade e chances de fusão vêm dos dados do jogo.": "Jumlah dan peluang fusi diambil dari data gim.",
+	"Junte itens do mesmo tipo e grau pra fundir num grau acima (o resultado é sorteado: pode subir ou manter — graus altos sobem menos).": "Gabungkan item dengan tipe dan grade sama untuk fusi ke grade lebih tinggi (hasil acak: bisa naik atau tetap — grade tinggi lebih jarang naik).",
+	"Funções do Cubo": "Fungsi Kubus",
+	"Alquimia": "Alkimia",
+	"Extração": "Ekstraksi",
+	"Travado": "Terkunci",
+	"Itens travados não entram na síntese": "Item terkunci tidak dipakai dalam sintesis",
+	"Configurações": "Pengaturan",
+	"Verificar atualização": "Periksa pembaruan",
+	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "Gagal memulai pemantauan (percobaan %d): %s. Mencoba lagi dalam 5 dtk."
 }

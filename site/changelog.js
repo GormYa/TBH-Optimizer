@@ -8,6 +8,17 @@ window.CHANGELOG = {
 	entries: [
         {
             date: "2026-06-13",
+            version: "v1.0.38",
+            title: "New Heroes & Inventory tabs, real synthesis odds, and a live Cube panel",
+            items: [
+                "New Heroes tab: see every hero with all 10 equipped slots, and click any item to inspect its real enchant rolls — each roll is measured against the material's min–max range, so you can tell a near-perfect roll from a floor one (shown as \"% of ceiling\"), with a per-hero average.",
+                "New Inventory tab: everything stored outside your heroes — bag, storage and trading post — grouped by type and grade so you can see what's ready to fuse at a glance.",
+                "Synthesis odds are now real, read straight from the game's data: each fusible group shows how many items you need and the actual chance to rise or stay a grade — Common is a guaranteed upgrade, while Divine only climbs about 9% of the time. Fusing never lowers a grade, so that's no longer implied. Locked items are left out of the count, since they can't go into the Cube.",
+                "New live Cube panel: an EXP progress bar to the next Cube level, plus a row showing which Cube functions you've unlocked — Synthesis, Alchemy, Crafting, Decoration, Engraving, Inscription, Offering and Extraction.",
+            ],
+        },
+        {
+            date: "2026-06-13",
             version: "v1.0.37",
             title: "Combined Gold+XP pick, smarter map-switch handling & a 16-language console",
             items: [

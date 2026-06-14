@@ -2,13 +2,11 @@
 	"Taskbar Hero — Otimizador de Farm": "Taskbar Hero — Farm Optimizatörü",
 	"Otimizador de Farm": "Farm Optimizatörü",
 	"Idioma": "Dil",
-
 	"Painel já aberto": "Panel zaten açık",
 	"O otimizador já está aberto em outra aba deste navegador. Volte para ela — ou continue por aqui.": "Optimizatör bu tarayıcının başka bir sekmesinde zaten açık. Oraya dön — ya da buradan devam et.",
 	"Continuar nesta aba": "Bu sekmede devam et",
 	"Otimizador encerrado": "Optimizatör kapatıldı",
 	"Pode fechar esta aba. Para voltar a monitorar o save, abra o programa de novo.": "Bu sekmeyi kapatabilirsin. Kaydı yeniden izlemek için programı tekrar aç.",
-
 	"Console do otimizador": "Optimizatör konsolu",
 	"Limpar": "Temizle",
 	"Fechar": "Kapat",
@@ -16,7 +14,6 @@
 	"Mostra ao vivo o que o monitor está fazendo": "Monitörün ne yaptığını canlı gösterir",
 	"Encerrar otimizador": "Optimizatörü kapat",
 	"Encerra o monitoramento e fecha o programa": "İzlemeyi durdurur ve programı kapatır",
-
 	"Monitoramento Ativo": "İzleme Aktif",
 	"Painel": "Panel",
 	"Fases": "Bölümler",
@@ -36,20 +33,17 @@
 	"Verificar": "Kontrol et",
 	"Dados do jogo:": "Oyun verileri:",
 	"jogo": "oyun",
-
 	"Nova versão": "Yeni sürüm",
 	"disponível": "mevcut",
 	"Clique para baixar e reabrir automaticamente.": "Otomatik indirip yeniden açmak için tıkla.",
 	"Atualizando…": "Güncelleniyor…",
 	"Atualizar agora": "Şimdi güncelle",
-
 	"Buscar fase, item, material, baú, runa, pet…": "Bölüm, eşya, sandık, rün, pet, materyal ara…",
 	"Nada encontrado para": "Şunun için sonuç yok:",
 	"fase(s)": "bölüm",
 	"Fase": "Bölüm",
 	"Runa": "Rün",
 	"Pet": "Pet",
-
 	"Melhor Mapa · Ouro/h": "En İyi Harita · Altın/sa",
 	"Melhor Mapa · XP/h": "En İyi Harita · XP/sa",
 	"corridas": "tur",
@@ -60,7 +54,6 @@
 	"Projeções ativas": "Projeksiyonlar aktif",
 	"Aguardando 1-1 + outra fase": "1-1 + başka bir bölüm bekleniyor",
 	"Média Móvel (EMA)": "Hareketli Ortalama (EMA)",
-
 	"Calibrar Projeções": "Projeksiyonları Kalibre Et",
 	"Âncoras: <strong>1-1</strong> + o <strong>maior mapa que você alcança</strong>. Adicione quantos mapas quiser abaixo — quanto mais pontos, melhor a estimativa. O tempo digitado é só um ponto de partida: as <strong>corridas reais</strong> vão refinando o valor automaticamente.": "Çapalar: <strong>1-1</strong> + <strong>ulaşabildiğin en yüksek harita</strong>. Aşağıya istediğin kadar harita ekle — ne kadar çok nokta, o kadar iyi tahmin. Girdiğin süre sadece bir başlangıç noktası: <strong>gerçek turlar</strong> değeri otomatik olarak iyileştirir.",
 	"Normal 1-1 (tempo)": "Normal 1-1 (süre)",
@@ -73,7 +66,6 @@
 	"Adicionar tempo de qualquer mapa…": "Herhangi bir haritanın süresini ekle…",
 	"Tempo (ex: 1:45)": "Süre (örn: 1:45)",
 	"+ Adicionar mapa": "+ Harita ekle",
-
 	"Time ativo": "Aktif takım",
 	"Nv": "Sv",
 	"Desempenho por Fase": "Bölüm Bazında Performans",
@@ -102,7 +94,6 @@
 	"Confiança alta (10+ corridas)": "Yüksek güven (10+ tur)",
 	"Confiança média (3-9)": "Orta güven (3-9)",
 	"Confiança baixa (1-2 corridas)": "Düşük güven (1-2 tur)",
-
 	"Árvore de runas do jogo.": "Oyunun rün ağacı.",
 	"Verde": "Yeşil",
 	"= dá pra subir agora ·": "= şimdi yükseltilebilir ·",
@@ -125,7 +116,6 @@
 	"Libere {n} primeiro": "Önce {n} aç",
 	"ou": "veya",
 	"nivel": "seviye",
-
 	"Sem dados de pets ainda.": "Henüz pet verisi yok.",
 	"Atributos totais dos pets": "Petlerin toplam özellikleri",
 	"Os efeitos de todos os pets que você já obteve se aplicam sempre — não precisa estar equipado. Equipar é só o visual.": "Edindiğin tüm petlerin etkileri her zaman geçerlidir — kuşanman gerekmez. Kuşanmak sadece görseldir.",
@@ -137,7 +127,6 @@
 	"Derrote {n}× {m}": "{n}× {m} yen",
 	"· fases:": "· bölümler:",
 	"monstro": "canavar",
-
 	"Dropa em": "Düştüğü yer",
 	"Taxa de drop": "Düşme oranı",
 	"Tabela de saque": "Ganimet tablosu",
@@ -157,7 +146,6 @@
 	"baú(s). Clique num baú para ver fases e tabela de saque.": "sandık. Bölümleri ve ganimet tablosunu görmek için bir sandığa tıkla.",
 	"Nenhum baú para este filtro": "Bu filtre için sandık yok",
 	"grupos": "grup",
-
 	"Incomum": "Az Bulunur",
 	"Raro": "Nadir",
 	"Épico": "Epik",
@@ -201,7 +189,6 @@
 	"baú(s) · % = chance de vir ao abrir aquele baú.": "sandık · % = o sandığı açınca gelme şansı.",
 	"Não cai diretamente de baús": "Sandıklardan doğrudan düşmez",
 	" — obtido por síntese.": " — sentezle elde edilir.",
-
 	"Grau": "Derece",
 	"Poder de Ataque": "Saldırı Gücü",
 	"Poder de Defesa": "Savunma Gücü",
@@ -213,7 +200,6 @@
 	"Negociável": "Takas edilebilir",
 	"Não negociável": "Takas edilemez",
 	"Requer Nv.": "Gereken Sv.",
-
 	"Onde cai": "Nerede düşer",
 	"Cai em": "Düştüğü yer",
 	"baú(s) · % = chance de vir ao abrir.": "sandık · % = açınca gelme şansı.",
@@ -221,7 +207,6 @@
 	"Materiais de <strong>criação e síntese</strong>. Clique pra ver em quais baús cada um cai.": "<strong>Üretim ve sentez</strong> materyalleri. Hangi sandıklardan düştüğünü görmek için birine tıkla.",
 	"Buscar material…": "Materyal ara…",
 	"material(is)": "materyal",
-
 	"3 atos · 4 dificuldades · 120 fases — monstros, chefes e tabelas de saque. Clique numa fase no mapa.": "3 perde · 4 zorluk · 120 bölüm — canavarlar, boss'lar ve ganimet tabloları. Haritada bir bölüme tıkla.",
 	"Ato": "Perde",
 	"— clique num nó pra inspecionar.": "— incelemek için bir düğüme tıkla.",
@@ -244,7 +229,6 @@
 	"Vida": "HP",
 	"Baús que caem aqui": "Burada düşen sandıklar",
 	"Carregando dados das fases…": "Bölüm verileri yükleniyor…",
-
 	"Espada": "Kılıç",
 	"Arco": "Yay",
 	"Cajado": "Asa",
@@ -267,7 +251,6 @@
 	"Bracelete": "Bilezik",
 	"Arma Principal": "Ana Silah",
 	"Arma Secundária": "Yan El Silahı",
-
 	"Dano de Ataque": "Saldırı Hasarı",
 	"Vel. de Ataque": "Saldırı Hızı",
 	"Vel. de Conjuração": "Büyü Hızı",
@@ -302,7 +285,6 @@
 	"ABS DANO": "HSR EMME",
 	"RES ELEM": "ELEM DİR",
 	"ROUBO VIDA": "CAN ÇALMA",
-
 	"Aumento de Ganho de Exp": "Exp Kazancı Artışı",
 	"Aumento de Ganho de Ouro": "Altın Kazancı Artışı",
 	"Exp Adicional": "Ek Exp",
@@ -338,7 +320,6 @@
 	"Tempo auto-abrir baú de chefe": "Boss sandığı otomatik açma süresi",
 	"Abrir baús de um tipo de vez": "Bir türün tüm sandıklarını tek seferde aç",
 	"Abrir baús de todos os tipos": "Tüm türlerin sandıklarını tek seferde aç",
-
 	"Herói": "Kahraman",
 	"Função": "İşlev",
 	"Evento": "Etkinlik",
@@ -376,7 +357,6 @@
 	"Apagar as corridas registradas de {s}?": "{s} için kayıtlı turlar silinsin mi?",
 	"Corridas de {s} apagadas.": "{s} turları silindi.",
 	"Erro ao limpar a fase.": "Bölümü temizlerken hata oluştu.",
-
 	"Grau {g}": "Derece: {g}",
 	"Usado em": "Kullanım yeri",
 	"Cubo Nv {n}": "Küp Sv. {n}",
@@ -421,5 +401,34 @@
 	"Troca de mapa: %s → %s. O app só enxerga o jogo pelos saves (gravados a cada ~3 min ou em eventos) e peguei o mapa novo já no meio de uma corrida (wave %d) — então esta primeira corrida sai parcial e será descartada; a próxima corrida completa no mapa novo já conta.": "Harita değişimi: %s → %s. Uygulama oyunu yalnızca kayıtlar üzerinden görür (her ~3 dk'da bir veya olaylarda yazılır) ve yeni haritayı bir turun ortasında yakaladım (dalga %d) — bu yüzden bu ilk tur kısmi çıkar ve atılır; yeni haritadaki sonraki tam tur zaten sayılır.",
 	"Fase %s: primeira corrida após a troca de mapa descartada — só %.0fs medidos (parte de uma corrida, não a corrida inteira), porque o save anterior já estava no meio dela. A próxima corrida completa conta.": "%s aşaması: harita değişiminden sonraki ilk tur atıldı — yalnızca %.0fs ölçüldü (turun bir kısmı, tüm tur değil), çünkü önceki kayıt zaten turun ortasındaydı. Sonraki tam tur sayılır.",
 	"Fase %s: ouro caiu %d (provável compra de runa/item) e esta fase ainda não tem média de ouro — descarto esta corrida pra não registrar ouro zerado; o próximo clear sem compra semeia a fase.": "%s aşaması: altın %d düştü (muhtemelen rün/eşya alımı) ve bu aşamanın henüz altın ortalaması yok — sıfır altın kaydetmemek için bu turu atıyorum; satın alma içermeyen sonraki geçiş aşamayı tohumlar.",
-	"Fase %s: ouro caiu %d, mas o gasto foi em upgrade de runa (~%.0f) — recuperei o ganho real do ciclo somando o gasto de volta: +%.0f ouro. Conto como clear normal.": "%s aşaması: altın %d düştü, ama harcama bir rün yükseltmesiydi (~%.0f) — harcamayı geri ekleyerek döngünün gerçek kazancını kurtardım: +%.0f altın. Normal bir geçiş olarak sayıyorum."
+	"Fase %s: ouro caiu %d, mas o gasto foi em upgrade de runa (~%.0f) — recuperei o ganho real do ciclo somando o gasto de volta: +%.0f ouro. Conto como clear normal.": "%s aşaması: altın %d düştü, ama harcama bir rün yükseltmesiydi (~%.0f) — harcamayı geri ekleyerek döngünün gerçek kazancını kurtardım: +%.0f altın. Normal bir geçiş olarak sayıyorum.",
+	"Heróis": "Kahramanlar",
+	"Caótico": "Kaotik",
+	"Encantamentos": "Büyüler",
+	"do teto": "maks.",
+	"No time": "Takımda",
+	"Este item não tem encantamentos.": "Bu eşyada büyü yok.",
+	"Seus <strong>heróis</strong> e o equipamento de cada um — clique num item pra ver os <strong>rolls</strong> dos encantamentos e o quão perto do teto cada um ficou.": "<strong>Kahramanların</strong> ve her birinin ekipmanı — büyülerin <strong>roll</strong> değerlerini ve her birinin maksimuma ne kadar yakın olduğunu görmek için bir eşyaya tıkla.",
+	"Abra o jogo para ver seus heróis e o equipamento de cada um.": "Kahramanlarını ve ekipmanlarını görmek için oyunu aç.",
+	"Inventário": "Envanter",
+	"Síntese": "Sentez",
+	"fundível": "birleştirilebilir",
+	"Mochila": "Sırt çantası",
+	"Armazém": "Depo",
+	"Banca": "Takas deposu",
+	"Equipamento": "Ekipman",
+	"Tudo que está guardado fora dos heróis — <strong>mochila</strong>, <strong>armazém</strong> e banca. Agrupado por tipo e grau pra você ver o que dá pra <strong>fundir</strong> (síntese).": "Kahramanların dışında saklanan her şey — <strong>sırt çantası</strong>, <strong>depo</strong> ve takas deposu. Neyi <strong>birleştirebileceğini</strong> (sentez) görmen için tür ve dereceye göre gruplandı.",
+	"Abra o jogo para ver seus itens guardados.": "Saklanan eşyalarını görmek için oyunu aç.",
+	"Marcado como fundível a partir de 9 itens; a contagem exata por grau ainda será refinada por uma extração dos dados do jogo.": "9 eşyadan itibaren birleştirilebilir olarak işaretlenir; dereceye göre tam sayı, ileride oyun verisi çıkarımıyla netleşecek.",
+	"Cubo": "Küp",
+	"Quantidade e chances de fusão vêm dos dados do jogo.": "Miktar ve birleştirme şansları oyun verilerinden gelir.",
+	"Junte itens do mesmo tipo e grau pra fundir num grau acima (o resultado é sorteado: pode subir ou manter — graus altos sobem menos).": "Aynı tür ve dereceden eşyaları birleştirip bir üst dereceye yükselt (sonuç rastgele: çıkabilir veya kalabilir — yüksek dereceler daha az yükselir).",
+	"Funções do Cubo": "Küp işlevleri",
+	"Alquimia": "Simya",
+	"Extração": "Çıkarma",
+	"Travado": "Kilitli",
+	"Itens travados não entram na síntese": "Kilitli eşyalar sentezde kullanılmaz",
+	"Configurações": "Ayarlar",
+	"Verificar atualização": "Güncellemeleri denetle",
+	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "İzleme başlatılamadı (deneme %d): %s. 5 sn içinde yeniden deneniyor."
 }

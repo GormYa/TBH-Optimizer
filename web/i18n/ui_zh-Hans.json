@@ -2,13 +2,11 @@
 	"Taskbar Hero — Otimizador de Farm": "Taskbar Hero — 刷关优化器",
 	"Otimizador de Farm": "刷关优化器",
 	"Idioma": "语言",
-
 	"Painel já aberto": "面板已打开",
 	"O otimizador já está aberto em outra aba deste navegador. Volte para ela — ou continue por aqui.": "优化器已在此浏览器的另一个标签页中打开。请回到那个标签页 — 或者在这里继续。",
 	"Continuar nesta aba": "在此标签页继续",
 	"Otimizador encerrado": "优化器已关闭",
 	"Pode fechar esta aba. Para voltar a monitorar o save, abra o programa de novo.": "可以关闭此标签页。要重新监控存档，请再次打开程序。",
-
 	"Console do otimizador": "优化器控制台",
 	"Limpar": "清空",
 	"Fechar": "关闭",
@@ -16,7 +14,6 @@
 	"Mostra ao vivo o que o monitor está fazendo": "实时显示监控器正在做什么",
 	"Encerrar otimizador": "退出优化器",
 	"Encerra o monitoramento e fecha o programa": "停止监控并关闭程序",
-
 	"Monitoramento Ativo": "监控中",
 	"Painel": "总览",
 	"Fases": "关卡",
@@ -36,20 +33,17 @@
 	"Verificar": "检查",
 	"Dados do jogo:": "游戏数据：",
 	"jogo": "游戏",
-
 	"Nova versão": "新版本",
 	"disponível": "可用",
 	"Clique para baixar e reabrir automaticamente.": "点击即可下载并自动重新打开。",
 	"Atualizando…": "正在更新…",
 	"Atualizar agora": "立即更新",
-
 	"Buscar fase, item, material, baú, runa, pet…": "搜索关卡、物品、宝箱、符文、宠物、材料…",
 	"Nada encontrado para": "未找到结果：",
 	"fase(s)": "个关卡",
 	"Fase": "关卡",
 	"Runa": "符文",
 	"Pet": "宠物",
-
 	"Melhor Mapa · Ouro/h": "最佳地图 · 金币/小时",
 	"Melhor Mapa · XP/h": "最佳地图 · XP/小时",
 	"corridas": "轮",
@@ -60,7 +54,6 @@
 	"Projeções ativas": "预测已启用",
 	"Aguardando 1-1 + outra fase": "等待 1-1 + 另一个关卡",
 	"Média Móvel (EMA)": "移动平均（EMA）",
-
 	"Calibrar Projeções": "校准预测",
 	"Âncoras: <strong>1-1</strong> + o <strong>maior mapa que você alcança</strong>. Adicione quantos mapas quiser abaixo — quanto mais pontos, melhor a estimativa. O tempo digitado é só um ponto de partida: as <strong>corridas reais</strong> vão refinando o valor automaticamente.": "锚点：<strong>1-1</strong> + <strong>你能打到的最高地图</strong>。可以在下方随意添加地图 — 数据点越多，估算越准。输入的用时只是起点：<strong>实际刷关</strong>会自动不断修正这个数值。",
 	"Normal 1-1 (tempo)": "Normal 1-1（用时）",
@@ -73,7 +66,6 @@
 	"Adicionar tempo de qualquer mapa…": "添加任意地图的用时…",
 	"Tempo (ex: 1:45)": "用时（例：1:45）",
 	"+ Adicionar mapa": "+ 添加地图",
-
 	"Time ativo": "当前队伍",
 	"Nv": "Lv",
 	"Desempenho por Fase": "各关卡表现",
@@ -102,7 +94,6 @@
 	"Confiança alta (10+ corridas)": "置信度高（10轮以上）",
 	"Confiança média (3-9)": "置信度中等（3-9轮）",
 	"Confiança baixa (1-2 corridas)": "置信度低（1-2轮）",
-
 	"Árvore de runas do jogo.": "游戏的符文树。",
 	"Verde": "绿色",
 	"= dá pra subir agora ·": "= 现在就能升级 ·",
@@ -125,7 +116,6 @@
 	"Libere {n} primeiro": "请先解锁{n}",
 	"ou": "或",
 	"nivel": "等级",
-
 	"Sem dados de pets ainda.": "暂无宠物数据。",
 	"Atributos totais dos pets": "宠物属性总计",
 	"Os efeitos de todos os pets que você já obteve se aplicam sempre — não precisa estar equipado. Equipar é só o visual.": "你获得过的所有宠物的效果始终生效 — 无需装备。装备只是改变外观。",
@@ -137,7 +127,6 @@
 	"Derrote {n}× {m}": "击败 {n}× {m}",
 	"· fases:": "· 关卡：",
 	"monstro": "怪物",
-
 	"Dropa em": "掉落于",
 	"Taxa de drop": "掉落率",
 	"Tabela de saque": "掉落表",
@@ -157,7 +146,6 @@
 	"baú(s). Clique num baú para ver fases e tabela de saque.": "个宝箱。点击宝箱查看对应关卡和掉落表。",
 	"Nenhum baú para este filtro": "此筛选条件下没有宝箱",
 	"grupos": "组",
-
 	"Incomum": "优秀",
 	"Raro": "稀有",
 	"Épico": "史诗",
@@ -201,7 +189,6 @@
 	"baú(s) · % = chance de vir ao abrir aquele baú.": "个宝箱 · % = 打开该宝箱时获得的概率。",
 	"Não cai diretamente de baús": "不会直接从宝箱掉落",
 	" — obtido por síntese.": " — 通过合成获得。",
-
 	"Grau": "品级",
 	"Poder de Ataque": "攻击力",
 	"Poder de Defesa": "防御力",
@@ -213,7 +200,6 @@
 	"Negociável": "可交易",
 	"Não negociável": "不可交易",
 	"Requer Nv.": "需要 Lv.",
-
 	"Onde cai": "掉落位置",
 	"Cai em": "掉落于",
 	"baú(s) · % = chance de vir ao abrir.": "个宝箱 · % = 打开时获得的概率。",
@@ -221,7 +207,6 @@
 	"Materiais de <strong>criação e síntese</strong>. Clique pra ver em quais baús cada um cai.": "<strong>制作与合成</strong>材料。点击查看每种材料从哪些宝箱掉落。",
 	"Buscar material…": "搜索材料…",
 	"material(is)": "种材料",
-
 	"3 atos · 4 dificuldades · 120 fases — monstros, chefes e tabelas de saque. Clique numa fase no mapa.": "3个章节 · 4个难度 · 120个关卡 — 怪物、Boss和掉落表。点击地图上的关卡。",
 	"Ato": "章节",
 	"— clique num nó pra inspecionar.": "— 点击节点查看详情。",
@@ -244,7 +229,6 @@
 	"Vida": "HP",
 	"Baús que caem aqui": "此处掉落的宝箱",
 	"Carregando dados das fases…": "正在加载关卡数据…",
-
 	"Espada": "剑",
 	"Arco": "弓",
 	"Cajado": "法杖",
@@ -267,7 +251,6 @@
 	"Bracelete": "手镯",
 	"Arma Principal": "主手武器",
 	"Arma Secundária": "副手武器",
-
 	"Dano de Ataque": "攻击伤害",
 	"Vel. de Ataque": "攻击速度",
 	"Vel. de Conjuração": "施法速度",
@@ -302,7 +285,6 @@
 	"ABS DANO": "吸收",
 	"RES ELEM": "元素抗",
 	"ROUBO VIDA": "吸血",
-
 	"Aumento de Ganho de Exp": "Exp获取提升",
 	"Aumento de Ganho de Ouro": "金币获取提升",
 	"Exp Adicional": "额外Exp",
@@ -338,7 +320,6 @@
 	"Tempo auto-abrir baú de chefe": "Boss宝箱自动开启时间",
 	"Abrir baús de um tipo de vez": "一键开启同类型全部宝箱",
 	"Abrir baús de todos os tipos": "一键开启所有类型宝箱",
-
 	"Herói": "英雄",
 	"Auto-update ainda não configurado (CDN).": "自动更新尚未配置（CDN）。",
 	"Erro:": "错误：",
@@ -373,11 +354,9 @@
 	"Apagar as corridas registradas de {s}?": "删除 {s} 的已记录刷关数据？",
 	"Corridas de {s} apagadas.": "已删除 {s} 的刷关记录。",
 	"Erro ao limpar a fase.": "清除关卡数据时出错。",
-
 	"Função": "功能",
 	"Evento": "活动",
 	"Invocação": "召唤",
-
 	"Grau {g}": "{g}品级",
 	"Usado em": "用于",
 	"Cubo Nv {n}": "魔方等级 {n}",
@@ -422,5 +401,34 @@
 	"Troca de mapa: %s → %s. O app só enxerga o jogo pelos saves (gravados a cada ~3 min ou em eventos) e peguei o mapa novo já no meio de uma corrida (wave %d) — então esta primeira corrida sai parcial e será descartada; a próxima corrida completa no mapa novo já conta.": "切换地图：%s → %s。本应用只能通过存档了解游戏（每 ~3 分钟或发生事件时写入），而我是在一次刷图的中途（波次 %d）才发现新地图——所以这第一次刷图是不完整的，会被丢弃；新地图上的下一次完整刷图即开始计入。",
 	"Fase %s: primeira corrida após a troca de mapa descartada — só %.0fs medidos (parte de uma corrida, não a corrida inteira), porque o save anterior já estava no meio dela. A próxima corrida completa conta.": "关卡 %s：切换地图后的第一次刷图被丢弃 — 只测到 %.0fs（只是一次刷图的一部分，不是整次），因为上一个存档已经处于刷图中途。下一次完整刷图计入。",
 	"Fase %s: ouro caiu %d (provável compra de runa/item) e esta fase ainda não tem média de ouro — descarto esta corrida pra não registrar ouro zerado; o próximo clear sem compra semeia a fase.": "关卡 %s：金币减少 %d（可能购买了符文/物品），且该关卡还没有金币均值 — 我丢弃这次刷图以免记录为 0 金币；下一次没有购买的通关会为该关卡奠定基准。",
-	"Fase %s: ouro caiu %d, mas o gasto foi em upgrade de runa (~%.0f) — recuperei o ganho real do ciclo somando o gasto de volta: +%.0f ouro. Conto como clear normal.": "关卡 %s：金币减少 %d，但这笔支出是符文升级（~%.0f）— 我把支出加回来，还原了本轮的真实收益：+%.0f 金币。按正常通关计入。"
+	"Fase %s: ouro caiu %d, mas o gasto foi em upgrade de runa (~%.0f) — recuperei o ganho real do ciclo somando o gasto de volta: +%.0f ouro. Conto como clear normal.": "关卡 %s：金币减少 %d，但这笔支出是符文升级（~%.0f）— 我把支出加回来，还原了本轮的真实收益：+%.0f 金币。按正常通关计入。",
+	"Heróis": "英雄",
+	"Caótico": "混沌",
+	"Encantamentos": "附魔",
+	"do teto": "占满值",
+	"No time": "在队伍中",
+	"Este item não tem encantamentos.": "该物品没有附魔。",
+	"Seus <strong>heróis</strong> e o equipamento de cada um — clique num item pra ver os <strong>rolls</strong> dos encantamentos e o quão perto do teto cada um ficou.": "你的<strong>英雄</strong>以及每位的装备 — 点击物品即可查看附魔的<strong>词条</strong>数值，以及每条距离满值有多近。",
+	"Abra o jogo para ver seus heróis e o equipamento de cada um.": "打开游戏查看你的英雄及其装备。",
+	"Inventário": "库存",
+	"Síntese": "合成",
+	"fundível": "可合成",
+	"Mochila": "背包",
+	"Armazém": "仓库",
+	"Banca": "交易仓",
+	"Equipamento": "装备",
+	"Tudo que está guardado fora dos heróis — <strong>mochila</strong>, <strong>armazém</strong> e banca. Agrupado por tipo e grau pra você ver o que dá pra <strong>fundir</strong> (síntese).": "英雄之外保管的一切 — <strong>背包</strong>、<strong>仓库</strong>和交易仓。按类型和品级分组，方便你看出哪些可以<strong>合成</strong>。",
+	"Abra o jogo para ver seus itens guardados.": "打开游戏查看你保管的物品。",
+	"Marcado como fundível a partir de 9 itens; a contagem exata por grau ainda será refinada por uma extração dos dados do jogo.": "从9件起标记为可合成；每个品级的确切数量将由后续的游戏数据提取来校正。",
+	"Cubo": "魔方",
+	"Quantidade e chances de fusão vêm dos dados do jogo.": "数量和合成概率来自游戏数据。",
+	"Junte itens do mesmo tipo e grau pra fundir num grau acima (o resultado é sorteado: pode subir ou manter — graus altos sobem menos).": "合并同类型同品级的物品以合成更高品级（结果随机：可能升或保持——高品级更难升）。",
+	"Funções do Cubo": "魔方功能",
+	"Alquimia": "炼金",
+	"Extração": "提取",
+	"Travado": "已锁定",
+	"Itens travados não entram na síntese": "锁定的物品不会用于合成",
+	"Configurações": "设置",
+	"Verificar atualização": "检查更新",
+	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "启动监控失败（第 %d 次尝试）：%s。5 秒后重试。"
 }

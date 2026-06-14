@@ -2,13 +2,11 @@
 	"Taskbar Hero — Otimizador de Farm": "Taskbar Hero — Оптимізатор фарму",
 	"Otimizador de Farm": "Оптимізатор фарму",
 	"Idioma": "Мова",
-
 	"Painel já aberto": "Панель уже відкрита",
 	"O otimizador já está aberto em outra aba deste navegador. Volte para ela — ou continue por aqui.": "Оптимізатор уже відкритий в іншій вкладці цього браузера. Повернись туди — або продовжуй тут.",
 	"Continuar nesta aba": "Продовжити в цій вкладці",
 	"Otimizador encerrado": "Оптимізатор закрито",
 	"Pode fechar esta aba. Para voltar a monitorar o save, abra o programa de novo.": "Можеш закрити цю вкладку. Щоб знову відстежувати сейв, відкрий програму ще раз.",
-
 	"Console do otimizador": "Консоль оптимізатора",
 	"Limpar": "Очистити",
 	"Fechar": "Закрити",
@@ -16,7 +14,6 @@
 	"Mostra ao vivo o que o monitor está fazendo": "Показує наживо, що робить монітор",
 	"Encerrar otimizador": "Завершити оптимізатор",
 	"Encerra o monitoramento e fecha o programa": "Зупиняє моніторинг і закриває програму",
-
 	"Monitoramento Ativo": "Моніторинг активний",
 	"Painel": "Панель",
 	"Fases": "Етапи",
@@ -36,20 +33,17 @@
 	"Verificar": "Перевірити",
 	"Dados do jogo:": "Дані гри:",
 	"jogo": "гра",
-
 	"Nova versão": "Нова версія",
 	"disponível": "доступна",
 	"Clique para baixar e reabrir automaticamente.": "Натисни, щоб завантажити й автоматично перезапустити.",
 	"Atualizando…": "Оновлення…",
 	"Atualizar agora": "Оновити зараз",
-
 	"Buscar fase, item, material, baú, runa, pet…": "Шукати етап, предмет, скриню, руну, улюбленця, матеріал…",
 	"Nada encontrado para": "Нічого не знайдено за запитом",
 	"fase(s)": "етап(и)",
 	"Fase": "Етап",
 	"Runa": "Руна",
 	"Pet": "Улюбленець",
-
 	"Melhor Mapa · Ouro/h": "Найкраща мапа · Золото/год",
 	"Melhor Mapa · XP/h": "Найкраща мапа · XP/год",
 	"corridas": "забігів",
@@ -60,7 +54,6 @@
 	"Projeções ativas": "Проєкції активні",
 	"Aguardando 1-1 + outra fase": "Очікування 1-1 + ще одного етапу",
 	"Média Móvel (EMA)": "Ковзне середнє (EMA)",
-
 	"Calibrar Projeções": "Калібрування проєкцій",
 	"Âncoras: <strong>1-1</strong> + o <strong>maior mapa que você alcança</strong>. Adicione quantos mapas quiser abaixo — quanto mais pontos, melhor a estimativa. O tempo digitado é só um ponto de partida: as <strong>corridas reais</strong> vão refinando o valor automaticamente.": "Якорі: <strong>1-1</strong> + <strong>найвища мапа, до якої ти доходиш</strong>. Додавай нижче скільки завгодно мап — що більше точок, то краща оцінка. Введений час — лише відправна точка: <strong>реальні забіги</strong> автоматично уточнюватимуть значення.",
 	"Normal 1-1 (tempo)": "Normal 1-1 (час)",
@@ -73,7 +66,6 @@
 	"Adicionar tempo de qualquer mapa…": "Додати час будь-якої мапи…",
 	"Tempo (ex: 1:45)": "Час (напр. 1:45)",
 	"+ Adicionar mapa": "+ Додати мапу",
-
 	"Time ativo": "Активна команда",
 	"Nv": "Рів.",
 	"Desempenho por Fase": "Ефективність за етапами",
@@ -102,7 +94,6 @@
 	"Confiança alta (10+ corridas)": "Висока достовірність (10+ забігів)",
 	"Confiança média (3-9)": "Середня достовірність (3-9)",
 	"Confiança baixa (1-2 corridas)": "Низька достовірність (1-2 забіги)",
-
 	"Árvore de runas do jogo.": "Дерево рун гри.",
 	"Verde": "Зелена",
 	"= dá pra subir agora ·": "= можна прокачати зараз ·",
@@ -125,7 +116,6 @@
 	"Libere {n} primeiro": "Спершу розблокуй {n}",
 	"ou": "або",
 	"nivel": "рівень",
-
 	"Sem dados de pets ainda.": "Даних про улюбленців поки немає.",
 	"Atributos totais dos pets": "Сумарні атрибути улюбленців",
 	"Os efeitos de todos os pets que você já obteve se aplicam sempre — não precisa estar equipado. Equipar é só o visual.": "Ефекти всіх улюбленців, яких ти колись отримав, діють завжди — споряджати не потрібно. Спорядження — суто візуал.",
@@ -137,7 +127,6 @@
 	"Derrote {n}× {m}": "Перемож {n}× {m}",
 	"· fases:": "· етапи:",
 	"monstro": "монстр",
-
 	"Dropa em": "Падає в",
 	"Taxa de drop": "Шанс дропу",
 	"Tabela de saque": "Таблиця луту",
@@ -157,7 +146,6 @@
 	"baú(s). Clique num baú para ver fases e tabela de saque.": "скриня(і). Натисни на скриню, щоб побачити етапи й таблицю луту.",
 	"Nenhum baú para este filtro": "Немає скринь за цим фільтром",
 	"grupos": "груп",
-
 	"Incomum": "Незвичайний",
 	"Raro": "Рідкісний",
 	"Épico": "Епічний",
@@ -201,7 +189,6 @@
 	"baú(s) · % = chance de vir ao abrir aquele baú.": "скриня(і) · % = шанс отримати при відкритті тієї скрині.",
 	"Não cai diretamente de baús": "Не падає напряму зі скринь",
 	" — obtido por síntese.": " — отримується синтезом.",
-
 	"Grau": "Ранг",
 	"Poder de Ataque": "Сила атаки",
 	"Poder de Defesa": "Сила захисту",
@@ -213,7 +200,6 @@
 	"Negociável": "Можна обміняти",
 	"Não negociável": "Не можна обміняти",
 	"Requer Nv.": "Потрібен рів.",
-
 	"Onde cai": "Де падає",
 	"Cai em": "Падає в",
 	"baú(s) · % = chance de vir ao abrir.": "скриня(і) · % = шанс при відкритті.",
@@ -221,7 +207,6 @@
 	"Materiais de <strong>criação e síntese</strong>. Clique pra ver em quais baús cada um cai.": "Матеріали для <strong>крафту й синтезу</strong>. Натисни на матеріал, щоб побачити, з яких скринь він падає.",
 	"Buscar material…": "Шукати матеріал…",
 	"material(is)": "матеріал(и)",
-
 	"3 atos · 4 dificuldades · 120 fases — monstros, chefes e tabelas de saque. Clique numa fase no mapa.": "3 акти · 4 складності · 120 етапів — монстри, боси й таблиці луту. Натисни на етап на мапі.",
 	"Ato": "Акт",
 	"— clique num nó pra inspecionar.": "— натисни на вузол, щоб роздивитись.",
@@ -244,7 +229,6 @@
 	"Vida": "HP",
 	"Baús que caem aqui": "Скрині, що падають тут",
 	"Carregando dados das fases…": "Завантаження даних етапів…",
-
 	"Espada": "Меч",
 	"Arco": "Лук",
 	"Cajado": "Посох",
@@ -267,7 +251,6 @@
 	"Bracelete": "Браслет",
 	"Arma Principal": "Основна зброя",
 	"Arma Secundária": "Зброя другої руки",
-
 	"Dano de Ataque": "Шкода атаки",
 	"Vel. de Ataque": "Швидкість атаки",
 	"Vel. de Conjuração": "Швидкість касту",
@@ -302,7 +285,6 @@
 	"ABS DANO": "ПОГЛ ШКОДИ",
 	"RES ELEM": "СТИХ ОПІР",
 	"ROUBO VIDA": "ВАМПІРИЗМ",
-
 	"Aumento de Ganho de Exp": "Збільшення приросту Exp",
 	"Aumento de Ganho de Ouro": "Збільшення приросту золота",
 	"Exp Adicional": "Додатковий Exp",
@@ -338,7 +320,6 @@
 	"Tempo auto-abrir baú de chefe": "Час автовідкриття скринь боса",
 	"Abrir baús de um tipo de vez": "Відкривати всі скрині одного типу одразу",
 	"Abrir baús de todos os tipos": "Відкривати скрині всіх типів одразу",
-
 	"Herói": "Герой",
 	"Função": "Функція",
 	"Evento": "Подія",
@@ -376,7 +357,6 @@
 	"Apagar as corridas registradas de {s}?": "Видалити записані забіги {s}?",
 	"Corridas de {s} apagadas.": "Забіги {s} видалено.",
 	"Erro ao limpar a fase.": "Помилка при очищенні етапу.",
-
 	"Grau {g}": "Ранг: {g}",
 	"Usado em": "Використовується у",
 	"Cubo Nv {n}": "Куб рів. {n}",
@@ -421,5 +401,34 @@
 	"Troca de mapa: %s → %s. O app só enxerga o jogo pelos saves (gravados a cada ~3 min ou em eventos) e peguei o mapa novo já no meio de uma corrida (wave %d) — então esta primeira corrida sai parcial e será descartada; a próxima corrida completa no mapa novo já conta.": "Зміна мапи: %s → %s. Застосунок бачить гру лише через збереження (пишуться кожні ~3 хв або за подіями), а нову мапу я застав посеред забігу (хвиля %d) — тож цей перший забіг неповний і буде відкинутий; наступний повний забіг на новій мапі вже зараховується.",
 	"Fase %s: primeira corrida após a troca de mapa descartada — só %.0fs medidos (parte de uma corrida, não a corrida inteira), porque o save anterior já estava no meio dela. A próxima corrida completa conta.": "Етап %s: перший забіг після зміни мапи відкинуто — виміряно лише %.0fs (частина забігу, а не весь забіг), бо попереднє збереження було вже посеред забігу. Наступний повний забіг зараховується.",
 	"Fase %s: ouro caiu %d (provável compra de runa/item) e esta fase ainda não tem média de ouro — descarto esta corrida pra não registrar ouro zerado; o próximo clear sem compra semeia a fase.": "Етап %s: золото впало на %d (імовірно купівля руни/предмета), а в цього етапу ще немає середнього по золоту — відкидаю цей забіг, щоб не записати нульове золото; наступне проходження без купівлі задає етап.",
-	"Fase %s: ouro caiu %d, mas o gasto foi em upgrade de runa (~%.0f) — recuperei o ganho real do ciclo somando o gasto de volta: +%.0f ouro. Conto como clear normal.": "Етап %s: золото впало на %d, але витрата — це покращення руни (~%.0f) — я відновив реальний дохід циклу, додавши витрату назад: +%.0f золота. Зараховую як звичайне проходження."
+	"Fase %s: ouro caiu %d, mas o gasto foi em upgrade de runa (~%.0f) — recuperei o ganho real do ciclo somando o gasto de volta: +%.0f ouro. Conto como clear normal.": "Етап %s: золото впало на %d, але витрата — це покращення руни (~%.0f) — я відновив реальний дохід циклу, додавши витрату назад: +%.0f золота. Зараховую як звичайне проходження.",
+	"Heróis": "Герої",
+	"Caótico": "Хаотичний",
+	"Encantamentos": "Зачарування",
+	"do teto": "від макс.",
+	"No time": "У команді",
+	"Este item não tem encantamentos.": "На цьому предметі немає зачарувань.",
+	"Seus <strong>heróis</strong> e o equipamento de cada um — clique num item pra ver os <strong>rolls</strong> dos encantamentos e o quão perto do teto cada um ficou.": "Твої <strong>герої</strong> та спорядження кожного — натисни на предмет, щоб побачити <strong>роли</strong> зачарувань і наскільки кожен близький до максимуму.",
+	"Abra o jogo para ver seus heróis e o equipamento de cada um.": "Відкрийте гру, щоб побачити своїх героїв та їхнє спорядження.",
+	"Inventário": "Інвентар",
+	"Síntese": "Синтез",
+	"fundível": "можна злити",
+	"Mochila": "Рюкзак",
+	"Armazém": "Сховище",
+	"Banca": "Торгове сховище",
+	"Equipamento": "Спорядження",
+	"Tudo que está guardado fora dos heróis — <strong>mochila</strong>, <strong>armazém</strong> e banca. Agrupado por tipo e grau pra você ver o que dá pra <strong>fundir</strong> (síntese).": "Усе, що зберігається поза героями — <strong>рюкзак</strong>, <strong>сховище</strong> та торгове сховище. Згруповано за типом і ґрейдом, щоб бачити, що можна <strong>злити</strong> (синтез).",
+	"Abra o jogo para ver seus itens guardados.": "Відкрийте гру, щоб побачити збережені предмети.",
+	"Marcado como fundível a partir de 9 itens; a contagem exata por grau ainda será refinada por uma extração dos dados do jogo.": "Позначається як «можна злити» від 9 предметів; точну кількість на ґрейд уточнить майбутнє вивантаження ігрових даних.",
+	"Cubo": "Куб",
+	"Quantidade e chances de fusão vêm dos dados do jogo.": "Кількість і шанси синтезу взято з даних гри.",
+	"Junte itens do mesmo tipo e grau pra fundir num grau acima (o resultado é sorteado: pode subir ou manter — graus altos sobem menos).": "Поєднайте предмети одного типу й ґрейду, щоб злити у вищий (результат випадковий: вгору або той самий — високі ґрейди ростуть рідше).",
+	"Funções do Cubo": "Функції Куба",
+	"Alquimia": "Алхімія",
+	"Extração": "Видобування",
+	"Travado": "Заблоковано",
+	"Itens travados não entram na síntese": "Заблоковані предмети не використовуються в синтезі",
+	"Configurações": "Налаштування",
+	"Verificar atualização": "Перевірити оновлення",
+	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "Не вдалося запустити моніторинг (спроба %d): %s. Повтор за 5 с."
 }

@@ -1,0 +1,5720 @@
+{
+ "odds": {
+  "COMMON": {
+   "down": 0.0,
+   "same": 0.0,
+   "up": 1.0,
+   "weights": [
+    0,
+    0,
+    0,
+    100000,
+    5000
+   ]
+  },
+  "UNCOMMON": {
+   "down": 0.0,
+   "same": 0.0,
+   "up": 1.0,
+   "weights": [
+    0,
+    0,
+    0,
+    100000,
+    4000
+   ]
+  },
+  "RARE": {
+   "down": 0.0,
+   "same": 0.0,
+   "up": 1.0,
+   "weights": [
+    0,
+    0,
+    0,
+    100000,
+    2500
+   ]
+  },
+  "LEGENDARY": {
+   "down": 0.0,
+   "same": 0.0,
+   "up": 1.0,
+   "weights": [
+    0,
+    0,
+    0,
+    100000,
+    1000
+   ]
+  },
+  "IMMORTAL": {
+   "down": 0.0,
+   "same": 0.4988,
+   "up": 0.5012,
+   "weights": [
+    0,
+    0,
+    100000,
+    100000,
+    500
+   ]
+  },
+  "ARCANA": {
+   "down": 0.0,
+   "same": 0.6656,
+   "up": 0.3344,
+   "weights": [
+    0,
+    0,
+    100000,
+    50000,
+    250
+   ]
+  },
+  "BEYOND": {
+   "down": 0.0,
+   "same": 0.7686,
+   "up": 0.2314,
+   "weights": [
+    0,
+    0,
+    100000,
+    30000,
+    100
+   ]
+  },
+  "CELESTIAL": {
+   "down": 0.0,
+   "same": 0.8332,
+   "up": 0.1668,
+   "weights": [
+    0,
+    0,
+    100000,
+    20000,
+    20
+   ]
+  },
+  "DIVINE": {
+   "down": 0.0,
+   "same": 0.9091,
+   "up": 0.0909,
+   "weights": [
+    0,
+    0,
+    100000,
+    10000,
+    0
+   ]
+  }
+ },
+ "amount": {
+  "Gear": {
+   "COMMON": 9,
+   "UNCOMMON": 9,
+   "RARE": 9,
+   "LEGENDARY": 9,
+   "IMMORTAL": 9,
+   "ARCANA": 9,
+   "BEYOND": 9,
+   "CELESTIAL": 9,
+   "DIVINE": 9
+  },
+  "Accessory": {
+   "COMMON": 9,
+   "UNCOMMON": 9,
+   "RARE": 9,
+   "LEGENDARY": 9,
+   "IMMORTAL": 9,
+   "ARCANA": 9,
+   "BEYOND": 9,
+   "CELESTIAL": 9,
+   "DIVINE": 9
+  },
+  "Material": {
+   "COMMON": 9,
+   "UNCOMMON": 9,
+   "RARE": 9,
+   "LEGENDARY": 9,
+   "IMMORTAL": 9,
+   "ARCANA": 9,
+   "BEYOND": 9,
+   "CELESTIAL": 9,
+   "DIVINE": 9
+  }
+ },
+ "slots": {
+  "COMMON": {
+   "inherent": 0,
+   "decoration": 0,
+   "engraving": 0,
+   "inscription": 0
+  },
+  "UNCOMMON": {
+   "inherent": 1,
+   "decoration": 0,
+   "engraving": 0,
+   "inscription": 0
+  },
+  "RARE": {
+   "inherent": 1,
+   "decoration": 1,
+   "engraving": 0,
+   "inscription": 0
+  },
+  "LEGENDARY": {
+   "inherent": 2,
+   "decoration": 2,
+   "engraving": 0,
+   "inscription": 0
+  },
+  "IMMORTAL": {
+   "inherent": 2,
+   "decoration": 2,
+   "engraving": 1,
+   "inscription": 0
+  },
+  "ARCANA": {
+   "inherent": 3,
+   "decoration": 2,
+   "engraving": 1,
+   "inscription": 1
+  },
+  "BEYOND": {
+   "inherent": 3,
+   "decoration": 2,
+   "engraving": 2,
+   "inscription": 1
+  },
+  "CELESTIAL": {
+   "inherent": 3,
+   "decoration": 2,
+   "engraving": 2,
+   "inscription": 2
+  },
+  "DIVINE": {
+   "inherent": 3,
+   "decoration": 2,
+   "engraving": 2,
+   "inscription": 2
+  },
+  "COSMIC": {
+   "inherent": 3,
+   "decoration": 2,
+   "engraving": 2,
+   "inscription": 2
+  }
+ },
+ "baseCubeExp": {
+  "COMMON": 2,
+  "UNCOMMON": 6,
+  "RARE": 18,
+  "LEGENDARY": 54,
+  "IMMORTAL": 162,
+  "ARCANA": 518,
+  "BEYOND": 1658,
+  "CELESTIAL": 5803,
+  "DIVINE": 20311,
+  "COSMIC": 71089
+ },
+ "cubeExp": {
+  "1": 15.0,
+  "2": 40.0,
+  "3": 100.0,
+  "4": 250.0,
+  "5": 400.0,
+  "6": 600.0,
+  "7": 850.0,
+  "8": 1150.0,
+  "9": 1550.0,
+  "10": 2150.0,
+  "11": 2950.0,
+  "12": 4050.0,
+  "13": 5450.0,
+  "14": 7250.0,
+  "15": 9450.0,
+  "16": 12150.0,
+  "17": 15350.0,
+  "18": 19050.0,
+  "19": 23250.0,
+  "20": 27950.0,
+  "21": 33250.0,
+  "22": 39250.0,
+  "23": 46050.0,
+  "24": 53750.0,
+  "25": 62450.0,
+  "26": 72250.0,
+  "27": 83250.0,
+  "28": 95550.0,
+  "29": 109250.0,
+  "30": 124450.0,
+  "31": 141250.0,
+  "32": 159750.0,
+  "33": 180050.0,
+  "34": 202250.0,
+  "35": 226450.0,
+  "36": 252750.0,
+  "37": 281250.0,
+  "38": 312050.0,
+  "39": 345250.0,
+  "40": 380950.0,
+  "41": 419250.0,
+  "42": 460250.0,
+  "43": 504050.0,
+  "44": 550750.0,
+  "45": 600450.0,
+  "46": 653250.0,
+  "47": 709250.0,
+  "48": 768550.0,
+  "49": 831250.0,
+  "50": 897450.0,
+  "51": 967250.0,
+  "52": 1040750.0,
+  "53": 1118050.0,
+  "54": 1199250.0,
+  "55": 1284450.0,
+  "56": 1373750.0,
+  "57": 1467250.0,
+  "58": 1565050.0,
+  "59": 1667250.0,
+  "60": 1773950.0,
+  "61": 1885250.0,
+  "62": 2001250.0,
+  "63": 2122050.0,
+  "64": 2247750.0,
+  "65": 2378450.0,
+  "66": 2514250.0,
+  "67": 2655250.0,
+  "68": 2801550.0,
+  "69": 2953250.0,
+  "70": 3110450.0,
+  "71": 3273250.0,
+  "72": 3441750.0,
+  "73": 3616050.0,
+  "74": 3796250.0,
+  "75": 3982450.0,
+  "76": 4174750.0,
+  "77": 4373250.0,
+  "78": 4578050.0,
+  "79": 4789250.0,
+  "80": 5006950.0,
+  "81": 5231250.0,
+  "82": 5462250.0,
+  "83": 5700050.0,
+  "84": 5944750.0,
+  "85": 6196450.0,
+  "86": 6455250.0,
+  "87": 6721250.0,
+  "88": 6994550.0,
+  "89": 7275250.0,
+  "90": 7563450.0,
+  "91": 7859250.0,
+  "92": 8162750.0,
+  "93": 8474050.0,
+  "94": 8793250.0,
+  "95": 9120450.0,
+  "96": 9455750.0,
+  "97": 9799250.0,
+  "98": 10151050.0,
+  "99": 10511250.0,
+  "100": 999999999.0
+ },
+ "recipes": [
+  {
+   "key": 10100110,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 1
+  },
+  {
+   "key": 10100111,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 1
+  },
+  {
+   "key": 10100112,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 1
+  },
+  {
+   "key": 10100113,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 1
+  },
+  {
+   "key": 10100510,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 5
+  },
+  {
+   "key": 10100511,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 5
+  },
+  {
+   "key": 10100512,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 5
+  },
+  {
+   "key": 10100513,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 5
+  },
+  {
+   "key": 10101010,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 10
+  },
+  {
+   "key": 10101011,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 10
+  },
+  {
+   "key": 10101012,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 10
+  },
+  {
+   "key": 10101013,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 10
+  },
+  {
+   "key": 10101020,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 5,
+   "maxResultLevel": 10
+  },
+  {
+   "key": 10101021,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 5,
+   "maxResultLevel": 10
+  },
+  {
+   "key": 10101022,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 5,
+   "maxResultLevel": 10
+  },
+  {
+   "key": 10101023,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 5,
+   "maxResultLevel": 10
+  },
+  {
+   "key": 10101510,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 15
+  },
+  {
+   "key": 10101511,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 15
+  },
+  {
+   "key": 10101512,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 15
+  },
+  {
+   "key": 10101513,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 15
+  },
+  {
+   "key": 10101514,
+   "type": "Gear",
+   "grade": "IMMORTAL",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 15
+  },
+  {
+   "key": 10101520,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 15
+  },
+  {
+   "key": 10101521,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 15
+  },
+  {
+   "key": 10101522,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 15
+  },
+  {
+   "key": 10101523,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 15
+  },
+  {
+   "key": 10101524,
+   "type": "Gear",
+   "grade": "IMMORTAL",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 15
+  },
+  {
+   "key": 10102010,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10102011,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10102012,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10102013,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10102014,
+   "type": "Gear",
+   "grade": "IMMORTAL",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10102020,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10102021,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10102022,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10102023,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10102024,
+   "type": "Gear",
+   "grade": "IMMORTAL",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10102510,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 15,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10102511,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 15,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10102512,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 15,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10102513,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 15,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10102514,
+   "type": "Gear",
+   "grade": "IMMORTAL",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 15,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10102515,
+   "type": "Gear",
+   "grade": "ARCANA",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 15,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10103010,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10103011,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10103012,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10103013,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10103014,
+   "type": "Gear",
+   "grade": "IMMORTAL",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10103015,
+   "type": "Gear",
+   "grade": "ARCANA",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10102520,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10102521,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10102522,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10102523,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10102524,
+   "type": "Gear",
+   "grade": "IMMORTAL",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10102525,
+   "type": "Gear",
+   "grade": "ARCANA",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10103020,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10103021,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10103022,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10103023,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10103024,
+   "type": "Gear",
+   "grade": "IMMORTAL",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10103025,
+   "type": "Gear",
+   "grade": "ARCANA",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10103510,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 20,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10103511,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 20,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10103512,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 20,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10103513,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 20,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10103514,
+   "type": "Gear",
+   "grade": "IMMORTAL",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 20,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10103515,
+   "type": "Gear",
+   "grade": "ARCANA",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 20,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10103516,
+   "type": "Gear",
+   "grade": "BEYOND",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 20,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10103520,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 20,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10103521,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 20,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10103522,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 20,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10103523,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 20,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10103524,
+   "type": "Gear",
+   "grade": "IMMORTAL",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 20,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10103525,
+   "type": "Gear",
+   "grade": "ARCANA",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 20,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10103526,
+   "type": "Gear",
+   "grade": "BEYOND",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 20,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10104010,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10104011,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10104012,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10104013,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10104014,
+   "type": "Gear",
+   "grade": "IMMORTAL",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10104015,
+   "type": "Gear",
+   "grade": "ARCANA",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10104016,
+   "type": "Gear",
+   "grade": "BEYOND",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10104020,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10104021,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10104022,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10104023,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10104024,
+   "type": "Gear",
+   "grade": "IMMORTAL",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10104025,
+   "type": "Gear",
+   "grade": "ARCANA",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10104026,
+   "type": "Gear",
+   "grade": "BEYOND",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10104510,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10104511,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10104512,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10104513,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10104514,
+   "type": "Gear",
+   "grade": "IMMORTAL",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10104515,
+   "type": "Gear",
+   "grade": "ARCANA",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10104516,
+   "type": "Gear",
+   "grade": "BEYOND",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10104517,
+   "type": "Gear",
+   "grade": "CELESTIAL",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10104520,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 30,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10104521,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 30,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10104522,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 30,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10104523,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 30,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10104524,
+   "type": "Gear",
+   "grade": "IMMORTAL",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 30,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10104525,
+   "type": "Gear",
+   "grade": "ARCANA",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 30,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10104526,
+   "type": "Gear",
+   "grade": "BEYOND",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 30,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10104527,
+   "type": "Gear",
+   "grade": "CELESTIAL",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 30,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105010,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105011,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105012,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105013,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105014,
+   "type": "Gear",
+   "grade": "IMMORTAL",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105015,
+   "type": "Gear",
+   "grade": "ARCANA",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105016,
+   "type": "Gear",
+   "grade": "BEYOND",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105017,
+   "type": "Gear",
+   "grade": "CELESTIAL",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105020,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105021,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105022,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105023,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105024,
+   "type": "Gear",
+   "grade": "IMMORTAL",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105025,
+   "type": "Gear",
+   "grade": "ARCANA",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105026,
+   "type": "Gear",
+   "grade": "BEYOND",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105027,
+   "type": "Gear",
+   "grade": "CELESTIAL",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105510,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105511,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105512,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105513,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105514,
+   "type": "Gear",
+   "grade": "IMMORTAL",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105515,
+   "type": "Gear",
+   "grade": "ARCANA",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105516,
+   "type": "Gear",
+   "grade": "BEYOND",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105517,
+   "type": "Gear",
+   "grade": "CELESTIAL",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105518,
+   "type": "Gear",
+   "grade": "DIVINE",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105520,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105521,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105522,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105523,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105524,
+   "type": "Gear",
+   "grade": "IMMORTAL",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105525,
+   "type": "Gear",
+   "grade": "ARCANA",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105526,
+   "type": "Gear",
+   "grade": "BEYOND",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105527,
+   "type": "Gear",
+   "grade": "CELESTIAL",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10105528,
+   "type": "Gear",
+   "grade": "DIVINE",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10106010,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10106011,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10106012,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10106013,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10106014,
+   "type": "Gear",
+   "grade": "IMMORTAL",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10106015,
+   "type": "Gear",
+   "grade": "ARCANA",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10106016,
+   "type": "Gear",
+   "grade": "BEYOND",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10106017,
+   "type": "Gear",
+   "grade": "CELESTIAL",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10106018,
+   "type": "Gear",
+   "grade": "DIVINE",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10106020,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10106021,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10106022,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10106023,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10106024,
+   "type": "Gear",
+   "grade": "IMMORTAL",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10106025,
+   "type": "Gear",
+   "grade": "ARCANA",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10106026,
+   "type": "Gear",
+   "grade": "BEYOND",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10106027,
+   "type": "Gear",
+   "grade": "CELESTIAL",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10106028,
+   "type": "Gear",
+   "grade": "DIVINE",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10106510,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10106511,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10106512,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10106513,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10106514,
+   "type": "Gear",
+   "grade": "IMMORTAL",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10106515,
+   "type": "Gear",
+   "grade": "ARCANA",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10106516,
+   "type": "Gear",
+   "grade": "BEYOND",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10106517,
+   "type": "Gear",
+   "grade": "CELESTIAL",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10106518,
+   "type": "Gear",
+   "grade": "DIVINE",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10106520,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10106521,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10106522,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10106523,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10106524,
+   "type": "Gear",
+   "grade": "IMMORTAL",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10106525,
+   "type": "Gear",
+   "grade": "ARCANA",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10106526,
+   "type": "Gear",
+   "grade": "BEYOND",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10106527,
+   "type": "Gear",
+   "grade": "CELESTIAL",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10106528,
+   "type": "Gear",
+   "grade": "DIVINE",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10107010,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10107011,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10107012,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10107013,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10107014,
+   "type": "Gear",
+   "grade": "IMMORTAL",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10107015,
+   "type": "Gear",
+   "grade": "ARCANA",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10107016,
+   "type": "Gear",
+   "grade": "BEYOND",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10107017,
+   "type": "Gear",
+   "grade": "CELESTIAL",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10107018,
+   "type": "Gear",
+   "grade": "DIVINE",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10107020,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10107021,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10107022,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10107023,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10107024,
+   "type": "Gear",
+   "grade": "IMMORTAL",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10107025,
+   "type": "Gear",
+   "grade": "ARCANA",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10107026,
+   "type": "Gear",
+   "grade": "BEYOND",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10107027,
+   "type": "Gear",
+   "grade": "CELESTIAL",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10107028,
+   "type": "Gear",
+   "grade": "DIVINE",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10107510,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10107511,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10107512,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10107513,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10107514,
+   "type": "Gear",
+   "grade": "IMMORTAL",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10107515,
+   "type": "Gear",
+   "grade": "ARCANA",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10107516,
+   "type": "Gear",
+   "grade": "BEYOND",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10107517,
+   "type": "Gear",
+   "grade": "CELESTIAL",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10107518,
+   "type": "Gear",
+   "grade": "DIVINE",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10107520,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10107521,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10107522,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10107523,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10107524,
+   "type": "Gear",
+   "grade": "IMMORTAL",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10107525,
+   "type": "Gear",
+   "grade": "ARCANA",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10107526,
+   "type": "Gear",
+   "grade": "BEYOND",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10107527,
+   "type": "Gear",
+   "grade": "CELESTIAL",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10107528,
+   "type": "Gear",
+   "grade": "DIVINE",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10108010,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10108011,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10108012,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10108013,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10108014,
+   "type": "Gear",
+   "grade": "IMMORTAL",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10108015,
+   "type": "Gear",
+   "grade": "ARCANA",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10108016,
+   "type": "Gear",
+   "grade": "BEYOND",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10108017,
+   "type": "Gear",
+   "grade": "CELESTIAL",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10108018,
+   "type": "Gear",
+   "grade": "DIVINE",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10108020,
+   "type": "Gear",
+   "grade": "COMMON",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10108021,
+   "type": "Gear",
+   "grade": "UNCOMMON",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10108022,
+   "type": "Gear",
+   "grade": "RARE",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10108023,
+   "type": "Gear",
+   "grade": "LEGENDARY",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10108024,
+   "type": "Gear",
+   "grade": "IMMORTAL",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10108025,
+   "type": "Gear",
+   "grade": "ARCANA",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10108026,
+   "type": "Gear",
+   "grade": "BEYOND",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10108027,
+   "type": "Gear",
+   "grade": "CELESTIAL",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10108028,
+   "type": "Gear",
+   "grade": "DIVINE",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10200110,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 1
+  },
+  {
+   "key": 10200111,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 1
+  },
+  {
+   "key": 10200112,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 1
+  },
+  {
+   "key": 10200113,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 1
+  },
+  {
+   "key": 10200510,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 5
+  },
+  {
+   "key": 10200511,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 5
+  },
+  {
+   "key": 10200512,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 5
+  },
+  {
+   "key": 10200513,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 5
+  },
+  {
+   "key": 10201010,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 10
+  },
+  {
+   "key": 10201011,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 10
+  },
+  {
+   "key": 10201012,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 10
+  },
+  {
+   "key": 10201013,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 10
+  },
+  {
+   "key": 10201510,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 5,
+   "maxResultLevel": 15
+  },
+  {
+   "key": 10201511,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 5,
+   "maxResultLevel": 15
+  },
+  {
+   "key": 10201512,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 5,
+   "maxResultLevel": 15
+  },
+  {
+   "key": 10201513,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 5,
+   "maxResultLevel": 15
+  },
+  {
+   "key": 10201514,
+   "type": "Accessory",
+   "grade": "IMMORTAL",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 5,
+   "maxResultLevel": 15
+  },
+  {
+   "key": 10201520,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 5,
+   "maxResultLevel": 15
+  },
+  {
+   "key": 10201521,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 5,
+   "maxResultLevel": 15
+  },
+  {
+   "key": 10201522,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 5,
+   "maxResultLevel": 15
+  },
+  {
+   "key": 10201523,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 5,
+   "maxResultLevel": 15
+  },
+  {
+   "key": 10201524,
+   "type": "Accessory",
+   "grade": "IMMORTAL",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 5,
+   "maxResultLevel": 15
+  },
+  {
+   "key": 10202010,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10202011,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10202012,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10202013,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10202014,
+   "type": "Accessory",
+   "grade": "IMMORTAL",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10202020,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10202021,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10202022,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10202023,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10202024,
+   "type": "Accessory",
+   "grade": "IMMORTAL",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 10,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10202510,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 15,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10202511,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 15,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10202512,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 15,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10202513,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 15,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10202514,
+   "type": "Accessory",
+   "grade": "IMMORTAL",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 15,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10202515,
+   "type": "Accessory",
+   "grade": "ARCANA",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 15,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10203010,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10203011,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10203012,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10203013,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10203014,
+   "type": "Accessory",
+   "grade": "IMMORTAL",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10203015,
+   "type": "Accessory",
+   "grade": "ARCANA",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10202520,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10202521,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10202522,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10202523,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10202524,
+   "type": "Accessory",
+   "grade": "IMMORTAL",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10202525,
+   "type": "Accessory",
+   "grade": "ARCANA",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10203020,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10203021,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10203022,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10203023,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10203024,
+   "type": "Accessory",
+   "grade": "IMMORTAL",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10203025,
+   "type": "Accessory",
+   "grade": "ARCANA",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 2,
+   "minResultLevel": 15,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10203510,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 20,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10203511,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 20,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10203512,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 20,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10203513,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 20,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10203514,
+   "type": "Accessory",
+   "grade": "IMMORTAL",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 20,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10203515,
+   "type": "Accessory",
+   "grade": "ARCANA",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 20,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10203516,
+   "type": "Accessory",
+   "grade": "BEYOND",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 20,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10203520,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 20,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10203521,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 20,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10203522,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 20,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10203523,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 20,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10203524,
+   "type": "Accessory",
+   "grade": "IMMORTAL",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 20,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10203525,
+   "type": "Accessory",
+   "grade": "ARCANA",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 20,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10203526,
+   "type": "Accessory",
+   "grade": "BEYOND",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 20,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10204010,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10204011,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10204012,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10204013,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10204014,
+   "type": "Accessory",
+   "grade": "IMMORTAL",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10204015,
+   "type": "Accessory",
+   "grade": "ARCANA",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10204016,
+   "type": "Accessory",
+   "grade": "BEYOND",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10204020,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10204021,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10204022,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10204023,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10204024,
+   "type": "Accessory",
+   "grade": "IMMORTAL",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10204025,
+   "type": "Accessory",
+   "grade": "ARCANA",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10204026,
+   "type": "Accessory",
+   "grade": "BEYOND",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 3,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10204510,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10204511,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10204512,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10204513,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10204514,
+   "type": "Accessory",
+   "grade": "IMMORTAL",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10204515,
+   "type": "Accessory",
+   "grade": "ARCANA",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10204516,
+   "type": "Accessory",
+   "grade": "BEYOND",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10204517,
+   "type": "Accessory",
+   "grade": "CELESTIAL",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 30,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10204520,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 30,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10204521,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 30,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10204522,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 30,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10204523,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 30,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10204524,
+   "type": "Accessory",
+   "grade": "IMMORTAL",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 30,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10204525,
+   "type": "Accessory",
+   "grade": "ARCANA",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 30,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10204526,
+   "type": "Accessory",
+   "grade": "BEYOND",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 30,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10204527,
+   "type": "Accessory",
+   "grade": "CELESTIAL",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 30,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205010,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205011,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205012,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205013,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205014,
+   "type": "Accessory",
+   "grade": "IMMORTAL",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205015,
+   "type": "Accessory",
+   "grade": "ARCANA",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205016,
+   "type": "Accessory",
+   "grade": "BEYOND",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205017,
+   "type": "Accessory",
+   "grade": "CELESTIAL",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205020,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205021,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205022,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205023,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205024,
+   "type": "Accessory",
+   "grade": "IMMORTAL",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205025,
+   "type": "Accessory",
+   "grade": "ARCANA",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205026,
+   "type": "Accessory",
+   "grade": "BEYOND",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205027,
+   "type": "Accessory",
+   "grade": "CELESTIAL",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 4,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205510,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205511,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205512,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205513,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205514,
+   "type": "Accessory",
+   "grade": "IMMORTAL",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205515,
+   "type": "Accessory",
+   "grade": "ARCANA",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205516,
+   "type": "Accessory",
+   "grade": "BEYOND",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205517,
+   "type": "Accessory",
+   "grade": "CELESTIAL",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205518,
+   "type": "Accessory",
+   "grade": "DIVINE",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205520,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205521,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205522,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205523,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205524,
+   "type": "Accessory",
+   "grade": "IMMORTAL",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205525,
+   "type": "Accessory",
+   "grade": "ARCANA",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205526,
+   "type": "Accessory",
+   "grade": "BEYOND",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205527,
+   "type": "Accessory",
+   "grade": "CELESTIAL",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10205528,
+   "type": "Accessory",
+   "grade": "DIVINE",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10206010,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10206011,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10206012,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10206013,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10206014,
+   "type": "Accessory",
+   "grade": "IMMORTAL",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10206015,
+   "type": "Accessory",
+   "grade": "ARCANA",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10206016,
+   "type": "Accessory",
+   "grade": "BEYOND",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10206017,
+   "type": "Accessory",
+   "grade": "CELESTIAL",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10206018,
+   "type": "Accessory",
+   "grade": "DIVINE",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 40,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10206020,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10206021,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10206022,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10206023,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10206024,
+   "type": "Accessory",
+   "grade": "IMMORTAL",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10206025,
+   "type": "Accessory",
+   "grade": "ARCANA",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10206026,
+   "type": "Accessory",
+   "grade": "BEYOND",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10206027,
+   "type": "Accessory",
+   "grade": "CELESTIAL",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10206028,
+   "type": "Accessory",
+   "grade": "DIVINE",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 5,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10206510,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10206511,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10206512,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10206513,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10206514,
+   "type": "Accessory",
+   "grade": "IMMORTAL",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10206515,
+   "type": "Accessory",
+   "grade": "ARCANA",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10206516,
+   "type": "Accessory",
+   "grade": "BEYOND",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10206517,
+   "type": "Accessory",
+   "grade": "CELESTIAL",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10206518,
+   "type": "Accessory",
+   "grade": "DIVINE",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10206520,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10206521,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10206522,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10206523,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10206524,
+   "type": "Accessory",
+   "grade": "IMMORTAL",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10206525,
+   "type": "Accessory",
+   "grade": "ARCANA",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10206526,
+   "type": "Accessory",
+   "grade": "BEYOND",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10206527,
+   "type": "Accessory",
+   "grade": "CELESTIAL",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10206528,
+   "type": "Accessory",
+   "grade": "DIVINE",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10207010,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10207011,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10207012,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10207013,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10207014,
+   "type": "Accessory",
+   "grade": "IMMORTAL",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10207015,
+   "type": "Accessory",
+   "grade": "ARCANA",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10207016,
+   "type": "Accessory",
+   "grade": "BEYOND",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10207017,
+   "type": "Accessory",
+   "grade": "CELESTIAL",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10207018,
+   "type": "Accessory",
+   "grade": "DIVINE",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10207020,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10207021,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10207022,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10207023,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10207024,
+   "type": "Accessory",
+   "grade": "IMMORTAL",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10207025,
+   "type": "Accessory",
+   "grade": "ARCANA",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10207026,
+   "type": "Accessory",
+   "grade": "BEYOND",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10207027,
+   "type": "Accessory",
+   "grade": "CELESTIAL",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10207028,
+   "type": "Accessory",
+   "grade": "DIVINE",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 6,
+   "minResultLevel": 50,
+   "maxResultLevel": 65
+  },
+  {
+   "key": 10207510,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 50,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10207511,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 50,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10207512,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 50,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10207513,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 50,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10207514,
+   "type": "Accessory",
+   "grade": "IMMORTAL",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 50,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10207515,
+   "type": "Accessory",
+   "grade": "ARCANA",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 50,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10207516,
+   "type": "Accessory",
+   "grade": "BEYOND",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 50,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10207517,
+   "type": "Accessory",
+   "grade": "CELESTIAL",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 50,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10207518,
+   "type": "Accessory",
+   "grade": "DIVINE",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 50,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10207520,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10207521,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10207522,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10207523,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10207524,
+   "type": "Accessory",
+   "grade": "IMMORTAL",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10207525,
+   "type": "Accessory",
+   "grade": "ARCANA",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10207526,
+   "type": "Accessory",
+   "grade": "BEYOND",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10207527,
+   "type": "Accessory",
+   "grade": "CELESTIAL",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10207528,
+   "type": "Accessory",
+   "grade": "DIVINE",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10208010,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10208011,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10208012,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10208013,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10208014,
+   "type": "Accessory",
+   "grade": "IMMORTAL",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10208015,
+   "type": "Accessory",
+   "grade": "ARCANA",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10208016,
+   "type": "Accessory",
+   "grade": "BEYOND",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10208017,
+   "type": "Accessory",
+   "grade": "CELESTIAL",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10208018,
+   "type": "Accessory",
+   "grade": "DIVINE",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10208020,
+   "type": "Accessory",
+   "grade": "COMMON",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10208021,
+   "type": "Accessory",
+   "grade": "UNCOMMON",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10208022,
+   "type": "Accessory",
+   "grade": "RARE",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10208023,
+   "type": "Accessory",
+   "grade": "LEGENDARY",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10208024,
+   "type": "Accessory",
+   "grade": "IMMORTAL",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10208025,
+   "type": "Accessory",
+   "grade": "ARCANA",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10208026,
+   "type": "Accessory",
+   "grade": "BEYOND",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10208027,
+   "type": "Accessory",
+   "grade": "CELESTIAL",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10208028,
+   "type": "Accessory",
+   "grade": "DIVINE",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 7,
+   "minResultLevel": 65,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10301010,
+   "type": "Material",
+   "grade": "COMMON",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 10
+  },
+  {
+   "key": 10301011,
+   "type": "Material",
+   "grade": "UNCOMMON",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 10
+  },
+  {
+   "key": 10301012,
+   "type": "Material",
+   "grade": "RARE",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 10
+  },
+  {
+   "key": 10301013,
+   "type": "Material",
+   "grade": "LEGENDARY",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 10
+  },
+  {
+   "key": 10301014,
+   "type": "Material",
+   "grade": "IMMORTAL",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 10
+  },
+  {
+   "key": 10301015,
+   "type": "Material",
+   "grade": "ARCANA",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 10
+  },
+  {
+   "key": 10301016,
+   "type": "Material",
+   "grade": "BEYOND",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 10
+  },
+  {
+   "key": 10301017,
+   "type": "Material",
+   "grade": "CELESTIAL",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 10
+  },
+  {
+   "key": 10301018,
+   "type": "Material",
+   "grade": "DIVINE",
+   "tier": 1,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 10
+  },
+  {
+   "key": 10302010,
+   "type": "Material",
+   "grade": "COMMON",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10302011,
+   "type": "Material",
+   "grade": "UNCOMMON",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10302012,
+   "type": "Material",
+   "grade": "RARE",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10302013,
+   "type": "Material",
+   "grade": "LEGENDARY",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10302014,
+   "type": "Material",
+   "grade": "IMMORTAL",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10302015,
+   "type": "Material",
+   "grade": "ARCANA",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10302016,
+   "type": "Material",
+   "grade": "BEYOND",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10302017,
+   "type": "Material",
+   "grade": "CELESTIAL",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10302018,
+   "type": "Material",
+   "grade": "DIVINE",
+   "tier": 2,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 20
+  },
+  {
+   "key": 10303010,
+   "type": "Material",
+   "grade": "COMMON",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10303011,
+   "type": "Material",
+   "grade": "UNCOMMON",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10303012,
+   "type": "Material",
+   "grade": "RARE",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10303013,
+   "type": "Material",
+   "grade": "LEGENDARY",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10303014,
+   "type": "Material",
+   "grade": "IMMORTAL",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10303015,
+   "type": "Material",
+   "grade": "ARCANA",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10303016,
+   "type": "Material",
+   "grade": "BEYOND",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10303017,
+   "type": "Material",
+   "grade": "CELESTIAL",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10303018,
+   "type": "Material",
+   "grade": "DIVINE",
+   "tier": 3,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 30
+  },
+  {
+   "key": 10304010,
+   "type": "Material",
+   "grade": "COMMON",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10304011,
+   "type": "Material",
+   "grade": "UNCOMMON",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10304012,
+   "type": "Material",
+   "grade": "RARE",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10304013,
+   "type": "Material",
+   "grade": "LEGENDARY",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10304014,
+   "type": "Material",
+   "grade": "IMMORTAL",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10304015,
+   "type": "Material",
+   "grade": "ARCANA",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10304016,
+   "type": "Material",
+   "grade": "BEYOND",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10304017,
+   "type": "Material",
+   "grade": "CELESTIAL",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10304018,
+   "type": "Material",
+   "grade": "DIVINE",
+   "tier": 4,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 40
+  },
+  {
+   "key": 10305010,
+   "type": "Material",
+   "grade": "COMMON",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10305011,
+   "type": "Material",
+   "grade": "UNCOMMON",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10305012,
+   "type": "Material",
+   "grade": "RARE",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10305013,
+   "type": "Material",
+   "grade": "LEGENDARY",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10305014,
+   "type": "Material",
+   "grade": "IMMORTAL",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10305015,
+   "type": "Material",
+   "grade": "ARCANA",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10305016,
+   "type": "Material",
+   "grade": "BEYOND",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10305017,
+   "type": "Material",
+   "grade": "CELESTIAL",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10305018,
+   "type": "Material",
+   "grade": "DIVINE",
+   "tier": 5,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 50
+  },
+  {
+   "key": 10306010,
+   "type": "Material",
+   "grade": "COMMON",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 60
+  },
+  {
+   "key": 10306011,
+   "type": "Material",
+   "grade": "UNCOMMON",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 60
+  },
+  {
+   "key": 10306012,
+   "type": "Material",
+   "grade": "RARE",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 60
+  },
+  {
+   "key": 10306013,
+   "type": "Material",
+   "grade": "LEGENDARY",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 60
+  },
+  {
+   "key": 10306014,
+   "type": "Material",
+   "grade": "IMMORTAL",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 60
+  },
+  {
+   "key": 10306015,
+   "type": "Material",
+   "grade": "ARCANA",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 60
+  },
+  {
+   "key": 10306016,
+   "type": "Material",
+   "grade": "BEYOND",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 60
+  },
+  {
+   "key": 10306017,
+   "type": "Material",
+   "grade": "CELESTIAL",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 60
+  },
+  {
+   "key": 10306018,
+   "type": "Material",
+   "grade": "DIVINE",
+   "tier": 6,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 60
+  },
+  {
+   "key": 10307010,
+   "type": "Material",
+   "grade": "COMMON",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 70
+  },
+  {
+   "key": 10307011,
+   "type": "Material",
+   "grade": "UNCOMMON",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 70
+  },
+  {
+   "key": 10307012,
+   "type": "Material",
+   "grade": "RARE",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 70
+  },
+  {
+   "key": 10307013,
+   "type": "Material",
+   "grade": "LEGENDARY",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 70
+  },
+  {
+   "key": 10307014,
+   "type": "Material",
+   "grade": "IMMORTAL",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 70
+  },
+  {
+   "key": 10307015,
+   "type": "Material",
+   "grade": "ARCANA",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 70
+  },
+  {
+   "key": 10307016,
+   "type": "Material",
+   "grade": "BEYOND",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 70
+  },
+  {
+   "key": 10307017,
+   "type": "Material",
+   "grade": "CELESTIAL",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 70
+  },
+  {
+   "key": 10307018,
+   "type": "Material",
+   "grade": "DIVINE",
+   "tier": 7,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 70
+  },
+  {
+   "key": 10308010,
+   "type": "Material",
+   "grade": "COMMON",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10308011,
+   "type": "Material",
+   "grade": "UNCOMMON",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10308012,
+   "type": "Material",
+   "grade": "RARE",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10308013,
+   "type": "Material",
+   "grade": "LEGENDARY",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10308014,
+   "type": "Material",
+   "grade": "IMMORTAL",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10308015,
+   "type": "Material",
+   "grade": "ARCANA",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10308016,
+   "type": "Material",
+   "grade": "BEYOND",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10308017,
+   "type": "Material",
+   "grade": "CELESTIAL",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10308018,
+   "type": "Material",
+   "grade": "DIVINE",
+   "tier": 8,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 80
+  },
+  {
+   "key": 10309010,
+   "type": "Material",
+   "grade": "COMMON",
+   "tier": 9,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 90
+  },
+  {
+   "key": 10309011,
+   "type": "Material",
+   "grade": "UNCOMMON",
+   "tier": 9,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 90
+  },
+  {
+   "key": 10309012,
+   "type": "Material",
+   "grade": "RARE",
+   "tier": 9,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 90
+  },
+  {
+   "key": 10309013,
+   "type": "Material",
+   "grade": "LEGENDARY",
+   "tier": 9,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 90
+  },
+  {
+   "key": 10309014,
+   "type": "Material",
+   "grade": "IMMORTAL",
+   "tier": 9,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 90
+  },
+  {
+   "key": 10309015,
+   "type": "Material",
+   "grade": "ARCANA",
+   "tier": 9,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 90
+  },
+  {
+   "key": 10309016,
+   "type": "Material",
+   "grade": "BEYOND",
+   "tier": 9,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 90
+  },
+  {
+   "key": 10309017,
+   "type": "Material",
+   "grade": "CELESTIAL",
+   "tier": 9,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 90
+  },
+  {
+   "key": 10309018,
+   "type": "Material",
+   "grade": "DIVINE",
+   "tier": 9,
+   "amount": 9,
+   "minMaterialTier": 1,
+   "minResultLevel": 1,
+   "maxResultLevel": 90
+  }
+ ],
+ "cubeRecipes": [
+  {
+   "cubeKey": 100001,
+   "recipeType": "SYNTHESIS",
+   "index": 0,
+   "defaultUnlocked": true,
+   "tooltipKey": "Cube_RecipeTooltip_Synthesis"
+  },
+  {
+   "cubeKey": 200001,
+   "recipeType": "ALCHEMY",
+   "index": 1,
+   "defaultUnlocked": false,
+   "tooltipKey": "Cube_RecipeTooltip_Alchemy"
+  },
+  {
+   "cubeKey": 300001,
+   "recipeType": "DECORATION",
+   "index": 3,
+   "defaultUnlocked": false,
+   "tooltipKey": "Cube_RecipeTooltip_Decoration"
+  },
+  {
+   "cubeKey": 400001,
+   "recipeType": "ENGRAVING",
+   "index": 4,
+   "defaultUnlocked": false,
+   "tooltipKey": "Cube_RecipeTooltip_Engraving"
+  },
+  {
+   "cubeKey": 500001,
+   "recipeType": "INSCRIPTION",
+   "index": 5,
+   "defaultUnlocked": false,
+   "tooltipKey": "Cube_RecipeTooltip_Inscription"
+  },
+  {
+   "cubeKey": 600001,
+   "recipeType": "CRAFTING",
+   "index": 2,
+   "defaultUnlocked": false,
+   "tooltipKey": "Cube_RecipeTooltip_Crafting"
+  },
+  {
+   "cubeKey": 700001,
+   "recipeType": "OFFERING",
+   "index": 7,
+   "defaultUnlocked": false,
+   "tooltipKey": "Cube_RecipeTooltip_Offering"
+  },
+  {
+   "cubeKey": 900001,
+   "recipeType": "EXTRACTION",
+   "index": 6,
+   "defaultUnlocked": false,
+   "tooltipKey": "Cube_RecipeTooltip_Extraction"
+  }
+ ],
+ "_schema": {
+  "odds": "por grau: down/same/up (fração) ao fundir + weights crus [L2,L1,Same,H1,H2] (GradeInfoData)",
+  "amount": "tipo de síntese (Gear/Accessory) -> grau -> nº de itens p/ fundir (SynthesisRecipeInfoData.MaterialAmount)",
+  "cubeExp": "nível do Cubo -> EXP p/ subir de nível (CubeLevelInfoData.ExpForLevelUp)",
+  "slots/baseCubeExp": "por grau: slots de enchant e EXP que o item rende (GradeInfoData)"
+ },
+ "gameVersion": "1.00.11"
+}

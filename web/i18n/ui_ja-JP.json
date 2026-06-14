@@ -2,13 +2,11 @@
 	"Taskbar Hero — Otimizador de Farm": "Taskbar Hero — 周回最適化ツール",
 	"Otimizador de Farm": "周回最適化ツール",
 	"Idioma": "言語",
-
 	"Painel já aberto": "パネルは既に開いています",
 	"O otimizador já está aberto em outra aba deste navegador. Volte para ela — ou continue por aqui.": "このブラウザの別のタブで最適化ツールが既に開いています。そちらに戻るか、ここで続行してください。",
 	"Continuar nesta aba": "このタブで続行",
 	"Otimizador encerrado": "最適化ツールを終了しました",
 	"Pode fechar esta aba. Para voltar a monitorar o save, abra o programa de novo.": "このタブは閉じて構いません。セーブの監視を再開するには、プログラムをもう一度起動してください。",
-
 	"Console do otimizador": "最適化ツールのコンソール",
 	"Limpar": "クリア",
 	"Fechar": "閉じる",
@@ -16,7 +14,6 @@
 	"Mostra ao vivo o que o monitor está fazendo": "モニターの動作をリアルタイムで表示します",
 	"Encerrar otimizador": "最適化ツールを終了",
 	"Encerra o monitoramento e fecha o programa": "監視を停止してプログラムを閉じます",
-
 	"Monitoramento Ativo": "監視中",
 	"Painel": "ダッシュボード",
 	"Fases": "ステージ",
@@ -36,20 +33,17 @@
 	"Verificar": "確認",
 	"Dados do jogo:": "ゲームデータ:",
 	"jogo": "ゲーム",
-
 	"Nova versão": "新バージョン",
 	"disponível": "が利用可能",
 	"Clique para baixar e reabrir automaticamente.": "クリックするとダウンロードして自動で再起動します。",
 	"Atualizando…": "更新中…",
 	"Atualizar agora": "今すぐ更新",
-
 	"Buscar fase, item, material, baú, runa, pet…": "ステージ・アイテム・宝箱・ルーン・ペット・素材を検索…",
 	"Nada encontrado para": "見つかりませんでした:",
 	"fase(s)": "ステージ",
 	"Fase": "ステージ",
 	"Runa": "ルーン",
 	"Pet": "ペット",
-
 	"Melhor Mapa · Ouro/h": "最適マップ · ゴールド/時",
 	"Melhor Mapa · XP/h": "最適マップ · XP/時",
 	"corridas": "周回",
@@ -60,7 +54,6 @@
 	"Projeções ativas": "予測 有効",
 	"Aguardando 1-1 + outra fase": "1-1 + もう1ステージ待ち",
 	"Média Móvel (EMA)": "移動平均(EMA)",
-
 	"Calibrar Projeções": "予測の較正",
 	"Âncoras: <strong>1-1</strong> + o <strong>maior mapa que você alcança</strong>. Adicione quantos mapas quiser abaixo — quanto mais pontos, melhor a estimativa. O tempo digitado é só um ponto de partida: as <strong>corridas reais</strong> vão refinando o valor automaticamente.": "基準点: <strong>1-1</strong> + <strong>到達できる最高のマップ</strong>。下に好きなだけマップを追加できます — ポイントが多いほど推定の精度が上がります。入力したタイムはあくまで出発点で、<strong>実際の周回</strong>が値を自動で磨き上げていきます。",
 	"Normal 1-1 (tempo)": "Normal 1-1(タイム)",
@@ -73,7 +66,6 @@
 	"Adicionar tempo de qualquer mapa…": "任意のマップのタイムを追加…",
 	"Tempo (ex: 1:45)": "タイム(例: 1:45)",
 	"+ Adicionar mapa": "+ マップを追加",
-
 	"Time ativo": "現在のチーム",
 	"Nv": "Lv",
 	"Desempenho por Fase": "ステージ別パフォーマンス",
@@ -102,7 +94,6 @@
 	"Confiança alta (10+ corridas)": "信頼度 高(10周以上)",
 	"Confiança média (3-9)": "信頼度 中(3〜9周)",
 	"Confiança baixa (1-2 corridas)": "信頼度 低(1〜2周)",
-
 	"Árvore de runas do jogo.": "ゲームのルーンツリーです。",
 	"Verde": "緑",
 	"= dá pra subir agora ·": "= 今すぐ強化可能 ·",
@@ -125,7 +116,6 @@
 	"Libere {n} primeiro": "先に{n}を解放してください",
 	"ou": "または",
 	"nivel": "レベル",
-
 	"Sem dados de pets ainda.": "まだペットのデータがありません。",
 	"Atributos totais dos pets": "ペットの合計ステータス",
 	"Os efeitos de todos os pets que você já obteve se aplicam sempre — não precisa estar equipado. Equipar é só o visual.": "入手したことのあるペットの効果は常に適用されます — 装備する必要はありません。装備は見た目だけです。",
@@ -137,7 +127,6 @@
 	"Derrote {n}× {m}": "{m}を{n}回倒す",
 	"· fases:": "· ステージ:",
 	"monstro": "モンスター",
-
 	"Dropa em": "ドロップ場所",
 	"Taxa de drop": "ドロップ率",
 	"Tabela de saque": "ドロップテーブル",
@@ -157,7 +146,6 @@
 	"baú(s). Clique num baú para ver fases e tabela de saque.": "個の宝箱。宝箱をクリックするとステージとドロップテーブルを確認できます。",
 	"Nenhum baú para este filtro": "このフィルターに該当する宝箱はありません",
 	"grupos": "グループ",
-
 	"Incomum": "アンコモン",
 	"Raro": "レア",
 	"Épico": "エピック",
@@ -201,7 +189,6 @@
 	"baú(s) · % = chance de vir ao abrir aquele baú.": "個の宝箱 · % = その宝箱を開けたときに出る確率。",
 	"Não cai diretamente de baús": "宝箱から直接ドロップしません",
 	" — obtido por síntese.": " — 合成で入手します。",
-
 	"Grau": "グレード",
 	"Poder de Ataque": "攻撃力",
 	"Poder de Defesa": "防御力",
@@ -213,7 +200,6 @@
 	"Negociável": "トレード可",
 	"Não negociável": "トレード不可",
 	"Requer Nv.": "必要Lv.",
-
 	"Onde cai": "ドロップ場所",
 	"Cai em": "ドロップ:",
 	"baú(s) · % = chance de vir ao abrir.": "個の宝箱 · % = 開けたときに出る確率。",
@@ -221,7 +207,6 @@
 	"Materiais de <strong>criação e síntese</strong>. Clique pra ver em quais baús cada um cai.": "<strong>クラフトと合成</strong>の素材です。クリックするとどの宝箱からドロップするか確認できます。",
 	"Buscar material…": "素材を検索…",
 	"material(is)": "件の素材",
-
 	"3 atos · 4 dificuldades · 120 fases — monstros, chefes e tabelas de saque. Clique numa fase no mapa.": "3アクト · 4難易度 · 120ステージ — モンスター・ボス・ドロップテーブル。マップ上のステージをクリックしてください。",
 	"Ato": "アクト",
 	"— clique num nó pra inspecionar.": "— ノードをクリックすると詳細を確認できます。",
@@ -244,7 +229,6 @@
 	"Vida": "HP",
 	"Baús que caem aqui": "ここでドロップする宝箱",
 	"Carregando dados das fases…": "ステージデータを読み込み中…",
-
 	"Espada": "剣",
 	"Arco": "弓",
 	"Cajado": "杖",
@@ -267,7 +251,6 @@
 	"Bracelete": "ブレスレット",
 	"Arma Principal": "メイン武器",
 	"Arma Secundária": "オフハンド武器",
-
 	"Dano de Ataque": "攻撃ダメージ",
 	"Vel. de Ataque": "攻撃速度",
 	"Vel. de Conjuração": "詠唱速度",
@@ -302,7 +285,6 @@
 	"ABS DANO": "ダメ吸収",
 	"RES ELEM": "属性耐性",
 	"ROUBO VIDA": "吸血",
-
 	"Aumento de Ganho de Exp": "Exp獲得量アップ",
 	"Aumento de Ganho de Ouro": "ゴールド獲得量アップ",
 	"Exp Adicional": "追加Exp",
@@ -338,7 +320,6 @@
 	"Tempo auto-abrir baú de chefe": "ボス宝箱の自動開封時間",
 	"Abrir baús de um tipo de vez": "同じ種類の宝箱を一括開封",
 	"Abrir baús de todos os tipos": "全種類の宝箱を一括開封",
-
 	"Herói": "ヒーロー",
 	"Auto-update ainda não configurado (CDN).": "自動更新はまだ設定されていません(CDN)。",
 	"Erro:": "エラー:",
@@ -373,11 +354,9 @@
 	"Apagar as corridas registradas de {s}?": "{s}の記録済み周回を削除しますか?",
 	"Corridas de {s} apagadas.": "{s}の周回を削除しました。",
 	"Erro ao limpar a fase.": "ステージ記録の消去中にエラーが発生しました。",
-
 	"Função": "機能",
 	"Evento": "イベント",
 	"Invocação": "召喚",
-
 	"Grau {g}": "{g}等級",
 	"Usado em": "使用先",
 	"Cubo Nv {n}": "キューブLv{n}",
@@ -422,5 +401,34 @@
 	"Troca de mapa: %s → %s. O app só enxerga o jogo pelos saves (gravados a cada ~3 min ou em eventos) e peguei o mapa novo já no meio de uma corrida (wave %d) — então esta primeira corrida sai parcial e será descartada; a próxima corrida completa no mapa novo já conta.": "マップ切替: %s → %s。アプリはセーブ（約3分ごと、またはイベント時に保存）でしかゲームを把握できず、新しいマップを周回の途中（ウェーブ %d）で捕捉しました — そのためこの最初の周回は部分的で破棄されます。新しいマップでの次の完全な周回からカウントします。",
 	"Fase %s: primeira corrida após a troca de mapa descartada — só %.0fs medidos (parte de uma corrida, não a corrida inteira), porque o save anterior já estava no meio dela. A próxima corrida completa conta.": "ステージ %s: マップ切替後の最初の周回を破棄 — 計測は %.0fs のみ（周回の一部で、周回全体ではない）。前のセーブが既に周回の途中だったためです。次の完全な周回からカウントします。",
 	"Fase %s: ouro caiu %d (provável compra de runa/item) e esta fase ainda não tem média de ouro — descarto esta corrida pra não registrar ouro zerado; o próximo clear sem compra semeia a fase.": "ステージ %s: ゴールドが %d 減少（おそらくルーン/アイテム購入）し、このステージにはまだゴールド平均がありません — ゴールド0で記録しないようこの周回を破棄します。次の購入なしのクリアでステージを初期化します。",
-	"Fase %s: ouro caiu %d, mas o gasto foi em upgrade de runa (~%.0f) — recuperei o ganho real do ciclo somando o gasto de volta: +%.0f ouro. Conto como clear normal.": "ステージ %s: ゴールドが %d 減少しましたが、支出はルーン強化（~%.0f）でした — 支出を足し戻してサイクルの実際の獲得を復元しました: +%.0f ゴールド。通常のクリアとしてカウントします。"
+	"Fase %s: ouro caiu %d, mas o gasto foi em upgrade de runa (~%.0f) — recuperei o ganho real do ciclo somando o gasto de volta: +%.0f ouro. Conto como clear normal.": "ステージ %s: ゴールドが %d 減少しましたが、支出はルーン強化（~%.0f）でした — 支出を足し戻してサイクルの実際の獲得を復元しました: +%.0f ゴールド。通常のクリアとしてカウントします。",
+	"Heróis": "ヒーロー",
+	"Caótico": "カオス",
+	"Encantamentos": "エンチャント",
+	"do teto": "最大値比",
+	"No time": "編成中",
+	"Este item não tem encantamentos.": "このアイテムにはエンチャントがありません。",
+	"Seus <strong>heróis</strong> e o equipamento de cada um — clique num item pra ver os <strong>rolls</strong> dos encantamentos e o quão perto do teto cada um ficou.": "あなたの<strong>ヒーロー</strong>と各自の装備 — アイテムをクリックすると、エンチャントの<strong>ロール</strong>値と、それぞれが最大値にどれだけ近いかを確認できます。",
+	"Abra o jogo para ver seus heróis e o equipamento de cada um.": "ゲームを開いて、ヒーローと装備を確認しましょう。",
+	"Inventário": "インベントリ",
+	"Síntese": "合成",
+	"fundível": "合成可能",
+	"Mochila": "バッグ",
+	"Armazém": "倉庫",
+	"Banca": "取引倉庫",
+	"Equipamento": "装備",
+	"Tudo que está guardado fora dos heróis — <strong>mochila</strong>, <strong>armazém</strong> e banca. Agrupado por tipo e grau pra você ver o que dá pra <strong>fundir</strong> (síntese).": "ヒーロー以外に保管中のすべて — <strong>バッグ</strong>、<strong>倉庫</strong>、取引倉庫。種類と等級ごとにまとめ、<strong>合成</strong>できるものが分かります。",
+	"Abra o jogo para ver seus itens guardados.": "ゲームを開いて、保管中のアイテムを確認しましょう。",
+	"Marcado como fundível a partir de 9 itens; a contagem exata por grau ainda será refinada por uma extração dos dados do jogo.": "9個から合成可能と表示します。等級ごとの正確な必要数は、今後のゲームデータ抽出で精緻化します。",
+	"Cubo": "キューブ",
+	"Quantidade e chances de fusão vêm dos dados do jogo.": "数量と合成確率はゲームデータに基づきます。",
+	"Junte itens do mesmo tipo e grau pra fundir num grau acima (o resultado é sorteado: pode subir ou manter — graus altos sobem menos).": "同じ種類・等級のアイテムを合わせて上位等級に合成します（結果はランダム：上がるか維持で、高等級ほど上がりにくい）。",
+	"Funções do Cubo": "キューブ機能",
+	"Alquimia": "錬金",
+	"Extração": "抽出",
+	"Travado": "ロック中",
+	"Itens travados não entram na síntese": "ロック中のアイテムは合成に使われません",
+	"Configurações": "設定",
+	"Verificar atualização": "アップデートを確認",
+	"Falha ao iniciar o monitoramento (tentativa %d): %s. Tento de novo em 5s.": "監視の開始に失敗しました（試行 %d 回目）: %s。5秒後に再試行します。"
 }
