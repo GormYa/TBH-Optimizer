@@ -19,6 +19,12 @@ func (f *FlexFloat) UnmarshalJSON(b []byte) error {
 		*f = 0
 		return nil
 	}
+	if strings.Contains(s, ",") {
+		if dot := strings.LastIndex(s, "."); dot >= 0 && strings.LastIndex(s, ",") > dot {
+			s = strings.ReplaceAll(s, ".", "")
+		}
+		s = strings.ReplaceAll(s, ",", ".")
+	}
 	v, err := strconv.ParseFloat(s, 64)
 	if err != nil {
 		return err
@@ -32,15 +38,15 @@ type Currency struct {
 	Quantity int `json:"Quantity"`
 }
 type Hero struct {
-	HeroKey                    int     `json:"heroKey"`
-	HeroLevel                  int     `json:"HeroLevel"`
+	HeroKey                    int       `json:"heroKey"`
+	HeroLevel                  int       `json:"HeroLevel"`
 	HeroExp                    FlexFloat `json:"HeroExp"`
-	IsUnLock                   bool    `json:"IsUnLock"`
-	AbilityPoint               int     `json:"AbilityPoint"`
-	AllocatedHeroAbilityPoint  int     `json:"AllocatedHeroAbilityPoint"`
-	EquippedItemIds            []int64 `json:"equippedItemIds"`
-	EquippedSkillKey           []int   `json:"equippedSKillKey"`
-	UnlockedAttributeGroupKeys []int   `json:"unlockedAttributeGroupKeys"`
+	IsUnLock                   bool      `json:"IsUnLock"`
+	AbilityPoint               int       `json:"AbilityPoint"`
+	AllocatedHeroAbilityPoint  int       `json:"AllocatedHeroAbilityPoint"`
+	EquippedItemIds            []int64   `json:"equippedItemIds"`
+	EquippedSkillKey           []int     `json:"equippedSKillKey"`
+	UnlockedAttributeGroupKeys []int     `json:"unlockedAttributeGroupKeys"`
 }
 
 // ItemEnchant é um mod rolado num item (decoração/gravação/inscrição):

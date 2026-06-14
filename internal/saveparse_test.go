@@ -12,6 +12,9 @@ func TestHeroExpAceitaStringOuNumero(t *testing.T) {
 	cases := map[string]float64{
 		`{"HeroExp": 1000.5}`:   1000.5,
 		`{"HeroExp": "1000.5"}`: 1000.5,
+		`{"HeroExp": "1000,5"}`: 1000.5,
+		`{"HeroExp": "1.234,5"}`: 1234.5,
+		`{"HeroExp": "1234567"}`: 1234567,
 		`{"HeroExp": "0"}`:      0,
 		`{"HeroExp": ""}`:       0,
 		`{"HeroExp": null}`:     0,

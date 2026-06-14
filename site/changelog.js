@@ -7,6 +7,14 @@
 window.CHANGELOG = {
 	entries: [
         {
+            data: "2026-06-13",
+            version: "v1.0.39-v1.0.40",
+            title: "Hotfix: xp do herói estava com float64",
+            items: [
+                "Por pegar o xp do jogo como float64, o json.Unmarshal falhava e o monitoramento ficava retentando a cada 5s pra sempre"
+            ]
+        },
+        {
             date: "2026-06-13",
             version: "v1.0.38",
             title: "New Heroes & Inventory tabs, real synthesis odds, and a live Cube panel",
