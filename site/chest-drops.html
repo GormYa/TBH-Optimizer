@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mecânica de Baús e Drops da Steam | Taskbar Hero Optimizer</title>
+	<meta name="description" content="Entenda como funciona o sistema de inventário da Steam no Taskbar Hero. Tempos de cooldown dos baús azuis, limites diários de drop e como forçar drops raros.">
+	<meta name="keywords" content="taskbar hero baús, taskbar hero drops, taskbar hero chest cooldown, boss chest, itens raros taskbar hero">
+	<meta name="robots" content="index, follow">
+	<meta name="theme-color" content="#0b0e14">
+	<link rel="canonical" href="https://taskbarhero.fun/chest-drops.html">
+	<link rel="alternate" hreflang="pt-BR" href="https://taskbarhero.fun/chest-drops.html">
+	<link rel="alternate" hreflang="x-default" href="https://taskbarhero.fun/chest-drops.html">
+	<link rel="icon" type="image/svg+xml" href="./favicon.svg">
+
+	<!-- Open Graph -->
+	<meta property="og:type" content="article">
+	<meta property="og:site_name" content="Taskbar Hero Otimizador de Farm">
+	<meta property="og:locale" content="pt_BR">
+	<meta property="og:url" content="https://taskbarhero.fun/chest-drops.html">
+	<meta property="og:title" content="Mecânica de Baús e Drops da Steam: Taskbar Hero">
+	<meta property="og:description" content="Aprenda o segredo do Cooldown de baús no Taskbar Hero e como forçar o jogo a dropar apenas Boss Chests no seu inventário Steam.">
+	<meta property="og:image" content="https://taskbarhero.fun/og.png">
+
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Article",
+		"headline": "Mecânica de Baús e Drops da Steam no Taskbar Hero",
+		"description": "Entenda como funciona o sistema de inventário da Steam no Taskbar Hero.",
+		"author": {
+			"@type": "Organization",
+			"name": "Taskbar Hero Optimizer"
+		}
+	}
+	</script>
+
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "FAQPage",
+		"mainEntity": [
+			{
+				"@type": "Question",
+				"name": "Qual o cooldown dos baús no Taskbar Hero?",
+				"acceptedAnswer": { "@type": "Answer", "text": "O baú comum (cinza) tem cooldown de cerca de 11 minutos, com no máximo 3 drops em uma janela de 33 minutos. O baú de chefe de fase (azul) tem cooldown de cerca de 9 minutos, máximo 3 por janela de 27 minutos. Já o baú lendário de chefe de Ato é recompensa de primeira passagem e não tem cooldown." }
+			},
+			{
+				"@type": "Question",
+				"name": "Por que não estou ganhando baús apesar da taxa de drop da fase?",
+				"acceptedAnswer": { "@type": "Answer", "text": "Os baús são itens do Steam Inventory Service, não do save local. Mesmo que a fase mostre uma taxa de drop, quem decide é o cooldown do Steam: enquanto o temporizador daquele tipo de baú não zerar, o drop é negado independentemente da taxa." }
+			},
+			{
+				"@type": "Question",
+				"name": "Os cooldowns de baú comum e de chefe são compartilhados?",
+				"acceptedAnswer": { "@type": "Answer", "text": "Não. Cada baú é um itemdef diferente no Steam e tem seu próprio cooldown. Por isso é possível receber um baú comum e um de chefe quase ao mesmo tempo." }
+			},
+			{
+				"@type": "Question",
+				"name": "Acumular baús comuns ajuda a dropar mais baús de boss?",
+				"acceptedAnswer": { "@type": "Answer", "text": "Sim, indiretamente. Encher os 3 slots de baús comuns não muda a taxa base, mas faz o jogo parar de pedir baús comuns à Steam, preservando o limite diário de drops da conta para os baús de boss (azul). Como os baús de boss usam slots independentes, eles continuam caindo normalmente." }
+			}
+		]
+	}
+	</script>
+
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		"itemListElement": [
+			{ "@type": "ListItem", "position": 1, "name": "Início", "item": "https://taskbarhero.fun/" },
+			{ "@type": "ListItem", "position": 2, "name": "Mecânica de Baús e Drops", "item": "https://taskbarhero.fun/chest-drops.html" }
+		]
+	}
+	</script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+	<style>
+		:root{
+			--bg:#0b0e14; --bg-2:#11161f; --panel:#151b26; --line:#242e3d; --line-soft:#1c2533;
+			--txt:#e7edf5; --txt-dim:#8a98ab; --txt-faint:#5d6b7e;
+			--gold:#f4b740; --gold-d:#b8841c; --xp:#4fd1ff; --drop:#c98bff;
+			--font-d:'Oxanium',sans-serif; --font-b:'Rajdhani',sans-serif;
+			--chest-common:#94a3b8; --chest-boss:#3b82f6; --chest-legend:#c98bff;
+		}
+		*{box-sizing:border-box;margin:0;padding:0}
+		html{scroll-behavior:smooth}
+		body{
+			font-family:var(--font-b);background:var(--bg);color:var(--txt);
+			line-height:1.6;overflow-x:hidden;min-height:100vh;
+			background-image:radial-gradient(800px 460px at 85% -10%,rgba(244,183,64,.08),transparent 60%);
+		}
+		.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+
+		header{display:flex;align-items:center;justify-content:space-between;padding:22px 0;border-bottom:1px solid var(--line-soft);margin-bottom:40px}
+		.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+		.brand:hover{text-decoration:none}
+		.mark{width:42px;height:42px;display:grid;place-items:center;font-size:22px;border-radius:11px;
+			background:linear-gradient(145deg,#1c2433,#11161f);border:1px solid var(--line);
+			box-shadow:0 0 18px rgba(244,183,64,.18);color:var(--gold)}
+		.brand h1{font-family:var(--font-d);font-size:18px;font-weight:800;letter-spacing:1px;line-height:1;margin-bottom:2px;color:var(--txt)}
+		.brand h1 span{color:var(--gold)}
+		.brand p{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--txt-faint);line-height:1;margin:0}
+		.gh{display:inline-flex;align-items:center;justify-content:center;gap:7px;box-sizing:border-box;font-family:var(--font-d);font-weight:600;font-size:13px;color:var(--txt-dim);text-decoration:none;border:1px solid var(--line);border-radius:9px;padding:8px 14px;transition:.15s}
+		.gh:hover{color:var(--txt);border-color:var(--gold-d);text-decoration:none}
+		.gh svg, .dropbtn svg { flex-shrink:0; display:block; }
+		.gh span, .dropbtn span { line-height:1; }
+
+		/* Dropdown Nav */
+		.dropdown { position: relative; display: inline-block; }
+		.dropbtn { display:inline-flex;align-items:center;justify-content:center;gap:4px;box-sizing:border-box;font-family: var(--font-d); font-weight: 600; font-size: 13px; color: var(--txt-dim); text-decoration: none; border: 1px solid var(--line); border-radius: 9px; padding: 8px 14px; transition: .15s; background: transparent; cursor: pointer; }
+		.dropdown:hover .dropbtn { color: var(--txt); border-color: var(--gold-d); text-decoration: none; }
+		.drop-wrapper { display: none; position: absolute; top: 100%; right: 0; padding-top: 8px; z-index: 10; }
+		.dropdown:hover .drop-wrapper { display: block; }
+		.drop-content { background: var(--panel); min-width: 180px; border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,.5); display: flex; flex-direction: column; overflow: hidden; }
+		.drop-content a { font-family: var(--font-d); color: var(--txt-dim); padding: 10px 16px; text-decoration: none; font-size: 13px; transition: .15s; font-weight: 600; text-align: left; }
+		.drop-content a:hover { background: var(--bg-2); color: var(--gold); }
+
+		main h1{font-family:var(--font-d);font-size:36px;font-weight:800;margin-bottom:12px;line-height:1.1;color:var(--txt)}
+		.lead{font-size:18px;color:var(--txt-dim);margin-bottom:40px}
+
+		h2{font-family:var(--font-d);font-weight:700;font-size:24px;margin:40px 0 16px;color:var(--gold);border-bottom:1px solid var(--line-soft);padding-bottom:10px}
+		h3{font-family:var(--font-d);font-weight:600;font-size:18px;margin:24px 0 12px;color:var(--txt)}
+		p{margin-bottom:16px;font-size:16px;color:var(--txt-dim)}
+		ul{margin:0 0 24px 24px;color:var(--txt-dim)}
+		li{margin-bottom:8px}
+		strong{color:var(--txt)}
+		main a{color:var(--gold);text-decoration:none}
+		main a:hover{text-decoration:underline}
+
+		.chest-card {
+			display: flex; flex-direction: column; gap: 10px;
+			background: var(--bg-2); border: 1px solid var(--line-soft);
+			border-radius: 12px; padding: 20px; margin-bottom: 20px;
+			position: relative; overflow: hidden;
+		}
+		.chest-card.common { border-left: 4px solid var(--chest-common); }
+		.chest-card.boss { border-left: 4px solid var(--chest-boss); }
+		.chest-card.legend { border-left: 4px solid var(--chest-legend); }
+		.chest-card h3 { margin: 0; display: flex; align-items: center; gap: 8px; }
+		.chest-card.common h3 { color: var(--chest-common); }
+		.chest-card.boss h3 { color: var(--chest-boss); }
+		.chest-card.legend h3 { color: var(--chest-legend); }
+
+		.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-top: 10px; }
+		.stat-item { background: var(--panel); padding: 12px; border-radius: 8px; border: 1px solid var(--line-soft); }
+		.stat-lbl { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--txt-faint); margin-bottom: 4px; display: block; }
+		.stat-val { font-family: var(--font-d); font-size: 18px; font-weight: 700; color: var(--txt); }
+
+		.cta-box{
+			background:linear-gradient(160deg,var(--panel),var(--bg-2));
+			border:1px solid var(--drop);border-radius:16px;padding:30px;
+			text-align:center;margin:50px 0;
+			box-shadow:0 10px 30px rgba(201,139,255,.08);
+		}
+		.cta-box h3{color:var(--drop);margin-top:0;font-size:22px}
+		.cta-box p{color:var(--txt);margin-bottom:24px}
+		.dl{font-family:var(--font-d);font-weight:800;font-size:16px;letter-spacing:.5px;color:#0b0d10;
+			background:linear-gradient(180deg,#e5b8ff,#c98bff);border:none;border-radius:12px;
+			padding:14px 30px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;
+			box-shadow:0 8px 20px rgba(201,139,255,.25);transition:transform .12s,box-shadow .12s}
+		.dl:hover{transform:translateY(-2px);box-shadow:0 12px 25px rgba(201,139,255,.35);text-decoration:none}
+		.dl svg{width:18px;height:18px}
+
+		.info-panel{background:rgba(244,183,64,.05);border-left:4px solid var(--gold);padding:16px 20px;border-radius:0 8px 8px 0;margin:24px 0}
+		.info-panel p{margin:0;color:var(--txt)}
+
+		footer{text-align:center;padding:40px 0;color:var(--txt-faint);font-size:13px;border-top:1px solid var(--line-soft);margin-top:60px}
+		.foot-links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;margin-bottom:18px}
+		.foot-links a{color:var(--txt-dim);text-decoration:none;font-family:var(--font-d);font-weight:600;font-size:13.5px}
+		.foot-links a:hover{color:var(--gold)}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<header>
+			<a href="./index.html" class="brand">
+				<div class="mark"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div>
+				<div>
+					<h1>TASKBAR<span>HERO</span></h1>
+					<p>Otimizador de Farm</p>
+				</div>
+			</a>
+			<nav style="display:flex;gap:10px;align-items:center">
+				<div class="dropdown">
+					<a class="dropbtn"><span>Guias</span> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+					<div class="drop-wrapper">
+						<div class="drop-content">
+							<a href="./tutorial.html">Como usar o Otimizador</a>
+							<a href="./guide.html">Guia de Ouro e XP</a>
+							<a href="./chest-drops.html">Mecânica de Baús</a>
+						</div>
+					</div>
+				</div>
+				<a class="gh" href="https://github.com/Rupelio/TBH-Optimizer" target="_blank" rel="noopener">
+					<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.29-.01-1.04-.02-2.05-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.39 1.24-3.23-.12-.31-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.18.77.84 1.24 1.92 1.24 3.23 0 4.62-2.81 5.64-5.49 5.94.43.37.81 1.1.81 2.22 0 1.6-.01 2.89-.01 3.29 0 .32.22.7.83.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/></svg>
+					<span>GitHub</span>
+				</a>
+			</nav>
+		</header>
+
+		<main>
+			<h1>Mecânica de Baús e Drops: O Segredo do Inventário da Steam</h1>
+			<p class="lead">Entenda os cooldowns reais dos servidores e por que você não está conseguindo baús azuis nas fases de Boss.</p>
+
+			<h2>A ilusão do Drop Rate Local</h2>
+			<p>Diferente de ouro e XP que são calculados e guardados puramente no seu arquivo de save local, <strong>os baús no Taskbar Hero são itens do Inventário da Steam (Steam Inventory Service)</strong>.</p>
+			<p>Isso significa que não importa a taxa de drop ("chestRate") que a fase indica ter: quem dita se você ganha um baú ou não são os limites rigorosos de <i>Cooldown</i> e <i>Daily Limit</i> definidos nos servidores da Valve.</p>
+
+			<h2>Tipos de Baús e Seus Cooldowns (Atualizado v1.00.11)</h2>
+
+			<div class="chest-card common">
+				<h3>Baú Comum (Cinza)</h3>
+				<p>Cai em praticamente todas as fases normais do jogo (ex: 1-1, 1-2, etc).</p>
+				<div class="stats-grid">
+					<div class="stat-item"><span class="stat-lbl">Tempo de Cooldown</span><span class="stat-val">11 minutos</span></div>
+					<div class="stat-item"><span class="stat-lbl">Limite por Janela</span><span class="stat-val">3 Drops</span></div>
+					<div class="stat-item"><span class="stat-lbl">Tamanho da Janela</span><span class="stat-val">33 minutos</span></div>
+				</div>
+			</div>
+
+			<div class="chest-card boss">
+				<h3>Baú de Chefe de Fase (Azul)</h3>
+				<p>Cai ao derrotar chefes de fase (raridade RARA). O cooldown de <strong>9 minutos</strong> vale para os baús de boss de nível alto (ex: o Boss Lv50 do Nightmare 3-5). <strong>Atenção:</strong> os primeiros baús de boss têm cooldowns muito maiores — alguns de 300 min (5 h) e os iniciais até 3600 min (60 h).</p>
+				<div class="stats-grid">
+					<div class="stat-item"><span class="stat-lbl">Cooldown (alto nível)</span><span class="stat-val">9 minutos</span></div>
+					<div class="stat-item"><span class="stat-lbl">Limite por Janela</span><span class="stat-val">3 Drops</span></div>
+					<div class="stat-item"><span class="stat-lbl">Tamanho da Janela</span><span class="stat-val">27 minutos</span></div>
+				</div>
+			</div>
+
+			<div class="chest-card legend">
+				<h3>Baú de Chefe de Ato (Roxo / Lendário)</h3>
+				<p>Recompensa de <strong>primeira passagem</strong> de cada chefe de Ato (ex: 1-10, 2-10, 3-10). Por ser garantido na primeira vez, <strong>não tem cooldown</strong> — mas também não pode ser farmado repetidamente.</p>
+				<div class="stats-grid">
+					<div class="stat-item"><span class="stat-lbl">Tempo de Cooldown</span><span class="stat-val">Nenhum</span></div>
+					<div class="stat-item"><span class="stat-lbl">Quando cai</span><span class="stat-val">1ª vez por chefe</span></div>
+					<div class="stat-item"><span class="stat-lbl">Raridade</span><span class="stat-val">Lendária</span></div>
+				</div>
+			</div>
+
+			<div class="info-panel">
+				<p><strong>A Estratégia Avançada (Acúmulo de Baús Comuns):</strong><br>
+				A Steam impõe um <strong>limite diário de drops</strong> por conta (Daily Drop Limit) para qualquer jogo. Se você deixa os baús comuns (cinza) caírem e abrirem, o jogo gasta essa cota a cada ~11 minutos com itens de baixo valor. O truque dos veteranos: <i>mantenha os slots de baús comuns cheios e não os abra</i>. Com os slots comuns lotados, o próprio cliente do jogo <strong>para de pedir baús comuns à Steam</strong> (ele checa a capacidade local antes de rolar o drop), preservando sua cota diária inteira para os <strong>Baús de Boss (azul)</strong>, que usam uma fileira de slots independente. Resultado: quase toda a sua cota diária de drops vira baú azul. <em>(Encher os comuns não muda a taxa base, apenas protege a cota diária.)</em></p>
+			</div>
+
+			<div class="cta-box">
+				<h3>Monitore seus Cooldowns de Baús</h3>
+				<p>Nosso aplicativo gratuito monitora inteligentemente os seus drops e calcula os cooldowns em tempo real para exibir os temporizadores. Saiba exatamente quando o jogo poderá liberar seu próximo drop de Baú Azul!</p>
+				<a class="dl" href="./index.html">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>
+					Baixar o Otimizador de Baús
+				</a>
+			</div>
+
+			<h3 style="margin-top: 40px; border-top: 1px solid var(--line-soft); padding-top: 20px;">Veja também</h3>
+			<ul>
+				<li><a href="./guide.html">Guia Matemático de Farm: Ouro/hora e XP/hora</a></li>
+			</ul>
+		</main>
+	</div>
+
+	<footer>
+		<nav class="foot-links">
+			<a href="./index.html">Página Inicial</a>
+			<a href="./guide.html">Guia de Ouro/XP</a>
+			<a href="./privacy.html">Privacidade</a>
+			<a href="./terms.html">Termos de Uso</a>
+		</nav>
+		<p style="margin-top: 10px; opacity: 0.7;">Taskbar Hero Optimizer · Fan-made tool</p>
+	</footer>
+</body>
+</html>

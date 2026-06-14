@@ -1,0 +1,64 @@
+{
+ "_schema": "Stats-base de combate por herói (HeroInfoData), valores CRUS do jogo. A escala (divisor p/ levar crit a fração 0..1, unidade de atkSpeed) é confirmada contra a tela do jogo e vira constante no modelo (internal/combat.go). heroKey -> {atk, atkSpeed, critChance, critDmg, maxHp, armor, base}.",
+ "scaleHints": {
+  "critChance": "valor cru; comparar com 'Crítico X%' na tela do herói pra achar o divisor",
+  "critDmg": "valor cru; comparar com 'Dano Crítico X%' (multiplicador = 1 + critDmg/divisor)",
+  "atkSpeed": "valor cru; comparar com a cadência mostrada (golpes/s) se houver"
+ },
+ "heroes": {
+  "101": {
+   "atk": 2.0,
+   "atkSpeed": 90.0,
+   "critChance": 25.0,
+   "critDmg": 1400.0,
+   "maxHp": 130.0,
+   "armor": 45.0,
+   "base": true
+  },
+  "201": {
+   "atk": 1.0,
+   "atkSpeed": 100.0,
+   "critChance": 40.0,
+   "critDmg": 1500.0,
+   "maxHp": 60.0,
+   "armor": 8.0,
+   "base": true
+  },
+  "301": {
+   "atk": 2.0,
+   "atkSpeed": 55.0,
+   "critChance": 50.0,
+   "critDmg": 1650.0,
+   "maxHp": 50.0,
+   "armor": 5.0,
+   "base": true
+  },
+  "401": {
+   "atk": 1.0,
+   "atkSpeed": 90.0,
+   "critChance": 20.0,
+   "critDmg": 1400.0,
+   "maxHp": 95.0,
+   "armor": 30.0,
+   "base": true
+  },
+  "501": {
+   "atk": 2.0,
+   "atkSpeed": 70.0,
+   "critChance": 45.0,
+   "critDmg": 1550.0,
+   "maxHp": 70.0,
+   "armor": 15.0,
+   "base": true
+  },
+  "601": {
+   "atk": 2.0,
+   "atkSpeed": 70.0,
+   "critChance": 25.0,
+   "critDmg": 1800.0,
+   "maxHp": 115.0,
+   "armor": 40.0,
+   "base": true
+  }
+ }
+}

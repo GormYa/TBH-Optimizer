@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Como Usar o Taskbar Hero Optimizer | Tutorial Completo</title>
+	<meta name="description" content="Aprenda o passo a passo para baixar, executar e entender todas as estatísticas e métricas (Ouro/h, XP/h, Baús) do painel do Taskbar Hero Optimizer.">
+	<meta name="keywords" content="como usar taskbar hero optimizer, tutorial tbh optimizer, baixar taskbar hero otimizador, instalar tbh optimizer">
+	<meta name="robots" content="index, follow">
+	<meta name="theme-color" content="#0b0e14">
+	<link rel="canonical" href="https://taskbarhero.fun/tutorial.html">
+	<link rel="alternate" hreflang="pt-BR" href="https://taskbarhero.fun/tutorial.html">
+	<link rel="alternate" hreflang="x-default" href="https://taskbarhero.fun/tutorial.html">
+	<link rel="icon" type="image/svg+xml" href="./favicon.svg">
+
+	<!-- Open Graph -->
+	<meta property="og:type" content="article">
+	<meta property="og:site_name" content="Taskbar Hero Otimizador de Farm">
+	<meta property="og:locale" content="pt_BR">
+	<meta property="og:url" content="https://taskbarhero.fun/tutorial.html">
+	<meta property="og:title" content="Como Usar o Taskbar Hero Optimizer | Tutorial Completo">
+	<meta property="og:description" content="Aprenda a instalar e a dominar todas as abas e métricas do painel do Otimizador.">
+	<meta property="og:image" content="https://taskbarhero.fun/og.png">
+
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Article",
+		"headline": "Como Usar o Taskbar Hero Optimizer",
+		"description": "Tutorial detalhado de como executar e entender o painel do Otimizador.",
+		"author": {
+			"@type": "Organization",
+			"name": "Taskbar Hero Optimizer"
+		}
+	}
+	</script>
+
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "FAQPage",
+		"mainEntity": [
+			{
+				"@type": "Question",
+				"name": "Como instalar o Taskbar Hero Optimizer?",
+				"acceptedAnswer": { "@type": "Answer", "text": "Baixe o optimizer.exe na página inicial e execute. Não precisa instalar — é portátil. Se o Windows SmartScreen avisar, clique em 'Mais informações' e 'Executar assim mesmo'. O painel abre sozinho no navegador em http://localhost:8080." }
+			},
+			{
+				"@type": "Question",
+				"name": "O Taskbar Hero Optimizer é seguro?",
+				"acceptedAnswer": { "@type": "Answer", "text": "Sim. É de código aberto (disponível no GitHub) e opera em modo somente leitura: apenas lê o arquivo de save do jogo, sem alterar a memória do jogo nem enviar seus dados para a internet." }
+			},
+			{
+				"@type": "Question",
+				"name": "O Otimizador mostra quando o próximo baú vai cair?",
+				"acceptedAnswer": { "@type": "Answer", "text": "Sim. A aba Baús acompanha os cooldowns do Steam Inventory e mostra barras de progresso com o tempo restante até o jogo poder liberar o próximo baú comum ou de chefe." }
+			},
+			{
+				"@type": "Question",
+				"name": "Como descobrir a melhor fase para farmar?",
+				"acceptedAnswer": { "@type": "Answer", "text": "Deixe o jogo rodando alguns minutos para o Otimizador medir seus tempos de limpeza, abra a aba Painel e ordene pela coluna Ouro/h Ajustado ou XP/h. A fase no topo é a melhor para o seu poder atual." }
+			}
+		]
+	}
+	</script>
+
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		"itemListElement": [
+			{ "@type": "ListItem", "position": 1, "name": "Início", "item": "https://taskbarhero.fun/" },
+			{ "@type": "ListItem", "position": 2, "name": "Tutorial do Otimizador", "item": "https://taskbarhero.fun/tutorial.html" }
+		]
+	}
+	</script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+	<style>
+		:root{
+			--bg:#0b0e14; --bg-2:#11161f; --panel:#151b26; --line:#242e3d; --line-soft:#1c2533;
+			--txt:#e7edf5; --txt-dim:#8a98ab; --txt-faint:#5d6b7e;
+			--gold:#f4b740; --gold-d:#b8841c; --xp:#4fd1ff; --drop:#c98bff;
+			--font-d:'Oxanium',sans-serif; --font-b:'Rajdhani',sans-serif;
+		}
+		*{box-sizing:border-box;margin:0;padding:0}
+		html{scroll-behavior:smooth}
+		body{
+			font-family:var(--font-b);background:var(--bg);color:var(--txt);
+			line-height:1.6;overflow-x:hidden;min-height:100vh;
+			background-image:radial-gradient(800px 460px at 85% -10%,rgba(244,183,64,.08),transparent 60%);
+		}
+		.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+
+		header{display:flex;align-items:center;justify-content:space-between;padding:22px 0;border-bottom:1px solid var(--line-soft);margin-bottom:40px}
+		.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+		.brand:hover{text-decoration:none}
+		.mark{width:42px;height:42px;display:grid;place-items:center;font-size:22px;border-radius:11px;
+			background:linear-gradient(145deg,#1c2433,#11161f);border:1px solid var(--line);
+			box-shadow:0 0 18px rgba(244,183,64,.18);color:var(--gold)}
+		.brand h1{font-family:var(--font-d);font-size:18px;font-weight:800;letter-spacing:1px;line-height:1;margin-bottom:2px;color:var(--txt)}
+		.brand h1 span{color:var(--gold)}
+		.brand p{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--txt-faint);line-height:1;margin:0}
+		
+		/* Dropdown Nav */
+		.dropdown { position: relative; display: inline-block; }
+		.dropbtn { display:inline-flex;align-items:center;justify-content:center;gap:4px;box-sizing:border-box;font-family: var(--font-d); font-weight: 600; font-size: 13px; color: var(--txt-dim); text-decoration: none; border: 1px solid var(--line); border-radius: 9px; padding: 8px 14px; transition: .15s; background: transparent; cursor: pointer; }
+		.dropdown:hover .dropbtn { color: var(--txt); border-color: var(--gold-d); text-decoration: none; }
+		.drop-wrapper { display: none; position: absolute; top: 100%; right: 0; padding-top: 8px; z-index: 10; }
+		.dropdown:hover .drop-wrapper { display: block; }
+		.drop-content { background: var(--panel); min-width: 180px; border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,.5); display: flex; flex-direction: column; overflow: hidden; }
+		.drop-content a { font-family: var(--font-d); color: var(--txt-dim); padding: 10px 16px; text-decoration: none; font-size: 13px; transition: .15s; font-weight: 600; text-align: left; }
+		.drop-content a:hover { background: var(--bg-2); color: var(--gold); }
+		.gh{display:inline-flex;align-items:center;justify-content:center;gap:7px;box-sizing:border-box;font-family:var(--font-d);font-weight:600;font-size:13px;color:var(--txt-dim);text-decoration:none;border:1px solid var(--line);border-radius:9px;padding:8px 14px;transition:.15s}
+		.gh:hover{color:var(--txt);border-color:var(--gold-d);text-decoration:none}
+		.gh svg, .dropbtn svg { flex-shrink:0; display:block; }
+		.gh span, .dropbtn span { line-height:1; }
+
+		main h1{font-family:var(--font-d);font-size:36px;font-weight:800;margin-bottom:12px;line-height:1.1;color:var(--txt)}
+		.lead{font-size:18px;color:var(--txt-dim);margin-bottom:40px}
+		
+		h2{font-family:var(--font-d);font-weight:700;font-size:24px;margin:40px 0 16px;color:var(--gold);border-bottom:1px solid var(--line-soft);padding-bottom:10px}
+		h3{font-family:var(--font-d);font-weight:600;font-size:18px;margin:24px 0 12px;color:var(--txt)}
+		p{margin-bottom:16px;font-size:16px;color:var(--txt-dim)}
+		ul{margin:0 0 24px 24px;color:var(--txt-dim)}
+		li{margin-bottom:8px}
+		strong{color:var(--txt)}
+		code{font-family:var(--font-d);background:var(--panel);padding:2px 6px;border-radius:5px;color:var(--xp);font-size:14px;border:1px solid var(--line-soft)}
+		
+		.step-box { background: var(--bg-2); border: 1px solid var(--line-soft); border-radius: 12px; padding: 24px; margin-bottom: 24px; position: relative; padding-left: 68px; }
+		.step-num { position: absolute; left: 20px; top: 22px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: rgba(244,183,64,.1); color: var(--gold); font-family: var(--font-d); font-weight: 800; border-radius: 8px; border: 1px solid rgba(244,183,64,.3); }
+		.step-box h3 { margin-top: 0; color: var(--txt); }
+		.step-box p:last-child { margin-bottom: 0; }
+
+		.warning-box { background: rgba(244,183,64,.05); border: 1px solid rgba(244,183,64,.3); border-radius: 8px; padding: 16px; margin: 16px 0; display: flex; gap: 12px; align-items: flex-start; }
+		.warning-box svg { color: var(--gold); min-width: 20px; }
+		.warning-box p { margin: 0; font-size: 14.5px; }
+
+		footer{text-align:center;padding:40px 0;color:var(--txt-faint);font-size:13px;border-top:1px solid var(--line-soft);margin-top:60px}
+		.foot-links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;margin-bottom:18px}
+		.foot-links a{color:var(--txt-dim);text-decoration:none;font-family:var(--font-d);font-weight:600;font-size:13.5px}
+		.foot-links a:hover{color:var(--gold)}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<header>
+			<a href="./index.html" class="brand">
+				<div class="mark"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div>
+				<div>
+					<h1>TASKBAR<span>HERO</span></h1>
+					<p>Otimizador de Farm</p>
+				</div>
+			</a>
+			<nav style="display:flex;gap:10px;align-items:center">
+				<div class="dropdown">
+					<a class="dropbtn"><span>Guias</span> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+					<div class="drop-wrapper">
+						<div class="drop-content">
+							<a href="./tutorial.html">Como usar o Otimizador</a>
+							<a href="./guide.html">Guia de Ouro e XP</a>
+							<a href="./chest-drops.html">Mecânica de Baús</a>
+						</div>
+					</div>
+				</div>
+				<a class="gh" href="https://github.com/Rupelio/TBH-Optimizer" target="_blank" rel="noopener">
+					<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.29-.01-1.04-.02-2.05-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.39 1.24-3.23-.12-.31-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.18.77.84 1.24 1.92 1.24 3.23 0 4.62-2.81 5.64-5.49 5.94.43.37.81 1.1.81 2.22 0 1.6-.01 2.89-.01 3.29 0 .32.22.7.83.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/></svg>
+					<span>GitHub</span>
+				</a>
+			</nav>
+		</header>
+
+		<main>
+			<h1>Como usar o Otimizador (Tutorial)</h1>
+			<p class="lead">Entenda passo a passo como instalar e dominar o painel para descobrir o mapa perfeito pro seu farm.</p>
+
+			<h2>1. Download e Execução</h2>
+			
+			<div class="step-box">
+				<div class="step-num">1</div>
+				<h3>Baixe a versão mais recente</h3>
+				<p>Na página inicial do site, clique no botão principal para baixar o arquivo <code>optimizer.exe</code>. O programa não requer instalação, ele é "portable" (roda direto da pasta em que você baixar).</p>
+			</div>
+
+			<div class="step-box">
+				<div class="step-num">2</div>
+				<h3>Execute o programa</h3>
+				<p>Dê um duplo clique no <code>optimizer.exe</code>. Como este é um programa independente e não possui um certificado digital pago da Microsoft, o Windows SmartScreen provavelmente exibirá uma tela azul de alerta.</p>
+				<div class="warning-box">
+					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+					<p><strong>Aviso do SmartScreen:</strong> Clique em <b>"Mais informações"</b> e depois no botão <b>"Executar assim mesmo"</b>. O aplicativo é 100% seguro, de código aberto (disponível no GitHub), e opera de forma estritamente "somente leitura" (read-only), sem alterar a memória do jogo ou enviar seus dados para a internet.</p>
+				</div>
+			</div>
+
+			<div class="step-box">
+				<div class="step-num">3</div>
+				<h3>O painel abrirá sozinho</h3>
+				<p>Assim que o executável iniciar, ele criará um pequeno servidor local no seu PC e abrirá automaticamente o seu navegador padrão no endereço <code>http://localhost:8080</code>. Esta é a interface visual do Otimizador.</p>
+			</div>
+
+			<h2>2. Entendendo as Abas do Painel</h2>
+			<p>O otimizador possui um menu lateral com várias abas. Da esquerda você navega entre <strong>Painel, Fases, Conselheiro, Heróis, Inventário, Runas, Pets, Baús, Itens e Materiais</strong>. Veja como interpretar os dados de cada uma:</p>
+
+			<h3>Aba Painel (Fases e Ouro/h)</h3>
+			<p>A tela inicial compila seus "Clear Times" (tempos de limpeza de fase). A mágica acontece nas duas colunas finais da tabela:</p>
+			<ul>
+				<li><strong>Ouro/h Bruto:</strong> Mostra a expectativa real de ganho apenas com monstros e baú final, caso você deixe o jogo rodando 1 hora inteira naquela fase.</li>
+				<li><strong>Ouro/h Ajustado:</strong> Essa é a métrica principal. Ela calcula o ouro bruto e soma ao <strong>valor de mercado</strong> de todos os itens dropados. Fases que dropam itens mais raros sobem ao topo desta lista. Clique no título da coluna para ordenar e encontrar a sua melhor fase!</li>
+			</ul>
+
+			<h3>Aba Fases (Mapa Vivo)</h3>
+			<p>Um mapa interativo de todos os Atos e fases. Cada fase mostra os monstros, o ouro e o XP base, os baús que podem cair e o HP do chefe. É a forma visual de explorar para onde levar o seu farm.</p>
+
+			<h3>Aba Conselheiro (Progressão)</h3>
+			<p>Reúne recomendações de progressão a partir do seu save, ajudando a decidir o próximo passo de evolução do seu time. <em>Este recurso está em evolução, então o que ele exibe pode mudar entre versões.</em></p>
+
+			<h3>Aba Heróis</h3>
+			<p>Mostra os 10 slots equipados de cada herói e os encantamentos (rolls) de cada peça. Para cada encantamento o Otimizador indica quanto do "teto" você atingiu — ou seja, se aquele roll já é o melhor possível para o material usado ou se ainda dá pra melhorar.</p>
+
+			<h3>Aba Inventário (Síntese e Cubo)</h3>
+			<p>Lista mochila, armazém e banca, e resume o que dá para <strong>fundir (síntese)</strong>: o jogo funde 9 itens do mesmo tipo e grau para subir de raridade, e a aba sinaliza quais grupos já estão "fundíveis" (ignorando itens cadeados/bloqueados). No topo aparece o <strong>Nível do Cubo</strong> com a barra de EXP e as funções já destravadas.</p>
+
+			<h3>Aba de Experiência / Painel (XP)</h3>
+			<p>O XP não tem valor fixo, pois ele é dividido apenas entre os heróis que sobrevivem até o final da fase. O Otimizador monitora especificamente o seu XP/hora, considerando o tempo da corrida e se alguém do grupo tem morrido.</p>
+
+			<h3>Aba de Baús (Tracker)</h3>
+			<p>O Taskbar Hero usa o inventário da Steam, que possui tempos de recarga globais estritos.</p>
+			<ul>
+				<li><strong>Painel Superior:</strong> Mostra barras de progresso informando quando seu próximo baú (comum ou de chefe) será liberado pela Steam. O cronômetro conta os minutos regressivos.</li>
+				<li><strong>Tabela de Fases:</strong> Indica com exatidão a porcentagem (%) de chance de drop de baú comum ou baú azul (chefe) caso a Steam autorize um drop.</li>
+			</ul>
+
+			<h3>Abas Runas e Pets</h3>
+			<p>Catálogos dos multiplicadores ativos do seu jogo. As runas afetam diretamente ouro, XP e poder de combate; os pets dão bônus passivos. Útil para ver de relance o que está turbinando o seu farm.</p>
+
+			<h3>Aba de Itens (Loot) e Materiais</h3>
+			<p>Funciona como um catálogo enciclopédico. Você pode filtrar os itens que deseja encontrar, ver seus respectivos valores (em ouro) no mercado e quais fases possuem as melhores chances percentuais de derrubá-los. A aba <strong>Materiais</strong> faz o mesmo para pedras da alma e demais materiais de craft, que não ocupam slots de equipamento.</p>
+
+			<div class="cta-box" style="background:var(--bg-2); border:1px solid var(--line-soft); border-radius:12px; padding:24px; margin-top:40px; text-align:center;">
+				<h3 style="color:var(--gold); margin-top:0;">Pronto para otimizar seu jogo?</h3>
+				<p>Volte para a página inicial para fazer o download.</p>
+				<a href="./index.html" style="display:inline-block; padding:10px 20px; background:var(--panel); border:1px solid var(--gold); border-radius:8px; font-family:var(--font-d); font-weight:700; color:var(--txt); text-decoration:none;">Ir para a Página Inicial</a>
+			</div>
+		</main>
+	</div>
+
+	<footer>
+		<nav class="foot-links">
+			<a href="./index.html">Página Inicial</a>
+			<a href="./guide.html">Guia de Ouro/XP</a>
+			<a href="./chest-drops.html">Guia de Baús</a>
+			<a href="./privacy.html">Privacidade</a>
+			<a href="./terms.html">Termos de Uso</a>
+		</nav>
+		<p style="margin-top: 10px; opacity: 0.7;">Taskbar Hero Optimizer · Fan-made tool</p>
+	</footer>
+</body>
+</html>

@@ -1,43 +1,52 @@
-name: 'workflow'
+name: Release
 on:
   push:
-    branches:
-      - main
+    tags:
+      - 'v*'
 
 jobs:
     build:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v6
-            # - uses: actions/setup-python@v5
-            #   with:
-            #     python-version: '3.13'
-            # - run: pip install UnityPy Pillow
-            # - uses: actions/setup-dotnet@v5
-            #   with:
-            #     dotnet-version: '8.0'
-            # - run: |
-            #     curl -L -o dd.zip https://github.com/SteamRE/DepotDownloader/releases/latest/download/DepotDownloader-linux-x64.zip
-            #     unzip -o dd.zip -d dd
-            #     chmod +x dd/DepotDownloader
-            #     ./dd/DepotDownloader -app 3678970 -depot 3678971 -dir game
-            #     ls -R game | head -30
-            # - run: python tools/extract.py web --game game
+
             - uses: actions/setup-go@v5
               with:
                 go-version: '1.26'
-            - run: GOOS=windows GOARCH=amd64 go build -ldflags "-s -w -H=windowsgui -X optimizer/internal.es3Password=${{ secrets.TBH_ES3_KEY }} -X optimizer/internal.Version=1.0.${{ github.run_number }}" -o optimizer.exe .
-            - run: |
+
+            - name: Extract version from tag
+              run: |
+                echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
+
+            - name: Build optimizer
+              run: |
+                GOOS=windows GOARCH=amd64 go build \
+                -ldflags "-s -w -H=windowsgui \
+                -X optimizer/internal.es3Password=${{ secrets.TBH_ES3_KEY }} \
+                -X optimizer/internal.Version=1.0.${{ github.run_number }}" \
+                -o optimizer.exe .
+
+            - name: Generate site files
+              run: |
                 mkdir -p public
                 cp -r site/* public/
-                cp optimizer.exe public/
                 cp web/chest_drops.json public/
                 cp -r web/sprites public/
                 go run ./cmd/sitegen -site site -out public
                 SHA=$(sha256sum optimizer.exe | cut -d' ' -f1)
-                echo "{\"version\":\"1.0.${{ github.run_number }}\",\"exe\":\"optimizer.exe\",\"sha256\":\"$SHA\",\"notes\":\"Dados atualizados\"}" > public/version.json
+                GAMEVER=$(python3 -c "import json; print(json.load(open('web/chest_drops.json'))['gameVersion'])")
+                echo "$SHA optimizer.exe" > public/SHA256SUMS.txt
+                echo "{\"version\":\"1.0.${{ github.run_number }}\",\"exe\":\"optimizer.exe\",\"sha256\":\"$SHA\",\"notes\":\"Dados atualizados\",\"gameVersion\":\"$GAMEVER\"}" > public/version.json
 
-            - uses: cloudflare/wrangler-action@v3
+            - name: Create Github Release
+              uses: softprops/action-gh-release@v2
+              with:
+                files: |
+                    optimizer.exe
+                    public/SHA256SUMS.txt
+
+            - name: Deploy Cloudflare Pages
+              uses: cloudflare/wrangler-action@v3
               with:
                 apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
                 accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

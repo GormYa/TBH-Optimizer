@@ -43,3 +43,5 @@ tools/
 # binário compilado (injeta a chave ES3 via ldflags; nunca commitar)
 optimizer.exe
 node_modules/
+
+.superpowers

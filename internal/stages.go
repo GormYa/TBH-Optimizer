@@ -2,7 +2,10 @@ package internal
 
 import (
 	"encoding/json"
+	"sync"
 )
+
+var reportBuildMu sync.Mutex
 
 func LoadFarmStages(data []byte) (map[int]FarmStageInfo, error) {
 	var stages []FarmStageInfo
@@ -60,6 +63,9 @@ func xpMultiplierMeasured(stats []StageStats, farm map[int]FarmStageInfo) (float
 }
 
 func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
+	reportBuildMu.Lock()
+	defer reportBuildMu.Unlock()
+
 	ctrl.StageHistory.mu.RLock()
 	defer ctrl.StageHistory.mu.RUnlock()
 
@@ -239,6 +245,18 @@ func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
 		}
 	}
 
+	combat := buildCombatReport(ctrl.HeroEquipment, ctrl.RuneLevels, dps, calibrated)
+	var advisor *AdvisorReport
+	if combat != nil {
+		stageLvl := 0
+		for _, info := range ctrl.FarmStages {
+			if info.Level > stageLvl {
+				stageLvl = info.Level
+			}
+		}
+		advisor = buildAdvisorReport(ctrl.HeroEquipment, ctrl.RuneLevels, ctrl.Inventory,
+			calibrated, combat.CalibrationK, float64(ctrl.Gold), stageLvl)
+	}
 	return AnalyticsReport{
 		BestGoldStage:  bestGoldStage,
 		BestXpStage:    bestXpStage,
@@ -258,5 +276,7 @@ func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
 		CubeLevel:      ctrl.CubeLevel,
 		CubeExp:        ctrl.CubeExp,
 		CubeRecipes:    ctrl.CubeRecipes,
+		Combat:         combat,
+		Advisor:        advisor,
 	}
 }

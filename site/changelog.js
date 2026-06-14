@@ -7,6 +7,17 @@
 window.CHANGELOG = {
 	entries: [
         {
+            date: "2026-06-14",
+            version: "v1.1.0",
+            title: "New Advisor tab: combat-model progression guidance",
+            items: [
+                "New 'Advisor' tab built on a calibrated combat model (your real DPS plus the decompiled damage formula) — it tells you what to do next to grow faster.",
+                "Can I beat it? — boss fight-time and a viable/slow/unbeatable verdict per stage, derived from your measured DPS.",
+                "Item score — the weakest slot on each active hero and the best upgrade (fusion or higher grade) ranked by DPS gain.",
+                "Rune ranking — buyable runes ranked by DPS per gold, with a separate gold/XP list.",
+            ],
+        },
+        {
             data: "2026-06-13",
             version: "v1.0.41",
             title: "Map now features animated flag and estimated values.",

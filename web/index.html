@@ -967,6 +967,61 @@
 					</div>
 				</div>
 			</section>
+	<section v-show="view === 'conselheiro'" class="view">
+			<div class="cv-wrap">
+				<!-- ESQUERDA: o que fazer agora -->
+				<div class="cv-col">
+					<div class="cv-blk cv-act">
+						<div class="cv-lbl">{{ t('O que fazer agora') }}</div>
+						<p class="sm-note" v-if="!advisorCalibrated">{{ t('Rode algumas corridas pra calibrar o modelo de combate.') }}</p>
+						<div v-if="!advTopActions.length" class="cv-mut">{{ t('Sem ações no momento.') }}</div>
+						<div class="cv-arow" v-for="(a, i) in advTopActions" :key="i">
+							<span class="cv-tag" :class="'cv-t-' + a.kind">{{ actionTag(a.kind) }}</span>
+							<span class="cv-atxt" v-html="actionText(a)"></span>
+							<span class="cv-gain" :class="actionGainClass(a)">{{ actionGain(a) }}</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- DIREITA: saúde do build + quem carrega -->
+				<div class="cv-col">
+					<div class="cv-blk">
+						<div class="cv-lbl">{{ t('Saúde do build') }}</div>
+						<div><span class="cv-big">{{ formatNumber(Math.round(statsReport.effective_dps || 0)) }}</span> <span class="cv-mut">{{ t('DPS/s') }}</span>
+							<span class="cv-pill" :class="advisorCalibrated ? 'cv-ok' : 'cv-wait'">{{ advisorCalibrated ? t('Calibrado') : t('Não calibrado') }}</span>
+						</div>
+						<div class="cv-comp">
+							<div class="cv-crow"><span class="cv-mut">{{ t('Ataque') }}</span><span class="cv-cy">{{ Math.round(advComposition.atk_pct) }}%</span></div>
+							<div class="cv-cbar"><i :style="{ width: advComposition.atk_pct + '%', background: '#4fd1e0' }"></i></div>
+							<div class="cv-crow"><span class="cv-mut">{{ t('Crítico') }}</span><span class="cv-acc">{{ Math.round(advComposition.crit_pct) }}%</span></div>
+							<div class="cv-cbar"><i :style="{ width: advComposition.crit_pct + '%', background: '#ff9b6b' }"></i></div>
+							<div class="cv-crow"><span class="cv-mut">{{ t('Velocidade') }}</span><span class="cv-grn">{{ Math.round(advComposition.speed_pct) }}%</span></div>
+							<div class="cv-cbar"><i :style="{ width: advComposition.speed_pct + '%', background: '#5fe39b' }"></i></div>
+							<div class="cv-mut cv-est">{{ t('Distribuição aproximada do investimento.') }}</div>
+						</div>
+					</div>
+
+					<div class="cv-blk">
+						<div class="cv-lbl">{{ t('Quem carrega o time') }}</div>
+						<div class="cv-hero" v-for="h in advCarries" :key="h.hero_key">
+							<span class="cv-nm">{{ advHeroName(h.hero_key) }}</span>
+							<span class="cv-hbar"><i :style="{ width: Math.round(h.dps_share * 100) + '%', background: '#c08bff' }"></i></span>
+							<span class="cv-pct">{{ Math.round(h.dps_share * 100) }}%</span>
+							<button type="button" class="cv-roen" @click="toggleRole(h.hero_key)" :title="t('Marcar como tank')">{{ t('tank?') }}</button>
+						</div>
+						<template v-if="advTanks.length">
+							<div class="cv-divh">{{ t('Tanks (fora do ranking de dano)') }}</div>
+							<div class="cv-hero" v-for="h in advTanks" :key="h.hero_key">
+								<span class="cv-nm cv-blu">{{ advHeroName(h.hero_key) }}</span>
+								<span class="cv-role">{{ t('Tank') }}</span>
+								<span class="cv-mut cv-ehp">{{ t('HP ef.') }} ~{{ formatNumber(Math.round(h.effective_hp)) }} <span class="cv-est">({{ t('est.') }})</span></span>
+								<button type="button" class="cv-roen" @click="toggleRole(h.hero_key)" :title="t('Marcar como carry')">{{ t('carry?') }}</button>
+							</div>
+						</template>
+					</div>
+				</div>
+			</div>
+		</section>
 		</main>
 	</div>
 
@@ -1531,6 +1586,7 @@
 				const navItems = [
 					{ id: 'painel', label: 'Painel', icon: 'dashboard' },
 					{ id: 'fases', label: 'Fases', icon: 'map' },
+					{ id: 'conselheiro', label: 'Conselheiro', icon: 'sparkles' },
 					{ id: 'herois', label: 'Heróis', icon: 'hero' },
 					{ id: 'inventario', label: 'Inventário', icon: 'bag' },
 					{ id: 'runas', label: 'Runas', icon: 'sparkles' },
@@ -1544,6 +1600,46 @@
 				const viewTitle = computed(() => (navItems.find(n => n.id === view.value) || {}).label || '');
 				const stageMap = computed(() => { const m = {}; (stagesList.value || []).forEach(s => m[s.key] = s); return m; });
 				const stageHP = (key) => (stageMap.value[key] || {}).totalHP || 0;
+				// --- Conselheiro v2: consome report.combat / report.advisor ---
+				const advisor = computed(() => statsReport.value.advisor || null);
+				const combat = computed(() => statsReport.value.combat || null);
+				const advisorCalibrated = computed(() => !!(advisor.value && advisor.value.calibrated));
+				const advComposition = computed(() => (advisor.value && advisor.value.composition) || { atk_pct: 0, crit_pct: 0, speed_pct: 0 });
+				const advTopActions = computed(() => (advisor.value && advisor.value.top_actions) || []);
+				const advHeroes = computed(() => (advisor.value && advisor.value.heroes) || []);
+				const runeDpsRanks = computed(() => (advisor.value && advisor.value.runes && advisor.value.runes.dps) || []);
+				const runeGoldXpRanks = computed(() => (advisor.value && advisor.value.runes && advisor.value.runes.gold_xp) || []);
+				const advHeroName = (k) => { const b = heroesData.value[k] || {}; return packName('heroes', k, b.name || (t('Herói') + ' ' + k)); };
+
+				// Override de papel: preferência de UI (localStorage), vence o auto.
+				const roleOverrides = ref({});
+				try { roleOverrides.value = JSON.parse(localStorage.getItem('cv_role_overrides') || '{}'); } catch (e) { roleOverrides.value = {}; }
+				const roleOf = (h) => roleOverrides.value[h.hero_key] || h.role_auto || 'carry';
+				const toggleRole = (heroKey) => {
+					const h = advHeroes.value.find(x => x.hero_key === heroKey);
+					const cur = (h && roleOf(h)) || 'carry';
+					roleOverrides.value = { ...roleOverrides.value, [heroKey]: cur === 'tank' ? 'carry' : 'tank' };
+					try { localStorage.setItem('cv_role_overrides', JSON.stringify(roleOverrides.value)); } catch (e) { /* sem persistência */ }
+				};
+				const advCarries = computed(() => advHeroes.value.filter(h => roleOf(h) !== 'tank').slice().sort((a, b) => (b.dps_share - a.dps_share)));
+				const advTanks = computed(() => advHeroes.value.filter(h => roleOf(h) === 'tank'));
+
+				// Ações: tag + texto (nome do item/runa) + ganho.
+				const actionTag = (k) => ({ runa: t('Runa'), equipar: t('Equipar'), tank: t('Tank'), ouro: t('Ouro') }[k] || k);
+				const actionText = (a) => {
+					if (a.kind === 'runa') return t('Subir') + ' <b>' + runeName({ key: a.ref_key, name: '#' + a.ref_key }) + '</b>';
+					if (a.kind === 'ouro') return t('Subir') + ' <b>' + runeName({ key: a.ref_key, name: '#' + a.ref_key }) + '</b>';
+					const who = a.hero_key ? ' <span class="cv-mut">· ' + advHeroName(a.hero_key) + '</span>' : '';
+					if (a.kind === 'tank') return t('Equipar') + ' <b>' + itemName(a.ref_key) + '</b> ' + t('do seu inventário') + who;
+					return t('Equipar') + ' <b>' + itemName(a.ref_key) + '</b> ' + t('do seu inventário') + who;
+				};
+				const actionGain = (a) => {
+					if (a.kind === 'tank') return '+' + Math.round(a.delta_pct) + '% ' + t('HP ef.') + ' (' + t('est.') + ')';
+					if (a.kind === 'ouro') return '+' + Math.round(a.delta_pct) + '% ' + t('ouro');
+					if (advisorCalibrated.value) return '+' + formatNumber(Math.round(a.delta_dps)) + ' DPS';
+					return '+' + (a.delta_pct || 0).toFixed(1) + '% DPS ' + t('(modelo)');
+				};
+				const actionGainClass = (a) => ({ runa: 'cv-grn', equipar: 'cv-grn', tank: 'cv-blu', ouro: 'cv-acc' }[a.kind] || 'cv-grn');
 
 				// #1 Loot/hora: taxa total de baú por fase (soma de todos os baús que caem nela)
 				// cruzada com as corridas/hora (3600 / tempo médio).
@@ -2198,6 +2294,9 @@
 					lang, LANGS, t, setLang, chestName, monsterName, runeName, petName, matName, uniqueText,
 					statsReport, stagesList, calibBaseTime, calibLimitStage, calibLimitTime,
 					view, navItems, viewTitle, goView, sortKey, sortDir, globalSearch, searchActive, searchResults, pickSearch,
+					advisor, combat, advisorCalibrated, advComposition, advTopActions, advHeroes,
+					runeDpsRanks, runeGoldXpRanks, advHeroName, roleOf, toggleRole, advCarries, advTanks,
+					actionTag, actionText, actionGain, actionGainClass,
 					sortedStages, bestGoldData, bestXpData, bestComboData, totalRunsAllStages,
 					addStage, addTime, addMapTime, resetStage,
 					fetchStats, resetHistory, submitCalibration, setSort, rankBy, sortArrow,

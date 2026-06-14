@@ -1,0 +1,26 @@
+name: Site Deploy
+on:
+    push:
+        branches:
+            - main
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v6
+
+            - uses: actions/setup-go@v5
+              with:
+                go-version: '1.26'
+            - run: |
+                mkdir -p public
+                cp -r site/* public/
+                cp web/chest_drops.json public/
+                cp -r web/sprites public/
+                go run ./cmd/sitegen -site site -out public
+
+            - uses: cloudflare/wrangler-action@v3
+              with:
+                apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+                accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+                command: pages deploy public --project-name=tbh-optimizer

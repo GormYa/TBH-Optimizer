@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tbh-optimizer.pages.dev/sitemap.xml
+Sitemap: https://taskbarhero.fun/sitemap.xml

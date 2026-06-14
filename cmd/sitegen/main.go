@@ -240,6 +240,17 @@ func hreflangCluster(base string, langs []*langDict) string {
 	return b.String()
 }
 
+var secondaryPages = []struct {
+	path, freq, prio string
+	stamp            bool
+}{
+	{"/guide.html", "weekly", "0.8", true},
+	{"/tutorial.html", "weekly", "0.8", true},
+	{"/chest-drops.html", "weekly", "0.8", true},
+	{"/privacy.html", "yearly", "0.3", false},
+	{"/terms.html", "yearly", "0.3", false},
+}
+
 func sitemapXML(base string, langs []*langDict, today string) string {
 	var alt strings.Builder
 	fmt.Fprintf(&alt, "\t\t<xhtml:link rel=\"alternate\" hreflang=\"pt-BR\" href=\"%s/\"/>\n", base)
@@ -269,8 +280,13 @@ func sitemapXML(base string, langs []*langDict, today string) string {
 	for _, d := range langs {
 		writeURL(base+"/"+d.code+"/", today, "weekly", "0.9", true)
 	}
-	writeURL(base+"/privacy.html", "", "yearly", "0.3", false)
-	writeURL(base+"/terms.html", "", "yearly", "0.3", false)
+	for _, p := range secondaryPages {
+		lastmod := ""
+		if p.stamp {
+			lastmod = today
+		}
+		writeURL(base+p.path, lastmod, p.freq, p.prio, false)
+	}
 	b.WriteString("</urlset>\n")
 	return b.String()
 }

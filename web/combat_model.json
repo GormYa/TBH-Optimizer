@@ -1,0 +1,48 @@
+{
+  "_schema": "Fórmula de DPS por herói usada pelo modelo de combate calibrado da Etapa 5 (internal/combat.go). Confirmada por desassemblagem de AttackDamage() no GameAssembly.dll.",
+  "formula": "atk * atkSpeed * (1 + critChance * (critDamage - 1))",
+  "confirmed": true,
+  "source": "Disassembly de AttackDamage() (Fase A) + wiki taskbarhero.wiki/mechanics (constantes verificadas no binário). CORREÇÃO 2026-06-14: critDamage é o MULTIPLICADOR CHEIO; o bônus é (critDamage - 1).",
+  "crit": {
+    "type": "multiplicative",
+    "probabilistic": true,
+    "hitMultiplier": "critDamage (multiplicador cheio; ex. 1.4 = golpe crítico dá 1.4x = +40%)",
+    "expectedFactor": "1 + critChance * (critDamage - 1)",
+    "note": "critDamage é o multiplicador cheio (wiki: 'Crit Damage is a direct multiplier', DPS = AtkSpeed × AtkDmg × (1 + CritChance × (CritDamage − 1))). O helper de crit do binário retorna (critDamage - 1) como fração de bônus; nossa leitura anterior tratava o valor cru 1.4 como o próprio bônus (+140%), o que estava ERRADO — são +40%."
+  },
+  "evidence": {
+    "imageBase": "0x180000000",
+    "methods": {
+      "ActiveSkill$$AttackDamage": "0xa3cc60",
+      "bcd$$AttackDamage": "0xa50040",
+      "bce$$AttackDamage": "0xa504e0",
+      "bcg$$AttackDamage": "0xa506d0",
+      "bcp$$AttackDamage": "0xad8590",
+      "HunterExplosiveBolt$$AttackDamage": "0xad5460"
+    },
+    "critRollHelper": "0x18414e1c0 (retorna bool: golpe é crítico)",
+    "critBonusHelper": "0x180b70230 (retorna float: bônus de crit como fração)",
+    "classMultiplierHelper": "0x180903420 (bcd/bce/bcg: escala a base por multiplicador de classe/skill — constante, absorvido por k)",
+    "damageInfoLayout": "struct de 0x28 bytes; OriginDamage = float em offset +0x08; tipo/enum em +0x10",
+    "observed": "ActiveSkill/bcp: após rolar crit, fazem 'addss xmm0,1.0; mulss xmm0,[ret+8]; movss [ret+8],xmm0' — crit multiplica o dano do golpe por (1+bônus)."
+  },
+  "scale": {
+    "_schema": "Divisores p/ levar os valores CRUS de hero_base.json / enchants ao espaço da fórmula. critChance/critDmg viram FRAÇÃO; atkSpeed e atk ficam em pontos crus (a cadência absoluta golpes/s e a conversão ATK->dano dissolvem em k).",
+    "critChance": 100,
+    "critDmg": 1000,
+    "atkSpeed": 1,
+    "atk": 1,
+    "confirmed": "2026-06-14 via HeroInfoData (extract_hero_base.py). critChance=100 é restrição DURA (raw 20..50 só é prob<=1 com /100). critDmg=1000: raw 1400 -> 1.4 = MULTIPLICADOR cheio (golpe crit x1.4 = +40%), conforme wiki; ÷100 daria 14x (absurdo). Resíduo de escala em deltas que NÃO mudam crit é absorvido por k.",
+    "enchantPercentDivisor": 1000,
+    "_enchantNote": "Enchants/runas com stat percentual (ModType ADDITIVE) gravam o valor em décimos-de-% (rollVal no index.html divide por 10 e mostra %); fração = Value/1000. Stats FLAT (AttackDamage/AttackSpeed pontos) entram crus."
+  },
+  "notes": "atkSpeed (golpes/s) entra linearmente fora de AttackDamage() (no loop de ataque). A conversão base ATK->dano e os multiplicadores de classe/skill são constantes por setup e se dissolvem no fator de calibração k = effective_dps/modeled_dps. A escala de crit foi CONFIRMADA no campo 'scale' (Fase A2.5, hero_base.json); a forma da fórmula veio do disassembly.",
+  "survivability": {
+    "_schema": "Modelo de sobrevivência (HP efetivo) do Conselheiro v2. ESTIMATIVA — ignora dodge/block/resistências. Fonte: wiki taskbarhero.wiki/mechanics (constantes verificadas no binário, Unit.gnl -> ug.jir).",
+    "armorReduction": "Armor / (Armor + 14*StageLevel + 12), teto 75%",
+    "armorReductionExact": "Armor^2 / (Armor^2 + (14*StageLevel + 12) * (Armor + 0.4*Damage)) — versão com perfuração por golpe grande; o Conselheiro usa a forma simples",
+    "effectiveHP": "maxHp / (1 - reduction)",
+    "notes": "50% de redução quando Armor = 14*StageLevel+12; teto 75% ~3x esse limiar. Armadura só mitiga dano FÍSICO; elementos usam resistências (divisor 100, linear). Não modelado no v2."
+  },
+  "gameVersion": "1.00.11"
+}
