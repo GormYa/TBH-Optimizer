@@ -8,11 +8,21 @@ window.CHANGELOG = {
 	entries: [
         {
             data: "2026-06-13",
-            version: "v1.0.39-v1.0.40",
-            title: "Hotfix: xp do herói estava com float64",
+            version: "v1.0.41",
+            title: "Map now features animated flag and estimated values.",
             items: [
-                "Por pegar o xp do jogo como float64, o json.Unmarshal falhava e o monitoramento ficava retentando a cada 5s pra sempre"
-            ]
+                "Now in the map tab you can see the flag waving.",
+                "The map tooltip shows your earnings on that map.",
+                "It shows what can be found in the map's chest, and clicking on the chest takes you to more details.",
+            ],
+        },
+        {
+            data: "2026-06-13",
+            version: "v1.0.39-v1.0.40",
+            title: "Hotfix: Hero's XP was set to float64",
+            items: [
+                "Because it retrieved the game's XP as float64, the json.Unmarshal function failed, and the monitoring kept retrying every 5 seconds indefinitely.",
+            ],
         },
         {
             date: "2026-06-13",
