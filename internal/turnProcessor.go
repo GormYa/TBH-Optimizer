@@ -65,7 +65,6 @@ func setupWatcher(ctrl *Control) (string, *fsnotify.Watcher, error) {
 
 	InitializeChestLookup(ctrl.WebFiles, ctrl.GameDataDir)
 	InitializeRuneCosts(ctrl.WebFiles, ctrl.GameDataDir)
-	InitializeCombatData(ctrl.WebFiles, ctrl.GameDataDir)
 	if hist, err := LoadChestHistory(); err == nil {
 		ctrl.ChestHistory = hist
 	}
