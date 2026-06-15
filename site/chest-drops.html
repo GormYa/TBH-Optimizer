@@ -43,7 +43,7 @@
 			{
 				"@type": "Question",
 				"name": "Qual o cooldown dos baús no Taskbar Hero?",
-				"acceptedAnswer": { "@type": "Answer", "text": "O baú comum (cinza) tem cooldown de cerca de 11 minutos, com no máximo 3 drops em uma janela de 33 minutos. O baú de chefe de fase (azul) tem cooldown de cerca de 9 minutos, máximo 3 por janela de 27 minutos. Já o baú lendário de chefe de Ato é recompensa de primeira passagem e não tem cooldown." }
+				"acceptedAnswer": { "@type": "Answer", "text": "Até a versão 1.00.11, o baú comum (cinza) tinha cooldown de cerca de 11 minutos (máx. 3 por janela de 33 min) e o baú de chefe de fase (azul) cerca de 9 minutos (máx. 3 por janela de 27 min). A atualização 1.00.12 (Server Migration) reduziu esses tempos mínimos e passou o controle para o servidor do jogo; os novos valores são menores e não foram divulgados oficialmente. O baú lendário de chefe de Ato é recompensa de primeira passagem e não tem cooldown." }
 			},
 			{
 				"@type": "Question",
@@ -210,7 +210,11 @@
 			<p>Diferente de ouro e XP que são calculados e guardados puramente no seu arquivo de save local, <strong>os baús no Taskbar Hero são itens do Inventário da Steam (Steam Inventory Service)</strong>.</p>
 			<p>Isso significa que não importa a taxa de drop ("chestRate") que a fase indica ter: quem dita se você ganha um baú ou não são os limites rigorosos de <i>Cooldown</i> e <i>Daily Limit</i> definidos nos servidores da Valve.</p>
 
-			<h2>Tipos de Baús e Seus Cooldowns (Atualizado v1.00.11)</h2>
+			<h2>Tipos de Baús e Seus Cooldowns</h2>
+
+			<div class="info-panel" style="border-left-color:var(--chest-boss);background:rgba(59,130,246,.06)">
+				<p><strong>Atualização v1.00.12 (Server Migration):</strong> o patch <strong>reduziu</strong> os tempos mínimos de aquisição dos baús Comuns e de Chefe de Fase e moveu o controle do cooldown para o <strong>servidor do próprio jogo</strong> (não é mais apenas o Steam Inventory Service). Os tempos abaixo eram os vigentes <strong>até a v1.00.11</strong>; os novos são menores e não foram divulgados oficialmente. Por isso o otimizador agora <strong>estima o cooldown real medindo seus próprios drops</strong> em vez de confiar nos valores antigos.</p>
+			</div>
 
 			<div class="chest-card common">
 				<h3>Baú Comum (Cinza)</h3>
@@ -244,7 +248,8 @@
 
 			<div class="info-panel">
 				<p><strong>A Estratégia Avançada (Acúmulo de Baús Comuns):</strong><br>
-				A Steam impõe um <strong>limite diário de drops</strong> por conta (Daily Drop Limit) para qualquer jogo. Se você deixa os baús comuns (cinza) caírem e abrirem, o jogo gasta essa cota a cada ~11 minutos com itens de baixo valor. O truque dos veteranos: <i>mantenha os slots de baús comuns cheios e não os abra</i>. Com os slots comuns lotados, o próprio cliente do jogo <strong>para de pedir baús comuns à Steam</strong> (ele checa a capacidade local antes de rolar o drop), preservando sua cota diária inteira para os <strong>Baús de Boss (azul)</strong>, que usam uma fileira de slots independente. Resultado: quase toda a sua cota diária de drops vira baú azul. <em>(Encher os comuns não muda a taxa base, apenas protege a cota diária.)</em></p>
+				A Steam impõe um <strong>limite diário de drops</strong> por conta (Daily Drop Limit) para qualquer jogo. Se você deixa os baús comuns (cinza) caírem e abrirem, o jogo gasta essa cota a cada ~11 minutos com itens de baixo valor. O truque dos veteranos: <i>mantenha os slots de baús comuns cheios e não os abra</i>. Com os slots comuns lotados, o próprio cliente do jogo <strong>para de pedir baús comuns à Steam</strong> (ele checa a capacidade local antes de rolar o drop), preservando sua cota diária inteira para os <strong>Baús de Boss (azul)</strong>, que usam uma fileira de slots independente. Resultado: quase toda a sua cota diária de drops vira baú azul. <em>(Encher os comuns não muda a taxa base, apenas protege a cota diária.)</em><br><br>
+				<strong>Nota v1.00.12:</strong> com a migração de servidor, os baús que você possui passaram a ir para a <em>Mailbox</em> e o controle de drop ficou server-side. Essa técnica de acúmulo precisa ser <strong>reverificada</strong> nessa versão — pode ter mudado.</p>
 			</div>
 
 			<div class="cta-box">
