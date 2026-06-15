@@ -4,8 +4,10 @@ import (
 	"embed"
 	"encoding/json"
 	"fmt"
+	"math"
 	"os"
 	"path/filepath"
+	"sort"
 	"strconv"
 	"strings"
 	"sync"
@@ -55,8 +57,10 @@ type ChestFamilyStatus struct {
 }
 
 type ChestTrackerStatus struct {
-	Families   []ChestFamilyStatus `json:"families"`
-	SuggestMap int                 `json:"suggest_map"`
+	Families      []ChestFamilyStatus `json:"families"`
+	SuggestMap    int                 `json:"suggest_map"`
+	CooldownCaps  map[int]float64     `json:"cooldown_caps"`
+	ObservedRates map[int]float64     `json:"observed_rates"`
 }
 
 type stageAndType struct {
@@ -393,74 +397,120 @@ func GetChestName(defId int) string {
 	return fmt.Sprintf("Baú %d", defId)
 }
 
-func ProcessChestDrops(ctrl *Control, currentSave *InnerSaveData) {
-	if ctrl.LastBoxQuantity == nil {
-		ctrl.LastBoxQuantity = make(map[int64]int)
-		ctrl.LastBoxTypes = make(map[int64]int)
-		for i, uniqueId := range currentSave.BoxData.BoxUniqueId {
-			if uniqueId != 0 {
-				ctrl.LastBoxQuantity[uniqueId] = currentSave.BoxData.BoxQuantity[i]
-				ctrl.LastBoxTypes[uniqueId] = currentSave.BoxData.BoxTypes[i]
+type dropToRecord struct {
+	defId int
+	uid   int64
+}
+
+func seedBoxBaseline(ctrl *Control, currentSave *InnerSaveData) {
+	ctrl.LastBoxQuantity = make(map[int64]int)
+	ctrl.LastBoxTypes = make(map[int64]int)
+	ctrl.LastBoxBucketGet = make(map[string]bool)
+	for i, uniqueId := range currentSave.BoxData.BoxUniqueId {
+		if uniqueId != 0 {
+			ctrl.LastBoxQuantity[uniqueId] = currentSave.BoxData.BoxQuantity[i]
+			ctrl.LastBoxTypes[uniqueId] = currentSave.BoxData.BoxTypes[i]
+		}
+	}
+	for _, id := range currentSave.BoxBucketGetBoxList {
+		ctrl.LastBoxBucketGet[id] = true
+	}
+}
+
+func dropsFromBucketLedger(ctrl *Control, currentSave *InnerSaveData, itemIdMap map[int64]int) []dropToRecord {
+	typeByUid := make(map[int64]int)
+	for i, uid := range currentSave.BoxData.BoxUniqueId {
+		if uid != 0 {
+			typeByUid[uid] = currentSave.BoxData.BoxTypes[i]
+		}
+	}
+	var newDrops []dropToRecord
+	for _, idStr := range currentSave.BoxBucketGetBoxList {
+		if ctrl.LastBoxBucketGet[idStr] {
+			continue
+		}
+		ctrl.LastBoxBucketGet[idStr] = true
+		uid, _ := strconv.ParseInt(idStr, 10, 64)
+		defId := 0
+		if uid != 0 {
+			if d, ok := itemIdMap[uid]; ok && d != 0 {
+				defId = d
 			}
 		}
-		return
+		if defId == 0 {
+			bType := typeByUid[uid]
+			defId = GetBoxItemDefID(bType, uid, currentSave.CommonSaveData.CurrentStageKey, itemIdMap)
+		}
+		if defId != 0 {
+			newDrops = append(newDrops, dropToRecord{defId: defId, uid: uid})
+		}
 	}
-	itemIdMap, _ := scanSteamCached()
+	return newDrops
+}
 
+func dropsFromQuantityDiff(ctrl *Control, currentSave *InnerSaveData, itemIdMap map[int64]int) []dropToRecord {
 	oldTotalByType := make(map[int]int)
 	for uniqueId, qty := range ctrl.LastBoxQuantity {
 		bType := ctrl.LastBoxTypes[uniqueId]
 		oldTotalByType[bType] += qty
 	}
-
 	newTotalByType := make(map[int]int)
 	for i, uniqueId := range currentSave.BoxData.BoxUniqueId {
 		if uniqueId != 0 {
 			bType := currentSave.BoxData.BoxTypes[i]
-			qty := currentSave.BoxData.BoxQuantity[i]
-			newTotalByType[bType] += qty
+			newTotalByType[bType] += currentSave.BoxData.BoxQuantity[i]
 		}
-	}
-
-	type dropToRecord struct {
-		defId int
-		uid   int64
 	}
 	var newDrops []dropToRecord
-
 	for bType, newQty := range newTotalByType {
 		oldQty := oldTotalByType[bType]
-		if newQty > oldQty {
-			diff := newQty - oldQty
-
-			var newUniqueIds []int64
-			for i, uniqueId := range currentSave.BoxData.BoxUniqueId {
-				if uniqueId != 0 && currentSave.BoxData.BoxTypes[i] == bType {
-					if _, exists := ctrl.LastBoxQuantity[uniqueId]; !exists {
-						newUniqueIds = append(newUniqueIds, uniqueId)
-					}
-				}
-			}
-
-			for i := 0; i < diff; i++ {
-				var uniqueId int64 = 0
-				if i < len(newUniqueIds) {
-					uniqueId = newUniqueIds[i]
-				}
-
-				defId := 0
-				if uniqueId != 0 {
-					defId = GetBoxItemDefID(bType, uniqueId, currentSave.CommonSaveData.CurrentStageKey, itemIdMap)
-				}
-				if defId == 0 {
-					defId = GetBoxItemDefID(bType, 0, currentSave.CommonSaveData.CurrentStageKey, itemIdMap)
-				}
-
-				if defId != 0 {
-					newDrops = append(newDrops, dropToRecord{defId: defId, uid: uniqueId})
+		if newQty <= oldQty {
+			continue
+		}
+		diff := newQty - oldQty
+		var newUniqueIds []int64
+		for i, uniqueId := range currentSave.BoxData.BoxUniqueId {
+			if uniqueId != 0 && currentSave.BoxData.BoxTypes[i] == bType {
+				if _, exists := ctrl.LastBoxQuantity[uniqueId]; !exists {
+					newUniqueIds = append(newUniqueIds, uniqueId)
 				}
 			}
 		}
+		for i := 0; i < diff; i++ {
+			var uniqueId int64 = 0
+			if i < len(newUniqueIds) {
+				uniqueId = newUniqueIds[i]
+			}
+			defId := 0
+			if uniqueId != 0 {
+				defId = GetBoxItemDefID(bType, uniqueId, currentSave.CommonSaveData.CurrentStageKey, itemIdMap)
+			}
+			if defId == 0 {
+				defId = GetBoxItemDefID(bType, 0, currentSave.CommonSaveData.CurrentStageKey, itemIdMap)
+			}
+			if defId != 0 {
+				newDrops = append(newDrops, dropToRecord{defId: defId, uid: uniqueId})
+			}
+		}
+	}
+	return newDrops
+}
+
+func ProcessChestDrops(ctrl *Control, currentSave *InnerSaveData) {
+	if ctrl.LastBoxQuantity == nil {
+		seedBoxBaseline(ctrl, currentSave)
+		return
+	}
+	if ctrl.LastBoxBucketGet == nil {
+		ctrl.LastBoxBucketGet = make(map[string]bool)
+	}
+	itemIdMap, _ := scanSteamCached()
+
+	var newDrops []dropToRecord
+	if len(currentSave.BoxBucketGetBoxList) > 0 {
+		newDrops = dropsFromBucketLedger(ctrl, currentSave, itemIdMap)
+	} else {
+		newDrops = dropsFromQuantityDiff(ctrl, currentSave, itemIdMap)
 	}
 
 	ctrl.LastBoxQuantity = make(map[int64]int)
@@ -494,12 +544,37 @@ func ProcessChestDrops(ctrl *Control, currentSave *InnerSaveData) {
 	}
 }
 
+func empiricalIntervalMin(itemDefId int, history []ChestDropEvent) int {
+	var ts []time.Time
+	for _, ev := range history {
+		if ev.ItemDefID == itemDefId {
+			ts = append(ts, ev.Timestamp)
+		}
+	}
+	if len(ts) < 2 {
+		return 0
+	}
+	sort.Slice(ts, func(i, j int) bool { return ts[i].Before(ts[j]) })
+	best := 0
+	for i := 1; i < len(ts); i++ {
+		gap := int(ts[i].Sub(ts[i-1]).Minutes())
+		if gap > 0 && (best == 0 || gap < best) {
+			best = gap
+		}
+	}
+	return best
+}
+
 func CalculateCooldowns(itemDefId int, history []ChestDropEvent, cfg ChestCooldownConfig) (droppedInWindow int, windowRemaining int, cooldownRemaining int, status string) {
 	if cfg.DropInterval == 0 && cfg.DropWindow == 0 {
 		return 0, 0, 0, "available"
 	}
 	now := time.Now()
-	intervalDur := time.Duration(cfg.DropInterval) * time.Minute
+	intervalMin := cfg.DropInterval
+	if emp := empiricalIntervalMin(itemDefId, history); emp > 0 && emp < intervalMin {
+		intervalMin = emp
+	}
+	intervalDur := time.Duration(intervalMin) * time.Minute
 	windowDur := time.Duration(cfg.DropWindow) * time.Minute
 	var myDrops []time.Time
 	for _, ev := range history {
@@ -537,6 +612,60 @@ func CalculateCooldowns(itemDefId int, history []ChestDropEvent, cfg ChestCooldo
 		status = "cooldown"
 	}
 	return droppedInWindow, windowRemaining, cooldownRemaining, status
+}
+
+func chestHourlyCap(itemDefId int, steamConfigs map[int]ChestCooldownConfig, history []ChestDropEvent) (float64, bool) {
+	cfg := GetChestCooldownConfig(itemDefId, steamConfigs)
+	eff := cfg.DropInterval
+	if emp := empiricalIntervalMin(itemDefId, history); emp > 0 && emp < eff {
+		eff = emp
+	}
+	rate := math.Inf(1)
+	if eff > 0 {
+		rate = 60.0 / float64(eff)
+	}
+	if cfg.DropWindow > 0 && cfg.DropMaxPerWindow > 0 {
+		if w := float64(cfg.DropMaxPerWindow) * 60.0 / float64(cfg.DropWindow); w < rate {
+			rate = w
+		}
+	}
+	if math.IsInf(rate, 1) {
+		return 0, false
+	}
+	return rate, true
+}
+
+func observedDropRates(history []ChestDropEvent) map[int]float64 {
+	byDef := make(map[int][]time.Time)
+	for _, ev := range history {
+		byDef[ev.ItemDefID] = append(byDef[ev.ItemDefID], ev.Timestamp)
+	}
+	out := make(map[int]float64)
+	for def, ts := range byDef {
+		if len(ts) < 4 {
+			continue
+		}
+		sort.Slice(ts, func(i, j int) bool { return ts[i].Before(ts[j]) })
+		var gaps []float64
+		for i := 1; i < len(ts); i++ {
+			g := ts[i].Sub(ts[i-1]).Minutes()
+			if g > 0 && g <= 60 {
+				gaps = append(gaps, g)
+			}
+		}
+		if len(gaps) < 3 {
+			continue
+		}
+		sort.Float64s(gaps)
+		median := gaps[len(gaps)/2]
+		if len(gaps)%2 == 0 {
+			median = (gaps[len(gaps)/2-1] + gaps[len(gaps)/2]) / 2
+		}
+		if median > 0 {
+			out[def] = 60.0 / median
+		}
+	}
+	return out
 }
 
 func GetChestTrackerStatus(ctrl *Control) ChestTrackerStatus {
@@ -659,8 +788,17 @@ func GetChestTrackerStatus(ctrl *Control) ChestTrackerStatus {
 	} else if len(cappedStages) > 0 {
 		pickHighest(cappedStages)
 	}
+	caps := make(map[int]float64)
+	for defId := range chestNames {
+		if cap, ok := chestHourlyCap(defId, steamConfigs, history); ok {
+			caps[defId] = cap
+		}
+	}
+
 	return ChestTrackerStatus{
-		Families:   families,
-		SuggestMap: suggestMap,
+		Families:      families,
+		SuggestMap:    suggestMap,
+		CooldownCaps:  caps,
+		ObservedRates: observedDropRates(history),
 	}
 }

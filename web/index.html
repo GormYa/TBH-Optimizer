@@ -290,9 +290,12 @@
 										<div class="r1" :class="{ 'ret-warn': (stage.exp_retained != null ? stage.exp_retained : 1) < 0.999 }">{{ Math.round((stage.exp_retained != null ? stage.exp_retained : 1) * 100) }}%</div>
 									</td>
 									<td>
-										<template v-if="chestRateByStage[stage.stage_key]">
-											<div class="r1 g-drop">{{ formatItems(chestsPerHour(stage)) }} <small>/h</small></div>
-											<div class="r2">{{ fmtPct(chestRateByStage[stage.stage_key]) }} {{ t('por clear') }}</div>
+										<template v-if="chestPerHourByType(stage).length">
+											<div v-for="g in chestPerHourByType(stage)" :key="g.type" style="display:flex;align-items:center;gap:6px;line-height:1.55;white-space:nowrap">
+												<span class="chest-type" :class="typeClass(g.type)" style="font-size:10px">{{ typeLabel(g.type) }}</span>
+												<span class="g-drop">{{ formatItems(g.perHour) }}<small>/h</small></span>
+												<small class="muted" :title="g.measured ? t('Taxa medida do seu histórico (já inclui bônus de runas/pets)') : (g.cdBound ? t('Limitado pelo cooldown do baú (satura farmando)') : t('Estimado pela taxa de drop por corrida'))">{{ g.measured ? t('medido') : (g.cdBound ? t('cooldown') : fmtPct(g.pct)) }}</small>
+											</div>
 										</template>
 										<span class="r2 muted" v-else>—</span>
 									</td>
@@ -1658,19 +1661,62 @@
 				})));
 				const advHasImprovements = computed(() => advEnchImprovable.value.length || advSynthReady.value.length || advRunesBuyable.value.length || advStalledGear.value.length);
 
-				// #1 Loot/hora: taxa total de baú por fase (soma de todos os baús que caem nela)
-				// cruzada com as corridas/hora (3600 / tempo médio).
-				const chestRateByStage = computed(() => {
+				// #1 Baús/hora REALISTA, SEPARADO por tipo. Comum e Boss são baús diferentes:
+				// drops, valores e cooldowns distintos, e competem só pela cota diária da Steam --
+				// somá-los num número só engana. Cada baú é limitado pelo seu teto de cooldown
+				// (cooldown_caps do backend; o cooldown server-side é o gargalo real, não o drop
+				// rate). Act Boss (first-clear, sem cooldown recorrente) fica fora do /h.
+				const cooldownCaps = computed(() => chestTracker.value.cooldown_caps || {});
+				// taxa MEDIDA por itemdef (do histórico real) -> embute runa/pet/cooldown real/clear.
+				const observedRates = computed(() => chestTracker.value.observed_rates || {});
+				// stageKey -> [{defId, rate, type}]: cada baú e sua taxa específica naquela fase
+				const chestsByStage = computed(() => {
 					const m = {};
 					(chestData.value.chests || []).forEach(c => (c.stages || []).forEach(s => {
-						m[s.key] = (m[s.key] || 0) + (s.dropRatePercent || 0);
+						(m[s.key] = m[s.key] || []).push({ defId: c.id, rate: s.dropRatePercent || 0, type: c.type });
 					}));
 					return m;
 				});
-				const chestsPerHour = (stage) => {
-					const t = stage.avg_time_spent;
-					if (!t || t <= 0) return 0;
-					return (3600 / t) * ((chestRateByStage.value[stage.stage_key] || 0) / 100);
+				// Baús/hora por TIPO. O modelo depende de COMO o baú cai:
+				//  • Comum: cai de QUALQUER kill (centenas por clear), então você SATURA o cooldown
+				//    farmando -- o limite é o teto do cooldown, não o "% por clear" (que é ilusório).
+				//  • Boss: cai só ao matar o boss (1 chance por clear) -> limitado pelas corridas/hora,
+				//    a menos que isso estoure o teto do cooldown. Aí sim min(corridas×taxa, teto).
+				//  • Act Boss: first-clear, sem cooldown recorrente -> fora do /h.
+				const TYPE_RANK = { 'Stage Boss': 0, 'Common': 1 };
+				const typeRank = (tp) => (tp in TYPE_RANK) ? TYPE_RANK[tp] : 9;
+				const chestPerHourByType = (stage) => {
+					const tt = stage.avg_time_spent;
+					if (!tt || tt <= 0) return [];
+					const runs = 3600 / tt;
+					const caps = cooldownCaps.value;
+					const obs = observedRates.value;
+					const haveCaps = Object.keys(caps).length > 0;
+					const g = {};
+					(chestsByStage.value[stage.stage_key] || []).forEach(({ defId, rate, type }) => {
+						if (type === 'Act Boss') return;            // first-clear, não é /h
+						const rateBased = runs * (rate / 100);
+						const cap = haveCaps ? caps[defId] : null;
+						const measured = obs[defId];
+						let val, cdBound = false, isMeasured = false;
+						if (measured != null) {
+							// taxa MEDIDA do histórico: já inclui runa/pet/cooldown real/clear.
+							val = measured; isMeasured = true;
+						} else if (type === 'Common') {
+							val = (cap != null) ? cap : rateBased;  // comum satura o cooldown
+							cdBound = (cap != null);
+						} else {
+							// boss: limitado pelas corridas (cold-start, sem bônus de runa ainda)
+							val = (cap != null) ? Math.min(rateBased, cap) : rateBased;
+							cdBound = (cap != null && cap < rateBased);
+						}
+						const k = type || '?';
+						(g[k] = g[k] || { type: k, perHour: 0, pct: 0, cdBound: false, measured: false });
+						g[k].perHour += val; g[k].pct += rate;
+						g[k].cdBound = g[k].cdBound || cdBound;
+						g[k].measured = g[k].measured || isMeasured;
+					});
+					return Object.values(g).sort((a, b) => typeRank(a.type) - typeRank(b.type));
 				};
 				const formatItems = (n) => !n ? (0).toLocaleString(lang.value, { minimumFractionDigits: 1 }) : n.toLocaleString(lang.value, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 
@@ -2317,7 +2363,7 @@
 					sortedStages, bestGoldData, bestXpData, bestComboData, totalRunsAllStages,
 					addStage, addTime, addMapTime, resetStage,
 					fetchStats, resetHistory, submitCalibration, setSort, rankBy, sortArrow,
-					stageHP, chestRateByStage, chestsPerHour, formatItems,
+					stageHP, chestPerHourByType, formatItems,
 					stageDetails, fasesStage, openStageTab, stageDetail, stageSummary, stageChests, chestBaseItems, fmtInt, stageName, stageLevel,
 					monsterSprite, detailStageKeys, gotoStageDelta, fasesIndex, activeHeroList,
 					mapAct, mapDiff, mapActs, mapDiffs, mapBg, mapStages, mapLine, selectMapStage,

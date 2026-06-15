@@ -125,6 +125,8 @@ type InnerSaveData struct {
 		ArrangedPetKey    int     `json:"ArrangedPetKey"`
 	} `json:"commonSaveData"`
 	BoxData             BoxData          `json:"BoxData"`
+	BoxBucketGetBoxList []string         `json:"BoxBucketGetBoxList"`
+	BoxBucketUseBoxList []string         `json:"BoxBucketUseBoxList"`
 	CurrenySaveDatas    []Currency       `json:"currenySaveDatas"`
 	HeroSaveDatas       []Hero           `json:"heroSaveDatas"`
 	AttributeSaveDatas  []AttributeSave  `json:"attributeSaveDatas"`
@@ -222,6 +224,7 @@ type Control struct {
 	CubeRecipes         []CubeRecipeSave
 	LastBoxQuantity     map[int64]int
 	LastBoxTypes        map[int64]int
+	LastBoxBucketGet    map[string]bool
 	ChestHistory        []ChestDropEvent
 	WebFiles            embed.FS
 	GameDataDir         string
