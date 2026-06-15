@@ -33,6 +33,7 @@ jobs:
                 cp web/chest_drops.json public/
                 cp -r web/sprites public/
                 go run ./cmd/sitegen -site site -out public
+                cp optimizer.exe public/optimizer.exe
                 SHA=$(sha256sum optimizer.exe | cut -d' ' -f1)
                 GAMEVER=$(python3 -c "import json; print(json.load(open('web/chest_drops.json'))['gameVersion'])")
                 echo "$SHA optimizer.exe" > public/SHA256SUMS.txt
