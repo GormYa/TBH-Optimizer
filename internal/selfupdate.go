@@ -1,6 +1,7 @@
 package internal
 
 import (
+	"bytes"
 	"crypto/sha256"
 	"encoding/hex"
 	"encoding/json"
@@ -20,9 +21,8 @@ import (
 var Version = "1.0.0"
 
 // updateBaseURL: raiz publica do CDN com version.json + optimizer.exe (+ dados).
-// Troque pela sua URL (GitHub Releases publico, Cloudflare Pages, Vercel...).
-// Enquanto contiver "EXAMPLE" o auto-update fica DESLIGADO (nao quebra nada).
-const updateBaseURL = "https://tbh-optimizer.pages.dev/"
+
+const updateBaseURL = "https://taskbarhero.fun/"
 
 // ReleaseInfo e o conteudo do version.json publicado no CDN.
 type ReleaseInfo struct {
@@ -68,6 +68,9 @@ func CheckForUpdate(client *http.Client) (rel *ReleaseInfo, hasUpdate bool, err 
 	}
 	var r ReleaseInfo
 	if err := json.Unmarshal(body, &r); err != nil {
+		if bytes.HasPrefix(bytes.TrimSpace(body), []byte("<")) {
+			return nil, false, fmt.Errorf("servidor de update indisponivel no momento (tente de novo em instantes)")
+		}
 		return nil, false, fmt.Errorf("version.json invalido: %w", err)
 	}
 	return &r, isNewer(r.Version, Version), nil
@@ -90,7 +93,11 @@ func ApplySelfUpdate(client *http.Client, rel *ReleaseInfo) error {
 	if name == "" {
 		name = "optimizer.exe"
 	}
-	data, err := httpGet(client, updateBaseURL+name)
+	exeURL := updateBaseURL + name
+	if strings.HasPrefix(name, "http://") || strings.HasPrefix(name, "https://") {
+		exeURL = name
+	}
+	data, err := httpGet(client, exeURL)
 	if err != nil {
 		return err
 	}
