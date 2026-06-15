@@ -64,7 +64,8 @@ func setupWatcher(ctrl *Control) (string, *fsnotify.Watcher, error) {
 	ctrl.primeFirstClear = currentSave.CommonSaveData.CurrentStageWave != 0
 
 	InitializeChestLookup(ctrl.WebFiles, ctrl.GameDataDir)
-	InitializeRuneCosts(ctrl.WebFiles, ctrl.GameDataDir)
+	InitializeCombatData(ctrl.WebFiles, ctrl.GameDataDir)
+	InitializeRuneCosts()
 	if hist, err := LoadChestHistory(); err == nil {
 		ctrl.ChestHistory = hist
 	}

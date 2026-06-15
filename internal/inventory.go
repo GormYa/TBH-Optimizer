@@ -1,13 +1,14 @@
 package internal
 
 type StoredItem struct {
-	Location  string `json:"location"`
-	SlotIndex int    `json:"slot_index"`
-	ItemKey   int    `json:"item_key"`
-	UniqueId  int64  `json:"unique_id"`
-	IsChaotic bool   `json:"is_chaotic"`
-	IsBlocked bool   `json:"is_blocked"`
-	Enchants  int    `json:"enchants"`
+	Location    string        `json:"location"`
+	SlotIndex   int           `json:"slot_index"`
+	ItemKey     int           `json:"item_key"`
+	UniqueId    int64         `json:"unique_id"`
+	IsChaotic   bool          `json:"is_chaotic"`
+	IsBlocked   bool          `json:"is_blocked"`
+	Enchants    int           `json:"enchants"`
+	EnchantData []ItemEnchant `json:"-"`
 }
 
 func resolveInventory(save *InnerSaveData) []StoredItem {
@@ -28,19 +29,22 @@ func resolveInventory(save *InnerSaveData) []StoredItem {
 			return
 		}
 		ench := 0
+		var edata []ItemEnchant
 		for _, e := range it.EnchantData {
 			if e.StatModKey != 0 {
 				ench++
+				edata = append(edata, e)
 			}
 		}
 		out = append(out, StoredItem{
-			Location:  loc,
-			SlotIndex: slot,
-			ItemKey:   it.ItemKey,
-			UniqueId:  uid,
-			IsChaotic: it.IsChaotic,
-			IsBlocked: it.IsBlocked,
-			Enchants:  ench,
+			Location:    loc,
+			SlotIndex:   slot,
+			ItemKey:     it.ItemKey,
+			UniqueId:    uid,
+			IsChaotic:   it.IsChaotic,
+			IsBlocked:   it.IsBlocked,
+			Enchants:    ench,
+			EnchantData: edata,
 		})
 	}
 

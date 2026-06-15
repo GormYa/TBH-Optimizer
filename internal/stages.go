@@ -258,5 +258,6 @@ func (ctrl *Control) GenerateReportWithEstimates() AnalyticsReport {
 		CubeLevel:      ctrl.CubeLevel,
 		CubeExp:        ctrl.CubeExp,
 		CubeRecipes:    ctrl.CubeRecipes,
+		Advisor:        buildAdvisorReport(ctrl, dps, overhead, calibrated),
 	}
 }

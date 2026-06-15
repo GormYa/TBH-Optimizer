@@ -249,4 +249,5 @@ type AnalyticsReport struct {
 	CubeLevel      int                 `json:"cube_level"`
 	CubeExp        float64             `json:"cube_exp"`
 	CubeRecipes    []CubeRecipeSave    `json:"cube_recipes"`
+	Advisor        *AdvisorReport      `json:"advisor,omitempty"`
 }

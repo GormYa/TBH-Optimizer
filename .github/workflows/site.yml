@@ -3,9 +3,14 @@ on:
     push:
         branches:
             - main
+    workflow_run:
+        workflows: ["Release"]
+        types:
+            - completed
 jobs:
     deploy:
         runs-on: ubuntu-latest
+        if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
         steps:
             - uses: actions/checkout@v6
 
@@ -18,10 +23,6 @@ jobs:
                 cp web/chest_drops.json public/
                 cp -r web/sprites public/
                 go run ./cmd/sitegen -site site -out public
-                # Cada "pages deploy" substitui a producao INTEIRA. Sem reincluir os
-                # artefatos de update, o Site Deploy apagava version.json/optimizer.exe
-                # da producao -> auto-update dos exes antigos quebrava (HTML no version.json).
-                # Puxa-os do ultimo Release pra que toda producao fique completa.
                 BASE="https://github.com/Rupelio/TBH-Optimizer/releases/latest/download"
                 curl -fsSL "$BASE/optimizer.exe" -o public/optimizer.exe || echo "WARN: optimizer.exe ainda nao publicado"
                 curl -fsSL "$BASE/version.json" -o public/version.json || echo "WARN: version.json ainda nao e asset do release (ok ate v1.0.47)"
