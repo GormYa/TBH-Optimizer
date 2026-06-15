@@ -39,7 +39,8 @@ jobs:
                 SHA=$(sha256sum optimizer.exe | cut -d' ' -f1)
                 GAMEVER=$(python3 -c "import json; print(json.load(open('web/chest_drops.json'))['gameVersion'])")
                 echo "$SHA optimizer.exe" > public/SHA256SUMS.txt
-                echo "{\"version\":\"1.0.${{ github.run_number }}\",\"exe\":\"optimizer.exe\",\"sha256\":\"$SHA\",\"notes\":\"Dados atualizados\",\"gameVersion\":\"$GAMEVER\"}" > public/version.json
+                EXE_URL="https://github.com/${{ github.repository }}/releases/download/${{ github.ref_name }}/optimizer.exe"
+                echo "{\"version\":\"1.0.${{ github.run_number }}\",\"exe\":\"$EXE_URL\",\"sha256\":\"$SHA\",\"notes\":\"Dados atualizados\",\"gameVersion\":\"$GAMEVER\"}" > public/version.json
 
             - name: Create Github Release
               uses: softprops/action-gh-release@v2
