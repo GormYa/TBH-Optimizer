@@ -10,3 +10,8 @@
   Cache-Control: no-cache
 /version.json
   Cache-Control: no-cache
+# O exe muda a cada release. Sem revalidar, o edge servia o exe ANTIGO enquanto o
+# version.json (no-cache) ja tinha o sha NOVO -> "SHA-256 nao confere". no-cache
+# obriga a revalidar via ETag, casando exe e version.json na mesma publicacao.
+/optimizer.exe
+  Cache-Control: no-cache
