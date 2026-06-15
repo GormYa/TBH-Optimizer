@@ -47,6 +47,7 @@ jobs:
               with:
                 files: |
                     optimizer.exe
+                    public/version.json
                     public/SHA256SUMS.txt
 
             - name: Deploy Cloudflare Pages

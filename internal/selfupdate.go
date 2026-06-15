@@ -20,9 +20,11 @@ import (
 // e publicar o MESMO numero no version.json do CDN.
 var Version = "1.0.0"
 
-// updateBaseURL: raiz publica do CDN com version.json + optimizer.exe (+ dados).
-
-const updateBaseURL = "https://taskbarhero.fun/"
+// updateBaseURL: fonte da verdade do update = GitHub Releases (NAO o Cloudflare).
+// "releases/latest/download/" sempre serve os assets do ultimo release publicado,
+// sem cache de edge, sem fallback HTML e sem brigar com o deploy da landing.
+// version.json e optimizer.exe sao publicados como assets do release pelo CI.
+const updateBaseURL = "https://github.com/Rupelio/TBH-Optimizer/releases/latest/download/"
 
 // ReleaseInfo e o conteudo do version.json publicado no CDN.
 type ReleaseInfo struct {
