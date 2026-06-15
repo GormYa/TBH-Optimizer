@@ -25,7 +25,7 @@ jobs:
                 GOOS=windows GOARCH=amd64 go build \
                 -ldflags "-s -w -H=windowsgui \
                 -X optimizer/internal.es3Password=${{ secrets.TBH_ES3_KEY }} \
-                -X optimizer/internal.Version=1.0.${{ github.run_number }}" \
+                -X optimizer/internal.Version=${VERSION}" \
                 -o optimizer.exe .
 
             - name: Generate site files
@@ -39,7 +39,7 @@ jobs:
                 SHA=$(sha256sum optimizer.exe | cut -d' ' -f1)
                 GAMEVER=$(python3 -c "import json; print(json.load(open('web/chest_drops.json'))['gameVersion'])")
                 echo "$SHA optimizer.exe" > public/SHA256SUMS.txt
-                echo "{\"version\":\"1.0.${{ github.run_number }}\",\"exe\":\"optimizer.exe\",\"sha256\":\"$SHA\",\"notes\":\"Dados atualizados\",\"gameVersion\":\"$GAMEVER\"}" > public/version.json
+                echo "{\"version\":\"${VERSION}\",\"exe\":\"optimizer.exe\",\"sha256\":\"$SHA\",\"notes\":\"Dados atualizados\",\"gameVersion\":\"$GAMEVER\"}" > public/version.json
 
             - name: Create Github Release
               uses: softprops/action-gh-release@v2
