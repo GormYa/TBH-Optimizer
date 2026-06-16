@@ -8,7 +8,7 @@ window.CHANGELOG = {
 	entries: [
         {
             date: "2026-06-16",
-            version: "v1.1.1",
+            version: "v1.1.2",
             title: "Hotfix: sane stage estimates & item grade in the Advisor",
             items: [
                 "Fixed estimated gold and XP per hour exploding to absurd values (stages showing trillions of XP/h). Clearing your runs and measuring a low-level stage while heavily over-leveled poisoned the calibration — the exp-retention floor (1%) was used as a divisor, inflating the multiplier ~100x and carrying into every estimate. Calibration now only trusts stages where your hero is reasonably matched to the stage's level.",
