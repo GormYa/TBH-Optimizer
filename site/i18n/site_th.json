@@ -47,7 +47,24 @@
   "Contato": "ติดต่อ",
   "feito por um fã · Dados do jogo:": "ทำโดยแฟนเกม · ข้อมูลเกม:",
   "['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']": "['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.', 'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.']",
-  "Baixe a versão mais recente acima.": "ดาวน์โหลดเวอร์ชันล่าสุดได้ด้านบน"
+  "Baixe a versão mais recente acima.": "ดาวน์โหลดเวอร์ชันล่าสุดได้ด้านบน",
+  "<span>Guias</span>": "<span>คู่มือ</span>",
+  "Como usar o Otimizador": "วิธีใช้ตัวช่วย",
+  "Guia de Ouro e XP": "คู่มือโกลด์และ XP",
+  "Mecânica de Baús": "กลไกหีบ",
+  "Build mais recente: <b id=\"ver2\" style=\"color:var(--gold)\">—</b>": "บิลด์ล่าสุด: <b id=\"ver2\" style=\"color:var(--gold)\">—</b>",
+  "O Taskbar Hero Optimizer (TBH Optimizer) é uma ferramenta gratuita de código aberto feita para otimizar o ganho de Ouro (Gold), Experiência (XP) e Gerenciamento de Baús no jogo ocioso <i>Taskbar Hero</i>. Ele analisa o arquivo de salvamento do jogo em tempo real para calcular estatísticas exatas de eficiência por fase.": "Taskbar Hero Optimizer (TBH Optimizer) เป็นเครื่องมือฟรีแบบโอเพนซอร์สที่สร้างขึ้นเพื่อปรับการได้รับโกลด์ (Gold) ประสบการณ์ (XP) และการจัดการหีบในเกมไอเดิล <i>Taskbar Hero</i> ให้เหมาะที่สุด มันวิเคราะห์ไฟล์เซฟของเกมแบบเรียลไทม์เพื่อคำนวณสถิติประสิทธิภาพที่แม่นยำของแต่ละด่าน",
+  "O arquivo de save padrão do jogo é monitorado automaticamente pelo aplicativo no Windows. Ele fica localizado na pasta <code>%USERPROFILE%\\AppData\\LocalLow\\TesseractStudio\\TaskbarHero\\SaveFile_Live.es3</code>. O aplicativo lê este arquivo a cada atualização em tempo real, sem modificar seus dados.": "ไฟล์เซฟมาตรฐานของเกมจะถูกติดตามโดยอัตโนมัติผ่านแอปบน Windows มันอยู่ในโฟลเดอร์ <code>%USERPROFILE%\\AppData\\LocalLow\\TesseractStudio\\TaskbarHero\\SaveFile_Live.es3</code> แอปจะอ่านไฟล์นี้ทุกครั้งที่อัปเดตแบบเรียลไทม์ โดยไม่แก้ไขข้อมูลของคุณ",
+  "Os baús de Taskbar Hero são itens do Steam Inventory Service e possuem cooldowns validados no servidor da Steam. O monitor lê esses dados diretamente do cache do Steam local (<code>inventorymsgcache</code>). Os baús normais (cinza) possuem cooldown de 11 minutos (limite de 3 drops por 33 min), enquanto os baús de chefe de fase (azuis) possuem cooldown de 9 minutos (limite de 3 drops por 27 min).": "หีบใน Taskbar Hero เป็นไอเทมของ Steam Inventory Service และมีคูลดาวน์ที่ตรวจสอบบนเซิร์ฟเวอร์ของ Steam ตัวติดตามจะอ่านข้อมูลเหล่านี้โดยตรงจากแคชของ Steam ในเครื่อง (<code>inventorymsgcache</code>) หีบทั่วไป (สีเทา) มีคูลดาวน์ 11 นาที (จำกัด 3 ดรอปต่อ 33 นาที) ขณะที่หีบบอสด่าน (สีน้ำเงิน) มีคูลดาวน์ 9 นาที (จำกัด 3 ดรอปต่อ 27 นาที)",
+  "Sim! Deixar o inventário de baús comuns cheio impede que o jogo envie requisições de drops comuns para os servidores da Steam. Isso evita que você gaste o seu <b>Limite Diário de Drops da Steam (Daily Drop Limit)</b> com baús de menor valor, permitindo que todas as suas requisições diárias de drop sejam direcionadas exclusivamente para os valiosos baús de boss (azuis).": "ช่วย! การปล่อยให้คลังหีบทั่วไปเต็มจะทำให้เกมหยุดส่งคำขอดรอปหีบทั่วไปไปยังเซิร์ฟเวอร์ของ Steam สิ่งนี้ป้องกันไม่ให้คุณเปลือง <b>ขีดจำกัดดรอปต่อวันของ Steam (Daily Drop Limit)</b> ไปกับหีบมูลค่าต่ำ จึงทำให้คำขอดรอปต่อวันทั้งหมดของคุณถูกส่งไปยังหีบบอส (สีน้ำเงิน) ที่มีค่าเท่านั้น",
+  "Sim, é 100% segura. O otimizador opera estritamente de forma <b>somente leitura (read-only)</b>, analisando o save e o cache local sem alterar a memória do jogo, sem injetar código e sem alterar arquivos de salvamento. O código-fonte é totalmente aberto e auditável no GitHub.": "ปลอดภัย 100% ตัวช่วยทำงานในโหมด <b>อ่านอย่างเดียว (read-only)</b> อย่างเคร่งครัด โดยวิเคราะห์เซฟและแคชในเครื่อง โดยไม่แก้ไขหน่วยความจำของเกม ไม่ฉีดโค้ด และไม่แก้ไขไฟล์เซฟ ซอร์สโค้ดเป็นโอเพนซอร์สเต็มรูปแบบและตรวจสอบได้บน GitHub",
+  "Fan-made tool · Game content © Nugem Studio &amp; Tesseract Studio · Not affiliated with the developers": "เครื่องมือที่สร้างโดยแฟน · เนื้อหาเกม © Nugem Studio &amp; Tesseract Studio · ไม่มีส่วนเกี่ยวข้องกับผู้พัฒนา",
+  "Taskbar Hero Optimizer · feito por um fã · Dados do jogo: <span id=\"gamever\">—</span>": "Taskbar Hero Optimizer · ทำโดยแฟนเกม · ข้อมูลเกม: <span id=\"gamever\">—</span>",
+  "O que é o Taskbar Hero Optimizer?": "Taskbar Hero Optimizer คืออะไร?",
+  "Como encontrar o arquivo de save (SaveFile_Live.es3) do jogo?": "จะหาไฟล์เซฟ (SaveFile_Live.es3) ของเกมได้อย่างไร?",
+  "Como funciona o Cooldown e o Tracker de Baús?": "คูลดาวน์และตัวติดตามหีบทำงานอย่างไร?",
+  "O acúmulo de baús comuns melhora o drop de baús de boss?": "การสะสมหีบทั่วไปช่วยให้ดรอปหีบบอสดีขึ้นไหม?",
+  "A ferramenta é segura? Pode causar banimento?": "เครื่องมือนี้ปลอดภัยไหม? อาจทำให้โดนแบนหรือเปล่า?"
  },
  "pages": {
   "guide.html": {
@@ -93,7 +110,16 @@
    "Lembre-se de refazer esse teste a cada grande upgrade de Arma ou destrave de novo Herói.": "อย่าลืมทำการทดสอบนี้ใหม่ทุกครั้งที่อัปเกรดอาวุธครั้งใหญ่หรือปลดล็อกฮีโร่ใหม่",
    "Veja também": "ดูเพิ่มเติม",
    "<a href=\"./chest-drops.html\">Como funciona a mecânica de Drops e Cooldown de Baús</a>": "<a href=\"./chest-drops.html\">กลไกการดรอปและคูลดาวน์ของหีบทำงานอย่างไร</a>",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · เครื่องมือที่สร้างโดยแฟน"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · เครื่องมือที่สร้างโดยแฟน",
+   "<span>Guias</span>": "<span>คู่มือ</span>",
+   "Como usar o Otimizador": "วิธีใช้ตัวช่วย",
+   "Guia de Ouro e XP": "คู่มือโกลด์และ XP",
+   "Mecânica de Baús": "กลไกหีบ",
+   "Conhecer o Otimizador de Farm": "รู้จักตัวช่วยฟาร์ม",
+   "Página Inicial": "หน้าแรก",
+   "Guia de Baús": "คู่มือหีบ",
+   "Privacidade": "ความเป็นส่วนตัว",
+   "Termos de Uso": "ข้อกำหนดการใช้งาน"
   },
   "tutorial.html": {
    "Aprenda o passo a passo para baixar, executar e entender todas as estatísticas e métricas (Ouro/h, XP/h, Baús) do painel do Taskbar Hero Optimizer.": "เรียนรู้ทีละขั้นตอนในการดาวน์โหลด รัน และเข้าใจสถิติและตัวชี้วัดทั้งหมด (โกลด์ต่อชั่วโมง, XP ต่อชั่วโมง, หีบ) ของแผงควบคุม Taskbar Hero Optimizer",
@@ -152,7 +178,17 @@
    "Funciona como um catálogo enciclopédico. Você pode filtrar os itens que deseja encontrar, ver seus respectivos valores (em ouro) no mercado e quais fases possuem as melhores chances percentuais de derrubá-los. A aba <strong>Materiais</strong> faz o mesmo para pedras da alma e demais materiais de craft, que não ocupam slots de equipamento.": "ทำงานเหมือนแคตตาล็อกสารานุกรม คุณสามารถกรองไอเทมที่ต้องการค้นหา ดูมูลค่า (เป็นโกลด์) ในตลาดของแต่ละชิ้น และด่านใดมีเปอร์เซ็นต์โอกาสดรอปดีที่สุด แท็บ <strong>วัสดุ</strong> ทำเช่นเดียวกันสำหรับหินวิญญาณและวัสดุคราฟต์อื่นๆ ที่ไม่กินสล็อตอุปกรณ์",
    "Pronto para otimizar seu jogo?": "พร้อมปรับแต่งเกมของคุณให้เหมาะที่สุดแล้วหรือยัง?",
    "Volte para a página inicial para fazer o download.": "กลับไปที่หน้าแรกเพื่อดาวน์โหลด",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · เครื่องมือที่สร้างโดยแฟน"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · เครื่องมือที่สร้างโดยแฟน",
+   "<span>Guias</span>": "<span>คู่มือ</span>",
+   "Como usar o Otimizador": "วิธีใช้ตัวช่วย",
+   "Guia de Ouro e XP": "คู่มือโกลด์และ XP",
+   "Mecânica de Baús": "กลไกหีบ",
+   "Ir para a Página Inicial": "ไปหน้าแรก",
+   "Página Inicial": "หน้าแรก",
+   "Guia de Ouro/XP": "คู่มือโกลด์/XP",
+   "Guia de Baús": "คู่มือหีบ",
+   "Privacidade": "ความเป็นส่วนตัว",
+   "Termos de Uso": "ข้อกำหนดการใช้งาน"
   },
   "chest-drops.html": {
    "Entenda como funciona o sistema de inventário da Steam no Taskbar Hero. Tempos de cooldown dos baús azuis, limites diários de drop e como forçar drops raros.": "เข้าใจวิธีการทำงานของระบบคลังไอเทม Steam ใน Taskbar Hero เวลาคูลดาวน์ของหีบสีน้ำเงิน ขีดจำกัดดรอปต่อวัน และวิธีบังคับให้ดรอปของหายาก",
@@ -194,7 +230,30 @@
    "Nosso aplicativo gratuito monitora inteligentemente os seus drops e calcula os cooldowns em tempo real para exibir os temporizadores. Saiba exatamente quando o jogo poderá liberar seu próximo drop de Baú Azul!": "แอปฟรีของเราติดตามการดรอปของคุณอย่างชาญฉลาดและคำนวณคูลดาวน์แบบเรียลไทม์เพื่อแสดงตัวจับเวลา รู้ได้อย่างแม่นยำว่าเมื่อใดเกมจะปล่อยหีบสีน้ำเงินใบถัดไปของคุณได้!",
    "Veja também": "ดูเพิ่มเติม",
    "<a href=\"./guide.html\">Guia Matemático de Farm: Ouro/hora e XP/hora</a>": "<a href=\"./guide.html\">คู่มือคณิตศาสตร์การฟาร์ม: โกลด์ต่อชั่วโมงและ XP ต่อชั่วโมง</a>",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · เครื่องมือที่สร้างโดยแฟน"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · เครื่องมือที่สร้างโดยแฟน",
+   "<span>Guias</span>": "<span>คู่มือ</span>",
+   "Como usar o Otimizador": "วิธีใช้ตัวช่วย",
+   "Guia de Ouro e XP": "คู่มือโกลด์และ XP",
+   "Mecânica de Baús": "กลไกหีบ",
+   "Baixar o Otimizador de Baús": "ดาวน์โหลดตัวช่วยหีบ",
+   "Página Inicial": "หน้าแรก",
+   "Guia de Ouro/XP": "คู่มือโกลด์/XP",
+   "Privacidade": "ความเป็นส่วนตัว",
+   "Termos de Uso": "ข้อกำหนดการใช้งาน",
+   "Tempo de Cooldown": "เวลาคูลดาวน์",
+   "11 minutos": "11 นาที",
+   "Limite por Janela": "จำกัดต่อช่วงเวลา",
+   "3 Drops": "3 ดรอป",
+   "Tamanho da Janela": "ความยาวช่วงเวลา",
+   "33 minutos": "33 นาที",
+   "Cooldown (alto nível)": "คูลดาวน์ (เลเวลสูง)",
+   "9 minutos": "9 นาที",
+   "27 minutos": "27 นาที",
+   "Nenhum": "ไม่มี",
+   "Quando cai": "ดรอปเมื่อใด",
+   "1ª vez por chefe": "ครั้งแรกต่อบอส",
+   "Raridade": "ความหายาก",
+   "Lendária": "ตำนาน"
   }
  }
 }

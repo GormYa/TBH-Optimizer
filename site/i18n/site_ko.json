@@ -47,7 +47,24 @@
   "Contato": "문의",
   "feito por um fã · Dados do jogo:": "팬이 만들었습니다 · 게임 데이터:",
   "['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']": "['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월']",
-  "Baixe a versão mais recente acima.": "위에서 최신 버전을 다운로드하세요."
+  "Baixe a versão mais recente acima.": "위에서 최신 버전을 다운로드하세요.",
+  "<span>Guias</span>": "<span>가이드</span>",
+  "Como usar o Otimizador": "최적화 도구 사용법",
+  "Guia de Ouro e XP": "골드 &amp; XP 가이드",
+  "Mecânica de Baús": "상자 메커니즘",
+  "Build mais recente: <b id=\"ver2\" style=\"color:var(--gold)\">—</b>": "최신 빌드: <b id=\"ver2\" style=\"color:var(--gold)\">—</b>",
+  "O Taskbar Hero Optimizer (TBH Optimizer) é uma ferramenta gratuita de código aberto feita para otimizar o ganho de Ouro (Gold), Experiência (XP) e Gerenciamento de Baús no jogo ocioso <i>Taskbar Hero</i>. Ele analisa o arquivo de salvamento do jogo em tempo real para calcular estatísticas exatas de eficiência por fase.": "Taskbar Hero Optimizer(TBH Optimizer)는 방치형 게임 <i>Taskbar Hero</i>에서 골드(Gold), 경험치(XP) 획득과 상자 관리를 최적화하기 위해 만들어진 무료 오픈 소스 도구입니다. 게임의 세이브 파일을 실시간으로 분석해 스테이지별 정확한 효율 통계를 계산합니다.",
+  "O arquivo de save padrão do jogo é monitorado automaticamente pelo aplicativo no Windows. Ele fica localizado na pasta <code>%USERPROFILE%\\AppData\\LocalLow\\TesseractStudio\\TaskbarHero\\SaveFile_Live.es3</code>. O aplicativo lê este arquivo a cada atualização em tempo real, sem modificar seus dados.": "게임의 기본 세이브 파일은 Windows에서 앱이 자동으로 모니터링합니다. 이 파일은 <code>%USERPROFILE%\\AppData\\LocalLow\\TesseractStudio\\TaskbarHero\\SaveFile_Live.es3</code> 폴더에 있습니다. 앱은 데이터를 수정하지 않고 매 갱신마다 이 파일을 실시간으로 읽습니다.",
+  "Os baús de Taskbar Hero são itens do Steam Inventory Service e possuem cooldowns validados no servidor da Steam. O monitor lê esses dados diretamente do cache do Steam local (<code>inventorymsgcache</code>). Os baús normais (cinza) possuem cooldown de 11 minutos (limite de 3 drops por 33 min), enquanto os baús de chefe de fase (azuis) possuem cooldown de 9 minutos (limite de 3 drops por 27 min).": "Taskbar Hero의 상자는 Steam Inventory Service의 아이템이며 Steam 서버에서 검증된 쿨다운을 가집니다. 모니터는 이 데이터를 로컬 Steam 캐시(<code>inventorymsgcache</code>)에서 직접 읽습니다. 일반 상자(회색)는 쿨다운이 11분(33분당 최대 3개 드롭)이고, 스테이지 보스 상자(파란색)는 쿨다운이 9분(27분당 최대 3개 드롭)입니다.",
+  "Sim! Deixar o inventário de baús comuns cheio impede que o jogo envie requisições de drops comuns para os servidores da Steam. Isso evita que você gaste o seu <b>Limite Diário de Drops da Steam (Daily Drop Limit)</b> com baús de menor valor, permitindo que todas as suas requisições diárias de drop sejam direcionadas exclusivamente para os valiosos baús de boss (azuis).": "네! 일반 상자 인벤토리를 가득 채워 두면 게임이 Steam 서버에 일반 드롭 요청을 보내지 않게 됩니다. 이렇게 하면 가치가 낮은 상자에 <b>Steam 일일 드롭 제한(Daily Drop Limit)</b>을 소모하지 않게 되어, 일일 드롭 요청 전부를 값진 보스 상자(파란색)에만 집중할 수 있습니다.",
+  "Sim, é 100% segura. O otimizador opera estritamente de forma <b>somente leitura (read-only)</b>, analisando o save e o cache local sem alterar a memória do jogo, sem injetar código e sem alterar arquivos de salvamento. O código-fonte é totalmente aberto e auditável no GitHub.": "네, 100% 안전합니다. 최적화 도구는 엄격하게 <b>읽기 전용(read-only)</b>으로 작동하며, 게임 메모리를 변경하거나 코드를 주입하거나 세이브 파일을 변경하지 않고 세이브와 로컬 캐시를 분석합니다. 소스 코드는 GitHub에서 완전히 공개되어 있어 감사할 수 있습니다.",
+  "Fan-made tool · Game content © Nugem Studio &amp; Tesseract Studio · Not affiliated with the developers": "팬이 만든 도구 · 게임 콘텐츠 © Nugem Studio &amp; Tesseract Studio · 개발사와 무관함",
+  "Taskbar Hero Optimizer · feito por um fã · Dados do jogo: <span id=\"gamever\">—</span>": "Taskbar Hero Optimizer · 팬이 만들었습니다 · 게임 데이터: <span id=\"gamever\">—</span>",
+  "O que é o Taskbar Hero Optimizer?": "Taskbar Hero Optimizer란 무엇인가요?",
+  "Como encontrar o arquivo de save (SaveFile_Live.es3) do jogo?": "게임의 세이브 파일(SaveFile_Live.es3)은 어떻게 찾나요?",
+  "Como funciona o Cooldown e o Tracker de Baús?": "상자 쿨다운과 트래커는 어떻게 작동하나요?",
+  "O acúmulo de baús comuns melhora o drop de baús de boss?": "일반 상자를 쌓아두면 보스 상자 드롭이 좋아지나요?",
+  "A ferramenta é segura? Pode causar banimento?": "이 도구는 안전한가요? 밴을 당할 수 있나요?"
  },
  "pages": {
   "guide.html": {
@@ -93,7 +110,16 @@
    "Lembre-se de refazer esse teste a cada grande upgrade de Arma ou destrave de novo Herói.": "무기를 크게 업그레이드하거나 새 영웅을 해금할 때마다 이 테스트를 다시 하는 것을 잊지 마세요.",
    "Veja também": "함께 보기",
    "<a href=\"./chest-drops.html\">Como funciona a mecânica de Drops e Cooldown de Baús</a>": "<a href=\"./chest-drops.html\">상자 드롭과 쿨다운 메커니즘이 작동하는 방식</a>",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · 팬이 만든 도구"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · 팬이 만든 도구",
+   "<span>Guias</span>": "<span>가이드</span>",
+   "Como usar o Otimizador": "최적화 도구 사용법",
+   "Guia de Ouro e XP": "골드 &amp; XP 가이드",
+   "Mecânica de Baús": "상자 메커니즘",
+   "Conhecer o Otimizador de Farm": "파밍 최적화 도구 살펴보기",
+   "Página Inicial": "홈",
+   "Guia de Baús": "상자 가이드",
+   "Privacidade": "개인정보 처리방침",
+   "Termos de Uso": "이용약관"
   },
   "tutorial.html": {
    "Aprenda o passo a passo para baixar, executar e entender todas as estatísticas e métricas (Ouro/h, XP/h, Baús) do painel do Taskbar Hero Optimizer.": "Taskbar Hero Optimizer 대시보드를 다운로드하고 실행하며 모든 통계와 지표(시간당 골드, 시간당 XP, 상자)를 이해하는 단계별 방법을 배워보세요.",
@@ -152,7 +178,17 @@
    "Funciona como um catálogo enciclopédico. Você pode filtrar os itens que deseja encontrar, ver seus respectivos valores (em ouro) no mercado e quais fases possuem as melhores chances percentuais de derrubá-los. A aba <strong>Materiais</strong> faz o mesmo para pedras da alma e demais materiais de craft, que não ocupam slots de equipamento.": "백과사전식 카탈로그처럼 작동합니다. 찾고 싶은 아이템을 필터링하고, 각 아이템의 시장 가치(골드)와 어떤 스테이지가 가장 높은 드롭 확률을 가지는지 볼 수 있습니다. <strong>재료</strong> 탭은 장비 슬롯을 차지하지 않는 소울 스톤과 그 밖의 제작 재료에 대해 동일한 역할을 합니다.",
    "Pronto para otimizar seu jogo?": "게임을 최적화할 준비가 되셨나요?",
    "Volte para a página inicial para fazer o download.": "다운로드하려면 홈페이지로 돌아가세요.",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · 팬이 만든 도구"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · 팬이 만든 도구",
+   "<span>Guias</span>": "<span>가이드</span>",
+   "Como usar o Otimizador": "최적화 도구 사용법",
+   "Guia de Ouro e XP": "골드 &amp; XP 가이드",
+   "Mecânica de Baús": "상자 메커니즘",
+   "Ir para a Página Inicial": "홈으로",
+   "Página Inicial": "홈",
+   "Guia de Ouro/XP": "골드/XP 가이드",
+   "Guia de Baús": "상자 가이드",
+   "Privacidade": "개인정보 처리방침",
+   "Termos de Uso": "이용약관"
   },
   "chest-drops.html": {
    "Entenda como funciona o sistema de inventário da Steam no Taskbar Hero. Tempos de cooldown dos baús azuis, limites diários de drop e como forçar drops raros.": "Taskbar Hero에서 Steam 인벤토리 시스템이 어떻게 작동하는지 이해해 보세요. 파란 상자의 쿨다운 시간, 일일 드롭 제한, 희귀 드롭을 유도하는 방법.",
@@ -194,7 +230,30 @@
    "Nosso aplicativo gratuito monitora inteligentemente os seus drops e calcula os cooldowns em tempo real para exibir os temporizadores. Saiba exatamente quando o jogo poderá liberar seu próximo drop de Baú Azul!": "저희 무료 앱은 사용자의 드롭을 똑똑하게 모니터링하고 쿨다운을 실시간으로 계산해 타이머를 표시합니다. 게임이 다음 파란 상자 드롭을 언제 내보낼 수 있는지 정확하게 알아보세요!",
    "Veja também": "함께 보기",
    "<a href=\"./guide.html\">Guia Matemático de Farm: Ouro/hora e XP/hora</a>": "<a href=\"./guide.html\">파밍 수학 가이드: 시간당 골드와 시간당 XP</a>",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · 팬이 만든 도구"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · 팬이 만든 도구",
+   "<span>Guias</span>": "<span>가이드</span>",
+   "Como usar o Otimizador": "최적화 도구 사용법",
+   "Guia de Ouro e XP": "골드 &amp; XP 가이드",
+   "Mecânica de Baús": "상자 메커니즘",
+   "Baixar o Otimizador de Baús": "상자 최적화 도구 다운로드",
+   "Página Inicial": "홈",
+   "Guia de Ouro/XP": "골드/XP 가이드",
+   "Privacidade": "개인정보 처리방침",
+   "Termos de Uso": "이용약관",
+   "Tempo de Cooldown": "쿨다운 시간",
+   "11 minutos": "11분",
+   "Limite por Janela": "윈도우당 제한",
+   "3 Drops": "3 드롭",
+   "Tamanho da Janela": "윈도우 길이",
+   "33 minutos": "33분",
+   "Cooldown (alto nível)": "쿨다운 (고레벨)",
+   "9 minutos": "9분",
+   "27 minutos": "27분",
+   "Nenhum": "없음",
+   "Quando cai": "드롭 조건",
+   "1ª vez por chefe": "보스당 첫 회",
+   "Raridade": "희귀도",
+   "Lendária": "전설"
   }
  }
 }

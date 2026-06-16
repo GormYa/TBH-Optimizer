@@ -47,7 +47,24 @@
   "Contato": "Kontakt",
   "feito por um fã · Dados do jogo:": "zrobione przez fana · Dane z gry:",
   "['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']": "['sty', 'lut', 'mar', 'kwi', 'maj', 'cze', 'lip', 'sie', 'wrz', 'paź', 'lis', 'gru']",
-  "Baixe a versão mais recente acima.": "Pobierz najnowszą wersję powyżej."
+  "Baixe a versão mais recente acima.": "Pobierz najnowszą wersję powyżej.",
+  "<span>Guias</span>": "<span>Poradniki</span>",
+  "Como usar o Otimizador": "Jak używać Optymalizatora",
+  "Guia de Ouro e XP": "Poradnik Złota i XP",
+  "Mecânica de Baús": "Mechanika Skrzyń",
+  "Build mais recente: <b id=\"ver2\" style=\"color:var(--gold)\">—</b>": "Najnowszy build: <b id=\"ver2\" style=\"color:var(--gold)\">—</b>",
+  "O Taskbar Hero Optimizer (TBH Optimizer) é uma ferramenta gratuita de código aberto feita para otimizar o ganho de Ouro (Gold), Experiência (XP) e Gerenciamento de Baús no jogo ocioso <i>Taskbar Hero</i>. Ele analisa o arquivo de salvamento do jogo em tempo real para calcular estatísticas exatas de eficiência por fase.": "Taskbar Hero Optimizer (TBH Optimizer) to darmowe, otwartoźródłowe narzędzie stworzone do optymalizacji zysku Złota (Gold), Doświadczenia (XP) oraz zarządzania Skrzyniami w grze idle <i>Taskbar Hero</i>. Analizuje plik sejwa gry w czasie rzeczywistym, by wyliczać dokładne statystyki wydajności na każdym etapie.",
+  "O arquivo de save padrão do jogo é monitorado automaticamente pelo aplicativo no Windows. Ele fica localizado na pasta <code>%USERPROFILE%\\AppData\\LocalLow\\TesseractStudio\\TaskbarHero\\SaveFile_Live.es3</code>. O aplicativo lê este arquivo a cada atualização em tempo real, sem modificar seus dados.": "Domyślny plik sejwa gry jest automatycznie monitorowany przez aplikację w systemie Windows. Znajduje się w folderze <code>%USERPROFILE%\\AppData\\LocalLow\\TesseractStudio\\TaskbarHero\\SaveFile_Live.es3</code>. Aplikacja odczytuje ten plik przy każdej aktualizacji w czasie rzeczywistym, bez modyfikowania twoich danych.",
+  "Os baús de Taskbar Hero são itens do Steam Inventory Service e possuem cooldowns validados no servidor da Steam. O monitor lê esses dados diretamente do cache do Steam local (<code>inventorymsgcache</code>). Os baús normais (cinza) possuem cooldown de 11 minutos (limite de 3 drops por 33 min), enquanto os baús de chefe de fase (azuis) possuem cooldown de 9 minutos (limite de 3 drops por 27 min).": "Skrzynie w Taskbar Hero są przedmiotami Steam Inventory Service i mają cooldowny walidowane na serwerze Steam. Monitor odczytuje te dane bezpośrednio z lokalnego cache'u Steam (<code>inventorymsgcache</code>). Zwykłe skrzynie (szare) mają cooldown 11 minut (limit 3 dropów na 33 min), natomiast skrzynie bossa etapu (niebieskie) mają cooldown 9 minut (limit 3 dropów na 27 min).",
+  "Sim! Deixar o inventário de baús comuns cheio impede que o jogo envie requisições de drops comuns para os servidores da Steam. Isso evita que você gaste o seu <b>Limite Diário de Drops da Steam (Daily Drop Limit)</b> com baús de menor valor, permitindo que todas as suas requisições diárias de drop sejam direcionadas exclusivamente para os valiosos baús de boss (azuis).": "Tak! Trzymanie ekwipunku zwykłych skrzyń pełnym sprawia, że gra przestaje wysyłać żądania zwykłych dropów do serwerów Steam. Dzięki temu nie marnujesz swojego <b>Dziennego Limitu Dropów Steam (Daily Drop Limit)</b> na skrzynie o niższej wartości, pozwalając, by wszystkie twoje dzienne żądania dropów były kierowane wyłącznie na cenne skrzynie bossa (niebieskie).",
+  "Sim, é 100% segura. O otimizador opera estritamente de forma <b>somente leitura (read-only)</b>, analisando o save e o cache local sem alterar a memória do jogo, sem injetar código e sem alterar arquivos de salvamento. O código-fonte é totalmente aberto e auditável no GitHub.": "Tak, jest w 100% bezpieczna. Optymalizator działa ściśle w trybie <b>tylko do odczytu (read-only)</b>, analizując sejw i lokalny cache bez zmieniania pamięci gry, bez wstrzykiwania kodu i bez modyfikowania plików zapisu. Kod źródłowy jest w pełni otwarty i możliwy do audytu na GitHubie.",
+  "Fan-made tool · Game content © Nugem Studio &amp; Tesseract Studio · Not affiliated with the developers": "Fan-made tool · Game content © Nugem Studio &amp; Tesseract Studio · Not affiliated with the developers",
+  "Taskbar Hero Optimizer · feito por um fã · Dados do jogo: <span id=\"gamever\">—</span>": "Taskbar Hero Optimizer · zrobione przez fana · Dane z gry: <span id=\"gamever\">—</span>",
+  "O que é o Taskbar Hero Optimizer?": "Czym jest Taskbar Hero Optimizer?",
+  "Como encontrar o arquivo de save (SaveFile_Live.es3) do jogo?": "Jak znaleźć plik sejwa (SaveFile_Live.es3) gry?",
+  "Como funciona o Cooldown e o Tracker de Baús?": "Jak działa Cooldown i Tracker Skrzyń?",
+  "O acúmulo de baús comuns melhora o drop de baús de boss?": "Czy gromadzenie zwykłych skrzyń poprawia drop skrzyń bossa?",
+  "A ferramenta é segura? Pode causar banimento?": "Czy narzędzie jest bezpieczne? Czy może spowodować bana?"
  },
  "pages": {
   "guide.html": {
@@ -93,7 +110,16 @@
    "Lembre-se de refazer esse teste a cada grande upgrade de Arma ou destrave de novo Herói.": "Pamiętaj, by powtarzać ten test po każdym większym ulepszeniu Broni lub odblokowaniu nowego Bohatera.",
    "Veja também": "Zobacz także",
    "<a href=\"./chest-drops.html\">Como funciona a mecânica de Drops e Cooldown de Baús</a>": "<a href=\"./chest-drops.html\">Jak działa mechanika dropów i cooldownu skrzyń</a>",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Fan-made tool"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Fan-made tool",
+   "<span>Guias</span>": "<span>Poradniki</span>",
+   "Como usar o Otimizador": "Jak używać Optymalizatora",
+   "Guia de Ouro e XP": "Poradnik Złota i XP",
+   "Mecânica de Baús": "Mechanika Skrzyń",
+   "Conhecer o Otimizador de Farm": "Poznaj Optymalizator Farmienia",
+   "Página Inicial": "Strona główna",
+   "Guia de Baús": "Poradnik Skrzyń",
+   "Privacidade": "Prywatność",
+   "Termos de Uso": "Warunki korzystania"
   },
   "tutorial.html": {
    "Aprenda o passo a passo para baixar, executar e entender todas as estatísticas e métricas (Ouro/h, XP/h, Baús) do painel do Taskbar Hero Optimizer.": "Poznaj krok po kroku, jak pobrać, uruchomić i zrozumieć wszystkie statystyki i metryki (Złoto/h, XP/h, Skrzynie) panelu Taskbar Hero Optimizer.",
@@ -152,7 +178,17 @@
    "Funciona como um catálogo enciclopédico. Você pode filtrar os itens que deseja encontrar, ver seus respectivos valores (em ouro) no mercado e quais fases possuem as melhores chances percentuais de derrubá-los. A aba <strong>Materiais</strong> faz o mesmo para pedras da alma e demais materiais de craft, que não ocupam slots de equipamento.": "Działa jak encyklopedyczny katalog. Możesz filtrować przedmioty, które chcesz znaleźć, zobaczyć ich wartości (w złocie) na rynku oraz to, które etapy mają najlepsze procentowe szanse na ich wypadnięcie. Zakładka <strong>Materiały</strong> robi to samo dla kamieni duszy i pozostałych materiałów do craftu, które nie zajmują slotów wyposażenia.",
    "Pronto para otimizar seu jogo?": "Gotowy, by zoptymalizować swoją grę?",
    "Volte para a página inicial para fazer o download.": "Wróć na stronę główną, aby pobrać.",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Fan-made tool"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Fan-made tool",
+   "<span>Guias</span>": "<span>Poradniki</span>",
+   "Como usar o Otimizador": "Jak używać Optymalizatora",
+   "Guia de Ouro e XP": "Poradnik Złota i XP",
+   "Mecânica de Baús": "Mechanika Skrzyń",
+   "Ir para a Página Inicial": "Przejdź do strony głównej",
+   "Página Inicial": "Strona główna",
+   "Guia de Ouro/XP": "Poradnik Złota/XP",
+   "Guia de Baús": "Poradnik Skrzyń",
+   "Privacidade": "Prywatność",
+   "Termos de Uso": "Warunki korzystania"
   },
   "chest-drops.html": {
    "Entenda como funciona o sistema de inventário da Steam no Taskbar Hero. Tempos de cooldown dos baús azuis, limites diários de drop e como forçar drops raros.": "Poznaj działanie systemu ekwipunku Steam w Taskbar Hero. Czasy cooldownu niebieskich skrzyń, dzienne limity dropów oraz jak wymusić rzadkie dropy.",
@@ -194,7 +230,30 @@
    "Nosso aplicativo gratuito monitora inteligentemente os seus drops e calcula os cooldowns em tempo real para exibir os temporizadores. Saiba exatamente quando o jogo poderá liberar seu próximo drop de Baú Azul!": "Nasza darmowa aplikacja inteligentnie monitoruje twoje dropy i liczy cooldowny w czasie rzeczywistym, by wyświetlać liczniki. Dowiedz się dokładnie, kiedy gra będzie mogła wydać twój kolejny drop Niebieskiej Skrzyni!",
    "Veja também": "Zobacz także",
    "<a href=\"./guide.html\">Guia Matemático de Farm: Ouro/hora e XP/hora</a>": "<a href=\"./guide.html\">Matematyczny Poradnik Farmienia: Złoto/godzinę i XP/godzinę</a>",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Fan-made tool"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Fan-made tool",
+   "<span>Guias</span>": "<span>Poradniki</span>",
+   "Como usar o Otimizador": "Jak używać Optymalizatora",
+   "Guia de Ouro e XP": "Poradnik Złota i XP",
+   "Mecânica de Baús": "Mechanika Skrzyń",
+   "Baixar o Otimizador de Baús": "Pobierz Optymalizator Skrzyń",
+   "Página Inicial": "Strona główna",
+   "Guia de Ouro/XP": "Poradnik Złota/XP",
+   "Privacidade": "Prywatność",
+   "Termos de Uso": "Warunki korzystania",
+   "Tempo de Cooldown": "Czas odnowienia",
+   "11 minutos": "11 minut",
+   "Limite por Janela": "Limit na okno",
+   "3 Drops": "3 dropy",
+   "Tamanho da Janela": "Rozmiar okna",
+   "33 minutos": "33 minuty",
+   "Cooldown (alto nível)": "Odnowienie (wysoki poziom)",
+   "9 minutos": "9 minut",
+   "27 minutos": "27 minut",
+   "Nenhum": "Brak",
+   "Quando cai": "Kiedy wypada",
+   "1ª vez por chefe": "1. raz na bossa",
+   "Raridade": "Rzadkość",
+   "Lendária": "Legendarny"
   }
  }
 }

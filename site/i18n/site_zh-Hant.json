@@ -47,7 +47,24 @@
   "Contato": "聯絡方式",
   "feito por um fã · Dados do jogo:": "由粉絲製作 · 遊戲資料:",
   "['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']": "['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']",
-  "Baixe a versão mais recente acima.": "請在上方下載最新版本。"
+  "Baixe a versão mais recente acima.": "請在上方下載最新版本。",
+  "<span>Guias</span>": "<span>指南</span>",
+  "Como usar o Otimizador": "如何使用優化器",
+  "Guia de Ouro e XP": "金幣與經驗指南",
+  "Mecânica de Baús": "寶箱機制",
+  "Build mais recente: <b id=\"ver2\" style=\"color:var(--gold)\">—</b>": "最新版本:<b id=\"ver2\" style=\"color:var(--gold)\">—</b>",
+  "O Taskbar Hero Optimizer (TBH Optimizer) é uma ferramenta gratuita de código aberto feita para otimizar o ganho de Ouro (Gold), Experiência (XP) e Gerenciamento de Baús no jogo ocioso <i>Taskbar Hero</i>. Ele analisa o arquivo de salvamento do jogo em tempo real para calcular estatísticas exatas de eficiência por fase.": "Taskbar Hero Optimizer(TBH Optimizer)是一款免費的開放原始碼工具,專為在放置遊戲 <i>Taskbar Hero</i> 中優化金幣(Gold)、經驗(XP)收益與寶箱管理而打造。它會即時分析遊戲存檔,計算每個關卡精確的效率統計數據。",
+  "O arquivo de save padrão do jogo é monitorado automaticamente pelo aplicativo no Windows. Ele fica localizado na pasta <code>%USERPROFILE%\\AppData\\LocalLow\\TesseractStudio\\TaskbarHero\\SaveFile_Live.es3</code>. O aplicativo lê este arquivo a cada atualização em tempo real, sem modificar seus dados.": "在 Windows 上,應用程式會自動監控遊戲的預設存檔。它位於 <code>%USERPROFILE%\\AppData\\LocalLow\\TesseractStudio\\TaskbarHero\\SaveFile_Live.es3</code> 資料夾中。應用程式會在每次更新時即時讀取這個檔案,不會修改你的資料。",
+  "Os baús de Taskbar Hero são itens do Steam Inventory Service e possuem cooldowns validados no servidor da Steam. O monitor lê esses dados diretamente do cache do Steam local (<code>inventorymsgcache</code>). Os baús normais (cinza) possuem cooldown de 11 minutos (limite de 3 drops por 33 min), enquanto os baús de chefe de fase (azuis) possuem cooldown de 9 minutos (limite de 3 drops por 27 min).": "Taskbar Hero 的寶箱是 Steam Inventory Service 的道具,並具有經 Steam 伺服器驗證的冷卻時間。監控器會直接從本機 Steam 快取(<code>inventorymsgcache</code>)讀取這些資料。普通寶箱(灰色)的冷卻時間為 11 分鐘(每 33 分鐘最多 3 次掉落),而關卡 Boss 寶箱(藍色)的冷卻時間為 9 分鐘(每 27 分鐘最多 3 次掉落)。",
+  "Sim! Deixar o inventário de baús comuns cheio impede que o jogo envie requisições de drops comuns para os servidores da Steam. Isso evita que você gaste o seu <b>Limite Diário de Drops da Steam (Daily Drop Limit)</b> com baús de menor valor, permitindo que todas as suas requisições diárias de drop sejam direcionadas exclusivamente para os valiosos baús de boss (azuis).": "會!讓普通寶箱的庫存保持填滿,可以阻止遊戲向 Steam 伺服器發送普通寶箱的掉落請求。這能避免你把 <b>Steam 每日掉落上限(Daily Drop Limit)</b>浪費在價值較低的寶箱上,讓你每天所有的掉落請求都能專門導向珍貴的 Boss 寶箱(藍色)。",
+  "Sim, é 100% segura. O otimizador opera estritamente de forma <b>somente leitura (read-only)</b>, analisando o save e o cache local sem alterar a memória do jogo, sem injetar código e sem alterar arquivos de salvamento. O código-fonte é totalmente aberto e auditável no GitHub.": "是的,它 100% 安全。優化器嚴格以<b>唯讀(read-only)</b>方式運作,只分析存檔與本機快取,不會修改遊戲記憶體、不會注入程式碼,也不會更動存檔。原始碼完全開放,可在 GitHub 上稽核。",
+  "Fan-made tool · Game content © Nugem Studio &amp; Tesseract Studio · Not affiliated with the developers": "粉絲自製工具 · 遊戲內容 © Nugem Studio &amp; Tesseract Studio · 與開發者無任何關聯",
+  "Taskbar Hero Optimizer · feito por um fã · Dados do jogo: <span id=\"gamever\">—</span>": "Taskbar Hero Optimizer · 由粉絲製作 · 遊戲資料:<span id=\"gamever\">—</span>",
+  "O que é o Taskbar Hero Optimizer?": "什麼是 Taskbar Hero Optimizer?",
+  "Como encontrar o arquivo de save (SaveFile_Live.es3) do jogo?": "如何找到遊戲的存檔(SaveFile_Live.es3)?",
+  "Como funciona o Cooldown e o Tracker de Baús?": "寶箱的冷卻時間與追蹤器如何運作?",
+  "O acúmulo de baús comuns melhora o drop de baús de boss?": "囤積普通寶箱能提升 Boss 寶箱的掉落嗎?",
+  "A ferramenta é segura? Pode causar banimento?": "這個工具安全嗎?會不會導致封鎖?"
  },
  "pages": {
   "guide.html": {
@@ -93,7 +110,16 @@
    "Lembre-se de refazer esse teste a cada grande upgrade de Arma ou destrave de novo Herói.": "記得每次有重大武器升級或解鎖新英雄時,都要重新做一次這個測試。",
    "Veja também": "另請參閱",
    "<a href=\"./chest-drops.html\">Como funciona a mecânica de Drops e Cooldown de Baús</a>": "<a href=\"./chest-drops.html\">寶箱掉落與冷卻機制如何運作</a>",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · 粉絲自製工具"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · 粉絲自製工具",
+   "<span>Guias</span>": "<span>指南</span>",
+   "Como usar o Otimizador": "如何使用優化器",
+   "Guia de Ouro e XP": "金幣與經驗指南",
+   "Mecânica de Baús": "寶箱機制",
+   "Conhecer o Otimizador de Farm": "了解刷圖優化器",
+   "Página Inicial": "首頁",
+   "Guia de Baús": "寶箱指南",
+   "Privacidade": "隱私權政策",
+   "Termos de Uso": "使用條款"
   },
   "tutorial.html": {
    "Aprenda o passo a passo para baixar, executar e entender todas as estatísticas e métricas (Ouro/h, XP/h, Baús) do painel do Taskbar Hero Optimizer.": "一步步學習如何下載、執行並理解 Taskbar Hero Optimizer 面板中的所有統計與指標(每小時金幣、每小時經驗、寶箱)。",
@@ -152,7 +178,17 @@
    "Funciona como um catálogo enciclopédico. Você pode filtrar os itens que deseja encontrar, ver seus respectivos valores (em ouro) no mercado e quais fases possuem as melhores chances percentuais de derrubá-los. A aba <strong>Materiais</strong> faz o mesmo para pedras da alma e demais materiais de craft, que não ocupam slots de equipamento.": "它的作用就像一本百科全書式的目錄。你可以篩選想找的道具,查看它們在市場上的對應價值(以金幣計),以及哪些關卡有最高的掉落機率百分比。<strong>材料</strong>分頁則對靈魂石及其他不佔裝備欄位的製作材料做同樣的事。",
    "Pronto para otimizar seu jogo?": "準備好優化你的遊戲了嗎?",
    "Volte para a página inicial para fazer o download.": "回到首頁進行下載。",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · 粉絲自製工具"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · 粉絲自製工具",
+   "<span>Guias</span>": "<span>指南</span>",
+   "Como usar o Otimizador": "如何使用優化器",
+   "Guia de Ouro e XP": "金幣與經驗指南",
+   "Mecânica de Baús": "寶箱機制",
+   "Ir para a Página Inicial": "前往首頁",
+   "Página Inicial": "首頁",
+   "Guia de Ouro/XP": "金幣/經驗指南",
+   "Guia de Baús": "寶箱指南",
+   "Privacidade": "隱私權政策",
+   "Termos de Uso": "使用條款"
   },
   "chest-drops.html": {
    "Entenda como funciona o sistema de inventário da Steam no Taskbar Hero. Tempos de cooldown dos baús azuis, limites diários de drop e como forçar drops raros.": "理解 Taskbar Hero 中 Steam 庫存系統的運作方式。藍色寶箱的冷卻時間、每日掉落上限,以及如何強制取得稀有掉落。",
@@ -194,7 +230,30 @@
    "Nosso aplicativo gratuito monitora inteligentemente os seus drops e calcula os cooldowns em tempo real para exibir os temporizadores. Saiba exatamente quando o jogo poderá liberar seu próximo drop de Baú Azul!": "我們的免費應用程式會智慧地監控你的掉落,並即時計算冷卻時間以顯示計時器。精確掌握遊戲何時能釋出你下一個藍色寶箱的掉落!",
    "Veja também": "另請參閱",
    "<a href=\"./guide.html\">Guia Matemático de Farm: Ouro/hora e XP/hora</a>": "<a href=\"./guide.html\">刷圖數學指南:每小時金幣與每小時經驗</a>",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · 粉絲自製工具"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · 粉絲自製工具",
+   "<span>Guias</span>": "<span>指南</span>",
+   "Como usar o Otimizador": "如何使用優化器",
+   "Guia de Ouro e XP": "金幣與經驗指南",
+   "Mecânica de Baús": "寶箱機制",
+   "Baixar o Otimizador de Baús": "下載寶箱優化器",
+   "Página Inicial": "首頁",
+   "Guia de Ouro/XP": "金幣/經驗指南",
+   "Privacidade": "隱私權政策",
+   "Termos de Uso": "使用條款",
+   "Tempo de Cooldown": "冷卻時間",
+   "11 minutos": "11 分鐘",
+   "Limite por Janela": "每個視窗上限",
+   "3 Drops": "3 次掉落",
+   "Tamanho da Janela": "視窗時長",
+   "33 minutos": "33 分鐘",
+   "Cooldown (alto nível)": "冷卻（高等級）",
+   "9 minutos": "9 分鐘",
+   "27 minutos": "27 分鐘",
+   "Nenhum": "無",
+   "Quando cai": "何時掉落",
+   "1ª vez por chefe": "每個 Boss 首次",
+   "Raridade": "稀有度",
+   "Lendária": "傳說"
   }
  }
 }

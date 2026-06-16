@@ -47,7 +47,24 @@
   "Contato": "İletişim",
   "feito por um fã · Dados do jogo:": "bir hayran yaptı · Oyun verileri:",
   "['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']": "['Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara']",
-  "Baixe a versão mais recente acima.": "Yukarıdan en yeni sürümü indir."
+  "Baixe a versão mais recente acima.": "Yukarıdan en yeni sürümü indir.",
+  "<span>Guias</span>": "<span>Rehberler</span>",
+  "Como usar o Otimizador": "Optimizer Nasıl Kullanılır",
+  "Guia de Ouro e XP": "Altın &amp; XP Rehberi",
+  "Mecânica de Baús": "Sandık Mekaniği",
+  "Build mais recente: <b id=\"ver2\" style=\"color:var(--gold)\">—</b>": "En yeni build: <b id=\"ver2\" style=\"color:var(--gold)\">—</b>",
+  "O Taskbar Hero Optimizer (TBH Optimizer) é uma ferramenta gratuita de código aberto feita para otimizar o ganho de Ouro (Gold), Experiência (XP) e Gerenciamento de Baús no jogo ocioso <i>Taskbar Hero</i>. Ele analisa o arquivo de salvamento do jogo em tempo real para calcular estatísticas exatas de eficiência por fase.": "Taskbar Hero Optimizer (TBH Optimizer), <i>Taskbar Hero</i> idle oyununda Altın (Gold), Deneyim (XP) kazancını ve Sandık Yönetimini optimize etmek için yapılmış ücretsiz, açık kaynaklı bir araçtır. Bölüm başına tam verimlilik istatistiklerini hesaplamak için oyunun kayıt dosyasını gerçek zamanlı analiz eder.",
+  "O arquivo de save padrão do jogo é monitorado automaticamente pelo aplicativo no Windows. Ele fica localizado na pasta <code>%USERPROFILE%\\AppData\\LocalLow\\TesseractStudio\\TaskbarHero\\SaveFile_Live.es3</code>. O aplicativo lê este arquivo a cada atualização em tempo real, sem modificar seus dados.": "Oyunun varsayılan kayıt dosyası, Windows'taki uygulama tarafından otomatik olarak izlenir. <code>%USERPROFILE%\\AppData\\LocalLow\\TesseractStudio\\TaskbarHero\\SaveFile_Live.es3</code> klasöründe bulunur. Uygulama bu dosyayı her güncellemede gerçek zamanlı okur, verilerini değiştirmez.",
+  "Os baús de Taskbar Hero são itens do Steam Inventory Service e possuem cooldowns validados no servidor da Steam. O monitor lê esses dados diretamente do cache do Steam local (<code>inventorymsgcache</code>). Os baús normais (cinza) possuem cooldown de 11 minutos (limite de 3 drops por 33 min), enquanto os baús de chefe de fase (azuis) possuem cooldown de 9 minutos (limite de 3 drops por 27 min).": "Taskbar Hero sandıkları Steam Inventory Service eşyalarıdır ve Steam sunucusunda doğrulanan bekleme süreleri (cooldown) vardır. İzleyici bu verileri doğrudan yerel Steam önbelleğinden (<code>inventorymsgcache</code>) okur. Normal sandıkların (gri) bekleme süresi 11 dakikadır (33 dakikada en fazla 3 drop), aşama boss'u sandıklarının (mavi) ise 9 dakikadır (27 dakikada en fazla 3 drop).",
+  "Sim! Deixar o inventário de baús comuns cheio impede que o jogo envie requisições de drops comuns para os servidores da Steam. Isso evita que você gaste o seu <b>Limite Diário de Drops da Steam (Daily Drop Limit)</b> com baús de menor valor, permitindo que todas as suas requisições diárias de drop sejam direcionadas exclusivamente para os valiosos baús de boss (azuis).": "Evet! Normal sandık envanterini dolu tutmak, oyunun Steam sunucularına normal drop istekleri göndermesini engeller. Böylece <b>Steam Günlük Drop Limitini (Daily Drop Limit)</b> daha düşük değerli sandıklara harcamazsın ve tüm günlük drop isteklerin yalnızca değerli boss sandıklarına (mavi) yönlendirilir.",
+  "Sim, é 100% segura. O otimizador opera estritamente de forma <b>somente leitura (read-only)</b>, analisando o save e o cache local sem alterar a memória do jogo, sem injetar código e sem alterar arquivos de salvamento. O código-fonte é totalmente aberto e auditável no GitHub.": "Evet, %100 güvenlidir. Optimizer kesinlikle <b>salt okunur (read-only)</b> şekilde çalışır; kaydı ve yerel önbelleği analiz ederken oyunun belleğini değiştirmez, kod enjekte etmez ve kayıt dosyalarını değiştirmez. Kaynak kod tamamen açıktır ve GitHub'da denetlenebilir.",
+  "Fan-made tool · Game content © Nugem Studio &amp; Tesseract Studio · Not affiliated with the developers": "Hayran yapımı araç · Oyun içeriği © Nugem Studio &amp; Tesseract Studio · Geliştiricilerle bağlantılı değildir",
+  "Taskbar Hero Optimizer · feito por um fã · Dados do jogo: <span id=\"gamever\">—</span>": "Taskbar Hero Optimizer · bir hayran yaptı · Oyun verileri: <span id=\"gamever\">—</span>",
+  "O que é o Taskbar Hero Optimizer?": "Taskbar Hero Optimizer nedir?",
+  "Como encontrar o arquivo de save (SaveFile_Live.es3) do jogo?": "Oyunun kayıt dosyası (SaveFile_Live.es3) nasıl bulunur?",
+  "Como funciona o Cooldown e o Tracker de Baús?": "Sandık Bekleme Süresi (Cooldown) ve Takipçisi nasıl çalışır?",
+  "O acúmulo de baús comuns melhora o drop de baús de boss?": "Normal sandık biriktirmek boss sandığı drop'unu iyileştirir mi?",
+  "A ferramenta é segura? Pode causar banimento?": "Araç güvenli mi? Ban'a yol açabilir mi?"
  },
  "pages": {
   "guide.html": {
@@ -93,7 +110,16 @@
    "Lembre-se de refazer esse teste a cada grande upgrade de Arma ou destrave de novo Herói.": "Her büyük Silah yükseltmesinde veya yeni Kahraman kilidini açtığında bu testi tekrarlamayı unutma.",
    "Veja também": "Ayrıca bakın",
    "<a href=\"./chest-drops.html\">Como funciona a mecânica de Drops e Cooldown de Baús</a>": "<a href=\"./chest-drops.html\">Sandık Drop ve Bekleme Süresi mekaniği nasıl çalışır</a>",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Hayran yapımı araç"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Hayran yapımı araç",
+   "<span>Guias</span>": "<span>Rehberler</span>",
+   "Como usar o Otimizador": "Optimizer Nasıl Kullanılır",
+   "Guia de Ouro e XP": "Altın &amp; XP Rehberi",
+   "Mecânica de Baús": "Sandık Mekaniği",
+   "Conhecer o Otimizador de Farm": "Farm Optimizasyon Aracını Keşfet",
+   "Página Inicial": "Anasayfa",
+   "Guia de Baús": "Sandık Rehberi",
+   "Privacidade": "Gizlilik",
+   "Termos de Uso": "Kullanım Koşulları"
   },
   "tutorial.html": {
    "Aprenda o passo a passo para baixar, executar e entender todas as estatísticas e métricas (Ouro/h, XP/h, Baús) do painel do Taskbar Hero Optimizer.": "Taskbar Hero Optimizer panelini indirmek, çalıştırmak ve tüm istatistikleri ile metrikleri (Altın/sa, XP/sa, Sandıklar) anlamak için adım adım öğren.",
@@ -152,7 +178,17 @@
    "Funciona como um catálogo enciclopédico. Você pode filtrar os itens que deseja encontrar, ver seus respectivos valores (em ouro) no mercado e quais fases possuem as melhores chances percentuais de derrubá-los. A aba <strong>Materiais</strong> faz o mesmo para pedras da alma e demais materiais de craft, que não ocupam slots de equipamento.": "Ansiklopedik bir katalog gibi çalışır. Bulmak istediğin eşyaları filtreleyebilir, pazardaki (altın cinsinden) değerlerini ve hangi bölümlerin onları düşürme yüzdesinin en yüksek olduğunu görebilirsin. <strong>Malzemeler</strong> sekmesi, ekipman slotu işgal etmeyen ruh taşları ve diğer craft malzemeleri için aynısını yapar.",
    "Pronto para otimizar seu jogo?": "Oyununu optimize etmeye hazır mısın?",
    "Volte para a página inicial para fazer o download.": "İndirmek için anasayfaya geri dön.",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Hayran yapımı araç"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Hayran yapımı araç",
+   "<span>Guias</span>": "<span>Rehberler</span>",
+   "Como usar o Otimizador": "Optimizer Nasıl Kullanılır",
+   "Guia de Ouro e XP": "Altın &amp; XP Rehberi",
+   "Mecânica de Baús": "Sandık Mekaniği",
+   "Ir para a Página Inicial": "Anasayfaya Git",
+   "Página Inicial": "Anasayfa",
+   "Guia de Ouro/XP": "Altın/XP Rehberi",
+   "Guia de Baús": "Sandık Rehberi",
+   "Privacidade": "Gizlilik",
+   "Termos de Uso": "Kullanım Koşulları"
   },
   "chest-drops.html": {
    "Entenda como funciona o sistema de inventário da Steam no Taskbar Hero. Tempos de cooldown dos baús azuis, limites diários de drop e como forçar drops raros.": "Taskbar Hero'da Steam envanter sisteminin nasıl çalıştığını anla. Mavi sandıkların bekleme süreleri, günlük drop limitleri ve nadir drop'ları nasıl zorlayacağın.",
@@ -194,7 +230,30 @@
    "Nosso aplicativo gratuito monitora inteligentemente os seus drops e calcula os cooldowns em tempo real para exibir os temporizadores. Saiba exatamente quando o jogo poderá liberar seu próximo drop de Baú Azul!": "Ücretsiz uygulamamız drop'larını akıllıca izler ve sayaçları göstermek için bekleme sürelerini gerçek zamanlı hesaplar. Oyunun sonraki Mavi Sandık drop'unu ne zaman serbest bırakabileceğini tam olarak bil!",
    "Veja também": "Ayrıca bakın",
    "<a href=\"./guide.html\">Guia Matemático de Farm: Ouro/hora e XP/hora</a>": "<a href=\"./guide.html\">Matematiksel Farm Rehberi: Saatlik Altın ve Saatlik XP</a>",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Hayran yapımı araç"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Hayran yapımı araç",
+   "<span>Guias</span>": "<span>Rehberler</span>",
+   "Como usar o Otimizador": "Optimizer Nasıl Kullanılır",
+   "Guia de Ouro e XP": "Altın &amp; XP Rehberi",
+   "Mecânica de Baús": "Sandık Mekaniği",
+   "Baixar o Otimizador de Baús": "Sandık Optimizasyon Aracını İndir",
+   "Página Inicial": "Anasayfa",
+   "Guia de Ouro/XP": "Altın/XP Rehberi",
+   "Privacidade": "Gizlilik",
+   "Termos de Uso": "Kullanım Koşulları",
+   "Tempo de Cooldown": "Bekleme Süresi",
+   "11 minutos": "11 dakika",
+   "Limite por Janela": "Pencere Başına Sınır",
+   "3 Drops": "3 Düşüş",
+   "Tamanho da Janela": "Pencere Boyutu",
+   "33 minutos": "33 dakika",
+   "Cooldown (alto nível)": "Bekleme (yüksek seviye)",
+   "9 minutos": "9 dakika",
+   "27 minutos": "27 dakika",
+   "Nenhum": "Yok",
+   "Quando cai": "Ne zaman düşer",
+   "1ª vez por chefe": "Boss başına ilk kez",
+   "Raridade": "Nadirlik",
+   "Lendária": "Efsanevi"
   }
  }
 }

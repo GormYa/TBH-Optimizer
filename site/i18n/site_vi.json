@@ -47,7 +47,24 @@
   "Contato": "Liên hệ",
   "feito por um fã · Dados do jogo:": "do một fan làm · Dữ liệu game:",
   "['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']": "['thg 1', 'thg 2', 'thg 3', 'thg 4', 'thg 5', 'thg 6', 'thg 7', 'thg 8', 'thg 9', 'thg 10', 'thg 11', 'thg 12']",
-  "Baixe a versão mais recente acima.": "Tải phiên bản mới nhất ở trên."
+  "Baixe a versão mais recente acima.": "Tải phiên bản mới nhất ở trên.",
+  "<span>Guias</span>": "<span>Hướng dẫn</span>",
+  "Como usar o Otimizador": "Cách dùng Trình Tối Ưu",
+  "Guia de Ouro e XP": "Hướng Dẫn Vàng &amp; XP",
+  "Mecânica de Baús": "Cơ chế Rương",
+  "Build mais recente: <b id=\"ver2\" style=\"color:var(--gold)\">—</b>": "Bản build mới nhất: <b id=\"ver2\" style=\"color:var(--gold)\">—</b>",
+  "O Taskbar Hero Optimizer (TBH Optimizer) é uma ferramenta gratuita de código aberto feita para otimizar o ganho de Ouro (Gold), Experiência (XP) e Gerenciamento de Baús no jogo ocioso <i>Taskbar Hero</i>. Ele analisa o arquivo de salvamento do jogo em tempo real para calcular estatísticas exatas de eficiência por fase.": "Taskbar Hero Optimizer (TBH Optimizer) là một công cụ miễn phí mã nguồn mở được tạo ra để tối ưu việc kiếm Vàng (Gold), Kinh nghiệm (XP) và Quản lý Rương trong game nhàn rỗi <i>Taskbar Hero</i>. Nó phân tích tệp save của trò chơi theo thời gian thực để tính các số liệu hiệu suất chính xác cho từng màn.",
+  "O arquivo de save padrão do jogo é monitorado automaticamente pelo aplicativo no Windows. Ele fica localizado na pasta <code>%USERPROFILE%\\AppData\\LocalLow\\TesseractStudio\\TaskbarHero\\SaveFile_Live.es3</code>. O aplicativo lê este arquivo a cada atualização em tempo real, sem modificar seus dados.": "Tệp save mặc định của trò chơi được ứng dụng tự động theo dõi trên Windows. Nó nằm trong thư mục <code>%USERPROFILE%\\AppData\\LocalLow\\TesseractStudio\\TaskbarHero\\SaveFile_Live.es3</code>. Ứng dụng đọc tệp này ở mỗi lần cập nhật theo thời gian thực, mà không sửa đổi dữ liệu của bạn.",
+  "Os baús de Taskbar Hero são itens do Steam Inventory Service e possuem cooldowns validados no servidor da Steam. O monitor lê esses dados diretamente do cache do Steam local (<code>inventorymsgcache</code>). Os baús normais (cinza) possuem cooldown de 11 minutos (limite de 3 drops por 33 min), enquanto os baús de chefe de fase (azuis) possuem cooldown de 9 minutos (limite de 3 drops por 27 min).": "Rương trong Taskbar Hero là vật phẩm của Steam Inventory Service và có hồi chiêu được xác thực trên máy chủ của Steam. Trình theo dõi đọc dữ liệu này trực tiếp từ cache Steam cục bộ (<code>inventorymsgcache</code>). Rương thường (xám) có hồi chiêu 11 phút (giới hạn 3 lần drop mỗi 33 phút), trong khi rương boss màn (xanh) có hồi chiêu 9 phút (giới hạn 3 lần drop mỗi 27 phút).",
+  "Sim! Deixar o inventário de baús comuns cheio impede que o jogo envie requisições de drops comuns para os servidores da Steam. Isso evita que você gaste o seu <b>Limite Diário de Drops da Steam (Daily Drop Limit)</b> com baús de menor valor, permitindo que todas as suas requisições diárias de drop sejam direcionadas exclusivamente para os valiosos baús de boss (azuis).": "Có! Giữ kho rương thường luôn đầy sẽ ngăn trò chơi gửi yêu cầu drop rương thường đến máy chủ của Steam. Điều này giúp bạn không tiêu phí <b>Giới Hạn Drop Hằng Ngày của Steam (Daily Drop Limit)</b> vào những rương giá trị thấp, cho phép toàn bộ yêu cầu drop hằng ngày của bạn được dồn riêng cho các rương boss (xanh) giá trị cao.",
+  "Sim, é 100% segura. O otimizador opera estritamente de forma <b>somente leitura (read-only)</b>, analisando o save e o cache local sem alterar a memória do jogo, sem injetar código e sem alterar arquivos de salvamento. O código-fonte é totalmente aberto e auditável no GitHub.": "Có, nó an toàn 100%. Trình tối ưu hoạt động nghiêm ngặt theo kiểu <b>chỉ đọc (read-only)</b>, phân tích save và cache cục bộ mà không thay đổi bộ nhớ của trò chơi, không tiêm mã và không sửa đổi các tệp save. Mã nguồn hoàn toàn mở và có thể kiểm tra trên GitHub.",
+  "Fan-made tool · Game content © Nugem Studio &amp; Tesseract Studio · Not affiliated with the developers": "Công cụ do fan làm · Nội dung game © Nugem Studio &amp; Tesseract Studio · Không liên kết với nhà phát triển",
+  "Taskbar Hero Optimizer · feito por um fã · Dados do jogo: <span id=\"gamever\">—</span>": "Taskbar Hero Optimizer · do một fan làm · Dữ liệu game: <span id=\"gamever\">—</span>",
+  "O que é o Taskbar Hero Optimizer?": "Taskbar Hero Optimizer là gì?",
+  "Como encontrar o arquivo de save (SaveFile_Live.es3) do jogo?": "Làm sao tìm tệp save (SaveFile_Live.es3) của trò chơi?",
+  "Como funciona o Cooldown e o Tracker de Baús?": "Hồi chiêu và Trình theo dõi Rương hoạt động như thế nào?",
+  "O acúmulo de baús comuns melhora o drop de baús de boss?": "Tích trữ rương thường có cải thiện việc rơi rương boss không?",
+  "A ferramenta é segura? Pode causar banimento?": "Công cụ này có an toàn không? Có thể bị cấm tài khoản không?"
  },
  "pages": {
   "guide.html": {
@@ -93,7 +110,16 @@
    "Lembre-se de refazer esse teste a cada grande upgrade de Arma ou destrave de novo Herói.": "Hãy nhớ làm lại bài kiểm tra này sau mỗi lần nâng cấp Vũ Khí lớn hoặc mở khóa Anh Hùng mới.",
    "Veja também": "Xem thêm",
    "<a href=\"./chest-drops.html\">Como funciona a mecânica de Drops e Cooldown de Baús</a>": "<a href=\"./chest-drops.html\">Cơ chế Drop và Hồi Chiêu của Rương hoạt động như thế nào</a>",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Công cụ do fan làm"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Công cụ do fan làm",
+   "<span>Guias</span>": "<span>Hướng dẫn</span>",
+   "Como usar o Otimizador": "Cách dùng Trình Tối Ưu",
+   "Guia de Ouro e XP": "Hướng Dẫn Vàng &amp; XP",
+   "Mecânica de Baús": "Cơ chế Rương",
+   "Conhecer o Otimizador de Farm": "Khám phá Trình Tối Ưu Farm",
+   "Página Inicial": "Trang chủ",
+   "Guia de Baús": "Hướng Dẫn Rương",
+   "Privacidade": "Quyền riêng tư",
+   "Termos de Uso": "Điều khoản sử dụng"
   },
   "tutorial.html": {
    "Aprenda o passo a passo para baixar, executar e entender todas as estatísticas e métricas (Ouro/h, XP/h, Baús) do painel do Taskbar Hero Optimizer.": "Học từng bước để tải về, chạy và hiểu tất cả số liệu và chỉ số (Vàng/giờ, XP/giờ, Rương) của bảng điều khiển Taskbar Hero Optimizer.",
@@ -152,7 +178,17 @@
    "Funciona como um catálogo enciclopédico. Você pode filtrar os itens que deseja encontrar, ver seus respectivos valores (em ouro) no mercado e quais fases possuem as melhores chances percentuais de derrubá-los. A aba <strong>Materiais</strong> faz o mesmo para pedras da alma e demais materiais de craft, que não ocupam slots de equipamento.": "Hoạt động như một danh mục bách khoa. Bạn có thể lọc các vật phẩm muốn tìm, xem giá trị tương ứng của chúng (bằng vàng) trên chợ và những màn nào có tỷ lệ phần trăm tốt nhất để rơi chúng. Tab <strong>Nguyên Liệu</strong> làm điều tương tự cho đá linh hồn và các nguyên liệu chế tạo khác, vốn không chiếm ô trang bị.",
    "Pronto para otimizar seu jogo?": "Sẵn sàng tối ưu trò chơi của bạn chưa?",
    "Volte para a página inicial para fazer o download.": "Quay lại trang chủ để tải về.",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Công cụ do fan làm"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Công cụ do fan làm",
+   "<span>Guias</span>": "<span>Hướng dẫn</span>",
+   "Como usar o Otimizador": "Cách dùng Trình Tối Ưu",
+   "Guia de Ouro e XP": "Hướng Dẫn Vàng &amp; XP",
+   "Mecânica de Baús": "Cơ chế Rương",
+   "Ir para a Página Inicial": "Về Trang chủ",
+   "Página Inicial": "Trang chủ",
+   "Guia de Ouro/XP": "Hướng Dẫn Vàng/XP",
+   "Guia de Baús": "Hướng Dẫn Rương",
+   "Privacidade": "Quyền riêng tư",
+   "Termos de Uso": "Điều khoản sử dụng"
   },
   "chest-drops.html": {
    "Entenda como funciona o sistema de inventário da Steam no Taskbar Hero. Tempos de cooldown dos baús azuis, limites diários de drop e como forçar drops raros.": "Hiểu cách hệ thống kho đồ của Steam hoạt động trong Taskbar Hero. Thời gian hồi chiêu của rương xanh, giới hạn drop hằng ngày và cách ép rơi đồ hiếm.",
@@ -194,7 +230,30 @@
    "Nosso aplicativo gratuito monitora inteligentemente os seus drops e calcula os cooldowns em tempo real para exibir os temporizadores. Saiba exatamente quando o jogo poderá liberar seu próximo drop de Baú Azul!": "Ứng dụng miễn phí của chúng tôi theo dõi thông minh các lần drop của bạn và tính hồi chiêu theo thời gian thực để hiển thị bộ đếm thời gian. Biết chính xác khi nào trò chơi có thể thả lần drop Rương Xanh tiếp theo của bạn!",
    "Veja também": "Xem thêm",
    "<a href=\"./guide.html\">Guia Matemático de Farm: Ouro/hora e XP/hora</a>": "<a href=\"./guide.html\">Hướng Dẫn Farm Theo Toán Học: Vàng/giờ và XP/giờ</a>",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Công cụ do fan làm"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Công cụ do fan làm",
+   "<span>Guias</span>": "<span>Hướng dẫn</span>",
+   "Como usar o Otimizador": "Cách dùng Trình Tối Ưu",
+   "Guia de Ouro e XP": "Hướng Dẫn Vàng &amp; XP",
+   "Mecânica de Baús": "Cơ chế Rương",
+   "Baixar o Otimizador de Baús": "Tải Trình Tối Ưu Rương",
+   "Página Inicial": "Trang chủ",
+   "Guia de Ouro/XP": "Hướng Dẫn Vàng/XP",
+   "Privacidade": "Quyền riêng tư",
+   "Termos de Uso": "Điều khoản sử dụng",
+   "Tempo de Cooldown": "Thời gian hồi",
+   "11 minutos": "11 phút",
+   "Limite por Janela": "Giới hạn mỗi cửa sổ",
+   "3 Drops": "3 Drop",
+   "Tamanho da Janela": "Độ dài cửa sổ",
+   "33 minutos": "33 phút",
+   "Cooldown (alto nível)": "Hồi chiêu (cấp cao)",
+   "9 minutos": "9 phút",
+   "27 minutos": "27 phút",
+   "Nenhum": "Không có",
+   "Quando cai": "Khi nào rơi",
+   "1ª vez por chefe": "Lần đầu mỗi boss",
+   "Raridade": "Độ hiếm",
+   "Lendária": "Huyền thoại"
   }
  }
 }

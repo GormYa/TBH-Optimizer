@@ -47,7 +47,24 @@
   "Contato": "Контакти",
   "feito por um fã · Dados do jogo:": "зроблено фанатом · Дані гри:",
   "['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']": "['січ', 'лют', 'бер', 'кві', 'тра', 'чер', 'лип', 'сер', 'вер', 'жов', 'лис', 'гру']",
-  "Baixe a versão mais recente acima.": "Завантажте останню версію вище."
+  "Baixe a versão mais recente acima.": "Завантажте останню версію вище.",
+  "<span>Guias</span>": "<span>Гайди</span>",
+  "Como usar o Otimizador": "Як користуватися Оптимізатором",
+  "Guia de Ouro e XP": "Гайд із золота та досвіду",
+  "Mecânica de Baús": "Механіка скринь",
+  "Build mais recente: <b id=\"ver2\" style=\"color:var(--gold)\">—</b>": "Найсвіжіший білд: <b id=\"ver2\" style=\"color:var(--gold)\">—</b>",
+  "O Taskbar Hero Optimizer (TBH Optimizer) é uma ferramenta gratuita de código aberto feita para otimizar o ganho de Ouro (Gold), Experiência (XP) e Gerenciamento de Baús no jogo ocioso <i>Taskbar Hero</i>. Ele analisa o arquivo de salvamento do jogo em tempo real para calcular estatísticas exatas de eficiência por fase.": "Taskbar Hero Optimizer (TBH Optimizer) — це безкоштовний інструмент з відкритим кодом, створений для оптимізації здобуття Золота (Gold), Досвіду (XP) та Керування Скринями в ідл-грі <i>Taskbar Hero</i>. Він аналізує файл сейву гри в реальному часі, щоб обчислювати точну статистику ефективності для кожного етапу.",
+  "O arquivo de save padrão do jogo é monitorado automaticamente pelo aplicativo no Windows. Ele fica localizado na pasta <code>%USERPROFILE%\\AppData\\LocalLow\\TesseractStudio\\TaskbarHero\\SaveFile_Live.es3</code>. O aplicativo lê este arquivo a cada atualização em tempo real, sem modificar seus dados.": "Стандартний файл сейву гри застосунок автоматично відстежує у Windows. Він розташований у папці <code>%USERPROFILE%\\AppData\\LocalLow\\TesseractStudio\\TaskbarHero\\SaveFile_Live.es3</code>. Застосунок читає цей файл при кожному оновленні в реальному часі, не змінюючи ваші дані.",
+  "Os baús de Taskbar Hero são itens do Steam Inventory Service e possuem cooldowns validados no servidor da Steam. O monitor lê esses dados diretamente do cache do Steam local (<code>inventorymsgcache</code>). Os baús normais (cinza) possuem cooldown de 11 minutos (limite de 3 drops por 33 min), enquanto os baús de chefe de fase (azuis) possuem cooldown de 9 minutos (limite de 3 drops por 27 min).": "Скрині в Taskbar Hero — це предмети Steam Inventory Service, які мають кулдауни, перевірені на сервері Steam. Монітор читає ці дані безпосередньо з локального кешу Steam (<code>inventorymsgcache</code>). Звичайні скрині (сірі) мають кулдаун 11 хвилин (ліміт 3 дропи за 33 хв), тоді як скрині боса етапу (сині) мають кулдаун 9 хвилин (ліміт 3 дропи за 27 хв).",
+  "Sim! Deixar o inventário de baús comuns cheio impede que o jogo envie requisições de drops comuns para os servidores da Steam. Isso evita que você gaste o seu <b>Limite Diário de Drops da Steam (Daily Drop Limit)</b> com baús de menor valor, permitindo que todas as suas requisições diárias de drop sejam direcionadas exclusivamente para os valiosos baús de boss (azuis).": "Так! Заповнення інвентаря звичайних скринь не дає грі надсилати запити на звичайні дропи до серверів Steam. Це не дає вам витрачати ваш <b>Добовий Ліміт Дропів Steam (Daily Drop Limit)</b> на менш цінні скрині, дозволяючи спрямовувати всі ваші добові запити на дроп виключно на цінні босові скрині (сині).",
+  "Sim, é 100% segura. O otimizador opera estritamente de forma <b>somente leitura (read-only)</b>, analisando o save e o cache local sem alterar a memória do jogo, sem injetar código e sem alterar arquivos de salvamento. O código-fonte é totalmente aberto e auditável no GitHub.": "Так, він на 100% безпечний. Оптимізатор працює строго в режимі <b>лише для читання (read-only)</b>, аналізуючи сейв і локальний кеш, не змінюючи пам'ять гри, не впроваджуючи код і не змінюючи файли сейву. Вихідний код повністю відкритий і доступний для перевірки на GitHub.",
+  "Fan-made tool · Game content © Nugem Studio &amp; Tesseract Studio · Not affiliated with the developers": "Fan-made tool · Game content © Nugem Studio &amp; Tesseract Studio · Not affiliated with the developers",
+  "Taskbar Hero Optimizer · feito por um fã · Dados do jogo: <span id=\"gamever\">—</span>": "Taskbar Hero Optimizer · зроблено фанатом · Дані гри: <span id=\"gamever\">—</span>",
+  "O que é o Taskbar Hero Optimizer?": "Що таке Taskbar Hero Optimizer?",
+  "Como encontrar o arquivo de save (SaveFile_Live.es3) do jogo?": "Як знайти файл сейву (SaveFile_Live.es3) гри?",
+  "Como funciona o Cooldown e o Tracker de Baús?": "Як працює Кулдаун і Трекер Скринь?",
+  "O acúmulo de baús comuns melhora o drop de baús de boss?": "Чи покращує накопичення звичайних скринь дроп босових скринь?",
+  "A ferramenta é segura? Pode causar banimento?": "Чи безпечний інструмент? Чи може спричинити бан?"
  },
  "pages": {
   "guide.html": {
@@ -93,7 +110,16 @@
    "Lembre-se de refazer esse teste a cada grande upgrade de Arma ou destrave de novo Herói.": "Не забувайте повторювати цей тест після кожного великого покращення Зброї чи розблокування нового Героя.",
    "Veja também": "Дивіться також",
    "<a href=\"./chest-drops.html\">Como funciona a mecânica de Drops e Cooldown de Baús</a>": "<a href=\"./chest-drops.html\">Як працює механіка дропу та кулдауну Скринь</a>",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Fan-made tool"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Fan-made tool",
+   "<span>Guias</span>": "<span>Гайди</span>",
+   "Como usar o Otimizador": "Як користуватися Оптимізатором",
+   "Guia de Ouro e XP": "Гайд із золота та досвіду",
+   "Mecânica de Baús": "Механіка скринь",
+   "Conhecer o Otimizador de Farm": "Дізнатися про Оптимізатор Фарму",
+   "Página Inicial": "Головна",
+   "Guia de Baús": "Гайд зі скринь",
+   "Privacidade": "Приватність",
+   "Termos de Uso": "Умови використання"
   },
   "tutorial.html": {
    "Aprenda o passo a passo para baixar, executar e entender todas as estatísticas e métricas (Ouro/h, XP/h, Baús) do painel do Taskbar Hero Optimizer.": "Дізнайтеся крок за кроком, як завантажити, запустити та зрозуміти всю статистику й метрики (Золото/год, Досвід/год, Скрині) панелі Taskbar Hero Optimizer.",
@@ -152,7 +178,17 @@
    "Funciona como um catálogo enciclopédico. Você pode filtrar os itens que deseja encontrar, ver seus respectivos valores (em ouro) no mercado e quais fases possuem as melhores chances percentuais de derrubá-los. A aba <strong>Materiais</strong> faz o mesmo para pedras da alma e demais materiais de craft, que não ocupam slots de equipamento.": "Працює як енциклопедичний каталог. Ви можете фільтрувати предмети, які хочете знайти, бачити їхню вартість (у золоті) на ринку та які етапи мають найкращі відсоткові шанси їх вибити. Вкладка <strong>Матеріали</strong> робить те саме для каменів душі та інших матеріалів для крафту, що не займають слотів спорядження.",
    "Pronto para otimizar seu jogo?": "Готові оптимізувати свою гру?",
    "Volte para a página inicial para fazer o download.": "Поверніться на головну сторінку, щоб завантажити.",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Fan-made tool"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Fan-made tool",
+   "<span>Guias</span>": "<span>Гайди</span>",
+   "Como usar o Otimizador": "Як користуватися Оптимізатором",
+   "Guia de Ouro e XP": "Гайд із золота та досвіду",
+   "Mecânica de Baús": "Механіка скринь",
+   "Ir para a Página Inicial": "На головну",
+   "Página Inicial": "Головна",
+   "Guia de Ouro/XP": "Гайд із золота/досвіду",
+   "Guia de Baús": "Гайд зі скринь",
+   "Privacidade": "Приватність",
+   "Termos de Uso": "Умови використання"
   },
   "chest-drops.html": {
    "Entenda como funciona o sistema de inventário da Steam no Taskbar Hero. Tempos de cooldown dos baús azuis, limites diários de drop e como forçar drops raros.": "Зрозумійте, як працює система інвентаря Steam у Taskbar Hero. Часи кулдауну синіх скринь, добові ліміти дропу та як форсувати рідкісні дропи.",
@@ -194,7 +230,30 @@
    "Nosso aplicativo gratuito monitora inteligentemente os seus drops e calcula os cooldowns em tempo real para exibir os temporizadores. Saiba exatamente quando o jogo poderá liberar seu próximo drop de Baú Azul!": "Наш безкоштовний застосунок розумно стежить за вашими дропами та рахує кулдауни в реальному часі, щоб показувати таймери. Знайте точно, коли гра зможе видати ваш наступний дроп Синьої Скрині!",
    "Veja também": "Дивіться також",
    "<a href=\"./guide.html\">Guia Matemático de Farm: Ouro/hora e XP/hora</a>": "<a href=\"./guide.html\">Математичний гайд із фарму: Золото/год та Досвід/год</a>",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Fan-made tool"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Fan-made tool",
+   "<span>Guias</span>": "<span>Гайди</span>",
+   "Como usar o Otimizador": "Як користуватися Оптимізатором",
+   "Guia de Ouro e XP": "Гайд із золота та досвіду",
+   "Mecânica de Baús": "Механіка скринь",
+   "Baixar o Otimizador de Baús": "Завантажити Оптимізатор скринь",
+   "Página Inicial": "Головна",
+   "Guia de Ouro/XP": "Гайд із золота/досвіду",
+   "Privacidade": "Приватність",
+   "Termos de Uso": "Умови використання",
+   "Tempo de Cooldown": "Час перезарядки",
+   "11 minutos": "11 хвилин",
+   "Limite por Janela": "Ліміт за вікно",
+   "3 Drops": "3 дропи",
+   "Tamanho da Janela": "Розмір вікна",
+   "33 minutos": "33 хвилини",
+   "Cooldown (alto nível)": "Перезарядка (високий рівень)",
+   "9 minutos": "9 хвилин",
+   "27 minutos": "27 хвилин",
+   "Nenhum": "Немає",
+   "Quando cai": "Коли випадає",
+   "1ª vez por chefe": "1-й раз із боса",
+   "Raridade": "Рідкість",
+   "Lendária": "Легендарний"
   }
  }
 }

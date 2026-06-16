@@ -47,7 +47,24 @@
   "Contato": "お問い合わせ",
   "feito por um fã · Dados do jogo:": "ファンが制作 · ゲームデータ:",
   "['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']": "['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']",
-  "Baixe a versão mais recente acima.": "上のボタンから最新バージョンをダウンロードしてください。"
+  "Baixe a versão mais recente acima.": "上のボタンから最新バージョンをダウンロードしてください。",
+  "<span>Guias</span>": "<span>ガイド</span>",
+  "Como usar o Otimizador": "最適化ツールの使い方",
+  "Guia de Ouro e XP": "ゴールド＆XPガイド",
+  "Mecânica de Baús": "宝箱の仕組み",
+  "Build mais recente: <b id=\"ver2\" style=\"color:var(--gold)\">—</b>": "最新ビルド: <b id=\"ver2\" style=\"color:var(--gold)\">—</b>",
+  "O Taskbar Hero Optimizer (TBH Optimizer) é uma ferramenta gratuita de código aberto feita para otimizar o ganho de Ouro (Gold), Experiência (XP) e Gerenciamento de Baús no jogo ocioso <i>Taskbar Hero</i>. Ele analisa o arquivo de salvamento do jogo em tempo real para calcular estatísticas exatas de eficiência por fase.": "Taskbar Hero Optimizer（TBH Optimizer）は、放置ゲーム<i>Taskbar Hero</i>でのゴールド（Gold）、経験値（XP）の獲得と宝箱の管理を最適化するための無料・オープンソースのツールです。ゲームのセーブファイルをリアルタイムで解析し、ステージごとの正確な効率統計を計算します。",
+  "O arquivo de save padrão do jogo é monitorado automaticamente pelo aplicativo no Windows. Ele fica localizado na pasta <code>%USERPROFILE%\\AppData\\LocalLow\\TesseractStudio\\TaskbarHero\\SaveFile_Live.es3</code>. O aplicativo lê este arquivo a cada atualização em tempo real, sem modificar seus dados.": "ゲームの標準セーブファイルは、Windows上でアプリが自動的に監視します。ファイルは<code>%USERPROFILE%\\AppData\\LocalLow\\TesseractStudio\\TaskbarHero\\SaveFile_Live.es3</code>フォルダにあります。アプリはこのファイルをリアルタイムで更新のたびに読み取り、データを変更することはありません。",
+  "Os baús de Taskbar Hero são itens do Steam Inventory Service e possuem cooldowns validados no servidor da Steam. O monitor lê esses dados diretamente do cache do Steam local (<code>inventorymsgcache</code>). Os baús normais (cinza) possuem cooldown de 11 minutos (limite de 3 drops por 33 min), enquanto os baús de chefe de fase (azuis) possuem cooldown de 9 minutos (limite de 3 drops por 27 min).": "Taskbar Heroの宝箱はSteam Inventory Serviceのアイテムであり、Steamのサーバーで検証されるクールダウンを持ちます。モニターはこれらのデータをローカルのSteamキャッシュ（<code>inventorymsgcache</code>）から直接読み取ります。通常宝箱（グレー）は11分のクールダウン（33分の枠ごとに最大3ドロップ）を持ち、ステージボス宝箱（青）は9分のクールダウン（27分の枠ごとに最大3ドロップ）を持ちます。",
+  "Sim! Deixar o inventário de baús comuns cheio impede que o jogo envie requisições de drops comuns para os servidores da Steam. Isso evita que você gaste o seu <b>Limite Diário de Drops da Steam (Daily Drop Limit)</b> com baús de menor valor, permitindo que todas as suas requisições diárias de drop sejam direcionadas exclusivamente para os valiosos baús de boss (azuis).": "はい！通常宝箱のインベントリを満杯のままにしておくと、ゲームがSteamのサーバーに通常ドロップを要求するのを防げます。これにより<b>Steamの1日のドロップ上限（Daily Drop Limit）</b>を価値の低い宝箱で消費せずに済み、1日のドロップ要求のすべてを価値の高いボス宝箱（青）だけに振り向けられます。",
+  "Sim, é 100% segura. O otimizador opera estritamente de forma <b>somente leitura (read-only)</b>, analisando o save e o cache local sem alterar a memória do jogo, sem injetar código e sem alterar arquivos de salvamento. O código-fonte é totalmente aberto e auditável no GitHub.": "はい、100%安全です。最適化ツールは厳密に<b>読み取り専用（read-only）</b>で動作し、セーブとローカルキャッシュを解析するだけで、ゲームのメモリを変更したり、コードを注入したり、セーブファイルを書き換えたりしません。ソースコードは完全にオープンで、GitHubで監査できます。",
+  "Fan-made tool · Game content © Nugem Studio &amp; Tesseract Studio · Not affiliated with the developers": "ファンメイドツール · Game content © Nugem Studio &amp; Tesseract Studio · 開発元とは関係ありません",
+  "Taskbar Hero Optimizer · feito por um fã · Dados do jogo: <span id=\"gamever\">—</span>": "Taskbar Hero Optimizer · ファンが制作 · ゲームデータ: <span id=\"gamever\">—</span>",
+  "O que é o Taskbar Hero Optimizer?": "Taskbar Hero Optimizerとは何ですか？",
+  "Como encontrar o arquivo de save (SaveFile_Live.es3) do jogo?": "ゲームのセーブファイル（SaveFile_Live.es3）を見つけるには？",
+  "Como funciona o Cooldown e o Tracker de Baús?": "宝箱のクールダウンとトラッカーはどう機能しますか？",
+  "O acúmulo de baús comuns melhora o drop de baús de boss?": "通常宝箱を貯めるとボス宝箱のドロップは改善しますか？",
+  "A ferramenta é segura? Pode causar banimento?": "このツールは安全ですか？BANの原因になりますか？"
  },
  "pages": {
   "guide.html": {
@@ -93,7 +110,16 @@
    "Lembre-se de refazer esse teste a cada grande upgrade de Arma ou destrave de novo Herói.": "武器の大きなアップグレードや新しいヒーローの解放のたびに、このテストをやり直すことを忘れないでください。",
    "Veja também": "あわせて読みたい",
    "<a href=\"./chest-drops.html\">Como funciona a mecânica de Drops e Cooldown de Baús</a>": "<a href=\"./chest-drops.html\">宝箱のドロップとクールダウンの仕組み</a>",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · ファンメイドツール"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · ファンメイドツール",
+   "<span>Guias</span>": "<span>ガイド</span>",
+   "Como usar o Otimizador": "最適化ツールの使い方",
+   "Guia de Ouro e XP": "ゴールド＆XPガイド",
+   "Mecânica de Baús": "宝箱の仕組み",
+   "Conhecer o Otimizador de Farm": "周回最適化ツールを見る",
+   "Página Inicial": "ホーム",
+   "Guia de Baús": "宝箱ガイド",
+   "Privacidade": "プライバシー",
+   "Termos de Uso": "利用規約"
   },
   "tutorial.html": {
    "Aprenda o passo a passo para baixar, executar e entender todas as estatísticas e métricas (Ouro/h, XP/h, Baús) do painel do Taskbar Hero Optimizer.": "Taskbar Hero Optimizerのダッシュボードのすべての統計と指標（時給ゴールド、時給XP、宝箱）をダウンロード・実行・理解する手順を学びましょう。",
@@ -152,7 +178,17 @@
    "Funciona como um catálogo enciclopédico. Você pode filtrar os itens que deseja encontrar, ver seus respectivos valores (em ouro) no mercado e quais fases possuem as melhores chances percentuais de derrubá-los. A aba <strong>Materiais</strong> faz o mesmo para pedras da alma e demais materiais de craft, que não ocupam slots de equipamento.": "百科事典のようなカタログとして機能します。見つけたいアイテムを絞り込み、それぞれのマーケットでの価値（ゴールド）と、それを最も高い確率で落とすステージを確認できます。<strong>素材</strong>タブは、装備スロットを占有しないソウルストーンやその他のクラフト素材について同じことを行います。",
    "Pronto para otimizar seu jogo?": "ゲームを最適化する準備はできましたか？",
    "Volte para a página inicial para fazer o download.": "ダウンロードするにはホームページに戻ってください。",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · ファンメイドツール"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · ファンメイドツール",
+   "<span>Guias</span>": "<span>ガイド</span>",
+   "Como usar o Otimizador": "最適化ツールの使い方",
+   "Guia de Ouro e XP": "ゴールド＆XPガイド",
+   "Mecânica de Baús": "宝箱の仕組み",
+   "Ir para a Página Inicial": "ホームへ",
+   "Página Inicial": "ホーム",
+   "Guia de Ouro/XP": "ゴールド／XPガイド",
+   "Guia de Baús": "宝箱ガイド",
+   "Privacidade": "プライバシー",
+   "Termos de Uso": "利用規約"
   },
   "chest-drops.html": {
    "Entenda como funciona o sistema de inventário da Steam no Taskbar Hero. Tempos de cooldown dos baús azuis, limites diários de drop e como forçar drops raros.": "Taskbar HeroにおけるSteamのインベントリシステムの仕組みを理解しましょう。青い宝箱のクールダウン時間、1日のドロップ上限、レアドロップを引き出す方法を解説します。",
@@ -194,7 +230,30 @@
    "Nosso aplicativo gratuito monitora inteligentemente os seus drops e calcula os cooldowns em tempo real para exibir os temporizadores. Saiba exatamente quando o jogo poderá liberar seu próximo drop de Baú Azul!": "私たちの無料アプリは、あなたのドロップを賢く監視し、クールダウンをリアルタイムで計算してタイマーを表示します。次の青い宝箱のドロップをゲームがいつ解放できるか、正確に把握しましょう！",
    "Veja também": "あわせて読みたい",
    "<a href=\"./guide.html\">Guia Matemático de Farm: Ouro/hora e XP/hora</a>": "<a href=\"./guide.html\">周回の数学ガイド：時給ゴールドと時給XP</a>",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · ファンメイドツール"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · ファンメイドツール",
+   "<span>Guias</span>": "<span>ガイド</span>",
+   "Como usar o Otimizador": "最適化ツールの使い方",
+   "Guia de Ouro e XP": "ゴールド＆XPガイド",
+   "Mecânica de Baús": "宝箱の仕組み",
+   "Baixar o Otimizador de Baús": "宝箱最適化ツールをダウンロード",
+   "Página Inicial": "ホーム",
+   "Guia de Ouro/XP": "ゴールド／XPガイド",
+   "Privacidade": "プライバシー",
+   "Termos de Uso": "利用規約",
+   "Tempo de Cooldown": "クールダウン時間",
+   "11 minutos": "11 分",
+   "Limite por Janela": "ウィンドウあたりの上限",
+   "3 Drops": "3 ドロップ",
+   "Tamanho da Janela": "ウィンドウの長さ",
+   "33 minutos": "33 分",
+   "Cooldown (alto nível)": "クールダウン（高レベル）",
+   "9 minutos": "9 分",
+   "27 minutos": "27 分",
+   "Nenhum": "なし",
+   "Quando cai": "ドロップ条件",
+   "1ª vez por chefe": "ボスごとに初回",
+   "Raridade": "レアリティ",
+   "Lendária": "伝説"
   }
  }
 }

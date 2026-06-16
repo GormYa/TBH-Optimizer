@@ -47,7 +47,24 @@
   "Contato": "Kontak",
   "feito por um fã · Dados do jogo:": "dibuat oleh fans · Data game:",
   "['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']": "['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des']",
-  "Baixe a versão mais recente acima.": "Unduh versi terbaru di atas."
+  "Baixe a versão mais recente acima.": "Unduh versi terbaru di atas.",
+  "<span>Guias</span>": "<span>Panduan</span>",
+  "Como usar o Otimizador": "Cara pakai Optimizer",
+  "Guia de Ouro e XP": "Panduan Gold &amp; XP",
+  "Mecânica de Baús": "Mekanik Chest",
+  "Build mais recente: <b id=\"ver2\" style=\"color:var(--gold)\">—</b>": "Build terbaru: <b id=\"ver2\" style=\"color:var(--gold)\">—</b>",
+  "O Taskbar Hero Optimizer (TBH Optimizer) é uma ferramenta gratuita de código aberto feita para otimizar o ganho de Ouro (Gold), Experiência (XP) e Gerenciamento de Baús no jogo ocioso <i>Taskbar Hero</i>. Ele analisa o arquivo de salvamento do jogo em tempo real para calcular estatísticas exatas de eficiência por fase.": "Taskbar Hero Optimizer (TBH Optimizer) adalah tool gratis open source yang dibuat untuk mengoptimalkan perolehan Gold, Experience (XP), dan Pengelolaan Chest di game idle <i>Taskbar Hero</i>. Tool ini menganalisis file save game secara real-time untuk menghitung statistik efisiensi yang tepat per stage.",
+  "O arquivo de save padrão do jogo é monitorado automaticamente pelo aplicativo no Windows. Ele fica localizado na pasta <code>%USERPROFILE%\\AppData\\LocalLow\\TesseractStudio\\TaskbarHero\\SaveFile_Live.es3</code>. O aplicativo lê este arquivo a cada atualização em tempo real, sem modificar seus dados.": "File save default game dipantau otomatis oleh aplikasi di Windows. File ini terletak di folder <code>%USERPROFILE%\\AppData\\LocalLow\\TesseractStudio\\TaskbarHero\\SaveFile_Live.es3</code>. Aplikasi membaca file ini di tiap pembaruan secara real-time, tanpa mengubah datanya.",
+  "Os baús de Taskbar Hero são itens do Steam Inventory Service e possuem cooldowns validados no servidor da Steam. O monitor lê esses dados diretamente do cache do Steam local (<code>inventorymsgcache</code>). Os baús normais (cinza) possuem cooldown de 11 minutos (limite de 3 drops por 33 min), enquanto os baús de chefe de fase (azuis) possuem cooldown de 9 minutos (limite de 3 drops por 27 min).": "Chest Taskbar Hero adalah item dari Steam Inventory Service dan memiliki cooldown yang divalidasi di server Steam. Monitor membaca data ini langsung dari cache Steam lokal (<code>inventorymsgcache</code>). Chest biasa (abu-abu) memiliki cooldown 11 menit (batas 3 drop per 33 menit), sedangkan chest bos stage (biru) memiliki cooldown 9 menit (batas 3 drop per 27 menit).",
+  "Sim! Deixar o inventário de baús comuns cheio impede que o jogo envie requisições de drops comuns para os servidores da Steam. Isso evita que você gaste o seu <b>Limite Diário de Drops da Steam (Daily Drop Limit)</b> com baús de menor valor, permitindo que todas as suas requisições diárias de drop sejam direcionadas exclusivamente para os valiosos baús de boss (azuis).": "Ya! Membiarkan inventaris chest biasa tetap penuh mencegah game mengirim permintaan drop biasa ke server Steam. Ini menghindarkan kamu menghabiskan <b>Batas Drop Harian Steam (Daily Drop Limit)</b> pada chest bernilai rendah, sehingga semua permintaan drop harian kamu diarahkan secara eksklusif untuk chest bos (biru) yang bernilai tinggi.",
+  "Sim, é 100% segura. O otimizador opera estritamente de forma <b>somente leitura (read-only)</b>, analisando o save e o cache local sem alterar a memória do jogo, sem injetar código e sem alterar arquivos de salvamento. O código-fonte é totalmente aberto e auditável no GitHub.": "Ya, 100% aman. Optimizer beroperasi secara ketat dalam mode <b>hanya-baca (read-only)</b>, menganalisis save dan cache lokal tanpa mengubah memori game, tanpa menyuntikkan kode, dan tanpa mengubah file save. Kode sumbernya sepenuhnya open source dan bisa diaudit di GitHub.",
+  "Fan-made tool · Game content © Nugem Studio &amp; Tesseract Studio · Not affiliated with the developers": "Fan-made tool · Game content © Nugem Studio &amp; Tesseract Studio · Not affiliated with the developers",
+  "Taskbar Hero Optimizer · feito por um fã · Dados do jogo: <span id=\"gamever\">—</span>": "Taskbar Hero Optimizer · dibuat oleh fans · Data game: <span id=\"gamever\">—</span>",
+  "O que é o Taskbar Hero Optimizer?": "Apa itu Taskbar Hero Optimizer?",
+  "Como encontrar o arquivo de save (SaveFile_Live.es3) do jogo?": "Cara menemukan file save (SaveFile_Live.es3) game?",
+  "Como funciona o Cooldown e o Tracker de Baús?": "Bagaimana cara kerja Cooldown dan Tracker Chest?",
+  "O acúmulo de baús comuns melhora o drop de baús de boss?": "Apakah menumpuk chest biasa meningkatkan drop chest bos?",
+  "A ferramenta é segura? Pode causar banimento?": "Apakah tool ini aman? Bisakah menyebabkan ban?"
  },
  "pages": {
   "guide.html": {
@@ -93,7 +110,16 @@
    "Lembre-se de refazer esse teste a cada grande upgrade de Arma ou destrave de novo Herói.": "Ingat untuk mengulang tes ini setiap ada upgrade Senjata besar atau membuka Hero baru.",
    "Veja também": "Lihat juga",
    "<a href=\"./chest-drops.html\">Como funciona a mecânica de Drops e Cooldown de Baús</a>": "<a href=\"./chest-drops.html\">Cara kerja mekanik Drop dan Cooldown Chest</a>",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Fan-made tool"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Fan-made tool",
+   "<span>Guias</span>": "<span>Panduan</span>",
+   "Como usar o Otimizador": "Cara pakai Optimizer",
+   "Guia de Ouro e XP": "Panduan Gold &amp; XP",
+   "Mecânica de Baús": "Mekanik Chest",
+   "Conhecer o Otimizador de Farm": "Kenali Optimizer Farming",
+   "Página Inicial": "Beranda",
+   "Guia de Baús": "Panduan Chest",
+   "Privacidade": "Privasi",
+   "Termos de Uso": "Ketentuan Penggunaan"
   },
   "tutorial.html": {
    "Aprenda o passo a passo para baixar, executar e entender todas as estatísticas e métricas (Ouro/h, XP/h, Baús) do painel do Taskbar Hero Optimizer.": "Pelajari langkah demi langkah untuk mengunduh, menjalankan, dan memahami semua statistik dan metrik (Gold/jam, XP/jam, Chest) di dasbor Taskbar Hero Optimizer.",
@@ -152,7 +178,17 @@
    "Funciona como um catálogo enciclopédico. Você pode filtrar os itens que deseja encontrar, ver seus respectivos valores (em ouro) no mercado e quais fases possuem as melhores chances percentuais de derrubá-los. A aba <strong>Materiais</strong> faz o mesmo para pedras da alma e demais materiais de craft, que não ocupam slots de equipamento.": "Berfungsi seperti katalog ensiklopedis. Kamu bisa memfilter item yang ingin kamu temukan, melihat nilai masing-masing (dalam gold) di pasar, dan stage mana yang punya peluang persentase terbaik untuk men-drop-nya. Tab <strong>Material</strong> melakukan hal yang sama untuk soul stone dan material craft lainnya, yang tidak memakai slot equipment.",
    "Pronto para otimizar seu jogo?": "Siap mengoptimalkan game kamu?",
    "Volte para a página inicial para fazer o download.": "Kembali ke halaman beranda untuk mengunduh.",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Fan-made tool"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Fan-made tool",
+   "<span>Guias</span>": "<span>Panduan</span>",
+   "Como usar o Otimizador": "Cara pakai Optimizer",
+   "Guia de Ouro e XP": "Panduan Gold &amp; XP",
+   "Mecânica de Baús": "Mekanik Chest",
+   "Ir para a Página Inicial": "Ke Beranda",
+   "Página Inicial": "Beranda",
+   "Guia de Ouro/XP": "Panduan Gold/XP",
+   "Guia de Baús": "Panduan Chest",
+   "Privacidade": "Privasi",
+   "Termos de Uso": "Ketentuan Penggunaan"
   },
   "chest-drops.html": {
    "Entenda como funciona o sistema de inventário da Steam no Taskbar Hero. Tempos de cooldown dos baús azuis, limites diários de drop e como forçar drops raros.": "Pahami cara kerja sistem inventaris Steam di Taskbar Hero. Waktu cooldown chest biru, batas drop harian, dan cara memaksa drop langka.",
@@ -194,7 +230,30 @@
    "Nosso aplicativo gratuito monitora inteligentemente os seus drops e calcula os cooldowns em tempo real para exibir os temporizadores. Saiba exatamente quando o jogo poderá liberar seu próximo drop de Baú Azul!": "Aplikasi gratis kami memantau drop kamu secara cerdas dan menghitung cooldown secara real-time untuk menampilkan penghitung waktu. Ketahui dengan tepat kapan game bisa melepas drop Chest Biru berikutnya!",
    "Veja também": "Lihat juga",
    "<a href=\"./guide.html\">Guia Matemático de Farm: Ouro/hora e XP/hora</a>": "<a href=\"./guide.html\">Panduan Matematika Farming: Gold/jam dan XP/jam</a>",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Fan-made tool"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Fan-made tool",
+   "<span>Guias</span>": "<span>Panduan</span>",
+   "Como usar o Otimizador": "Cara pakai Optimizer",
+   "Guia de Ouro e XP": "Panduan Gold &amp; XP",
+   "Mecânica de Baús": "Mekanik Chest",
+   "Baixar o Otimizador de Baús": "Unduh Optimizer Chest",
+   "Página Inicial": "Beranda",
+   "Guia de Ouro/XP": "Panduan Gold/XP",
+   "Privacidade": "Privasi",
+   "Termos de Uso": "Ketentuan Penggunaan",
+   "Tempo de Cooldown": "Waktu Cooldown",
+   "11 minutos": "11 menit",
+   "Limite por Janela": "Batas per Jendela",
+   "3 Drops": "3 Drop",
+   "Tamanho da Janela": "Ukuran Jendela",
+   "33 minutos": "33 menit",
+   "Cooldown (alto nível)": "Cooldown (level tinggi)",
+   "9 minutos": "9 menit",
+   "27 minutos": "27 menit",
+   "Nenhum": "Tidak ada",
+   "Quando cai": "Kapan jatuh",
+   "1ª vez por chefe": "Pertama kali per bos",
+   "Raridade": "Kelangkaan",
+   "Lendária": "Legendaris"
   }
  }
 }

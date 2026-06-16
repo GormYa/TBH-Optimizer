@@ -47,7 +47,24 @@
   "Contato": "Contact",
   "feito por um fã · Dados do jogo:": "made by a fan · Game data:",
   "['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']": "['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']",
-  "Baixe a versão mais recente acima.": "Download the latest version above."
+  "Baixe a versão mais recente acima.": "Download the latest version above.",
+  "<span>Guias</span>": "<span>Guides</span>",
+  "Como usar o Otimizador": "How to use the Optimizer",
+  "Guia de Ouro e XP": "Gold &amp; XP Guide",
+  "Mecânica de Baús": "Chest Mechanics",
+  "Build mais recente: <b id=\"ver2\" style=\"color:var(--gold)\">—</b>": "Latest build: <b id=\"ver2\" style=\"color:var(--gold)\">—</b>",
+  "O Taskbar Hero Optimizer (TBH Optimizer) é uma ferramenta gratuita de código aberto feita para otimizar o ganho de Ouro (Gold), Experiência (XP) e Gerenciamento de Baús no jogo ocioso <i>Taskbar Hero</i>. Ele analisa o arquivo de salvamento do jogo em tempo real para calcular estatísticas exatas de eficiência por fase.": "Taskbar Hero Optimizer (TBH Optimizer) is a free, open-source tool built to optimize Gold gains, Experience (XP) and Chest management in the idle game <i>Taskbar Hero</i>. It analyzes the game's save file in real time to calculate exact efficiency stats for each stage.",
+  "O arquivo de save padrão do jogo é monitorado automaticamente pelo aplicativo no Windows. Ele fica localizado na pasta <code>%USERPROFILE%\\AppData\\LocalLow\\TesseractStudio\\TaskbarHero\\SaveFile_Live.es3</code>. O aplicativo lê este arquivo a cada atualização em tempo real, sem modificar seus dados.": "The game's default save file is monitored automatically by the app on Windows. It's located in the folder <code>%USERPROFILE%\\AppData\\LocalLow\\TesseractStudio\\TaskbarHero\\SaveFile_Live.es3</code>. The app reads this file on every real-time update, without modifying its data.",
+  "Os baús de Taskbar Hero são itens do Steam Inventory Service e possuem cooldowns validados no servidor da Steam. O monitor lê esses dados diretamente do cache do Steam local (<code>inventorymsgcache</code>). Os baús normais (cinza) possuem cooldown de 11 minutos (limite de 3 drops por 33 min), enquanto os baús de chefe de fase (azuis) possuem cooldown de 9 minutos (limite de 3 drops por 27 min).": "Taskbar Hero chests are Steam Inventory Service items with cooldowns validated on Steam's server. The monitor reads this data directly from the local Steam cache (<code>inventorymsgcache</code>). Common chests (gray) have an 11-minute cooldown (limit of 3 drops per 33 min), while stage boss chests (blue) have a 9-minute cooldown (limit of 3 drops per 27 min).",
+  "Sim! Deixar o inventário de baús comuns cheio impede que o jogo envie requisições de drops comuns para os servidores da Steam. Isso evita que você gaste o seu <b>Limite Diário de Drops da Steam (Daily Drop Limit)</b> com baús de menor valor, permitindo que todas as suas requisições diárias de drop sejam direcionadas exclusivamente para os valiosos baús de boss (azuis).": "Yes! Keeping your common chest inventory full stops the game from sending common drop requests to Steam's servers. This prevents you from spending your <b>Steam Daily Drop Limit</b> on lower-value chests, letting all of your daily drop requests be directed exclusively to the valuable boss (blue) chests.",
+  "Sim, é 100% segura. O otimizador opera estritamente de forma <b>somente leitura (read-only)</b>, analisando o save e o cache local sem alterar a memória do jogo, sem injetar código e sem alterar arquivos de salvamento. O código-fonte é totalmente aberto e auditável no GitHub.": "Yes, it's 100% safe. The optimizer operates strictly in <b>read-only</b> mode, analyzing the save and the local cache without altering the game's memory, without injecting code and without modifying save files. The source code is fully open and auditable on GitHub.",
+  "Fan-made tool · Game content © Nugem Studio &amp; Tesseract Studio · Not affiliated with the developers": "Fan-made tool · Game content © Nugem Studio &amp; Tesseract Studio · Not affiliated with the developers",
+  "Taskbar Hero Optimizer · feito por um fã · Dados do jogo: <span id=\"gamever\">—</span>": "Taskbar Hero Optimizer · made by a fan · Game data: <span id=\"gamever\">—</span>",
+  "O que é o Taskbar Hero Optimizer?": "What is the Taskbar Hero Optimizer?",
+  "Como encontrar o arquivo de save (SaveFile_Live.es3) do jogo?": "How do I find the game's save file (SaveFile_Live.es3)?",
+  "Como funciona o Cooldown e o Tracker de Baús?": "How do the Chest Cooldown and Tracker work?",
+  "O acúmulo de baús comuns melhora o drop de baús de boss?": "Does hoarding common chests improve boss chest drops?",
+  "A ferramenta é segura? Pode causar banimento?": "Is the tool safe? Can it get me banned?"
  },
  "pages": {
   "guide.html": {
@@ -93,7 +110,16 @@
    "Lembre-se de refazer esse teste a cada grande upgrade de Arma ou destrave de novo Herói.": "Remember to redo this test after every major Weapon upgrade or new Hero unlock.",
    "Veja também": "See also",
    "<a href=\"./chest-drops.html\">Como funciona a mecânica de Drops e Cooldown de Baús</a>": "<a href=\"./chest-drops.html\">How the Chest Drop and Cooldown mechanic works</a>",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Fan-made tool"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Fan-made tool",
+   "<span>Guias</span>": "<span>Guides</span>",
+   "Como usar o Otimizador": "How to use the Optimizer",
+   "Guia de Ouro e XP": "Gold &amp; XP Guide",
+   "Mecânica de Baús": "Chest Mechanics",
+   "Conhecer o Otimizador de Farm": "Discover the Farm Optimizer",
+   "Página Inicial": "Home",
+   "Guia de Baús": "Chest Guide",
+   "Privacidade": "Privacy",
+   "Termos de Uso": "Terms of Use"
   },
   "tutorial.html": {
    "Aprenda o passo a passo para baixar, executar e entender todas as estatísticas e métricas (Ouro/h, XP/h, Baús) do painel do Taskbar Hero Optimizer.": "Learn the step-by-step process to download, run and understand all the stats and metrics (Gold/h, XP/h, Chests) of the Taskbar Hero Optimizer dashboard.",
@@ -152,7 +178,17 @@
    "Funciona como um catálogo enciclopédico. Você pode filtrar os itens que deseja encontrar, ver seus respectivos valores (em ouro) no mercado e quais fases possuem as melhores chances percentuais de derrubá-los. A aba <strong>Materiais</strong> faz o mesmo para pedras da alma e demais materiais de craft, que não ocupam slots de equipamento.": "It works like an encyclopedic catalog. You can filter the items you want to find, see their respective market values (in gold) and which stages have the best percentage chances of dropping them. The <strong>Materials</strong> tab does the same for soul stones and other crafting materials, which don't take up equipment slots.",
    "Pronto para otimizar seu jogo?": "Ready to optimize your game?",
    "Volte para a página inicial para fazer o download.": "Go back to the home page to download.",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Fan-made tool"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Fan-made tool",
+   "<span>Guias</span>": "<span>Guides</span>",
+   "Como usar o Otimizador": "How to use the Optimizer",
+   "Guia de Ouro e XP": "Gold &amp; XP Guide",
+   "Mecânica de Baús": "Chest Mechanics",
+   "Ir para a Página Inicial": "Go to Home",
+   "Página Inicial": "Home",
+   "Guia de Ouro/XP": "Gold/XP Guide",
+   "Guia de Baús": "Chest Guide",
+   "Privacidade": "Privacy",
+   "Termos de Uso": "Terms of Use"
   },
   "chest-drops.html": {
    "Entenda como funciona o sistema de inventário da Steam no Taskbar Hero. Tempos de cooldown dos baús azuis, limites diários de drop e como forçar drops raros.": "Understand how the Steam inventory system works in Taskbar Hero. Blue chest cooldown times, daily drop limits and how to force rare drops.",
@@ -194,7 +230,30 @@
    "Nosso aplicativo gratuito monitora inteligentemente os seus drops e calcula os cooldowns em tempo real para exibir os temporizadores. Saiba exatamente quando o jogo poderá liberar seu próximo drop de Baú Azul!": "Our free app intelligently tracks your drops and calculates the cooldowns in real time to display the timers. Know exactly when the game can release your next Blue Chest drop!",
    "Veja também": "See also",
    "<a href=\"./guide.html\">Guia Matemático de Farm: Ouro/hora e XP/hora</a>": "<a href=\"./guide.html\">Mathematical Farming Guide: Gold/hour and XP/hour</a>",
-   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Fan-made tool"
+   "Taskbar Hero Optimizer · Fan-made tool": "Taskbar Hero Optimizer · Fan-made tool",
+   "<span>Guias</span>": "<span>Guides</span>",
+   "Como usar o Otimizador": "How to use the Optimizer",
+   "Guia de Ouro e XP": "Gold &amp; XP Guide",
+   "Mecânica de Baús": "Chest Mechanics",
+   "Baixar o Otimizador de Baús": "Download the Chest Optimizer",
+   "Página Inicial": "Home",
+   "Guia de Ouro/XP": "Gold/XP Guide",
+   "Privacidade": "Privacy",
+   "Termos de Uso": "Terms of Use",
+   "Tempo de Cooldown": "Cooldown Time",
+   "11 minutos": "11 minutes",
+   "Limite por Janela": "Limit per Window",
+   "3 Drops": "3 Drops",
+   "Tamanho da Janela": "Window Size",
+   "33 minutos": "33 minutes",
+   "Cooldown (alto nível)": "Cooldown (high level)",
+   "9 minutos": "9 minutes",
+   "27 minutos": "27 minutes",
+   "Nenhum": "None",
+   "Quando cai": "When it drops",
+   "1ª vez por chefe": "1st time per boss",
+   "Raridade": "Rarity",
+   "Lendária": "Legendary"
   }
  }
 }
