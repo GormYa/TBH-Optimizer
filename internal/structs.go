@@ -211,6 +211,7 @@ type Control struct {
 	midWindowRestart    bool
 	reanchorWave        int
 	timeContamStreak    map[int]int
+	xpCeilStreak        map[int]int
 	primeFirstClear     bool
 	Gold                int
 	RuneLevels          map[int]int

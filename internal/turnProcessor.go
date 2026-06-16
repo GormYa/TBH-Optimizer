@@ -291,6 +291,14 @@ func (ctrl *Control) estimateClearXp(stage int) float64 {
 
 const xpCeilFactor = 2.0
 
+// xpCeilAccept: na cold-start (sem histórico próprio) o teto de XP usa uma projeção
+// (expectedEXP×ret) que SUBESTIMA brutalmente fases muito acima do nível — o clear real
+// pode ser dezenas de vezes a projeção. Rejeitar uma vez é ok; rejeitar pra sempre trava
+// a fase (nunca ganha histórico). Então aceita quando o MESMO excesso se repete por
+// xpCeilAccept janelas seguidas: XP estável é clear real; janela com mortes/tentativas
+// seria errática. Menor que timeContamAccept porque XP repetido é sinal mais forte.
+const xpCeilAccept = 2
+
 // projectedClearXp projeta o XP de UM clear da fase: esperado dos dados do jogo x
 // multiplicador medido (mediana das fases com carimbo de nivel) x retencao MEDIA
 // do time ativo.
@@ -509,9 +517,16 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 
 	if ctrl.estimateClearXp(clearedStage) == 0 {
 		if xpEst := ctrl.projectedClearXp(clearedStage); xpEst > 0 && xpGain > xpCeilFactor*xpEst {
-			advanceClock()
-			Logf("reject", "Fase %s descartada: +%.0f xp é %.1fx o esperado de UM clear (~%.0f xp, não segundos) — a janela contém mortes/tentativas múltiplas, não uma corrida só.", ctrl.stageDisplay(clearedStage), xpGain, xpGain/xpEst, xpEst)
-			return
+			if ctrl.xpCeilStreak == nil {
+				ctrl.xpCeilStreak = make(map[int]int)
+			}
+			ctrl.xpCeilStreak[clearedStage]++
+			if ctrl.xpCeilStreak[clearedStage] < xpCeilAccept {
+				advanceClock()
+				Logf("reject", "Fase %s descartada: +%.0f xp é %.1fx o projetado de UM clear (~%.0f xp) — pode ser janela com mortes/tentativas. Confirmo se o valor repetir.", ctrl.stageDisplay(clearedStage), xpGain, xpGain/xpEst, xpEst)
+				return
+			}
+			Logf("info", "Fase %s: +%.0f xp acima da projeção (~%.0f) pela %dª janela estável seguida — consistente demais pra ser contaminação; aceito como o clear real (a projeção subestima fase muito acima do nível).", ctrl.stageDisplay(clearedStage), xpGain, xpEst, ctrl.xpCeilStreak[clearedStage])
 		}
 	}
 
@@ -578,6 +593,7 @@ func calculateAndLogRound(ctrl *Control, currentSave *InnerSaveData) {
 	)
 
 	delete(ctrl.timeContamStreak, clearedStage)
+	delete(ctrl.xpCeilStreak, clearedStage)
 
 	if err := ctrl.StageHistory.Save(HistoryFilePath); err != nil {
 		fmt.Println("Aviso: falha ao persistir o historico:", err)

@@ -26,6 +26,9 @@ func yieldMultipliers(stats []StageStats, farm map[int]FarmStageInfo) (gold, xp 
 		if !ok {
 			continue
 		}
+		if !expBandReliable(info.Level, st.MeasuredHeroLevel) {
+			continue
+		}
 		if info.ExpectedGold > 0 {
 			gm = append(gm, st.AvgGoldPerRun/info.ExpectedGold)
 		}
@@ -46,6 +49,9 @@ func xpMultiplierMeasured(stats []StageStats, farm map[int]FarmStageInfo) (float
 		}
 		info, ok := farm[st.StageKey]
 		if !ok || info.ExpectedEXP <= 0 {
+			continue
+		}
+		if !expBandReliable(info.Level, st.MeasuredHeroLevel) {
 			continue
 		}
 		retThen := expRetention(info.Level, st.MeasuredHeroLevel)

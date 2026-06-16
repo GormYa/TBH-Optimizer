@@ -32,6 +32,31 @@ func TestYieldMultipliersIgnoresStaleXP(t *testing.T) {
 	}
 }
 
+// Uma fase de nivel baixo medida com o heroi MUITO acima (ex.: 1-1 nivel 1 com heroi
+// 83) cai no piso de retencao (1%). Usar esse ponto pra calibrar divide pelo piso e
+// infla o multiplicador ~100x -> estoura TODAS as estimativas (bug do XP estimado em
+// trilhoes). Pontos no fundo do poco de retencao nao podem calibrar. Dados reais do
+// save do usuario (stage_history.json + farm_stages.json).
+func TestYieldMultipliersIgnoresExtremeLevelMismatch(t *testing.T) {
+	farm := map[int]FarmStageInfo{
+		3306: {Key: 3306, Level: 75, ExpectedGold: 2263296, ExpectedEXP: 46249213},
+		1101: {Key: 1101, Level: 1, ExpectedGold: 140, ExpectedEXP: 155},
+	}
+	stats := []StageStats{
+		// fase bem-pareada (heroi 83 x fase 75, ret 0.63): multiplicador real ~1.0
+		{StageKey: 3306, TotalRuns: 10, MeasuredHeroLevel: 83, AvgGoldPerRun: 727816.84, AvgXpPerRun: 28329438},
+		// fase 1-1 com heroi 83: ret no piso (0.01) -> ponto envenenado, deve ser ignorado
+		{StageKey: 1101, TotalRuns: 3, MeasuredHeroLevel: 83, AvgGoldPerRun: 9291, AvgXpPerRun: 176576.56},
+	}
+	gold, xp := yieldMultipliers(stats, farm)
+	if xp > 5.0 {
+		t.Fatalf("multiplicador de XP nao deveria inflar pela fase 1-1 super over-level (esperado ~1), veio %.1f", xp)
+	}
+	if gold > 5.0 {
+		t.Fatalf("multiplicador de ouro nao deveria inflar pela fase 1-1 (esperado <1), veio %.1f", gold)
+	}
+}
+
 // As COLUNAS de uma fase antiga (stale) precisam contar a mesma historia: tempo,
 // por-corrida e por-hora todos reprojetados — nao o por-corrida da medicao velha ao
 // lado de um por-hora recalculado. E numa fase carimbada cujo nivel mudou, o

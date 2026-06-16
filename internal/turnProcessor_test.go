@@ -897,6 +897,65 @@ func TestNegativeGoldWithInflatedXpRejected(t *testing.T) {
 	}
 }
 
+// XP-CEIL DEADLOCK (fase muito acima do nível): herói 83 no 2-5 (nv43) ganha XP real
+// estável (~229k), MUITO acima da projeção do modelo (~44k = expectedEXP×ret, que
+// subestima fase over-leveled por ordens de grandeza). O teto só roda na 1ª medição
+// (sem histórico próprio), então rejeitava o 1º clear válido — e, sem nunca registrar,
+// rejeitava pra SEMPRE: a fase jamais era medida. Repetição estável (≥ xpCeilAccept
+// janelas) prova clear real e registra. Dados reais: 2-5 veio 229624/229644/229632.
+func TestXpCeilDeadlockAcceptsStableOverlevelClear(t *testing.T) {
+	old, _ := os.Getwd()
+	if err := os.Chdir(t.TempDir()); err != nil {
+		t.Fatal(err)
+	}
+	defer os.Chdir(old)
+
+	const calib = 3306 // 3-6, perto do nível -> calibra xm ~1.0
+	const stage = 2205 // 2-5, nv43; herói 83 -> retenção no piso (projeção subestima)
+	const clearXp = 229624.0
+	ctrl := Control{
+		UseEMA: true, EMAAlpha: 0.2,
+		FarmStages: map[int]FarmStageInfo{
+			calib: {Key: calib, TotalHP: 112198128, ExpectedGold: 2263296, ExpectedEXP: 46249213, Waves: 27, Level: 75},
+			stage: {Key: stage, TotalHP: 8425065, ExpectedGold: 244428, ExpectedEXP: 4578413, Waves: 22, Level: 43},
+		},
+		HeroStates:          map[int]HeroState{201: {Level: 83, Xp: 1000}},
+		ActiveHeroCount:     1,
+		HeroLevel:           83,
+		LastCurrentStageKey: stage,
+		LastPlayTime:        1000,
+		LastGold:            500,
+	}
+	// 3-6 medido: xm = 28.3M / (46.25M × ret(75,83)≈0.63) ≈ 0.97 (projeção do 2-5 ~44k)
+	for range 3 {
+		ctrl.StageHistory.Update(calib, 250, 700000, 28300000, true, 0.2, 1, 83, 0, nil)
+	}
+
+	gold, xp := 500, 1000.0
+	// 1ª janela: clear válido mas acima do teto -> segura (uma só não prova)
+	gold += 9291
+	xp += clearXp
+	calculateAndLogRound(&ctrl, newClearSave(stage, 1032, gold, 201, 83, xp))
+	if s, ok := ctrl.StageHistory.Get(stage); ok && s.TotalRuns != 0 {
+		t.Fatalf("1ª janela acima do teto deveria segurar; runs=%d (esperado 0)", s.TotalRuns)
+	}
+
+	// 2ª janela igual e estável: consistente demais pra ser morte/tentativa -> registra
+	gold += 9291
+	xp += clearXp
+	calculateAndLogRound(&ctrl, newClearSave(stage, 1064, gold, 201, 83, xp))
+	if s, ok := ctrl.StageHistory.Get(stage); !ok || s.TotalRuns != 1 {
+		runs := 0
+		if ok {
+			runs = s.TotalRuns
+		}
+		t.Fatalf("2ª janela estável seguida deveria registrar o clear real over-level; runs=%d (esperado 1)", runs)
+	}
+	if len(ctrl.xpCeilStreak) != 0 {
+		t.Fatalf("registrar deveria zerar o streak da fase; streak=%v", ctrl.xpCeilStreak)
+	}
+}
+
 // TENTATIVAS DE BOSS SEM TESTEMUNHA: o jogador tenta o boss do ato 3x entre
 // autosaves (nenhum save flagra o outro mapa) e volta a farmar. A janela fecha com
 // ganhos de UM clear normal mas tempo somando as tentativas. Caso real: 3-9 com

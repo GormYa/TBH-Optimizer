@@ -36,6 +36,31 @@ func TestExpRetention(t *testing.T) {
 	}
 }
 
+// Uma medicao so calibra os multiplicadores se estiver DENTRO da parabola de retencao
+// (diff <= e1) — antes da cauda de decaimento. Na cauda, base x retencao desacopla do
+// ganho real (heroi nv83 x fase nv1: ~176k XP, nao base x piso). Heroi 32: over e1=8,
+// under e1=14. Par indefinido (nivel <=0) conta como confiavel (retencao 1.0).
+func TestExpBandReliable(t *testing.T) {
+	cases := []struct {
+		stage, hero int
+		want        bool
+	}{
+		{32, 32, true},  // diff 0
+		{24, 32, true},  // over, diff 8 (= e1)
+		{23, 32, false}, // over, diff 9 (> e1) -> cauda
+		{1, 32, false},  // 1-1 com heroi alto -> cauda (o ponto envenenado)
+		{46, 32, true},  // under, diff 14 (= e1)
+		{47, 32, false}, // under, diff 15 (> e1) -> cauda
+		{0, 32, true},   // fase indefinida
+		{40, 0, true},   // medicao legada sem carimbo de nivel
+	}
+	for _, c := range cases {
+		if got := expBandReliable(c.stage, c.hero); got != c.want {
+			t.Errorf("expBandReliable(%d,%d)=%v, quero %v", c.stage, c.hero, got, c.want)
+		}
+	}
+}
+
 // XP/hora deve ser dividido pelos herois ATIVOS (3), nao por todos do save (6),
 // senao mostra metade do valor (descasando do wiki, que e por heroi ativo).
 func TestNumActiveHeroes(t *testing.T) {

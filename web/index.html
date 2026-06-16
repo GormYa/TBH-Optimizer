@@ -1029,8 +1029,8 @@
 					<template v-if="advStalledGear.length">
 						<div class="cv-divh">{{ t('Equipamento parado no inventário') }}</div>
 						<div class="cv-arow" v-for="u in advStalledGear.slice(0,5)" :key="'g'+u.key">
-							<span class="cv-atxt"><b>{{ u.to }}</b> › <span class="cv-mut">{{ u.hero }}</span></span>
-							<span class="cv-gain cv-grn">{{ t('stats melhores') }}</span>
+							<span class="cv-atxt"><b>{{ u.to }}</b><span class="cv-mut" v-if="u.toGrade"> ({{ gradeLabel(u.toGrade) }})</span> › <span class="cv-mut">{{ u.hero }}</span></span>
+							<span class="cv-gain cv-grn"><template v-if="u.upgrades">{{ gradeLabel(u.fromGrade) }} → {{ gradeLabel(u.toGrade) }}</template><template v-else>{{ t('stats melhores') }}</template></span>
 						</div>
 					</template>
 					<template v-if="advEnchImprovable.length">
@@ -1657,7 +1657,8 @@
 					.map(r => ({ key: r.key, name: runeName(r), cost: nextLevelCost(r) })).sort((a, b) => (a.cost || 0) - (b.cost || 0)));
 				// item parado dominante: comparação real (base + enchants) feita no backend (advisor.stalled_gear)
 				const advStalledGear = computed(() => ((advisor.value && advisor.value.stalled_gear) || []).map(g => ({
-					hero: heroNameOf(g.hero_key), to: itemName(g.to_item), from: itemName(g.from_item), key: g.to_item
+					hero: heroNameOf(g.hero_key), to: itemName(g.to_item), from: itemName(g.from_item), key: g.to_item,
+					toGrade: g.to_grade, fromGrade: g.from_grade, upgrades: g.to_grade && g.from_grade && g.to_grade !== g.from_grade
 				})));
 				const advHasImprovements = computed(() => advEnchImprovable.value.length || advSynthReady.value.length || advRunesBuyable.value.length || advStalledGear.value.length);
 

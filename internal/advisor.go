@@ -17,10 +17,12 @@ type HeroDamage struct {
 }
 
 type StalledGear struct {
-	HeroKey   int `json:"hero_key"`
-	SlotIndex int `json:"slot_index"`
-	FromItem  int `json:"from_item"`
-	ToItem    int `json:"to_item"`
+	HeroKey   int    `json:"hero_key"`
+	SlotIndex int    `json:"slot_index"`
+	FromItem  int    `json:"from_item"`
+	ToItem    int    `json:"to_item"`
+	FromGrade string `json:"from_grade"`
+	ToGrade   string `json:"to_grade"`
 }
 
 type AdvisorReport struct {
@@ -145,7 +147,11 @@ func buildStalledGear(ctrl *Control, runes []statContribution) []StalledGear {
 				bestItem, bestVec, bestFound = ci.ItemKey, candVec, true
 			}
 			if bestFound {
-				out = append(out, StalledGear{HeroKey: he.HeroKey, SlotIndex: si, FromItem: s.ItemKey, ToItem: bestItem})
+				out = append(out, StalledGear{
+					HeroKey: he.HeroKey, SlotIndex: si,
+					FromItem: s.ItemKey, ToItem: bestItem,
+					FromGrade: itemMeta[s.ItemKey].Grade, ToGrade: itemMeta[bestItem].Grade,
+				})
 			}
 		}
 	}

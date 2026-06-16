@@ -7,6 +7,15 @@
 window.CHANGELOG = {
 	entries: [
         {
+            date: "2026-06-16",
+            version: "v1.1.1",
+            title: "Hotfix: sane stage estimates & item grade in the Advisor",
+            items: [
+                "Fixed estimated gold and XP per hour exploding to absurd values (stages showing trillions of XP/h). Clearing your runs and measuring a low-level stage while heavily over-leveled poisoned the calibration — the exp-retention floor (1%) was used as a divisor, inflating the multiplier ~100x and carrying into every estimate. Calibration now only trusts stages where your hero is reasonably matched to the stage's level.",
+                "The Advisor's gear suggestions now show the recommended item's grade/tier, including the upgrade jump (e.g. Legendary → Immortal), so you can see how much stronger the suggested item really is.",
+            ],
+        },
+        {
             date: "2026-06-14",
             version: "v1.1.0",
             title: "New Advisor tab: combat-model progression guidance",
