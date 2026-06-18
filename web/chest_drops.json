@@ -1,12 +1,12 @@
 {
  "_schema": {
-  "source": "arquivos do jogo TaskbarHero v1.00.11 (extração local UnityPy)",
+  "source": "arquivos do jogo TaskbarHero v1.00.14 (extração local UnityPy)",
   "dropRate": "stages[].dropRatePercent em %; rate do CSV /10",
   "loot": "loot[].weight + hero ('' = base). % do grupo = weight / soma dos pesos dos grupos ativos (base + heróis selecionados). por item ~ %/len(items)",
   "heroes": "id -> {name, dlc}; heróis cuja posse muda a pool de loot"
  },
  "updatedAt": "",
- "gameVersion": "1.00.11",
+ "gameVersion": "1.00.14",
  "heroes": {
   "501": {
    "name": "Caçador",
@@ -14063,14 +14063,6 @@
      "grade": "COMMON",
      "items": [
       300001
-     ]
-    },
-    {
-     "weight": 10,
-     "hero": "",
-     "grade": "IMMORTAL",
-     "items": [
-      190001
      ]
     }
    ]
@@ -29617,6 +29609,22 @@
      ]
     },
     {
+     "weight": 3951421,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      611031
+     ]
+    },
+    {
+     "weight": 3951421,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      631031
+     ]
+    },
+    {
      "weight": 3747156,
      "hero": "",
      "grade": "LEGENDARY",
@@ -29670,35 +29678,11 @@
      ]
     },
     {
-     "weight": 3259922,
-     "hero": "",
-     "grade": "UNCOMMON",
-     "items": [
-      601031
-     ]
-    },
-    {
-     "weight": 3259922,
-     "hero": "",
-     "grade": "UNCOMMON",
-     "items": [
-      611031
-     ]
-    },
-    {
-     "weight": 3259922,
+     "weight": 3161136,
      "hero": "",
      "grade": "UNCOMMON",
      "items": [
       621031
-     ]
-    },
-    {
-     "weight": 3259922,
-     "hero": "",
-     "grade": "UNCOMMON",
-     "items": [
-      631031
      ]
     },
     {
@@ -29725,15 +29709,15 @@
      ]
     },
     {
-     "weight": 1504580,
+     "weight": 1975710,
      "hero": "",
-     "grade": "RARE",
+     "grade": "UNCOMMON",
      "items": [
-      602031
+      601031
      ]
     },
     {
-     "weight": 1504580,
+     "weight": 1823733,
      "hero": "",
      "grade": "RARE",
      "items": [
@@ -29741,7 +29725,15 @@
      ]
     },
     {
-     "weight": 1504580,
+     "weight": 1823733,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      632031
+     ]
+    },
+    {
+     "weight": 1458987,
      "hero": "",
      "grade": "RARE",
      "items": [
@@ -29749,11 +29741,11 @@
      ]
     },
     {
-     "weight": 1504580,
+     "weight": 911867,
      "hero": "",
      "grade": "RARE",
      "items": [
-      632031
+      602031
      ]
     },
     {
@@ -29802,23 +29794,7 @@
      ]
     },
     {
-     "weight": 250764,
-     "hero": "",
-     "grade": "LEGENDARY",
-     "items": [
-      633031
-     ]
-    },
-    {
-     "weight": 250762,
-     "hero": "",
-     "grade": "LEGENDARY",
-     "items": [
-      603031
-     ]
-    },
-    {
-     "weight": 250762,
+     "weight": 303955,
      "hero": "",
      "grade": "LEGENDARY",
      "items": [
@@ -29826,11 +29802,27 @@
      ]
     },
     {
-     "weight": 250762,
+     "weight": 303955,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      633031
+     ]
+    },
+    {
+     "weight": 243164,
      "hero": "",
      "grade": "LEGENDARY",
      "items": [
       623031
+     ]
+    },
+    {
+     "weight": 151977,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      603031
      ]
     },
     {
@@ -30003,6 +29995,22 @@
      ]
     },
     {
+     "weight": 345121,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      611051
+     ]
+    },
+    {
+     "weight": 345121,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      631051
+     ]
+    },
+    {
      "weight": 301430,
      "hero": "",
      "grade": "UNCOMMON",
@@ -30012,35 +30020,11 @@
      ]
     },
     {
-     "weight": 284725,
-     "hero": "",
-     "grade": "UNCOMMON",
-     "items": [
-      601051
-     ]
-    },
-    {
-     "weight": 284725,
-     "hero": "",
-     "grade": "UNCOMMON",
-     "items": [
-      611051
-     ]
-    },
-    {
-     "weight": 284725,
+     "weight": 276097,
      "hero": "",
      "grade": "UNCOMMON",
      "items": [
       621051
-     ]
-    },
-    {
-     "weight": 284725,
-     "hero": "",
-     "grade": "UNCOMMON",
-     "items": [
-      631051
      ]
     },
     {
@@ -30109,6 +30093,30 @@
      ]
     },
     {
+     "weight": 172561,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      601051
+     ]
+    },
+    {
+     "weight": 159287,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      612051
+     ]
+    },
+    {
+     "weight": 159287,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      632051
+     ]
+    },
+    {
      "weight": 155022,
      "hero": "",
      "grade": "LEGENDARY",
@@ -30151,35 +30159,11 @@
      ]
     },
     {
-     "weight": 131412,
-     "hero": "",
-     "grade": "RARE",
-     "items": [
-      602051
-     ]
-    },
-    {
-     "weight": 131412,
-     "hero": "",
-     "grade": "RARE",
-     "items": [
-      612051
-     ]
-    },
-    {
-     "weight": 131412,
+     "weight": 127430,
      "hero": "",
      "grade": "RARE",
      "items": [
       622051
-     ]
-    },
-    {
-     "weight": 131412,
-     "hero": "",
-     "grade": "RARE",
-     "items": [
-      632051
      ]
     },
     {
@@ -30213,6 +30197,14 @@
       123002,
       123003,
       123004
+     ]
+    },
+    {
+     "weight": 79644,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      602051
      ]
     },
     {
@@ -30298,15 +30290,7 @@
      ]
     },
     {
-     "weight": 21902,
-     "hero": "",
-     "grade": "LEGENDARY",
-     "items": [
-      603051
-     ]
-    },
-    {
-     "weight": 21902,
+     "weight": 26548,
      "hero": "",
      "grade": "LEGENDARY",
      "items": [
@@ -30314,19 +30298,19 @@
      ]
     },
     {
-     "weight": 21902,
-     "hero": "",
-     "grade": "LEGENDARY",
-     "items": [
-      623051
-     ]
-    },
-    {
-     "weight": 21902,
+     "weight": 26548,
      "hero": "",
      "grade": "LEGENDARY",
      "items": [
       633051
+     ]
+    },
+    {
+     "weight": 21238,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      623051
      ]
     },
     {
@@ -30338,6 +30322,14 @@
       413041,
       423041,
       433041
+     ]
+    },
+    {
+     "weight": 13274,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      603051
      ]
     },
     {
@@ -31039,6 +31031,22 @@
      ]
     },
     {
+     "weight": 312285,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      611071
+     ]
+    },
+    {
+     "weight": 312285,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      631071
+     ]
+    },
+    {
      "weight": 280106,
      "hero": "",
      "grade": "LEGENDARY",
@@ -31050,38 +31058,6 @@
      ]
     },
     {
-     "weight": 257635,
-     "hero": "",
-     "grade": "UNCOMMON",
-     "items": [
-      601071
-     ]
-    },
-    {
-     "weight": 257635,
-     "hero": "",
-     "grade": "UNCOMMON",
-     "items": [
-      611071
-     ]
-    },
-    {
-     "weight": 257635,
-     "hero": "",
-     "grade": "UNCOMMON",
-     "items": [
-      621071
-     ]
-    },
-    {
-     "weight": 257635,
-     "hero": "",
-     "grade": "UNCOMMON",
-     "items": [
-      631071
-     ]
-    },
-    {
      "weight": 255805,
      "hero": "",
      "grade": "LEGENDARY",
@@ -31090,6 +31066,14 @@
       113002,
       113003,
       113004
+     ]
+    },
+    {
+     "weight": 249828,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      621071
      ]
     },
     {
@@ -31113,6 +31097,22 @@
      ]
     },
     {
+     "weight": 187370,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      612071
+     ]
+    },
+    {
+     "weight": 187370,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      632071
+     ]
+    },
+    {
      "weight": 183872,
      "hero": "",
      "grade": "UNCOMMON",
@@ -31133,35 +31133,19 @@
      ]
     },
     {
-     "weight": 154580,
+     "weight": 156142,
      "hero": "",
-     "grade": "RARE",
+     "grade": "UNCOMMON",
      "items": [
-      602071
+      601071
      ]
     },
     {
-     "weight": 154580,
-     "hero": "",
-     "grade": "RARE",
-     "items": [
-      612071
-     ]
-    },
-    {
-     "weight": 154580,
+     "weight": 149896,
      "hero": "",
      "grade": "RARE",
      "items": [
       622071
-     ]
-    },
-    {
-     "weight": 154580,
-     "hero": "",
-     "grade": "RARE",
-     "items": [
-      632071
      ]
     },
     {
@@ -31209,6 +31193,14 @@
      ]
     },
     {
+     "weight": 93685,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      602071
+     ]
+    },
+    {
      "weight": 81707,
      "hero": "",
      "grade": "IMMORTAL",
@@ -31231,15 +31223,7 @@
      ]
     },
     {
-     "weight": 51527,
-     "hero": "",
-     "grade": "LEGENDARY",
-     "items": [
-      603071
-     ]
-    },
-    {
-     "weight": 51527,
+     "weight": 62457,
      "hero": "",
      "grade": "LEGENDARY",
      "items": [
@@ -31247,19 +31231,19 @@
      ]
     },
     {
-     "weight": 51527,
-     "hero": "",
-     "grade": "LEGENDARY",
-     "items": [
-      623071
-     ]
-    },
-    {
-     "weight": 51527,
+     "weight": 62457,
      "hero": "",
      "grade": "LEGENDARY",
      "items": [
       633071
+     ]
+    },
+    {
+     "weight": 49966,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      623071
      ]
     },
     {
@@ -31279,6 +31263,14 @@
       413071,
       423071,
       433071
+     ]
+    },
+    {
+     "weight": 31228,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      603071
      ]
     },
     {
@@ -31331,15 +31323,7 @@
      ]
     },
     {
-     "weight": 4684,
-     "hero": "",
-     "grade": "IMMORTAL",
-     "items": [
-      604071
-     ]
-    },
-    {
-     "weight": 4684,
+     "weight": 5678,
      "hero": "",
      "grade": "IMMORTAL",
      "items": [
@@ -31347,7 +31331,15 @@
      ]
     },
     {
-     "weight": 4684,
+     "weight": 5678,
+     "hero": "",
+     "grade": "IMMORTAL",
+     "items": [
+      634071
+     ]
+    },
+    {
+     "weight": 4542,
      "hero": "",
      "grade": "IMMORTAL",
      "items": [
@@ -31355,11 +31347,11 @@
      ]
     },
     {
-     "weight": 4684,
+     "weight": 2839,
      "hero": "",
      "grade": "IMMORTAL",
      "items": [
-      634071
+      604071
      ]
     },
     {
@@ -31754,15 +31746,7 @@
      ]
     },
     {
-     "weight": 305778,
-     "hero": "",
-     "grade": "UNCOMMON",
-     "items": [
-      601091
-     ]
-    },
-    {
-     "weight": 305778,
+     "weight": 370640,
      "hero": "",
      "grade": "UNCOMMON",
      "items": [
@@ -31770,15 +31754,7 @@
      ]
     },
     {
-     "weight": 305778,
-     "hero": "",
-     "grade": "UNCOMMON",
-     "items": [
-      621091
-     ]
-    },
-    {
-     "weight": 305778,
+     "weight": 370640,
      "hero": "",
      "grade": "UNCOMMON",
      "items": [
@@ -31794,6 +31770,14 @@
       113002,
       113003,
       113004
+     ]
+    },
+    {
+     "weight": 296512,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      621091
      ]
     },
     {
@@ -31849,6 +31833,22 @@
      ]
     },
     {
+     "weight": 222384,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      612091
+     ]
+    },
+    {
+     "weight": 222384,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      632091
+     ]
+    },
+    {
      "weight": 194525,
      "hero": "",
      "grade": "RARE",
@@ -31860,35 +31860,11 @@
      ]
     },
     {
-     "weight": 183467,
+     "weight": 185320,
      "hero": "",
-     "grade": "RARE",
+     "grade": "UNCOMMON",
      "items": [
-      602091
-     ]
-    },
-    {
-     "weight": 183467,
-     "hero": "",
-     "grade": "RARE",
-     "items": [
-      612091
-     ]
-    },
-    {
-     "weight": 183467,
-     "hero": "",
-     "grade": "RARE",
-     "items": [
-      622091
-     ]
-    },
-    {
-     "weight": 183467,
-     "hero": "",
-     "grade": "RARE",
-     "items": [
-      632091
+      601091
      ]
     },
     {
@@ -31900,6 +31876,14 @@
       114002,
       114003,
       114004
+     ]
+    },
+    {
+     "weight": 177907,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      622091
      ]
     },
     {
@@ -31976,6 +31960,14 @@
      ]
     },
     {
+     "weight": 111192,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      602091
+     ]
+    },
+    {
      "weight": 99486,
      "hero": "",
      "grade": "IMMORTAL",
@@ -32009,15 +32001,7 @@
      ]
     },
     {
-     "weight": 61155,
-     "hero": "",
-     "grade": "LEGENDARY",
-     "items": [
-      603091
-     ]
-    },
-    {
-     "weight": 61155,
+     "weight": 74127,
      "hero": "",
      "grade": "LEGENDARY",
      "items": [
@@ -32025,19 +32009,19 @@
      ]
     },
     {
-     "weight": 61155,
-     "hero": "",
-     "grade": "LEGENDARY",
-     "items": [
-      623091
-     ]
-    },
-    {
-     "weight": 61155,
+     "weight": 74127,
      "hero": "",
      "grade": "LEGENDARY",
      "items": [
       633091
+     ]
+    },
+    {
+     "weight": 59302,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      623091
      ]
     },
     {
@@ -32071,6 +32055,14 @@
       121002,
       121003,
       121004
+     ]
+    },
+    {
+     "weight": 37064,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      603091
      ]
     },
     {
@@ -32194,15 +32186,7 @@
      ]
     },
     {
-     "weight": 5560,
-     "hero": "",
-     "grade": "IMMORTAL",
-     "items": [
-      604091
-     ]
-    },
-    {
-     "weight": 5560,
+     "weight": 6739,
      "hero": "",
      "grade": "IMMORTAL",
      "items": [
@@ -32210,7 +32194,15 @@
      ]
     },
     {
-     "weight": 5560,
+     "weight": 6739,
+     "hero": "",
+     "grade": "IMMORTAL",
+     "items": [
+      634091
+     ]
+    },
+    {
+     "weight": 5392,
      "hero": "",
      "grade": "IMMORTAL",
      "items": [
@@ -32218,11 +32210,11 @@
      ]
     },
     {
-     "weight": 5560,
+     "weight": 3370,
      "hero": "",
      "grade": "IMMORTAL",
      "items": [
-      634091
+      604091
      ]
     },
     {
@@ -32977,6 +32969,22 @@
      ]
     },
     {
+     "weight": 279216,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      611091
+     ]
+    },
+    {
+     "weight": 279216,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      631091
+     ]
+    },
+    {
      "weight": 251026,
      "hero": "",
      "grade": "RARE",
@@ -32995,6 +33003,14 @@
       112003,
       112004,
       112005
+     ]
+    },
+    {
+     "weight": 223373,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      621091
      ]
     },
     {
@@ -33051,6 +33067,38 @@
      ]
     },
     {
+     "weight": 167530,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      612091
+     ]
+    },
+    {
+     "weight": 167530,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      632091
+     ]
+    },
+    {
+     "weight": 139608,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      601091
+     ]
+    },
+    {
+     "weight": 134024,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      622091
+     ]
+    },
+    {
      "weight": 125650,
      "hero": "",
      "grade": "RARE",
@@ -33104,6 +33152,14 @@
      ]
     },
     {
+     "weight": 83765,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      602091
+     ]
+    },
+    {
      "weight": 75537,
      "hero": "",
      "grade": "IMMORTAL",
@@ -33123,6 +33179,30 @@
       111002,
       111003,
       111004
+     ]
+    },
+    {
+     "weight": 55842,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      613091
+     ]
+    },
+    {
+     "weight": 55842,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      633091
+     ]
+    },
+    {
+     "weight": 44674,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      623091
      ]
     },
     {
@@ -33154,6 +33234,14 @@
       115002,
       115003,
       115004
+     ]
+    },
+    {
+     "weight": 27921,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      603091
      ]
     },
     {
@@ -33249,6 +33337,38 @@
       315091,
       325091,
       335091
+     ]
+    },
+    {
+     "weight": 5076,
+     "hero": "",
+     "grade": "IMMORTAL",
+     "items": [
+      614091
+     ]
+    },
+    {
+     "weight": 5076,
+     "hero": "",
+     "grade": "IMMORTAL",
+     "items": [
+      634091
+     ]
+    },
+    {
+     "weight": 4061,
+     "hero": "",
+     "grade": "IMMORTAL",
+     "items": [
+      624091
+     ]
+    },
+    {
+     "weight": 2538,
+     "hero": "",
+     "grade": "IMMORTAL",
+     "items": [
+      604091
      ]
     },
     {
@@ -33643,6 +33763,22 @@
      ]
     },
     {
+     "weight": 340699,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      611111
+     ]
+    },
+    {
+     "weight": 340699,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      631111
+     ]
+    },
+    {
      "weight": 310295,
      "hero": "",
      "grade": "LEGENDARY",
@@ -33674,38 +33810,6 @@
      ]
     },
     {
-     "weight": 281077,
-     "hero": "",
-     "grade": "UNCOMMON",
-     "items": [
-      601111
-     ]
-    },
-    {
-     "weight": 281077,
-     "hero": "",
-     "grade": "UNCOMMON",
-     "items": [
-      611111
-     ]
-    },
-    {
-     "weight": 281077,
-     "hero": "",
-     "grade": "UNCOMMON",
-     "items": [
-      621111
-     ]
-    },
-    {
-     "weight": 281077,
-     "hero": "",
-     "grade": "UNCOMMON",
-     "items": [
-      631111
-     ]
-    },
-    {
      "weight": 280560,
      "hero": "",
      "grade": "RARE",
@@ -33714,6 +33818,14 @@
       512091,
       522091,
       532091
+     ]
+    },
+    {
+     "weight": 272560,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      621111
      ]
     },
     {
@@ -33736,6 +33848,22 @@
       114002,
       114003,
       114004
+     ]
+    },
+    {
+     "weight": 248427,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      612111
+     ]
+    },
+    {
+     "weight": 248427,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      632111
      ]
     },
     {
@@ -33780,23 +33908,7 @@
      ]
     },
     {
-     "weight": 204952,
-     "hero": "",
-     "grade": "RARE",
-     "items": [
-      602111
-     ]
-    },
-    {
-     "weight": 204952,
-     "hero": "",
-     "grade": "RARE",
-     "items": [
-      612111
-     ]
-    },
-    {
-     "weight": 204952,
+     "weight": 198741,
      "hero": "",
      "grade": "RARE",
      "items": [
@@ -33804,11 +33916,11 @@
      ]
     },
     {
-     "weight": 204952,
+     "weight": 170350,
      "hero": "",
-     "grade": "RARE",
+     "grade": "UNCOMMON",
      "items": [
-      632111
+      601111
      ]
     },
     {
@@ -33845,6 +33957,14 @@
      ]
     },
     {
+     "weight": 124213,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      602111
+     ]
+    },
+    {
      "weight": 116860,
      "hero": "",
      "grade": "RARE",
@@ -33878,6 +33998,22 @@
      ]
     },
     {
+     "weight": 99371,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      613111
+     ]
+    },
+    {
+     "weight": 99371,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      633111
+     ]
+    },
+    {
      "weight": 92428,
      "hero": "",
      "grade": "LEGENDARY",
@@ -33889,35 +34025,11 @@
      ]
     },
     {
-     "weight": 81981,
-     "hero": "",
-     "grade": "LEGENDARY",
-     "items": [
-      603111
-     ]
-    },
-    {
-     "weight": 81981,
-     "hero": "",
-     "grade": "LEGENDARY",
-     "items": [
-      613111
-     ]
-    },
-    {
-     "weight": 81981,
+     "weight": 79497,
      "hero": "",
      "grade": "LEGENDARY",
      "items": [
       623111
-     ]
-    },
-    {
-     "weight": 81981,
-     "hero": "",
-     "grade": "LEGENDARY",
-     "items": [
-      633111
      ]
     },
     {
@@ -33958,6 +34070,14 @@
      "items": [
       141001,
       141002
+     ]
+    },
+    {
+     "weight": 49685,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      603111
      ]
     },
     {
@@ -34038,6 +34158,22 @@
      ]
     },
     {
+     "weight": 21293,
+     "hero": "",
+     "grade": "IMMORTAL",
+     "items": [
+      614111
+     ]
+    },
+    {
+     "weight": 21293,
+     "hero": "",
+     "grade": "IMMORTAL",
+     "items": [
+      634111
+     ]
+    },
+    {
      "weight": 20265,
      "hero": "",
      "grade": "UNCOMMON",
@@ -34054,38 +34190,6 @@
      ]
     },
     {
-     "weight": 17567,
-     "hero": "",
-     "grade": "IMMORTAL",
-     "items": [
-      604111
-     ]
-    },
-    {
-     "weight": 17567,
-     "hero": "",
-     "grade": "IMMORTAL",
-     "items": [
-      614111
-     ]
-    },
-    {
-     "weight": 17567,
-     "hero": "",
-     "grade": "IMMORTAL",
-     "items": [
-      624111
-     ]
-    },
-    {
-     "weight": 17567,
-     "hero": "",
-     "grade": "IMMORTAL",
-     "items": [
-      634111
-     ]
-    },
-    {
      "weight": 17499,
      "hero": "",
      "grade": "IMMORTAL",
@@ -34094,6 +34198,14 @@
       414111,
       424111,
       434111
+     ]
+    },
+    {
+     "weight": 17035,
+     "hero": "",
+     "grade": "IMMORTAL",
+     "items": [
+      624111
      ]
     },
     {
@@ -34151,6 +34263,14 @@
       413091,
       423091,
       433091
+     ]
+    },
+    {
+     "weight": 10647,
+     "hero": "",
+     "grade": "IMMORTAL",
+     "items": [
+      604111
      ]
     },
     {
@@ -34968,6 +35088,22 @@
      ]
     },
     {
+     "weight": 209682,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      611111
+     ]
+    },
+    {
+     "weight": 209682,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      631111
+     ]
+    },
+    {
      "weight": 184895,
      "hero": "",
      "grade": "IMMORTAL",
@@ -34988,6 +35124,14 @@
      ]
     },
     {
+     "weight": 167746,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      621111
+     ]
+    },
+    {
      "weight": 161191,
      "hero": "",
      "grade": "LEGENDARY",
@@ -34996,6 +35140,22 @@
       123002,
       123003,
       123004
+     ]
+    },
+    {
+     "weight": 152893,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      612111
+     ]
+    },
+    {
+     "weight": 152893,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      632111
      ]
     },
     {
@@ -35042,6 +35202,22 @@
      ]
     },
     {
+     "weight": 122315,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      622111
+     ]
+    },
+    {
+     "weight": 104841,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      601111
+     ]
+    },
+    {
      "weight": 102671,
      "hero": "",
      "grade": "LEGENDARY",
@@ -35075,6 +35251,14 @@
      ]
     },
     {
+     "weight": 76447,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      602111
+     ]
+    },
+    {
      "weight": 64423,
      "hero": "",
      "grade": "IMMORTAL",
@@ -35086,6 +35270,22 @@
      ]
     },
     {
+     "weight": 61158,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      613111
+     ]
+    },
+    {
+     "weight": 61158,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      633111
+     ]
+    },
+    {
      "weight": 53669,
      "hero": "",
      "grade": "IMMORTAL",
@@ -35094,6 +35294,14 @@
       314111,
       324111,
       334111
+     ]
+    },
+    {
+     "weight": 48926,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      623111
      ]
     },
     {
@@ -35114,6 +35322,14 @@
      "items": [
       141001,
       141002
+     ]
+    },
+    {
+     "weight": 30579,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      603111
      ]
     },
     {
@@ -35198,6 +35414,30 @@
      ]
     },
     {
+     "weight": 13105,
+     "hero": "",
+     "grade": "IMMORTAL",
+     "items": [
+      614111
+     ]
+    },
+    {
+     "weight": 13105,
+     "hero": "",
+     "grade": "IMMORTAL",
+     "items": [
+      634111
+     ]
+    },
+    {
+     "weight": 10484,
+     "hero": "",
+     "grade": "IMMORTAL",
+     "items": [
+      624111
+     ]
+    },
+    {
      "weight": 8078,
      "hero": "",
      "grade": "IMMORTAL",
@@ -35217,6 +35457,14 @@
       515111,
       525111,
       535111
+     ]
+    },
+    {
+     "weight": 6553,
+     "hero": "",
+     "grade": "IMMORTAL",
+     "items": [
+      604111
      ]
     },
     {
@@ -35658,6 +35906,22 @@
      ]
     },
     {
+     "weight": 363410,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      611141
+     ]
+    },
+    {
+     "weight": 363410,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      631141
+     ]
+    },
+    {
      "weight": 342969,
      "hero": "",
      "grade": "IMMORTAL",
@@ -35698,35 +35962,11 @@
      ]
     },
     {
-     "weight": 299813,
-     "hero": "",
-     "grade": "UNCOMMON",
-     "items": [
-      601141
-     ]
-    },
-    {
-     "weight": 299813,
-     "hero": "",
-     "grade": "UNCOMMON",
-     "items": [
-      611141
-     ]
-    },
-    {
-     "weight": 299813,
+     "weight": 290728,
      "hero": "",
      "grade": "UNCOMMON",
      "items": [
       621141
-     ]
-    },
-    {
-     "weight": 299813,
-     "hero": "",
-     "grade": "UNCOMMON",
-     "items": [
-      631141
      ]
     },
     {
@@ -35752,15 +35992,7 @@
      ]
     },
     {
-     "weight": 218614,
-     "hero": "",
-     "grade": "RARE",
-     "items": [
-      602141
-     ]
-    },
-    {
-     "weight": 218614,
+     "weight": 264987,
      "hero": "",
      "grade": "RARE",
      "items": [
@@ -35768,19 +36000,19 @@
      ]
     },
     {
-     "weight": 218614,
-     "hero": "",
-     "grade": "RARE",
-     "items": [
-      622141
-     ]
-    },
-    {
-     "weight": 218614,
+     "weight": 264987,
      "hero": "",
      "grade": "RARE",
      "items": [
       632141
+     ]
+    },
+    {
+     "weight": 211989,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      622141
      ]
     },
     {
@@ -35792,6 +36024,14 @@
       124002,
       124003,
       124004
+     ]
+    },
+    {
+     "weight": 181705,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      601141
      ]
     },
     {
@@ -35857,6 +36097,14 @@
      ]
     },
     {
+     "weight": 132493,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      602141
+     ]
+    },
+    {
      "weight": 118266,
      "hero": "",
      "grade": "RARE",
@@ -35880,6 +36128,22 @@
      ]
     },
     {
+     "weight": 105994,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      613141
+     ]
+    },
+    {
+     "weight": 105994,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      633141
+     ]
+    },
+    {
      "weight": 94612,
      "hero": "",
      "grade": "ARCANA",
@@ -35891,35 +36155,11 @@
      ]
     },
     {
-     "weight": 87445,
-     "hero": "",
-     "grade": "LEGENDARY",
-     "items": [
-      603141
-     ]
-    },
-    {
-     "weight": 87445,
-     "hero": "",
-     "grade": "LEGENDARY",
-     "items": [
-      613141
-     ]
-    },
-    {
-     "weight": 87445,
+     "weight": 84795,
      "hero": "",
      "grade": "LEGENDARY",
      "items": [
       623141
-     ]
-    },
-    {
-     "weight": 87445,
-     "hero": "",
-     "grade": "LEGENDARY",
-     "items": [
-      633141
      ]
     },
     {
@@ -35931,6 +36171,14 @@
       122002,
       122003,
       122004
+     ]
+    },
+    {
+     "weight": 52997,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      603141
      ]
     },
     {
@@ -35970,6 +36218,22 @@
      ]
     },
     {
+     "weight": 22714,
+     "hero": "",
+     "grade": "IMMORTAL",
+     "items": [
+      614141
+     ]
+    },
+    {
+     "weight": 22714,
+     "hero": "",
+     "grade": "IMMORTAL",
+     "items": [
+      634141
+     ]
+    },
+    {
      "weight": 21469,
      "hero": "",
      "grade": "IMMORTAL",
@@ -35992,35 +36256,11 @@
      ]
     },
     {
-     "weight": 18739,
-     "hero": "",
-     "grade": "IMMORTAL",
-     "items": [
-      604141
-     ]
-    },
-    {
-     "weight": 18739,
-     "hero": "",
-     "grade": "IMMORTAL",
-     "items": [
-      614141
-     ]
-    },
-    {
-     "weight": 18739,
+     "weight": 18171,
      "hero": "",
      "grade": "IMMORTAL",
      "items": [
       624141
-     ]
-    },
-    {
-     "weight": 18739,
-     "hero": "",
-     "grade": "IMMORTAL",
-     "items": [
-      634141
      ]
     },
     {
@@ -36043,6 +36283,14 @@
       315141,
       325141,
       335141
+     ]
+    },
+    {
+     "weight": 11357,
+     "hero": "",
+     "grade": "IMMORTAL",
+     "items": [
+      604141
      ]
     },
     {
@@ -36515,6 +36763,38 @@
      ]
     },
     {
+     "weight": 287868,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      611141
+     ]
+    },
+    {
+     "weight": 287868,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      631141
+     ]
+    },
+    {
+     "weight": 247699,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      612141
+     ]
+    },
+    {
+     "weight": 247699,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      632141
+     ]
+    },
+    {
      "weight": 241654,
      "hero": "",
      "grade": "LEGENDARY",
@@ -36523,6 +36803,14 @@
       513141,
       523141,
       533141
+     ]
+    },
+    {
+     "weight": 230294,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      621141
      ]
     },
     {
@@ -36559,6 +36847,14 @@
      ]
     },
     {
+     "weight": 198160,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      622141
+     ]
+    },
+    {
      "weight": 196039,
      "hero": "",
      "grade": "ARCANA",
@@ -36579,6 +36875,14 @@
      ]
     },
     {
+     "weight": 143934,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      601141
+     ]
+    },
+    {
      "weight": 139125,
      "hero": "",
      "grade": "RARE",
@@ -36596,6 +36900,14 @@
       514141,
       524141,
       534141
+     ]
+    },
+    {
+     "weight": 123850,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      602141
      ]
     },
     {
@@ -36633,6 +36945,22 @@
      ]
     },
     {
+     "weight": 96699,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      613141
+     ]
+    },
+    {
+     "weight": 96699,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      633141
+     ]
+    },
+    {
      "weight": 81750,
      "hero": "",
      "grade": "RARE",
@@ -36641,6 +36969,14 @@
       412141,
       422141,
       432141
+     ]
+    },
+    {
+     "weight": 77360,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      623141
      ]
     },
     {
@@ -36655,6 +36991,30 @@
      ]
     },
     {
+     "weight": 48350,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      603141
+     ]
+    },
+    {
+     "weight": 33473,
+     "hero": "",
+     "grade": "IMMORTAL",
+     "items": [
+      614141
+     ]
+    },
+    {
+     "weight": 33473,
+     "hero": "",
+     "grade": "IMMORTAL",
+     "items": [
+      634141
+     ]
+    },
+    {
      "weight": 30288,
      "hero": "",
      "grade": "LEGENDARY",
@@ -36663,6 +37023,14 @@
       413141,
       423141,
       433141
+     ]
+    },
+    {
+     "weight": 26778,
+     "hero": "",
+     "grade": "IMMORTAL",
+     "items": [
+      624141
      ]
     },
     {
@@ -36683,6 +37051,14 @@
       414141,
       424141,
       434141
+     ]
+    },
+    {
+     "weight": 16736,
+     "hero": "",
+     "grade": "IMMORTAL",
+     "items": [
+      604141
      ]
     },
     {
@@ -36794,6 +37170,30 @@
      ]
     },
     {
+     "weight": 3720,
+     "hero": "",
+     "grade": "ARCANA",
+     "items": [
+      615141
+     ]
+    },
+    {
+     "weight": 3720,
+     "hero": "",
+     "grade": "ARCANA",
+     "items": [
+      635141
+     ]
+    },
+    {
+     "weight": 2976,
+     "hero": "",
+     "grade": "ARCANA",
+     "items": [
+      625141
+     ]
+    },
+    {
      "weight": 2500,
      "hero": "",
      "grade": "COMMON",
@@ -36818,6 +37218,14 @@
       415141,
       425141,
       435141
+     ]
+    },
+    {
+     "weight": 1860,
+     "hero": "",
+     "grade": "ARCANA",
+     "items": [
+      605141
      ]
     },
     {
@@ -37241,6 +37649,22 @@
      ]
     },
     {
+     "weight": 327778,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      611171
+     ]
+    },
+    {
+     "weight": 327778,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      631171
+     ]
+    },
+    {
      "weight": 302572,
      "hero": "",
      "grade": "LEGENDARY",
@@ -37270,6 +37694,22 @@
      ]
     },
     {
+     "weight": 282042,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      612171
+     ]
+    },
+    {
+     "weight": 282042,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      632171
+     ]
+    },
+    {
      "weight": 271299,
      "hero": "",
      "grade": "LEGENDARY",
@@ -37292,6 +37732,14 @@
      ]
     },
     {
+     "weight": 262223,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      621171
+     ]
+    },
+    {
      "weight": 251993,
      "hero": "",
      "grade": "LEGENDARY",
@@ -37300,6 +37748,14 @@
       313171,
       323171,
       333171
+     ]
+    },
+    {
+     "weight": 225634,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      622171
      ]
     },
     {
@@ -37322,6 +37778,14 @@
       514171,
       524171,
       534171
+     ]
+    },
+    {
+     "weight": 163889,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      601171
      ]
     },
     {
@@ -37358,6 +37822,30 @@
      ]
     },
     {
+     "weight": 141021,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      602171
+     ]
+    },
+    {
+     "weight": 110107,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      613171
+     ]
+    },
+    {
+     "weight": 110107,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      633171
+     ]
+    },
+    {
      "weight": 96572,
      "hero": "",
      "grade": "RARE",
@@ -37375,6 +37863,14 @@
       412171,
       422171,
       432171
+     ]
+    },
+    {
+     "weight": 88085,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      623171
      ]
     },
     {
@@ -37410,6 +37906,14 @@
      ]
     },
     {
+     "weight": 55053,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      603171
+     ]
+    },
+    {
      "weight": 42349,
      "hero": "",
      "grade": "RARE",
@@ -37418,6 +37922,22 @@
       122002,
       122003,
       122004
+     ]
+    },
+    {
+     "weight": 38114,
+     "hero": "",
+     "grade": "IMMORTAL",
+     "items": [
+      614171
+     ]
+    },
+    {
+     "weight": 38114,
+     "hero": "",
+     "grade": "IMMORTAL",
+     "items": [
+      634171
      ]
     },
     {
@@ -37443,6 +37963,14 @@
      ]
     },
     {
+     "weight": 30491,
+     "hero": "",
+     "grade": "IMMORTAL",
+     "items": [
+      624171
+     ]
+    },
+    {
      "weight": 24095,
      "hero": "",
      "grade": "IMMORTAL",
@@ -37462,6 +37990,14 @@
       515171,
       525171,
       535171
+     ]
+    },
+    {
+     "weight": 19057,
+     "hero": "",
+     "grade": "IMMORTAL",
+     "items": [
+      604171
      ]
     },
     {
@@ -37556,6 +38092,30 @@
      ]
     },
     {
+     "weight": 4235,
+     "hero": "",
+     "grade": "ARCANA",
+     "items": [
+      615171
+     ]
+    },
+    {
+     "weight": 4235,
+     "hero": "",
+     "grade": "ARCANA",
+     "items": [
+      635171
+     ]
+    },
+    {
+     "weight": 3388,
+     "hero": "",
+     "grade": "ARCANA",
+     "items": [
+      625171
+     ]
+    },
+    {
      "weight": 2685,
      "hero": "",
      "grade": "ARCANA",
@@ -37591,6 +38151,14 @@
      "grade": "COMMON",
      "items": [
       130001
+     ]
+    },
+    {
+     "weight": 2118,
+     "hero": "",
+     "grade": "ARCANA",
+     "items": [
+      605171
      ]
     },
     {
@@ -38029,6 +38597,22 @@
      ]
     },
     {
+     "weight": 351977,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      611171
+     ]
+    },
+    {
+     "weight": 351977,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      631171
+     ]
+    },
+    {
      "weight": 337666,
      "hero": "",
      "grade": "ARCANA",
@@ -38060,6 +38644,30 @@
      ]
     },
     {
+     "weight": 302863,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      612171
+     ]
+    },
+    {
+     "weight": 302863,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      632171
+     ]
+    },
+    {
+     "weight": 281582,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      621171
+     ]
+    },
+    {
      "weight": 280080,
      "hero": "",
      "grade": "LEGENDARY",
@@ -38077,6 +38685,14 @@
      "items": [
       143001,
       143002
+     ]
+    },
+    {
+     "weight": 242290,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      622171
      ]
     },
     {
@@ -38135,6 +38751,22 @@
      ]
     },
     {
+     "weight": 175988,
+     "hero": "",
+     "grade": "UNCOMMON",
+     "items": [
+      601171
+     ]
+    },
+    {
+     "weight": 151432,
+     "hero": "",
+     "grade": "RARE",
+     "items": [
+      602171
+     ]
+    },
+    {
      "weight": 132317,
      "hero": "",
      "grade": "LEGENDARY",
@@ -38143,6 +38775,22 @@
       123002,
       123003,
       123004
+     ]
+    },
+    {
+     "weight": 118235,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      613171
+     ]
+    },
+    {
+     "weight": 118235,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      633171
      ]
     },
     {
@@ -38177,6 +38825,14 @@
      ]
     },
     {
+     "weight": 94588,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      623171
+     ]
+    },
+    {
      "weight": 60645,
      "hero": "",
      "grade": "BEYOND",
@@ -38185,6 +38841,14 @@
       126002,
       126003,
       126004
+     ]
+    },
+    {
+     "weight": 59118,
+     "hero": "",
+     "grade": "LEGENDARY",
+     "items": [
+      603171
      ]
     },
     {
@@ -38217,6 +38881,30 @@
       112003,
       112004,
       112005
+     ]
+    },
+    {
+     "weight": 40928,
+     "hero": "",
+     "grade": "IMMORTAL",
+     "items": [
+      614171
+     ]
+    },
+    {
+     "weight": 40928,
+     "hero": "",
+     "grade": "IMMORTAL",
+     "items": [
+      634171
+     ]
+    },
+    {
+     "weight": 32743,
+     "hero": "",
+     "grade": "IMMORTAL",
+     "items": [
+      624171
      ]
     },
     {
@@ -38261,6 +38949,14 @@
       315171,
       325171,
       335171
+     ]
+    },
+    {
+     "weight": 20464,
+     "hero": "",
+     "grade": "IMMORTAL",
+     "items": [
+      604171
      ]
     },
     {
@@ -38344,6 +39040,30 @@
      ]
     },
     {
+     "weight": 4548,
+     "hero": "",
+     "grade": "ARCANA",
+     "items": [
+      615171
+     ]
+    },
+    {
+     "weight": 4548,
+     "hero": "",
+     "grade": "ARCANA",
+     "items": [
+      635171
+     ]
+    },
+    {
+     "weight": 3638,
+     "hero": "",
+     "grade": "ARCANA",
+     "items": [
+      625171
+     ]
+    },
+    {
      "weight": 3132,
      "hero": "",
      "grade": "ARCANA",
@@ -38374,6 +39094,14 @@
       316171,
       326171,
       336171
+     ]
+    },
+    {
+     "weight": 2274,
+     "hero": "",
+     "grade": "ARCANA",
+     "items": [
+      605171
      ]
     },
     {
@@ -49023,6 +49751,12 @@
    "icon": "sprites/AMULET_600014.png",
    "cat": "equip"
   },
+  "601171": {
+   "name": "Amuleto Etéreo",
+   "grade": "UNCOMMON",
+   "icon": "sprites/AMULET_600017.png",
+   "cat": "equip"
+  },
   "602031": {
    "name": "Amuleto de prata",
    "grade": "RARE",
@@ -49057,6 +49791,12 @@
    "name": "Amuleto do Eclipse",
    "grade": "RARE",
    "icon": "sprites/AMULET_600014.png",
+   "cat": "equip"
+  },
+  "602171": {
+   "name": "Amuleto Etéreo",
+   "grade": "RARE",
+   "icon": "sprites/AMULET_600017.png",
    "cat": "equip"
   },
   "603031": {
@@ -49095,6 +49835,12 @@
    "icon": "sprites/AMULET_600014.png",
    "cat": "equip"
   },
+  "603171": {
+   "name": "Amuleto Etéreo",
+   "grade": "LEGENDARY",
+   "icon": "sprites/AMULET_600017.png",
+   "cat": "equip"
+  },
   "604071": {
    "name": "Pingente de Pedra Lunar",
    "grade": "IMMORTAL",
@@ -49117,6 +49863,24 @@
    "name": "Amuleto do Eclipse",
    "grade": "IMMORTAL",
    "icon": "sprites/AMULET_600014.png",
+   "cat": "equip"
+  },
+  "604171": {
+   "name": "Amuleto Etéreo",
+   "grade": "IMMORTAL",
+   "icon": "sprites/AMULET_600017.png",
+   "cat": "equip"
+  },
+  "605141": {
+   "name": "Amuleto do Eclipse",
+   "grade": "ARCANA",
+   "icon": "sprites/AMULET_600014.png",
+   "cat": "equip"
+  },
+  "605171": {
+   "name": "Amuleto Etéreo",
+   "grade": "ARCANA",
+   "icon": "sprites/AMULET_600017.png",
    "cat": "equip"
   },
   "611031": {
@@ -49155,6 +49919,12 @@
    "icon": "sprites/EARING_610014.png",
    "cat": "equip"
   },
+  "611171": {
+   "name": "Brinco Etéreo",
+   "grade": "UNCOMMON",
+   "icon": "sprites/EARING_610017.png",
+   "cat": "equip"
+  },
   "612031": {
    "name": "Brinco de Prata",
    "grade": "RARE",
@@ -49189,6 +49959,12 @@
    "name": "Brinco celestial",
    "grade": "RARE",
    "icon": "sprites/EARING_610014.png",
+   "cat": "equip"
+  },
+  "612171": {
+   "name": "Brinco Etéreo",
+   "grade": "RARE",
+   "icon": "sprites/EARING_610017.png",
    "cat": "equip"
   },
   "613031": {
@@ -49227,6 +50003,12 @@
    "icon": "sprites/EARING_610014.png",
    "cat": "equip"
   },
+  "613171": {
+   "name": "Brinco Etéreo",
+   "grade": "LEGENDARY",
+   "icon": "sprites/EARING_610017.png",
+   "cat": "equip"
+  },
   "614071": {
    "name": "Brinco de Esmeralda",
    "grade": "IMMORTAL",
@@ -49249,6 +50031,24 @@
    "name": "Brinco celestial",
    "grade": "IMMORTAL",
    "icon": "sprites/EARING_610014.png",
+   "cat": "equip"
+  },
+  "614171": {
+   "name": "Brinco Etéreo",
+   "grade": "IMMORTAL",
+   "icon": "sprites/EARING_610017.png",
+   "cat": "equip"
+  },
+  "615141": {
+   "name": "Brinco celestial",
+   "grade": "ARCANA",
+   "icon": "sprites/EARING_610014.png",
+   "cat": "equip"
+  },
+  "615171": {
+   "name": "Brinco Etéreo",
+   "grade": "ARCANA",
+   "icon": "sprites/EARING_610017.png",
    "cat": "equip"
   },
   "621031": {
@@ -49287,6 +50087,12 @@
    "icon": "sprites/RING_620014.png",
    "cat": "equip"
   },
+  "621171": {
+   "name": "Anel Etéreo",
+   "grade": "UNCOMMON",
+   "icon": "sprites/RING_620017.png",
+   "cat": "equip"
+  },
   "622031": {
    "name": "Anel de Prata",
    "grade": "RARE",
@@ -49321,6 +50127,12 @@
    "name": "Anel do Eclipse",
    "grade": "RARE",
    "icon": "sprites/RING_620014.png",
+   "cat": "equip"
+  },
+  "622171": {
+   "name": "Anel Etéreo",
+   "grade": "RARE",
+   "icon": "sprites/RING_620017.png",
    "cat": "equip"
   },
   "623031": {
@@ -49359,6 +50171,12 @@
    "icon": "sprites/RING_620014.png",
    "cat": "equip"
   },
+  "623171": {
+   "name": "Anel Etéreo",
+   "grade": "LEGENDARY",
+   "icon": "sprites/RING_620017.png",
+   "cat": "equip"
+  },
   "624071": {
    "name": "Anel de Âmbar",
    "grade": "IMMORTAL",
@@ -49381,6 +50199,24 @@
    "name": "Anel do Eclipse",
    "grade": "IMMORTAL",
    "icon": "sprites/RING_620014.png",
+   "cat": "equip"
+  },
+  "624171": {
+   "name": "Anel Etéreo",
+   "grade": "IMMORTAL",
+   "icon": "sprites/RING_620017.png",
+   "cat": "equip"
+  },
+  "625141": {
+   "name": "Anel do Eclipse",
+   "grade": "ARCANA",
+   "icon": "sprites/RING_620014.png",
+   "cat": "equip"
+  },
+  "625171": {
+   "name": "Anel Etéreo",
+   "grade": "ARCANA",
+   "icon": "sprites/RING_620017.png",
    "cat": "equip"
   },
   "631031": {
@@ -49419,6 +50255,12 @@
    "icon": "sprites/BRACER_630014.png",
    "cat": "equip"
   },
+  "631171": {
+   "name": "Braçadeira Etérea",
+   "grade": "UNCOMMON",
+   "icon": "sprites/BRACER_630017.png",
+   "cat": "equip"
+  },
   "632031": {
    "name": "Braçadeira de Prata",
    "grade": "RARE",
@@ -49453,6 +50295,12 @@
    "name": "Bracelete do Eclipse",
    "grade": "RARE",
    "icon": "sprites/BRACER_630014.png",
+   "cat": "equip"
+  },
+  "632171": {
+   "name": "Braçadeira Etérea",
+   "grade": "RARE",
+   "icon": "sprites/BRACER_630017.png",
    "cat": "equip"
   },
   "633031": {
@@ -49491,6 +50339,12 @@
    "icon": "sprites/BRACER_630014.png",
    "cat": "equip"
   },
+  "633171": {
+   "name": "Braçadeira Etérea",
+   "grade": "LEGENDARY",
+   "icon": "sprites/BRACER_630017.png",
+   "cat": "equip"
+  },
   "634071": {
    "name": "Braçadeira de Obsidiana",
    "grade": "IMMORTAL",
@@ -49513,6 +50367,24 @@
    "name": "Bracelete do Eclipse",
    "grade": "IMMORTAL",
    "icon": "sprites/BRACER_630014.png",
+   "cat": "equip"
+  },
+  "634171": {
+   "name": "Braçadeira Etérea",
+   "grade": "IMMORTAL",
+   "icon": "sprites/BRACER_630017.png",
+   "cat": "equip"
+  },
+  "635141": {
+   "name": "Bracelete do Eclipse",
+   "grade": "ARCANA",
+   "icon": "sprites/BRACER_630014.png",
+   "cat": "equip"
+  },
+  "635171": {
+   "name": "Braçadeira Etérea",
+   "grade": "ARCANA",
+   "icon": "sprites/BRACER_630017.png",
    "cat": "equip"
   }
  },
