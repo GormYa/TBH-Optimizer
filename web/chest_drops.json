@@ -1,12 +1,12 @@
 {
  "_schema": {
-  "source": "arquivos do jogo TaskbarHero v1.00.17 (extração local UnityPy)",
+  "source": "arquivos do jogo TaskbarHero v1.00.20 (extração local UnityPy)",
   "dropRate": "stages[].dropRatePercent em %; rate do CSV /10",
   "loot": "loot[].weight + hero ('' = base). % do grupo = weight / soma dos pesos dos grupos ativos (base + heróis selecionados). por item ~ %/len(items)",
   "heroes": "id -> {name, dlc}; heróis cuja posse muda a pool de loot"
  },
  "updatedAt": "",
- "gameVersion": "1.00.17",
+ "gameVersion": "1.00.20",
  "heroes": {
   "501": {
    "name": "Caçador",
