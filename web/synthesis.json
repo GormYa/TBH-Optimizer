@@ -5716,5 +5716,5 @@
   "cubeExp": "nível do Cubo -> EXP p/ subir de nível (CubeLevelInfoData.ExpForLevelUp)",
   "slots/baseCubeExp": "por grau: slots de enchant e EXP que o item rende (GradeInfoData)"
  },
- "gameVersion": "1.00.20"
+ "gameVersion": "1.00.21"
 }
