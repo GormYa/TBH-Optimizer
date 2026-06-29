@@ -39,6 +39,7 @@ scripts/
 # tools/ = scripts de extração / engenharia reversa (dev local) -> NUNCA commitar.
 # O app embute os JSON já extraídos; nada em tools/ precisa ir pro git.
 tools/
+!tools/extract.py
 
 # binário compilado (injeta a chave ES3 via ldflags; nunca commitar)
 optimizer.exe
