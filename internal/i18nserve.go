@@ -19,7 +19,7 @@ func i18nPack(client *http.Client, dataDir, code string) ([]byte, error) {
 		return b, nil
 	}
 	cache := filepath.Join(dataDir, "i18n", name)
-	b, err := httpGet(client, updateBaseURL+"i18n/"+name)
+	b, err := httpGet(client, "https://taskbarhero.fun/i18n/"+name)
 	if err == nil {
 		if mkErr := os.MkdirAll(filepath.Dir(cache), 0755); mkErr == nil {
 			_ = os.WriteFile(cache, b, 0644)

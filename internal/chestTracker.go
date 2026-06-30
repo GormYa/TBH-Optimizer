@@ -608,7 +608,14 @@ func CalculateCooldowns(itemDefId int, history []ChestDropEvent, cfg ChestCooldo
 	}
 
 	status = "available"
-	if cooldownRemaining > 0 {
+	if cfg.UseDropWindow && droppedInWindow >= cfg.DropMaxPerWindow {
+		status = "capped"
+		// Se está no limite de baús na janela, a espera real é o maior entre
+		// o cooldown individual restante e o tempo para abrir vaga na janela.
+		if windowRemaining > cooldownRemaining {
+			cooldownRemaining = windowRemaining
+		}
+	} else if cooldownRemaining > 0 {
 		status = "cooldown"
 	}
 	return droppedInWindow, windowRemaining, cooldownRemaining, status
