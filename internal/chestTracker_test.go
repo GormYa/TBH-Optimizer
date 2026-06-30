@@ -62,8 +62,8 @@ func TestCalculateCooldowns(t *testing.T) {
 	if winRemCap <= 0 {
 		t.Fatalf("expected window remaining, got %d", winRemCap)
 	}
-	if statusCap != "cooldown" {
-		t.Fatalf("expected status 'cooldown', got %s", statusCap)
+	if statusCap != "capped" {
+		t.Fatalf("expected status 'capped', got %s", statusCap)
 	}
 }
 
